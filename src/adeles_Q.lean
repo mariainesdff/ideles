@@ -20,6 +20,6 @@ variables [∀ (p : P), has_coe (Z p) (Q p)]
 -- Finite adeles
 def A_Q_f := restricted_product P Q Z
 
-def inh := restricted_product.inhabited P Q Z
+--def inh := restricted_product.inhabited P Q Z
 
 
