@@ -3,6 +3,8 @@ import data.set.finite
 import data.real.nnreal
 import ring_theory.valuation.basic
 import ring_theory.valuation.integers
+import linear_algebra.finite_dimensional
+import ring_theory.integral_closure
 
 universes u v
 variables (R : Type u)[ring R] (Γ₀ : Type v)[linear_ordered_comm_monoid_with_zero Γ₀] 
@@ -39,3 +41,15 @@ structure A_Q_f : Type :=
 (x : Π v : vals_Q, @cau_seq.completion.Cauchy _ _ _ _ v.to_fun _)
 (fin_supp : set.finite({ v : vals | (x v) ∈ v.integers}))
 -/
+
+-- let K be a number field
+variables (K : Type) [field K] [char_zero K] [finite_dimensional ℚ K]
+
+-- that's the ring of integers!
+def integer_ring : subring K := (integral_closure ℤ K).to_subring
+
+def finite_primes := {P : ideal (integer_ring K) // P.is_maximal }
+
+-- do a product over these
+
+-- next big step: complete K at P, or perhaps integer_ring K at P
