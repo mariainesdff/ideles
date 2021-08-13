@@ -2,6 +2,7 @@ import data.nat.prime
 import data.set.finite
 import number_theory.padics
 import number_theory.divisors
+import topology.metric_space.basic
 
 noncomputable theory
 open nat
@@ -216,7 +217,23 @@ end
 
 end comm_ring
 
-/- section topological_space
+/-
+
+variable p: primes
+instance (p : primes) : topological_ring ℚ_[p] := by apply_instance 
+
+instance (p : primes) : pseudo_metric_space ℚ_[p] := by apply_instance
+
+def Z_p_ball (p : primes) : set ℚ_[p] := (metric.ball (0 : ℚ_[p]) (1 : ℝ))
+
+#check Z_p_ball p
+
+lemma open_padic_integers {p:primes}: is_open (Z_p_ball p) :=  metric.is_open_ball
+
+
+section topological_spacevariable (p: primes)
+
+instance (p : primes): topological_ring ℚ_[p] := by apply_instance
 
 def is_open : set A_Q_f → Prop := sorry
 
@@ -226,11 +243,21 @@ theorem is_open_inter (S T : set A_Q_f) : is_open S → is_open T → is_open (S
 
 theorem is_open_sUnion (S : set (set A_Q_f)) : (∀ (T : set A_Q_f), T ∈ S → is_open T) → is_open (⋃₀S) := sorry
 
+instance : topological_space A_Q_f := { 
+  is_open := fin_adeles.is_open,
+  is_open_univ := fin_adeles.is_open_univ,
+  is_open_inter := fin_adeles.is_open_inter,
+  is_open_sUnion := fin_adeles.is_open_sUnion }
+
+instance : topological_ring A_Q_f := { 
+  continuous_add := sorry,
+  continuous_mul := sorry,
+  continuous_neg := sorry} 
+
 
 end topological_space -/
 
-
-instance : add_comm_group A_Q_f :=
+instance : add_comm_group A_Q_f := 
 { add := fin_adeles.add,
   add_assoc := fin_adeles.add_assoc,
   zero := fin_adeles.zero,
@@ -239,11 +266,10 @@ instance : add_comm_group A_Q_f :=
   neg := fin_adeles.neg,
   add_left_neg := fin_adeles.add_left_neg,
   add_comm := fin_adeles.add_comm
-}
+} 
 
 instance : comm_ring A_Q_f  := 
-{ 
-  mul := fin_adeles.mul,
+{ mul := fin_adeles.mul,
   mul_assoc := fin_adeles.mul_assoc,
   one := fin_adeles.one,
   one_mul := fin_adeles.one_mul,
@@ -251,17 +277,9 @@ instance : comm_ring A_Q_f  :=
   left_distrib := fin_adeles.left_distrib,
   right_distrib := fin_adeles.right_distrib,
   mul_comm := fin_adeles.mul_comm,
-  
-  -- TODO: figure out how not to repeat this
-  add := fin_adeles.add,
-  add_assoc := fin_adeles.add_assoc,
-  zero := fin_adeles.zero,
-  zero_add := fin_adeles.zero_add,
-  add_zero := fin_adeles.add_zero,
-  neg := fin_adeles.neg,
-  add_left_neg := fin_adeles.add_left_neg,
-  add_comm := fin_adeles.add_comm,
+  ..(show add_comm_group A_Q_f, by apply_instance),
 }
+
 section Q_algebra
 
 def map_Q_fin_adeles : ℚ → A_Q_f := (λ r, {A_Q_f . el := (λ p, (r: ℚ_[p])), fin_supp := begin
@@ -342,25 +360,11 @@ def hom_Q_fin_adeles : ring_hom ℚ A_Q_f := { to_fun := fin_adeles.map_Q_fin_ad
 
 instance : algebra ℚ A_Q_f := { smul := fin_adeles.smul,
   to_fun := fin_adeles.map_Q_fin_adeles,
-  -- TODO: remove
-  map_one' := fin_adeles.map_one',
-  map_mul' := fin_adeles.map_mul',
-  map_zero' := fin_adeles.map_zero',
-  map_add' := fin_adeles.map_add',
   commutes' := fin_adeles.commutes',
-  smul_def' := fin_adeles.smul_def' }
+  smul_def' := fin_adeles.smul_def',
+  ..hom_Q_fin_adeles }
 
 end Q_algebra
-/- instance : topological_space A_Q_f := { 
-  is_open := fin_adeles.is_open,
-  is_open_univ := fin_adeles.is_open_univ,
-  is_open_inter := fin_adeles.is_open_inter,
-  is_open_sUnion := fin_adeles.is_open_sUnion }
-
-instance : topological_ring A_Q_f := { 
-  continuous_add := sorry,
-  continuous_mul := sorry,
-  continuous_neg := sorry} -/
 
 end fin_adeles
 
