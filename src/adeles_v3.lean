@@ -29,13 +29,6 @@ def M : submonoid R :=
 
 def A_Q_f := localization M
 
---variables (a : A_Q_f) (r : R) (z : Z)
-
-/- def map_to_Pi_Q_p (a : A_Q_f) : Π p : primes, ℚ_[p] :=
-begin
-  cases ((localization.monoid_of M).sec  a) with r d,
-  exact λ p, (r p)/(d.val p),
-end -/
 
 --variables (α : Type*)
 def f (x : Π p : primes, ℚ_[p]) (q : primes) : ℕ :=
@@ -97,6 +90,38 @@ begin
     exact one_le_finprod' hp,
 end
 
+lemma norm_d (x : Π p : primes, ℚ_[p]) 
+  (h : set.finite({ p : primes | padic.valuation (x p) < 0 })) {p : primes} (hp : padic.valuation (x p) < 0) : ∥(↑(↑(finprod (f x)) : ℤ) : ℚ_[p])∥ ≤ (↑(↑p : ℕ)^(x p).valuation : ℝ) := 
+  begin
+    set d := finprod ( f x) with hd,
+    have : 0 ≤ -(x p).valuation,
+    { rw [le_neg, neg_zero], exact le_of_lt hp },
+    have hn : (x p).valuation = -int.nat_abs(padic.valuation (x p)),
+    { cases int.nat_abs_eq (x p).valuation with habs hneg_abs,
+    { have : 0 ≤  (x p).valuation, by {rw habs, rw ← int.abs_eq_nat_abs, exact abs_nonneg _},
+    rw ← not_lt at this,
+    exact absurd hp this},
+    { exact hneg_abs }},
+    rw [hn, padic_norm_e.norm_int_le_pow_iff_dvd (d : ℤ) (int.nat_abs(padic.valuation (x p))), int.coe_nat_dvd,hd],
+    have h2 : f x p = ↑p^int.nat_abs(padic.valuation (x p)),
+    { unfold f, 
+      rw [mul_indicator_apply, if_pos], refl, rwa set.mem_set_of_eq},
+    rw ← h2,
+    apply finprod_mem_div (f x) p,
+    have h3 : mul_support (f x) = { p : primes | padic.valuation (x p) < 0 },
+    { ext q, 
+      rw mul_support,
+      unfold f,
+      split,
+      { intro hne_one, exact mem_of_mul_indicator_ne_one hne_one},
+      { intro hval, rw mem_set_of_eq at hval ⊢, rw mul_indicator_apply, rw if_pos, 
+      exact ne_of_gt (one_lt_pow (x q).valuation.nat_abs q
+        (int.nat_abs_pos_of_ne_zero (int.ne_of_lt hval))
+        (nat.prime.one_lt q.2)),
+      exact hval}},
+    rwa h3,
+  end
+
 lemma int_components (x : Π p : primes, ℚ_[p]) 
   (h : set.finite({ p : primes | padic.valuation (x p) < 0 })) (p : primes) :  ∥↑(finprod (f x))*(x p)∥ ≤ 1 := 
   begin
@@ -104,30 +129,7 @@ lemma int_components (x : Π p : primes, ℚ_[p])
     rw [padic_norm_e.mul],
     by_cases hp : p ∈ { p : primes | padic.valuation (x p) < 0 },
     { rw set.mem_set_of_eq at hp,
-        have hd : ∥↑↑d∥ ≤ ↑(↑p : ℕ)^(x p).valuation,
-        { have : 0 ≤ -(x p).valuation := sorry,
-          lift -(x p).valuation to ℕ using this with neg_xval,
-          rw ← neg_neg (x p).valuation,
-          rw ← h_1,
-          rw padic_norm_e.norm_int_le_pow_iff_dvd (d : ℤ) neg_xval,
-          rw int.coe_nat_dvd,
-          rw hd,
-          have h1 : neg_xval = int.nat_abs(padic.valuation (x p)),
-          { sorry },
-          have h2 : f x p = ↑p^int.nat_abs(padic.valuation (x p)),
-          { unfold f, 
-            rw [mul_indicator_apply, if_pos], refl, rwa set.mem_set_of_eq},
-          rw [h1, ← h2],
-          apply finprod_mem_div (f x) p,
-          have h3 : mul_support (f x) = { p : primes | padic.valuation (x p) < 0 },
-          { ext p, 
-            rw mul_support,
-            unfold f,
-            split,
-            { intro hne_one, exact mem_of_mul_indicator_ne_one hne_one},
-            {intro hval, rw mem_set_of_eq, rw mul_indicator_apply, rw if_pos, { sorry}, exact hval,},
-            },
-          rwa h3},
+        have hd : ∥↑↑d∥ ≤ ↑(↑p : ℕ)^(x p).valuation := norm_d x h hp,
         have hxp : ∥x p∥ = ↑(↑p : ℕ)^-(x p).valuation,
         { apply padic.norm_eq_pow_val,
         intro hzero,
@@ -175,6 +177,12 @@ def linear_prod (p: primes) : linear_map ℤ (Π (q: primes), ℤ_[q])  ℚ_[p] 
 { to_fun    := (λ a, ↑(a p)),
   map_add'  := (λ x y, padic_int.coe_add (x p) (y p)),
   map_smul' :=  (λ m x, add_monoid_hom.map_int_module_smul (group_hom_prod p) m x) }
+
+/- def map_to_Pi_Q_p (a : A_Q_f) : Π p : primes, ℚ_[p] :=
+begin
+  cases ((localization.monoid_of M).sec  a) with r d,
+  exact λ p, (r p)/(d.val p),
+end -/
 
 /-  def proj_p (p: primes) : A_Q_f → ℚ_[p] := 
 tensor_product.lift 
