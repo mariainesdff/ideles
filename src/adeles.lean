@@ -108,7 +108,7 @@ lemma norm_d (x : Π p : primes, ℚ_[p]) (h : set.finite({ p : primes | padic.v
     { cases int.nat_abs_eq (x p).valuation with habs hneg_abs,
     { have : 0 ≤  (x p).valuation, by {rw habs, rw ← int.abs_eq_nat_abs, exact abs_nonneg _},
     rw ← not_lt at this,
-    exact absurd hp this},
+    exact absurd hp this },
     { exact hneg_abs }},
     rw [hn, padic_norm_e.norm_int_le_pow_iff_dvd (d : ℤ) (int.nat_abs(padic.valuation (x p)))],
     rw [int.coe_nat_dvd, hd],
@@ -198,9 +198,9 @@ def linear_prod (p: primes) : linear_map ℤ (Π (q: primes), ℤ_[q])  ℚ_[p] 
 begin
   cases ((localization.monoid_of M).sec  a) with r d,
   exact λ p, (r p)/(d.val p),
-end -/
+end  -/
 
-/-  def proj_p (p: primes) : A_Q_f → ℚ_[p] := 
+/-def proj_p (p: primes) : A_Q_f → ℚ_[p] := 
 tensor_product.lift 
   (linear_map.mk₂ ℤ ((λ (p: primes) (r : ℚ) (a: Π (q: primes), ℤ_[q]), (r*(a p) : ℚ_[p])) p)
     (λ m₁ m₂ n, by {simp, ring})
