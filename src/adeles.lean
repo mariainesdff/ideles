@@ -334,11 +334,36 @@ end
 /-  use [d, set.mem_compl_singleton_iff.mpr 
     (ne_of_gt (lt_of_lt_of_le zero_lt_one (int.to_nat_le.mp (denom_pos x h))))] -/
 
-instance Q_algebra: algebra ℚ A_Q_f := { smul := λ r a,
+
+lemma foo (r s : ℚ) (p : primes) : ((r * s).num : ℚ_[p]) * ((r.denom) * (s.denom)) =  (r.num) * (s.num) * ((r * s).denom) := begin
+  sorry
+end
+
+private lemma M_non_divisors: M ≤ non_zero_divisors R :=
+begin
+  intros x hxM,
+  unfold non_zero_divisors,
+  rw ← submonoid.mem_carrier at hxM ⊢,
+  change x ∈ inj_pnat ''({0}ᶜ) at hxM,
+  simp at hxM ⊢,
+  rcases hxM with ⟨d, hd, hd1⟩,
+  intros z hz,
+  rw [← hd1, pi.mul_def, pi.zero_def] at hz,
+  unfold inj_pnat at hz,
+  ext p,
+  have h : (z p)*↑d = 0, 
+  { calc (z p)*↑d = (λ (i : primes), z i * ↑d) p : rfl
+              ... = (λ (i : primes), (0 : ℤ_[p])) p : by rw hz
+              ... = 0 : rfl},
+  rw padic_int.cast_inj,
+  have hd' : ↑d ≠ (0 : ℤ_[p]) := int.cast_ne_zero.mpr hd,
+  exact eq_zero_of_ne_zero_of_mul_right_eq_zero hd' h,
+end
+
+
+noncomputable instance Q_algebra: algebra ℚ A_Q_f := { smul := λ r a,
   (localization.mk (λ p, r.num) ⟨(inj_pnat ↑r.denom), by {use [↑ r.denom, set.mem_compl_singleton_iff.mpr (int.coe_nat_ne_zero.mpr (r.denom_ne_zero))]}⟩)*a,
   to_fun := λ r, localization.mk (λ p, r.num) ⟨(inj_pnat ↑r.denom), by {use [↑ r.denom, set.mem_compl_singleton_iff.mpr (int.coe_nat_ne_zero.mpr (r.denom_ne_zero))]}⟩,
-    /- rintro ⟨n, d, hd, hnd⟩, 
-    exact localization.mk (λ p, n) ⟨(inj_pnat ↑d), by {use [↑ d, set.mem_compl_singleton_iff.mpr (ne_of_gt (int.coe_nat_pos.mpr hd))]}⟩, -/
   map_one' := begin
     rw localization.mk_eq_mk',
     rw ← @is_localization.mk'_self' R _ M (localization M) _ _ _ 1,
@@ -346,16 +371,46 @@ instance Q_algebra: algebra ℚ A_Q_f := { smul := λ r a,
     unfold inj_pnat,
     simp,
   end,
-  map_mul' := λ r s, by 
-  {repeat {rw localization.mk_eq_mk'_apply},
-  rw ← is_localization.mk'_mul (localization M) _ _ _ _,
-  apply is_localization.mk'_eq_iff_eq.mpr,
-  unfold inj_pnat,
-  simp,
-  sorry,
-  },
-  map_zero' := sorry,
-  map_add' := sorry,
+  map_mul' := λ r s, begin
+    /-unfold inj_pnat,
+    simp [← is_localization.mk'_mul (localization M) _ _ _ _],
+    apply is_localization.mk'_eq_iff_eq.mpr,
+    rw algebra_map,
+    --repeat {rw ← ring_hom.map_mul},
+    repeat {rw pi.mul_def},
+    simp,
+    suffices h : (λ (p : primes), ((r * s).num : ℤ_[p]) * (↑(r.denom) * ↑(s.denom))) = (λ (p : primes), ↑(r.num) * ↑(s.num) * ↑((r * s).denom)),
+    { rw h },
+    ext p,
+    simp,
+    exact foo r s p, -/
+    sorry,
+  end,
+  map_zero' := begin
+    simp,
+    apply is_localization.mk'_eq_iff_eq_mul.mpr,
+    rw [zero_mul, is_localization.to_map_eq_zero_iff A_Q_f M_non_divisors],
+    refl,
+  end,
+  map_add' := λ r s, begin
+    unfold inj_pnat,
+    simp,
+    rw [← @is_localization.mk'_add R _ M (localization M) _ _ _ _ _ _ _],
+    apply is_localization.mk'_eq_iff_eq.mpr,
+    rw algebra_map,
+    repeat {rw pi.mul_def},
+    rw pi.add_def,
+    simp,
+    sorry,
+    --repeat {rw ← ring_hom.map_mul},
+    /-repeat {rw pi.mul_def},
+    simp,
+    suffices h : (λ (p : primes), ((r * s).num : ℤ_[p]) * (↑(r.denom) * ↑(s.denom))) = (λ (p : primes), ↑(r.num) * ↑(s.num) * ↑((r * s).denom)),
+    { rw h },
+    ext p,
+    simp,
+    exact foo r s p, -/
+  end,
   commutes' := λ r x, by {rw mul_comm},
   smul_def' := λ r x, by {simp} }
 
