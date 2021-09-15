@@ -335,8 +335,32 @@ end
     (ne_of_gt (lt_of_lt_of_le zero_lt_one (int.to_nat_le.mp (denom_pos x h))))] -/
 
 
-lemma foo (r s : ℚ) (p : primes) : ((r * s).num : ℚ_[p]) * ((r.denom) * (s.denom)) =  (r.num) * (s.num) * ((r * s).denom) := begin
-  sorry
+lemma map_mul (r s : ℚ) (p : primes) : 
+((r * s).num : ℚ_[p]) * ((r.denom) * (s.denom)) =  (r.num) * (s.num) * ((r * s).denom) := 
+begin
+  rw [rat.mul_num, rat.mul_denom],
+  norm_cast,
+  rw [← int.mul_div_assoc' ↑(r.denom * s.denom), padic.cast_eq_of_rat_of_nat],
+  rw [← int.cast_coe_nat _, ← padic.cast_eq_of_rat_of_int],
+  rw [← int.cast_mul (r.num * s.num) _, int.coe_nat_div, ← int.mul_div_assoc (r.num * s.num)],
+  exact int.gcd_dvd_right (r.num * s.num) (r.denom * s.denom),
+  exact int.gcd_dvd_left (r.num * s.num) (r.denom * s.denom),
+end
+
+private lemma map_add (r s : ℚ) (p : primes) : 
+((r + s).num : ℚ_[p]) * ((r.denom) * (s.denom)) = 
+((r.num) * (s.denom) + (s.num) * (r.denom)) * ((r + s).denom) := 
+begin
+  rw rat.add_num_denom r s,
+  norm_cast,
+  have h : 0 < (r.denom * s.denom : ℕ) := 
+    mul_pos (nat.pos_of_ne_zero r.denom_ne_zero) (nat.pos_of_ne_zero s.denom_ne_zero),
+  rw [← rat.mk_pnat_eq _ (r.denom * s.denom : ℕ) h, rat.mk_pnat_num _ _, rat.mk_pnat_denom _ _],
+  simp,
+  rw [mul_comm ↑(r.denom) s.num, ← int.mul_div_assoc' (↑(r.denom) * ↑(s.denom))],
+  rw [int.mul_div_assoc (r.num * ↑(s.denom) + s.num * ↑(r.denom))],
+  exact int.gcd_dvd_right _ _,
+  exact int.gcd_dvd_left (r.num * ↑(s.denom) + s.num * ↑(r.denom)) (r.denom * s.denom),
 end
 
 private lemma M_non_divisors: M ≤ non_zero_divisors R :=
@@ -360,31 +384,32 @@ begin
   exact eq_zero_of_ne_zero_of_mul_right_eq_zero hd' h,
 end
 
-
-noncomputable instance Q_algebra: algebra ℚ A_Q_f := { smul := λ r a,
-  (localization.mk (λ p, r.num) ⟨(inj_pnat ↑r.denom), by {use [↑ r.denom, set.mem_compl_singleton_iff.mpr (int.coe_nat_ne_zero.mpr (r.denom_ne_zero))]}⟩)*a,
-  to_fun := λ r, localization.mk (λ p, r.num) ⟨(inj_pnat ↑r.denom), by {use [↑ r.denom, set.mem_compl_singleton_iff.mpr (int.coe_nat_ne_zero.mpr (r.denom_ne_zero))]}⟩,
+noncomputable instance Q_algebra_A_Q_f: algebra ℚ A_Q_f := { smul := λ r a,
+  (localization.mk (λ p, r.num) 
+    ⟨(inj_pnat ↑r.denom), by {use [↑ r.denom, 
+      set.mem_compl_singleton_iff.mpr (int.coe_nat_ne_zero.mpr (r.denom_ne_zero))]}⟩) * a,
+  to_fun := λ r, localization.mk (λ p, r.num) 
+    ⟨(inj_pnat ↑r.denom), by {use [↑ r.denom, 
+      set.mem_compl_singleton_iff.mpr (int.coe_nat_ne_zero.mpr (r.denom_ne_zero))]}⟩,
   map_one' := begin
-    rw localization.mk_eq_mk',
-    rw ← @is_localization.mk'_self' R _ M (localization M) _ _ _ 1,
+    rw [localization.mk_eq_mk', ← @is_localization.mk'_self' R _ M (localization M) _ _ _ 1],
     apply is_localization.mk'_eq_iff_eq.mpr,
     unfold inj_pnat,
     simp,
   end,
   map_mul' := λ r s, begin
-    /-unfold inj_pnat,
+    unfold inj_pnat,
     simp [← is_localization.mk'_mul (localization M) _ _ _ _],
     apply is_localization.mk'_eq_iff_eq.mpr,
     rw algebra_map,
-    --repeat {rw ← ring_hom.map_mul},
     repeat {rw pi.mul_def},
     simp,
-    suffices h : (λ (p : primes), ((r * s).num : ℤ_[p]) * (↑(r.denom) * ↑(s.denom))) = (λ (p : primes), ↑(r.num) * ↑(s.num) * ↑((r * s).denom)),
+    suffices h : (λ (p : primes), ((r * s).num : ℤ_[p]) * (↑(r.denom) * ↑(s.denom))) = 
+      (λ (p : primes), ↑(r.num) * ↑(s.num) * ↑((r * s).denom)),
     { rw h },
     ext p,
     simp,
-    exact foo r s p, -/
-    sorry,
+    exact map_mul r s p,
   end,
   map_zero' := begin
     simp,
@@ -401,19 +426,15 @@ noncomputable instance Q_algebra: algebra ℚ A_Q_f := { smul := λ r a,
     repeat {rw pi.mul_def},
     rw pi.add_def,
     simp,
-    sorry,
-    --repeat {rw ← ring_hom.map_mul},
-    /-repeat {rw pi.mul_def},
-    simp,
-    suffices h : (λ (p : primes), ((r * s).num : ℤ_[p]) * (↑(r.denom) * ↑(s.denom))) = (λ (p : primes), ↑(r.num) * ↑(s.num) * ↑((r * s).denom)),
+    suffices h : (λ (p : primes), ((r + s).num : ℤ_[p]) * ((r.denom) * (s.denom))) = 
+      (λ (p : primes), ((r.num) * (s.denom) + (s.num) * (r.denom)) * ((r + s).denom)),
     { rw h },
     ext p,
     simp,
-    exact foo r s p, -/
+    exact map_add r s p,
   end,
   commutes' := λ r x, by {rw mul_comm},
   smul_def' := λ r x, by {simp} }
-
 
 /-! Adeles of ℚ -/
 def A_Q := A_Q_f × ℝ
@@ -428,11 +449,13 @@ let d := finprod (f x) in ⟨localization.mk
 def map_to_Pi_Q_p_R (a : A_Q) : (Π p : primes, ℚ_[p]) × ℝ :=
 ⟨is_localization.lift hom_prod_m_unit a.1, a.2⟩
 
+instance : semiring A_Q := prod.semiring
+instance Q_algebra_A_Q : algebra ℚ A_Q := algebra.prod.algebra ℚ A_Q_f ℝ
+
 /-! Topological Ring  -/
 instance : topological_space R := Pi.topological_space
 instance : topological_space A_Q_f := localization.topological_space
 instance : topological_ring A_Q_f := localization.topological_ring
 
-instance : semiring A_Q := prod.semiring
 instance : topological_space A_Q := prod.topological_space
 instance : topological_ring A_Q := prod.topological_ring
