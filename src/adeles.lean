@@ -305,19 +305,14 @@ end
 
 lemma left_inverse_map_to_Pi_Q_p (a : A_Q_f) : map_from_Pi_Q_p (map_to_Pi_Q_p a) (restricted_image a) = a := 
 begin
-  set x := map_to_Pi_Q_p a with hx,
-  --unfold map_to_Pi_Q_p,
+  have ha : ∃ r (d' : M), is_localization.mk' (localization M) r d' = a := is_localization.mk'_surjective M a,
+  rcases ha with ⟨r, d', ha⟩,
+  cases d' with d' hd',
+  
+  unfold map_to_Pi_Q_p,
   unfold map_from_Pi_Q_p,
   dsimp only,
-  /- rw localization.mk_eq_monoid_of_mk'_apply,
-  rw submonoid.localization_map.mk'_eq_iff_eq_mul,
-  simp,
-  rw ← monoid_hom.to_fun_eq_coe (localization.monoid_of M).to_map, -/
   rw localization.mk_eq_mk'_apply,
-  apply is_localization.mk'_eq_iff_eq_mul.mpr,
-  rw ← is_localization.to_localization_map_to_map_apply M A_Q_f _,
-  --rw ← is_localization.mk'_one A_Q_f _,
-  --rw ← is_localization.mk'_one A_Q_f _,
   sorry
 end
 
@@ -335,6 +330,35 @@ begin
   { right, exact hp},
   {left, unfold inj_pnat, simp},
 end
+
+/-  use [d, set.mem_compl_singleton_iff.mpr 
+    (ne_of_gt (lt_of_lt_of_le zero_lt_one (int.to_nat_le.mp (denom_pos x h))))] -/
+
+instance Q_algebra: algebra ℚ A_Q_f := { smul := λ r a,
+  (localization.mk (λ p, r.num) ⟨(inj_pnat ↑r.denom), by {use [↑ r.denom, set.mem_compl_singleton_iff.mpr (int.coe_nat_ne_zero.mpr (r.denom_ne_zero))]}⟩)*a,
+  to_fun := λ r, localization.mk (λ p, r.num) ⟨(inj_pnat ↑r.denom), by {use [↑ r.denom, set.mem_compl_singleton_iff.mpr (int.coe_nat_ne_zero.mpr (r.denom_ne_zero))]}⟩,
+    /- rintro ⟨n, d, hd, hnd⟩, 
+    exact localization.mk (λ p, n) ⟨(inj_pnat ↑d), by {use [↑ d, set.mem_compl_singleton_iff.mpr (ne_of_gt (int.coe_nat_pos.mpr hd))]}⟩, -/
+  map_one' := begin
+    rw localization.mk_eq_mk',
+    rw ← @is_localization.mk'_self' R _ M (localization M) _ _ _ 1,
+    apply is_localization.mk'_eq_iff_eq.mpr,
+    unfold inj_pnat,
+    simp,
+  end,
+  map_mul' := λ r s, by 
+  {repeat {rw localization.mk_eq_mk'_apply},
+  rw ← is_localization.mk'_mul (localization M) _ _ _ _,
+  apply is_localization.mk'_eq_iff_eq.mpr,
+  unfold inj_pnat,
+  simp,
+  sorry,
+  },
+  map_zero' := sorry,
+  map_add' := sorry,
+  commutes' := λ r x, by {rw mul_comm},
+  smul_def' := λ r x, by {simp} }
+
 
 /-! Adeles of ℚ -/
 def A_Q := A_Q_f × ℝ
