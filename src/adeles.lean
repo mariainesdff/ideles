@@ -312,6 +312,14 @@ begin
   unfold map_from_Pi_Q_p,
   dsimp only,
   rw localization.mk_eq_mk'_apply,
+  rw ← ha,
+  apply is_localization.mk'_eq_iff_eq.mpr,
+  rw pi.mul_def,
+  rw pi.mul_def,
+  simp,
+  apply congr_arg,
+  ext p,
+  simp,
   sorry
 end
 
@@ -329,10 +337,6 @@ begin
   { right, exact hp},
   {left, unfold inj_pnat, simp},
 end
-
-/-  use [d, set.mem_compl_singleton_iff.mpr 
-    (ne_of_gt (lt_of_lt_of_le zero_lt_one (int.to_nat_le.mp (denom_pos x h))))] -/
-
 
 lemma map_mul (r s : ℚ) (p : primes) : 
 ((r * s).num : ℚ_[p]) * ((r.denom) * (s.denom)) =  (r.num) * (s.num) * ((r * s).denom) := 
@@ -402,10 +406,7 @@ noncomputable instance Q_algebra_A_Q_f: algebra ℚ A_Q_f := { smul := λ r a,
     apply is_localization.mk'_eq_iff_eq.mpr,
     rw algebra_map,
     repeat {rw pi.mul_def},
-    simp,
-    suffices h : (λ (p : primes), ((r * s).num : ℤ_[p]) * (↑(r.denom) * ↑(s.denom))) = 
-      (λ (p : primes), ↑(r.num) * ↑(s.num) * ↑((r * s).denom)),
-    { rw h },
+    apply congr_arg,
     ext p,
     simp,
     exact map_mul r s p,
@@ -424,10 +425,7 @@ noncomputable instance Q_algebra_A_Q_f: algebra ℚ A_Q_f := { smul := λ r a,
     rw algebra_map,
     repeat {rw pi.mul_def},
     rw pi.add_def,
-    simp,
-    suffices h : (λ (p : primes), ((r + s).num : ℤ_[p]) * ((r.denom) * (s.denom))) = 
-      (λ (p : primes), ((r.num) * (s.denom) + (s.num) * (r.denom)) * ((r + s).denom)),
-    { rw h },
+    apply congr_arg,
     ext p,
     simp,
     exact map_add r s p,
