@@ -289,7 +289,6 @@ begin
     --rw padic.add_comm_group
     --intro h,
 
-
   have hp : (hom_prod.to_monoid_hom.mrestrict M ⟨d', hd'⟩ p : ℚ_[p])*(↑(is_unit.lift_right (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit ⟨d', hd'⟩)⁻¹ : (Π p:primes, ℚ_[p])) p = 1,
   { rw ← pi.mul_apply,
     have h1 := is_unit.mul_lift_right_inv (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit ⟨d', hd'⟩,
@@ -450,7 +449,8 @@ def map_to_Pi_Q_p_R (a : A_Q) : (Π p : primes, ℚ_[p]) × ℝ :=
 ⟨is_localization.lift hom_prod_m_unit a.1, a.2⟩
 
 instance : semiring A_Q := prod.semiring
-instance Q_algebra_A_Q : algebra ℚ A_Q := algebra.prod.algebra ℚ A_Q_f ℝ
+instance : comm_ring A_Q := prod.comm_ring
+instance : algebra ℚ A_Q := algebra.prod.algebra ℚ A_Q_f ℝ
 
 /-! Topological Ring  -/
 instance : topological_space R := Pi.topological_space
