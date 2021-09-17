@@ -138,14 +138,16 @@ lemma map_id_mul : ∀ r s : units ℚ, map_id (r * s) = map_id r * map_id s := 
   exact map_mul r s p,
 end
 
-lemma map_units_Q_I_Q_f_mul : ∀ r s : units ℚ, map_units_Q_I_Q_f (r * s) = map_units_Q_I_Q_f r * map_units_Q_I_Q_f s := begin
-  intros r s, 
+lemma map_units_Q_I_Q_f_mul (r s : units ℚ) :  
+  map_units_Q_I_Q_f (r * s) = map_units_Q_I_Q_f r * map_units_Q_I_Q_f s := 
+begin
   rw [map_units_Q_I_Q_f, ← units.eq_iff],
   simp,
   exact map_id_mul r s,
 end
 
-def hom_units_Q_I_Q_f : monoid_hom (units ℚ) I_Q_f := monoid_hom.mk' map_units_Q_I_Q_f  map_units_Q_I_Q_f_mul
+def hom_units_Q_I_Q_f : monoid_hom (units ℚ) I_Q_f := 
+monoid_hom.mk' map_units_Q_I_Q_f map_units_Q_I_Q_f_mul
 
 variables (K : Type*) [field K] [char_zero K] [finite_dimensional ℚ K]
 
@@ -176,8 +178,9 @@ by {rw mul_comm, exact right_inv' r}
 
 def map_units_Q_I_Q : units ℚ → I_Q := λ r, ⟨map_id' r, map_inv' r, right_inv' r, left_inv' r⟩
 
-lemma map_units_Q_I_Q_mul : ∀ r s : units ℚ, map_units_Q_I_Q (r * s) = map_units_Q_I_Q r * map_units_Q_I_Q s := begin
-  intros r s,
+lemma map_units_Q_I_Q_mul (r s : units ℚ) : 
+  map_units_Q_I_Q (r * s) = map_units_Q_I_Q r * map_units_Q_I_Q s := 
+begin
   rw [map_units_Q_I_Q, ← units.eq_iff],
   simp,
   rw [map_id', prod.eq_iff_fst_eq_snd_eq],
@@ -186,9 +189,11 @@ lemma map_units_Q_I_Q_mul : ∀ r s : units ℚ, map_units_Q_I_Q (r * s) = map_u
   simp
 end
 
-def hom_units_Q_I_Q : monoid_hom (units ℚ) I_Q := monoid_hom.mk' map_units_Q_I_Q  map_units_Q_I_Q_mul
+def hom_units_Q_I_Q : monoid_hom (units ℚ) I_Q := 
+monoid_hom.mk' map_units_Q_I_Q  map_units_Q_I_Q_mul
 
-lemma inj_hom_units_Q_I_Q : function.injective hom_units_Q_I_Q := begin
+lemma inj_hom_units_Q_I_Q : function.injective hom_units_Q_I_Q := 
+begin
   rw monoid_hom.injective_iff,
   intros r hr,
   rw ← monoid_hom.to_fun_eq_coe at hr,

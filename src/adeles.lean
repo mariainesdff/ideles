@@ -21,12 +21,12 @@ def inj_pnat : ℤ  → (Π (p : primes), ℤ_[p]) := λ (z : ℤ), (λ p, z)
 def M : submonoid R := 
 { carrier  := inj_pnat '' set.compl {0},
   one_mem' := by {use [1, set.mem_compl_singleton_iff.mpr one_ne_zero], 
-    unfold inj_pnat, simp, refl},
+    rw inj_pnat, simp, refl},
   mul_mem' := 
   begin
     rintros a b ⟨za, hza, rfl⟩ ⟨zb, hzb, rfl⟩,
     use [za*zb, mul_ne_zero hza hzb],
-    unfold inj_pnat, ext, simp,
+    rw inj_pnat, ext, simp,
   end }
 
 def A_Q_f := localization M
@@ -90,8 +90,7 @@ lemma denom_pos (x : Π p : primes, ℚ_[p])
 begin
     have hp : ∀ p, 1 ≤ (f x) p,
     { intro p,
-      unfold f, 
-      rw [← finprod_eq_mul_indicator_apply, finprod_eq_if],
+      rw [f, ← finprod_eq_mul_indicator_apply, finprod_eq_if],
       by_cases h : p ∈ {p : primes | (x p).valuation < 0},
       { rw if_pos h, exact nat.one_le_pow (int.nat_abs (x p).valuation) p (nat.prime.pos p.2)},
       { rw if_neg h }},
@@ -114,8 +113,7 @@ lemma norm_d (x : Π p : primes, ℚ_[p]) (h : set.finite({ p : primes | padic.v
     rw [hn, padic_norm_e.norm_int_le_pow_iff_dvd (d : ℤ) (int.nat_abs(padic.valuation (x p)))],
     rw [int.coe_nat_dvd, hd],
     have h2 : f x p = ↑p^int.nat_abs(padic.valuation (x p)),
-    { unfold f, 
-      rw [mul_indicator_apply, if_pos], refl, rwa set.mem_set_of_eq },
+    { rw [f, mul_indicator_apply, if_pos], refl, rwa set.mem_set_of_eq },
     rw ← h2,
     apply finprod_mem_div (f x) p,
     have h3 : mul_support (f x) = { p : primes | padic.valuation (x p) < 0 },
@@ -233,16 +231,18 @@ begin
   rcases hm_1 with ⟨z, hne_zero, hz⟩,
   rw set.mem_compl_singleton_iff at hne_zero,
   change m p ≠ 0,
-  rw ← hz,
-  unfold inj_pnat,
+  rw [← hz, inj_pnat],
   exact int.cast_ne_zero.mpr hne_zero,
 end
 
-lemma padic_int.cast_eq_zero {p : primes} {z : ℤ_[p]} : (z : ℚ_[p]) = 0 ↔ z = 0 := ⟨ λ h, by {ext, exact h}, λ h, by {rw h, refl}⟩
+lemma padic_int.cast_eq_zero {p : primes} {z : ℤ_[p]} : (z : ℚ_[p]) = 0 ↔ z = 0 := 
+⟨ λ h, by {ext, exact h}, λ h, by {rw h, refl}⟩
 
-lemma padic_int.cast_ne_zero {p : primes} {z : ℤ_[p]} : (z : ℚ_[p]) ≠  0 ↔ z ≠ 0 := not_congr padic_int.cast_eq_zero
+lemma padic_int.cast_ne_zero {p : primes} {z : ℤ_[p]} : (z : ℚ_[p]) ≠  0 ↔ z ≠ 0 := 
+not_congr padic_int.cast_eq_zero
 
-lemma padic_int.cast_inj {p : primes} {x y : ℤ_[p]} : (x : ℚ_[p]) = y ↔ x = y := ⟨ λ h, by {ext, exact h}, λ h, by {rw h}⟩
+lemma padic_int.cast_inj {p : primes} {x y : ℤ_[p]} : (x : ℚ_[p]) = y ↔ x = y 
+:= ⟨ λ h, by {ext, exact h}, λ h, by {rw h}⟩
 
 lemma hom_prod_m_unit : ∀ m : M, is_unit (hom_prod m) :=
 begin
@@ -262,80 +262,144 @@ is_localization.lift hom_prod_m_unit a
 def map_to_Pi_Q_p' : ring_hom A_Q_f (Π p : primes, ℚ_[p]) :=
 is_localization.lift hom_prod_m_unit
 
-lemma padic.val_mul {p : primes} ( q r : ℚ_[p]) : (q*r).valuation = q.valuation + r.valuation := sorry
+lemma padic.val_mul {p : primes} ( q r : ℚ_[p]) (hq : q ≠ 0) (hr : r ≠ 0) : 
+  (q * r).valuation = q.valuation + r.valuation := 
+begin
+  have h : ∥q * r∥ = ∥q∥ * ∥r∥ := padic_norm_e.mul q r,
+  rw [padic.norm_eq_pow_val hq, padic.norm_eq_pow_val hr] at h,
+  rw padic.norm_eq_pow_val (mul_ne_zero hq hr) at h,
+  have hp :  (0 : ℝ) < ↑(p : ℕ),
+  {rw [← cast_zero, cast_lt], exact prime.pos p.property},
+  have h0 : ↑(p : ℕ) ≠ (0 : ℝ) := ne_of_gt hp,
+  have h1 : ↑(p : ℕ) ≠ (1 : ℝ),
+  { rw ← cast_one,
+    intro h2,
+    exact (nat.prime.ne_one p.property) (nat.cast_inj.mp h2),
+  },
+  rw [← fpow_add h0 (-q.valuation) (-r.valuation), fpow_inj hp h1, ← neg_add _ _] at h,
+  exact neg_inj.mp h,
+end
 
 /- def map_to_Pi_Q_p (a : A_Q_f) : Π p : primes, ℚ_[p] :=
 map_to_Pi_Q_p' a -/
 
-lemma restricted_image (a : A_Q_f) : set.finite({ p : primes | padic.valuation ((map_to_Pi_Q_p a) p) < 0 }) := 
+lemma finite_factors (d : ℤ) : finite {p : primes | ↑p.val ∣ d} := begin
+  set factors := {p : primes | ↑p.val ∣ d} with hfactors,
+  have h : factors = {p : primes | p.val ∈ (int.nat_abs d).factors.to_finset} := sorry,
+
+  have h1 : finite {p : ℕ | p ∈ (int.nat_abs d).factors.to_finset} := 
+    finite_mem_finset ((int.nat_abs d).factors.to_finset),
+
+
+  have h2 := finite.preimage_embedding (⟨(λ p : primes, (p : ℕ)), primes.coe_nat_inj⟩ ) h1,
+
+  simp at h2,
+  sorry,
+end
+
+lemma restricted_image (a : A_Q_f) : 
+  set.finite({ p : primes | padic.valuation ((map_to_Pi_Q_p a) p) < 0 }) := 
 begin
+  set supp := {p : primes | padic.valuation ((map_to_Pi_Q_p a) p) < 0} with hsupp,
+  rw map_to_Pi_Q_p at hsupp,
   have ha : ∃ r (d' : M), is_localization.mk' A_Q_f r d' = a := is_localization.mk'_surjective M a,
   rcases ha with ⟨r, d', ha⟩,
-  cases d' with d' hd',
-  have hd : ∃ d : ℤ, inj_pnat d = d',
+  --cases d' with d' hd',
+  rw ← ha at hsupp,
+  rw @is_localization.lift_mk' R _ M A_Q_f _ _ _ _ _ _ hom_prod_m_unit r d' at hsupp,
+
+  have hd : ∃ d : ℤ, inj_pnat d = d'.val,
+  { cases d' with d' hd',
+    rw ← submonoid.mem_carrier at hd',
+    change d' ∈ inj_pnat '' (compl {0}) at hd',
+    cases hd' with d hd,
+    use [d, hd.right] },
+  cases hd with d hd,
+
+  have hsubset : supp ⊆ {p : primes | ↑p.val ∣ d} := sorry,
+
+  have hdenom_finite : finite {p : primes | ↑p.val ∣ d} := finite_factors d,
+  exact finite.subset hdenom_finite hsubset,
+
+  /-have hd : ∃ d : ℤ, inj_pnat d = d',
   { rw ← submonoid.mem_carrier at hd',
   change d' ∈ inj_pnat '' (compl {0}) at hd',
   cases hd'_1 with d hd,
   use [d, hd.right] },
   cases hd with d hd,
   unfold map_to_Pi_Q_p,
+
   set supp := {p : primes | ((is_localization.lift hom_prod_m_unit) a p).valuation < 0} with hsupp,
   have hsubset : supp ⊆ {p : primes | ↑p.val ∣ d},
   { intro p,
   repeat { rw mem_set_of_eq },
   rw ← ha,
-  { rw is_localization.lift_mk' _ _,
+  /- { rw is_localization.lift_mk' _ _,
     rw pi.mul_apply,
     --rw padic.add_comm_group
     --intro h,
 
-  have hp : (hom_prod.to_monoid_hom.mrestrict M ⟨d', hd'⟩ p : ℚ_[p])*(↑(is_unit.lift_right (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit ⟨d', hd'⟩)⁻¹ : (Π p:primes, ℚ_[p])) p = 1,
+  have hp : (hom_prod.to_monoid_hom.mrestrict M ⟨d', hd'⟩ p : ℚ_[p])*
+    (↑(is_unit.lift_right (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit ⟨d', hd'⟩)⁻¹ : 
+    (Π p:primes, ℚ_[p])) p = 1,
   { rw ← pi.mul_apply,
-    have h1 := is_unit.mul_lift_right_inv (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit ⟨d', hd'⟩,
+    have h1 := is_unit.mul_lift_right_inv (hom_prod.to_monoid_hom.mrestrict M) 
+      hom_prod_m_unit ⟨d', hd'⟩,
     rw h1, 
     simp },
     rw padic.val_mul,
-    sorry, 
-  }
-  },
-  have hdenom_finite : finite {p : primes | ↑p.val ∣ d} := sorry,
-  exact finite.subset hdenom_finite hsubset,
+    sorry,
+  } 
+  }, -/
+ -/
 end
 
-lemma left_inverse_map_to_Pi_Q_p (a : A_Q_f) : map_from_Pi_Q_p (map_to_Pi_Q_p a) (restricted_image a) = a := 
+lemma left_inverse_map_to_Pi_Q_p (a : A_Q_f) : 
+  map_from_Pi_Q_p (map_to_Pi_Q_p a) (restricted_image a) = a := 
 begin
-  have ha : ∃ r (d' : M), is_localization.mk' (localization M) r d' = a := is_localization.mk'_surjective M a,
+  have ha : ∃ r (d' : M), is_localization.mk' (localization M) r d' = a := 
+    is_localization.mk'_surjective M a,
   rcases ha with ⟨r, d', ha⟩,
   cases d' with d' hd',
-  
   unfold map_to_Pi_Q_p,
-  unfold map_from_Pi_Q_p,
+  rw map_from_Pi_Q_p,
   dsimp only,
-  rw localization.mk_eq_mk'_apply,
-  rw ← ha,
+  rw [localization.mk_eq_mk'_apply, ← ha],
   apply is_localization.mk'_eq_iff_eq.mpr,
-  rw pi.mul_def,
-  rw pi.mul_def,
+  repeat { rw pi.mul_def},
   simp,
   apply congr_arg,
   ext p,
+  rw inj_pnat,
   simp,
-  sorry
+  rw [mul_comm (r p : ℚ_[p]) _, mul_assoc],
+  simp,
+  left,
+  rw @is_localization.lift_mk' R _ M (localization M) _ _ _ _ _ _ hom_prod_m_unit r ⟨d', hd' ⟩,
+  rw pi.mul_apply,
+  have h2 : (hom_prod.to_monoid_hom.mrestrict M) ⟨d', hd'⟩ p = ↑(d' p),
+  { rw [monoid_hom.mrestrict_apply, hom_prod], simp},
+  rw [← h2, mul_assoc],
+  rw ← pi.mul_apply _ ((hom_prod.to_monoid_hom.mrestrict M) ⟨d', hd'⟩),
+  rw (is_unit.lift_right_inv_mul (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit ⟨d', hd'⟩),
+  rw hom_prod,
+  simp,
 end
 
-lemma right_inverse_map_to_Pi_Q_p (x : Π p : primes, ℚ_[p]) (h : set.finite({ p : primes | padic.valuation (x p) < 0 })): (map_to_Pi_Q_p (map_from_Pi_Q_p x h)) = x := 
+lemma right_inverse_map_to_Pi_Q_p (x : Π p : primes, ℚ_[p]) 
+  (h : set.finite({ p : primes | padic.valuation (x p) < 0 })):
+  (map_to_Pi_Q_p (map_from_Pi_Q_p x h)) = x := 
 begin
-  unfold map_from_Pi_Q_p,
+  rw map_from_Pi_Q_p,
   dsimp only,
-  rw localization.mk_eq_mk'_apply,
-  unfold map_to_Pi_Q_p,
+  rw [localization.mk_eq_mk'_apply, map_to_Pi_Q_p],
   apply (is_localization.lift_mk'_spec _ _ _ _).mpr,
   rw hom_prod,
   ext p,
   simp,
   by_cases hp: (x p = 0),
   { right, exact hp},
-  {left, unfold inj_pnat, simp},
+  {left, rw inj_pnat, simp},
 end
 
 lemma map_mul (r s : ℚ) (p : primes) : 
@@ -369,14 +433,13 @@ end
 private lemma M_non_divisors: M ≤ non_zero_divisors R :=
 begin
   intros x hxM,
-  unfold non_zero_divisors,
+  rw non_zero_divisors,
   rw ← submonoid.mem_carrier at hxM ⊢,
   change x ∈ inj_pnat ''({0}ᶜ) at hxM,
   simp at hxM ⊢,
   rcases hxM with ⟨d, hd, hd1⟩,
   intros z hz,
-  rw [← hd1, pi.mul_def, pi.zero_def] at hz,
-  unfold inj_pnat at hz,
+  rw [← hd1, pi.mul_def, pi.zero_def, inj_pnat] at hz,
   ext p,
   have h : (z p)*↑d = 0, 
   { calc (z p)*↑d = (λ (i : primes), z i * ↑d) p : rfl
@@ -436,15 +499,28 @@ noncomputable instance Q_algebra_A_Q_f: algebra ℚ A_Q_f := { smul := λ r a,
 /-! Adeles of ℚ -/
 def A_Q := A_Q_f × ℝ
 
-def map_from_Pi_Q_p_R (x : Π p : primes, ℚ_[p]) (r : ℝ) 
-  (h : set.finite({ p : primes | padic.valuation (x p) < 0 })) : A_Q := 
-let d := finprod (f x) in ⟨localization.mk 
-  (λ p, ⟨d*(x p), int_components x h p⟩)
-  ⟨inj_pnat d , by use [d, set.mem_compl_singleton_iff.mpr 
-    (ne_of_gt (lt_of_lt_of_le zero_lt_one (int.to_nat_le.mp (denom_pos x h))))]⟩, r⟩
+def map_from_Pi_Q_p_R (x : (Π p : primes, ℚ_[p]) ×  ℝ) 
+  (h : set.finite({ p : primes | padic.valuation (x.1 p) < 0 })) : A_Q := 
+⟨ map_from_Pi_Q_p x.1 h, x.2⟩
 
 def map_to_Pi_Q_p_R (a : A_Q) : (Π p : primes, ℚ_[p]) × ℝ :=
-⟨is_localization.lift hom_prod_m_unit a.1, a.2⟩
+⟨map_to_Pi_Q_p a.1, a.2⟩
+
+lemma left_inverse_map_to_Pi_Q_p_R (a : A_Q) : 
+  map_from_Pi_Q_p_R (map_to_Pi_Q_p_R a) (restricted_image a.1) = a := 
+begin
+  unfold map_to_Pi_Q_p_R,
+  rw [map_from_Pi_Q_p_R, prod.eq_iff_fst_eq_snd_eq],
+  exact ⟨left_inverse_map_to_Pi_Q_p a.1, rfl⟩,
+end
+
+lemma right_inverse_map_to_Pi_Q_p_R (x : (Π p : primes, ℚ_[p]) ×  ℝ)
+  (h : set.finite({ p : primes | padic.valuation (x.1 p) < 0 })) :
+  (map_to_Pi_Q_p_R (map_from_Pi_Q_p_R x h)) = x :=
+begin
+  rw [map_from_Pi_Q_p_R, map_to_Pi_Q_p_R, prod.eq_iff_fst_eq_snd_eq], 
+  exact ⟨ right_inverse_map_to_Pi_Q_p x.1 h, rfl⟩,
+end
 
 instance : semiring A_Q := prod.semiring
 instance : comm_ring A_Q := prod.comm_ring
