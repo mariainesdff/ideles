@@ -16,5 +16,3 @@ instance : ring (finite_adeles_map K) := algebra.tensor_product.tensor_product.r
 def adeles_map : Type* := K ⊗[ℚ] A_Q
 
 instance : ring (adeles_map K) := algebra.tensor_product.tensor_product.ring
-
-
