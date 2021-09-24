@@ -210,13 +210,11 @@ instance : is_localization M A_Q_f := localization.is_localization
 lemma m_ne_zero (m : M) (p : primes) : (↑m : R) p ≠ 0 := 
 begin
   cases m with m hm,
-  rw ← submonoid.mem_carrier at hm,
-  change m ∈ inj_pnat '' (compl {0}) at hm,
-  rw set.mem_image inj_pnat (compl {0}) m at hm_1,
-  rcases hm_1 with ⟨z, hne_zero, hz⟩,
+  have hcarrier : M.carrier = inj_pnat '' ({0}ᶜ) := rfl,
+  rw [← submonoid.mem_carrier, hcarrier, set.mem_image inj_pnat (compl {0}) m] at hm,
+  rcases hm with ⟨z, hne_zero, hz⟩,
   rw set.mem_compl_singleton_iff at hne_zero,
-  change m p ≠ 0,
-  rw [← hz, inj_pnat],
+  rw [set_like.coe_mk, ← hz, inj_pnat],
   exact int.cast_ne_zero.mpr hne_zero,
 end
 
@@ -292,48 +290,43 @@ begin
 
   have hd : ∃ d : ℤ, inj_pnat d = d'.val,
   { cases d' with d' hd',
-    rw ← submonoid.mem_carrier at hd',
-    change d' ∈ inj_pnat '' (compl {0}) at hd',
+    have hcarrier : M.carrier = inj_pnat '' ({0}ᶜ) := rfl,
+    rw [← submonoid.mem_carrier, hcarrier] at hd',
     cases hd' with d hd,
     use [d, hd.right] },
   cases hd with d hd,
 
-  have hsubset : supp ⊆ {p : primes | ↑p.val ∣ d} := sorry,
+  have hsubset : supp ⊆ {p : primes | ↑p.val ∣ d},
+  {rw hsupp,
+  intros p hp,
+  rw mem_set_of_eq at hp ⊢,
+  rw pi.mul_apply at hp,
+  simp only [ring_hom.to_monoid_hom_eq_coe] at hp,
+
+  unfold hom_prod at hp,
+  simp at hp,
+  rw ← units.inv_eq_coe_inv at hp,
+  --simp at hp,
+  --rw units.coe_inv at hp,
+  /- set pterm := (((is_unit.lift_right (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit) d')⁻¹ : (Π (p : primes), ℚ_[p])) p with hpterm,
+  rw pi.inv_apply at hpterm, -/
+  --rw ← hpterm at hp,
+  --rw cast_inv at hp,
+  --rw pi.inv_apply ((is_unit.lift_right (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit) d' : (Π (p : primes), ℚ_[p])) p at hp,
+  --simp only [monoid_hom.mrestrict_apply] at hp, 
+/- { rw [monoid_hom.mrestrict_apply, ring_hom.to_monoid_hom_eq_coe, set_like.coe_mk, hom_prod,
+    ring_hom.coe_monoid_hom_mk, monoid_hom.coe_mk],
+  },
+  rw [← h2, mul_assoc, ← pi.mul_apply _ ((hom_prod.to_monoid_hom.mrestrict M) ⟨d', hd'⟩),
+    (is_unit.lift_right_inv_mul (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit ⟨d', hd'⟩),
+    hom_prod, ring_hom.coe_mk, pi.one_apply, mul_one], -/
+
+  --rw [ring_hom.to_monoid_hom_eq_coe hom_prod] at hp,
+  rw padic.val_mul at hp,
+  sorry, sorry, sorry},
 
   have hdenom_finite : finite {p : primes | ↑p.val ∣ d} := finite_factors d,
   exact finite.subset hdenom_finite hsubset,
-
-  /-have hd : ∃ d : ℤ, inj_pnat d = d',
-  { rw ← submonoid.mem_carrier at hd',
-  change d' ∈ inj_pnat '' (compl {0}) at hd',
-  cases hd'_1 with d hd,
-  use [d, hd.right] },
-  cases hd with d hd,
-  unfold map_to_Pi_Q_p,
-
-  set supp := {p : primes | ((is_localization.lift hom_prod_m_unit) a p).valuation < 0} with hsupp,
-  have hsubset : supp ⊆ {p : primes | ↑p.val ∣ d},
-  { intro p,
-  repeat { rw mem_set_of_eq },
-  rw ← ha,
-  /- { rw is_localization.lift_mk' _ _,
-    rw pi.mul_apply,
-    --rw padic.add_comm_group
-    --intro h,
-
-  have hp : (hom_prod.to_monoid_hom.mrestrict M ⟨d', hd'⟩ p : ℚ_[p])*
-    (↑(is_unit.lift_right (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit ⟨d', hd'⟩)⁻¹ : 
-    (Π p:primes, ℚ_[p])) p = 1,
-  { rw ← pi.mul_apply,
-    have h1 := is_unit.mul_lift_right_inv (hom_prod.to_monoid_hom.mrestrict M) 
-      hom_prod_m_unit ⟨d', hd'⟩,
-    rw h1, 
-    simp },
-    rw padic.val_mul,
-    sorry,
-  } 
-  }, -/
- -/
 end
 
 --set_option profiler true
