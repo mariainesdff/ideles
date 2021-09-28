@@ -118,7 +118,7 @@ lemma norm_d (x : Π p : primes, ℚ_[p]) (h : set.finite({ p : primes | padic.v
     have h3 : mul_support (f x) = { p : primes | padic.valuation (x p) < 0 },
     { ext q, 
       rw mul_support,
-      unfold f,
+      simp_rw f,
       split,
       { intro hne_one, exact mem_of_mul_indicator_ne_one hne_one},
       { intro hval, rw mem_set_of_eq at hval ⊢, rw mul_indicator_apply, rw if_pos, 
@@ -243,7 +243,7 @@ is_localization.lift hom_prod_m_unit a
 def map_to_Pi_Q_p' : ring_hom A_Q_f (Π p : primes, ℚ_[p]) :=
 is_localization.lift hom_prod_m_unit
 
-lemma padic.val_mul {p : primes} ( q r : ℚ_[p]) (hq : q ≠ 0) (hr : r ≠ 0) : 
+lemma padic.valuation_mul {p : primes} ( q r : ℚ_[p]) (hq : q ≠ 0) (hr : r ≠ 0) : 
   (q * r).valuation = q.valuation + r.valuation := 
 begin
   have h : ∥q * r∥ = ∥q∥ * ∥r∥ := padic_norm_e.mul q r,
@@ -264,69 +264,88 @@ end
 /- def map_to_Pi_Q_p (a : A_Q_f) : Π p : primes, ℚ_[p] :=
 map_to_Pi_Q_p' a -/
 
-lemma finite_factors (d : ℤ) : finite {p : primes | ↑p.val ∣ d} := begin
-  set factors := {p : primes | ↑p.val ∣ d} with hfactors,
-  have h : factors = {p : primes | p.val ∈ (int.nat_abs d).factors.to_finset} := sorry,
-
-  have h1 : finite {p : ℕ | p ∈ (int.nat_abs d).factors.to_finset} := 
-    finite_mem_finset ((int.nat_abs d).factors.to_finset),
-
-
-  have h2 := finite.preimage_embedding (⟨(λ p : primes, (p : ℕ)), primes.coe_nat_inj⟩ ) h1,
-
-  simp at h2,
-  sorry,
+lemma finite_factors (d : ℤ) (hd : d ≠ 0) : finite {p : primes | ↑p.val ∣ d} := begin
+  set factors := {p : primes | ↑p.val ∣ d},
+  have h : factors = {p : primes | p.val ∈ (int.nat_abs d).factors.to_finset},
+  { ext p,
+    rw [set.mem_set_of_eq, set.mem_set_of_eq, list.mem_to_finset, 
+      mem_factors_iff_dvd (nat.pos_of_ne_zero (int.nat_abs_ne_zero_of_ne_zero hd)) p.2, 
+      ← int.coe_nat_dvd],
+    exact iff.symm int.dvd_nat_abs,
+  },
+  rw h,
+  exact finite.preimage_embedding (⟨(λ p : primes, (p : ℕ)), primes.coe_nat_inj⟩ ) 
+    (finite_mem_finset ((int.nat_abs d).factors.to_finset)),
 end
+
+@[simp]
+lemma padic_int.coe_valuation {p : ℕ} [fact p.prime] (x : ℤ_[p]) :
+(x : ℚ_[p]).valuation = x.valuation := rfl
+
+lemma padic.valuation_pos_iff_dvd {p : ℕ} [hp : fact (p.prime)] (d : ℤ) (hd : d ≠ 0) :
+0 < (d : ℚ_[p]).valuation ↔ (p : ℤ) ∣ d := 
+begin 
+  rw [← padic_norm_e.norm_int_lt_one_iff_dvd, ← padic_int.coe_coe_int, 
+    padic_int.padic_norm_e_of_padic_int (d : ℤ_[p]), padic_int.norm_eq_pow_val,
+    ← gpow_zero (p : ℝ), fpow_lt_iff_lt, padic_int.coe_valuation, right.neg_neg_iff],
+  { rw [← nat.cast_one, nat.cast_lt],
+    exact prime.one_lt hp.1 },
+  { exact int.cast_ne_zero.mpr hd },
+end
+
+--set_option pp.implicit true
 
 lemma restricted_image (a : A_Q_f) : 
   set.finite({ p : primes | padic.valuation ((map_to_Pi_Q_p a) p) < 0 }) := 
 begin
   set supp := {p : primes | padic.valuation ((map_to_Pi_Q_p a) p) < 0} with hsupp,
-  rw map_to_Pi_Q_p at hsupp,
   have ha : ∃ r (d' : M), is_localization.mk' A_Q_f r d' = a := is_localization.mk'_surjective M a,
   rcases ha with ⟨r, d', ha⟩,
-  rw ← ha at hsupp,
-  rw @is_localization.lift_mk' R _ M A_Q_f _ _ _ _ _ _ hom_prod_m_unit r d' at hsupp,
-
-  have hd : ∃ d : ℤ, inj_pnat d = d'.val,
+  rw [map_to_Pi_Q_p, ← ha, @is_localization.lift_mk' R _ M A_Q_f _ _ _ _ _ _ hom_prod_m_unit r d']
+    at hsupp,
+  have hd : ∃ d : ℤ, d ≠ 0 ∧ inj_pnat d = d'.val,
   { cases d' with d' hd',
     have hcarrier : M.carrier = inj_pnat '' ({0}ᶜ) := rfl,
     rw [← submonoid.mem_carrier, hcarrier] at hd',
     cases hd' with d hd,
-    use [d, hd.right] },
-  cases hd with d hd,
-
+    use [d, hd.left, hd.right] },
+  rcases hd with ⟨d, hd_ne_zero, hd_inj⟩,
   have hsubset : supp ⊆ {p : primes | ↑p.val ∣ d},
-  {rw hsupp,
-  intros p hp,
-  rw mem_set_of_eq at hp ⊢,
-  rw pi.mul_apply at hp,
-  simp only [ring_hom.to_monoid_hom_eq_coe] at hp,
-
-  unfold hom_prod at hp,
-  simp at hp,
-  rw ← units.inv_eq_coe_inv at hp,
-  --simp at hp,
-  --rw units.coe_inv at hp,
-  /- set pterm := (((is_unit.lift_right (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit) d')⁻¹ : (Π (p : primes), ℚ_[p])) p with hpterm,
-  rw pi.inv_apply at hpterm, -/
-  --rw ← hpterm at hp,
-  --rw cast_inv at hp,
-  --rw pi.inv_apply ((is_unit.lift_right (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit) d' : (Π (p : primes), ℚ_[p])) p at hp,
-  --simp only [monoid_hom.mrestrict_apply] at hp, 
-/- { rw [monoid_hom.mrestrict_apply, ring_hom.to_monoid_hom_eq_coe, set_like.coe_mk, hom_prod,
-    ring_hom.coe_monoid_hom_mk, monoid_hom.coe_mk],
-  },
-  rw [← h2, mul_assoc, ← pi.mul_apply _ ((hom_prod.to_monoid_hom.mrestrict M) ⟨d', hd'⟩),
-    (is_unit.lift_right_inv_mul (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit ⟨d', hd'⟩),
-    hom_prod, ring_hom.coe_mk, pi.one_apply, mul_one], -/
-
-  --rw [ring_hom.to_monoid_hom_eq_coe hom_prod] at hp,
-  rw padic.val_mul at hp,
-  sorry, sorry, sorry},
-
-  have hdenom_finite : finite {p : primes | ↑p.val ∣ d} := finite_factors d,
-  exact finite.subset hdenom_finite hsubset,
+  { rw hsupp,
+    intros p hp,
+    have hd : (d' : R) p = (d : ℤ_[p]),
+    { simp_rw [← subtype.val_eq_coe],
+      rw [← hd_inj,inj_pnat]},
+    rw mem_set_of_eq at hp ⊢,
+    rw pi.mul_apply at hp,
+    by_cases hr : (hom_prod r p) = 0,
+    { rw [hr, zero_mul, padic.valuation_zero] at hp,
+      exfalso,
+      exact lt_irrefl 0 hp},
+    { have h_inv : 
+        (((is_unit.lift_right (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit) d').inv p) *
+        ((hom_prod.to_monoid_hom.mrestrict M) d' p) = 1,
+      { rw [units.inv_eq_coe_inv, ← pi.mul_apply, is_unit.lift_right_inv_mul 
+          (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit d', pi.one_apply]},
+      rw [← units.inv_eq_coe_inv , padic.valuation_mul _ _ hr (left_ne_zero_of_mul_eq_one h_inv),
+        ← not_le] at hp,
+      have hval : 0 < ((hom_prod.to_monoid_hom.mrestrict M) d' p).valuation,
+      { have hinv_add : padic.valuation
+        (((is_unit.lift_right (hom_prod.to_monoid_hom.mrestrict M) hom_prod_m_unit) d').inv p)
+        + padic.valuation ((hom_prod.to_monoid_hom.mrestrict M) d' p) = 0,
+        { rw [← padic.valuation_mul _ _ (left_ne_zero_of_mul_eq_one h_inv)
+            (right_ne_zero_of_mul_eq_one h_inv), h_inv, padic.valuation_one]},
+      have hp_nonneg: 0 ≤ (hom_prod r p).valuation,
+      { rw [hom_prod, ring_hom.coe_mk, padic_int.coe_valuation],
+        exact padic_int.valuation_nonneg (r p)},
+        by_contradiction h1,
+        rw [not_lt, ← (neg_eq_of_add_eq_zero hinv_add), ← neg_zero, neg_le_neg_iff] at h1,
+        have h2 := le_add_of_nonneg_of_le hp_nonneg h1,
+        exact hp h2},      
+      rw [hom_prod, monoid_hom.mrestrict_apply, ring_hom.to_monoid_hom_eq_coe, 
+        ring_hom.coe_monoid_hom_mk, monoid_hom.coe_mk, hd, padic_int.coe_coe_int] at hval,
+      exact (padic.valuation_pos_iff_dvd d hd_ne_zero).mp hval}},
+  exact finite.subset (finite_factors d hd_ne_zero) hsubset,
 end
 
 --set_option profiler true
@@ -337,7 +356,7 @@ begin
   have ha : ∃ r (d' : M), is_localization.mk' (localization M) r d' = a := 
     is_localization.mk'_surjective M a,
   rcases ha with ⟨r, ⟨d', hd'⟩, ha⟩,
-  unfold map_to_Pi_Q_p,
+  simp_rw map_to_Pi_Q_p,
   rw map_from_Pi_Q_p,
   dsimp only,
   rw [localization.mk_eq_mk'_apply, ← ha],
@@ -376,8 +395,7 @@ begin
   { right, exact hp},
   {left, rw inj_pnat, 
   dsimp only,
-  rw int.cast_coe_nat,
-  rw padic_int.coe_coe},
+  rw [int.cast_coe_nat, padic_int.coe_coe]},
 end
 
 lemma map_mul (r s : ℚ) (p : primes) : 
@@ -442,15 +460,15 @@ noncomputable instance Q_algebra_A_Q_f: algebra ℚ A_Q_f := { smul := λ r a,
     rw [localization.mk_eq_mk', ← @is_localization.mk'_self' R _ M (localization M) _ _ _ 1],
     apply is_localization.mk'_eq_iff_eq.mpr,
     apply congr_arg,
-    unfold inj_pnat,
+    simp_rw inj_pnat,
     ext p,
     rw [set_like.coe_mk, submonoid.coe_one, mul_one, one_mul, rat.num_one, rat.denom_one,
     int.cast_coe_nat], refl,
   end,
   map_mul' :=  λ r s, begin
-    unfold inj_pnat,
+    simp_rw inj_pnat,
     rw [localization.mk_eq_mk', ← is_localization.mk'_mul (localization M) _ _ _ _],
-    simp only [int.cast_coe_nat],
+    simp_rw int.cast_coe_nat,
     apply is_localization.mk'_eq_iff_eq.mpr,
     rw algebra_map,
     repeat {rw pi.mul_def},
@@ -464,16 +482,17 @@ noncomputable instance Q_algebra_A_Q_f: algebra ℚ A_Q_f := { smul := λ r a,
     exact map_mul r s p,
   end,
   map_zero' := begin
-    simp only [rat.num_zero, localization.mk_eq_mk', int.cast_zero, rat.denom_zero],
+    rw localization.mk_eq_mk',
+    simp_rw [rat.num_zero, int.cast_zero, rat.denom_zero],
     rw [@is_localization.mk'_eq_iff_eq_mul R _ M (localization M) _ _ _ _ _ _, zero_mul,
       is_localization.to_map_eq_zero_iff (localization M) M_non_divisors],
     refl,
   end,
   map_add' :=  λ r s, begin
-    unfold inj_pnat,
+    simp_rw inj_pnat,
     rw [localization.mk_eq_mk', ← @is_localization.mk'_add R _ M (localization M) _ _ _ _ _ _ _,
       set_like.coe_mk, set_like.coe_mk], 
-    simp only [int.cast_coe_nat],
+    simp_rw int.cast_coe_nat,
     apply is_localization.mk'_eq_iff_eq.mpr,
     apply congr_arg,
     repeat {rw pi.mul_def},
@@ -504,7 +523,7 @@ def map_to_Pi_Q_p_R (a : A_Q) : (Π p : primes, ℚ_[p]) × ℝ :=
 lemma left_inverse_map_to_Pi_Q_p_R (a : A_Q) : 
   map_from_Pi_Q_p_R (map_to_Pi_Q_p_R a) (restricted_image a.1) = a := 
 begin
-  unfold map_to_Pi_Q_p_R,
+  simp_rw map_to_Pi_Q_p_R,
   rw [map_from_Pi_Q_p_R, prod.eq_iff_fst_eq_snd_eq],
   exact ⟨left_inverse_map_to_Pi_Q_p a.1, rfl⟩,
 end
