@@ -4,24 +4,6 @@ import adeles
 
 noncomputable theory
 open nat 
---universe u
-
-lemma padic.val_mul' {p : primes} ( q r : ℚ_[p]) (hq : q ≠ 0) (hr : r ≠ 0) : 
-  (q * r).valuation = q.valuation + r.valuation := 
-begin
-  have h : ∥q * r∥ = ∥q∥ * ∥r∥ := padic_norm_e.mul q r,
-  rw [padic.norm_eq_pow_val hq, padic.norm_eq_pow_val hr,
-    padic.norm_eq_pow_val (mul_ne_zero hq hr)] at h,
-  have hp :  (0 : ℝ) < ↑(p : ℕ),
-  { rw [← cast_zero, cast_lt], exact prime.pos p.property },
-  have h0 : ↑(p : ℕ) ≠ (0 : ℝ) := ne_of_gt hp,
-  have h1 : ↑(p : ℕ) ≠ (1 : ℝ),
-  { rw ← cast_one,
-    intro h2,
-    exact (nat.prime.ne_one p.property) (nat.cast_inj.mp h2) },
-  rw [← fpow_add h0 (-q.valuation) (-r.valuation), fpow_inj hp h1, ← neg_add _ _] at h,
-  exact neg_inj.mp h,
-end
 
 section ring_filter_basis
 
@@ -72,7 +54,8 @@ begin
     rw [set_like.eta, mul_comm (algebra_map R S s), mul_assoc, mul_comm (algebra_map R S r), mul_assoc, algebra_map, ← ring_hom.map_mul, ← ring_hom.map_mul, hxy],
   end
 
-instance localization.ring_filter_basis  (h : ∀  (m ∈ M) (U : set R), (U ∈ B.sets) → ({m}*U) ∈ B.sets) : ring_filter_basis S := { sets := {(is_localization.to_localization_map M S).to_map '' U | U ∈ B.sets},
+instance localization.ring_filter_basis  (h : ∀  (m ∈ M) (U : set R), (U ∈ B.sets) → ({m}*U) ∈ B.sets) : ring_filter_basis S := 
+{ sets := {(is_localization.to_localization_map M S).to_map '' U | U ∈ B.sets},
   nonempty := 
   begin
     cases (B.nonempty) with U hU,
@@ -135,7 +118,7 @@ instance localization.ring_filter_basis  (h : ∀  (m ∈ M) (U : set R), (U ∈
   conj := begin
     intros x U hU,
     use [U, hU],
-    simp only [add_sub_cancel', set.preimage_id'],
+    simp_rw [add_sub_cancel', set.preimage_id'],
   end,
   mul := 
   begin
@@ -169,7 +152,7 @@ instance localization.ring_filter_basis  (h : ∀  (m ∈ M) (U : set R), (U ∈
 
   variables (R : Type*) [ring R] (S : Type*) [ring S] (f : ring_hom R S)
 
-/-   structure filter_basis_at_zero (α : Type*) [add_group α] extends filter_basis α :=
+  structure filter_basis_at_zero (α : Type*) [add_group α] extends filter_basis α :=
   (zero : ∀ {U}, U ∈ sets → (0 : α) ∈ U)
 
   lemma topological_ring.to_filter_basis_at_zero [t : topological_space R] [topological_ring R] : filter_basis_at_zero R := 
@@ -177,9 +160,9 @@ instance localization.ring_filter_basis  (h : ∀  (m ∈ M) (U : set R), (U ∈
     nonempty :=  ⟨set.univ, t.is_open_univ, set.mem_univ (0 : R)⟩,
     inter_sets := λ U V ⟨hU_open, hU_zero⟩ ⟨hV_open, hV_zero⟩,
       by use [U ∩ V, t.is_open_inter U V hU_open hV_open, set.mem_inter hU_zero hV_zero],
-    zero := λ U ⟨hU_open, hU_zero⟩ , hU_zero } -/
+    zero := λ U ⟨hU_open, hU_zero⟩ , hU_zero }
 
-  end topological_ring -/
+  end topological_ring  -/
 
 --#print R
 --#print M
@@ -190,6 +173,7 @@ instance t_p {p : primes} : topological_space ℤ_[p] := infer_instance
 
 --def B_Z_p (p : primes) := {U : set ℤ_[p] | t_p.is_open U ∧ ((0 : ℤ_[p]) ∈ U)}
 
+-- Ring filter basis for ℤ_[p] satisfying h
 def B_Z_p (p : primes) := { U : set ℤ_[p] | ∃ n : ℕ,  U = metric.ball (0 : ℤ_[p]) (p^(-(n : ℤ)))}
   
 lemma open_mul_Z_p {p : primes} (U : set ℤ_[p]) (hU : U ∈ B_Z_p p) (z : ℤ) (hne_zero : z ≠ 0) : 
@@ -257,6 +241,93 @@ begin
       rw [← padic_int.cast_inj, padic_int.coe_mul,padic_int.coe_coe_int, subtype.coe_mk _ _,
       hy, ← mul_div_assoc, mul_comm, mul_div_assoc, div_self this, mul_one] },
 end
+
+--def B_Z_p (p : primes) := { U : set ℤ_[p] | ∃ n : ℕ,  U = metric.ball (0 : ℤ_[p]) (p^(-(n : ℤ)))}
+
+private lemma one_lt_real_prime (p : primes) : 1 < (p : ℝ) :=
+by { rw [coe_coe, one_lt_cast], exact nat.prime.one_lt p.2}
+private lemma real_prime_pos (p : primes) : 0 < (p : ℝ) :=
+lt_trans zero_lt_one (one_lt_real_prime p)
+
+instance ring_filter_basis_Z_p {p : primes} : ring_filter_basis ℤ_[p] := { sets := B_Z_p p,
+  nonempty := by {use [metric.ball (0 : ℤ_[p]) (p^(-(0 : ℤ))), 0], refl},
+  inter_sets := λ U V ⟨nU, hU⟩ ⟨nV, hV⟩, begin
+    let nmax := max nU nV,
+    use [metric.ball (0 : ℤ_[p]) (p^(-(nmax : ℤ))), nmax],
+    have hp : 1 < (p : ℝ) := one_lt_real_prime p,
+    rw set.subset_inter_iff,
+    split,
+    { rw hU,
+      apply metric.ball_subset_ball,
+      rw [fpow_le_iff_le hp, neg_le_neg_iff,int.coe_nat_le],
+      exact le_max_left _ _},
+    { rw hV,
+      apply metric.ball_subset_ball,
+      rw [fpow_le_iff_le hp, neg_le_neg_iff,int.coe_nat_le],
+      exact le_max_right _ _},
+  end,
+  zero := λ U ⟨nU, hU⟩, begin
+    rw hU,
+    exact metric.mem_ball_self (nat.fpow_pos_of_pos (nat.prime.pos p.2) _),
+  end,
+  add := λ U ⟨nU, hU⟩, begin
+    use [U, nU, hU],
+    rw hU,
+    intros x hx,
+    rw set.mem_add at hx,
+    rcases hx with ⟨y, z, hy, hz, hadd⟩,
+    rw [mem_ball_0_iff] at hy hz ⊢,
+    rw ← hadd,
+    exact lt_of_le_of_lt (padic_int.nonarchimedean _ _) (max_lt hy hz),
+  end,
+  neg := λ U ⟨nU, hU⟩, begin
+    use [U, nU, hU],
+    rw hU,
+    intros x hx,
+    rw [set.neg_preimage, set.mem_neg, mem_ball_0_iff, norm_neg],
+    exact mem_ball_0_iff.mp hx,
+  end,
+  conj := λ z U ⟨nU, hU⟩, begin
+    use [U, nU, hU],
+    simp_rw [add_sub_cancel', set.preimage_id'],
+  end,
+  mul := λ U ⟨nU, hU⟩, begin
+    use [U, nU, hU],
+    rw hU,
+    intros x hx,
+    rcases hx with ⟨y, z, hy, hz, hmul⟩,
+    rw [mem_ball_0_iff] at hy hz ⊢,
+    rw [← hmul, padic_int.norm_mul _ _],
+    have hp : 1 < (p : ℝ) := one_lt_real_prime p,
+    have hp' : 0 < (p : ℝ) := real_prime_pos p,
+    by_cases hz_zero : z = 0,
+    { rw [hz_zero, norm_zero, mul_zero],
+      exact fpow_pos_of_pos hp' _},
+    have h := mul_lt_mul hy (le_of_lt hz) (norm_pos_iff.mpr hz_zero) (fpow_nonneg (le_of_lt hp') _),
+    have h1 : (p : ℝ)^-(nU : ℤ) * (p : ℝ)^-(nU : ℤ) ≤ (p : ℝ)^-(nU : ℤ),
+    { rw [← fpow_add (ne_of_gt hp'), fpow_le_iff_le hp,  add_neg_le_iff_le_add', add_right_neg, right.neg_nonpos_iff],
+      exact int.coe_nat_nonneg nU,
+    },
+    exact lt_of_lt_of_le h h1,
+  end,
+  mul_left := λ z U ⟨nU, hU⟩, begin
+    lift z.valuation to ℕ using z.valuation_nonneg with m hm,
+    use [U, nU, hU],
+    rw hU,
+    intros x hx,
+    rw mem_ball_0_iff at hx,
+    rw [set.mem_preimage, mem_ball_0_iff, padic_int.norm_mul, ← one_mul ((p : ℝ)^-(nU : ℤ))],
+    exact mul_lt_mul' z.norm_le_one hx (norm_nonneg x) zero_lt_one,
+  end,
+  mul_right := λ z U ⟨nU, hU⟩, begin
+    lift z.valuation to ℕ using z.valuation_nonneg with m hm,
+    use [U, nU, hU],
+    rw hU,
+    intros x hx,
+    rw mem_ball_0_iff at hx,
+    rw [set.mem_preimage, mem_ball_0_iff, padic_int.norm_mul, mul_comm, ← one_mul ((p : ℝ)^-(nU : ℤ))],
+    exact mul_lt_mul' z.norm_le_one hx (norm_nonneg x) zero_lt_one, -- TODO : rewrite using mul_left
+  end,}
 
 /- def B := {U : set R | R.topological_space.is_open U ∧ ((0 : R) ∈ U)}
 
