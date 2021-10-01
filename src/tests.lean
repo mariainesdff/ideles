@@ -9,7 +9,7 @@ open nat
 instance m_p {p : primes} : metric_space ℤ_[p] := infer_instance
 instance t_p {p : primes} : topological_space ℤ_[p] := infer_instance
 
-def B_Z_p (p : primes) := { U : set ℤ_[p] | ∃ n : ℕ,  U = metric.ball (0 : ℤ_[p]) (p^(-(n : ℤ)))}
+def B_Z_p (p : primes) := { U : set ℤ_[p] | ∃ n : ℕ,  U = metric.ball (0 : ℤ_[p]) (p^(-(n : ℤ)))} --TODO : add ℤ_[p]
   
 lemma open_mul_Z_p {p : primes} (U : set ℤ_[p]) (hU : U ∈ B_Z_p p) (z : ℤ) (hne_zero : z ≠ 0) : 
 (λ (x : ℤ_[p]), ↑z*x) '' U ∈ B_Z_p p := 
@@ -82,7 +82,7 @@ by { rw [coe_coe, one_lt_cast], exact nat.prime.one_lt p.2}
 private lemma real_prime_pos (p : primes) : 0 < (p : ℝ) :=
 lt_trans zero_lt_one (one_lt_real_prime p)
 
-instance ring_filter_basis_Z_p {p : primes} : ring_filter_basis ℤ_[p] := { sets := B_Z_p p,
+instance ring_filter_basis_Z_p (p : primes) : ring_filter_basis ℤ_[p] := { sets := B_Z_p p,
   nonempty := by {use [metric.ball (0 : ℤ_[p]) (p^(-(0 : ℤ))), 0], refl},
   inter_sets := λ U V ⟨nU, hU⟩ ⟨nV, hV⟩, begin
     let nmax := max nU nV,
@@ -162,9 +162,70 @@ instance ring_filter_basis_Z_p {p : primes} : ring_filter_basis ℤ_[p] := { set
     exact mul_lt_mul' z.norm_le_one hx (norm_nonneg x) zero_lt_one, -- TODO : rewrite using mul_left
   end,}
 
-instance ring_filter_basis_pi_Z_p : ring_filter_basis pi_Z_p := pi.ring_filter_basis (λ p : primes, ring_filter_basis_Z_p)
+instance ring_filter_basis_pi_Z_p : ring_filter_basis pi_Z_p := pi.ring_filter_basis (λ  p : primes, ring_filter_basis_Z_p p)
 
-/- lemma open_mul_pi_Z_p (m ∈ M) (U : set (Π p : primes, ℤ_[p])) : U ∈ ring_filter_basis_pi_Z_p.sets → {(m : pi_Z_p)}*U ∈ ring_filter_basis_pi_Z_p.sets := sorry
+lemma open_mul_pi_Z_p (m ∈ M) (U : set pi_Z_p) : U ∈ ring_filter_basis_pi_Z_p.sets → {(m : pi_Z_p)}*U ∈ ring_filter_basis_pi_Z_p.sets :=
+begin
+  have hz : ∃ z : ℤ, z ≠ 0 ∧ inj_pnat z = (m : pi_Z_p) := int_M ⟨m, H⟩,
+  rcases hz with ⟨z, hz_ne_zero, hzm⟩,
+  
+  set F_factors := set.finite.to_finset (finite_factors z hz_ne_zero)with hF_factors,
+  rintro ⟨S, F, hrestr, hSF⟩,
+  set T : Π p : primes, set (ℤ_[p]) := λ p, by
+  { by_cases hpF : p ∈ F,
+    { exact {m p}*(S p) },
+    { exact {m p}*(metric.ball (0 : ℤ_[p]) ((p : ℝ)^-(0 : ℤ))), }} with hT,
+  use [T, F ∪ F_factors],
+  --use [T, F],
 
-instance ring_filter_basis_A_Q_f : ring_filter_basis A_Q_f := localization.ring_filter_basis pi_Z_p M A_Q_f ring_filter_basis_pi_Z_p (open_mul_pi_Z_p) -/
+  split,
+  { intros p hpF_union,
+    rw [hT, ← hzm, inj_pnat],
+    by_cases hpF : p ∈ F,
+    { dsimp only,
+      rw dif_pos hpF, 
+      convert open_mul_Z_p (S p) (hrestr p hpF) z hz_ne_zero,
+      simp_rw [set.singleton_mul],},
+    { dsimp only,
+      rw dif_neg hpF,
+      lift (z : ℤ_[p]).valuation to ℕ using (z : ℤ_[p]).valuation_nonneg with n hn,
+      use n, sorry, }},
+  rw hSF, 
+  ext x,
+  rw [set.singleton_mul, set.mem_image, set.mem_pi],
+  split,
+  { intro hx,
+    rcases hx with ⟨y, hy, hyx⟩,
+    intros p hpF,
+    rw [← hyx, hT, pi.mul_apply],
+    dsimp only,
+    by_cases hpF : p ∈ F,
+    { rw dif_pos hpF,
+      use [m p, y p, set.mem_singleton (m p), hy p hpF] },
+    { rw dif_neg hpF,
+      use [m p, y p, set.mem_singleton (m p)],
+      rw metric.mem_ball, sorry }},
+  { intro hx,
+    rw hT at hx,
+    dsimp only at hx,
+    set y : pi_Z_p := λ p, by {
+      by_cases hpF_union : p ∈ (F ∪ F_factors),
+      { by_cases hpF : p ∈ F,
+        { have hx_p := hx p hpF_union,
+          rw dif_pos hpF at hx_p,
+          choose mp yp hyp using hx_p,
+          exact yp },
+        { have hx_p := hx p hpF_union,
+          rw dif_neg hpF at hx_p,
+          choose mp yp hyp using hx_p,
+          exact yp }},
+      { have : ∥(x p : ℚ_[p])/(m p)∥ ≤ 1 := sorry,
+        exact ⟨(x p : ℚ_[p])/(m p), this⟩ }} with hy,
+    use y,
+    split, sorry,
+    sorry,
+     },
+end
+
+instance ring_filter_lsis_A_Q_f : ring_filter_basis A_Q_f := localization.ring_filter_basis pi_Z_p M A_Q_f ring_filter_basis_pi_Z_p (open_mul_pi_Z_p)
 

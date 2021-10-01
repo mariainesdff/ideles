@@ -11,14 +11,14 @@ noncomputable theory
 open nat 
 instance (p : primes) : fact (nat.prime p) := ⟨p.2⟩
 
-def R := (Π (p: primes), ℤ_[p])
+def pi_Z_p := (Π (p: primes), ℤ_[p])
 
-instance : comm_ring R := pi.comm_ring
-instance : ring R := infer_instance
+instance : comm_ring pi_Z_p := pi.comm_ring
+instance : ring pi_Z_p := infer_instance
 
 def inj_pnat : ℤ  → (Π (p : primes), ℤ_[p]) := λ (z : ℤ), (λ p, z) 
 
-def M : submonoid R := 
+def M : submonoid pi_Z_p := 
 { carrier  := inj_pnat '' set.compl {0},
   one_mem' := by {use [1, set.mem_compl_singleton_iff.mpr one_ne_zero], 
     rw inj_pnat, dsimp only, ext p, rw int.cast_one, refl},
@@ -39,6 +39,15 @@ def f (x : Π p : primes, ℚ_[p]) (q : primes) : ℕ :=
 
 open function set
 --open_locale big_operators
+
+lemma int_M (m : M) : ∃ d : ℤ, d ≠ 0 ∧ inj_pnat d = (m : pi_Z_p) :=
+begin
+  cases m with m hm,
+  have hcarrier : M.carrier = inj_pnat '' ({0}ᶜ) := rfl,
+  rw [← submonoid.mem_carrier, hcarrier] at hm,
+  cases hm with d hd,
+  use [d, hd.left, hd.right]
+end
 
 variables {α : Type*} [decidable_eq α] {N : Type*} [comm_monoid N]
 
@@ -176,38 +185,38 @@ let d := finprod (f x) in localization.mk
   ⟨inj_pnat d , by use [d, set.mem_compl_singleton_iff.mpr 
     (ne_of_gt (lt_of_lt_of_le zero_lt_one (int.to_nat_le.mp (denom_pos x h))))]⟩
 
-def group_hom_prod' (p : primes) : add_monoid_hom R ℚ_[p] := 
+def group_hom_prod' (p : primes) : add_monoid_hom pi_Z_p ℚ_[p] := 
 { to_fun    := (λ a, ↑(a p)),
   map_zero' := rfl,
   map_add'  := (λ x y, padic_int.coe_add (x p) (y p)) }
 
-def hom_prod' (p : primes) : ring_hom R ℚ_[p]   := 
+def hom_prod' (p : primes) : ring_hom pi_Z_p ℚ_[p]   := 
 { to_fun   := (λ a, ↑(a p)),
   map_one' := rfl,
   map_mul' := (λ x y, padic_int.coe_mul (x p) (y p)),
   ..group_hom_prod' p }
 
-def linear_prod' (p: primes) : linear_map ℤ R ℚ_[p] := 
+def linear_prod' (p: primes) : linear_map ℤ pi_Z_p ℚ_[p] := 
 { to_fun    := (λ a, ↑(a p)),
   map_add'  := (λ x y, padic_int.coe_add (x p) (y p)),
   map_smul' :=  (λ m x, add_monoid_hom.map_int_module_smul (group_hom_prod' p) m x) }
 
-def group_hom_prod : add_monoid_hom R (Π p : primes, ℚ_[p]) := 
+def group_hom_prod : add_monoid_hom pi_Z_p (Π p : primes, ℚ_[p]) := 
 { to_fun    := (λ a p, ↑(a p)),
   map_zero' := rfl,
   map_add'  := assume x y, by {ext p, rw [pi.add_apply, padic_int.coe_add], refl}}
 
-def hom_prod : ring_hom R (Π p : primes, ℚ_[p])   := 
+def hom_prod : ring_hom pi_Z_p (Π p : primes, ℚ_[p])   := 
 { to_fun   := (λ a p, ↑(a p)),
   map_one' := rfl,
   map_mul' := assume x y, by {ext p, rw [pi.mul_apply, padic_int.coe_mul], refl},
   ..group_hom_prod }
 
 instance : comm_ring A_Q_f := localization.comm_ring
-instance : algebra R A_Q_f := localization.algebra
+instance : algebra pi_Z_p A_Q_f := localization.algebra
 instance : is_localization M A_Q_f := localization.is_localization
 
-lemma m_ne_zero (m : M) (p : primes) : (↑m : R) p ≠ 0 := 
+lemma m_ne_zero (m : M) (p : primes) : (↑m : pi_Z_p) p ≠ 0 := 
 begin
   cases m with m hm,
   have hcarrier : M.carrier = inj_pnat '' ({0}ᶜ) := rfl,
@@ -301,19 +310,16 @@ begin
   set supp := {p : primes | padic.valuation ((map_to_Pi_Q_p a) p) < 0} with hsupp,
   have ha : ∃ r (d' : M), is_localization.mk' A_Q_f r d' = a := is_localization.mk'_surjective M a,
   rcases ha with ⟨r, d', ha⟩,
-  rw [map_to_Pi_Q_p, ← ha, @is_localization.lift_mk' R _ M A_Q_f _ _ _ _ _ _ hom_prod_m_unit r d']
+  rw [map_to_Pi_Q_p, ← ha, @is_localization.lift_mk' pi_Z_p _ M A_Q_f _ _ _ _ _ _ hom_prod_m_unit r d']
     at hsupp,
   have hd : ∃ d : ℤ, d ≠ 0 ∧ inj_pnat d = d'.val,
-  { cases d' with d' hd',
-    have hcarrier : M.carrier = inj_pnat '' ({0}ᶜ) := rfl,
-    rw [← submonoid.mem_carrier, hcarrier] at hd',
-    cases hd' with d hd,
-    use [d, hd.left, hd.right] },
+  { rw subtype.val_eq_coe,
+    exact int_M d' },
   rcases hd with ⟨d, hd_ne_zero, hd_inj⟩,
   have hsubset : supp ⊆ {p : primes | ↑p.val ∣ d},
   { rw hsupp,
     intros p hp,
-    have hd : (d' : R) p = (d : ℤ_[p]),
+    have hd : (d' : pi_Z_p) p = (d : ℤ_[p]),
     { simp_rw [← subtype.val_eq_coe],
       rw [← hd_inj,inj_pnat]},
     rw mem_set_of_eq at hp ⊢,
@@ -369,7 +375,7 @@ begin
   rw [int.cast_coe_nat, padic_int.coe_coe, mul_comm (r p : ℚ_[p]) _, mul_assoc,
     mul_eq_mul_left_iff],
   left,
-  rw [@is_localization.lift_mk' R _ M (localization M) _ _ _ _ _ _ hom_prod_m_unit r ⟨d', hd' ⟩,
+  rw [@is_localization.lift_mk' pi_Z_p _ M (localization M) _ _ _ _ _ _ hom_prod_m_unit r ⟨d', hd' ⟩,
     pi.mul_apply],
   have h2 : (hom_prod.to_monoid_hom.mrestrict M) ⟨d', hd'⟩ p = ↑(d' p),
   { rw [monoid_hom.mrestrict_apply, ring_hom.to_monoid_hom_eq_coe, set_like.coe_mk, hom_prod,
@@ -428,7 +434,7 @@ begin
 end
 
 
-private lemma M_non_divisors: M ≤ non_zero_divisors R :=
+private lemma M_non_divisors: M ≤ non_zero_divisors pi_Z_p :=
 begin
   intros x hxM,
   have hcarrier : M.carrier = inj_pnat '' ({0}ᶜ) := rfl,
@@ -457,7 +463,7 @@ noncomputable instance Q_algebra_A_Q_f: algebra ℚ A_Q_f := { smul := λ r a,
     ⟨(inj_pnat ↑r.denom), by {use [↑ r.denom, 
       set.mem_compl_singleton_iff.mpr (int.coe_nat_ne_zero.mpr (r.denom_ne_zero))]}⟩,
   map_one' := begin
-    rw [localization.mk_eq_mk', ← @is_localization.mk'_self' R _ M (localization M) _ _ _ 1],
+    rw [localization.mk_eq_mk', ← @is_localization.mk'_self' pi_Z_p _ M (localization M) _ _ _ 1],
     apply is_localization.mk'_eq_iff_eq.mpr,
     apply congr_arg,
     simp_rw inj_pnat,
@@ -484,13 +490,13 @@ noncomputable instance Q_algebra_A_Q_f: algebra ℚ A_Q_f := { smul := λ r a,
   map_zero' := begin
     rw localization.mk_eq_mk',
     simp_rw [rat.num_zero, int.cast_zero, rat.denom_zero],
-    rw [@is_localization.mk'_eq_iff_eq_mul R _ M (localization M) _ _ _ _ _ _, zero_mul,
+    rw [@is_localization.mk'_eq_iff_eq_mul pi_Z_p _ M (localization M) _ _ _ _ _ _, zero_mul,
       is_localization.to_map_eq_zero_iff (localization M) M_non_divisors],
     refl,
   end,
   map_add' :=  λ r s, begin
     simp_rw inj_pnat,
-    rw [localization.mk_eq_mk', ← @is_localization.mk'_add R _ M (localization M) _ _ _ _ _ _ _,
+    rw [localization.mk_eq_mk', ← @is_localization.mk'_add pi_Z_p _ M (localization M) _ _ _ _ _ _ _,
       set_like.coe_mk, set_like.coe_mk], 
     simp_rw int.cast_coe_nat,
     apply is_localization.mk'_eq_iff_eq.mpr,
@@ -513,26 +519,26 @@ noncomputable instance Q_algebra_A_Q_f: algebra ℚ A_Q_f := { smul := λ r a,
 /-! Adeles of ℚ -/
 def A_Q := A_Q_f × ℝ
 
-def map_from_Pi_Q_p_R (x : (Π p : primes, ℚ_[p]) ×  ℝ) 
+def map_from_Pi_Q_p_pi_Z_p (x : (Π p : primes, ℚ_[p]) ×  ℝ) 
   (h : set.finite({ p : primes | padic.valuation (x.1 p) < 0 })) : A_Q := 
 ⟨ map_from_Pi_Q_p x.1 h, x.2⟩
 
-def map_to_Pi_Q_p_R (a : A_Q) : (Π p : primes, ℚ_[p]) × ℝ :=
+def map_to_Pi_Q_p_pi_Z_p (a : A_Q) : (Π p : primes, ℚ_[p]) × ℝ :=
 ⟨map_to_Pi_Q_p a.1, a.2⟩
 
-lemma left_inverse_map_to_Pi_Q_p_R (a : A_Q) : 
-  map_from_Pi_Q_p_R (map_to_Pi_Q_p_R a) (restricted_image a.1) = a := 
+lemma left_inverse_map_to_Pi_Q_p_pi_Z_p (a : A_Q) : 
+  map_from_Pi_Q_p_pi_Z_p (map_to_Pi_Q_p_pi_Z_p a) (restricted_image a.1) = a := 
 begin
-  simp_rw map_to_Pi_Q_p_R,
-  rw [map_from_Pi_Q_p_R, prod.eq_iff_fst_eq_snd_eq],
+  simp_rw map_to_Pi_Q_p_pi_Z_p,
+  rw [map_from_Pi_Q_p_pi_Z_p, prod.eq_iff_fst_eq_snd_eq],
   exact ⟨left_inverse_map_to_Pi_Q_p a.1, rfl⟩,
 end
 
-lemma right_inverse_map_to_Pi_Q_p_R (x : (Π p : primes, ℚ_[p]) ×  ℝ)
+lemma right_inverse_map_to_Pi_Q_p_pi_Z_p (x : (Π p : primes, ℚ_[p]) ×  ℝ)
   (h : set.finite({ p : primes | padic.valuation (x.1 p) < 0 })) :
-  (map_to_Pi_Q_p_R (map_from_Pi_Q_p_R x h)) = x :=
+  (map_to_Pi_Q_p_pi_Z_p (map_from_Pi_Q_p_pi_Z_p x h)) = x :=
 begin
-  rw [map_from_Pi_Q_p_R, map_to_Pi_Q_p_R, prod.eq_iff_fst_eq_snd_eq], 
+  rw [map_from_Pi_Q_p_pi_Z_p, map_to_Pi_Q_p_pi_Z_p, prod.eq_iff_fst_eq_snd_eq], 
   exact ⟨ right_inverse_map_to_Pi_Q_p x.1 h, rfl⟩,
 end
 
@@ -540,8 +546,8 @@ instance : semiring A_Q := prod.semiring
 instance : comm_ring A_Q := prod.comm_ring
 instance : algebra ℚ A_Q := algebra.prod.algebra ℚ A_Q_f ℝ
 
-/-! Topological Ring  -/
-instance : topological_space R := Pi.topological_space
+/-! Topological ring  -/
+instance : topological_space pi_Z_p := Pi.topological_space
 instance : topological_space A_Q_f := localization.topological_space
 instance : topological_ring A_Q_f := localization.topological_ring
 
