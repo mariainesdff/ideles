@@ -98,7 +98,7 @@ begin
   unfold inj_pnat,
   dsimp only,
   rw [localization.mk_eq_mk', ← is_localization.mk'_mul (localization M) _ _ _ _, pi.mul_def,
-    ← @is_localization.mk'_self' R _ M (localization M) _ _ _ 1],
+    ← @is_localization.mk'_self' pi_Z_p _ M (localization M) _ _ _ 1],
   apply is_localization.mk'_eq_iff_eq.mpr,
   rw [submonoid.coe_one, mul_one, one_mul, submonoid.coe_mul,set_like.coe_mk, set_like.coe_mk,
     units.val_eq_coe, units.inv_eq_coe_inv, units.coe_inv', pi.mul_def],
