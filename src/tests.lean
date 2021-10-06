@@ -22,7 +22,7 @@ lemma padic_int.univ_open_ball {p : primes} (n : ℤ) (hn : 0 < n) :
 begin
   ext z,
   split; intro hz,
-  { rw mem_ball_0_iff,
+  { rw mem_ball_zero_iff,
     have hz : ∥z∥ ≤ 1 := padic_int.norm_le_one z,
     have hp : 1 < (p : ℝ)^(n : ℤ) := 
     begin
@@ -33,11 +33,7 @@ begin
   { exact set.mem_univ z }
 end
 
-lemma fpow_pos {K : Type*} [linear_ordered_field K] {a : K} (ha : 0 < a) (z : ℤ) : 0 < a ^ z := 
-lt_iff_le_and_ne.mpr ⟨fpow_nonneg (le_of_lt ha) z,
-  ne.symm (fpow_ne_zero z (ne.symm (ne_of_lt ha)))⟩
-
-lemma padic.norm_le_pow_iff_norm_lt_pow_add_one {p : ℕ} [hp_prime : fact p.prime] (x : ℚ_[p]) 
+/- lemma padic.norm_le_pow_iff_norm_lt_pow_add_one {p : ℕ} [hp_prime : fact p.prime] (x : ℚ_[p]) 
   (n : ℤ) : ∥x∥ ≤ p ^ n ↔ ∥x∥ < p ^ (n + 1) :=
 begin
   have aux : ∀ n : ℤ, 0 < (p ^ n : ℝ),
@@ -51,7 +47,7 @@ end
 
 lemma padic.norm_lt_pow_iff_norm_le_pow_sub_one {p : ℕ} [ hp_prime : fact p.prime] (x : ℚ_[p])
   (n : ℤ) : ∥x∥ < p ^ n ↔ ∥x∥ ≤ p ^ (n - 1) :=
-by rw [padic.norm_le_pow_iff_norm_lt_pow_add_one, sub_add_cancel]
+by rw [padic.norm_le_pow_iff_norm_lt_pow_add_one, sub_add_cancel] -/
 
 lemma padic_int.mul_open_ball {p : primes} {z : ℤ_[p]} (hz : z ≠ 0) (n : ℤ) :
   {z} * (metric.ball (0 : ℤ_[p]) ((p : ℝ)^n)) = 
@@ -63,7 +59,7 @@ begin
   split; intro hx,
   { rcases hx with ⟨y, hy, hyx⟩,
     rw [ ← hyx, fpow_sub (ne_of_gt (real_prime_pos p)), padic_int.norm_mul, 
-    padic_int.norm_eq_pow_val hz, ← coe_coe, lt_div_iff (fpow_pos (real_prime_pos p)
+    padic_int.norm_eq_pow_val hz, ← coe_coe, lt_div_iff (fpow_pos_of_pos (real_prime_pos p)
     ((z : ℤ_[p]).valuation)), mul_comm, ← mul_assoc, ← fpow_add (ne_of_gt (real_prime_pos p)),
     add_right_neg, gpow_zero, one_mul],
     cases (min_choice 1 n) with hmin_1 hmin_n,
@@ -107,6 +103,18 @@ begin
   rw [hzU, neg_neg],
 end
 
+private lemma Z_p.mul_left (p : primes) (z : ℤ_[p]) {U : set ℤ_[p]} (hU : U ∈ (B_Z_p p)) : (∃ (V : set ℤ_[p]) (H : V ∈ (B_Z_p p)), V ⊆ (λ (x : ℤ_[p]), z * x) ⁻¹' U)
+:= 
+begin
+    lift z.valuation to ℕ using z.valuation_nonneg with m hm,
+    cases hU with nU hU,
+    use [U, nU, hU],
+    rw hU,
+    intros x hx,
+    rw [set.mem_preimage, mem_ball_zero_iff, padic_int.norm_mul, ← one_mul ((p : ℝ)^-(nU : ℤ))],
+    exact mul_lt_mul' z.norm_le_one (mem_ball_zero_iff.mp hx) (norm_nonneg x) zero_lt_one,
+end
+
 instance ring_filter_basis_Z_p (p : primes) : ring_filter_basis ℤ_[p] := { sets := B_Z_p p,
   nonempty := by {use [metric.ball (0 : ℤ_[p]) (p^(-(0 : ℤ))), 0]},
   inter_sets := λ U V ⟨nU, hU⟩ ⟨nV, hV⟩, begin
@@ -134,16 +142,15 @@ instance ring_filter_basis_Z_p (p : primes) : ring_filter_basis ℤ_[p] := { set
     intros x hx,
     rw set.mem_add at hx,
     rcases hx with ⟨y, z, hy, hz, hadd⟩,
-    rw [mem_ball_0_iff] at hy hz ⊢,
-    rw ← hadd,
-    exact lt_of_le_of_lt (padic_int.nonarchimedean _ _) (max_lt hy hz),
+    rw [mem_ball_zero_iff, ← hadd],
+    exact lt_of_le_of_lt (padic_int.nonarchimedean _ _) (max_lt (mem_ball_zero_iff.mp hy) (mem_ball_zero_iff.mp hz)),
   end,
   neg := λ U ⟨nU, hU⟩, begin
     use [U, nU, hU],
     rw hU,
     intros x hx,
-    rw [set.neg_preimage, set.mem_neg, mem_ball_0_iff, norm_neg],
-    exact mem_ball_0_iff.mp hx,
+    rw [set.neg_preimage, set.mem_neg, mem_ball_zero_iff, norm_neg],
+    exact mem_ball_zero_iff.mp hx,
   end,
   conj := λ z U ⟨nU, hU⟩, begin
     use [U, nU, hU],
@@ -156,7 +163,7 @@ instance ring_filter_basis_Z_p (p : primes) : ring_filter_basis ℤ_[p] := { set
       rw hU',
       intros x hx,
       rcases hx with ⟨y, z, hy, hz, hmul⟩,
-      rw [mem_ball_0_iff] at hy hz ⊢,
+      rw [mem_ball_zero_iff] at hy hz ⊢,
       rw [← hmul, padic_int.norm_mul _ _],
       have hp : 1 < (p : ℝ) := one_lt_real_prime p,
       have hp' : 0 < (p : ℝ) := real_prime_pos p,
@@ -170,39 +177,20 @@ instance ring_filter_basis_Z_p (p : primes) : ring_filter_basis ℤ_[p] := { set
           right.neg_nonpos_iff],
         exact int.coe_nat_nonneg nU },
       rw hU at h1,
-      exact lt_of_lt_of_le h h1,
-    },
+      exact lt_of_lt_of_le h h1 },
     { use [metric.ball (0 : ℤ_[p]) ((p : ℝ)^-(0 : ℤ)), 0],
       rw hU',
       intros x hx,
       rcases hx with ⟨y, z, hy, hz, hmul⟩,
-      simp_rw [mem_ball_0_iff, neg_zero, gpow_zero] at hy hz ⊢,
+      rw [mem_ball_zero_iff, neg_zero, gpow_zero] at hy hz,
       have hp : 1 * 1 < (p : ℝ)^-nU',
       { rw [mul_one, ← gpow_zero (p : ℝ), fpow_lt_iff_lt (one_lt_real_prime p), right.neg_pos_iff],
         exact not_le.mp hn,},
-      rw [← hmul, padic_int.norm_mul],
+      rw [mem_ball_zero_iff, ← hmul, padic_int.norm_mul],
       exact lt_trans (mul_lt_mul'' hy hz (norm_nonneg _) (norm_nonneg _)) hp },
   end,
-  mul_left := λ z U ⟨nU, hU⟩, begin
-    lift z.valuation to ℕ using z.valuation_nonneg with m hm,
-    use [U, nU, hU],
-    rw hU,
-    intros x hx,
-    rw mem_ball_0_iff at hx,
-    rw [set.mem_preimage, mem_ball_0_iff, padic_int.norm_mul, ← one_mul ((p : ℝ)^-(nU : ℤ))],
-    exact mul_lt_mul' z.norm_le_one hx (norm_nonneg x) zero_lt_one,
-  end,
-  mul_right := λ z U ⟨nU, hU⟩, begin
-    lift z.valuation to ℕ using z.valuation_nonneg with m hm,
-    use [U, nU, hU],
-    rw hU,
-    intros x hx,
-    rw mem_ball_0_iff at hx,
-    rw [set.mem_preimage, mem_ball_0_iff, padic_int.norm_mul, mul_comm,
-      ← one_mul ((p : ℝ)^-(nU : ℤ))],
-    exact mul_lt_mul' z.norm_le_one hx (norm_nonneg x) zero_lt_one, 
-    -- TODO : rewrite using mul_left
-  end,}
+  mul_left := Z_p.mul_left p,
+  mul_right := by { simp_rw mul_comm, exact Z_p.mul_left p }}
 
 instance ring_filter_basis_pi_Z_p : ring_filter_basis pi_Z_p := 
 pi.ring_filter_basis (λ  p : primes, ring_filter_basis_Z_p p)
@@ -276,7 +264,7 @@ begin
           exact padic_int.norm_le_one yp },
         { have hx_p := hx p hpF_union,
           rw [if_neg hpF, neg_neg, padic_int.mul_open_ball (padic_int.cast_ne_zero.mp (hm_p p)) 1,
-            mem_ball_0_iff, min_eq_right (refl (1 : ℤ))] at hx_p,
+            mem_ball_zero_iff, min_eq_right (refl (1 : ℤ))] at hx_p,
           rw [normed_field.norm_div, div_le_iff (norm_pos_iff.mpr (hm_p p)),
             padic.norm_eq_pow_val (hm_p p),  one_mul, padic.norm_le_pow_iff_norm_lt_pow_add_one _ _,
             padic_int.padic_norm_e_of_padic_int (x p), ← coe_coe, ← sub_eq_neg_add,

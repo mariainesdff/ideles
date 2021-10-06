@@ -196,10 +196,10 @@ def hom_prod' (p : primes) : ring_hom pi_Z_p ℚ_[p]   :=
   map_mul' := (λ x y, padic_int.coe_mul (x p) (y p)),
   ..group_hom_prod' p }
 
-def linear_prod' (p: primes) : linear_map ℤ pi_Z_p ℚ_[p] := 
+/- def linear_prod' (p: primes) : linear_map ℤ pi_Z_p ℚ_[p] := 
 { to_fun    := (λ a, ↑(a p)),
   map_add'  := (λ x y, padic_int.coe_add (x p) (y p)),
-  map_smul' :=  (λ m x, add_monoid_hom.map_int_module_smul (group_hom_prod' p) m x) }
+  map_smul' :=  (λ m x, add_monoid_hom.map_int_module_smul (group_hom_prod' p) m x) } -/
 
 def group_hom_prod : add_monoid_hom pi_Z_p (Π p : primes, ℚ_[p]) := 
 { to_fun    := (λ a p, ↑(a p)),
