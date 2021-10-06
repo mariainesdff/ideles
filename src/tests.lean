@@ -132,11 +132,11 @@ instance ring_filter_basis_Z_p (p : primes) : ring_filter_basis ℤ_[p] := { set
       rw [fpow_le_iff_le hp, neg_le_neg_iff],
       exact le_max_right _ _},
   end,
-  zero := λ U ⟨nU, hU⟩, begin
+  zero' := λ U ⟨nU, hU⟩, begin
     rw hU,
     exact metric.mem_ball_self (nat.fpow_pos_of_pos (nat.prime.pos p.2) _),
   end,
-  add := λ U ⟨nU, hU⟩, begin
+  add' := λ U ⟨nU, hU⟩, begin
     use [U, nU, hU],
     rw hU,
     intros x hx,
@@ -145,18 +145,18 @@ instance ring_filter_basis_Z_p (p : primes) : ring_filter_basis ℤ_[p] := { set
     rw [mem_ball_zero_iff, ← hadd],
     exact lt_of_le_of_lt (padic_int.nonarchimedean _ _) (max_lt (mem_ball_zero_iff.mp hy) (mem_ball_zero_iff.mp hz)),
   end,
-  neg := λ U ⟨nU, hU⟩, begin
+  neg' := λ U ⟨nU, hU⟩, begin
     use [U, nU, hU],
     rw hU,
     intros x hx,
     rw [set.neg_preimage, set.mem_neg, mem_ball_zero_iff, norm_neg],
     exact mem_ball_zero_iff.mp hx,
   end,
-  conj := λ z U ⟨nU, hU⟩, begin
+  conj' := λ z U ⟨nU, hU⟩, begin
     use [U, nU, hU],
-    simp_rw [add_sub_cancel', set.preimage_id'],
+    simp_rw [← sub_eq_add_neg, add_sub_cancel', set.preimage_id'],
   end,
-  mul := λ U ⟨nU', hU'⟩, begin
+  mul' := λ U ⟨nU', hU'⟩, begin
     by_cases hn : 0 ≤ nU',
     { use [U, nU', hU'],
       lift nU' to ℕ using hn with nU hU,
@@ -189,8 +189,8 @@ instance ring_filter_basis_Z_p (p : primes) : ring_filter_basis ℤ_[p] := { set
       rw [mem_ball_zero_iff, ← hmul, padic_int.norm_mul],
       exact lt_trans (mul_lt_mul'' hy hz (norm_nonneg _) (norm_nonneg _)) hp },
   end,
-  mul_left := Z_p.mul_left p,
-  mul_right := by { simp_rw mul_comm, exact Z_p.mul_left p }}
+  mul_left' := Z_p.mul_left p,
+  mul_right' := by { simp_rw mul_comm, exact Z_p.mul_left p }}
 
 instance ring_filter_basis_pi_Z_p : ring_filter_basis pi_Z_p := 
 pi.ring_filter_basis (λ  p : primes, ring_filter_basis_Z_p p)
