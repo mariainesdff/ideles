@@ -81,11 +81,10 @@ begin
     (@is_topological_basis_from_basis_at_zero R _ t₂ tr₂ B hB₂)],
 end
 
-lemma image_topological_basis_at_zero (R₁ : Type*) [ring R₁] [t₁ : topological_space R₁]
-  [topological_ring R₁] (R₂ : Type*) [ring R₂] [t₂ : topological_space R₂] [topological_ring R₂]
-  (f : ring_hom R₁ R₂) (h_cont : continuous f) (h_open : is_open_map f) :
+lemma image_topological_basis_at_zero {S : Type*} [ring S] [t₂ : topological_space S]
+  [topological_ring S] (f : ring_hom R S) (h_cont : continuous f) (h_open : is_open_map f) :
   is_topological_basis_at_zero 
-    { U : set R₂ | ∃ (V : set R₁), is_open V ∧ (0 : R₁) ∈ V  ∧ f '' V = U} := 
+    { U : set S | ∃ (V : set R), is_open V ∧ (0 : R) ∈ V  ∧ f '' V = U} := 
 begin
   split,
   { intros U hU,
@@ -118,20 +117,7 @@ end
 end topological_ring
 
 section ring_filter_basis
-
--- From the perfectoid space project:
 attribute [instance] set.has_mul set.has_add
-/- class add_group_filter_basis (α : Type*) [add_group α] extends filter_basis α :=
-(zero : ∀ {U}, U ∈ sets → (0 : α) ∈ U)
-(add : ∀ {U}, U ∈ sets → ∃ V ∈ sets, V + V ⊆ U)
-(neg : ∀ {U}, U ∈ sets → ∃ V ∈ sets, V ⊆ (λ x, -x) ⁻¹' U)
-(conj : ∀ x₀, ∀ U ∈ sets, ∃ V ∈ sets, V ⊆ (λ x, x₀+x-x₀) ⁻¹' U)
-
-class ring_filter_basis (α : Type*) [ring α] extends add_group_filter_basis α :=
-(mul : ∀ {U}, U ∈ sets → ∃ V ∈ sets, V * V ⊆ U)
-(mul_left : ∀ (x₀ : α) {U}, U ∈ sets → ∃ V ∈ sets, V ⊆ (λ x, x₀*x) ⁻¹' U)
-(mul_right : ∀ (x₀ : α) {U}, U ∈ sets → ∃ V ∈ sets, V ⊆ (λ x, x*x₀) ⁻¹' U) -/
---
 
 variables (R : Type*) [comm_ring R] (M : submonoid R) (S : Type*) [comm_ring S] [algebra R S]
   [is_localization M S] (B : ring_filter_basis R)
@@ -610,5 +596,24 @@ instance pi.ring_filter_basis {ι : Type*} {X : ι → Type*} [∀ i, ring (X i)
   mul'       := λ U hU, pi.ring_filter_basis.mul T hU,
   mul_left'  := λ x U hU, pi.ring_filter_basis.mul_left T x U hU,
   mul_right' := λ x U hU, pi.ring_filter_basis.mul_right T x U hU, }
+
+  /- The product topology on Π i, X i equals the topology associated to pi.ring_filter_basis -/
+
+lemma pi_eq_ring_filter_basis_topology {ι : Type*} {X : ι → Type*} [∀ i, ring (X i)]
+  [∀ i, topological_space (X i)] [∀ i, topological_ring (X i)] (B : 
+  ring_filter_basis (Π i, X i)) : Pi.topological_space = B.topology
+:= 
+begin
+  apply le_antisymm,
+  { intros U hU,
+  sorry,
+  },
+  { have hB : B.topology = topological_space.mk_of_nhds _ := rfl,
+    intros U hU,
+    rw hB,
+    simp only,
+    intros a ha,
+    sorry }
+end
 
   end ring_filter_basis

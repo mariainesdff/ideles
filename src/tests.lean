@@ -307,6 +307,6 @@ begin
       exact hz_ne_zero }}},
 end
 
-instance ring_filter_basis_A_Q_f : ring_filter_basis A_Q_f := 
+instance : ring_filter_basis A_Q_f := 
 localization.ring_filter_basis pi_Z_p M A_Q_f ring_filter_basis_pi_Z_p (open_mul_pi_Z_p)
 

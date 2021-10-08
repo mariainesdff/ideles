@@ -51,48 +51,6 @@ end
 
 variables {α : Type*} [decidable_eq α] {N : Type*} [comm_monoid N]
 
-lemma finprod_mem_div (f : α → N) (a : α) (hf : finite (mul_support f)) : (f a) ∣ (finprod f) :=
-begin
-  by_cases ha: a ∈ (mul_support f),
-  { unfold_projs,
-    rw ← @finprod_cond_eq_left α N _ f a,
-    set h := λ (i : α), finprod (λ (H : i = a), f i) with hdef,
-    have hna : ∀ x ≠ a, h x = 1 := by {intros x hx, 
-    rw hdef, dsimp only, rwa [finprod_eq_if, if_neg],},
-    have hs : finite (mul_support h),
-    { have hss : mul_support h ⊆ {a},
-      { intros x hx,
-        exact not_not.mp (mt (hna x) hx)},
-      exact finite.subset (finite_singleton a) hss},
-    set g : α → N := λ b, if b = a then 1 else (f b) with gdef,
-    use finprod g,
-    have gs : finite (mul_support g),
-    { have hfg: mul_support g ⊆ mul_support f,
-      { intros x hgx,
-        rw mem_mul_support at hgx ⊢,
-        rw gdef at hgx, dsimp only at hgx, 
-        by_cases h2 : x = a,
-        { rw if_pos h2 at hgx, exfalso, apply hgx, refl,},
-        { rw if_neg h2 at hgx, exact hgx}}, 
-      exact finite.subset hf hfg},
-    rw ← finprod_mul_distrib hs gs,
-    apply finprod_congr,
-    have H : ∀ x, f x = (h x) * (g x),
-    { intro x,
-      by_cases h2 : x = a,
-        {rw [h2, gdef, hdef], 
-        dsimp only, 
-        rw [finprod_eq_if, if_pos, if_pos, mul_one], 
-        refl, refl}, 
-        {rw [hna x h2, one_mul, gdef], 
-        dsimp only,
-        rw if_neg, 
-        exact h2}}, 
-    exact H}, 
-    rw [mem_mul_support, not_not] at ha,
-    rw ha, exact one_dvd (finprod f),
-end
-
 lemma denom_pos (x : Π p : primes, ℚ_[p]) 
   (h : set.finite({ p : primes | padic.valuation (x p) < 0 })) : 1 ≤ finprod (f x) :=
 begin
@@ -123,7 +81,7 @@ lemma norm_d (x : Π p : primes, ℚ_[p]) (h : set.finite({ p : primes | padic.v
     have h2 : f x p = ↑p^int.nat_abs(padic.valuation (x p)),
     { rw [f, mul_indicator_apply, if_pos], refl, rwa set.mem_set_of_eq },
     rw ← h2,
-    apply finprod_mem_div (f x) p,
+    apply finprod_mem_dvd p,
     have h3 : mul_support (f x) = { p : primes | padic.valuation (x p) < 0 },
     { ext q, 
       rw mul_support,
@@ -269,9 +227,6 @@ begin
   rw [← fpow_add h0 (-q.valuation) (-r.valuation), fpow_inj hp h1, ← neg_add _ _] at h,
   exact neg_inj.mp h,
 end
-
-/- def map_to_Pi_Q_p (a : A_Q_f) : Π p : primes, ℚ_[p] :=
-map_to_Pi_Q_p' a -/
 
 lemma finite_factors (d : ℤ) (hd : d ≠ 0) : finite {p : primes | ↑p.val ∣ d} := begin
   set factors := {p : primes | ↑p.val ∣ d},
@@ -547,7 +502,14 @@ instance : comm_ring A_Q := prod.comm_ring
 instance : algebra ℚ A_Q := algebra.prod.algebra ℚ A_Q_f ℝ
 
 /-! Topological ring  -/
+instance (p : primes) : topological_space ℤ_[p] := infer_instance
+instance (p : primes) : topological_ring ℤ_[p] := infer_instance
+
 instance : topological_space pi_Z_p := Pi.topological_space
+instance pi_Z_p.topological_ring : topological_ring (Π p : primes, ℤ_[p]) := pi.topological_ring --TODO
+
+#check pi_Z_p.topological_space
+
 instance : topological_space A_Q_f := localization.topological_space
 instance : topological_ring A_Q_f := localization.topological_ring
 
