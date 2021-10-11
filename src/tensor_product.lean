@@ -4,7 +4,7 @@ import ring_theory.localization
 variables {R : Type*} [comm_ring R] {S : submonoid R} (A : Type*) [comm_ring A] [algebra R A] 
 (B : Type*) [comm_ring B] [algebra R B] [is_localization S B]
 
-open_locale tensor_product
+/- open_locale tensor_product
 
 instance : algebra A (B ⊗[R] A)  := { smul := begin
   intros a x,
@@ -38,14 +38,16 @@ lemma tensor_product_with_localization (B : Type*) [comm_ring B] [algebra R B]
     simp [← hy1],
     change (1 : B) ⊗ₜ[R] ((algebra_map R A) y : A) * z ⊗ₜ[R] 1 = 1,
     simp,
-    rw [algebra.tensor_product.tmul_mul_tmul, hz, mul_one, algebra.tensor_product.one_def],
+    --rw [algebra.tensor_product.tmul_mul_tmul, hz, mul_one, algebra.tensor_product.one_def],
+    --rw submodule.span_induction
+    sorry,
   end,
   surj := sorry,
-  eq_iff_exists := 
-  begin
+  eq_iff_exists := {}
+  /- begin
     intros x y, split; intro hxy,
     { sorry },
     { cases hxy with c hc,
-      simp, 
+      --simp, 
       sorry,}
-  end }
+  end -/ } -/
