@@ -10,29 +10,42 @@ open nat
 
 open_locale classical topological_space filter
 
+attribute [instance] set.has_mul set.has_add
+
+lemma is_open_add_constant {G : Type*} [add_group G] [t' : topological_space G] [tg : topological_add_group G] (a : G) (U : set G) (hU : is_open U) : is_open ({a} + U) := 
+begin
+  rw [set.singleton_add, set.image_add_left],
+  apply is_open.preimage _ hU,
+  have h_incl : continuous (λ (b : G), (-a, b)) := continuous.prod_mk 
+    (continuous_map.const (-a)).continuous_to_fun continuous_map.id.continuous_to_fun,
+  have h_comp :  (λ (b : G), -a + b) = function.comp (λ ( p : G × G), p.1 + p.2)
+    (λ (b : G), (-a, b)) := rfl,
+  rw h_comp,
+  exact continuous.comp has_continuous_add.continuous_add h_incl,
+end
+
+lemma is_open_constant_add  {G : Type*} [add_group G] [t' : topological_space G] [tg : topological_add_group G] (a : G) (U : set G) (hU : is_open U) : is_open (U + {a}) := 
+begin
+  rw [set.add_singleton, set.image_add_right],
+  apply is_open.preimage _ hU,
+  have h_incl : continuous (λ (b : G), (b, -a)) := continuous.prod_mk 
+    continuous_map.id.continuous_to_fun
+    (continuous_map.const (-a)).continuous_to_fun,
+  have h_comp :  (λ (b : G), b + -a) = function.comp (λ ( p : G × G), p.1 + p.2)
+    (λ (b : G), (b, -a)) := rfl,
+  rw h_comp,
+  exact continuous.comp has_continuous_add.continuous_add h_incl,
+end
+
 section topological_ring
 
-variables {R : Type*} [ring R] [t : topological_space R] [tr : topological_ring R]
+variables {R : Type*} [ring R] [t : topological_space R] [tr : topological_ring R] 
 include t tr
-
-attribute [instance] set.has_mul set.has_add
 
 structure is_topological_basis_at_zero (s : set (set R)) : Prop :=
 (h_open : ∀ U ∈ s, is_open U)
 (h_zero : ∀ U ∈ s, (0 : R) ∈ U)
 (h_nhds : ∀ (U : set R), (0 : R) ∈ U → is_open U → ∃ V ∈ s, V ⊆ U)
-
-lemma is_open_add_constant (a : R) (U : set R) (hU : is_open U) : is_open ({a} + U) := 
-begin
-  rw [set.singleton_add, set.image_add_left],
-  apply is_open.preimage _ hU,
-  have h_incl : continuous (λ (b : R), (-a, b)) := continuous.prod_mk 
-    (continuous_map.const (-a)).continuous_to_fun continuous_map.id.continuous_to_fun,
-  have h_comp :  (λ (b : R), -a + b) = function.comp (λ ( p : R × R), p.1 + p.2)
-    (λ (b : R), (-a, b)) := rfl,
-  rw h_comp,
-  exact continuous.comp has_continuous_add.continuous_add h_incl,
-end
 
 lemma is_topological_basis_from_basis_at_zero {B : set (set R)} 
   [hB : is_topological_basis_at_zero B] : 

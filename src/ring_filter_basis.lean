@@ -8,6 +8,19 @@ open_locale classical topological_space filter
 
 attribute [instance] set.has_mul set.has_add
 
+@[to_additive image_add_sub]
+lemma image_conj {α : Type*} [group α] {a : α} {t : set α} : (λ b, a⁻¹ * b * a) '' t = (λ b, a * b * a⁻¹) ⁻¹' t := 
+begin
+  ext x,
+  rw [mem_image, mem_preimage],
+  split; intro hx,
+  { rcases hx with ⟨y, hty, hxy⟩,
+    rw [← hxy, ← mul_assoc, ← mul_assoc, mul_right_inv, one_mul, mul_assoc, mul_right_inv, mul_one],
+    exact hty, },
+  { use [a * x * a⁻¹, hx],
+    rw [← mul_assoc, ← mul_assoc, mul_left_inv, one_mul, mul_assoc, mul_left_inv, mul_one] }
+end
+
 lemma nhds_nonempty {α : Type*} [topological_space α] (a : α) : set.nonempty (nhds a).sets :=
 begin
   use set.univ,
@@ -15,21 +28,69 @@ begin
   use [set.univ, rfl.subset, is_open_univ],
 end
 
-instance nhds_zero_add_group_filter_basis {X : Type*} [add_group X] [topological_space X] [tg: topological_add_group X] : add_group_filter_basis X := 
+lemma continuous_at_iff_exists_open {α : Type*} {β : Type*} [topological_space α] [topological_space β] {f : α → β} {x : α} :
+continuous_at f x ↔ ∀ (U : set β) (hU : U ∈ nhds (f x)), ∃ (V : set α), (V ∈ nhds x) ∧ f '' V ⊆ U := 
+begin
+  split; intro h,
+  { intros U hU,
+    use f⁻¹' U,
+    exact ⟨continuous_at.preimage_mem_nhds h hU,         
+      image_preimage_subset _ _⟩,},
+  { intros U hU,
+    rcases (h U hU) with ⟨V, hVx, hUV⟩,
+    rw [image_subset_iff] at hUV,
+    rw [filter.mem_map, ← filter.exists_mem_subset_iff],
+    exact ⟨V, hVx, hUV⟩ },
+end
+
+lemma mem_nhds_zero_zero {α : Type*} [topological_space α] [has_zero α] {U : set (α × α)} (hU : U ∈ nhds ((0 : α), (0 : α ))) : ∃ (V : set α), (V ∈ nhds (0 : α)) ∧ V.prod V ⊆ U :=
+begin
+  rw mem_nhds_prod_iff at hU,
+  rcases hU with ⟨V1, hV1, V2, hV2, h_prod⟩,
+  use V1 ∩ V2,
+  split,
+  { exact (nhds (0 : α)).inter_sets hV1 hV2, },
+  { intros x hx,
+    apply h_prod,
+    rw mem_prod at hx ⊢,
+    exact ⟨mem_of_mem_inter_left hx.1, mem_of_mem_inter_right hx.2⟩, }
+end
+
+instance nhds_zero_add_group_filter_basis {X : Type*} [add_group X] [topological_space X] [topological_add_group X] : add_group_filter_basis X := 
 { sets := (nhds (0 : X)).sets,
   nonempty := nhds_nonempty (0 : X),
   inter_sets := λ S T hS hT, ⟨S ∩ T, (nhds (0 : X)).inter_sets hS hT, rfl.subset⟩,
   zero' := λ S hS, mem_of_mem_nhds (filter.mem_sets.mp hS),
   add' := λ S hS,
   begin
-    --use [S, hS],
-    rw [filter.mem_sets, mem_nhds_iff] at hS,
-    rcases hS with ⟨T, hST, hT_open, hT_zero⟩,
-    sorry
+    rw [filter.mem_sets] at hS,
+    simp_rw [exists_prop, filter.mem_sets],
+    have h_cont : continuous_at (λ (p : X × X), p.fst + p.snd) (0,0) := continuous.continuous_at continuous_add,
+    rw [continuous_at_iff_exists_open, add_zero] at h_cont,
+    simp_rw [image_subset_iff] at h_cont,
+    rcases (h_cont S hS) with ⟨V, hV_zero, hV_add⟩,
+    rcases (mem_nhds_zero_zero hV_zero) with ⟨W, hW_zero, hW_prod⟩,
+    use [W, hW_zero],
+    { rintros x ⟨y, z, hy, hz, hadd⟩,
+      have hyz : (y, z) ∈ (λ (p : X × X), p.fst + p.snd)⁻¹' S,
+      { apply hV_add,
+        apply hW_prod,
+        rw mem_prod,
+        dsimp only,
+        exact ⟨hy, hz⟩ },
+      rw mem_preimage at hyz,
+      dsimp only at hyz,
+      rwa ← hadd, }
   end,
   neg' := λ S hS,
   begin
-    use (λ (x : X), -x) ⁻¹' S,
+    have h_cont : continuous_at (λ (x : X), -x) 0 := continuous.continuous_at continuous_neg,
+    rw [continuous_at_iff_exists_open, neg_zero] at h_cont,
+    rw filter.mem_sets at hS,
+    simp_rw [exists_prop, filter.mem_sets],
+    simp_rw [image_subset_iff] at h_cont,
+    exact h_cont S hS,
+    /- use (λ (x : X), -x) ⁻¹' S,
     split,
     { rw [filter.mem_sets, mem_nhds_iff] at hS ⊢,
       rcases hS with ⟨T, hST, hT_open, hT_zero⟩,
@@ -40,22 +101,55 @@ instance nhds_zero_add_group_filter_basis {X : Type*} [add_group X] [topological
       { split,
         { exact (continuous_def.mp tg.continuous_neg) T hT_open, },
         { rw [mem_preimage, neg_zero], exact hT_zero, }}},
-    { refl },
+    { refl }, -/
   end,
   conj' := λ x S hS,
   begin
-    sorry,
+    rw [filter.mem_sets] at hS,
+    simp_rw [exists_prop, filter.mem_sets],
+    have h_cont : continuous (λ (y : X), x + y + -x),
+    { exact (continuous_const.add continuous_id).add continuous_const },
+    have h_cont_at : continuous_at (λ (y : X), x + y + -x) 0 := continuous.continuous_at h_cont,
+    rw [continuous_at_iff_exists_open, add_zero, add_right_neg] at h_cont_at,
+    simp_rw [image_subset_iff] at h_cont_at,
+    exact h_cont_at S hS,
   end, }
 
-
-instance nhds_zero_ring_filter_basis {X : Type*} [ring X] [topological_space X] : ring_filter_basis X := 
-{ --sets := (nhds (0 : X)).sets,
-  mul' := sorry,
-  mul_left' := sorry,
-  mul_right' := sorry,
+instance nhds_zero_ring_filter_basis {X : Type*} [ring X] [topological_space X] [tr : topological_ring X]: ring_filter_basis X := 
+{ mul' := λ S hS,
+  begin
+    have h_cont : continuous_at (λ (p : X × X), p.fst * p.snd) (0,0) := continuous.continuous_at tr.continuous_mul,
+    rw [continuous_at_iff_exists_open, mul_zero] at h_cont,
+    simp_rw [image_subset_iff] at h_cont,
+    rcases (h_cont S hS) with ⟨V, hV_zero, hV_mul⟩,
+    rcases (mem_nhds_zero_zero hV_zero) with ⟨W, hW_zero, hW_prod⟩,
+    use [W, hW_zero],
+    { rintros x ⟨y, z, hy, hz, hadd⟩,
+      have hyz : (y, z) ∈ (λ (p : X × X), p.fst * p.snd)⁻¹' S,
+      { apply hV_mul,
+        apply hW_prod,
+        rw mem_prod,
+        dsimp only,
+        exact ⟨hy, hz⟩ },
+      rw mem_preimage at hyz,
+      dsimp only at hyz,
+      rwa ← hadd, },
+  end,
+  mul_left' := λ x S hS,
+  begin
+    have h_cont : continuous_at (λ (y : X), x * y) 0 := continuous.continuous_at (continuous_mul_left x),
+    rw [continuous_at_iff_exists_open, mul_zero] at h_cont,
+    rcases (h_cont S hS) with ⟨V, hV_zero, hV_mul⟩,
+    exact ⟨ V, hV_zero, image_subset_iff.mp hV_mul⟩,
+  end,
+  mul_right' := λ x S hS,
+  begin
+    have h_cont : continuous_at (λ (y : X), y * x) 0 := continuous.continuous_at (continuous_mul_right x),
+    rw [continuous_at_iff_exists_open, zero_mul] at h_cont,
+    rcases (h_cont S hS) with ⟨V, hV_zero, hV_mul⟩,
+    exact ⟨ V, hV_zero, image_subset_iff.mp hV_mul⟩,
+  end,
   .. nhds_zero_add_group_filter_basis }
-
-
 
 private def pi.ring_filter_basis.sets {ι : Type*} {X : ι → Type*} [∀ i, ring (X i)]
   (T : Π i, ring_filter_basis (X i)) :
@@ -397,7 +491,49 @@ instance pi.ring_filter_basis {ι : Type*} {X : ι → Type*} [∀ i, ring (X i)
 
   /- The product topology on Π i, X i equals the topology associated to pi.ring_filter_basis -/
 
-lemma pi_eq_ring_filter_basis_topology {ι : Type*} {X : ι → Type*} [∀ i, ring (X i)]
+variables {ι : Type*} {X : ι → Type*} [∀ i, ring (X i)] (T : Π i, ring_filter_basis (X i))(i : ι)
+
+/- set_option pp.all true
+#check ring_filter_basis.topology (T i)
+#check (Π (j : ι), ring_filter_basis.topology (T j)) -/
+
+lemma pi_eq_ring_filter_basis_topology {ι : Type*} {X : ι → Type*} [∀ i, ring (X i)] (T : Π i, ring_filter_basis (X i)) :
+@Pi.topological_space ι X (λ (i : ι), (T i).topology) = (pi.ring_filter_basis T).topology := 
+begin
+  apply le_antisymm,
+  { --rw pi_eq_generate_from,
+    intros U hU,
+    rw pi_eq_generate_from,
+    rw topological_space.generate_from,
+    dsimp only,
+    
+    
+    sorry },
+  { letI := (pi.ring_filter_basis T).topology,
+    rw pi_eq_generate_from,
+    rw le_generate_from_iff_subset_is_open,
+    intros U hU,
+    rw mem_set_of_eq at hU ⊢,
+    rcases hU with ⟨S, F, h_restr, hSF⟩,
+    intros a haU,
+    rw ← add_group_filter_basis.nhds_eq _,
+    rw hSF,
+    --apply is_open_set_pi,
+    --apply set_pi_mem_nhds,
+    --rw hSF,
+    --rw mem_nhds_iff,
+    --split,
+    /- rw mem_nhds_iff,
+    use [U, rfl.subset],
+    split,
+    { intro b, },
+    exact haU, -/
+    sorry,
+     }
+end
+
+--Wrong statement
+lemma pi_eq_ring_filter_basis_topology' {ι : Type*} {X : ι → Type*} [∀ i, ring (X i)]
   [∀ i, topological_space (X i)] [∀ i, topological_ring (X i)] (B : 
   ring_filter_basis (Π i, X i)) : Pi.topological_space = B.topology
 := 
