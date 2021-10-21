@@ -474,26 +474,26 @@ noncomputable instance Q_algebra_A_Q_f: algebra ℚ A_Q_f := { smul := λ r a,
 /-! Adeles of ℚ -/
 def A_Q := A_Q_f × ℝ
 
-def map_from_Pi_Q_p_pi_Z_p (x : (Π p : primes, ℚ_[p]) ×  ℝ) 
+def map_from_Pi_Q_p_R (x : (Π p : primes, ℚ_[p]) ×  ℝ) 
   (h : set.finite({ p : primes | padic.valuation (x.1 p) < 0 })) : A_Q := 
 ⟨ map_from_Pi_Q_p x.1 h, x.2⟩
 
-def map_to_Pi_Q_p_pi_Z_p (a : A_Q) : (Π p : primes, ℚ_[p]) × ℝ :=
+def map_to_Pi_Q_p_R (a : A_Q) : (Π p : primes, ℚ_[p]) × ℝ :=
 ⟨map_to_Pi_Q_p a.1, a.2⟩
 
-lemma left_inverse_map_to_Pi_Q_p_pi_Z_p (a : A_Q) : 
-  map_from_Pi_Q_p_pi_Z_p (map_to_Pi_Q_p_pi_Z_p a) (restricted_image a.1) = a := 
+lemma left_inverse_map_to_Pi_Q_p_R (a : A_Q) : 
+  map_from_Pi_Q_p_R (map_to_Pi_Q_p_R a) (restricted_image a.1) = a := 
 begin
-  simp_rw map_to_Pi_Q_p_pi_Z_p,
-  rw [map_from_Pi_Q_p_pi_Z_p, prod.eq_iff_fst_eq_snd_eq],
+  simp_rw map_to_Pi_Q_p_R,
+  rw [map_from_Pi_Q_p_R, prod.eq_iff_fst_eq_snd_eq],
   exact ⟨left_inverse_map_to_Pi_Q_p a.1, rfl⟩,
 end
 
-lemma right_inverse_map_to_Pi_Q_p_pi_Z_p (x : (Π p : primes, ℚ_[p]) ×  ℝ)
+lemma right_inverse_map_to_Pi_Q_p_R (x : (Π p : primes, ℚ_[p]) ×  ℝ)
   (h : set.finite({ p : primes | padic.valuation (x.1 p) < 0 })) :
-  (map_to_Pi_Q_p_pi_Z_p (map_from_Pi_Q_p_pi_Z_p x h)) = x :=
+  (map_to_Pi_Q_p_R (map_from_Pi_Q_p_R x h)) = x :=
 begin
-  rw [map_from_Pi_Q_p_pi_Z_p, map_to_Pi_Q_p_pi_Z_p, prod.eq_iff_fst_eq_snd_eq], 
+  rw [map_from_Pi_Q_p_R, map_to_Pi_Q_p_R, prod.eq_iff_fst_eq_snd_eq], 
   exact ⟨ right_inverse_map_to_Pi_Q_p x.1 h, rfl⟩,
 end
 

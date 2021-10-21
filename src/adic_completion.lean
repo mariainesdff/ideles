@@ -34,9 +34,10 @@ def ring.adic_completion.of : R →+* (ring.adic_completion I) :=
 @[simp] lemma ring.adic_completion.of_apply (x : R) (n : ℕ) :
   (ring.adic_completion.of I x).1 n = ideal.quotient.mk _ x := rfl
 
+set_option profiler true
 -- deterministic timeout
-/- instance : algebra R (ring.adic_completion I) := 
-ring_hom.to_algebra (ring.adic_completion.of I) -/
+instance : algebra R (ring.adic_completion I) := 
+ring_hom.to_algebra (ring.adic_completion.of I)
 
 instance : algebra R (ring.adic_completion I):= 
 { smul := λ r x, (ring.adic_completion.of I r) * x,
@@ -54,4 +55,6 @@ def I_hat : ideal (ring.adic_completion I) :=
   exact ideal.mul_mem_left _ x, }}
 
 -- deterministic timeout
- /- instance : ring_filter_basis (ring.adic_completion I) := ideal.ring_filter_basis (I_hat I) -/
+--instance : ring_filter_basis (ring.adic_completion I) := ideal.ring_filter_basis (I_hat I)
+
+/- instance : topological_space (ring.adic_completion I) := ideal.adic_topology (I_hat I) -/
