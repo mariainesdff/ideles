@@ -117,36 +117,6 @@ begin
   { exact hn },
 end
 
---instance : integral_domain (R_v R v) := sorry 
-/- { 
-  exists_pair_ne := 
-  begin
-    use [0, 1],
-    rw [← @uniform_space.completion.coe_one R _ (us R v), 
-      ← @uniform_space.completion.coe_zero R (us R v) _],
-    have h_inj : function.injective (coe : R → (R_v R v)) :=
-    @uniform_embedding.inj R _ (us R v) _ coe 
-      (@uniform_space.completion.uniform_embedding_coe R (us R v) (ss R v)),
-    rw function.injective.ne_iff h_inj,
-    exact zero_ne_one,
-  end,
-  eq_zero_or_eq_zero_of_mul_eq_zero := --λ x y hxy,
-  begin
-    have h : ∀ a b : R, a * b = 0 → a = 0 ∨ b = 0 := 
-    integral_domain.eq_zero_or_eq_zero_of_mul_eq_zero,
-    have h_int : ∀ a b : R, 
-      (@uniform_space.completion.coe_ring_hom R _ (us R v) (tr R v) (ug R v) a) *
-      (@uniform_space.completion.coe_ring_hom R _ (us R v) (tr R v) (ug R v) b) = 0 →
-      (@uniform_space.completion.coe_ring_hom R _ (us R v) (tr R v) (ug R v) a) = 0 ∨
-      (@uniform_space.completion.coe_ring_hom R _ (us R v) (tr R v) (ug R v) b) = 0 := sorry,
-    have h_closed : is_closed {x : (R_v R v) × (R_v R v) | x.1 * x.2 = 0 → x.1 = 0 ∨ x.2 = 0} := 
-    sorry,
-    set p : (R_v R v) → (R_v R v) →  Prop := λ x y, x * y = 0 → x = 0 ∨ y = 0 with hp,
-    intros a b,
-    exact @uniform_space.completion.induction_on₂ R (us R v) R (us R v) p a b h_closed h_int,
-  end,
-  ..R_v.comm_ring R v} -/
-
 def R_hat := (Π (v : maximal_spectrum R), (R_v R v))
 instance : comm_ring (R_hat R) := pi.comm_ring
 
@@ -179,7 +149,6 @@ instance : comm_ring (finite_adele_ring R) := localization.comm_ring
 instance : algebra (R_hat R) (finite_adele_ring R) := localization.algebra
 instance : is_localization (diag_R R) (finite_adele_ring R):= localization.is_localization
 
-/- TEST -/
 lemma preimage_diag_R (x : diag_R R) : ∃ r : R, r ≠ 0 ∧ inj_R R r = (x : R_hat R) := x.property
 
 instance ts_frac : topological_space (fraction_ring R) := 
@@ -200,7 +169,6 @@ instance K_v.algebra : algebra (R_v R v) (K_v R v) := fraction_ring.algebra R v
 instance : is_fraction_ring (R_v R v) (fraction_ring (R_v R v)) := by apply_instance
 instance K_v.is_fraction_ring : is_fraction_ring (R_v R v) (K_v R v) :=
 fraction_ring.is_fraction_ring R v
-/- instance K_v.field : field (K_v R v) := @fraction_ring.field (R_v R v) (R_v.integral_domain R v) -/
 
 def K_v.ring_hom : R_v R v  →+* K_v R v := 
 (K_v.algebra R v).to_ring_hom
@@ -244,45 +212,48 @@ lemma integral_domain.mem_non_zero_divisors {r : R} (hr : r ≠ 0) :
   r ∈ non_zero_divisors R := λ s hs,  or.resolve_right (eq_zero_or_eq_zero_of_mul_eq_zero hs) hr
 
 lemma image_non_zero_divisors {r : R} (hr : r ∈ non_zero_divisors R) : 
-  (@uniform_space.completion.coe_ring_hom R _ (us R v) (tr R v) (ug R v) r : R_v R v) ∈ non_zero_divisors (R_v R v) := sorry
+  ((coe : R → R_v R v) r) ∈ non_zero_divisors (R_v R v) := sorry
 
-lemma bar {r : R} (hr : r ≠ 0) : is_unit (K_v.ring_hom R v
-  (@uniform_space.completion.coe_ring_hom R _ (us R v) (tr R v) (ug R v) r : R_v R v)) :=
-begin
-    have hr' : (@uniform_space.completion.coe_ring_hom R _ (us R v) (tr R v) (ug R v) r : R_v R v) ∈ non_zero_divisors (R_v R v)
-    := image_non_zero_divisors R v (integral_domain.mem_non_zero_divisors R hr),
-    set r' := (⟨(@uniform_space.completion.coe_ring_hom R _ (us R v) (tr R v) (ug R v) r : R_v R v),
-    hr'⟩ : non_zero_divisors (R_v R v)) with hr',
-  exact is_localization.map_units (K_v R v) r',
-end
+lemma non_zero_divisor_is_unit {r : R} (hr : r ≠ 0) : is_unit (K_v.ring_hom R v
+  ((coe : R → R_v R v) r)) :=
+is_localization.map_units (K_v R v) (⟨((coe : R → R_v R v) r),
+  (image_non_zero_divisors R v (integral_domain.mem_non_zero_divisors R hr))⟩ :
+  non_zero_divisors (R_v R v))
 
 lemma hom_prod_diag_unit : ∀ x : (diag_R R), is_unit (hom_prod R x) :=
 begin
   rintro ⟨x, r, hr_compl, hrx⟩,
   rw [compl_eq_compl, mem_compl_eq, mem_singleton_iff] at hr_compl,
   rw [is_unit_iff_exists_inv, subtype.coe_mk, ← hrx],
-  use (λ v, localization.mk 1 ⟨
-    (@uniform_space.completion.coe_ring_hom R _ (us R v) (tr R v) (ug R v) r : R_v R v), image_non_zero_divisors R v (integral_domain.mem_non_zero_divisors R hr_compl)⟩),
+  use (λ v, localization.mk 1 ⟨((coe : R → R_v R v) r), 
+    image_non_zero_divisors R v (integral_domain.mem_non_zero_divisors R hr_compl)⟩),
   ext v,
-  rw [hom_prod, ring_hom.coe_mk, pi.mul_apply, pi.one_apply],
-  rw localization.mk_eq_mk',
-
-  /- use (λ v, 1/(K_v.ring_hom R v
-    (@uniform_space.completion.coe_ring_hom R _ (us R v) (tr R v) (ug R v) r : R_v R v))),
-  ext v,
-  simp_rw one_div,
-  apply div_self _,
-  have h_zero : inj_R_v R v 0 = 0 := rfl,
-  rw [hom_prod, ring_hom.coe_mk, ← (K_v.ring_hom R v).map_zero, 
-    injective.ne_iff (K_v.ring_hom.injective R v), inj_R, ← h_zero, 
-    injective.ne_iff (inj_R_v.injective R v)], 
-  rw [compl_eq_compl, mem_compl_eq, mem_singleton_iff] at hr_compl,
-  exact hr_compl, -/
-  sorry
+  rw [hom_prod, ring_hom.coe_mk, pi.mul_apply, pi.one_apply, inj_R],
+  dsimp only, rw inj_R_v, dsimp only,
+  have h_simp : (K_v.ring_hom R v) ((coe : R → R_v R v) r) = 
+    localization.mk ((coe : R → R_v R v) r) 1 := rfl,
+  rw [eq_mpr_eq_cast, cast_eq, h_simp, localization.mk_mul, mul_one, one_mul,
+    localization.mk_eq_mk', is_localization.mk'_self],
 end
 
 def map_to_K_hat (x : finite_adele_ring R) : K_hat R := 
 is_localization.lift (hom_prod_diag_unit R) x
+
+lemma restricted_image (x : finite_adele_ring R) : 
+  set.finite({ v : maximal_spectrum R | ¬ is_localization.is_integer (R_v R v) (map_to_K_hat R x v)}) := 
+begin
+  set supp := { v : maximal_spectrum R | ¬ is_localization.is_integer (R_v R v) (map_to_K_hat R x v)} with hsupp,
+  obtain ⟨r, d', hx⟩ := is_localization.mk'_surjective (diag_R R) x,
+  obtain ⟨d, hd_ne_zero, hd_inj⟩ := d'.property,
+  have hd : ideal.span{d} ≠ (0 : ideal R),
+  { rw [ideal.zero_eq_bot, ne.def, ideal.span_singleton_eq_bot],
+    exact hd_ne_zero, },
+  obtain ⟨f, h_irred, h_assoc⟩:= wf_dvd_monoid.exists_factors (ideal.span{d}) hd,
+  have hsubset : supp ⊆ { v : maximal_spectrum R | v.val.as_ideal ∣ ideal.span({d})} := sorry,
+  apply finite.subset _ hsubset,
+  have h_bound := finite.intro (unique_factorization_monoid.fintype_subtype_dvd (ideal.span{d}) hd),
+  sorry
+end
 
 def finite_adele_ring' :=
 { x : (Π v : (maximal_spectrum R), K_v R v) //
@@ -395,96 +366,21 @@ instance : comm_ring (finite_adele_ring' R) := {
   mul_comm      := λ x y, by { unfold_projs, simp_rw [subtype.mk_eq_mk, mul_comm]},
   ..(finite_adele_ring'.add_comm_group R)}
 
-/- def K_v := @uniform_space.completion (fraction_ring R) (us_frac R v)
-instance K_v.comm_ring : comm_ring (K_v R v) := @uniform_space.completion.comm_ring (fraction_ring R) _ (us_frac R v) (ug_frac R v) (tr_frac R v) 
-
-def fraction_ring_hom : R_v R v  →+* K_v R v := @uniform_space.completion.map_ring_hom R _ (us R v) (tr R v) (ug R v) (fraction_ring R) (us_frac R v) _ (ug_frac R v) (tr_frac R v)(algebra_map R (localization (non_zero_divisors R))) (@localization.continuous R _ (ts R v)(non_zero_divisors R))
-
-instance : algebra (R_v R v) (K_v R v) := sorry
-
-instance K_v_is_fraction_ring : is_fraction_ring (R_v R v) (K_v R v) := 
-{ map_units := λ ⟨y, hy⟩,
-  begin
-    have : algebra_map (R_v R v) (K_v R v) = fraction_ring_hom R v := rfl,
-    rw [set_like.coe_mk, this, fraction_ring_hom],
-    sorry,
-  end,
-  surj := λ z,
-  begin
-  /-
-  R : Type u_1,
-  _inst_1 : integral_domain R,
-  _inst_2 : is_dedekind_domain R,
-  v : maximal_spectrum R,
-  h : ∀ (a b : R), a * b = 0 → a = 0 ∨ b = 0,
-  h_int :
-    ∀ (a b : R),
-      ⇑uniform_space.completion.coe_ring_hom a * ⇑uniform_space.completion.coe_ring_hom b = 0 →
-      ⇑uniform_space.completion.coe_ring_hom a = 0 ∨ ⇑uniform_space.completion.coe_ring_hom b = 0,
-  h_closed : is_closed {x : R_v R v × R_v R v | x.fst * x.snd = 0 → x.fst = 0 ∨ x.snd = 0}
-  ⊢ ∀ (a b : R_v R v), a * b = 0 → a = 0 ∨ b = 0
-  -/
+def finite_adele.hom : (finite_adele_ring R) →+* (finite_adele_ring' R) := { to_fun := sorry,
+  map_one' := sorry,
+  map_mul' := sorry,
+  map_zero' := sorry,
+  map_add' := sorry }
   
-    sorry,
-  end,
-  eq_iff_exists := λ x y,
-  begin
-    /- have : algebra_map (R_v R v) (K_v R v) = fraction_ring_hom R v := rfl,
-    rw [this, fraction_ring_hom], -/
-    split; intro hxy,
-    { use 1,
-      rw [submonoid.coe_one, mul_one, mul_one],
-      
-      sorry },
-    { sorry }
-  end }-/
+def finite_adele.inv : (finite_adele_ring' R) →+* (finite_adele_ring R) := { to_fun := sorry,
+  map_one' := sorry,
+  map_mul' := sorry,
+  map_zero' := sorry,
+  map_add' := sorry }
 
-/- def fraction_map : R → (fraction_ring R) := (localization.monoid_of (non_zero_divisors R)).to_fun
+lemma finite_adele.hom_inv_id : (finite_adele.inv R).comp (finite_adele.hom R) = ring_hom.id (finite_adele_ring R) := sorry
 
-def fraction_ring_hom : R →+* (fraction_ring R) := algebra_map R (localization (non_zero_divisors R))
+lemma finite_adele.inv_hom_id : (finite_adele.hom R).comp (finite_adele.inv R) = ring_hom.id (finite_adele_ring' R) := sorry
 
-def fraction_map_completion : R_v R v → K_v R v:= (@uniform_space.completion.map R (us R v) (fraction_ring R) (us_frac R v) (fraction_map R)) -/
-
-/- lemma fraction_coe_comm (r : R) : (fraction_ring_hom R v) (inj_R_v R v r) = @uniform_space.completion.coe_ring_hom (fraction_ring R) _ (us_frac R v) (tr_frac R v) (ug_frac R v) (algebra_map R _ r) :=
-begin
-{ rw inj_R_v,
-  simp only [eq_mpr_eq_cast, cast_eq],
-  rw fraction_ring_hom,
-  --rw uniform_space.completion.map_ring_hom,
-  simp_rw uniform_space.completion.coe_ring_hom,
-  simp only [ring_hom.coe_mk],
-  rw uniform_space.completion.map_ring_hom,
-    --rw uniform_space.completion.map_ring_hom,
-  rw uniform_space.completion.extension_hom,
-  simp only [ring_hom.coe_mk, ring_hom.coe_comp],
-  rw uniform_space.completion.extension,
-  sorry },
-end -/
-
-/- open filter
-def finite_adele_ring' := {x : (Π v : (maximal_spectrum R), K_v R v) // ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, is_localization.is_integer (R_v R v) (x v)  }
-
-lemma hom_prod_diag_unit : ∀ x : (diag_R R), is_unit (hom_prod R x) :=
-begin
-  rintro ⟨x, r, hr_compl, hrx⟩,
-  rw is_unit_iff_exists_inv,
-  have h_inv : ∃ s : (fraction_ring R), (algebra_map R (fraction_ring R) r)*s = 1,
-  { use 1/(algebra_map R (fraction_ring R) r), 
-    rw [← mul_div_assoc, mul_one, div_self],
-    rw [compl_eq_compl, mem_compl_eq, mem_singleton_iff] at hr_compl,
-    exact is_localization.to_map_ne_zero_of_mem_non_zero_divisors (fraction_ring R) (rfl.subset) (integral_domain.mem_non_zero_divisors R hr_compl) },
-  cases h_inv with s hs,
-  use (λ v, @uniform_space.completion.coe_ring_hom (fraction_ring R) _ (us_frac R v) (tr_frac R v) (ug_frac R v) s),
-  rw [subtype.coe_mk, hom_prod, ring_hom.coe_mk],
-  ext v,
-  have comm_diag : (fraction_ring_hom R v) (x v) = @uniform_space.completion.coe_ring_hom (fraction_ring R) _ (us_frac R v) (tr_frac R v) (ug_frac R v) (algebra_map R _ r), 
-  { rw [← hrx, inj_R],
-    dsimp only,
-    exact fraction_coe_comm R v r },
-  rw [pi.mul_apply, comm_diag, pi.one_apply, ← ring_hom.map_mul, hs, ring_hom.map_one],
-end
-
-def map_to_K_hat (x : finite_adele_ring R) : K_hat R := 
-is_localization.lift (hom_prod_diag_unit R) x
-
- -/
+def finite_adele.eq_defs : ring_equiv (finite_adele_ring R) (finite_adele_ring' R) :=
+  ring_equiv.of_hom_inv (finite_adele.hom R) (finite_adele.inv R) (finite_adele.hom_inv_id R) (finite_adele.inv_hom_id R)
