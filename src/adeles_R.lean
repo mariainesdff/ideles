@@ -193,11 +193,9 @@ begin
     push_neg at h,
     apply hv,
     rw [K_v.is_integer, K_v.is_integer] at h,
-    rw [K_v.is_integer, pi.mul_apply],
     have h_mul : valued.v (x v * y v) = (valued.v (x v)) * (valued.v (y v)) 
     := (valued.v).map_mul' (x v) (y v),
-    rw h_mul,
-    rw ← mul_one (1 : with_zero (multiplicative ℤ )),
+    rw [K_v.is_integer, pi.mul_apply, h_mul, ← mul_one (1 : with_zero (multiplicative ℤ ))],
     exact with_zero.mul_le_one h.left  h.right, },
   exact finite.subset (finite.union hx hy) h_subset,
 end
