@@ -29,7 +29,7 @@ instance {α : Type*} [linear_ordered_comm_group α] :
   ..with_zero.comm_group_with_zero }
 
 
-lemma with_zero.div_le_div_right {α : Type*} [linear_ordered_comm_group α] (x y z : with_zero α)
+lemma with_zero.div_le_div_right {α : Type*} [linear_ordered_comm_group α] {x y z : with_zero α}
   (hz : 0 < z) : x/z ≤ y/z ↔ x ≤ y := 
 begin
   { by_cases hx : x = 0,
@@ -51,4 +51,27 @@ begin
           exact habc,
           exact with_zero.coe_ne_zero, },
         exact with_zero.mul_le_mul_left _ _ hab _, }}},
+  end
+
+  lemma with_zero.div_le_iff {α : Type*} [linear_ordered_comm_group α] {x y z : with_zero α}
+  (hy : 0 < y) : x/y ≤ z ↔ x ≤ z*y := 
+  begin
+    conv_lhs {rw ← mul_one z, rw ← div_self (ne_of_gt hy), rw ← mul_div_assoc},
+    exact with_zero.div_le_div_right hy,
+  end
+
+  lemma with_zero.mul_le_one {α : Type*} [linear_ordered_comm_group α] {x y : with_zero α} : 
+    x ≤ 1 → y ≤ 1 → x*y ≤ 1 :=
+  begin
+    intros hx1 hy1,
+    by_cases hx : x = 0,
+    { rw [hx, zero_mul], exact with_zero.zero_le _, },
+    { by_cases hy : y = 0,
+      { rw [hy, mul_zero], exact with_zero.zero_le _, },
+      { obtain ⟨a, hax⟩ := with_zero.ne_zero_iff_exists.mp hx,
+        obtain ⟨b, hby⟩ := with_zero.ne_zero_iff_exists.mp hy,
+        rw [← hax, ← hby, ← with_zero.coe_mul, ← with_zero.coe_one, with_zero.coe_le_coe],
+        rw [← hax, ← with_zero.coe_one, with_zero.coe_le_coe] at hx1,
+        rw [← hby, ← with_zero.coe_one, with_zero.coe_le_coe] at hy1,
+        apply mul_le_one' hx1 hy1, }}
   end

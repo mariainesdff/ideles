@@ -1,12 +1,12 @@
 import algebraic_geometry.prime_spectrum
 import ring_theory.dedekind_domain
-import topology.algebra.localization
+import topology.algebra.valued_field
 import with_zero
 
 noncomputable theory
 open_locale classical
 
-variables (R : Type*) {K : Type*} [integral_domain R] [is_dedekind_domain R] [field K]
+variables (R : Type) {K : Type} [integral_domain R] [is_dedekind_domain R] [field K]
   [algebra R K] [is_fraction_ring R K] 
 
 --def Γ₀ := with_zero (multiplicative ℤ)
@@ -53,12 +53,11 @@ begin
 end
 
 
-def ring.adic_valuation.def (v : maximal_spectrum R) (r : R) : with_zero (multiplicative ℤ) :=
+def ring.adic_valuation.def (r : R) : with_zero (multiplicative ℤ) :=
 dite (r = 0) (λ (h : r = 0), 0) (λ h : ¬ r = 0, (multiplicative.of_add
   (-(associates.mk v.val.as_ideal).count (associates.mk (ideal.span{r} : ideal R)).factors : ℤ)))
 
-lemma ring.adic_valuation.map_one' (v : maximal_spectrum R) :
-  ring.adic_valuation.def v 1 = 1 := 
+lemma ring.adic_valuation.map_one' : ring.adic_valuation.def v 1 = 1 := 
 begin
   rw [ring.adic_valuation.def, dif_neg (ne.symm zero_ne_one)],
   { rw [← with_zero.coe_one, with_zero.coe_inj, ← of_add_zero],
@@ -70,7 +69,7 @@ begin
   { by apply_instance }
 end
 
-lemma ring.adic_valuation.map_mul' (v : maximal_spectrum R) (x y : R) :
+lemma ring.adic_valuation.map_mul' (x y : R) :
   ring.adic_valuation.def v (x * y) = ring.adic_valuation.def v x * ring.adic_valuation.def v y :=
 begin
   rw [ring.adic_valuation.def, ring.adic_valuation.def, ring.adic_valuation.def],
@@ -94,9 +93,8 @@ begin
   rw [← associates.dvd_eq_le, ← associates.mk_pow, associates.mk_dvd_mk, ideal.dvd_span_singleton],
 end
 
-lemma ring.adic_valuation.map_add' (v : maximal_spectrum R) (x y : R) :
-  ring.adic_valuation.def v (x + y) ≤
-    max (ring.adic_valuation.def v x) (ring.adic_valuation.def v y) := 
+lemma ring.adic_valuation.map_add' (x y : R) : ring.adic_valuation.def v (x + y) ≤
+  max (ring.adic_valuation.def v x) (ring.adic_valuation.def v y) := 
 begin
   by_cases hx : x = 0,
   { rw [hx, zero_add],
@@ -151,6 +149,23 @@ lemma ring.adic_valuation.ne_zero (v : maximal_spectrum R)
 begin
   rw [ring.adic_valuation.def, dif_neg (non_zero_divisors.coe_ne_zero x)],
   exact with_zero.coe_ne_zero,
+end
+
+lemma ring.adic_valuation.zero_le (v : maximal_spectrum R)
+(x : non_zero_divisors R) : 0 < ring.adic_valuation.def v x :=
+begin
+  rw [ring.adic_valuation.def, dif_neg (non_zero_divisors.coe_ne_zero x)],
+  exact with_zero.zero_lt_coe _,
+end
+
+lemma ring.adic_valuation.le_one (x : R) : ring.adic_valuation.def v x ≤ 1 :=
+begin
+  rw ring.adic_valuation.def,
+  by_cases hx : x = 0,
+  { rw dif_pos hx, exact with_zero.zero_le 1,},
+  { rw [dif_neg hx, ← with_zero.coe_one, ← of_add_zero, with_zero.coe_le_coe, of_add_le,
+      right.neg_nonpos_iff],
+    exact int.coe_nat_nonneg _, }
 end
 
 def adic_valuation.def (v : maximal_spectrum R) (x : K) : (with_zero (multiplicative ℤ)) :=
@@ -258,8 +273,8 @@ begin
       (submonoid.mul_mem (non_zero_divisors R) sx.property sy.property), },
 
   rw [adic_valuation.well_defined K v h_frac_x, adic_valuation.well_defined K v h_frac_y,
-    adic_valuation.well_defined K v h_frac_xy, with_zero.div_le_div_right _ _ _ h_denom,
-    with_zero.div_le_div_right _ _ _ h_denom, ← le_max_iff],
+    adic_valuation.well_defined K v h_frac_xy, with_zero.div_le_div_right h_denom,
+    with_zero.div_le_div_right h_denom, ← le_max_iff],
   exact ring.adic_valuation.map_add' v _ _,
 end
 
@@ -270,3 +285,17 @@ def adic_valuation (v : maximal_spectrum R) : valuation K (with_zero (multiplica
   map_one'  := adic_valuation.map_one' v, 
   map_mul'  := adic_valuation.map_mul' v, 
   map_add'  := adic_valuation.map_add' v }
+
+lemma adic_valuation.le_one (x : R) : adic_valuation.def v (algebra_map R K x) ≤ 1 :=
+begin
+  rw adic_valuation.def,
+  dsimp only,
+  let rx : R := (classical.some (adic_valuation.def._proof_1 (algebra_map R K x))),
+  let sx : non_zero_divisors R := (classical.some (adic_valuation.def._proof_2 (algebra_map R K x))),
+  have hx : is_localization.mk' K rx sx = is_localization.mk' K x (1 : non_zero_divisors R),
+  { rw is_localization.mk'_one,
+    exact classical.some_spec (adic_valuation.def._proof_2 (algebra_map R K x)), },
+  rw [adic_valuation.well_defined K v hx, with_zero.div_le_iff (ring.adic_valuation.zero_le v 1),
+    one_mul, submonoid.coe_one, ring.adic_valuation.map_one' v],
+  exact ring.adic_valuation.le_one v x,
+end
