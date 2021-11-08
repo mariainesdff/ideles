@@ -1,4 +1,4 @@
-import algebraic_geometry.prime_spectrum
+import algebraic_geometry.prime_spectrum.basic
 import ring_theory.dedekind_domain
 import topology.algebra.valued_field
 import with_zero
@@ -6,7 +6,7 @@ import with_zero
 noncomputable theory
 open_locale classical
 
-variables (R : Type) {K : Type} [integral_domain R] [is_dedekind_domain R] [field K]
+variables (R : Type) {K : Type} [comm_ring R] [is_domain R] [is_dedekind_domain R] [field K]
   [algebra R K] [is_fraction_ring R K] 
 
 --def Γ₀ := with_zero (multiplicative ℤ)
@@ -19,6 +19,8 @@ variable {R}
 
 lemma of_add_le (α : Type*) [has_add α] [partial_order α] (x y : α) :
   multiplicative.of_add x ≤ multiplicative.of_add y ↔ x ≤ y := by refl
+lemma of_add_lt (α : Type*) [has_add α] [partial_order α] (x y : α) :
+  multiplicative.of_add x < multiplicative.of_add y ↔ x < y := by refl
 
 lemma of_add_inj (α : Type*) [has_add α] (x y : α) 
   (hxy : multiplicative.of_add x = multiplicative.of_add y) : x = y := 
@@ -38,20 +40,16 @@ begin
   apply ideal.prime_of_is_prime v.property v.val.property,
 end
 
-lemma associates.mk_ne_zero' {I : ideal R} (hI : I ≠ 0): (associates.mk I) ≠ 0 :=
+/- lemma associates.mk_ne_zero' {I : ideal R} (hI : I ≠ 0): (associates.mk I) ≠ 0 :=
 begin
   rw [ne.def, associates.mk_eq_zero], exact hI,
-end
+end -/
 
-lemma associates.mk_ne_zero {x : R} (hx : x ≠ 0): (associates.mk (ideal.span{x} : ideal R)) ≠ 0 :=
+lemma associates.mk_ne_zero' {x : R} : (associates.mk (ideal.span{x} : ideal R)) ≠ 0 ↔ (x ≠ 0):=
 begin
-  have : (ideal.span{x} : ideal R) ≠ 0,
-  { rw [ne.def, ideal.zero_eq_bot, ideal.span_singleton_eq_bot],
-    exact hx,
-  },
-  apply associates.mk_ne_zero' this,
+  rw associates.mk_ne_zero,
+  rw [ideal.zero_eq_bot, ne.def, ideal.span_singleton_eq_bot],
 end
-
 
 def ring.adic_valuation.def (r : R) : with_zero (multiplicative ℤ) :=
 dite (r = 0) (λ (h : r = 0), 0) (λ h : ¬ r = 0, (multiplicative.of_add
@@ -79,12 +77,12 @@ begin
     { rw [hy, mul_zero, dif_pos (eq.refl _), mul_zero] },
     { rw [dif_neg hx, dif_neg hy, dif_neg (mul_ne_zero hx hy), ← with_zero.coe_mul,
         with_zero.coe_inj, ← of_add_add],
-      have hx' : associates.mk (ideal.span{x} : ideal R) ≠ 0 := associates.mk_ne_zero hx,
-      have hy' : associates.mk (ideal.span{y} : ideal R) ≠ 0 := associates.mk_ne_zero hy,
+      have hx' : associates.mk (ideal.span{x} : ideal R) ≠ 0 := associates.mk_ne_zero'.mpr hx,
+      have hy' : associates.mk (ideal.span{y} : ideal R) ≠ 0 := associates.mk_ne_zero'.mpr hy,
       rw [← ideal.span_singleton_mul_span_singleton, ← associates.mk_mul_mk, ← neg_add,
         associates.count_mul hx' hy' _],
       { refl },
-      { apply (associates.irreducible_of_maximal v) }}}
+      { apply (associates.irreducible_of_maximal v), }}}
 end
 
 lemma associates.le_singleton_iff (x : R) (n : ℕ) (I : ideal R) :
@@ -115,9 +113,10 @@ begin
       set nmin := min 
         ((associates.mk v.val.as_ideal).count (associates.mk (ideal.span {x})).factors)
         ((associates.mk v.val.as_ideal).count (associates.mk (ideal.span {y})).factors),
-      have hx' : (associates.mk (ideal.span {x} : ideal R)) ≠ 0 := associates.mk_ne_zero hx,
-      have hy' : (associates.mk (ideal.span {y} : ideal R)) ≠ 0 := associates.mk_ne_zero hy,
-      have hxy' : (associates.mk (ideal.span {x + y} : ideal R)) ≠ 0 := associates.mk_ne_zero hxy,
+      have hx' : (associates.mk (ideal.span {x} : ideal R)) ≠ 0 := associates.mk_ne_zero'.mpr hx,
+      have hy' : (associates.mk (ideal.span {y} : ideal R)) ≠ 0 := associates.mk_ne_zero'.mpr hy,
+      have hxy' : (associates.mk (ideal.span {x + y} : ideal R)) ≠ 0 := 
+      associates.mk_ne_zero'.mpr hxy,
       have h_dvd_x : x ∈ v.val.as_ideal ^ (nmin),
       { rw [← associates.le_singleton_iff x nmin _],
        rw [associates.prime_pow_dvd_iff_le hx' _],
@@ -186,7 +185,9 @@ end
 
 variable {K}
 
-variables {A : Type*} [integral_domain A] {S : Type*} [field S] [algebra A S] [is_fraction_ring A S]
+variables {A : Type*} [comm_ring A] [is_domain A] {S : Type*} [field S] [algebra A S]
+  [is_fraction_ring A S]
+
 lemma is_localization.mk'_eq_zero  {r : A} {s : non_zero_divisors A}
   (h : is_localization.mk' S r s = 0) : r = 0 := 
 begin
@@ -231,6 +232,7 @@ begin
   { simp only [is_fraction_ring.mk'_eq_div],},
   { simp only [is_fraction_ring.mk'_eq_div],},
   { by apply_instance },
+  { by apply_instance },
 end
 
 lemma adic_valuation.map_mul' (v : maximal_spectrum R)
@@ -273,8 +275,8 @@ begin
       (submonoid.mul_mem (non_zero_divisors R) sx.property sy.property), },
 
   rw [adic_valuation.well_defined K v h_frac_x, adic_valuation.well_defined K v h_frac_y,
-    adic_valuation.well_defined K v h_frac_xy, with_zero.div_le_div_right h_denom,
-    with_zero.div_le_div_right h_denom, ← le_max_iff],
+    adic_valuation.well_defined K v h_frac_xy, with_zero.div_le_div_right (ne_of_gt h_denom),
+    with_zero.div_le_div_right (ne_of_gt h_denom), ← le_max_iff],
   exact ring.adic_valuation.map_add' v _ _,
 end
 
@@ -291,11 +293,13 @@ begin
   rw adic_valuation.def,
   dsimp only,
   let rx : R := (classical.some (adic_valuation.def._proof_1 (algebra_map R K x))),
-  let sx : non_zero_divisors R := (classical.some (adic_valuation.def._proof_2 (algebra_map R K x))),
+  let sx : non_zero_divisors R := 
+  (classical.some (adic_valuation.def._proof_2 (algebra_map R K x))),
   have hx : is_localization.mk' K rx sx = is_localization.mk' K x (1 : non_zero_divisors R),
   { rw is_localization.mk'_one,
     exact classical.some_spec (adic_valuation.def._proof_2 (algebra_map R K x)), },
-  rw [adic_valuation.well_defined K v hx, with_zero.div_le_iff (ring.adic_valuation.zero_le v 1),
+  rw [adic_valuation.well_defined K v hx, with_zero.div_le_iff 
+    (ne_of_gt (ring.adic_valuation.zero_le v 1)),
     one_mul, submonoid.coe_one, ring.adic_valuation.map_one' v],
   exact ring.adic_valuation.le_one v x,
 end
