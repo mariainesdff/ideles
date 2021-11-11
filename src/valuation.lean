@@ -169,20 +169,34 @@ begin
     exact int.coe_nat_nonneg _, }
 end
 
+set_option profiler true
 lemma ring.adic_valuation.exists_uniformizer : 
   ∃ (π : R), ring.adic_valuation.def v π = multiplicative.of_add (-1 : ℤ) := 
 begin
-  have h : v.val.as_ideal^2 < v.val.as_ideal := sorry,
-  obtain ⟨π, mem, nmem⟩ := set_like.exists_of_lt h,
-  have hπ : π ≠ 0 := sorry,
+  have hv : irreducible (associates.mk v.val.as_ideal) := associates.irreducible_of_maximal v,
+  have hlt : v.val.as_ideal^2 < v.val.as_ideal,
+  { rw ← ideal.dvd_not_unit_iff_lt,
+    use [v.property, v.val.as_ideal],
+    split,
+    { rw ideal.is_unit_iff,
+      exact ideal.is_prime.ne_top v.val.property,  },
+    { exact sq v.val.as_ideal }},
+  obtain ⟨π, mem, nmem⟩ := set_like.exists_of_lt hlt,
+  have hπ : π ≠ 0,
+  { intro h,
+    rw h at nmem,
+    exact nmem (submodule.zero_mem (v.val.as_ideal^2)), },
   use π,
-  rw ring.adic_valuation.def,
-  rw dif_neg hπ, rw with_zero.coe_inj,
-  apply congr_arg, rw neg_inj, 
-  rw ← int.coe_nat_one,
-  rw int.coe_nat_inj',
-  sorry,
+  rw [ring.adic_valuation.def, dif_neg hπ, with_zero.coe_inj],
+  apply congr_arg, 
+  rw [neg_inj, ← int.coe_nat_one, int.coe_nat_inj'],
+  rw [← ideal.dvd_span_singleton, ← associates.mk_le_mk_iff_dvd_iff] at mem nmem,
+  rw associates.mk_pow at nmem,
+  rw ← pow_one ( associates.mk v.val.as_ideal) at mem,
+  rw associates.prime_pow_dvd_iff_le (associates.mk_ne_zero'.mpr hπ) hv at mem nmem,
+  linarith,
 end
+set_option profiler false
 
 def adic_valuation.def (v : maximal_spectrum R) (x : K) : (with_zero (multiplicative ℤ)) :=
 let s := classical.some (classical.some_spec (is_localization.mk'_surjective
