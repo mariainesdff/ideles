@@ -40,11 +40,6 @@ begin
   apply ideal.prime_of_is_prime v.property v.val.property,
 end
 
-/- lemma associates.mk_ne_zero' {I : ideal R} (hI : I ≠ 0): (associates.mk I) ≠ 0 :=
-begin
-  rw [ne.def, associates.mk_eq_zero], exact hI,
-end -/
-
 lemma associates.mk_ne_zero' {x : R} : (associates.mk (ideal.span{x} : ideal R)) ≠ 0 ↔ (x ≠ 0):=
 begin
   rw associates.mk_ne_zero,
@@ -143,10 +138,17 @@ def ring.adic_valuation (v : maximal_spectrum R) : valuation R (with_zero (multi
   map_mul'  := ring.adic_valuation.map_mul' v,
   map_add'  := ring.adic_valuation.map_add' v }
 
-lemma ring.adic_valuation.ne_zero (v : maximal_spectrum R)
-(x : non_zero_divisors R) : ring.adic_valuation.def v x ≠ 0 :=
+lemma ring.adic_valuation.ne_zero (v : maximal_spectrum R) (x : non_zero_divisors R) :
+  ring.adic_valuation.def v x ≠ 0 :=
 begin
   rw [ring.adic_valuation.def, dif_neg (non_zero_divisors.coe_ne_zero x)],
+  exact with_zero.coe_ne_zero,
+end
+
+lemma ring.adic_valuation.ne_zero' (v : maximal_spectrum R) (x : R) (hx : x ≠ 0) :
+  ring.adic_valuation.def v x ≠ 0 :=
+begin
+  rw [ring.adic_valuation.def, dif_neg hx],
   exact with_zero.coe_ne_zero,
 end
 
@@ -167,6 +169,21 @@ begin
     exact int.coe_nat_nonneg _, }
 end
 
+lemma ring.adic_valuation.exists_uniformizer : 
+  ∃ (π : R), ring.adic_valuation.def v π = multiplicative.of_add (-1 : ℤ) := 
+begin
+  have h : v.val.as_ideal^2 < v.val.as_ideal := sorry,
+  obtain ⟨π, mem, nmem⟩ := set_like.exists_of_lt h,
+  have hπ : π ≠ 0 := sorry,
+  use π,
+  rw ring.adic_valuation.def,
+  rw dif_neg hπ, rw with_zero.coe_inj,
+  apply congr_arg, rw neg_inj, 
+  rw ← int.coe_nat_one,
+  rw int.coe_nat_inj',
+  sorry,
+end
+
 def adic_valuation.def (v : maximal_spectrum R) (x : K) : (with_zero (multiplicative ℤ)) :=
 let s := classical.some (classical.some_spec (is_localization.mk'_surjective
   (non_zero_divisors R) x)) in (ring.adic_valuation.def v (classical.some
@@ -182,6 +199,36 @@ begin
   ← ring.adic_valuation.map_mul' v, ← ring.adic_valuation.map_mul' v,
   is_fraction_ring.injective R K (is_localization.mk'_eq_iff_eq.mp h_mk)],
 end
+
+lemma is_localization.mk'_eq_zero_of_num_zero {R : Type*} [comm_ring R] {M : submonoid R}
+  {S : Type*} [comm_ring S] [algebra R S] [is_localization M S] {z : S}  {x : R} {y : M}
+  (hxyz : z = is_localization.mk' S x y) (hx : x = 0) : z = 0 := 
+by rw [hxyz, hx, eq_comm, is_localization.eq_mk'_iff_mul_eq, zero_mul, ring_hom.map_zero]
+
+lemma is_localization.mk'_num_ne_zero_of_ne_zero {R : Type*} [comm_ring R] {M : submonoid R}
+  {S : Type*} [comm_ring S] [algebra R S] [is_localization M S] {z : S}  {x : R} {y : M}
+  (hxyz : z = is_localization.mk' S x y) (hz : z ≠ 0) : x ≠ 0 := 
+begin
+  rw is_localization.eq_mk'_iff_mul_eq at hxyz, 
+  intro hx,
+  exact hz (is_localization.eq_zero_of_fst_eq_zero hxyz hx),
+end
+
+/- lemma adic_valuation.ne_zero (v : maximal_spectrum R) (x : K) (hx : x ≠ 0) :
+  adic_valuation.def v x ≠ 0 :=
+begin
+  rw [adic_valuation.def, ne.def, div_eq_zero_iff, decidable.not_or_iff_and_not],
+  let rx : R := (classical.some (adic_valuation.def._proof_1 (x : K))),
+  let sx : non_zero_divisors R := (classical.some (adic_valuation.def._proof_2 (x : K))),
+  have hnum_ne_zero : rx ≠ (0 : R),
+  { have hx_loc : x = is_localization.mk' K rx sx :=
+    eq.symm (classical.some_spec (adic_valuation.def._proof_2 (x : K))),
+    exact is_localization.mk'_num_ne_zero_of_ne_zero hx_loc hx, },
+  exact ⟨ring.adic_valuation.ne_zero' v (classical.some (adic_valuation.def._proof_1 (x : K)))
+    hnum_ne_zero, ring.adic_valuation.ne_zero' v (sx : R) (non_zero_divisors.coe_ne_zero sx)⟩,
+end  -/
+
+
 
 variable {K}
 

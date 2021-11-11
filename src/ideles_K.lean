@@ -25,6 +25,11 @@ begin
   convert h,
 end
 
+def I_K.proj1 : monoid_hom (I_K K) (I_K_f K) := 
+{ to_fun := λ x, ((I_K.as_prod K).to_fun x).1,
+  map_one' := by {rw [mul_equiv.to_fun_eq_coe, mul_equiv.map_one, prod.fst_one]},
+  map_mul' := λ x y, by {simp only [prod.fst_mul, mul_equiv.to_fun_eq_coe, mul_equiv.map_mul]}}
+
 lemma right_inv (x : units K) : (inj_K.ring_hom K) x.val * (inj_K.ring_hom K) x.inv = 1 := 
 begin
   rw [← (inj_K.ring_hom K).map_mul, units.val_eq_coe, units.inv_eq_coe_inv, units.mul_inv],
@@ -64,35 +69,36 @@ def v_comp_inv (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
   with_zero (multiplicative ℤ) := valued.v (x.inv.1.val v)
 --@valued.extension K _ (v_valued_K v) (x.inv.1.val v)
 
+-- I_K_f
+lemma I_K_f.restricted_product (x : I_K_f K) :
+  finite ({ v : maximal_spectrum (ring_of_integers K) | (¬ (x.val.val v) ∈ R_v K v) } ∪ 
+    { v : maximal_spectrum (ring_of_integers K) | ¬ (x.inv.val v) ∈ R_v K v }) :=
+restricted_product (ring_of_integers K) K x
+
+
 lemma prod_val_inv_eq_one (x : I_K K) (v : maximal_spectrum (ring_of_integers K)): 
+  (x.val.fst.val v) * (x.inv.fst.val v) = 1  :=
+begin
+  rw [← pi.mul_apply, mul_apply_val, ← prod.fst_mul, units.val_inv,
+    prod.fst_one, subtype.val_eq_coe, ← one_def, subtype.coe_mk],
+  refl,
+end
+
+lemma valuation.prod_val_inv_eq_one (x : I_K K) (v : maximal_spectrum (ring_of_integers K)): 
   (v_comp_val K x v) * (v_comp_inv K x v) = 1 :=
 begin
   simp only [v_comp_val, v_comp_inv],
-  rw ← valued.v.map_mul,
-  rw ← pi.mul_apply,
-  dsimp only,
-  rw mul_apply_val,
-  rw ← prod.fst_mul,
-  rw units.val_inv,
-  rw prod.fst_one,
-  rw subtype.val_eq_coe,
-  --rw subring.coe_one,
-  --rw mul_apply _ K,
-  --rw subtype.val_eq_coe,
-  --rw subtype.val_eq_coe,
-  --simp_rw ← subring.coe_mul,
-  --
-  --squeeze_simp,
-  sorry
+  rw [← valued.v.map_mul, prod_val_inv_eq_one K x v],
+  exact valuation.map_one _,
 end
 
+lemma v_comp.ne_zero (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
+  (x.val.1.val v) ≠ 0 := left_ne_zero_of_mul_eq_one (prod_val_inv_eq_one K x v)
 
 lemma restricted_product (x : I_K K) :
   finite ({ v : maximal_spectrum (ring_of_integers K) | (¬ (x.val.1.val v) ∈ R_v K v) } ∪ 
     { v : maximal_spectrum (ring_of_integers K) | ¬ (x.inv.1.val v) ∈ R_v K v }) :=
 finite.union x.val.1.property x.inv.1.property
-
---x.val.1.property
 
 lemma finite_exponents (x : I_K K) :
   finite { v : maximal_spectrum (ring_of_integers K) | v_comp_val K x v ≠ 1 } :=
@@ -101,24 +107,31 @@ begin
   { v : maximal_spectrum (ring_of_integers K) | ¬ (x.val.1.val v) ∈ R_v K v } ∪ 
   { v : maximal_spectrum (ring_of_integers K) | ¬ (x.inv.1.val v) ∈ R_v K v },
   { intros v hv,
-    rw mem_union,
-    rw mem_set_of_eq, rw mem_set_of_eq,
+    rw [mem_union, mem_set_of_eq, mem_set_of_eq, K_v.is_integer, K_v.is_integer],
     rw mem_set_of_eq at hv,
     cases (lt_or_gt_of_ne hv) with hlt hgt,
     { right,
-      sorry },
-    { left,
-      rw K_v.is_integer,
-      exact not_le.mpr hgt, }},
+      have h_one : (v_comp_val K x v) * (v_comp_inv K x v) = 1 := 
+      valuation.prod_val_inv_eq_one K x v,
+      have h_inv : 1 < v_comp_inv K x v,
+      { have hx : v_comp_val K x v ≠ 0,
+        { rw [v_comp_val, valuation.ne_zero_iff],
+          exact v_comp.ne_zero K x v,},
+        rw mul_eq_one_iff_inv_eq₀ hx at h_one,
+        rw [← h_one, ← with_zero.inv_one, inv_lt_inv₀ (ne.symm zero_ne_one) hx],
+        exact hlt, },
+      exact not_le.mpr h_inv,},
+    { left, exact not_le.mpr hgt, }},
   exact finite.subset (restricted_product K x) h_subset,
 end
-  
-def map_to_fractional_ideals : 
-  I_K K → (fractional_ideal (non_zero_divisors (ring_of_integers K)) K) := λ x,
-begin
-  sorry
-end
 
+def I_K_f.map_to_fractional_ideals : monoid_hom
+  (I_K_f K) (fractional_ideal (non_zero_divisors (ring_of_integers K)) K) := 
+map_to_fractional_ideals (ring_of_integers K) K
+  
+def I_K.map_to_fractional_ideals : 
+  monoid_hom (I_K K) (fractional_ideal (non_zero_divisors (ring_of_integers K)) K) := 
+monoid_hom.comp (I_K_f.map_to_fractional_ideals K) (I_K.proj1 K)
 
 end number_field
 
