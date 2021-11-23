@@ -6,6 +6,14 @@ import with_zero
 noncomputable theory
 open_locale classical
 
+section valuation
+variables {S : Type*} [ring S] {Γ₀ : Type*} [linear_ordered_comm_monoid_with_zero Γ₀]
+  (v : valuation S Γ₀) {x y z : S}
+
+lemma valuation.def : v x = v.to_fun x := rfl
+
+end valuation
+
 variables (R : Type) {K : Type} [comm_ring R] [is_domain R] [is_dedekind_domain R] [field K]
   [algebra R K] [is_fraction_ring R K] 
 
@@ -303,8 +311,6 @@ begin
   exact nat.eq_of_le_of_lt_succ mem nmem,
 end
 
-
-
 def adic_valuation.def (v : maximal_spectrum R) (x : K) : (with_zero (multiplicative ℤ)) :=
 let s := classical.some (classical.some_spec (is_localization.mk'_surjective
   (non_zero_divisors R) x)) in (ring.adic_valuation.def v (classical.some
@@ -343,18 +349,6 @@ begin
   rw adic_valuation.of_algebra_map v,
   exact ring.adic_valuation.le_one v r,
 end
-
-variable (K)
-lemma adic_valuation.exists_uniformizer : 
-  ∃ (π : K), adic_valuation.def v π = multiplicative.of_add (-1 : ℤ) := 
-begin
-  obtain ⟨r, hr⟩ := ring.adic_valuation.exists_uniformizer v,
-  use algebra_map R K r,
-  rw adic_valuation.of_algebra_map v,
-  exact hr,
-end
-
-variable {K}
 
 lemma is_localization.mk'_eq_zero_of_num_zero {R : Type*} [comm_ring R] {M : submonoid R}
   {S : Type*} [comm_ring S] [algebra R S] [is_localization M S] {z : S}  {x : R} {y : M}
@@ -476,6 +470,35 @@ def adic_valuation (v : maximal_spectrum R) : valuation K (with_zero (multiplica
   map_mul'  := adic_valuation.map_mul' v, 
   map_add'  := adic_valuation.map_add' v }
 
+
+variable (K)
+lemma adic_valuation.exists_uniformizer : 
+  ∃ (π : K), adic_valuation.def v π = multiplicative.of_add (-1 : ℤ) := 
+begin
+  obtain ⟨r, hr⟩ := ring.adic_valuation.exists_uniformizer v,
+  use algebra_map R K r,
+  rw adic_valuation.of_algebra_map v,
+  exact hr,
+end
+
+/- variable (K)
+lemma adic_valuation.exists_uniformizer' : 
+  ∃ (π : K), adic_valuation v π = multiplicative.of_add (-1 : ℤ) := 
+begin
+  simp_rw valuation.def,
+  exact adic_valuation.exists_uniformizer K v,
+end -/
+
+lemma adic_valuation.uniformizer_ne_zero :
+  (classical.some (adic_valuation.exists_uniformizer K v)) ≠ 0 :=
+begin
+  have hu := (classical.some_spec (adic_valuation.exists_uniformizer K v)),
+  have h : adic_valuation.def v (classical.some _) = adic_valuation v (classical.some _) := rfl,
+  rw h at hu,
+  exact (valuation.ne_zero_iff _).mp (ne_of_eq_of_ne hu with_zero.coe_ne_zero),
+end
+
+variable {K}
 
 section valuation_map_pow
 lemma valuation.map_zpow {Γ₀ : Type*} [linear_ordered_comm_group_with_zero Γ₀] {K : Type*}
