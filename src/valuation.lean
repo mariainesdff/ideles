@@ -153,25 +153,6 @@ def foo (n : with_top ℤ) : with_zero (multiplicative ℤ) :=
 dite (n = ⊤) (λ (h : n = ⊤), 0) 
   (λ h : ¬ n = ⊤, multiplicative.of_add (classical.some (with_top.ne_top_iff_exists.mp h)))
 
-/-! Additive valuation -/
-def ring.add_adic_valuation.def (r : R) : with_top ℤ :=
-dite (r = 0) (λ (h : r = 0), ⊤) 
-  (λ h : ¬ r = 0, (((associates.mk v.val.as_ideal).count 
-  (associates.mk (ideal.span{r} : ideal R)).factors : ℤ) : with_top ℤ))
-
-lemma ring.add_adic_valuation.map_zero : ring.add_adic_valuation.def v 0 = ⊤ :=
-by {rw [ring.add_adic_valuation.def, dif_pos rfl],}
-
-lemma ring.add_adic_valuation.map_one : ring.add_adic_valuation.def v 1 = 0 :=
-begin
-  rw [ring.add_adic_valuation.def, dif_neg one_ne_zero, ideal.span_singleton_one, 
-    ← ideal.one_eq_top, associates.mk_one, associates.factors_one, associates.count_zero _, 
-    int.coe_nat_zero, with_top.coe_zero],
-  { apply associates.irreducible_of_maximal v },
-  { apply_instance },
-end
-
-
 lemma ideal.mem_pow_count {x : R} (hx : x ≠ 0) {I : ideal R} (hI : irreducible (associates.mk I)) :
   x ∈ I^((associates.mk I).count (associates.mk (ideal.span {x})).factors) :=
 begin
@@ -187,62 +168,6 @@ begin
   rw [← associates.le_singleton_iff x _ I, associates.prime_pow_dvd_iff_le hx' hI] at hxI ⊢,
   exact le_trans hm hxI,
 end 
-
-lemma ring.add_adic_valuation.map_add (x y : R) :
-  min (ring.add_adic_valuation.def v x) (ring.add_adic_valuation.def v y) ≤ 
-  ring.add_adic_valuation.def v (x + y) :=
-begin
-  by_cases hx : x = 0,
-  { rw [hx, zero_add, ring.add_adic_valuation.def, dif_pos (eq.refl _),
-     min_eq_right (@le_top _ _ (ring.add_adic_valuation.def v y))],
-    exact le_refl _,},
-  { by_cases hy : y = 0,
-    { rw [hy, add_zero, min_comm, ring.add_adic_valuation.def, dif_pos rfl,
-        min_eq_right (@le_top _ _ (ring.add_adic_valuation.def v x))],
-        exact le_refl _ },
-    { by_cases hxy : x + y = 0,
-      { conv_rhs { rw [ring.add_adic_valuation.def, dif_pos hxy] }, exact le_top,},
-      { rw [ring.add_adic_valuation.def, ring.add_adic_valuation.def, ring.add_adic_valuation.def,
-          dif_neg hxy, dif_neg hx, dif_neg hy],
-      rw [min_le_iff, with_top.coe_le_coe, with_top.coe_le_coe, int.coe_nat_le, int.coe_nat_le,
-        ← min_le_iff],
-      set nmin := min 
-        ((associates.mk v.val.as_ideal).count (associates.mk (ideal.span {x})).factors)
-        ((associates.mk v.val.as_ideal).count (associates.mk (ideal.span {y})).factors),
-      have hxy' : (associates.mk (ideal.span {x + y} : ideal R)) ≠ 0 := 
-      associates.mk_ne_zero'.mpr hxy,
-      have hv := associates.irreducible_of_maximal v,
-      have h_dvd_x : x ∈ v.val.as_ideal ^ (nmin),
-      { exact ideal.mem_le_pow hx hv (ideal.mem_pow_count hx hv) nmin (min_le_left _ _), },
-      have h_dvd_y : y ∈ v.val.as_ideal ^ nmin,
-      { exact ideal.mem_le_pow hy hv (ideal.mem_pow_count hy hv) nmin (min_le_right _ _) },
-      have h_dvd_xy : associates.mk v.val.as_ideal^nmin ≤ associates.mk (ideal.span {x + y}),
-      { rw associates.le_singleton_iff,
-        exact ideal.add_mem (v.val.as_ideal^nmin) h_dvd_x h_dvd_y, },
-      apply (associates.prime_pow_dvd_iff_le hxy' hv).mp h_dvd_xy }}}
-end
-
-lemma ring.add_adic_valuation.map_mul (x y : R) : ring.add_adic_valuation.def v (x * y) =
-  (ring.add_adic_valuation.def v x) + (ring.add_adic_valuation.def v y)  := 
-begin
-  rw [ring.add_adic_valuation.def, ring.add_adic_valuation.def, ring.add_adic_valuation.def],
-  by_cases hx : x = 0,
-  { rw [hx, zero_mul, dif_pos rfl, top_add] },
-  { by_cases hy : y = 0,
-    { rw [hy, mul_zero, dif_pos rfl, add_top] },
-    { rw [dif_neg hx, dif_neg hy, dif_neg (mul_ne_zero hx hy), ← with_top.coe_add, 
-        with_top.coe_eq_coe, ← int.coe_nat_add, int.coe_nat_inj'],
-        have hx' : associates.mk (ideal.span{x} : ideal R) ≠ 0 := associates.mk_ne_zero'.mpr hx,
-      have hy' : associates.mk (ideal.span{y} : ideal R) ≠ 0 := associates.mk_ne_zero'.mpr hy,
-      rw [← ideal.span_singleton_mul_span_singleton, ← associates.mk_mul_mk,
-        associates.count_mul hx' hy' _],
-      { apply (associates.irreducible_of_maximal v), }}}
-end
-
-def ring.add_adic_valuation (v : maximal_spectrum R) : add_valuation R (with_top ℤ) := 
-add_valuation.of (ring.add_adic_valuation.def v) (ring.add_adic_valuation.map_zero v) 
-(ring.add_adic_valuation.map_one v) (ring.add_adic_valuation.map_add v)
-(ring.add_adic_valuation.map_mul v)  
 
 /-! Valuation on the ring of fractions -/
 
@@ -510,21 +435,3 @@ begin
 end
 end valuation_map_pow
 
-/-! Additive valuation on the fraction ring -/
-
-def add_adic_valuation.def (x : K) : with_top ℤ :=
-let s := classical.some (classical.some_spec (is_localization.mk'_surjective
-  (non_zero_divisors R) x)) in (ring.add_adic_valuation.def v (classical.some
-    (is_localization.mk'_surjective (non_zero_divisors R) x))) - (ring.add_adic_valuation.def v s)
-
-variable (K)
-lemma add_adic_valuation.well_defined (v : maximal_spectrum R) {r r' : R} 
-  {s s' : non_zero_divisors R} (h_mk : is_localization.mk' K r s = is_localization.mk' K r' s') :
-  (ring.add_adic_valuation.def v r) - (ring.add_adic_valuation.def v s) =
-   (ring.add_adic_valuation.def v r') -(ring.add_adic_valuation.def v s') := 
-begin
-  sorry
-  /- rw [div_eq_div_iff (ring.adic_valuation.ne_zero v s) (ring.adic_valuation.ne_zero v s'),
-  ← ring.adic_valuation.map_mul' v, ← ring.adic_valuation.map_mul' v,
-  is_fraction_ring.injective R K (is_localization.mk'_eq_iff_eq.mp h_mk)], -/
-end
