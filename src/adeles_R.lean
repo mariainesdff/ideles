@@ -13,6 +13,8 @@ instance v_valued_K (v : maximal_spectrum R) : valued K :=
   grp := infer_instance,
   v   := adic_valuation v }
 
+lemma v_valued_K.def {x : K} : @valued.v K _ (v_valued_K v) (x) = adic_valuation.def v  x := rfl
+
 instance ts' : topological_space K := @valued.topological_space K _ (v_valued_K v)
 instance tdr' : @topological_division_ring K _ (ts' v) := 
 @valued.topological_division_ring K _ (v_valued_K v)
@@ -36,6 +38,8 @@ instance valued_K_v : valued (K_v K v) :=
 { Γ₀  := with_zero (multiplicative ℤ),
   grp := infer_instance,
   v   := @valued.extension_valuation K _ (v_valued_K v) }
+
+lemma valued_K_v.def {x : K_v K v} : valued.v (x) = @valued.extension K _ (v_valued_K v)  x := rfl
 
 --TODO : ask
 instance : covariant_class (valued.Γ₀ (K_v K v)) (valued.Γ₀ (K_v K v)) has_mul.mul has_le.le :=
@@ -149,9 +153,11 @@ instance : is_localization (diag_R R K) (finite_adele_ring R K):= localization.i
 lemma preimage_diag_R (x : diag_R R K) : ∃ r : R, r ≠ 0 ∧ inj_R R K r = (x : R_hat R K) := 
 x.property
 
-def finite_adele_ring' :=
+/- def finite_adele_ring' :=
 { x : (Π v : (maximal_spectrum R), K_v K v) //
-  ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) }
+  ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) } -/
+def finite_adele_ring' :=
+{ x : (K_hat R K) // ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) }
 
 lemma restr_add (x y : finite_adele_ring' R K) : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
   ((x.val + y.val) v ∈ R_v K v) := 
@@ -267,7 +273,7 @@ instance : comm_ring (finite_adele_ring' R K) :=
   mul_comm      := λ x y, by { unfold_projs, rw [mul', mul', subtype.mk_eq_mk, mul_comm], },
   ..(finite_adele_ring'.add_comm_group R K)}
 
-instance : comm_ring { x : (Π v : (maximal_spectrum R), K_v K v) //
+instance : comm_ring { x : (K_hat R K) //
   ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) } := 
 finite_adele_ring'.comm_ring R K
 
@@ -276,7 +282,11 @@ lemma mul_apply (x y : finite_adele_ring' R K) :
 lemma mul_apply_val (x y : finite_adele_ring' R K) :  
 x.val * y.val = (x * y).val := rfl
 
---def foo : @subring (K_hat R K) (K_hat.ring R K) := sorry
+@[simp]
+lemma one_def : (⟨1, restr_one R K⟩ : finite_adele_ring' R K) = 1 := rfl
+
+@[simp]
+lemma zero_def : (⟨0, restr_zero R K⟩ : finite_adele_ring' R K) = 0 := rfl
 
 def group_hom_prod : add_monoid_hom (R_hat R K) (K_hat R K) := 
 { to_fun    := (λ x v, (x v)),
@@ -314,14 +324,14 @@ end
 def map_to_K_hat (x : finite_adele_ring R K) : K_hat R K := 
 is_localization.lift (hom_prod_diag_unit R K) x
 
-lemma finite_factors (d : R) (hd : (ideal.span{d} : ideal R) ≠ 0) : 
-  finite { v : maximal_spectrum R | v.val.as_ideal ∣ (ideal.span({d}) : ideal R)} := 
-  begin
-  haveI h_fin := unique_factorization_monoid.fintype_subtype_dvd (ideal.span({d}) : ideal R) hd,
+variable {R}
+lemma ideal.finite_factors (I : ideal R) (hI : I ≠ 0) : 
+  finite { v : maximal_spectrum R | v.val.as_ideal ∣ I } := 
+begin
+  haveI h_fin := unique_factorization_monoid.fintype_subtype_dvd I hI,
   let f' : finset (ideal R) := finset.map 
-    ⟨(λ I : {x // x ∣ (ideal.span {d} : ideal R)}, I.val), subtype.coe_injective⟩
-    h_fin.elems,
-  have h_eq : { v : maximal_spectrum R | v.val.as_ideal ∣ (ideal.span({d}) : ideal R)} = 
+    ⟨(λ J : {x // x ∣ I}, J.val), subtype.coe_injective⟩ h_fin.elems,
+  have h_eq : { v : maximal_spectrum R | v.val.as_ideal ∣ I } = 
     { v : maximal_spectrum R | v.val.as_ideal ∈ f' },
   { ext v,
     rw [mem_set_of_eq, mem_set_of_eq, finset.mem_map], 
@@ -344,6 +354,10 @@ lemma finite_factors (d : R) (hd : (ideal.span{d} : ideal R) ≠ 0) :
     (finite_mem_finset (f')),
 end
 
+lemma finite_factors (d : R) (hd : (ideal.span{d} : ideal R) ≠ 0) : 
+  finite { v : maximal_spectrum R | v.val.as_ideal ∣ (ideal.span({d}) : ideal R)} := 
+ideal.finite_factors (ideal.span{d} : ideal R) hd
+
 variable {R}
 lemma ring.adic_valuation_le_one_iff_dvd {v : maximal_spectrum R} {d : R} (hd : d ≠ 0) :
 ring.adic_valuation.def v d < 1 ↔ v.val.as_ideal ∣ ideal.span{d} := 
@@ -355,43 +369,61 @@ begin
   apply associates.mk_ne_zero'.mpr hd,
   { apply associates.irreducible_of_maximal v },
 end
+
 variable (R)
 lemma restricted_image (x : finite_adele_ring R K) : 
   set.finite({ v : maximal_spectrum R | ¬ (map_to_K_hat R K x v) ∈ (R_v K v)}) :=
 begin
-  set supp := { v : maximal_spectrum R | ¬ (map_to_K_hat R K x v) ∈ (R_v K v)} with h_supp,
   obtain ⟨r, d', hx⟩ := is_localization.mk'_surjective (diag_R R K) x,
   obtain ⟨d, hd_ne_zero, hd_inj⟩ := d'.property,
   have hd : ideal.span{d} ≠ (0 : ideal R),
   { rw [ideal.zero_eq_bot, ne.def, ideal.span_singleton_eq_bot],
     exact hd_ne_zero, },
   obtain ⟨f, h_irred, h_assoc⟩:= wf_dvd_monoid.exists_factors (ideal.span{d}) hd,
-  have hsubset : supp ⊆ { v : maximal_spectrum R | v.val.as_ideal ∣ ideal.span({d})},
-  { rw h_supp,
-    intros v hv,
+  have hsubset : { v : maximal_spectrum R | ¬ (map_to_K_hat R K x v) ∈ (R_v K v)} ⊆ 
+    { v : maximal_spectrum R | v.val.as_ideal ∣ ideal.span({d})},
+  { intros v hv,
     rw mem_set_of_eq at hv ⊢,
-    rw [map_to_K_hat, ← hx] at hv,
-
-    --rw is_fraction_ring.lift_mk' at hv,
-    --rw [is_localization.lift_mk', pi.mul_apply] at hv,
-    have h2 : ((hom_prod R K).to_monoid_hom.mrestrict _) d' v = ((d' : R_hat R K) v),
-    { /- rw [monoid_hom.mrestrict_apply, ring_hom.to_monoid_hom_eq_coe, set_like.coe_mk, hom_prod,
-      ring_hom.coe_monoid_hom_mk, monoid_hom.coe_mk], -/
-      sorry,
-    },
-    --simp only [monoid_hom.mrestrict_apply, ring_hom.coe_monoid_hom, ring_hom.to_monoid_hom_eq_coe, subtype.val_eq_coe] at h2,
-    --rw h2 at hv,
-    sorry },
-  exact finite.subset (finite_factors R d hd) hsubset,
+    rw [map_to_K_hat, ← hx, is_localization.lift_mk', pi.mul_apply] at hv,
+    by_cases hr : hom_prod R K r v = 0,
+    { rw [hr, zero_mul, K_v.is_integer, valuation.map_zero] at hv,
+      exact absurd (with_zero.zero_le 1) hv, },
+    { have h_inv : (((is_unit.lift_right ((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) 
+        (hom_prod_diag_unit R K)) d').inv v) *
+        (((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) d' v) = 1,
+      { rw [units.inv_eq_coe_inv, ← pi.mul_apply, is_unit.lift_right_inv_mul 
+          ((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) (hom_prod_diag_unit R K) d',
+          pi.one_apply]},
+      have h_val : (valued.v (((is_unit.lift_right ((hom_prod R K).to_monoid_hom.mrestrict 
+        (diag_R R K)) (hom_prod_diag_unit R K)) d').inv v))*
+        (valued.v (((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) d' v)) = 1,
+      { rw [← valuation.map_mul, h_inv, valuation.map_one], },
+      have h_coe : (((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) d') v =
+        ((d' : R_hat R K) v) := rfl,
+      have hd' : ((d'.val) v).val = (coe : K → K_v K v) (algebra_map R K d),
+      { rw ← hd_inj, dsimp only [inj_R], rw inj_R_v, },
+      rw [K_v.is_integer, valuation.map_mul, ← units.inv_eq_coe_inv, 
+        eq_one_div_of_mul_eq_one_left h_val, ← mul_div_assoc, mul_one, 
+        with_zero.div_le_iff (right_ne_zero_of_mul_eq_one h_val), one_mul, not_le, h_coe,
+        ← subtype.val_eq_coe, ← subtype.val_eq_coe, hd', valued_K_v.def, valued.extension_extends,
+        v_valued_K.def] at hv,
+      have h_val_r : valued.v ((hom_prod R K) r v) ≤ 1,
+      { rw [hom_prod, ring_hom.coe_mk, ← subtype.val_eq_coe, ← K_v.is_integer],
+        exact (r v).property, },
+      have h_val_d : adic_valuation.def v (algebra_map R K d)  < 1 := lt_of_lt_of_le hv h_val_r,
+      exact (adic_valuation.lt_one_iff_dvd v d).mp h_val_d, }},
+    exact finite.subset (finite_factors d hd) hsubset,
 end 
 
 lemma map_to_K_hat.map_one : map_to_K_hat R K 1 = 1 := 
 by { rw [map_to_K_hat, ring_hom.map_one] }
 
-lemma map_to_K_hat.map_mul (x y : finite_adele_ring R K) : map_to_K_hat R K (x*y) = map_to_K_hat R K x * map_to_K_hat R K y := 
+lemma map_to_K_hat.map_mul (x y : finite_adele_ring R K) : 
+  map_to_K_hat R K (x*y) = map_to_K_hat R K x * map_to_K_hat R K y := 
 by { rw [map_to_K_hat, map_to_K_hat, map_to_K_hat, ring_hom.map_mul], }
 
-lemma map_to_K_hat.map_add (x y : finite_adele_ring R K) : map_to_K_hat R K (x + y) = map_to_K_hat R K x + map_to_K_hat R K y := 
+lemma map_to_K_hat.map_add (x y : finite_adele_ring R K) : map_to_K_hat R K (x + y) = 
+  map_to_K_hat R K x + map_to_K_hat R K y := 
 by { rw [map_to_K_hat, map_to_K_hat, map_to_K_hat, ring_hom.map_add], }
 
 lemma map_to_K_hat.map_zero : map_to_K_hat R K 0 = 0 := 
@@ -414,7 +446,7 @@ def finite_adele.hom : (finite_adele_ring R K) →+* (finite_adele_ring' R K) :=
   map_add'  := λ x y,
   by { unfold_projs, simp only [add'], exact subtype.mk_eq_mk.mpr (map_to_K_hat.map_add R K x y) }}
   
-def finite_adele.inv : (finite_adele_ring' R K) →+* (finite_adele_ring R K) := 
+/- def finite_adele.inv : (finite_adele_ring' R K) →+* (finite_adele_ring R K) := 
 { to_fun    := sorry,
   map_one'  := sorry,
   map_mul'  := sorry,
@@ -425,12 +457,12 @@ lemma finite_adele.hom_inv_id :
   (finite_adele.inv R K).comp (finite_adele.hom R K) = ring_hom.id (finite_adele_ring R K) := sorry
 
 lemma finite_adele.inv_hom_id :
-  (finite_adele.hom R K).comp (finite_adele.inv R K) = ring_hom.id (finite_adele_ring' R K) := sorry
+  (finite_adele.hom R K).comp (finite_adele.inv R K) = ring_hom.id (finite_adele_ring' R K) := sorry 
 
 def finite_adele.eq_defs : ring_equiv (finite_adele_ring R K) (finite_adele_ring' R K) :=
   ring_equiv.of_hom_inv (finite_adele.hom R K) (finite_adele.inv R K)
     (finite_adele.hom_inv_id R K) (finite_adele.inv_hom_id R K)
-
+-/
 
 lemma inj_K_image (x : K) : 
   set.finite({ v : maximal_spectrum R | ¬ (coe : K → (K_v K v)) x ∈ (R_v K v)}) := 
@@ -461,7 +493,7 @@ begin
       rw [adic_valuation.well_defined K v h_loc, subtype.coe_mk,
         (le_antisymm (ring.adic_valuation.le_one v d) (not_lt.mp h_one_le)), div_one] at hv,
       exact hv (ring.adic_valuation.le_one v r) },
-  exact finite.subset (finite_factors R d hd_ne_zero) hsubset,
+  exact finite.subset (finite_factors d hd_ne_zero) hsubset,
 end
 
 def inj_K : K → finite_adele_ring' R K := 

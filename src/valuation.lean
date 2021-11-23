@@ -209,6 +209,36 @@ begin
     exact int.coe_nat_nonneg _, }
 end
 
+theorem associates.count_ne_zero_iff_dvd {α : Type*} [comm_cancel_monoid_with_zero α]
+  [dec_irr : Π (p : associates α), decidable (irreducible p)] [unique_factorization_monoid α] 
+  [nontrivial α] [dec : decidable_eq α] {a p : α} (ha0 : a ≠ 0) (hp : irreducible p) :
+  (associates.mk p).count (associates.mk a).factors ≠ 0 ↔ p ∣ a :=
+begin
+  rw ← associates.mk_le_mk_iff_dvd_iff,
+  split; intro h,
+  { exact associates.le_of_count_ne_zero (associates.mk_ne_zero.mpr ha0) 
+    ((associates.irreducible_mk p).mpr hp) h, },
+  { rw [← pow_one (associates.mk p), associates.prime_pow_dvd_iff_le
+    (associates.mk_ne_zero.mpr ha0)  ((associates.irreducible_mk p).mpr hp)] at h,
+    exact ne_of_gt (lt_of_lt_of_le zero_lt_one h), }
+end
+
+lemma ring.adic_valuation.lt_one_iff_dvd (r : R) : 
+  ring.adic_valuation.def v r < 1 ↔ v.val.as_ideal ∣ ideal.span {r} :=
+begin
+  rw ring.adic_valuation.def,
+  split_ifs with hr,
+  { rw [hr, ideal.dvd_span_singleton], 
+    simp only [submodule.zero_mem],
+    rw [iff_true, ← with_zero.coe_one],
+     exact with_zero.zero_lt_coe 1, },
+  { rw [← with_zero.coe_one, ← of_add_zero, with_zero.coe_lt_coe, of_add_lt, neg_lt_zero,
+      ← int.coe_nat_zero, int.coe_nat_lt, zero_lt_iff],
+    apply associates.count_ne_zero_iff_dvd,
+    { rw [ne.def, ideal.zero_eq_bot, ideal.span_singleton_eq_bot], exact hr },
+    { apply ideal.irreducible_of_maximal v }}
+end
+
 lemma ideal.is_nonunit_iff {I : ideal R} : ¬ is_unit I ↔ I ≠ ⊤ := by rw ideal.is_unit_iff
 
 lemma ring.adic_valuation.exists_uniformizer : 
@@ -273,6 +303,13 @@ lemma adic_valuation.le_one (r : R) : adic_valuation.def v (algebra_map R K r) �
 begin
   rw adic_valuation.of_algebra_map v,
   exact ring.adic_valuation.le_one v r,
+end
+
+lemma adic_valuation.lt_one_iff_dvd (r : R) : 
+  adic_valuation.def v (algebra_map R K r) < 1 ↔ v.val.as_ideal ∣ ideal.span {r} :=
+begin
+  rw adic_valuation.of_algebra_map v,
+  exact ring.adic_valuation.lt_one_iff_dvd v r,
 end
 
 lemma is_localization.mk'_eq_zero_of_num_zero {R : Type*} [comm_ring R] {M : submonoid R}
