@@ -63,18 +63,15 @@ def C_K := quotient_group.quotient (inj_units_K.group_hom K).range
 
 def v_comp_val (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
   with_zero (multiplicative ℤ) := valued.v (x.val.1.val v)
---@valued.extension K _ (v_valued_K v) (x.val.1.val v)
 
 def v_comp_inv (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
   with_zero (multiplicative ℤ) := valued.v (x.inv.1.val v)
---@valued.extension K _ (v_valued_K v) (x.inv.1.val v)
 
 -- I_K_f
 lemma I_K_f.restricted_product (x : I_K_f K) :
   finite ({ v : maximal_spectrum (ring_of_integers K) | (¬ (x.val.val v) ∈ R_v K v) } ∪ 
     { v : maximal_spectrum (ring_of_integers K) | ¬ (x.inv.val v) ∈ R_v K v }) :=
 restricted_product (ring_of_integers K) K x
-
 
 lemma prod_val_inv_eq_one (x : I_K K) (v : maximal_spectrum (ring_of_integers K)): 
   (x.val.fst.val v) * (x.inv.fst.val v) = 1  :=

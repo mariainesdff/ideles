@@ -12,9 +12,6 @@ namespace number_field
 
 variables (K : Type) [field K] [number_field K]
 
-/- instance : is_dedekind_domain (ring_of_integers K) := 
-is_integral_closure.is_dedekind_domain ℤ ℚ K _ -/
-
 def A_K_f := finite_adele_ring' (ring_of_integers K) K
 def A_K := (A_K_f K) × (K ⊗[ℚ] ℝ)
 

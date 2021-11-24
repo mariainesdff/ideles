@@ -41,10 +41,6 @@ instance valued_K_v : valued (K_v K v) :=
 
 lemma valued_K_v.def {x : K_v K v} : valued.v (x) = @valued.extension K _ (v_valued_K v)  x := rfl
 
---TODO : ask
-instance : covariant_class (valued.Γ₀ (K_v K v)) (valued.Γ₀ (K_v K v)) has_mul.mul has_le.le :=
-ordered_comm_monoid.to_covariant_class_left _
-
 instance ts : topological_space (K_v K v) := @valued.topological_space (K_v K v) _ (valued_K_v v)
 instance tdr : @topological_division_ring (K_v K v) _ (ts v) := 
 @valued.topological_division_ring (K_v K v) _ (valued_K_v v)
@@ -82,17 +78,11 @@ instance : topological_space (K_hat R K) := Pi.topological_space
 instance tr_hat : topological_ring (Π (v : maximal_spectrum R), (K_v K v)) := pi.topological_ring
 instance : topological_ring (K_hat R K) := tr_hat  R K
 
+/- lemma valuation.is_integer {R : Type*} [ring R] {Γ₀ : Type*} 
+  [linear_ordered_comm_group_with_zero Γ₀] (v : valuation R Γ₀) (x : R) :
+  x ∈ valuation.integer v ↔ v(x) ≤ 1 := by refl -/
 
-lemma valuation.is_integer {R : Type*} {Γ₀ : Type*} [ring R]
-  [linear_ordered_comm_group_with_zero Γ₀] (v : valuation R Γ₀) (x : R):
-x ∈ valuation.integer v ↔ v(x) ≤ 1 := 
-begin
-   rw ← subring.mem_carrier,
-   refl,
-end
-
-lemma K_v.is_integer (x : K_v K v) : x ∈ R_v K v ↔ valued.v x ≤ 1 := 
-by { rw R_v, exact valuation.is_integer _ _,}
+lemma K_v.is_integer (x : K_v K v) : x ∈ R_v K v ↔ valued.v x ≤ 1 := by refl
 
 def inj_R_v' : R → (K_v K v) := λ r, (coe : K → (K_v K v)) (algebra_map R K r)
 def inj_R_v : R → (R_v K v) := λ r, ⟨(coe : K → (K_v K v)) (algebra_map R K r), begin 
@@ -102,20 +92,15 @@ def inj_R_v : R → (R_v K v) := λ r, ⟨(coe : K → (K_v K v)) (algebra_map R
 end⟩
 def inj_R : R → (R_hat R K) := λ r v, inj_R_v R K v r
 
--- TODO : PR
-lemma uniform_space.completion.injective_coe {α : Type*} [uniform_space α]
-[separated_space α] : 
+lemma uniform_space.completion.coe_inj {α : Type*} [uniform_space α] [separated_space α] :
   injective  (coe : α → uniform_space.completion α) := 
-begin
-  exact @uniform_embedding.inj _ _ _ _ coe 
-      (uniform_space.completion.uniform_embedding_coe _),
-end
+@uniform_embedding.inj _ _ _ _ coe (uniform_space.completion.uniform_embedding_coe _)
 
 lemma inj_R_v.injective : function.injective (inj_R_v R K v) :=
 begin
   intros x y hxy,
   have h_inj : function.injective (coe : K → (K_v K v)) :=
-    @uniform_space.completion.injective_coe K (us' v) (ss v),
+    @uniform_space.completion.coe_inj K (us' v) (ss v),
   rw [inj_R_v, subtype.mk_eq_mk] at hxy,
   exact (is_fraction_ring.injective R K) ((h_inj) hxy),
 end
@@ -153,9 +138,6 @@ instance : is_localization (diag_R R K) (finite_adele_ring R K):= localization.i
 lemma preimage_diag_R (x : diag_R R K) : ∃ r : R, r ≠ 0 ∧ inj_R R K r = (x : R_hat R K) := 
 x.property
 
-/- def finite_adele_ring' :=
-{ x : (Π v : (maximal_spectrum R), K_v K v) //
-  ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) } -/
 def finite_adele_ring' :=
 { x : (K_hat R K) // ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) }
 
@@ -313,7 +295,7 @@ begin
   { rw [K_v.is_integer R K, valuation.map_zero], exact zero_le_one',},
   have h_zero : (0 : R_v K v) = ⟨(0 : K_v K v), h⟩ := rfl,
   have h_inj : function.injective (coe : K → (K_v K v)) :=
-    @uniform_space.completion.injective_coe K (us' v) (ss v),
+    @uniform_space.completion.coe_inj K (us' v) (ss v),
   rw [h_zero, subtype.mk_eq_mk, ← uniform_space.completion.coe_zero, 
     ← (algebra_map R K).map_zero, ← ne.def, 
     injective.ne_iff (injective.comp h_inj (is_fraction_ring.injective R K))],
@@ -325,7 +307,7 @@ def map_to_K_hat (x : finite_adele_ring R K) : K_hat R K :=
 is_localization.lift (hom_prod_diag_unit R K) x
 
 variable {R}
-lemma ideal.finite_factors (I : ideal R) (hI : I ≠ 0) : 
+lemma ideal.finite_factors {I : ideal R} (hI : I ≠ 0) : 
   finite { v : maximal_spectrum R | v.val.as_ideal ∣ I } := 
 begin
   haveI h_fin := unique_factorization_monoid.fintype_subtype_dvd I hI,
@@ -356,21 +338,9 @@ end
 
 lemma finite_factors (d : R) (hd : (ideal.span{d} : ideal R) ≠ 0) : 
   finite { v : maximal_spectrum R | v.val.as_ideal ∣ (ideal.span({d}) : ideal R)} := 
-ideal.finite_factors (ideal.span{d} : ideal R) hd
+ideal.finite_factors hd
 
-variable {R}
-lemma ring.adic_valuation_le_one_iff_dvd {v : maximal_spectrum R} {d : R} (hd : d ≠ 0) :
-ring.adic_valuation.def v d < 1 ↔ v.val.as_ideal ∣ ideal.span{d} := 
-begin 
-  rw [ring.adic_valuation.def, dif_neg hd, ← with_zero.coe_one, with_zero.coe_lt_coe, 
-  ← of_add_zero, of_add_lt, neg_lt_zero, ← int.coe_nat_zero, int.coe_nat_lt,
-  nat.lt_iff_add_one_le, zero_add, ← associates.prime_pow_dvd_iff_le, pow_one _, 
-  associates.mk_le_mk_iff_dvd_iff],
-  apply associates.mk_ne_zero'.mpr hd,
-  { apply associates.irreducible_of_maximal v },
-end
-
-variable (R)
+variable (R) 
 lemma restricted_image (x : finite_adele_ring R K) : 
   set.finite({ v : maximal_spectrum R | ¬ (map_to_K_hat R K x v) ∈ (R_v K v)}) :=
 begin
@@ -488,7 +458,7 @@ begin
        = is_localization.mk' K r ⟨d, hd⟩,
     { rw hx, exact (classical.some_spec (adic_valuation.def._proof_2 x)) },
       dsimp only at hv,
-      rw ← ring.adic_valuation_le_one_iff_dvd (non_zero_divisors.ne_zero hd),
+      rw ← ring.adic_valuation.lt_one_iff_dvd,
       by_contradiction h_one_le,
       rw [adic_valuation.well_defined K v h_loc, subtype.coe_mk,
         (le_antisymm (ring.adic_valuation.le_one v d) (not_lt.mp h_one_le)), div_one] at hv,
@@ -546,6 +516,6 @@ begin
   have hv := congr_fun hx v,
   dsimp only at hv,
   have h_inj : function.injective (coe : K → (K_v K v)) :=
-    @uniform_space.completion.injective_coe K (us' v) (ss v),
+    @uniform_space.completion.coe_inj K (us' v) (ss v),
   apply h_inj hv,
 end
