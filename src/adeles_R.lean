@@ -404,7 +404,7 @@ begin
       { rw ← hd_inj, dsimp only [inj_R], rw inj_R_v, },
       rw [K_v.is_integer, valuation.map_mul, ← units.inv_eq_coe_inv, 
         eq_one_div_of_mul_eq_one_left h_val, ← mul_div_assoc, mul_one, 
-        with_zero.div_le_iff (right_ne_zero_of_mul_eq_one h_val), one_mul, not_le, h_coe,
+        div_le_iff₀ (right_ne_zero_of_mul_eq_one h_val), one_mul, not_le, h_coe,
         ← subtype.val_eq_coe, ← subtype.val_eq_coe, hd', valued_K_v.def, valued.extension_extends,
         v_valued_K.def] at hv,
       have h_val_r : valued.v ((hom_prod R K) r v) ≤ 1,

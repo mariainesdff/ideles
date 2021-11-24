@@ -126,25 +126,25 @@ begin
 end
 
 def I_K_f.map_to_fractional_ideals : monoid_hom
-  (I_K_f K) (fractional_ideal (non_zero_divisors (ring_of_integers K)) K) := 
+  (I_K_f K) (units (fractional_ideal (non_zero_divisors (ring_of_integers K)) K)) := 
 map_to_fractional_ideals (ring_of_integers K) K
   
 def I_K.map_to_fractional_ideals : 
-  monoid_hom (I_K K) (fractional_ideal (non_zero_divisors (ring_of_integers K)) K) := 
+  monoid_hom (I_K K) (units (fractional_ideal (non_zero_divisors (ring_of_integers K)) K)) := 
 monoid_hom.comp (I_K_f.map_to_fractional_ideals K) (I_K.proj1 K)
 
 end number_field
 
 namespace function_field
 
-variables (Fq F : Type) [field Fq] [fintype Fq] [field F] [algebra (polynomial Fq) F]
-  [algebra (fraction_ring (polynomial Fq)) F] [is_separable (fraction_ring (polynomial Fq)) F]
-  [function_field Fq F] [is_scalar_tower (polynomial Fq) (fraction_ring (polynomial Fq)) F] 
+variables (Fq F : Type) [field Fq] [field F] [algebra (polynomial Fq) F] [algebra (ratfunc Fq) F] 
+  [function_field Fq F] [algebra (fraction_ring (polynomial Fq)) F]
+   [is_scalar_tower (polynomial Fq) (ratfunc Fq) F] [is_separable (ratfunc Fq) F]
 
 def I_F_f := units (A_F_f Fq F)
-def I_F := units (A_F Fq F)
+--def I_F := units (A_F Fq F)
 
 instance : comm_group (I_F_f Fq F) := units.comm_group
-instance : comm_group (I_F Fq F) := units.comm_group
+--instance : comm_group (I_F Fq F) := units.comm_group
 
 end function_field

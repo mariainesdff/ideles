@@ -263,19 +263,7 @@ begin
     exact v.property },
 end}
 
-theorem associates.count_ne_zero_iff_dvd {α : Type*} [comm_cancel_monoid_with_zero α]
-  [dec_irr : Π (p : associates α), decidable (irreducible p)] [unique_factorization_monoid α] 
-  [nontrivial α] [dec : decidable_eq α] {a p : α} (ha0 : a ≠ 0) (hp : irreducible p) :
-  (associates.mk p).count (associates.mk a).factors ≠ 0 ↔ p ∣ a :=
-begin
-  rw ← associates.mk_le_mk_iff_dvd_iff,
-  split; intro h,
-  { exact associates.le_of_count_ne_zero (associates.mk_ne_zero.mpr ha0) 
-    ((associates.irreducible_mk p).mpr hp) h, },
-  { rw [← pow_one (associates.mk p), associates.prime_pow_dvd_iff_le
-    (associates.mk_ne_zero.mpr ha0)  ((associates.irreducible_mk p).mpr hp)] at h,
-    exact ne_of_gt (lt_of_lt_of_le zero_lt_one h), }
-end
+
 
 variables {R K}
 lemma associates.finite_factors (I : ideal R) (hI : I ≠ 0) :

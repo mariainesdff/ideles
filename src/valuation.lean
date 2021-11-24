@@ -1,7 +1,6 @@
 import algebraic_geometry.prime_spectrum.basic
 import ring_theory.dedekind_domain
 import topology.algebra.valued_field
-import with_zero
 
 noncomputable theory
 open_locale classical
@@ -419,19 +418,17 @@ begin
       (submonoid.mul_mem (non_zero_divisors R) sx.property sy.property), },
 
   rw [adic_valuation.well_defined K v h_frac_x, adic_valuation.well_defined K v h_frac_y,
-    adic_valuation.well_defined K v h_frac_xy, with_zero.div_le_div_right (ne_of_gt h_denom),
-    with_zero.div_le_div_right (ne_of_gt h_denom), ← le_max_iff],
+    adic_valuation.well_defined K v h_frac_xy, div_le_div_right₀ (ne_of_gt h_denom), 
+    div_le_div_right₀ (ne_of_gt h_denom), ← le_max_iff],
   exact ring.adic_valuation.map_add' v _ _,
 end
 
---set_option pp.implicit true
 def adic_valuation (v : maximal_spectrum R) : valuation K (with_zero (multiplicative ℤ)) := { 
   to_fun    := adic_valuation.def v, 
   map_zero' := adic_valuation.map_zero' v,
   map_one'  := adic_valuation.map_one' v, 
   map_mul'  := adic_valuation.map_mul' v, 
   map_add'  := adic_valuation.map_add' v }
-
 
 variable (K)
 lemma adic_valuation.exists_uniformizer : 
