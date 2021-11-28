@@ -138,14 +138,24 @@ instance : is_localization (diag_R R K) (finite_adele_ring R K):= localization.i
 lemma preimage_diag_R (x : diag_R R K) : ∃ r : R, r ≠ 0 ∧ inj_R R K r = (x : R_hat R K) := 
 x.property
 
-def finite_adele_ring' :=
-{ x : (K_hat R K) // ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) }
+def restricted : K_hat R K → Prop := λ x, 
+ ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v)
+
+def finite_adele_ring' := { x : (K_hat R K) // restricted R K x }
+
+def coe' : (finite_adele_ring' R K) → K_hat R K := λ x, x.val
+instance has_coe' : has_coe (finite_adele_ring' R K) (K_hat R K) := {coe := coe' R K } 
+instance has_lift_t' : has_lift_t (finite_adele_ring' R K) (K_hat R K) := {lift := coe' R K } 
+
+/- def finite_adele_ring' :=
+{ x : (K_hat R K) // ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) } -/
 
 lemma restr_add (x y : finite_adele_ring' R K) : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
   ((x.val + y.val) v ∈ R_v K v) := 
 begin
   cases x with x hx,
   cases y with y hy,
+  simp only [restricted] at hx hy ⊢,
   rw filter.eventually_cofinite at hx hy ⊢,
   have h_subset : {v : maximal_spectrum R | ¬ (x + y) v ∈  (R_v K v)} ⊆
     {v : maximal_spectrum R | ¬ x v ∈ (R_v K v)} ∪ {v : maximal_spectrum R | ¬ y v ∈ (R_v K v)},
@@ -196,6 +206,7 @@ lemma restr_mul (x y : finite_adele_ring' R K) : ∀ᶠ (v : maximal_spectrum R)
 begin
   cases x with x hx,
   cases y with y hy,
+  simp only [restricted] at hx hy ⊢,
   rw filter.eventually_cofinite at hx hy ⊢,
   have h_subset : {v : maximal_spectrum R | ¬ (x * y) v ∈  (R_v K v)} ⊆
     {v : maximal_spectrum R | ¬ x v ∈ (R_v K v)} ∪ {v : maximal_spectrum R | ¬ y v ∈ (R_v K v)},
@@ -250,17 +261,28 @@ instance : comm_ring (finite_adele_ring' R K) :=
   one           := ⟨1, restr_one R K⟩,
   one_mul       := λ x, by { simp_rw [mul', one_mul, subtype.val_eq_coe, subtype.coe_eta] },
   mul_one       := λ x, by { simp_rw [mul', mul_one, subtype.val_eq_coe, subtype.coe_eta] },
-  left_distrib  := λ x y z, by { unfold_projs, simp_rw [mul', add', left_distrib], },
-  right_distrib := λ x y z, by { unfold_projs, simp_rw [mul', add', right_distrib], },
+  left_distrib  := λ x y z, by { unfold_projs, simp_rw [mul', add', left_distrib], refl, },
+  right_distrib := λ x y z, by { unfold_projs, simp_rw [mul', add', right_distrib], refl, },
   mul_comm      := λ x y, by { unfold_projs, rw [mul', mul', subtype.mk_eq_mk, mul_comm], },
   ..(finite_adele_ring'.add_comm_group R K)}
 
-open_locale classical
+lemma finite_adele_ring'.coe_add (x y : finite_adele_ring' R K) : 
+(coe : finite_adele_ring' R K → K_hat R K) (x + y) = ↑x + ↑y := rfl
+
+lemma finite_adele_ring'.coe_zero : 
+(coe : finite_adele_ring' R K → K_hat R K) 0 = 0 := rfl
+
+lemma finite_adele_ring'.coe_neg (x : finite_adele_ring' R K) : 
+(coe : finite_adele_ring' R K → K_hat R K) (-x) = -↑x  := rfl
+
+lemma finite_adele_ring'.coe_mul (x y : finite_adele_ring' R K) : 
+(coe : finite_adele_ring' R K → K_hat R K) (x * y) = ↑x * ↑y := rfl
+
+lemma finite_adele_ring'.coe_one : 
+(coe : finite_adele_ring' R K → K_hat R K) 1 = 1 := rfl
 
 instance finite_adele_ring'.inhabited : inhabited (finite_adele_ring' R K) := 
 { default := ⟨0, restr_zero R K⟩ }
-
---def coe' : finite_adele_ring' R K → K_hat R K :=  λ x, x.val
 
 instance : topological_space (finite_adele_ring' R K) := subtype.topological_space
 
@@ -278,30 +300,35 @@ instance : topological_ring (finite_adele_ring' R K) :=
     rw continuous_def,
     intros U hU,
     obtain ⟨V, hV_open, hUV⟩ := hU,
-    have h_prod := continuous_def.mp (K_hat.topological_ring R K).continuous_add V hV_open,
     rw is_open_prod_iff,
     intros a b hab,
-    rw [mem_preimage, ← hUV, mem_preimage] at hab,
-    have : (a + b).val = a.val + b.val := rfl,
-    simp [subtype.val_eq_coe] at this,
-    rw this at hab,
-    obtain ⟨V₁, V₂, h_V₁, h_V₂, h_aV₁, h_bV₂, h_V₁V₂⟩ :=
-    (is_open_prod_iff.mp h_prod) a.val b.val hab,
-    let coe := (coe : {x : K_hat R K // ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, 
-     x v ∈ R_v K v} → K_hat R K),
+    rw [mem_preimage, ← hUV, mem_preimage, finite_adele_ring'.coe_add] at hab,
+    obtain ⟨V₁, V₂, h_V₁, h_V₂, h_aV₁, h_bV₂, h_V₁V₂⟩ := (is_open_prod_iff.mp
+      (continuous_def.mp (K_hat.topological_ring R K).continuous_add V hV_open)) a.val b.val hab,
     use [coe⁻¹' V₁, coe⁻¹' V₂, ⟨V₁, h_V₁, rfl⟩, ⟨V₂, h_V₂, rfl⟩, h_aV₁, h_bV₂],
     intros p hp,
     rw [mem_prod, mem_preimage, mem_preimage] at hp,
-    rw [mem_preimage, ← hUV, mem_preimage],
-    have : (p.fst + p.snd).val = p.fst.val + p.snd.val := rfl,
-    simp [subtype.val_eq_coe] at this,
-    rw this,
+    rw [mem_preimage, ← hUV, mem_preimage, finite_adele_ring'.coe_add],
     exact h_V₁V₂ (mk_mem_prod hp.1 hp.2),
   end,
-  continuous_mul := sorry }
+  continuous_mul := 
+  begin
+    rw continuous_def,
+    intros U hU,
+    obtain ⟨V, hV_open, hUV⟩ := hU,
+    rw is_open_prod_iff,
+    intros a b hab,
+    rw [mem_preimage, ← hUV, mem_preimage, finite_adele_ring'.coe_mul] at hab,
+    obtain ⟨V₁, V₂, h_V₁, h_V₂, h_aV₁, h_bV₂, h_V₁V₂⟩ := (is_open_prod_iff.mp
+      (continuous_def.mp (K_hat.topological_ring R K).continuous_mul V hV_open)) a.val b.val hab,
+    use [coe⁻¹' V₁, coe⁻¹' V₂, ⟨V₁, h_V₁, rfl⟩, ⟨V₂, h_V₂, rfl⟩, h_aV₁, h_bV₂],
+    intros p hp,
+    rw [mem_prod, mem_preimage, mem_preimage] at hp,
+    rw [mem_preimage, ← hUV, mem_preimage, finite_adele_ring'.coe_mul],
+    exact h_V₁V₂ (mk_mem_prod hp.1 hp.2),
+  end, }
 
-instance : comm_ring { x : (K_hat R K) //
-  ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) } := 
+instance : comm_ring { x : (K_hat R K) // restricted R K x } := 
 finite_adele_ring'.comm_ring R K
 
 lemma mul_apply (x y : finite_adele_ring' R K) :  

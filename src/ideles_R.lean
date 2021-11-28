@@ -732,7 +732,6 @@ begin
     h_subset,
 end
 
-set_option profiler true
 lemma map_to_fractional_ideals.surjective : surjective (map_to_fractional_ideals R K) :=
 begin
   rintro ⟨I, I_inv, hval_inv, hinv_val⟩,
