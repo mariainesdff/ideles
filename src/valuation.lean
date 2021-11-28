@@ -442,8 +442,8 @@ end
 variable {K}
 
 section valuation_map_pow
-lemma valuation.map_zpow {Γ₀ : Type*} [linear_ordered_comm_group_with_zero Γ₀] {K : Type*}
-  [division_ring K] (v : valuation K Γ₀) {x : K} {n : ℤ}: v (x^n) = v x ^ n :=
+lemma valuation.map_zpow {Γ : Type*} [linear_ordered_comm_group_with_zero Γ] {K' : Type*}
+  [division_ring K'] (v : valuation K' Γ) {x : K'} {n : ℤ}: v (x^n) = v x ^ n :=
 begin
   cases n,
   { rw [int.of_nat_eq_coe, zpow_coe_nat, zpow_coe_nat, valuation.map_pow], },

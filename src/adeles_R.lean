@@ -76,7 +76,7 @@ instance : comm_ring (K_hat R K) := pi.comm_ring
 instance : ring (K_hat R K) := infer_instance
 instance : topological_space (K_hat R K) := Pi.topological_space
 instance tr_hat : topological_ring (Π (v : maximal_spectrum R), (K_v K v)) := pi.topological_ring
-instance : topological_ring (K_hat R K) := tr_hat  R K
+instance : topological_ring (K_hat R K) := tr_hat R K
 
 /- lemma valuation.is_integer {R : Type*} [ring R] {Γ₀ : Type*} 
   [linear_ordered_comm_group_with_zero Γ₀] (v : valuation R Γ₀) (x : R) :
@@ -94,7 +94,7 @@ def inj_R : R → (R_hat R K) := λ r v, inj_R_v R K v r
 
 lemma uniform_space.completion.coe_inj {α : Type*} [uniform_space α] [separated_space α] :
   injective  (coe : α → uniform_space.completion α) := 
-@uniform_embedding.inj _ _ _ _ coe (uniform_space.completion.uniform_embedding_coe _)
+uniform_embedding.inj (uniform_space.completion.uniform_embedding_coe _)
 
 lemma inj_R_v.injective : function.injective (inj_R_v R K v) :=
 begin
@@ -254,6 +254,51 @@ instance : comm_ring (finite_adele_ring' R K) :=
   right_distrib := λ x y z, by { unfold_projs, simp_rw [mul', add', right_distrib], },
   mul_comm      := λ x y, by { unfold_projs, rw [mul', mul', subtype.mk_eq_mk, mul_comm], },
   ..(finite_adele_ring'.add_comm_group R K)}
+
+open_locale classical
+
+instance finite_adele_ring'.inhabited : inhabited (finite_adele_ring' R K) := 
+{ default := ⟨0, restr_zero R K⟩ }
+
+--def coe' : finite_adele_ring' R K → K_hat R K :=  λ x, x.val
+
+instance : topological_space (finite_adele_ring' R K) := subtype.topological_space
+
+section topology
+
+lemma is_open_subtype_iff {α : Type*} {p : α → Prop} [t : topological_space α] 
+  {s : set (subtype p)} : is_open s ↔ ∃s' : set α, t.is_open s' ∧ coe ⁻¹' s' = s := by refl
+
+end topology
+
+set_option pp.coercions true
+instance : topological_ring (finite_adele_ring' R K) := 
+{ continuous_add := 
+  begin
+    rw continuous_def,
+    intros U hU,
+    obtain ⟨V, hV_open, hUV⟩ := hU,
+    have h_prod := continuous_def.mp (K_hat.topological_ring R K).continuous_add V hV_open,
+    rw is_open_prod_iff,
+    intros a b hab,
+    rw [mem_preimage, ← hUV, mem_preimage] at hab,
+    have : (a + b).val = a.val + b.val := rfl,
+    simp [subtype.val_eq_coe] at this,
+    rw this at hab,
+    obtain ⟨V₁, V₂, h_V₁, h_V₂, h_aV₁, h_bV₂, h_V₁V₂⟩ :=
+    (is_open_prod_iff.mp h_prod) a.val b.val hab,
+    let coe := (coe : {x : K_hat R K // ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, 
+     x v ∈ R_v K v} → K_hat R K),
+    use [coe⁻¹' V₁, coe⁻¹' V₂, ⟨V₁, h_V₁, rfl⟩, ⟨V₂, h_V₂, rfl⟩, h_aV₁, h_bV₂],
+    intros p hp,
+    rw [mem_prod, mem_preimage, mem_preimage] at hp,
+    rw [mem_preimage, ← hUV, mem_preimage],
+    have : (p.fst + p.snd).val = p.fst.val + p.snd.val := rfl,
+    simp [subtype.val_eq_coe] at this,
+    rw this,
+    exact h_V₁V₂ (mk_mem_prod hp.1 hp.2),
+  end,
+  continuous_mul := sorry }
 
 instance : comm_ring { x : (K_hat R K) //
   ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) } := 

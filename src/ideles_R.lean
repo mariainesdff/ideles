@@ -732,6 +732,7 @@ begin
     h_subset,
 end
 
+set_option profiler true
 lemma map_to_fractional_ideals.surjective : surjective (map_to_fractional_ideals R K) :=
 begin
   rintro ⟨I, I_inv, hval_inv, hinv_val⟩,
@@ -753,11 +754,13 @@ begin
     have hv : valued.v ((idele.mk' R K h_exps).val.val v) ≠ 0 := 
     idele.mk'.valuation_ne_zero v h_exps,
     rw with_zero.to_integer,
+    set x := classical.some (with_zero.to_integer._proof_1 hv) with hx_def,
     have hx := classical.some_spec (with_zero.to_integer._proof_1 hv),
-    simp_rw [idele.mk', pi.unif, valuation.map_zpow, valued_K_v.def, valued.extension_extends,
+    rw ← hx_def at hx ⊢,
+    simp only [idele.mk', pi.unif] at hx,
+    rw [valuation.map_zpow, valued_K_v.def, valued.extension_extends,
       v_valued_K.def, classical.some_spec (adic_valuation.exists_uniformizer K v), 
-        ← with_zero.coe_zpow] at hx ⊢,
-    rw with_zero.coe_inj at hx,
+        ← with_zero.coe_zpow, with_zero.coe_inj] at hx,
     rw [hx, ← of_add_zsmul, to_add_of_add, algebra.id.smul_eq_mul, mul_neg_eq_neg_mul_symm, 
           mul_one, neg_neg], },
   exact ⟨H, map_to_fractional_ideals.inv_eq_inv _ ⟨I, I_inv, hval_inv, hinv_val⟩ H⟩,
