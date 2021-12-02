@@ -511,7 +511,7 @@ begin
   exact hw.2 (eq.symm (subtype.coe_injective(subtype.coe_injective hvw))), 
 end
 
-lemma ideal.finprod_ne_zero (I : ideal R) :
+lemma ideal.finprod_count_ne_zero (I : ideal R) :
   associates.mk (∏ᶠ (v : maximal_spectrum R), v.val.as_ideal ^ 
     (associates.mk v.val.as_ideal).count (associates.mk I).factors) ≠ 0 := 
 begin
@@ -528,7 +528,7 @@ lemma ideal.finprod_count (I : ideal R) (hI : I ≠ 0) :
     (associates.mk v.val.as_ideal).count (associates.mk I).factors)).factors = 
     (associates.mk v.val.as_ideal).count (associates.mk I).factors :=
 begin
-  have h_ne_zero := ideal.finprod_ne_zero I,
+  have h_ne_zero := ideal.finprod_count_ne_zero I,
   have hv : irreducible (associates.mk v.val.as_ideal) := associates.irreducible_of_maximal v,
   have h_dvd := finprod_mem_dvd _ (idele.finite_mul_support' I hI),
   have h_not_dvd := ideal.finprod_not_dvd v I hI,
@@ -560,7 +560,7 @@ lemma ideal.factorization (I : ideal R) (hI : I ≠ 0) :
 begin
   rw [← associated_iff_eq, ← associates.mk_eq_mk_iff_associated],
   apply associates.eq_of_eq_counts,
-  { apply ideal.finprod_ne_zero I },
+  { apply ideal.finprod_count_ne_zero I },
   { apply associates.mk_ne_zero.mpr hI},
   intros v hv,
   obtain ⟨J, hJv⟩ := associates.exists_rep v,
@@ -742,7 +742,45 @@ begin
   push_cast,
   ring,
 end
+
+lemma fractional_ideal.count_mul' (I I' : fractional_ideal (non_zero_divisors R) K) :
+  fractional_ideal.count K v (I*I')  = (if I ≠ 0 ∧ I' ≠ 0 then  fractional_ideal.count K v (I) + 
+  fractional_ideal.count K v (I') else 0)
+   := 
+begin
+  split_ifs,
+  { exact fractional_ideal.count_mul K v h.1 h.2 },
+  { push_neg at h,
+    by_cases hI : I = 0,
+    { rw [hI, zero_mul, fractional_ideal.count, dif_pos (eq.refl _)], },
+    { rw [(h hI), mul_zero, fractional_ideal.count, dif_pos (eq.refl _)], }}
+end
 --set_option profiler false
+
+lemma fractional_ideal.count_zero : 
+  fractional_ideal.count K v (0 : fractional_ideal (non_zero_divisors R) K)  = 0 :=
+by rw [fractional_ideal.count, dif_pos (eq.refl _)]
+
+lemma fractional_ideal.count_one : 
+  fractional_ideal.count K v (1 : fractional_ideal (non_zero_divisors R) K)  = 0 :=
+begin
+  sorry,
+  /- rw ← zpow_zero (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K),
+  exact fractional_ideal.count_pow K v 0, -/
+end
+
+lemma fractional_ideal.count_pow' (n : ℕ) (I : fractional_ideal (non_zero_divisors R) K) : 
+  fractional_ideal.count K v (I^n) = n * fractional_ideal.count K v I :=
+begin
+  induction n with n h,
+  { rw [pow_zero, int.coe_nat_zero, zero_mul, fractional_ideal.count_one] },
+  { rw pow_succ, rw fractional_ideal.count_mul',
+    by_cases hI : I = 0,
+    { have h_neg : ¬ (I ≠ 0 ∧ I ^ n ≠ 0),
+      { rw [not_and, not_not, ne.def], intro h, exact absurd hI h, },
+      rw [if_neg h_neg, hI, fractional_ideal.count_zero, mul_zero], },
+    { rw [if_pos (and.intro hI (pow_ne_zero n hI)), h, nat.succ_eq_add_one], ring, }},
+end 
 
 lemma fractional_ideal.count_pow (n : ℕ) : 
   fractional_ideal.count K v
@@ -767,18 +805,12 @@ begin
     { rw [ne.def, associates.mk_eq_zero], exact v.property, },
     exact hv_irred, },
 end
+
 lemma fractional_ideal.count_self : 
   fractional_ideal.count K v (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)  = 1 :=
 begin
   rw ← zpow_one (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K),
   exact fractional_ideal.count_pow K v 1,
-end
-
-lemma fractional_ideal.count_one : 
-  fractional_ideal.count K v (1 : fractional_ideal (non_zero_divisors R) K)  = 0 :=
-begin
-  rw ← zpow_zero (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K),
-  exact fractional_ideal.count_pow K v 0,
 end
 
 lemma fractional_ideal.count_inv (n : ℤ) : 
@@ -805,6 +837,31 @@ begin
       fractional_ideal.count_pow], }
 end
 
+lemma fractional_ideal.count_maximal_coprime (w : maximal_spectrum R) (hw : w ≠ v) :
+  fractional_ideal.count K v (w.val.as_ideal : fractional_ideal (non_zero_divisors R) K) = 0 := 
+begin
+  sorry
+end
+
+lemma fractional_ideal.count_finprod_coprime (exps : maximal_spectrum R → ℤ) :
+  fractional_ideal.count K v (∏ᶠ (i : maximal_spectrum R) (H : i ∈ mul_support 
+  (λ (i : maximal_spectrum R), (i.val.as_ideal : fractional_ideal (non_zero_divisors R) K) ^ exps i)
+  \ {v}), ↑(i.val.as_ideal) ^ exps i) = 0 :=
+begin
+  apply finprod_mem_induction (λ I, fractional_ideal.count K v I = 0),
+  { exact fractional_ideal.count_one K v },
+  { intros I I' hI hI',
+    have := fractional_ideal.count_mul' K v I I',
+    by_cases h : I ≠ 0 ∧ I' ≠ 0,
+    { rw if_pos h at this, 
+    rw [fractional_ideal.count_mul K v h.1 h.2, hI, hI', add_zero] },
+    { rw if_neg h at this, exact this }},
+  { intros w hw,
+    simp only [mem_singleton_iff, mem_mul_support, ne.def, mem_diff] at hw,
+    --rw fractional
+    sorry }
+end
+
 lemma fractional_ideal.count_finprod (exps : maximal_spectrum R → ℤ)
 (h_exps : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, exps v = 0 ) :
 fractional_ideal.count K v (∏ᶠ (v : maximal_spectrum R), 
@@ -825,16 +882,15 @@ begin
   dsimp only,
   rw fractional_ideal.count_zpow,
   sorry,
-  { sorry },
-  { sorry }
-  /- have h_ne_zero := ideal.finprod_ne_zero I,
-  have hv : irreducible (associates.mk v.val.as_ideal) := associates.irreducible_of_maximal v,
-  have h_dvd := finprod_mem_dvd _ (idele.finite_mul_support' I hI),
-  have h_not_dvd := ideal.finprod_not_dvd v I hI,
-  rw [← associates.mk_dvd_mk, associates.dvd_eq_le, associates.mk_pow,
-    associates.prime_pow_dvd_iff_le h_ne_zero hv] at h_dvd h_not_dvd,
-  rw not_le at h_not_dvd,
-  apply nat.eq_of_le_of_lt_succ h_dvd h_not_dvd, -/
+  { apply zpow_ne_zero, 
+    exact fractional_ideal.coe_ideal_ne_zero_iff.mpr v.property,},
+  { dsimp only,
+    have hfin : (mul_support (λ (i : maximal_spectrum R), ↑(i.val.as_ideal) ^ exps i) \ {v}).finite,
+    { exact finite.subset h_supp (diff_subset _ _)},
+    rw [finprod_mem_eq_finite_to_finset_prod _ hfin, finset.prod_ne_zero_iff],
+    intros w hw,
+    apply zpow_ne_zero, 
+    exact fractional_ideal.coe_ideal_ne_zero_iff.mpr w.property, }
 end
 
 variables (R K)
@@ -1008,3 +1064,10 @@ begin
     intro v,
     rw [h_val v, zpow_zero _] }
 end
+
+variables (R K)
+instance ufi_ts : topological_space (units (fractional_ideal (non_zero_divisors R) K)) := ⊥
+
+instance ufi_tg : topological_group (units (fractional_ideal (non_zero_divisors R) K)) := 
+{ continuous_mul := continuous_of_discrete_topology,
+  continuous_inv := continuous_of_discrete_topology, }
