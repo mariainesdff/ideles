@@ -74,6 +74,13 @@ lemma valuation_val_inv (x : finite_idele_group' R K) :
   (valued.v (x.val.val v)) * (valued.v (x.inv.val v)) = 1 :=
 by rw [← valuation.map_mul, prod_val_inv_eq_one, valuation.map_one]
 
+lemma valuation_inv (x : finite_idele_group' R K) :
+  (valued.v (x.inv.val v)) = (valued.v (x.val.val v))⁻¹ :=
+begin
+  rw [← mul_one (valued.v (x.val.val v))⁻¹,eq_inv_mul_iff_mul_eq₀, valuation_val_inv],
+  { exact (valuation.ne_zero_iff _).mpr (v_comp.ne_zero R K v x) } 
+end
+
 lemma restricted_product (x : finite_idele_group' R K) :
   finite ({ v : maximal_spectrum R | (¬ (x.val.val v) ∈ R_v K v) } ∪ 
     { v : maximal_spectrum R | ¬ (x.inv.val v) ∈ R_v K v }) :=
@@ -1081,3 +1088,108 @@ instance ufi_ts : topological_space (units (fractional_ideal (non_zero_divisors 
 instance ufi_tg : topological_group (units (fractional_ideal (non_zero_divisors R) K)) := 
 { continuous_mul := continuous_of_discrete_topology,
   continuous_inv := continuous_of_discrete_topology, }
+
+
+@[to_additive]
+lemma continuous_iff_continuous_at_one {α : Type*} {β : Type*} [topological_space α] 
+  [topological_space β] [group α] [group β] [topological_group α] [topological_group β] {
+  f : α →* β} : continuous f ↔ continuous_at f 1 :=
+begin
+  rw continuous_iff_continuous_at,
+  refine ⟨λ hf, hf 1, λ hf, _⟩,
+  intros x  U hUx,
+  rw [filter.mem_map, ← map_mul_left_nhds_one, filter.mem_map],
+  rw [← map_mul_left_nhds_one, filter.mem_map, ← monoid_hom.map_one f] at hUx,
+  convert continuous_at.preimage_mem_nhds hf hUx,
+  ext y,
+  simp only [mem_preimage, monoid_hom.map_mul],
+end
+
+@[to_additive continuous_iff_open_add_kernel]
+lemma continuous_iff_open_kernel {α : Type*} {β : Type*} [topological_space α] [topological_space β] 
+  [discrete_topology β] [group α] [group β] [topological_group α] [topological_group β]
+  {f : α →* β} : continuous f ↔ is_open (f⁻¹' {1}) := 
+begin
+  refine ⟨λ hf, _, λ hf, _⟩,
+  { apply continuous.is_open_preimage hf _ (singletons_open_iff_discrete.mpr (infer_instance) 1) },
+  { rw continuous_iff_continuous_at_one,
+    intros U hU,
+    rw [monoid_hom.map_one, discrete_topology_iff_nhds.mp, filter.mem_pure] at hU,
+    rw [filter.mem_map, mem_nhds_iff],
+    exact ⟨f ⁻¹' {1}, λ x hx, by apply (singleton_subset_iff.mpr hU) hx, hf, 
+      by rw [mem_preimage, mem_singleton_iff, monoid_hom.map_one]⟩,
+    { apply_instance }}
+end
+
+lemma finite_idele.to_add_valuations.comp_eq_zero_iff (x : finite_idele_group' R K) : 
+  finite_idele.to_add_valuations R K x v = 0 ↔ valued.v ( x.val.val v) = 1 :=
+begin
+  set y := classical.some (with_zero.to_integer._proof_1 
+    (finite_idele.to_add_valuations._proof_1 R K x v)) with hy,
+  have hy_spec := classical.some_spec (with_zero.to_integer._proof_1 
+    (finite_idele.to_add_valuations._proof_1 R K x v)),
+  rw ← hy at hy_spec,
+  rw [finite_idele.to_add_valuations, neg_eq_zero ,with_zero.to_integer, ← to_add_one, ← hy,
+    ← hy_spec, ← with_zero.coe_one, with_zero.coe_inj],
+  refine ⟨λ h_eq, by rw [← of_add_to_add y, ← of_add_to_add 1, h_eq], λ h_eq, by rw h_eq⟩,
+end
+
+lemma finite_idele.valuation_eq_one_iff (x : finite_idele_group' R K) : 
+  valued.v (x.val.val v) = 1 ↔ x.val.val v ∈ R_v K v ∧ x⁻¹.val.val v ∈ R_v K v :=
+begin
+  rw [K_v.is_integer, K_v.is_integer],
+  refine ⟨λ h_one, _, λ h_int, _⟩,
+  { have h_mul := valuation_val_inv R K v x,
+    rw [h_one, one_mul] at h_mul,
+    exact ⟨ le_of_eq h_one, le_of_eq h_mul ⟩ , },
+  { have : x.inv = x⁻¹.val := rfl,
+    rw [← this, valuation_inv, ← inv_one, inv_le_inv₀, inv_one] at h_int,
+    rw [eq_iff_le_not_lt, not_lt],
+    exact h_int,
+    { exact (valuation.ne_zero_iff _).mpr (v_comp.ne_zero R K v x)},
+    { exact one_ne_zero }}
+end
+
+lemma map_to_fractional_ideals.continuous : continuous (map_to_fractional_ideals R K) := 
+begin
+  rw continuous_iff_open_kernel,
+  have h_ker : (map_to_fractional_ideals R K) ⁻¹' {1} = 
+    { x : units(finite_adele_ring' R K) |
+       ∀ v : maximal_spectrum R, finite_idele.to_add_valuations R K x v = 0 },
+  { ext x,
+    exact map_to_fractional_ideals.mem_kernel_iff x, },
+  rw h_ker,
+  --rw is_open,
+  --rw finite_idele_group'.topological_space,
+  --rw units.topological_space,
+  --rw topological_space.induced,
+  --simp only,
+  use {p : (finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ) | 
+    ∀ v : maximal_spectrum R, (p.1.val v) ∈ R_v K v ∧ 
+    ((mul_opposite.unop p.2).val v) ∈ R_v K v},
+  split,
+  { have : prod.topological_space.is_open {p : finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ 
+  | ∀ (v : maximal_spectrum R), p.fst.val v ∈ R_v K v ∧ (mul_opposite.unop p.snd).val v ∈ R_v K v}
+    ↔ is_open {p : finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ 
+  | ∀ (v : maximal_spectrum R), p.fst.val v ∈ R_v K v ∧ (mul_opposite.unop p.snd).val v ∈ R_v K v}
+    := by refl,
+    rw this, clear this,
+    rw [is_open_prod_iff],
+    intros x y hxy,
+    use {x : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), x.val v ∈ R_v K v},
+    use {x : (finite_adele_ring' R K )ᵐᵒᵖ | ∀ (v : maximal_spectrum R), 
+      (mul_opposite.unop x).val v ∈ R_v K v},
+    refine ⟨_, by sorry, by sorry, by sorry, _⟩,
+    { 
+      sorry},
+    { intros p hp v,
+      exact ⟨ hp.1 v, hp.2 v⟩, }},
+  { rw preimage_set_of_eq,
+    ext x,
+    rw [mem_set_of_eq, embed_product, monoid_hom.coe_mk, mul_opposite.unop_op],
+    simp_rw [finite_idele.to_add_valuations.comp_eq_zero_iff, finite_idele.valuation_eq_one_iff],
+    refl, },
+end
+
+
+

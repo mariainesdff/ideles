@@ -8,22 +8,22 @@ open function set
 variables {R : Type} {K : Type} [comm_ring R] [is_domain R] [is_dedekind_domain R] [field K]
   [algebra R K] [is_fraction_ring R K] (v : maximal_spectrum R)
 
-instance v_valued_K (v : maximal_spectrum R) : valued K := 
+def v_valued_K (v : maximal_spectrum R) : valued K := 
 { Γ₀  := with_zero (multiplicative ℤ),
   grp := infer_instance,
   v   := adic_valuation v }
 
 lemma v_valued_K.def {x : K} : @valued.v K _ (v_valued_K v) (x) = adic_valuation.def v  x := rfl
 
-instance ts' : topological_space K := @valued.topological_space K _ (v_valued_K v)
-instance tdr' : @topological_division_ring K _ (ts' v) := 
+def ts' : topological_space K := @valued.topological_space K _ (v_valued_K v)
+lemma tdr' : @topological_division_ring K _ (ts' v) := 
 @valued.topological_division_ring K _ (v_valued_K v)
-instance tr' : @topological_ring K  (ts' v) _ := infer_instance
-instance tg' : @topological_add_group K (ts' v) _ := infer_instance
-instance us' : uniform_space K := @topological_add_group.to_uniform_space K _ (ts' v) (tg' v)
-instance ug' : @uniform_add_group K (us' v) _ := 
+lemma tr' : @topological_ring K  (ts' v) _ := infer_instance
+lemma tg' : @topological_add_group K (ts' v) _ := infer_instance
+def us' : uniform_space K := @topological_add_group.to_uniform_space K _ (ts' v) (tg' v)
+lemma ug' : @uniform_add_group K (us' v) _ := 
 @topological_add_group_is_uniform K _ (ts' v) (tg' v)
-instance cf' : @completable_top_field K _ (us' v) := @valued.completable K _ (v_valued_K v)
+lemma cf' : @completable_top_field K _ (us' v) := @valued.completable K _ (v_valued_K v)
 
 instance ss : @separated_space K (us' v) := @valued_ring.separated K _ (v_valued_K v)
 
@@ -146,9 +146,6 @@ def finite_adele_ring' := { x : (K_hat R K) // restricted R K x }
 def coe' : (finite_adele_ring' R K) → K_hat R K := λ x, x.val
 instance has_coe' : has_coe (finite_adele_ring' R K) (K_hat R K) := {coe := coe' R K } 
 instance has_lift_t' : has_lift_t (finite_adele_ring' R K) (K_hat R K) := {lift := coe' R K } 
-
-/- def finite_adele_ring' :=
-{ x : (K_hat R K) // ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) } -/
 
 lemma restr_add (x y : finite_adele_ring' R K) : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
   ((x.val + y.val) v ∈ R_v K v) := 
@@ -284,16 +281,208 @@ lemma finite_adele_ring'.coe_one :
 instance finite_adele_ring'.inhabited : inhabited (finite_adele_ring' R K) := 
 { default := ⟨0, restr_zero R K⟩ }
 
-instance : topological_space (finite_adele_ring' R K) := subtype.topological_space
+
+
+def finite_adele_ring'.generating_set : set (set (finite_adele_ring' R K)) :=
+{ U : set (finite_adele_ring' R K) | ∃ (V : Π (v : maximal_spectrum R), set (K_v K v)),
+  (∀ x : finite_adele_ring' R K, x ∈ U ↔ ∀ v, x.val v ∈ V v) ∧ 
+  (∀ v, is_open (V v)) ∧ ∀ᶠ v in filter.cofinite, V v = univ } 
+
+instance : topological_space (finite_adele_ring' R K) := topological_space.generate_from
+  (finite_adele_ring'.generating_set R K)
+
+lemma finite_adele_ring'.continuous_add : 
+  continuous (λ (p : finite_adele_ring' R K × finite_adele_ring' R K), p.fst + p.snd) :=
+begin
+  apply continuous_generated_from,
+  rintros U ⟨V, hUV, hV_open, hV_univ⟩,
+  have hV : ∀ v : maximal_spectrum R, is_open 
+    ((λ p : ( K_v K v × K_v K v), p.fst + p.snd) ⁻¹' V v) := 
+  λ v, continuous.is_open_preimage continuous_add (V v) (hV_open v),
+  have hV' : ∀ᶠ v : maximal_spectrum R in filter.cofinite, 
+    ((λ p : ( K_v K v × K_v K v), p.fst + p.snd) ⁻¹' V v) = univ,
+  { have : {v : maximal_spectrum R | ¬(λ (p : K_v K v × K_v K v), p.fst + p.snd) ⁻¹' V v = univ} ⊆ 
+      {v : maximal_spectrum R | ¬ V v = univ},
+    { intros v hv h_univ,
+      rw [mem_set_of_eq, h_univ, preimage_univ] at hv,
+      exact hv (eq.refl _), },
+    exact finite.subset hV_univ this, },
+  simp_rw is_open_prod_iff at hV,
+  rw is_open_prod_iff,
+  intros x y hxy,
+  have hxy' : ∀ (v : maximal_spectrum R), (x.val v, y.val v) ∈
+     (λ p : (K_v K v) × (K_v K v), p.fst + p.snd) ⁻¹' V v := λ v, (hUV _).mp hxy v,
+  set Vx : Π (v : maximal_spectrum R), set (K_v K v) := λ v, 
+  ite (V v = univ) univ (classical.some (hV v _ _ (hxy' v))) with hVx,
+  set Vy : Π (v : maximal_spectrum R), set (K_v K v) := λ v,
+  ite (V v = univ) univ (classical.some (classical.some_spec (hV v _ _ (hxy' v)))) with hVy,
+  use [{z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vx v },
+    {z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vy v }],
+  refine ⟨_,_, _, _,_⟩,
+  { use Vx,
+    refine ⟨λ x, by refl,_,_⟩,
+    { intro v, simp only [hVx], split_ifs,
+      { exact is_open_univ }, 
+      { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).1 }},
+    { have : {v : maximal_spectrum R | ¬ Vx v = univ} ⊆ {v : maximal_spectrum R | ¬ V v = univ},
+      { intros v hv h_univ, 
+        simp only [hVx] at hv, rw [mem_set_of_eq, if_pos h_univ] at hv,
+        exact hv (eq.refl _) },
+      exact finite.subset hV_univ this, }},
+  { use Vy,
+    refine ⟨λ x, by refl,_,_⟩,
+    { intro v, simp only [hVy], split_ifs,
+      { exact is_open_univ }, 
+      { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.1 }},
+    { have : {v : maximal_spectrum R | ¬ Vy v = univ} ⊆ {v : maximal_spectrum R | ¬ V v = univ},
+      { intros v hv h_univ, 
+        simp only [hVy] at hv, rw [mem_set_of_eq, if_pos h_univ] at hv,
+        exact hv (eq.refl _) },
+      exact finite.subset hV_univ this, }},
+  { rw [mem_set_of_eq],
+    intro v,
+    simp only [hVx],
+    split_ifs,
+    { exact mem_univ _ },
+    { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.1 }},
+  { rw [mem_set_of_eq],
+    intro v,
+    simp only [hVy],
+    split_ifs,
+    { exact mem_univ _ },
+    { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.2.1 }},
+  { intros p hp,
+    rw [mem_prod, mem_set_of_eq, mem_set_of_eq] at hp,
+    rw [mem_preimage, hUV],
+    intro v,
+    have hp' : prod.mk (p.fst.val v) (p.snd.val v) ∈ (Vx v).prod (Vy v) := 
+    mem_prod.mpr ⟨hp.1 v, hp.2 v⟩,
+    by_cases h_univ : V v = univ,
+    { rw h_univ, exact mem_univ _},
+    { simp only [hVx, hVy, if_neg h_univ] at hp',
+    exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.2.2 hp' }} 
+end
+
+lemma finite_adele_ring'.continuous_mul : 
+  continuous (λ (p : finite_adele_ring' R K × finite_adele_ring' R K), p.fst * p.snd) :=
+begin
+  apply continuous_generated_from,
+  rintros U ⟨V, hUV, hV_open, hV_univ⟩,
+  have hV : ∀ v : maximal_spectrum R, is_open 
+    ((λ p : ( K_v K v × K_v K v), p.fst * p.snd) ⁻¹' V v) := 
+  λ v, continuous.is_open_preimage continuous_mul (V v) (hV_open v),
+  have hV' : ∀ᶠ v : maximal_spectrum R in filter.cofinite, 
+    ((λ p : ( K_v K v × K_v K v), p.fst * p.snd) ⁻¹' V v) = univ,
+  { have : {v : maximal_spectrum R | ¬(λ (p : K_v K v × K_v K v), p.fst * p.snd) ⁻¹' V v = univ} ⊆ 
+      {v : maximal_spectrum R | ¬ V v = univ},
+    { intros v hv h_univ,
+      rw [mem_set_of_eq, h_univ, preimage_univ] at hv,
+      exact hv (eq.refl _), },
+    exact finite.subset hV_univ this, },
+  simp_rw is_open_prod_iff at hV,
+  rw is_open_prod_iff,
+  intros x y hxy,
+  have hxy' : ∀ (v : maximal_spectrum R), (x.val v, y.val v) ∈
+     (λ p : (K_v K v) × (K_v K v), p.fst * p.snd) ⁻¹' V v := λ v, (hUV _).mp hxy v,
+  set Vx : Π (v : maximal_spectrum R), set (K_v K v) := λ v, 
+  ite (V v = univ) univ (classical.some (hV v _ _ (hxy' v))) with hVx,
+  set Vy : Π (v : maximal_spectrum R), set (K_v K v) := λ v,
+  ite (V v = univ) univ (classical.some (classical.some_spec (hV v _ _ (hxy' v)))) with hVy,
+  use [{z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vx v },
+    {z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vy v }],
+  refine ⟨_,_, _, _,_⟩,
+  { use Vx,
+    refine ⟨λ x, by refl,_,_⟩,
+    { intro v, simp only [hVx], split_ifs,
+      { exact is_open_univ }, 
+      { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).1 }},
+    { have : {v : maximal_spectrum R | ¬ Vx v = univ} ⊆ {v : maximal_spectrum R | ¬ V v = univ},
+      { intros v hv h_univ, 
+        simp only [hVx] at hv, rw [mem_set_of_eq, if_pos h_univ] at hv,
+        exact hv (eq.refl _) },
+      exact finite.subset hV_univ this, }},
+  { use Vy,
+    refine ⟨λ x, by refl,_,_⟩,
+    { intro v, simp only [hVy], split_ifs,
+      { exact is_open_univ }, 
+      { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.1 }},
+    { have : {v : maximal_spectrum R | ¬ Vy v = univ} ⊆ {v : maximal_spectrum R | ¬ V v = univ},
+      { intros v hv h_univ, 
+        simp only [hVy] at hv, rw [mem_set_of_eq, if_pos h_univ] at hv,
+        exact hv (eq.refl _) },
+      exact finite.subset hV_univ this, }},
+  { rw [mem_set_of_eq],
+    intro v,
+    simp only [hVx],
+    split_ifs,
+    { exact mem_univ _ },
+    { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.1 }},
+  { rw [mem_set_of_eq],
+    intro v,
+    simp only [hVy],
+    split_ifs,
+    { exact mem_univ _ },
+    { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.2.1 }},
+  { intros p hp,
+    rw [mem_prod, mem_set_of_eq, mem_set_of_eq] at hp,
+    rw [mem_preimage, hUV],
+    intro v,
+    have hp' : prod.mk (p.fst.val v) (p.snd.val v) ∈ (Vx v).prod (Vy v) := 
+    mem_prod.mpr ⟨hp.1 v, hp.2 v⟩,
+    by_cases h_univ : V v = univ,
+    { rw h_univ, exact mem_univ _},
+    { simp only [hVx, hVy, if_neg h_univ] at hp',
+    exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.2.2 hp' }} 
+end
+
+instance : topological_ring (finite_adele_ring' R K) := 
+{ continuous_add := 
+  begin
+    apply continuous_generated_from,
+    rintros U ⟨V, hUV, hV_open, hV_univ⟩,
+    let W := pi univ V,
+    have hW : is_open ((λ p : (Π (v : maximal_spectrum R), K_v K v) ×
+      Π (v : maximal_spectrum R), K_v K v, p.fst + p.snd) ⁻¹' W),
+    { apply continuous.is_open_preimage continuous_add,
+      sorry,
+      { apply_instance }},
+    rw is_open_prod_iff at hW ⊢,
+    intros x y hxy,
+    have hxy' : (x.val, y.val) ∈ (λ (p : (Π (v : maximal_spectrum R), K_v K v) × 
+      Π (v : maximal_spectrum R), K_v K v), p.fst + p.snd) ⁻¹' W := sorry,
+    obtain ⟨Wx, Wy, Wx_open, Wy_open, x_in_Wx, y_in_Wy, WxWy⟩ := hW x.val y.val hxy',
+    set Ux := {z : finite_adele_ring' R K | z.val ∈ Wx } with hUx,
+    set Uy := {z : finite_adele_ring' R K | z.val ∈ Wy } with hUy,
+    use [Ux, Uy],
+    refine ⟨_,_, x_in_Wx, y_in_Wy,_⟩,
+    { suffices : Ux ∈ finite_adele_ring'.generating_set R K,
+      { sorry },
+      rw finite_adele_ring'.generating_set, rw mem_set_of_eq,
+      
+      /- set Vx : Π (v : maximal_spectrum R), set (K_v K v) :=
+      λ v, { z : K_v K v | } -/
+      },
+    sorry,
+
+    { intros p hp,
+      rw [mem_prod, hUx, hUy, mem_set_of_eq, mem_set_of_eq] at hp,
+      rw [mem_preimage, hUV],
+      intro v,
+      have hp' : prod.mk p.fst.val p.snd.val ∈ Wx.prod Wy := mem_prod.mpr ⟨hp.1, hp.2⟩,
+      exact WxWy hp' v (mem_univ v), }
+  end,
+  continuous_mul := sorry } -/
+/-  Wrong topology! -/
+/- instance : topological_space (finite_adele_ring' R K) := subtype.topological_space
 
 section topology
 
 lemma is_open_subtype_iff {α : Type*} {p : α → Prop} [t : topological_space α] 
   {s : set (subtype p)} : is_open s ↔ ∃s' : set α, t.is_open s' ∧ coe ⁻¹' s' = s := by refl
 
-end topology
+end topology -/
 
-set_option pp.coercions true
+/- set_option pp.coercions true
 instance : topological_ring (finite_adele_ring' R K) := 
 { continuous_add := 
   begin
@@ -326,7 +515,24 @@ instance : topological_ring (finite_adele_ring' R K) :=
     rw [mem_prod, mem_preimage, mem_preimage] at hp,
     rw [mem_preimage, ← hUV, mem_preimage, finite_adele_ring'.coe_mul],
     exact h_V₁V₂ (mk_mem_prod hp.1 hp.2),
-  end, }
+  end, } -/
+
+/- lemma finite_adele_ring'.is_open_integer_subring :
+  is_open {x : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), x.val v ∈ R_v K v} :=
+begin  
+  rw is_open_subtype_iff,
+  use {x : K_hat R K | ∀ (v : maximal_spectrum R), x v ∈ R_v K v},
+  split,
+  { rw K_hat.topological_space,
+    rw Pi.topological_space,
+    
+    sorry },
+  { have : {x : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), x.val v ∈ R_v K v} =
+      {x : {y // restricted R K y} | ∀ (v : maximal_spectrum R), x.val v ∈ R_v K v} := rfl,
+    ext x, 
+    rw [mem_preimage, this, mem_set_of_eq, mem_set_of_eq],
+    simp_rw subtype.val_eq_coe, }
+end -/
 
 instance : comm_ring { x : (K_hat R K) // restricted R K x } := 
 finite_adele_ring'.comm_ring R K
@@ -520,11 +726,8 @@ begin
     intros v hv,
     rw mem_set_of_eq at hv ⊢,
     have h_val : valued.v ((coe : K → (K_v K v)) x) = @valued.extension K _ (v_valued_K v) x := rfl,
-    rw [K_v.is_integer, h_val, valued.extension_extends _] at hv,
-    simp only [valued.v] at hv,
-    have : (adic_valuation v) x = adic_valuation.def v x := rfl,
-    rw this at hv,
-    rw adic_valuation.def at hv,
+    rw [K_v.is_integer, h_val, valued.extension_extends _, v_valued_K.def, 
+      adic_valuation.def] at hv,
     let sx : non_zero_divisors R := (classical.some (adic_valuation.def._proof_2 x)),
     have h_loc : is_localization.mk' K (classical.some (adic_valuation.def._proof_1 x)) sx
        = is_localization.mk' K r ⟨d, hd⟩,

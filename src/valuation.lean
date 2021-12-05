@@ -17,27 +17,27 @@ variables (R : Type) {K : Type} [comm_ring R] [is_domain R] [is_dedekind_domain 
   [algebra R K] [is_fraction_ring R K] 
 
 -- Note : not the maximal spectrum if R is a field
-def maximal_spectrum := {v : prime_spectrum R // v.as_ideal ≠ 0 }
+def maximal_spectrum := {v : prime_spectrum R // v.val ≠ 0 }
 variable (v : maximal_spectrum R)
 
 variable {R}
 --Maximal spectrum lemmas
 lemma associates.irreducible_of_maximal (v : maximal_spectrum R) :
-  irreducible (associates.mk v.val.as_ideal) := 
+  irreducible (associates.mk v.val.val) := 
 begin
   rw [associates.irreducible_mk _, unique_factorization_monoid.irreducible_iff_prime],
   apply ideal.prime_of_is_prime v.property v.val.property,
 end
 
 lemma ideal.irreducible_of_maximal (v : maximal_spectrum R) :
-  irreducible v.val.as_ideal := 
+  irreducible v.val.val := 
 begin
   rw [unique_factorization_monoid.irreducible_iff_prime],
   apply ideal.prime_of_is_prime v.property v.val.property,
 end
 
 lemma ideal.prime_of_maximal (v : maximal_spectrum R) :
-  prime v.val.as_ideal := 
+  prime v.val.val := 
 begin
   apply ideal.prime_of_is_prime v.property v.val.property,
 end
@@ -143,7 +143,7 @@ end
 
 def ring.adic_valuation.def (r : R) : with_zero (multiplicative ℤ) :=
 dite (r = 0) (λ (h : r = 0), 0) (λ h : ¬ r = 0, (multiplicative.of_add
-  (-(associates.mk v.val.as_ideal).count (associates.mk (ideal.span{r} : ideal R)).factors : ℤ)))
+  (-(associates.mk v.val.val).count (associates.mk (ideal.span{r} : ideal R)).factors : ℤ)))
 
 lemma ring.adic_valuation.map_zero' : ring.adic_valuation.def v 0 = 0 := 
 by { rw [ring.adic_valuation.def, dif_pos], refl, }
@@ -198,26 +198,26 @@ begin
       rw [le_max_iff, with_zero.coe_le_coe, of_add_le, with_zero.coe_le_coe, of_add_le,
         neg_le_neg_iff, neg_le_neg_iff, int.coe_nat_le, int.coe_nat_le, ← min_le_iff],
       set nmin := min 
-        ((associates.mk v.val.as_ideal).count (associates.mk (ideal.span {x})).factors)
-        ((associates.mk v.val.as_ideal).count (associates.mk (ideal.span {y})).factors),
+        ((associates.mk v.val.val).count (associates.mk (ideal.span {x})).factors)
+        ((associates.mk v.val.val).count (associates.mk (ideal.span {y})).factors),
       have hx' : (associates.mk (ideal.span {x} : ideal R)) ≠ 0 := associates.mk_ne_zero'.mpr hx,
       have hy' : (associates.mk (ideal.span {y} : ideal R)) ≠ 0 := associates.mk_ne_zero'.mpr hy,
       have hxy' : (associates.mk (ideal.span {x + y} : ideal R)) ≠ 0 := 
       associates.mk_ne_zero'.mpr hxy,
-      have h_dvd_x : x ∈ v.val.as_ideal ^ (nmin),
+      have h_dvd_x : x ∈ v.val.val ^ (nmin),
       { rw [← associates.le_singleton_iff x nmin _],
        rw [associates.prime_pow_dvd_iff_le hx' _],
        exact min_le_left _ _,
         apply associates.irreducible_of_maximal v,
       },
-      have h_dvd_y : y ∈ v.val.as_ideal ^ nmin,
+      have h_dvd_y : y ∈ v.val.val ^ nmin,
       { rw [← associates.le_singleton_iff y nmin _, associates.prime_pow_dvd_iff_le hy' _],
         exact min_le_right _ _,
         apply associates.irreducible_of_maximal v,
       },
-      have h_dvd_xy : associates.mk v.val.as_ideal^nmin ≤ associates.mk (ideal.span {x + y}),
+      have h_dvd_xy : associates.mk v.val.val^nmin ≤ associates.mk (ideal.span {x + y}),
       { rw associates.le_singleton_iff,
-        exact ideal.add_mem (v.val.as_ideal^nmin) h_dvd_x h_dvd_y, },
+        exact ideal.add_mem (v.val.val^nmin) h_dvd_x h_dvd_y, },
       rw (associates.prime_pow_dvd_iff_le hxy' _) at h_dvd_xy,
       exact h_dvd_xy,
       apply associates.irreducible_of_maximal v, }}}
@@ -264,7 +264,7 @@ begin
 end
 
 lemma ring.adic_valuation.lt_one_iff_dvd (r : R) : 
-  ring.adic_valuation.def v r < 1 ↔ v.val.as_ideal ∣ ideal.span {r} :=
+  ring.adic_valuation.def v r < 1 ↔ v.val.val ∣ ideal.span {r} :=
 begin
   rw ring.adic_valuation.def,
   split_ifs with hr,
@@ -284,23 +284,23 @@ lemma ideal.is_nonunit_iff {I : ideal R} : ¬ is_unit I ↔ I ≠ ⊤ := by rw i
 lemma ring.adic_valuation.exists_uniformizer : 
   ∃ (π : R), ring.adic_valuation.def v π = multiplicative.of_add (-1 : ℤ) := 
 begin
-  have hv : irreducible (associates.mk v.val.as_ideal) := associates.irreducible_of_maximal v,
-  have hlt : v.val.as_ideal^2 < v.val.as_ideal,
+  have hv : irreducible (associates.mk v.val.val) := associates.irreducible_of_maximal v,
+  have hlt : v.val.val^2 < v.val.val,
   { rw ← ideal.dvd_not_unit_iff_lt,
-    exact ⟨v.property, v.val.as_ideal,
-     ideal.is_nonunit_iff.mpr (ideal.is_prime.ne_top v.val.property), sq v.val.as_ideal⟩ } ,
+    exact ⟨v.property, v.val.val,
+     ideal.is_nonunit_iff.mpr (ideal.is_prime.ne_top v.val.property), sq v.val.val⟩ } ,
   obtain ⟨π, mem, nmem⟩ := set_like.exists_of_lt hlt,
   have hπ : associates.mk (ideal.span {π}) ≠ 0,
   { rw associates.mk_ne_zero',
     intro h,
     rw h at nmem,
-    exact nmem (submodule.zero_mem (v.val.as_ideal^2)), },
+    exact nmem (submodule.zero_mem (v.val.val^2)), },
   use π,
   rw [ring.adic_valuation.def, dif_neg (associates.mk_ne_zero'.mp hπ), with_zero.coe_inj],
   apply congr_arg, 
   rw [neg_inj, ← int.coe_nat_one, int.coe_nat_inj'],
   rw [← ideal.dvd_span_singleton, ← associates.mk_le_mk_iff_dvd_iff] at mem nmem,
-  rw [← pow_one ( associates.mk v.val.as_ideal), 
+  rw [← pow_one ( associates.mk v.val.val), 
     associates.prime_pow_dvd_iff_le hπ hv]  at mem,
   rw [associates.mk_pow, associates.prime_pow_dvd_iff_le hπ hv, not_le] at nmem,
   exact nat.eq_of_le_of_lt_succ mem nmem,
@@ -346,7 +346,7 @@ begin
 end
 
 lemma adic_valuation.lt_one_iff_dvd (r : R) : 
-  adic_valuation.def v (algebra_map R K r) < 1 ↔ v.val.as_ideal ∣ ideal.span {r} :=
+  adic_valuation.def v (algebra_map R K r) < 1 ↔ v.val.val ∣ ideal.span {r} :=
 begin
   rw adic_valuation.of_algebra_map v,
   exact ring.adic_valuation.lt_one_iff_dvd v r,
