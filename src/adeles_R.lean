@@ -436,42 +436,9 @@ begin
 end
 
 instance : topological_ring (finite_adele_ring' R K) := 
-{ continuous_add := 
-  begin
-    apply continuous_generated_from,
-    rintros U ⟨V, hUV, hV_open, hV_univ⟩,
-    let W := pi univ V,
-    have hW : is_open ((λ p : (Π (v : maximal_spectrum R), K_v K v) ×
-      Π (v : maximal_spectrum R), K_v K v, p.fst + p.snd) ⁻¹' W),
-    { apply continuous.is_open_preimage continuous_add,
-      sorry,
-      { apply_instance }},
-    rw is_open_prod_iff at hW ⊢,
-    intros x y hxy,
-    have hxy' : (x.val, y.val) ∈ (λ (p : (Π (v : maximal_spectrum R), K_v K v) × 
-      Π (v : maximal_spectrum R), K_v K v), p.fst + p.snd) ⁻¹' W := sorry,
-    obtain ⟨Wx, Wy, Wx_open, Wy_open, x_in_Wx, y_in_Wy, WxWy⟩ := hW x.val y.val hxy',
-    set Ux := {z : finite_adele_ring' R K | z.val ∈ Wx } with hUx,
-    set Uy := {z : finite_adele_ring' R K | z.val ∈ Wy } with hUy,
-    use [Ux, Uy],
-    refine ⟨_,_, x_in_Wx, y_in_Wy,_⟩,
-    { suffices : Ux ∈ finite_adele_ring'.generating_set R K,
-      { sorry },
-      rw finite_adele_ring'.generating_set, rw mem_set_of_eq,
-      
-      /- set Vx : Π (v : maximal_spectrum R), set (K_v K v) :=
-      λ v, { z : K_v K v | } -/
-      },
-    sorry,
-
-    { intros p hp,
-      rw [mem_prod, hUx, hUy, mem_set_of_eq, mem_set_of_eq] at hp,
-      rw [mem_preimage, hUV],
-      intro v,
-      have hp' : prod.mk p.fst.val p.snd.val ∈ Wx.prod Wy := mem_prod.mpr ⟨hp.1, hp.2⟩,
-      exact WxWy hp' v (mem_univ v), }
-  end,
-  continuous_mul := sorry } -/
+{ continuous_add := finite_adele_ring'.continuous_add R K,
+  continuous_mul := finite_adele_ring'.continuous_mul R K }
+  
 /-  Wrong topology! -/
 /- instance : topological_space (finite_adele_ring' R K) := subtype.topological_space
 
