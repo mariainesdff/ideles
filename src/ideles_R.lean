@@ -1159,11 +1159,6 @@ begin
   { ext x,
     exact map_to_fractional_ideals.mem_kernel_iff x, },
   rw h_ker,
-  --rw is_open,
-  --rw finite_idele_group'.topological_space,
-  --rw units.topological_space,
-  --rw topological_space.induced,
-  --simp only,
   use {p : (finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ) | 
     ∀ v : maximal_spectrum R, (p.1.val v) ∈ R_v K v ∧ 
     ((mul_opposite.unop p.2).val v) ∈ R_v K v},
@@ -1176,12 +1171,12 @@ begin
     rw this, clear this,
     rw [is_open_prod_iff],
     intros x y hxy,
+    rw mem_set_of_eq at hxy,
     use {x : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), x.val v ∈ R_v K v},
     use {x : (finite_adele_ring' R K )ᵐᵒᵖ | ∀ (v : maximal_spectrum R), 
       (mul_opposite.unop x).val v ∈ R_v K v},
-    refine ⟨_, by sorry, by sorry, by sorry, _⟩,
-    { 
-      sorry},
+    refine ⟨finite_adele_ring'.is_open_integer_subring R K, 
+      finite_adele_ring'.is_open_integer_subring_opp R K, λ v, (hxy v).1, λ v, (hxy v).2, _⟩,
     { intros p hp v,
       exact ⟨ hp.1 v, hp.2 v⟩, }},
   { rw preimage_set_of_eq,

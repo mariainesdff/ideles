@@ -408,7 +408,7 @@ begin
   sorry
 end
 
-set_option profiler true
+--set_option profiler true
 lemma finite_adele_ring'.continuous_add : 
   continuous (λ (p : finite_adele_ring' R K × finite_adele_ring' R K), p.fst + p.snd) :=
 begin
@@ -417,7 +417,6 @@ begin
   have hV : ∀ v : maximal_spectrum R, is_open 
     ((λ p : ( K_v K v × K_v K v), p.fst + p.snd) ⁻¹' V v) := 
   λ v, continuous.is_open_preimage continuous_add (V v) (hV_open v),
-
   simp_rw is_open_prod_iff at hV,
   rw is_open_prod_iff,
   intros x y hxy,
@@ -438,8 +437,7 @@ begin
         { exact mem_union_right _ (hv hx hy)},
         { exact mem_union_left _ (mem_union_right _ hy), }},
       { exact mem_union_left _ (mem_union_left _ hx),},},
-    exact finite.subset (finite.union (finite.union x.property y.property) hV_int) h_subset,
-  }, 
+    exact finite.subset (finite.union (finite.union x.property y.property) hV_int) h_subset, }, 
   set Vx : Π (v : maximal_spectrum R), set (K_v K v) := λ v, 
   ite (cond v) (R_v K v) (classical.some (hV v _ _ (hxy' v))) with hVx,
   set Vy : Π (v : maximal_spectrum R), set (K_v K v) := λ v, ite (cond v) 
@@ -451,8 +449,7 @@ begin
     refine ⟨λ x, by refl,_,_⟩,
     { intro v, simp only [hVx], split_ifs,
       { exact K_v.is_open_R_v R K v },
-      { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).1 },
-      },
+      { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).1 },},
       { have : {v : maximal_spectrum R | ¬ Vx v = R_v K v} ⊆ {v : maximal_spectrum R | ¬ cond v},
       { intros v hv h_cond_v,
         rw mem_set_of_eq at hv,
@@ -464,8 +461,7 @@ begin
     refine ⟨λ x, by refl,_,_⟩,
     { intro v, simp only [hVy], split_ifs,
       { exact K_v.is_open_R_v R K v },
-      { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.1 },
-      },
+      { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.1 },},
       { have : {v : maximal_spectrum R | ¬ Vy v = R_v K v} ⊆ {v : maximal_spectrum R | ¬ cond v },
       { intros v hv h_cond_v, 
         rw mem_set_of_eq at hv,
@@ -506,9 +502,6 @@ begin
       { rw [if_neg hv, if_neg hv] at hp',
         { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.2.2 hp'},} }}
 end
-
-#exit
-
 
 lemma finite_adele_ring'.continuous_mul : 
   continuous (λ (p : finite_adele_ring' R K × finite_adele_ring' R K), p.fst * p.snd) :=
@@ -591,7 +584,20 @@ lemma finite_adele_ring'.is_open_integer_subring :
   is_open {x : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), x.val v ∈ R_v K v} :=
 begin  
   apply topological_space.generate_open.basic,
-  sorry
+  rw finite_adele_ring'.generating_set,
+  use λ v, R_v K v,
+  refine ⟨λ v, by refl, λ v, K_v.is_open_R_v R K v,_⟩,
+  { rw filter.eventually_cofinite,
+    simp_rw [eq_self_iff_true, not_true, set_of_false, finite_empty] },
+end
+
+lemma finite_adele_ring'.is_open_integer_subring_opp : is_open
+  {x : (finite_adele_ring' R K)ᵐᵒᵖ | 
+    ∀ (v : maximal_spectrum R),(mul_opposite.unop x).val v ∈ R_v K v} :=
+begin
+  use {x : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), x.val v ∈ R_v K v},
+  use finite_adele_ring'.is_open_integer_subring R K,
+  refl,
 end
   
 /-  Wrong topology! -/
