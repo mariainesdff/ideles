@@ -408,12 +408,12 @@ begin
   sorry
 end
 
-
+set_option profiler true
 lemma finite_adele_ring'.continuous_add : 
   continuous (λ (p : finite_adele_ring' R K × finite_adele_ring' R K), p.fst + p.snd) :=
 begin
   apply continuous_generated_from,
-  rintros U ⟨V, hUV, hV_open, hV_univ⟩,
+  rintros U ⟨V, hUV, hV_open, hV_int⟩,
   have hV : ∀ v : maximal_spectrum R, is_open 
     ((λ p : ( K_v K v × K_v K v), p.fst + p.snd) ⁻¹' V v) := 
   λ v, continuous.is_open_preimage continuous_add (V v) (hV_open v),
@@ -423,11 +423,23 @@ begin
   intros x y hxy,
   have hxy' : ∀ (v : maximal_spectrum R), (x.val v, y.val v) ∈
      (λ p : (K_v K v) × (K_v K v), p.fst + p.snd) ⁻¹' V v := λ v, (hUV _).mp hxy v,
-  
   set cond := λ v : maximal_spectrum R, x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v 
     with h_cond,
-  set S := {v : maximal_spectrum R | ¬ (cond v)} with hS,
-  have hS_fin : S.finite := sorry, 
+  have hS_fin : {v : maximal_spectrum R | ¬ (cond v)}.finite,
+  { have h_subset : {v : maximal_spectrum R | ¬ (cond v)} ⊆ 
+      {v : maximal_spectrum R | ¬ (x.val v ∈ R_v K v)} ∪
+      {v : maximal_spectrum R | ¬ (y.val v ∈ R_v K v)} ∪
+      {v : maximal_spectrum R | ¬ (V v = R_v K v)},
+    { intros v hv,
+      rw [mem_set_of_eq, h_cond] at hv,
+      push_neg at hv,
+      by_cases hx : x.val v ∈ R_v K v,
+      { by_cases hy : y.val v ∈ R_v K v,
+        { exact mem_union_right _ (hv hx hy)},
+        { exact mem_union_left _ (mem_union_right _ hy), }},
+      { exact mem_union_left _ (mem_union_left _ hx),},},
+    exact finite.subset (finite.union (finite.union x.property y.property) hV_int) h_subset,
+  }, 
   set Vx : Π (v : maximal_spectrum R), set (K_v K v) := λ v, 
   ite (cond v) (R_v K v) (classical.some (hV v _ _ (hxy' v))) with hVx,
   set Vy : Π (v : maximal_spectrum R), set (K_v K v) := λ v, ite (cond v) 
@@ -447,34 +459,32 @@ begin
         simp only [hVx] at hv,
         rw if_pos h_cond_v at hv,
         exact hv (eq.refl _), }, 
-      exact finite.subset hS_fin this,
-       }},
+      exact finite.subset hS_fin this, }},
   { use Vy,
     refine ⟨λ x, by refl,_,_⟩,
     { intro v, simp only [hVy], split_ifs,
       { exact K_v.is_open_R_v R K v },
       { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.1 },
       },
-      { have : {v : maximal_spectrum R | ¬ Vy v = R_v K v} ⊆ 
-        {v : maximal_spectrum R | ¬ y.val v ∈ R_v K v},
-      { intros v hv, 
-        sorry },
-      --exact finite.subset hS_fin this, 
-      sorry}},
+      { have : {v : maximal_spectrum R | ¬ Vy v = R_v K v} ⊆ {v : maximal_spectrum R | ¬ cond v },
+      { intros v hv h_cond_v, 
+        rw mem_set_of_eq at hv,
+        simp only [hVy] at hv,
+        rw if_pos h_cond_v at hv,
+        exact hv (eq.refl _), }, 
+      exact finite.subset hS_fin this, }},
   { rw [mem_set_of_eq],
     intro v,
     simp only [hVx],
     split_ifs,
     { exact h.1,},
-    { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.1 },
-    },
+    { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.1 },},
   { rw [mem_set_of_eq],
     intro v,
     simp only [hVy],
     split_ifs,
     { exact h.2.1 },
-    { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.2.1 },
-    },
+    { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.2.1 }},
   { intros p hp,
     rw [mem_prod, mem_set_of_eq, mem_set_of_eq] at hp,
     rw [mem_preimage, hUV],
@@ -485,12 +495,19 @@ begin
     { rw h_univ, exact mem_univ _},
     { simp only [hVx, hVy, if_neg h_univ] at hp',
       by_cases hv : cond v,
-      { rw [if_pos hv, if_pos hv] at hp', sorry },
+      { rw [if_pos hv, if_pos hv, mem_prod, set_like.mem_coe, K_v.is_integer, set_like.mem_coe,
+          K_v.is_integer] at hp',
+        rw hv.2.2,
+        rw set_like.mem_coe,
+        rw K_v.is_integer,
+        have h_max : valued.v ((p.fst + p.snd).val v) ≤ max (valued.v ((p.fst).val v))
+          (valued.v ((p.snd).val v)) := valuation.map_add _ _ _,
+        exact le_trans h_max (max_le hp'.1 hp'.2), },
       { rw [if_neg hv, if_neg hv] at hp',
         { exact (classical.some_spec (classical.some_spec (hV v _ _ (hxy' v)))).2.2.2.2 hp'},} }}
 end
 
-
+#exit
 
 
 lemma finite_adele_ring'.continuous_mul : 
