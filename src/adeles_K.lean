@@ -4,6 +4,8 @@ import number_theory.number_field
 import ring_theory.tensor_product
 import adeles_R
 
+import topology.metric_space.basic
+
 noncomputable theory
 
 open_locale tensor_product
@@ -18,6 +20,14 @@ def A_K := (A_K_f K) × (K ⊗[ℚ] ℝ)
 instance : comm_ring (A_K_f K) := 
 finite_adele_ring'.comm_ring (ring_of_integers K) K
 instance : comm_ring (A_K K) := prod.comm_ring
+instance : topological_space (A_K_f K) := 
+finite_adele_ring'.topological_space (ring_of_integers K) K
+instance : topological_ring (A_K_f K) := 
+finite_adele_ring'.topological_ring (ring_of_integers K) K
+instance : topological_space (K ⊗[ℚ] ℝ) := sorry
+instance : topological_ring (K ⊗[ℚ] ℝ) := sorry
+instance : topological_space (A_K K) := prod.topological_space
+instance : topological_ring (A_K K) := prod.topological_ring
 
 def inj_K_f : K → A_K_f K := inj_K (ring_of_integers K) K
 def inj_K_f.ring_hom : ring_hom K (A_K_f K) := inj_K.ring_hom (ring_of_integers K) K

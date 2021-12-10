@@ -1,3 +1,4 @@
+import ring_theory.class_group
 import adeles_K
 import ideles_R
 
@@ -21,75 +22,63 @@ def prod_units.mul_equiv : mul_equiv (units (R × S)) ((units R) × (units S)) :
   inv_fun   := λ x, units.mk (prod.mk (x.1 : R) (x.2 : S)) 
     (prod.mk (((x.1)⁻¹ : units R) : R) (((x.2)⁻¹ : units S) : S))
     (by { rw [prod.mk_mul_mk, units.mul_inv, units.mul_inv], refl })
-    (by { rw [prod.mk_mul_mk, units.inv_mul, units.inv_mul], refl, }),
+    (by { rw [prod.mk_mul_mk, units.inv_mul, units.inv_mul], refl }),
   left_inv  := λ x, by simp only [prod.mk.eta, units.coe_mk, units.mk_coe],
   right_inv := λ x, by simp only [prod.mk.eta, units.coe_mk, units.mk_coe],
-  map_mul'  := λ x y,
-  begin
-    ext,
-    simp only [prod.fst_mul, units.coe_mk, units.coe_mul],
-    simp only [prod.snd_mul, units.coe_mk, units.coe_mul],
-  end }
+  map_mul'  := λ x y, 
+  by { simp only [prod.fst_mul, prod.snd_mul, units.coe_mk, units.coe_mul], refl }}
 
+variables {R S}
 lemma prod_units.mul_equiv.continuous : continuous ⇑(prod_units.mul_equiv R S) :=
 begin
-  simp only [prod_units.mul_equiv, ← mul_equiv.to_fun_eq_coe],
   apply continuous.prod_mk,
   { apply continuous_induced_rng,
-    rw [embed_product, monoid_hom.coe_mk],
     apply continuous.prod_mk,
     { simp only [units.coe_mk],
-      have h_comp : (λ (x : units (R × S)), (x : R × S).fst) = (λ x : (R × S), x.1 ) ∘
+      have h_comp : (λ (x : units (R × S)), (x : R × S).1) = (λ x : (R × S), x.1 ) ∘
         (λ x : (R × S) × (R × S)ᵐᵒᵖ, x.1) ∘ (embed_product (R × S)) := rfl,
       rw h_comp,
       apply continuous.comp continuous_fst
         (continuous.comp continuous_fst continuous_induced_dom) },
     { simp only [units.coe_mk, units.inv_mk],
-      sorry },
-  },
-  sorry,
+      have h_comp : (λ (x : units (R × S)), (mul_opposite.op ((x⁻¹ : units (R × S)) : R × S).1)) = 
+        (λ x : (R × S)ᵐᵒᵖ, (mul_opposite.op (mul_opposite.unop x).1)) ∘
+        (λ x : (R × S) × (R × S)ᵐᵒᵖ, x.2) ∘ (embed_product (R × S)) := rfl,
+      rw h_comp,
+      apply continuous.comp
+        (continuous.comp continuous_op (continuous.comp continuous_fst continuous_unop))
+        (continuous.comp continuous_snd continuous_induced_dom) }},
+  { apply continuous_induced_rng,
+    apply continuous.prod_mk,
+    { apply continuous.comp continuous_snd units.continuous_coe },
+    { apply continuous.comp continuous_op
+       (continuous.comp continuous_snd (continuous.comp units.continuous_coe continuous_inv)),
+      apply_instance,}},
 end
 
-def prod_units.hom : homeomorph (units (R × S)) ((units R) × (units S)) := 
-{ continuous_to_fun := 
-  begin
-    simp only [mul_equiv.to_fun_eq_coe],
-    rw continuous_def,
-    intros U hU,
-    use (λ x : units R × units S, prod.mk (prod.mk x.1.val x.2.val)
-      (mul_opposite.op (prod.mk x.1.inv x.2.inv)))'' U,
-    refine ⟨_,_⟩,
-    { have : prod.topological_space.is_open ((λ (x : units R × units S), 
-        ((x.fst.val, x.snd.val), mul_opposite.op (x.fst.inv, x.snd.inv))) '' U) ↔ 
-        is_open ((λ (x : units R × units S), 
-          ((x.fst.val, x.snd.val), mul_opposite.op (x.fst.inv, x.snd.inv))) '' U) := by refl,
-      rw [this, is_open_prod_iff], clear this,
-      intros r s hrs,
-      rw mem_image at hrs,
-      --let V := λ x : U, prod.mk (x : units R × units S).1.val (x : units R × units S).2.val,
-      use [(λ x : units R × units S, prod.mk x.1.val x.2.val)'' U,
-        (λ (x : units R × units S), (mul_opposite.op (x.fst.inv, x.snd.inv))) '' U],
-        refine ⟨_,_,_,_,_⟩,
-        { --apply continuous.prod_mk,
-          sorry },
-        { sorry },
-        { sorry },
-        { sorry },
-       sorry},
-    { ext x,
-      rw [mem_preimage, mem_preimage, embed_product, mem_image],
-      split; intro h,
-      { obtain ⟨y, hyU, hyx⟩ := h,
-        simp only [prod.mk.inj_iff, units.val_eq_coe, mul_opposite.op_inj, units.inv_eq_coe_inv, 
-          monoid_hom.coe_mk] at hyx,
-        rw [prod_units.mul_equiv, mul_equiv.coe_mk],
-        simp_rw [← hyx.2, ← hyx.1, units.mk_coe, prod.mk.eta],
-        exact hyU,},
-      { use [(prod_units.mul_equiv R S).to_fun x, h],
-        rw [prod_units.mul_equiv, mul_equiv.to_fun_eq_coe, monoid_hom.coe_mk, mul_equiv.coe_mk,
-          prod.mk.eta, prod.mk.eta] }}
-  end,
-  continuous_inv_fun := sorry,
+lemma prod_units.mul_equiv.inv_continuous : continuous ⇑((prod_units.mul_equiv R S).symm) :=
+begin
+  simp only [prod_units.mul_equiv, ← mul_equiv.inv_fun_eq_symm],
+  apply continuous_induced_rng,
+  apply continuous.prod_mk,
+  { apply continuous.prod_mk (continuous.comp units.continuous_coe continuous_fst)
+      (continuous.comp units.continuous_coe continuous_snd), },
+  { apply continuous.comp continuous_op,
+    apply continuous.comp units.continuous_coe,
+    apply continuous_induced_rng,
+    apply continuous.prod_mk,
+    { apply continuous.prod_mk
+        (continuous.comp units.continuous_coe (continuous.comp continuous_inv continuous_fst))
+        (continuous.comp units.continuous_coe (continuous.comp continuous_inv continuous_snd));
+      apply_instance },
+    { apply continuous.comp continuous_op
+        (continuous.prod_mk (continuous.comp units.continuous_coe continuous_fst)
+          (continuous.comp units.continuous_coe continuous_snd)) }}
+end
+
+def prod_units.homeo : homeomorph (units (R × S)) ((units R) × (units S)) := 
+{ continuous_to_fun  := prod_units.mul_equiv.continuous,
+  continuous_inv_fun := prod_units.mul_equiv.inv_continuous,
   ..prod_units.mul_equiv R S }
 
 end units
@@ -112,41 +101,38 @@ instance : topological_group (I_K K) := units.topological_group
 lemma I_K_f.def : I_K_f K = units (A_K_f K) := rfl
 lemma I_K.def : I_K K = units (A_K K) := rfl
 
-lemma I_K.as_prod : I_K K ≃* (I_K_f K) × units (K ⊗[ℚ] ℝ) := 
-begin
-  have h : units (A_K_f K ×  K ⊗[ℚ] ℝ) ≃* (units (A_K_f K) × units (K ⊗[ℚ] ℝ)) := 
-  mul_equiv.prod_units,
-  convert h,
-end
+def I_K.as_prod : I_K K ≃* (I_K_f K) × units (K ⊗[ℚ] ℝ) := 
+by apply prod_units.mul_equiv (A_K_f K) (K ⊗[ℚ] ℝ)
 
-lemma I_K.as_prod.continuous : continuous ((I_K.as_prod K).to_fun) := sorry
-def I_K.as_prod.homeomorphism : homeomorph (I_K K) ((I_K_f K) × units (K ⊗[ℚ] ℝ)) := 
-{ continuous_to_fun := sorry,
-  continuous_inv_fun := sorry,
-  ..(I_K.as_prod K)}
 
+def I_K.as_prod.homeo : homeomorph (I_K K) ((I_K_f K) × units (K ⊗[ℚ] ℝ)) := 
+prod_units.homeo
+
+variable {K}
+lemma I_K.as_prod.continuous : continuous ((I_K.as_prod K).to_fun) :=
+(I_K.as_prod.homeo K).continuous_to_fun
+lemma I_K.as_prod.continuous_inv : continuous ((I_K.as_prod K).inv_fun) :=
+(I_K.as_prod.homeo K).continuous_inv_fun
 
 def I_K.mk (x : I_K_f K) (u : units (K ⊗[ℚ] ℝ)) : I_K K := (I_K.as_prod K).inv_fun (prod.mk x u)
 
-def I_K.proj1 : monoid_hom (I_K K) (I_K_f K) := 
+variable (K)
+def I_K.fst : monoid_hom (I_K K) (I_K_f K) := 
 { to_fun := λ x, ((I_K.as_prod K).to_fun x).1,
   map_one' := by {rw [mul_equiv.to_fun_eq_coe, mul_equiv.map_one, prod.fst_one]},
   map_mul' := λ x y, by {simp only [prod.fst_mul, mul_equiv.to_fun_eq_coe, mul_equiv.map_mul]}}
 
-lemma I_K.proj1.surjective : function.surjective (I_K.proj1 K) := 
+variable {K}
+lemma I_K.fst.surjective : function.surjective (I_K.fst K) := 
 begin
   intro x,
-  use I_K.mk K x (1 : units (K ⊗[ℚ] ℝ)),
-  rw [I_K.proj1, monoid_hom.coe_mk, mul_equiv.to_fun_eq_coe, I_K.mk, 
+  use I_K.mk x (1 : units (K ⊗[ℚ] ℝ)),
+  rw [I_K.fst, monoid_hom.coe_mk, mul_equiv.to_fun_eq_coe, I_K.mk, 
     mul_equiv.inv_fun_eq_symm, mul_equiv.apply_symm_apply],
 end
 
-lemma I_K.proj1.continuous : continuous (I_K.proj1 K) := 
-begin
-  rw continuous_def,
-  intros U hU,
-  sorry,
-end
+lemma I_K.fst.continuous : continuous (I_K.fst K) := 
+continuous.comp continuous_fst I_K.as_prod.continuous
 
 lemma right_inv (x : units K) : (inj_K.ring_hom K) x.val * (inj_K.ring_hom K) x.inv = 1 := 
 begin
@@ -157,9 +143,11 @@ end
 lemma left_inv (x : units K) : (inj_K.ring_hom K) x.inv * (inj_K.ring_hom K) x.val  = 1 := 
 by rw [mul_comm, right_inv]
 
+variable (K)
 def inj_units_K : units K → I_K K := λ x, ⟨number_field.inj_K.ring_hom K x.val, 
-  number_field.inj_K.ring_hom K x.inv, right_inv K x, left_inv K x⟩
+  number_field.inj_K.ring_hom K x.inv, right_inv x, left_inv x⟩
 
+variable {K}
 @[simp]
 lemma inj_units_K.map_one : inj_units_K K 1 = 1 := 
 by {rw inj_units_K, simp only [inj_K.map_one], refl,}
@@ -172,12 +160,15 @@ begin
   simp_rw [units.val_eq_coe, units.coe_mul, units.coe_mk, (inj_K.ring_hom K).map_mul],
 end
 
+variable (K)
 def inj_units_K.group_hom : monoid_hom (units K) (I_K K) := 
 { to_fun    := inj_units_K K,
-  map_one'  := inj_units_K.map_one K,
-  map_mul'  := inj_units_K.map_mul K, }
+  map_one'  := inj_units_K.map_one,
+  map_mul'  := inj_units_K.map_mul, }
 
 def C_K := quotient_group.quotient (inj_units_K.group_hom K).range
+
+--instance : group (C_K K) := infer_instance
 
 def v_comp_val (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
   with_zero (multiplicative ℤ) := valued.v (x.val.1.val v)
@@ -240,16 +231,18 @@ begin
   exact finite.subset (restricted_product K x) h_subset,
 end
 
+
 def I_K_f.map_to_fractional_ideals : monoid_hom
   (I_K_f K) (units (fractional_ideal (non_zero_divisors (ring_of_integers K)) K)) := 
 map_to_fractional_ideals (ring_of_integers K) K
 
+variable {K}
 lemma I_K_f.map_to_fractional_ideals.surjective :
   function.surjective (I_K_f.map_to_fractional_ideals K) :=
 --map_to_fractional_ideals.surjective (ring_of_integers K) K
 @map_to_fractional_ideals.surjective (ring_of_integers K) K _ _ _ _ _ _
 
-lemma map_to_fractional_ideals.mem_kernel_iff (x : I_K_f K) : 
+lemma I_K_f.map_to_fractional_ideals.mem_kernel_iff (x : I_K_f K) : 
   I_K_f.map_to_fractional_ideals K x = 1 ↔ 
   ∀ v : maximal_spectrum (ring_of_integers K), 
     finite_idele.to_add_valuations (ring_of_integers K) K x v = 0 := 
@@ -258,24 +251,67 @@ lemma map_to_fractional_ideals.mem_kernel_iff (x : I_K_f K) :
 lemma I_K_f.map_to_fractional_ideals.continuous :
   continuous (I_K_f.map_to_fractional_ideals K) :=
 --map_to_fractional_ideals.continuous (ring_of_integers K) K
-@map_to_fractional_ideals.continuous (ring_of_integers K) K _ _ _ _ _ _ 
-  
+@map_to_fractional_ideals.continuous (ring_of_integers K) K _ _ _ _ _ _
+
+variable (K)
 def I_K.map_to_fractional_ideals : 
   monoid_hom (I_K K) (units (fractional_ideal (non_zero_divisors (ring_of_integers K)) K)) := 
-monoid_hom.comp (I_K_f.map_to_fractional_ideals K) (I_K.proj1 K)
+monoid_hom.comp (I_K_f.map_to_fractional_ideals K) (I_K.fst K)
 
+variable {K}
 lemma I_K.map_to_fractional_ideals.surjective :
   function.surjective (I_K.map_to_fractional_ideals K) :=
-function.surjective.comp (I_K_f.map_to_fractional_ideals.surjective K) (I_K.proj1.surjective K)
+function.surjective.comp I_K_f.map_to_fractional_ideals.surjective I_K.fst.surjective
+
+lemma I_K.map_to_fractional_ideals.mem_kernel_iff (x : I_K K) : 
+  I_K.map_to_fractional_ideals K x = 1 ↔ 
+  ∀ v : maximal_spectrum (ring_of_integers K), 
+    finite_idele.to_add_valuations (ring_of_integers K) K (I_K.fst K x) v = 0 :=
+I_K_f.map_to_fractional_ideals.mem_kernel_iff (I_K.fst K x)
 
 lemma I_K.map_to_fractional_ideals.continuous :
   continuous (I_K.map_to_fractional_ideals K) :=
-begin
-  apply continuous.comp (I_K_f.map_to_fractional_ideals.continuous K),
-  sorry
-end
+continuous.comp I_K_f.map_to_fractional_ideals.continuous I_K.fst.continuous
+
+variable (K)
+def I_K_f.map_to_class_group :
+  (I_K_f K) → (class_group (ring_of_integers K) K) := 
+λ x, quotient_group.mk (I_K_f.map_to_fractional_ideals K x)
+
+instance : topological_space (class_group ↥(ring_of_integers K) K) := ⊥
+instance : topological_group (class_group ↥(ring_of_integers K) K) := 
+{ continuous_mul := continuous_of_discrete_topology,
+  continuous_inv := continuous_of_discrete_topology, }
+
+variable {K}
+lemma I_K_f.map_to_class_group.surjective : surjective (I_K_f.map_to_class_group K) := 
+surjective.comp quotient.surjective_quotient_mk' I_K_f.map_to_fractional_ideals.surjective
+
+lemma I_K_f.map_to_class_group.continuous : continuous (I_K_f.map_to_class_group K) := 
+continuous.comp continuous_bot (I_K_f.map_to_fractional_ideals.continuous)
+
+variable (K)
+def I_K.map_to_class_group :
+  (I_K K) → (class_group (ring_of_integers K) K) := 
+λ x, quotient_group.mk (I_K.map_to_fractional_ideals K x)
+
+variable {K}
+lemma I_K.map_to_class_group.surjective : surjective (I_K.map_to_class_group K) := 
+surjective.comp quotient.surjective_quotient_mk' I_K.map_to_fractional_ideals.surjective
+
+lemma I_K.map_to_class_group.continuous : continuous (I_K.map_to_class_group K) := 
+continuous.comp continuous_bot I_K.map_to_fractional_ideals.continuous
+
+-- Timeout
+--set_option trace.class_instances true
+def I_K.monoid_hom_to_class_group : (I_K K) →* (class_group (ring_of_integers K) K) := 
+{ to_fun   := I_K.map_to_class_group K,
+  map_one' := sorry,
+  map_mul' := sorry }
 
 end number_field
+
+#exit
 
 namespace function_field
 

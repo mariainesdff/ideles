@@ -1031,6 +1031,7 @@ begin
     h_subset,
 end
 
+variables (R K)
 lemma map_to_fractional_ideals.surjective : surjective (map_to_fractional_ideals R K) :=
 begin
   rintro ⟨I, I_inv, hval_inv, hinv_val⟩,
@@ -1064,6 +1065,7 @@ begin
   exact ⟨H, map_to_fractional_ideals.inv_eq_inv _ ⟨I, I_inv, hval_inv, hinv_val⟩ H⟩,
 end
 
+variables {R K}
 lemma map_to_fractional_ideals.mem_kernel_iff (x : finite_idele_group' R K) : 
   map_to_fractional_ideals R K x = 1 ↔ 
   ∀ v : maximal_spectrum R, finite_idele.to_add_valuations R K x v = 0 :=
