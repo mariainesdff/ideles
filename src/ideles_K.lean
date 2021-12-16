@@ -34,12 +34,7 @@ begin
   apply continuous.prod_mk,
   { apply continuous_induced_rng,
     apply continuous.prod_mk,
-    { simp only [units.coe_mk],
-      have h_comp : (λ (x : units (R × S)), (x : R × S).1) = (λ x : (R × S), x.1 ) ∘
-        (λ x : (R × S) × (R × S)ᵐᵒᵖ, x.1) ∘ (embed_product (R × S)) := rfl,
-      rw h_comp,
-      apply continuous.comp continuous_fst
-        (continuous.comp continuous_fst continuous_induced_dom) },
+    { apply continuous.comp continuous_fst units.continuous_coe, },
     { simp only [units.coe_mk, units.inv_mk],
       have h_comp : (λ (x : units (R × S)), (mul_opposite.op ((x⁻¹ : units (R × S)) : R × S).1)) = 
         (λ x : (R × S)ᵐᵒᵖ, (mul_opposite.op (mul_opposite.unop x).1)) ∘
@@ -168,8 +163,8 @@ def inj_units_K.group_hom : monoid_hom (units K) (I_K K) :=
 
 def C_K := quotient_group.quotient (inj_units_K.group_hom K).range
 
---instance : group (C_K K) := infer_instance
-
+instance : comm_group (C_K K) := quotient_group.quotient.comm_group (inj_units_K.group_hom K).range
+--#print quotient_group.quotient.comm_group
 def v_comp_val (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
   with_zero (multiplicative ℤ) := valued.v (x.val.1.val v)
 
@@ -295,23 +290,109 @@ def I_K.map_to_class_group :
   (I_K K) → (class_group (ring_of_integers K) K) := 
 λ x, quotient_group.mk (I_K.map_to_fractional_ideals K x)
 
+def I_K.map_to_class_group' :
+  (I_K K) → (class_group (ring_of_integers K) K) := 
+λ x, quotient_group.mk' _ (I_K.map_to_fractional_ideals K x)
+
+
 variable {K}
-lemma I_K.map_to_class_group.surjective : surjective (I_K.map_to_class_group K) := 
+lemma I_K.map_to_class_group.surjective : surjective (I_K.map_to_class_group' K) := 
 surjective.comp quotient.surjective_quotient_mk' I_K.map_to_fractional_ideals.surjective
 
-lemma I_K.map_to_class_group.continuous : continuous (I_K.map_to_class_group K) := 
+lemma I_K.map_to_class_group.continuous : continuous (I_K.map_to_class_group' K) := 
 continuous.comp continuous_bot I_K.map_to_fractional_ideals.continuous
 
--- Timeout
---set_option trace.class_instances true
+-- TODO
+lemma I_K.map_to_class_group.map_one : I_K.map_to_class_group K 1 = 1 :=
+by {simp only [I_K.map_to_class_group, monoid_hom.map_one], refl }
+
+lemma I_K.map_to_class_group.map_mul (x y : I_K K) : I_K.map_to_class_group K (x * y) = 
+  I_K.map_to_class_group K x * I_K.map_to_class_group K y :=
+by {simp only [I_K.map_to_class_group, monoid_hom.map_mul], refl }
+
 def I_K.monoid_hom_to_class_group : (I_K K) →* (class_group (ring_of_integers K) K) := 
 { to_fun   := I_K.map_to_class_group K,
-  map_one' := sorry,
-  map_mul' := sorry }
+  map_one' := I_K.map_to_class_group.map_one,
+  map_mul' := I_K.map_to_class_group.map_mul }
+
+lemma I_K_f.map_to_fractional_ideal.map_units (k : units K) : 
+  fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
+  ((I_K_f.map_to_fractional_ideals K) (units.mk ((inj_K_f.ring_hom K) k.val)
+  ((inj_K_f.ring_hom K) k.inv) (by sorry) (by sorry))) := 
+begin
+  /- rw I_K_f.map_to_fractional_ideals,
+  rw map_to_fractional_ideals,
+  simp only [units.coe_inv', units.val_eq_coe, units.inv_eq_coe_inv, monoid_hom.coe_mk],
+  rw map_to_fractional_ideals.def,
+  simp only [units.coe_mk],
+  rw map_to_fractional_ideals.val,
+  simp only [subtype.val_eq_coe], -/
+  set I := (fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K))
+    with hI_def,
+  have hI : I ≠ 0 := sorry,
+  
+  rw ← fractional_ideal.factorization_principal I hI k hI_def,
+  apply finprod_congr,
+  sorry
+end
+lemma I_K.map_to_fractional_ideals.map_units_K (k : units K) : 
+  fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
+  ↑((I_K.map_to_fractional_ideals K) ((inj_units_K.group_hom K) k)) := 
+begin
+  --rw inj_units_K.group_hom,
+  --rw [monoid_hom.coe_mk],
+  --rw inj_units_K,
+  --dsimp only,
+  --simp_rw inj_K.ring_hom,
+  --rw I_K.map_to_fractional_ideals,
+  --rw [monoid_hom.coe_comp, comp_app, I_K.fst],
+  exact I_K_f.map_to_fractional_ideal.map_units k,
+end
+
+lemma I_K.map_to_class_group.map_units_K (k : units K) :
+  I_K.map_to_class_group' K ((inj_units_K.group_hom K) k) = 1 :=
+begin
+  rw I_K.map_to_class_group',
+  simp only,
+  rw [quotient_group.mk'_apply, quotient_group.eq_one_iff, monoid_hom.mem_range],
+  simp only [to_principal_ideal_eq_iff], 
+  use k,
+  exact I_K.map_to_fractional_ideals.map_units_K k,
+end
+
+/- variable (K)
+lemma C_K.map_to_class_group :
+  (C_K K) → (class_group (ring_of_integers K) K) :=
+begin
+  --rw C_K,
+  --rw quotient_group.quotient,
+  apply quotient.lift,
+  swap,
+  exact I_K.map_to_class_group K,
+  { intros x y hxy,
+    obtain ⟨k, hk⟩ := hxy,
+    rw eq_inv_mul_iff_mul_eq at hk,
+    rw ← hk,
+    rw I_K.map_to_class_group.map_mul,
+    suffices h : I_K.map_to_class_group K ((inj_units_K.group_hom K) k) = 1,
+    rw [h, mul_one],
+    exact I_K.map_to_class_group.map_units_K k,
+    },
+end
+ -/
+ variable (K)
+def C_K.monoid_hom_to_class_group :
+  (C_K K) →* (class_group (ring_of_integers K) K) :=
+begin
+  apply quotient_group.lift (inj_units_K.group_hom K).range I_K.monoid_hom_to_class_group _,
+  { intros x hx,
+    obtain ⟨k, hk⟩ := hx,
+    rw ← hk,
+    exact I_K.map_to_class_group.map_units_K k,
+  },
+end
 
 end number_field
-
-#exit
 
 namespace function_field
 

@@ -29,6 +29,13 @@ instance : topological_ring (K ⊗[ℚ] ℝ) := sorry
 instance : topological_space (A_K K) := prod.topological_space
 instance : topological_ring (A_K K) := prod.topological_ring
 
+variables (n : Type*) [fintype n] 
+instance : ring (n → ℝ) := pi.ring 
+instance : topological_space (n → ℝ) := Pi.topological_space
+instance : has_continuous_add (n → ℝ) := pi.has_continuous_add'
+instance : has_continuous_mul (n → ℝ) := pi.has_continuous_mul'
+instance : topological_ring (n → ℝ) := topological_ring.mk
+
 def inj_K_f : K → A_K_f K := inj_K (ring_of_integers K) K
 def inj_K_f.ring_hom : ring_hom K (A_K_f K) := inj_K.ring_hom (ring_of_integers K) K
 

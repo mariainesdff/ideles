@@ -665,6 +665,29 @@ begin
   { apply_instance },
 end
 
+lemma fractional_ideal.factorization_principal (I : fractional_ideal (non_zero_divisors R) K) 
+  (hI : I ≠ 0) (k : K) (hk : I = fractional_ideal.span_singleton (non_zero_divisors R) k) :
+  ∏ᶠ (v : maximal_spectrum R), (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^
+    ((associates.mk v.val.as_ideal).count (associates.mk
+    (ideal.span {classical.some (is_fraction_ring.div_surjective k)} : ideal R)).factors - 
+    (associates.mk v.val.as_ideal).count (associates.mk (ideal.span {classical.some(classical.some_spec 
+(is_fraction_ring.div_surjective k))} : ideal R)).factors : ℤ) = I := 
+begin
+  set n : R := classical.some (is_fraction_ring.div_surjective k) with hn,
+  set d : R := classical.some (classical.some_spec (is_fraction_ring.div_surjective k)) with hd,
+  --rw [← hd],
+  have haJ' : I = fractional_ideal.span_singleton (non_zero_divisors R) ((algebra_map R K) d)⁻¹ *
+    ↑(ideal.span {n} : ideal R),
+  { rw hk,
+    simp only [fractional_ideal.span_singleton_mul_span_singleton, 
+    fractional_ideal.coe_ideal_span_singleton],
+    sorry,
+  },
+--obtain ⟨n : R, d, hd, hnd⟩ := is_fraction_ring.div_surjective k,
+exact fractional_ideal.factorization I hI haJ',
+end
+
+
 variables (K)
 def fractional_ideal.count (I : fractional_ideal (non_zero_divisors R) K) : ℤ := 
 dite (I = 0) (λ (hI : I = 0), 0) (λ hI : ¬ I = 0, 
