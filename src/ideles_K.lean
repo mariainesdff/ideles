@@ -161,11 +161,13 @@ def inj_units_K.group_hom : monoid_hom (units K) (I_K K) :=
   map_one'  := inj_units_K.map_one,
   map_mul'  := inj_units_K.map_mul, }
 
-def C_K := quotient_group.quotient (inj_units_K.group_hom K).range
 
-instance : comm_group (C_K K) := quotient_group.quotient.comm_group (inj_units_K.group_hom K).range
+def C_K := (I_K K) ⧸ (inj_units_K.group_hom K).range
+
+instance : comm_group (C_K K) := 
+quotient_group.has_quotient.quotient.comm_group ((inj_units_K.group_hom K).range)
 instance : topological_space (C_K K) := quotient.topological_space
-instance : topological_group (C_K K) := sorry
+instance : topological_group (C_K K) := topological_group_quotient ((inj_units_K.group_hom K).range)
 
 def v_comp_val (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
   with_zero (multiplicative ℤ) := valued.v (x.val.1.val v)

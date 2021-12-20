@@ -63,13 +63,7 @@ lemma is_localization.mk'_num_ne_zero_of_ne_zero {R : Type*} [comm_ring R] {M : 
   {S : Type*} [comm_ring S] [algebra R S] [is_localization M S] {z : S}  {x : R} {y : M}
   (hxyz : z = is_localization.mk' S x y) (hz : z ≠ 0) : x ≠ 0 := 
 λ hx, hz (is_localization.eq_zero_of_fst_eq_zero (is_localization.eq_mk'_iff_mul_eq.mp hxyz) hx)
-/- begin
-  intro hx,
-  exact hz (is_localization.eq_zero_of_fst_eq_zero (is_localization.eq_mk'_iff_mul_eq.mp hxyz) hx),
-  /- revert hz,
-  contrapose!,
-  exact is_localization.mk'_eq_zero_of_num_zero hxyz, -/
-end -/
+
 variables {A : Type*} [comm_ring A] [is_domain A] {S : Type*} [field S] [algebra A S]
   [is_fraction_ring A S]
 
@@ -90,21 +84,6 @@ begin
   exact is_fraction_ring.injective A S h,
   exact is_fraction_ring.to_map_ne_zero_of_mem_non_zero_divisors s.property,
 end 
-
---Associates lemmas
-theorem associates.count_ne_zero_iff_dvd {α : Type*} [comm_cancel_monoid_with_zero α]
-  [dec_irr : Π (p : associates α), decidable (irreducible p)] [unique_factorization_monoid α] 
-  [nontrivial α] [dec : decidable_eq α] {a p : α} (ha0 : a ≠ 0) (hp : irreducible p) :
-  (associates.mk p).count (associates.mk a).factors ≠ 0 ↔ p ∣ a :=
-begin
-  rw ← associates.mk_le_mk_iff_dvd_iff,
-  split; intro h,
-  { exact associates.le_of_count_ne_zero (associates.mk_ne_zero.mpr ha0) 
-    ((associates.irreducible_mk p).mpr hp) h, },
-  { rw [← pow_one (associates.mk p), associates.prime_pow_dvd_iff_le
-    (associates.mk_ne_zero.mpr ha0)  ((associates.irreducible_mk p).mpr hp)] at h,
-    exact ne_of_gt (lt_of_lt_of_le zero_lt_one h), }
-end
 
 -- Ideal associates lemmas
 @[simp] lemma associates.mk_ne_zero' {x : R} : 
@@ -144,6 +123,15 @@ end
 def ring.adic_valuation.def (r : R) : with_zero (multiplicative ℤ) :=
 dite (r = 0) (λ (h : r = 0), 0) (λ h : ¬ r = 0, (multiplicative.of_add
   (-(associates.mk v.val.val).count (associates.mk (ideal.span{r} : ideal R)).factors : ℤ)))
+
+lemma ring.adic_valuation.def.dif_pos {r : R} (hr : r = 0) :
+  ring.adic_valuation.def v r = 0 :=
+by rw [ring.adic_valuation.def, dif_pos hr]
+
+lemma ring.adic_valuation.def.dif_neg {r : R} (hr : r ≠ 0) :
+  ring.adic_valuation.def v r = (multiplicative.of_add
+  (-(associates.mk v.val.val).count (associates.mk (ideal.span{r} : ideal R)).factors : ℤ)) :=
+by rw [ring.adic_valuation.def, dif_neg hr]
 
 lemma ring.adic_valuation.map_zero' : ring.adic_valuation.def v 0 = 0 := 
 by { rw [ring.adic_valuation.def, dif_pos], refl, }
@@ -438,16 +426,4 @@ begin
   rw h at hu,
   exact (valuation.ne_zero_iff _).mp (ne_of_eq_of_ne hu with_zero.coe_ne_zero),
 end
-
-variable {K}
-
-section valuation_map_pow
-lemma valuation.map_zpow {Γ : Type*} [linear_ordered_comm_group_with_zero Γ] {K' : Type*}
-  [division_ring K'] (v : valuation K' Γ) {x : K'} {n : ℤ}: v (x^n) = v x ^ n :=
-begin
-  cases n,
-  { rw [int.of_nat_eq_coe, zpow_coe_nat, zpow_coe_nat, valuation.map_pow], },
-  { rw [zpow_neg_succ_of_nat, zpow_neg_succ_of_nat, valuation.map_inv, valuation.map_pow], },
-end
-end valuation_map_pow
 

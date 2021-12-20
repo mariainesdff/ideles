@@ -29,7 +29,7 @@ instance ss : @separated_space K (us' v) := @valued_ring.separated K _ (v_valued
 
 variables (K)
 def K_v := @uniform_space.completion K (us' v)
-instance : field (K_v K v) := @field_completion K _ (us' v) (tdr' v) _ (ug' v) (tr' v)
+instance : field (K_v K v) := @field_completion K _ (us' v) (tdr' v) _ (ug' v)
 instance : division_ring (K_v K v) := infer_instance
 instance : comm_ring (K_v K v) := infer_instance
 
