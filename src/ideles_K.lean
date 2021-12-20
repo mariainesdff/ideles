@@ -140,7 +140,7 @@ by rw [mul_comm, right_inv]
 
 variable (K)
 def inj_units_K : units K → I_K K := λ x, ⟨number_field.inj_K.ring_hom K x.val, 
-  number_field.inj_K.ring_hom K x.inv, right_inv x, left_inv x⟩
+  inj_K.ring_hom K x.inv, right_inv x, left_inv x⟩
 
 variable {K}
 @[simp]
@@ -315,26 +315,73 @@ def I_K.monoid_hom_to_class_group : (I_K K) →* (class_group (ring_of_integers 
   map_one' := I_K.map_to_class_group.map_one,
   map_mul' := I_K.map_to_class_group.map_mul }
 
+example (G : Type*) [add_comm_group G] (a b : G) :
+  - - a - b = -b - - a := begin
+    --simp only [neg_neg, sub_neg_eq_add],
+    /- rw sub_eq_add_neg, 
+    rw add_comm, -/
+    --rw add_comm,
+    simp only [neg_sub_neg, neg_neg],
+  end
+
+lemma I_K_f.unit_image.mul_inv (k : units K):
+  ((inj_K_f.ring_hom K) k.val) * ((inj_K_f.ring_hom K) k.inv) = 1 :=
+begin
+  rw [← ring_hom.map_mul, units.val_eq_coe, units.inv_eq_coe_inv,
+    units.mul_inv, ring_hom.map_one],
+end 
+
+lemma I_K_f.unit_image.inv_mul (k : units K):
+  ((inj_K_f.ring_hom K) k.inv) * ((inj_K_f.ring_hom K) k.val) = 1 :=
+by rw [mul_comm, I_K_f.unit_image.mul_inv]
+
+open_locale classical
+
+--set_option profiler true
 lemma I_K_f.map_to_fractional_ideal.map_units (k : units K) : 
   fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
   ((I_K_f.map_to_fractional_ideals K) (units.mk ((inj_K_f.ring_hom K) k.val)
-  ((inj_K_f.ring_hom K) k.inv) (by sorry) (by sorry))) := 
+  ((inj_K_f.ring_hom K) k.inv) (I_K_f.unit_image.mul_inv k) (I_K_f.unit_image.inv_mul k))) := 
 begin
-  /- rw I_K_f.map_to_fractional_ideals,
-  rw map_to_fractional_ideals,
-  simp only [units.coe_inv', units.val_eq_coe, units.inv_eq_coe_inv, monoid_hom.coe_mk],
-  rw map_to_fractional_ideals.def,
-  simp only [units.coe_mk],
-  rw map_to_fractional_ideals.val,
-  simp only [subtype.val_eq_coe], -/
   set I := (fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K))
     with hI_def,
-  have hI : I ≠ 0 := sorry,
-  
+  have hI : I ≠ 0,
+  { rw [hI_def, fractional_ideal.span_singleton_ne_zero_iff],
+    exact units.ne_zero k },
   rw ← fractional_ideal.factorization_principal I hI k hI_def,
   apply finprod_congr,
-  sorry
+  intro v,
+  apply congr_arg,
+  rw finite_idele.to_add_valuations,
+  simp only,
+  rw [with_zero.to_integer, ← injective.eq_iff multiplicative.of_add.injective, of_add_neg, of_add_to_add,
+    ← neg_sub_neg, of_add_sub, ← inv_div'],
+  apply congr_arg,
+  have hv : valued.v (((inj_K_f.ring_hom K) k.val).val v) ≠ 0,
+  { rw valuation.ne_zero_iff,
+    rw inj_K_f.ring_hom.v_comp,
+    rw [units.val_eq_coe],
+    rw ← uniform_space.completion.coe_zero,
+    rw injective.ne_iff (@uniform_space.completion.coe_inj K (us' v) (ss v)),
+    exact units.ne_zero k },
+  let z :=  classical.some (with_zero.to_integer._proof_1 hv),
+  let hz :=  classical.some_spec (with_zero.to_integer._proof_1 hv),
+
+  rw [← with_zero.coe_inj, hz, valued_K_v.def, inj_K_f.ring_hom,
+    inj_K.ring_hom_apply, inj_K_apply, valued.extension_extends, units.val_eq_coe, v_valued_K.def,
+    adic_valuation.def],
+  simp only,
+  rw [with_zero.coe_div,
+    ring.adic_valuation.def.dif_neg v (non_zero_divisors.coe_ne_zero _), 
+    ring.adic_valuation.def.dif_neg],
+  { have h := (classical.some_spec (classical.some_spec (adic_valuation.def._proof_1 (k : K)))),
+    apply is_localization.mk'_num_ne_zero_of_ne_zero
+  (eq.symm h)
+   (units.ne_zero k)},
+
 end
+
+
 lemma I_K.map_to_fractional_ideals.map_units_K (k : units K) : 
   fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
   ↑((I_K.map_to_fractional_ideals K) ((inj_units_K.group_hom K) k)) := 

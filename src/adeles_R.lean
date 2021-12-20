@@ -687,36 +687,36 @@ is_localization.lift (hom_prod_diag_unit R K) x
 
 variable {R}
 lemma ideal.finite_factors {I : ideal R} (hI : I ≠ 0) : 
-  finite { v : maximal_spectrum R | v.val.as_ideal ∣ I } := 
+  finite { v : maximal_spectrum R | v.val.val ∣ I } := 
 begin
   haveI h_fin := unique_factorization_monoid.fintype_subtype_dvd I hI,
   let f' : finset (ideal R) := finset.map 
     ⟨(λ J : {x // x ∣ I}, J.val), subtype.coe_injective⟩ h_fin.elems,
-  have h_eq : { v : maximal_spectrum R | v.val.as_ideal ∣ I } = 
-    { v : maximal_spectrum R | v.val.as_ideal ∈ f' },
+  have h_eq : { v : maximal_spectrum R | v.val.val ∣ I } = 
+    { v : maximal_spectrum R | v.val.val ∈ f' },
   { ext v,
     rw [mem_set_of_eq, mem_set_of_eq, finset.mem_map], 
     simp_rw exists_prop,
     rw [subtype.exists, embedding.coe_fn_mk],
     simp_rw [exists_and_distrib_right, exists_eq_right],
     split,
-    { intro h, use h, exact fintype.complete ⟨v.val.as_ideal, h⟩},
+    { intro h, use h, exact fintype.complete ⟨v.val.val, h⟩},
     { intro h, obtain ⟨hv, -⟩ := h, exact hv, }},    
   rw h_eq,
-  have hv : ∀ v : maximal_spectrum R, v.val.as_ideal = v.val.val := λ v, rfl,
-  have hv_inj : injective (λ (v : maximal_spectrum R), v.val.as_ideal),
+  have hv : ∀ v : maximal_spectrum R, v.val.val = v.val.val := λ v, rfl,
+  have hv_inj : injective (λ (v : maximal_spectrum R), v.val.val),
   { intros v w hvw, 
     dsimp only at hvw,
     rw [hv v, hv w] at hvw,
     ext, 
     rw [← subtype.val_eq_coe, ← subtype.val_eq_coe, ← subtype.val_eq_coe, 
       ← subtype.val_eq_coe, hvw],},
-  exact finite.preimage_embedding ⟨(λ v : maximal_spectrum R, v.val.as_ideal), hv_inj⟩
+  exact finite.preimage_embedding ⟨(λ v : maximal_spectrum R, v.val.val), hv_inj⟩
     (finite_mem_finset (f')),
 end
 
 lemma finite_factors (d : R) (hd : (ideal.span{d} : ideal R) ≠ 0) : 
-  finite { v : maximal_spectrum R | v.val.as_ideal ∣ (ideal.span({d}) : ideal R)} := 
+  finite { v : maximal_spectrum R | v.val.val ∣ (ideal.span({d}) : ideal R)} := 
 ideal.finite_factors hd
 
 variable (R) 
@@ -730,7 +730,7 @@ begin
     exact hd_ne_zero, },
   obtain ⟨f, h_irred, h_assoc⟩:= wf_dvd_monoid.exists_factors (ideal.span{d}) hd,
   have hsubset : { v : maximal_spectrum R | ¬ (map_to_K_hat R K x v) ∈ (R_v K v)} ⊆ 
-    { v : maximal_spectrum R | v.val.as_ideal ∣ ideal.span({d})},
+    { v : maximal_spectrum R | v.val.val ∣ ideal.span({d})},
   { intros v hv,
     rw mem_set_of_eq at hv ⊢,
     rw [map_to_K_hat, ← hx, is_localization.lift_mk', pi.mul_apply] at hv,
@@ -822,7 +822,7 @@ begin
   { rw [ideal.zero_eq_bot, ne.def, ideal.span_singleton_eq_bot],
     apply non_zero_divisors.ne_zero hd, },
   obtain ⟨f, h_irred, h_assoc⟩:= wf_dvd_monoid.exists_factors (ideal.span{d}) hd_ne_zero,
-  have hsubset : supp ⊆ { v : maximal_spectrum R | v.val.as_ideal ∣ ideal.span({d})},
+  have hsubset : supp ⊆ { v : maximal_spectrum R | v.val.val ∣ ideal.span({d})},
   { rw h_supp,
     intros v hv,
     rw mem_set_of_eq at hv ⊢,
@@ -842,8 +842,12 @@ begin
   exact finite.subset (finite_factors d hd_ne_zero) hsubset,
 end
 
+@[simps coe]
 def inj_K : K → finite_adele_ring' R K := 
 λ x, ⟨(λ v : maximal_spectrum R, (coe : K → (K_v K v)) x), inj_K_image R K x⟩
+
+lemma inj_K_apply (k : K) : 
+  inj_K R K  k = ⟨(λ v : maximal_spectrum R, (coe : K → (K_v K v)) k), inj_K_image R K k⟩ := rfl
 
 @[simp]
 lemma inj_K.map_zero : inj_K R K 0 = 0 := by { rw inj_K, ext v, rw [subtype.coe_mk], refl }
@@ -877,6 +881,8 @@ def inj_K.ring_hom : ring_hom K (finite_adele_ring' R K)  :=
   map_one' := inj_K.map_one R K,
   map_mul' := inj_K.map_mul R K,
   ..inj_K.add_group_hom R K }
+
+lemma inj_K.ring_hom_apply {k : K} : inj_K.ring_hom R K k = inj_K R K k := rfl
 
 -- We need to assume that the maximal spectrum of R is nonempty (i.e., R is not a field) for this to
 -- work 

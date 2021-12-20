@@ -39,6 +39,9 @@ instance : topological_ring (n → ℝ) := topological_ring.mk
 def inj_K_f : K → A_K_f K := inj_K (ring_of_integers K) K
 def inj_K_f.ring_hom : ring_hom K (A_K_f K) := inj_K.ring_hom (ring_of_integers K) K
 
+lemma inj_K_f.ring_hom.v_comp (v : maximal_spectrum (ring_of_integers K)) (k : K) :
+  ((inj_K_f.ring_hom K) k).val v = (coe : K → (K_v K v)) k := rfl
+
 def inj_K : K → A_K K := λ x, ⟨inj_K_f K x, algebra.tensor_product.include_left x⟩
 def inj_K.ring_hom : ring_hom K (A_K K) := 
 ring_hom.prod (inj_K_f.ring_hom K) (@algebra.tensor_product.include_left ℚ _ K _ _ ℝ _ _ )

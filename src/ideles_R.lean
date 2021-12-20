@@ -171,11 +171,11 @@ begin
 end
 
 lemma finite_support (x : finite_idele_group' R K ) : (mul_support (λ (v : maximal_spectrum R), 
-  (v.val.as_ideal : 
+  (v.val.val : 
     fractional_ideal (non_zero_divisors R) K) ^ finite_idele.to_add_valuations R K x v)).finite := 
 begin
   have h_subset :
-    {v : maximal_spectrum R | (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K) ^ 
+    {v : maximal_spectrum R | (v.val.val : fractional_ideal (non_zero_divisors R) K) ^ 
       finite_idele.to_add_valuations R K x v ≠ 1} ⊆
     { v : maximal_spectrum R | valued.v (x.val.val v) ≠ 1 },
   { intros v,
@@ -194,13 +194,13 @@ begin
 end
 
 lemma finite_support' (x : finite_idele_group' R K ) : (mul_support (λ (v : maximal_spectrum R), 
-  (v.val.as_ideal : 
+  (v.val.val : 
     fractional_ideal (non_zero_divisors R) K) ^ -finite_idele.to_add_valuations R K x v)).finite
 := 
 begin
-  have h : {v : maximal_spectrum R | (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K) ^ 
+  have h : {v : maximal_spectrum R | (v.val.val : fractional_ideal (non_zero_divisors R) K) ^ 
     -finite_idele.to_add_valuations R K x v ≠ 1} =
-    {v : maximal_spectrum R | (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K) ^ 
+    {v : maximal_spectrum R | (v.val.val : fractional_ideal (non_zero_divisors R) K) ^ 
       finite_idele.to_add_valuations R K x v ≠ 1},
   { ext v,
     rw [mem_set_of_eq, mem_set_of_eq, ne.def, ne.def, zpow_neg₀, inv_eq_one₀], },
@@ -210,12 +210,12 @@ end
 
 def map_to_fractional_ideals.val :
   (finite_idele_group' R K) → (fractional_ideal (non_zero_divisors R) K) := λ x,
-∏ᶠ (v : maximal_spectrum R), (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^
+∏ᶠ (v : maximal_spectrum R), (v.val.val : fractional_ideal (non_zero_divisors R) K)^
   (finite_idele.to_add_valuations R K x v)
   
 def map_to_fractional_ideals.inv :
   (finite_idele_group' R K) → (fractional_ideal (non_zero_divisors R) K) := λ x,
-∏ᶠ (v : maximal_spectrum R), (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^
+∏ᶠ (v : maximal_spectrum R), (v.val.val : fractional_ideal (non_zero_divisors R) K)^
   (-finite_idele.to_add_valuations R K x v)
 
 lemma finite_idele.to_add_valuations.mul_inv (x : finite_idele_group' R K): 
@@ -272,11 +272,11 @@ def map_to_fractional_ideals : monoid_hom
 variables {R K}
 lemma associates.finite_factors (I : ideal R) (hI : I ≠ 0) :
   ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
-  ((associates.mk v.val.as_ideal).count (associates.mk I).factors : ℤ) = 0 :=
+  ((associates.mk v.val.val).count (associates.mk I).factors : ℤ) = 0 :=
 begin
   have h_supp : {v : maximal_spectrum R |
-    ¬((associates.mk v.val.as_ideal).count (associates.mk I).factors : ℤ) = 0} =
-    { v : maximal_spectrum R | v.val.as_ideal ∣ I },
+    ¬((associates.mk v.val.val).count (associates.mk I).factors : ℤ) = 0} =
+    { v : maximal_spectrum R | v.val.val ∣ I },
   { ext v,
     rw mem_set_of_eq, rw mem_set_of_eq,
     rw [int.coe_nat_eq_zero, subtype.val_eq_coe],
@@ -345,19 +345,19 @@ def idele.mk (a : Π v : maximal_spectrum R, K_v K v)
 
 lemma idele.finite_mul_support {I : ideal R} (hI : I ≠ 0):
   (mul_support (λ (v : maximal_spectrum R), 
-  (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^
-  ((associates.mk v.val.as_ideal).count (associates.mk I).factors : ℤ))).finite := 
+  (v.val.val : fractional_ideal (non_zero_divisors R) K)^
+  ((associates.mk v.val.val).count (associates.mk I).factors : ℤ))).finite := 
 begin
   have h_subset : {v : maximal_spectrum R | 
-    (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K) ^
-    ((associates.mk v.val.as_ideal).count (associates.mk I).factors : ℤ) ≠ 1} ⊆ 
+    (v.val.val : fractional_ideal (non_zero_divisors R) K) ^
+    ((associates.mk v.val.val).count (associates.mk I).factors : ℤ) ≠ 1} ⊆ 
     {v : maximal_spectrum R | 
-    ((associates.mk v.val.as_ideal).count (associates.mk I).factors : ℤ) ≠ 0},
+    ((associates.mk v.val.val).count (associates.mk I).factors : ℤ) ≠ 0},
   { intros v hv,
     rw mem_set_of_eq at hv ⊢,
     intro h_zero,
-    have hv' : (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^
-      ((associates.mk v.val.as_ideal).count (associates.mk I).factors : ℤ) = 1,
+    have hv' : (v.val.val : fractional_ideal (non_zero_divisors R) K)^
+      ((associates.mk v.val.val).count (associates.mk I).factors : ℤ) = 1,
     { rw [h_zero, zpow_zero _],},
     exact hv hv', },
   exact finite.subset (filter.eventually_cofinite.mp (associates.finite_factors I hI)) h_subset,
@@ -365,19 +365,19 @@ end
 
 lemma idele.finite_mul_support' (I : ideal R) (hI : I ≠ 0):
   (mul_support (λ (v : maximal_spectrum R), 
-  v.val.as_ideal^(associates.mk v.val.as_ideal).count (associates.mk I).factors)).finite := 
+  v.val.val^(associates.mk v.val.val).count (associates.mk I).factors)).finite := 
 begin
   have h_subset : {v : maximal_spectrum R | 
-    v.val.as_ideal^
-    (associates.mk v.val.as_ideal).count (associates.mk I).factors ≠ 1} ⊆ 
+    v.val.val^
+    (associates.mk v.val.val).count (associates.mk I).factors ≠ 1} ⊆ 
     {v : maximal_spectrum R | 
-    ((associates.mk v.val.as_ideal).count (associates.mk I).factors : ℤ) ≠ 0},
+    ((associates.mk v.val.val).count (associates.mk I).factors : ℤ) ≠ 0},
   { intros v hv,
     rw mem_set_of_eq at hv ⊢,
     intro h_zero,
     rw int.coe_nat_eq_zero at h_zero,
-    have hv' : v.val.as_ideal^
-      (associates.mk v.val.as_ideal).count (associates.mk I).factors = 1,
+    have hv' : v.val.val^
+      (associates.mk v.val.val).count (associates.mk I).factors = 1,
     { rw [h_zero, pow_zero _],},
     exact hv hv', },
   exact finite.subset (filter.eventually_cofinite.mp (associates.finite_factors I hI)) h_subset,
@@ -385,8 +385,8 @@ end
 
 lemma idele.finite_mul_support_inv {I : ideal R} (hI : I ≠ 0):
   (mul_support (λ (v : maximal_spectrum R), 
-  (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^
-  -((associates.mk v.val.as_ideal).count (associates.mk I).factors : ℤ))).finite := 
+  (v.val.val : fractional_ideal (non_zero_divisors R) K)^
+  -((associates.mk v.val.val).count (associates.mk I).factors : ℤ))).finite := 
 begin
   rw mul_support, 
   simp_rw [zpow_neg₀, ne.def, inv_eq_one₀],
@@ -491,36 +491,36 @@ begin
 end
 
 lemma ideal.finprod_not_dvd (I : ideal R) (hI : I ≠ 0) : 
-¬ (v.val.as_ideal)^
-  ((associates.mk v.val.as_ideal).count (associates.mk I).factors + 1) ∣
-    (∏ᶠ (v : maximal_spectrum R), (v.val.as_ideal)^
-      (associates.mk v.val.as_ideal).count (associates.mk I).factors) :=
+¬ (v.val.val)^
+  ((associates.mk v.val.val).count (associates.mk I).factors + 1) ∣
+    (∏ᶠ (v : maximal_spectrum R), (v.val.val)^
+      (associates.mk v.val.val).count (associates.mk I).factors) :=
 begin
-  have h_ne_zero : v.val.as_ideal ^
-    (associates.mk v.val.as_ideal).count (associates.mk I).factors ≠ 0 := pow_ne_zero _ v.property,
+  have h_ne_zero : v.val.val ^
+    (associates.mk v.val.val).count (associates.mk I).factors ≠ 0 := pow_ne_zero _ v.property,
   rw [← finprod_mem_dvd' v (idele.finite_mul_support' I hI), pow_add, pow_one],
   intro h_contr,
   rw mul_dvd_mul_iff_left h_ne_zero at h_contr,
-  have hv_prime : prime v.val.as_ideal := ideal.prime_of_is_prime v.property v.val.property,
-  have h_finite : finite (mul_support (λ (v : maximal_spectrum R), v.val.as_ideal^
-    (associates.mk v.val.as_ideal).count (associates.mk I).factors) \ {v}),
+  have hv_prime : prime v.val.val := ideal.prime_of_is_prime v.property v.val.property,
+  have h_finite : finite (mul_support (λ (v : maximal_spectrum R), v.val.val^
+    (associates.mk v.val.val).count (associates.mk I).factors) \ {v}),
   { apply finite.subset (idele.finite_mul_support' I hI) (diff_subset _ _), },
   rw finprod_mem_eq_finite_to_finset_prod _ h_finite at h_contr,
   obtain ⟨w, hw, hvw'⟩ := prime.exists_mem_finset_dvd hv_prime h_contr,
-  have hw_prime : prime w.val.as_ideal := ideal.prime_of_is_prime w.property w.val.property,
+  have hw_prime : prime w.val.val := ideal.prime_of_is_prime w.property w.val.property,
   rw [finite.mem_to_finset, mem_diff, mem_singleton_iff] at hw,
   have hvw := prime.dvd_of_dvd_pow hv_prime hvw',
   rw [prime.dvd_prime_iff_associated hv_prime hw_prime, associated_iff_eq] at hvw,
-  have hv' : v.val.as_ideal = v.val.val := rfl,
-  have hw' : w.val.as_ideal = w.val.val := rfl,
+  have hv' : v.val.val = v.val.val := rfl,
+  have hw' : w.val.val = w.val.val := rfl,
   rw [hv', hw', subtype.val_eq_coe, subtype.val_eq_coe, subtype.val_eq_coe, subtype.val_eq_coe]
     at hvw, 
   exact hw.2 (eq.symm (subtype.coe_injective(subtype.coe_injective hvw))), 
 end
 
 lemma ideal.finprod_count_ne_zero (I : ideal R) :
-  associates.mk (∏ᶠ (v : maximal_spectrum R), v.val.as_ideal ^ 
-    (associates.mk v.val.as_ideal).count (associates.mk I).factors) ≠ 0 := 
+  associates.mk (∏ᶠ (v : maximal_spectrum R), v.val.val ^ 
+    (associates.mk v.val.val).count (associates.mk I).factors) ≠ 0 := 
 begin
   rw [associates.mk_ne_zero, finprod_def],
   split_ifs,
@@ -531,12 +531,12 @@ begin
 end
 
 lemma ideal.finprod_count (I : ideal R) (hI : I ≠ 0) :
-(associates.mk v.val.as_ideal).count (associates.mk (∏ᶠ (v : maximal_spectrum R), (v.val.as_ideal)^
-    (associates.mk v.val.as_ideal).count (associates.mk I).factors)).factors = 
-    (associates.mk v.val.as_ideal).count (associates.mk I).factors :=
+(associates.mk v.val.val).count (associates.mk (∏ᶠ (v : maximal_spectrum R), (v.val.val)^
+    (associates.mk v.val.val).count (associates.mk I).factors)).factors = 
+    (associates.mk v.val.val).count (associates.mk I).factors :=
 begin
   have h_ne_zero := ideal.finprod_count_ne_zero I,
-  have hv : irreducible (associates.mk v.val.as_ideal) := associates.irreducible_of_maximal v,
+  have hv : irreducible (associates.mk v.val.val) := associates.irreducible_of_maximal v,
   have h_dvd := finprod_mem_dvd _ (idele.finite_mul_support' I hI),
   have h_not_dvd := ideal.finprod_not_dvd v I hI,
   rw [← associates.mk_dvd_mk, associates.dvd_eq_le, associates.mk_pow,
@@ -547,12 +547,12 @@ end
 
 /- lemma ideal.finprod_count' (exps : Π v : maximal_spectrum R, ℕ) 
 (h_exps : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, exps v = 0):
-(associates.mk v.val.as_ideal).count (associates.mk (∏ᶠ (v : maximal_spectrum R), (v.val.as_ideal)^
+(associates.mk v.val.val).count (associates.mk (∏ᶠ (v : maximal_spectrum R), (v.val.val)^
     (exps v))).factors = exps v :=
 begin
   sorry,
   /- have h_ne_zero := ideal.finprod_ne_zero I,
-  have hv : irreducible (associates.mk v.val.as_ideal) := associates.irreducible_of_maximal v,
+  have hv : irreducible (associates.mk v.val.val) := associates.irreducible_of_maximal v,
   have h_dvd := finprod_mem_dvd _ (idele.finite_mul_support' I hI),
   have h_not_dvd := ideal.finprod_not_dvd v I hI,
   rw [← associates.mk_dvd_mk, associates.dvd_eq_le, associates.mk_pow,
@@ -562,8 +562,8 @@ begin
 end -/
 
 lemma ideal.factorization (I : ideal R) (hI : I ≠ 0) :
-  ∏ᶠ (v : maximal_spectrum R), (v.val.as_ideal)^
-    (associates.mk v.val.as_ideal).count (associates.mk I).factors = I := 
+  ∏ᶠ (v : maximal_spectrum R), (v.val.val)^
+    (associates.mk v.val.val).count (associates.mk I).factors = I := 
 begin
   rw [← associated_iff_eq, ← associates.mk_eq_mk_iff_associated],
   apply associates.eq_of_eq_counts,
@@ -599,8 +599,8 @@ begin
 end
 
 lemma ideal.factorization_coe (I : ideal R) (hI : I ≠ 0) :
-  ∏ᶠ (v : maximal_spectrum R), (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^
-    ((associates.mk v.val.as_ideal).count (associates.mk I).factors : ℤ) = I := 
+  ∏ᶠ (v : maximal_spectrum R), (v.val.val : fractional_ideal (non_zero_divisors R) K)^
+    ((associates.mk v.val.val).count (associates.mk I).factors : ℤ) = I := 
 begin
   conv_rhs{rw ← ideal.factorization I hI}, 
   rw fractional_ideal.coe_finprod,
@@ -644,9 +644,9 @@ end
 lemma fractional_ideal.factorization (I : fractional_ideal (non_zero_divisors R) K) (hI : I ≠ 0) 
   {a : R} {J : ideal R} 
   (haJ : I = fractional_ideal.span_singleton (non_zero_divisors R) ((algebra_map R K) a)⁻¹ * ↑J) :
-  ∏ᶠ (v : maximal_spectrum R), (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^
-    ((associates.mk v.val.as_ideal).count (associates.mk J).factors - 
-    (associates.mk v.val.as_ideal).count (associates.mk (ideal.span{a})).factors : ℤ) = I := 
+  ∏ᶠ (v : maximal_spectrum R), (v.val.val : fractional_ideal (non_zero_divisors R) K)^
+    ((associates.mk v.val.val).count (associates.mk J).factors - 
+    (associates.mk v.val.val).count (associates.mk (ideal.span{a})).factors : ℤ) = I := 
 begin
   have hJ_ne_zero : J ≠ 0 := fractional_ideal.ideal_factor_ne_zero hI haJ,
   have hJ := ideal.factorization_coe J hJ_ne_zero,
@@ -667,23 +667,28 @@ end
 
 lemma fractional_ideal.factorization_principal (I : fractional_ideal (non_zero_divisors R) K) 
   (hI : I ≠ 0) (k : K) (hk : I = fractional_ideal.span_singleton (non_zero_divisors R) k) :
-  ∏ᶠ (v : maximal_spectrum R), (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^
-    ((associates.mk v.val.as_ideal).count (associates.mk
-    (ideal.span {classical.some (is_fraction_ring.div_surjective k)} : ideal R)).factors - 
-    (associates.mk v.val.as_ideal).count (associates.mk (ideal.span {classical.some(classical.some_spec 
-(is_fraction_ring.div_surjective k))} : ideal R)).factors : ℤ) = I := 
+  ∏ᶠ (v : maximal_spectrum R), (v.val.val : fractional_ideal (non_zero_divisors R) K)^
+    ((associates.mk v.val.val).count (associates.mk
+    (ideal.span {classical.some (is_localization.mk'_surjective (non_zero_divisors R) k)} : ideal R)).factors - 
+    (associates.mk v.val.val).count (associates.mk (ideal.span {
+      (classical.some (classical.some_spec (is_localization.mk'_surjective
+  (non_zero_divisors R) k)) : ↥(non_zero_divisors R))
+    } : ideal R)).factors : ℤ) = I := 
 begin
-  set n : R := classical.some (is_fraction_ring.div_surjective k) with hn,
-  set d : R := classical.some (classical.some_spec (is_fraction_ring.div_surjective k)) with hd,
-  --rw [← hd],
+  set n : R := classical.some(is_localization.mk'_surjective (non_zero_divisors R) k) with hn,
+  set d : ↥(non_zero_divisors R) := (classical.some (classical.some_spec (is_localization.mk'_surjective
+  (non_zero_divisors R) k))) with hd,
+  have hd_ne_zero : (algebra_map R K) (d : R) ≠ 0 :=
+  ring_hom.map_ne_zero_of_mem_non_zero_divisors _
+     (is_fraction_ring.injective R K) d.property,
   have haJ' : I = fractional_ideal.span_singleton (non_zero_divisors R) ((algebra_map R K) d)⁻¹ *
     ↑(ideal.span {n} : ideal R),
-  { rw hk,
-    simp only [fractional_ideal.span_singleton_mul_span_singleton, 
-    fractional_ideal.coe_ideal_span_singleton],
-    sorry,
-  },
---obtain ⟨n : R, d, hd, hnd⟩ := is_fraction_ring.div_surjective k,
+  { rw [hk, fractional_ideal.coe_ideal_span_singleton,
+      fractional_ideal.span_singleton_mul_span_singleton],
+    apply congr_arg,
+    rw [eq_inv_mul_iff_mul_eq₀ hd_ne_zero, mul_comm,
+      ← is_localization.eq_mk'_iff_mul_eq, eq_comm],
+    exact classical.some_spec (classical.some_spec (is_localization.mk'_surjective (non_zero_divisors R) k)), },
 exact fractional_ideal.factorization I hI haJ',
 end
 
@@ -693,14 +698,14 @@ def fractional_ideal.count (I : fractional_ideal (non_zero_divisors R) K) : ℤ 
 dite (I = 0) (λ (hI : I = 0), 0) (λ hI : ¬ I = 0, 
 let a := classical.some (fractional_ideal.exists_eq_span_singleton_mul I) in let 
 J := classical.some (classical.some_spec (fractional_ideal.exists_eq_span_singleton_mul I))
-in ((associates.mk v.val.as_ideal).count (associates.mk J).factors - 
-    (associates.mk v.val.as_ideal).count (associates.mk (ideal.span{a})).factors : ℤ))
+in ((associates.mk v.val.val).count (associates.mk J).factors - 
+    (associates.mk v.val.val).count (associates.mk (ideal.span{a})).factors : ℤ))
 
 lemma fractional_ideal.count_well_defined  {I : fractional_ideal (non_zero_divisors R) K}
   (hI : I ≠ 0)  {a : R} {J : ideal R} 
   (h_aJ : I = fractional_ideal.span_singleton (non_zero_divisors R) ((algebra_map R K) a)⁻¹ * ↑J) :
-  fractional_ideal.count K v I = ((associates.mk v.val.as_ideal).count (associates.mk J).factors - 
-    (associates.mk v.val.as_ideal).count (associates.mk (ideal.span{a})).factors : ℤ) :=
+  fractional_ideal.count K v I = ((associates.mk v.val.val).count (associates.mk J).factors - 
+    (associates.mk v.val.val).count (associates.mk (ideal.span{a})).factors : ℤ) :=
 begin
   set a₁ := classical.some (fractional_ideal.exists_eq_span_singleton_mul I) with h_a₁,
   set J₁ := classical.some (classical.some_spec (fractional_ideal.exists_eq_span_singleton_mul I))
@@ -722,7 +727,7 @@ begin
       injective.eq_iff (is_localization.injective K (le_refl (non_zero_divisors R)))],
     rw [ne.def, ideal.zero_eq_bot, ideal.span_singleton_eq_bot] at h_a_ne_zero,
     exact h_a_ne_zero,},
-  have hv : irreducible (associates.mk v.val.as_ideal),
+  have hv : irreducible (associates.mk v.val.val),
   { rw associates.irreducible_mk,
     exact ideal.irreducible_of_maximal v,},
   rw [h_a₁J₁, ← fractional_ideal.div_span_singleton, ← fractional_ideal.div_span_singleton,
@@ -745,7 +750,7 @@ lemma fractional_ideal.count_mul {I I' : fractional_ideal (non_zero_divisors R) 
   fractional_ideal.count K v (I*I')  = fractional_ideal.count K v (I) + 
   fractional_ideal.count K v (I') :=
 begin
-  have hv : irreducible (associates.mk v.val.as_ideal),
+  have hv : irreducible (associates.mk v.val.val),
   { apply associates.irreducible_of_maximal },
   --have hII' : I*I' ≠ 0 := mul_ne_zero hI hI',
   obtain ⟨a, J, ha, haJ⟩ := fractional_ideal.exists_eq_span_singleton_mul I,
@@ -816,18 +821,18 @@ begin
 end
 
 lemma fractional_ideal.count_self : 
-  fractional_ideal.count K v (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)  = 1 :=
+  fractional_ideal.count K v (v.val.val : fractional_ideal (non_zero_divisors R) K)  = 1 :=
 begin
-  have hv : (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K) ≠ 0,
+  have hv : (v.val.val : fractional_ideal (non_zero_divisors R) K) ≠ 0,
   { rw fractional_ideal.coe_ideal_ne_zero_iff,
     exact v.property  },
-  have h_self : (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K) = 
+  have h_self : (v.val.val : fractional_ideal (non_zero_divisors R) K) = 
     fractional_ideal.span_singleton (non_zero_divisors R) ((algebra_map R K) 1)⁻¹ * 
-    ↑(v.val.as_ideal),
+    ↑(v.val.val),
   { rw [(algebra_map R K).map_one, inv_one, fractional_ideal.span_singleton_one, one_mul], },
     rw fractional_ideal.count_well_defined K v hv h_self,
 
-  have hv_irred : irreducible (associates.mk v.val.as_ideal),
+  have hv_irred : irreducible (associates.mk v.val.val),
     { apply associates.irreducible_of_maximal v },
   rw associates.count_self hv_irred,
   rw [ideal.span_singleton_one, ← ideal.one_eq_top, associates.mk_one, 
@@ -837,7 +842,7 @@ end
 
 lemma fractional_ideal.count_pow' (n : ℕ) : 
   fractional_ideal.count K v
-  ((v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^n) = n := 
+  ((v.val.val : fractional_ideal (non_zero_divisors R) K)^n) = n := 
 by rw [fractional_ideal.count_pow, fractional_ideal.count_self, mul_one]
 
 lemma fractional_ideal.count_inv (n : ℤ) (I : fractional_ideal (non_zero_divisors R) K) : 
@@ -865,7 +870,7 @@ end
 
 lemma fractional_ideal.count_zpow' (n : ℤ) : 
   fractional_ideal.count K v
-  ((v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^n) = n := 
+  ((v.val.val : fractional_ideal (non_zero_divisors R) K)^n) = n := 
 by rw [fractional_ideal.count_zpow, fractional_ideal.count_self, mul_one]
 
 lemma fractional_ideal.count_maximal_coprime (w : maximal_spectrum R) (hw : w ≠ v) :
@@ -892,8 +897,8 @@ begin
 end
 lemma fractional_ideal.count_finprod_coprime (exps : maximal_spectrum R → ℤ) :
   fractional_ideal.count K v (∏ᶠ (i : maximal_spectrum R) (H : i ∈ mul_support 
-  (λ (i : maximal_spectrum R), (i.val.as_ideal : fractional_ideal (non_zero_divisors R) K) ^ exps i)
-  \ {v}), ↑(i.val.as_ideal) ^ exps i) = 0 :=
+  (λ (i : maximal_spectrum R), (i.val.val : fractional_ideal (non_zero_divisors R) K) ^ exps i)
+  \ {v}), ↑(i.val.val) ^ exps i) = 0 :=
 begin
   apply finprod_mem_induction (λ I, fractional_ideal.count K v I = 0),
   { exact fractional_ideal.count_one K v },
@@ -909,11 +914,11 @@ end
 lemma fractional_ideal.count_finprod (exps : maximal_spectrum R → ℤ)
 (h_exps : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, exps v = 0 ) :
 fractional_ideal.count K v (∏ᶠ (v : maximal_spectrum R), 
-  (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K)^(exps v)) = exps v :=
+  (v.val.val : fractional_ideal (non_zero_divisors R) K)^(exps v)) = exps v :=
 begin
-  have h_supp : (mul_support (λ (i : maximal_spectrum R), ↑(i.val.as_ideal) ^ exps i)).finite,
+  have h_supp : (mul_support (λ (i : maximal_spectrum R), ↑(i.val.val) ^ exps i)).finite,
   { have h_subset : {v : maximal_spectrum R | 
-      (v.val.as_ideal : fractional_ideal (non_zero_divisors R) K) ^ exps v ≠ 1} ⊆ 
+      (v.val.val : fractional_ideal (non_zero_divisors R) K) ^ exps v ≠ 1} ⊆ 
       {v : maximal_spectrum R | exps v ≠ 0},
     { intros v hv,
       by_contradiction h,
@@ -925,7 +930,7 @@ begin
     fractional_ideal.count_finprod_coprime, add_zero],
   { apply zpow_ne_zero, 
     exact fractional_ideal.coe_ideal_ne_zero_iff.mpr v.property,},
-  { have hfin : (mul_support (λ (i : maximal_spectrum R), ↑(i.val.as_ideal) ^ exps i) \ {v}).finite,
+  { have hfin : (mul_support (λ (i : maximal_spectrum R), ↑(i.val.val) ^ exps i) \ {v}).finite,
     { exact finite.subset h_supp (diff_subset _ _)},
     rw [finprod_mem_eq_finite_to_finset_prod _ hfin, finset.prod_ne_zero_iff],
     intros w hw,
@@ -1026,19 +1031,19 @@ lemma fractional_ideal.finite_factors {I : fractional_ideal (non_zero_divisors R
   {a : R} {J : ideal R} 
   (haJ : I = fractional_ideal.span_singleton (non_zero_divisors R) ((algebra_map R K) a)⁻¹ * ↑J) :
   ∀ᶠ v : maximal_spectrum R in filter.cofinite,
-  (((associates.mk v.val.as_ideal).count (associates.mk J).factors : ℤ) - 
-    ((associates.mk v.val.as_ideal).count (associates.mk (ideal.span {a})).factors) = 0) :=
+  (((associates.mk v.val.val).count (associates.mk J).factors : ℤ) - 
+    ((associates.mk v.val.val).count (associates.mk (ideal.span {a})).factors) = 0) :=
 begin
   have ha_ne_zero : ideal.span{a} ≠ 0 := fractional_ideal.constant_factor_ne_zero hI haJ,
   have hJ_ne_zero : J ≠ 0 := fractional_ideal.ideal_factor_ne_zero hI haJ,
   rw filter.eventually_cofinite,
-  have h_subset : {v : maximal_spectrum R | ¬((associates.mk v.val.as_ideal).count 
+  have h_subset : {v : maximal_spectrum R | ¬((associates.mk v.val.val).count 
     (associates.mk J).factors : ℤ) - 
-    ↑((associates.mk v.val.as_ideal).count (associates.mk (ideal.span {a})).factors) = 0} ⊆ 
-    {v : maximal_spectrum R | v.val.as_ideal ∣ J} ∪ 
-    {v : maximal_spectrum R | v.val.as_ideal ∣ (ideal.span {a})},
+    ↑((associates.mk v.val.val).count (associates.mk (ideal.span {a})).factors) = 0} ⊆ 
+    {v : maximal_spectrum R | v.val.val ∣ J} ∪ 
+    {v : maximal_spectrum R | v.val.val ∣ (ideal.span {a})},
   { intros v hv,
-    have hv_irred : irreducible v.val.as_ideal := ideal.irreducible_of_maximal v,
+    have hv_irred : irreducible v.val.val := ideal.irreducible_of_maximal v,
     by_contradiction h_nmem,
     rw [mem_union_eq, mem_set_of_eq, mem_set_of_eq] at h_nmem,
     push_neg at h_nmem,  
@@ -1062,8 +1067,8 @@ begin
   have hI_ne_zero : I ≠ 0 := left_ne_zero_of_mul_eq_one hval_inv,
   have hI := fractional_ideal.factorization I hI_ne_zero haJ,
   have h_exps : ∀ᶠ v : maximal_spectrum R in filter.cofinite,
-  ((associates.mk v.val.as_ideal).count (associates.mk J).factors : ℤ) - 
-    ((associates.mk v.val.as_ideal).count (associates.mk (ideal.span {a})).factors) = 0 :=
+  ((associates.mk v.val.val).count (associates.mk J).factors : ℤ) - 
+    ((associates.mk v.val.val).count (associates.mk (ideal.span {a})).factors) = 0 :=
    fractional_ideal.finite_factors hI_ne_zero haJ,
   use idele.mk' R K h_exps,
   rw map_to_fractional_ideals,
