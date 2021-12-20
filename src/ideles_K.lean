@@ -164,6 +164,8 @@ def inj_units_K.group_hom : monoid_hom (units K) (I_K K) :=
 def C_K := quotient_group.quotient (inj_units_K.group_hom K).range
 
 instance : comm_group (C_K K) := quotient_group.quotient.comm_group (inj_units_K.group_hom K).range
+instance : topological_space (C_K K) := quotient.topological_space
+instance : topological_group (C_K K) := sorry
 
 def v_comp_val (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
   with_zero (multiplicative ℤ) := valued.v (x.val.1.val v)
@@ -381,16 +383,30 @@ begin
 end
 
 variable (K)
-def C_K.monoid_hom_to_class_group :
+def C_K.map_to_class_group :
   (C_K K) →* (class_group (ring_of_integers K) K) :=
 begin
   apply quotient_group.lift (inj_units_K.group_hom K).range I_K.monoid_hom_to_class_group _,
   { intros x hx,
     obtain ⟨k, hk⟩ := hx,
     rw ← hk,
-    exact I_K.map_to_class_group.map_units_K k,
-  },
+    exact I_K.map_to_class_group.map_units_K k,},
 end
+
+
+lemma C_K.map_to_class_group.surjective :
+  surjective (C_K.map_to_class_group K) :=
+begin
+  intro y,
+  obtain ⟨x, hx⟩ := I_K.map_to_class_group.surjective y,
+  use [quotient_group.mk x, hx],
+end
+
+lemma C_K.map_to_class_group.continuous :
+  continuous (C_K.map_to_class_group K) := 
+continuous_quot_lift (quotient_group.lift._proof_1
+  (inj_units_K.group_hom K).range I_K.monoid_hom_to_class_group
+  (C_K.map_to_class_group._proof_2 K)) I_K.map_to_class_group.continuous
 
 end number_field
 
