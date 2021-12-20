@@ -406,7 +406,8 @@ begin
   set Vx : Π (v : maximal_spectrum R), set (K_v K v) := λ v, 
   ite (cond v) (R_v K v) (classical.some (is_open_prod_iff.mp (hV v) _ _ (hxy' v))) with hVx,
   set Vy : Π (v : maximal_spectrum R), set (K_v K v) := λ v, ite (cond v) 
-    (R_v K v) (classical.some (classical.some_spec (is_open_prod_iff.mp (hV v) _ _ (hxy' v)))) with hVy,
+    (R_v K v) (classical.some (classical.some_spec (is_open_prod_iff.mp (hV v) _ _ (hxy' v)))) 
+    with hVy,
   use [{z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vx v },
     {z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vy v }],
   refine ⟨is_open_Vx R K hV hV_int hxy' hVx, is_open_Vy R K hV hV_int hxy' hVy, _, _,_⟩,
@@ -526,7 +527,8 @@ begin
   set Vx : Π (v : maximal_spectrum R), set (K_v K v) := λ v, 
   ite (cond v) (R_v K v) (classical.some (is_open_prod_iff.mp (hV v) _ _ (hxy' v))) with hVx,
   set Vy : Π (v : maximal_spectrum R), set (K_v K v) := λ v, ite (cond v) 
-    (R_v K v) (classical.some (classical.some_spec (is_open_prod_iff.mp (hV v) _ _ (hxy' v)))) with hVy,
+    (R_v K v) (classical.some (classical.some_spec (is_open_prod_iff.mp (hV v) _ _ (hxy' v))))
+    with hVy,
   use [{z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vx v },
     {z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vy v }],
   refine ⟨is_open_Vx_mul R K hV hV_int hxy' hVx, is_open_Vy_mul R K hV hV_int hxy' hVy, _, _,_⟩,
@@ -589,51 +591,6 @@ begin
   use finite_adele_ring'.is_open_integer_subring R K,
   refl,
 end
-  
-/-  Wrong topology! -/
-/- instance : topological_space (finite_adele_ring' R K) := subtype.topological_space
-
-section topology
-
-lemma is_open_subtype_iff {α : Type*} {p : α → Prop} [t : topological_space α] 
-  {s : set (subtype p)} : is_open s ↔ ∃s' : set α, t.is_open s' ∧ coe ⁻¹' s' = s := by refl
-
-end topology -/
-
-/- set_option pp.coercions true
-instance : topological_ring (finite_adele_ring' R K) := 
-{ continuous_add := 
-  begin
-    rw continuous_def,
-    intros U hU,
-    obtain ⟨V, hV_open, hUV⟩ := hU,
-    rw is_open_prod_iff,
-    intros a b hab,
-    rw [mem_preimage, ← hUV, mem_preimage, finite_adele_ring'.coe_add] at hab,
-    obtain ⟨V₁, V₂, h_V₁, h_V₂, h_aV₁, h_bV₂, h_V₁V₂⟩ := (is_open_prod_iff.mp
-      (continuous_def.mp (K_hat.topological_ring R K).continuous_add V hV_open)) a.val b.val hab,
-    use [coe⁻¹' V₁, coe⁻¹' V₂, ⟨V₁, h_V₁, rfl⟩, ⟨V₂, h_V₂, rfl⟩, h_aV₁, h_bV₂],
-    intros p hp,
-    rw [mem_prod, mem_preimage, mem_preimage] at hp,
-    rw [mem_preimage, ← hUV, mem_preimage, finite_adele_ring'.coe_add],
-    exact h_V₁V₂ (mk_mem_prod hp.1 hp.2),
-  end,
-  continuous_mul := 
-  begin
-    rw continuous_def,
-    intros U hU,
-    obtain ⟨V, hV_open, hUV⟩ := hU,
-    rw is_open_prod_iff,
-    intros a b hab,
-    rw [mem_preimage, ← hUV, mem_preimage, finite_adele_ring'.coe_mul] at hab,
-    obtain ⟨V₁, V₂, h_V₁, h_V₂, h_aV₁, h_bV₂, h_V₁V₂⟩ := (is_open_prod_iff.mp
-      (continuous_def.mp (K_hat.topological_ring R K).continuous_mul V hV_open)) a.val b.val hab,
-    use [coe⁻¹' V₁, coe⁻¹' V₂, ⟨V₁, h_V₁, rfl⟩, ⟨V₂, h_V₂, rfl⟩, h_aV₁, h_bV₂],
-    intros p hp,
-    rw [mem_prod, mem_preimage, mem_preimage] at hp,
-    rw [mem_preimage, ← hUV, mem_preimage, finite_adele_ring'.coe_mul],
-    exact h_V₁V₂ (mk_mem_prod hp.1 hp.2),
-  end, } -/
 
 instance : comm_ring { x : (K_hat R K) // restricted R K x } := 
 finite_adele_ring'.comm_ring R K

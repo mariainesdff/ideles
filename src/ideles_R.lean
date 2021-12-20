@@ -545,22 +545,6 @@ begin
   apply nat.eq_of_le_of_lt_succ h_dvd h_not_dvd,
 end
 
-/- lemma ideal.finprod_count' (exps : Π v : maximal_spectrum R, ℕ) 
-(h_exps : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, exps v = 0):
-(associates.mk v.val.val).count (associates.mk (∏ᶠ (v : maximal_spectrum R), (v.val.val)^
-    (exps v))).factors = exps v :=
-begin
-  sorry,
-  /- have h_ne_zero := ideal.finprod_ne_zero I,
-  have hv : irreducible (associates.mk v.val.val) := associates.irreducible_of_maximal v,
-  have h_dvd := finprod_mem_dvd _ (idele.finite_mul_support' I hI),
-  have h_not_dvd := ideal.finprod_not_dvd v I hI,
-  rw [← associates.mk_dvd_mk, associates.dvd_eq_le, associates.mk_pow,
-    associates.prime_pow_dvd_iff_le h_ne_zero hv] at h_dvd h_not_dvd,
-  rw not_le at h_not_dvd,
-  apply nat.eq_of_le_of_lt_succ h_dvd h_not_dvd, -/
-end -/
-
 lemma ideal.factorization (I : ideal R) (hI : I ≠ 0) :
   ∏ᶠ (v : maximal_spectrum R), (v.val.val)^
     (associates.mk v.val.val).count (associates.mk I).factors = I := 
@@ -668,19 +652,17 @@ end
 lemma fractional_ideal.factorization_principal (I : fractional_ideal (non_zero_divisors R) K) 
   (hI : I ≠ 0) (k : K) (hk : I = fractional_ideal.span_singleton (non_zero_divisors R) k) :
   ∏ᶠ (v : maximal_spectrum R), (v.val.val : fractional_ideal (non_zero_divisors R) K)^
-    ((associates.mk v.val.val).count (associates.mk
-    (ideal.span {classical.some (is_localization.mk'_surjective (non_zero_divisors R) k)} : ideal R)).factors - 
-    (associates.mk v.val.val).count (associates.mk (ideal.span {
-      (classical.some (classical.some_spec (is_localization.mk'_surjective
-  (non_zero_divisors R) k)) : ↥(non_zero_divisors R))
-    } : ideal R)).factors : ℤ) = I := 
+    ((associates.mk v.val.val).count (associates.mk (ideal.span 
+    {classical.some (is_localization.mk'_surjective (non_zero_divisors R) k)} : ideal R)).factors - 
+    (associates.mk v.val.val).count (associates.mk (ideal.span { (classical.some
+    (classical.some_spec (is_localization.mk'_surjective (non_zero_divisors R) k)) :
+    ↥(non_zero_divisors R))} : ideal R)).factors : ℤ) = I := 
 begin
   set n : R := classical.some(is_localization.mk'_surjective (non_zero_divisors R) k) with hn,
-  set d : ↥(non_zero_divisors R) := (classical.some (classical.some_spec (is_localization.mk'_surjective
-  (non_zero_divisors R) k))) with hd,
-  have hd_ne_zero : (algebra_map R K) (d : R) ≠ 0 :=
-  ring_hom.map_ne_zero_of_mem_non_zero_divisors _
-     (is_fraction_ring.injective R K) d.property,
+  set d : ↥(non_zero_divisors R) := (classical.some (classical.some_spec
+    (is_localization.mk'_surjective (non_zero_divisors R) k))) with hd,
+  have hd_ne_zero : (algebra_map R K) (d : R) ≠ 0 := ring_hom.map_ne_zero_of_mem_non_zero_divisors
+    _ (is_fraction_ring.injective R K) d.property,
   have haJ' : I = fractional_ideal.span_singleton (non_zero_divisors R) ((algebra_map R K) d)⁻¹ *
     ↑(ideal.span {n} : ideal R),
   { rw [hk, fractional_ideal.coe_ideal_span_singleton,
@@ -688,10 +670,10 @@ begin
     apply congr_arg,
     rw [eq_inv_mul_iff_mul_eq₀ hd_ne_zero, mul_comm,
       ← is_localization.eq_mk'_iff_mul_eq, eq_comm],
-    exact classical.some_spec (classical.some_spec (is_localization.mk'_surjective (non_zero_divisors R) k)), },
+    exact classical.some_spec (classical.some_spec (is_localization.mk'_surjective
+      (non_zero_divisors R) k)), },
 exact fractional_ideal.factorization I hI haJ',
 end
-
 
 variables (K)
 def fractional_ideal.count (I : fractional_ideal (non_zero_divisors R) K) : ℤ := 
@@ -712,7 +694,7 @@ begin
     with h_J₁,
   have h_a₁J₁ : I = fractional_ideal.span_singleton (non_zero_divisors R) ((algebra_map R K) a₁)⁻¹ *
     ↑J₁ :=
-  (classical.some_spec (classical.some_spec (fractional_ideal.exists_eq_span_singleton_mul I))).2,
+(classical.some_spec (classical.some_spec (fractional_ideal.exists_eq_span_singleton_mul I))).2,
   have h_a₁_ne_zero : a₁ ≠ 0 :=
   (classical.some_spec (classical.some_spec (fractional_ideal.exists_eq_span_singleton_mul I))).1,
   have h_J₁_ne_zero : J₁ ≠ 0 := fractional_ideal.ideal_factor_ne_zero hI h_a₁J₁,
@@ -752,7 +734,6 @@ lemma fractional_ideal.count_mul {I I' : fractional_ideal (non_zero_divisors R) 
 begin
   have hv : irreducible (associates.mk v.val.val),
   { apply associates.irreducible_of_maximal },
-  --have hII' : I*I' ≠ 0 := mul_ne_zero hI hI',
   obtain ⟨a, J, ha, haJ⟩ := fractional_ideal.exists_eq_span_singleton_mul I,
   have ha_ne_zero : associates.mk (ideal.span {a} : ideal R) ≠ 0,
   { rw [ne.def, associates.mk_eq_zero, ideal.zero_eq_bot, ideal.span_singleton_eq_bot], exact ha },
