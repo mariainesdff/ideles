@@ -96,11 +96,11 @@ instance : topological_group (I_K K) := units.topological_group
 lemma I_K_f.def : I_K_f K = units (A_K_f K) := rfl
 lemma I_K.def : I_K K = units (A_K K) := rfl
 
-def I_K.as_prod : I_K K ≃* (I_K_f K) × units (K ⊗[ℚ] ℝ) := 
-by apply prod_units.mul_equiv (A_K_f K) (K ⊗[ℚ] ℝ)
+def I_K.as_prod : I_K K ≃* (I_K_f K) × units (ℝ ⊗[ℚ] K) := 
+by apply prod_units.mul_equiv (A_K_f K) (ℝ ⊗[ℚ] K)
 
 
-def I_K.as_prod.homeo : homeomorph (I_K K) ((I_K_f K) × units (K ⊗[ℚ] ℝ)) := 
+def I_K.as_prod.homeo : homeomorph (I_K K) ((I_K_f K) × units (ℝ ⊗[ℚ] K)) := 
 prod_units.homeo
 
 variable {K}
@@ -109,7 +109,7 @@ lemma I_K.as_prod.continuous : continuous ((I_K.as_prod K).to_fun) :=
 lemma I_K.as_prod.continuous_inv : continuous ((I_K.as_prod K).inv_fun) :=
 (I_K.as_prod.homeo K).continuous_inv_fun
 
-def I_K.mk (x : I_K_f K) (u : units (K ⊗[ℚ] ℝ)) : I_K K := (I_K.as_prod K).inv_fun (prod.mk x u)
+def I_K.mk (x : I_K_f K) (u : units (ℝ ⊗[ℚ] K)) : I_K K := (I_K.as_prod K).inv_fun (prod.mk x u)
 
 variable (K)
 def I_K.fst : monoid_hom (I_K K) (I_K_f K) := 
@@ -121,7 +121,7 @@ variable {K}
 lemma I_K.fst.surjective : function.surjective (I_K.fst K) := 
 begin
   intro x,
-  use I_K.mk x (1 : units (K ⊗[ℚ] ℝ)),
+  use I_K.mk x (1 : units (ℝ ⊗[ℚ] K)),
   rw [I_K.fst, monoid_hom.coe_mk, mul_equiv.to_fun_eq_coe, I_K.mk, 
     mul_equiv.inv_fun_eq_symm, mul_equiv.apply_symm_apply],
 end
