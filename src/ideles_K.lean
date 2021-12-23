@@ -363,7 +363,6 @@ begin
     ring.adic_valuation.def.dif_neg],
   { have h := (classical.some_spec (classical.some_spec (adic_valuation.def._proof_1 (k : K)))),
     apply is_localization.mk'_num_ne_zero_of_ne_zero (eq.symm h) (units.ne_zero k)},
-
 end
 
 lemma I_K.map_to_fractional_ideals.map_units_K (k : units K) : 
@@ -384,6 +383,12 @@ begin
   exact I_K.map_to_fractional_ideals.map_units_K k,
 end
 
+lemma I_K.map_to_class_group.mem_kernel_iff (x : I_K K) : 
+  I_K.map_to_class_group K x = 1 ↔ ∃ (k : K) (hk : k ≠ 0),
+  ∀ v : maximal_spectrum (ring_of_integers K), 
+    valued.v ((I_K.fst K x).val.val v) = adic_valuation v k :=
+sorry
+
 variable (K)
 def C_K.map_to_class_group :
   (C_K K) →* (class_group (ring_of_integers K) K) :=
@@ -394,7 +399,6 @@ begin
     rw ← hk,
     exact I_K.map_to_class_group.map_units_K k,},
 end
-
 
 lemma C_K.map_to_class_group.surjective :
   surjective (C_K.map_to_class_group K) :=
@@ -409,6 +413,12 @@ lemma C_K.map_to_class_group.continuous :
 continuous_quot_lift (quotient_group.lift._proof_1
   (inj_units_K.group_hom K).range I_K.monoid_hom_to_class_group
   (C_K.map_to_class_group._proof_2 K)) I_K.map_to_class_group.continuous
+
+/- lemma C_K.map_to_class_group.mem_kernel_iff (x : C_K K) : 
+  C_K.map_to_class_group K x = 1 ↔ 
+  ∀ v : maximal_spectrum (ring_of_integers K), 
+    finite_idele.to_add_valuations (ring_of_integers K) K (I_K.fst K x) v = 0 :=
+I_K_f.map_to_fractional_ideals.mem_kernel_iff (I_K.fst K x) -/
 
 end number_field
 
