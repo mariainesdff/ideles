@@ -289,33 +289,35 @@ continuous.comp continuous_bot (I_K_f.map_to_fractional_ideals.continuous)
 
 variable (K)
 def I_K.map_to_class_group :
-  (I_K K) → (class_group (ring_of_integers K) K) := 
-λ x, quotient_group.mk (I_K.map_to_fractional_ideals K x)
+  (I_K K) → (class_group (ring_of_integers K) K) :=
+λ x, quotient_group.mk' _ (I_K.map_to_fractional_ideals K x)
+--λ x, quotient_group.mk (I_K.map_to_fractional_ideals K x)
 
-def I_K.map_to_class_group' :
+/- def I_K.map_to_class_group' :
   (I_K K) → (class_group (ring_of_integers K) K) := 
 λ x, quotient_group.mk' _ (I_K.map_to_fractional_ideals K x)
-
+-/
 
 variable {K}
-lemma I_K.map_to_class_group.surjective : surjective (I_K.map_to_class_group' K) := 
+lemma I_K.map_to_class_group.surjective : surjective (I_K.map_to_class_group K) := 
 surjective.comp quotient.surjective_quotient_mk' I_K.map_to_fractional_ideals.surjective
 
-lemma I_K.map_to_class_group.continuous : continuous (I_K.map_to_class_group' K) := 
+lemma I_K.map_to_class_group.continuous : continuous (I_K.map_to_class_group K) := 
 continuous.comp continuous_bot I_K.map_to_fractional_ideals.continuous
 
 -- TODO
+variable {K}
 lemma I_K.map_to_class_group.map_one : I_K.map_to_class_group K 1 = 1 :=
-by {simp only [I_K.map_to_class_group, monoid_hom.map_one], refl }
+by {simp only [I_K.map_to_class_group, monoid_hom.map_one] }
 
 lemma I_K.map_to_class_group.map_mul (x y : I_K K) : I_K.map_to_class_group K (x * y) = 
   I_K.map_to_class_group K x * I_K.map_to_class_group K y :=
-by {simp only [I_K.map_to_class_group, monoid_hom.map_mul], refl }
+by {simp only [I_K.map_to_class_group, monoid_hom.map_mul] }
 
 def I_K.monoid_hom_to_class_group : (I_K K) →* (class_group (ring_of_integers K) K) := 
 { to_fun   := I_K.map_to_class_group K,
   map_one' := I_K.map_to_class_group.map_one,
-  map_mul' := I_K.map_to_class_group.map_mul }
+  map_mul' := λ x y, I_K.map_to_class_group.map_mul x y }
 
 lemma I_K_f.unit_image.mul_inv (k : units K):
   ((inj_K_f.ring_hom K) k.val) * ((inj_K_f.ring_hom K) k.inv) = 1 :=
@@ -373,21 +375,63 @@ begin
 end
 
 lemma I_K.map_to_class_group.map_units_K (k : units K) :
-  I_K.map_to_class_group' K ((inj_units_K.group_hom K) k) = 1 :=
+  I_K.map_to_class_group K ((inj_units_K.group_hom K) k) = 1 :=
 begin
-  rw I_K.map_to_class_group',
-  simp only,
+  simp only [I_K.map_to_class_group],
   rw [quotient_group.mk'_apply, quotient_group.eq_one_iff, monoid_hom.mem_range],
   simp only [to_principal_ideal_eq_iff], 
   use k,
-  exact I_K.map_to_fractional_ideals.map_units_K k,
+  exact I_K.map_to_fractional_ideals.map_units_K k, 
 end
+
+def field.units.mk' {F : Type*} [field F] (k : F) (hk : k ≠ 0) : units F := 
+{ val     := k,
+  inv     := k⁻¹,
+  val_inv := mul_inv_cancel hk,
+  inv_val := inv_mul_cancel hk}
+
+/- 
+lemma I_K.map_to_class_group.mem_kernel_iff (x : I_K K) : 
+  I_K.map_to_class_group K x = 1 ↔ ∃ (k : K) (hk : k ≠ 0),
+  ∀ v : maximal_spectrum (ring_of_integers K), 
+    valued.v ((I_K.fst K x).val.val v) = adic_valuation v k := -/
 
 lemma I_K.map_to_class_group.mem_kernel_iff (x : I_K K) : 
   I_K.map_to_class_group K x = 1 ↔ ∃ (k : K) (hk : k ≠ 0),
   ∀ v : maximal_spectrum (ring_of_integers K), 
-    valued.v ((I_K.fst K x).val.val v) = adic_valuation v k :=
-sorry
+    (finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v) 
+    = -with_zero.to_integer (units.valuation_ne_zero (ring_of_integers K) K v hk) :=
+begin
+  rw [I_K.map_to_class_group, quotient_group.coe_mk', quotient_group.eq_one_iff,
+      monoid_hom.mem_range],
+    simp_rw [to_principal_ideal_eq_iff],
+  refine ⟨λ h, _, λ h, _⟩,
+  { obtain ⟨k, hk⟩ := h,
+    use k.val,
+    have hk_ne_zero : k.val ≠ 0 := by sorry,
+    use hk_ne_zero,
+    intro v,
+    simp only [finite_idele.to_add_valuations],
+    
+    rw neg_inj,
+    rw with_zero.to_integer, rw with_zero.to_integer,
+    rw injective.eq_iff multiplicative.to_add.injective,
+    
+    have h_valuations : valued.v (((I_K.fst K) x).val.val v) =
+      valued.v ((coe : K → K_v K v) k.val) := sorry,
+    simp_rw h_valuations,
+},
+  { obtain ⟨k, hk, h_vals⟩ := h,
+    use field.units.mk' k hk,
+    rw [I_K.map_to_fractional_ideals.map_units_K, I_K.map_to_fractional_ideals,
+      I_K_f.map_to_fractional_ideals, map_to_fractional_ideals, monoid_hom.coe_comp,
+      comp_app, monoid_hom.coe_mk,map_to_fractional_ideals.def, units.coe_mk],
+    simp only [map_to_fractional_ideals.val],
+    apply finprod_congr,
+    intro v,
+    rw h_vals v,
+    refl, }
+end
 
 variable (K)
 def C_K.map_to_class_group :
