@@ -396,6 +396,36 @@ lemma I_K.map_to_class_group.mem_kernel_iff (x : I_K K) :
   ∀ v : maximal_spectrum (ring_of_integers K), 
     valued.v ((I_K.fst K x).val.val v) = adic_valuation v k := -/
 
+lemma I_K.map_to_fractional_ideals.apply (x : I_K K) : (((I_K.map_to_fractional_ideals K) x) : 
+  fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K) = 
+  finprod (λ (v : maximal_spectrum ↥(ring_of_integers K)), 
+    (v.val.val : fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K)^
+    finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v) := rfl
+
+lemma foo (x : I_K K) (k : units K) (v : maximal_spectrum (ring_of_integers K))
+  (hkx: fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
+  (((I_K.map_to_fractional_ideals K) x) :
+  fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K)) :
+  valued.v (((I_K.fst K) x).val.val v) = valued.v ((coe : K → K_v K v) k.val) :=
+begin
+  rw I_K.map_to_fractional_ideals.apply at hkx,
+  rw ← fractional_ideal.factorization_principal _ _ _ rfl at hkx,
+  { /- have h_exps_v: ((((associates.mk v.val.val).count 
+      (associates.mk (ideal.span {classical.some _})).factors) : ℤ) - 
+      (((associates.mk v.val.val).count
+      (associates.mk (ideal.span {↑(classical.some _)})).factors)) : ℤ) = 
+      finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v,
+    { sorry }, -/
+    rw valued_K_v.def,
+    sorry, },
+  { apply_instance },
+  { apply_instance },
+  { rw [ne.def, fractional_ideal.span_singleton_eq_zero_iff],
+    exact units.ne_zero k},
+
+end
+
+/-
 lemma I_K.map_to_class_group.mem_kernel_iff (x : I_K K) : 
   I_K.map_to_class_group K x = 1 ↔ ∃ (k : K) (hk : k ≠ 0),
   ∀ v : maximal_spectrum (ring_of_integers K), 
@@ -406,21 +436,19 @@ begin
       monoid_hom.mem_range],
     simp_rw [to_principal_ideal_eq_iff],
   refine ⟨λ h, _, λ h, _⟩,
-  { obtain ⟨k, hk⟩ := h,
+ { obtain ⟨k, hk⟩ := h,
     use k.val,
     have hk_ne_zero : k.val ≠ 0 := by sorry,
     use hk_ne_zero,
     intro v,
-    simp only [finite_idele.to_add_valuations],
-    
-    rw neg_inj,
-    rw with_zero.to_integer, rw with_zero.to_integer,
-    rw injective.eq_iff multiplicative.to_add.injective,
-    
+    rw [finite_idele.to_add_valuations, neg_inj, with_zero.to_integer,
+      with_zero.to_integer, injective.eq_iff multiplicative.to_add.injective],
     have h_valuations : valued.v (((I_K.fst K) x).val.val v) =
-      valued.v ((coe : K → K_v K v) k.val) := sorry,
-    simp_rw h_valuations,
-},
+      valued.v ((coe : K → K_v K v) k.val),
+    { 
+      sorry
+    },
+    simp_rw [h_valuations], }, 
   { obtain ⟨k, hk, h_vals⟩ := h,
     use field.units.mk' k hk,
     rw [I_K.map_to_fractional_ideals.map_units_K, I_K.map_to_fractional_ideals,
@@ -432,6 +460,7 @@ begin
     rw h_vals v,
     refl, }
 end
+-/
 
 variable (K)
 def C_K.map_to_class_group :

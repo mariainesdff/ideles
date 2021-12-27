@@ -111,6 +111,14 @@ begin
   exact finite.subset (restricted_product R K x) h_subset,
 end
 
+lemma units.valuation_ne_zero {k : K} (hk : k ≠ 0) : valued.v ((coe : K → (K_v K v)) k) ≠ 0 := 
+begin
+  rw [valuation.ne_zero_iff, ← uniform_space.completion.coe_zero,
+    injective.ne_iff uniform_space.completion.coe_inj],
+  exact hk,
+  apply_instance,
+end
+
 def with_zero.to_integer {x : with_zero (multiplicative ℤ )} (hx : x ≠ 0) : ℤ :=
 multiplicative.to_add (classical.some (with_zero.ne_zero_iff_exists.mp hx))
 
