@@ -448,8 +448,6 @@ begin
     { exact h_nk_ne_zero }},
 end
 
-#exit
-
 lemma I_K.map_to_class_group.mem_kernel_iff (x : I_K K) : 
   I_K.map_to_class_group K x = 1 ↔ ∃ (k : K) (hk : k ≠ 0),
   ∀ v : maximal_spectrum (ring_of_integers K), 
@@ -467,10 +465,17 @@ begin
     intro v,
     rw [finite_idele.to_add_valuations, neg_inj, with_zero.to_integer,
       with_zero.to_integer, injective.eq_iff multiplicative.to_add.injective],
+    apply classical.some_spec2,
+    intros a ha,
+    rw eq_comm,
+    apply classical.some_spec2,
+    intros b hb,
     have h_valuations : valued.v (((I_K.fst K) x).val.val v) =
       valued.v ((coe : K → K_v K v) k.val),
     { apply foo x k v hk },
-    simp_rw [h_valuations], }, 
+    rw [← h_valuations, ← hb] at ha,
+    rw ← with_zero.coe_inj,
+    exact ha, }, 
   { obtain ⟨k, hk, h_vals⟩ := h,
     use field.units.mk' k hk,
     rw [I_K.map_to_fractional_ideals.map_units_K, I_K.map_to_fractional_ideals,
@@ -481,7 +486,7 @@ begin
     intro v,
     rw h_vals v,
     refl, }
-end
+  end
 
 variable (K)
 def C_K.map_to_class_group :
