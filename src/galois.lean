@@ -51,8 +51,8 @@ def subgroup.is_normal_topological_closure {G : Type*} [topological_space G] [gr
     exact subgroup.normal.conj_mem infer_instance m hm g,
   end }
 
-def subgroup.connected_component_of_identity {G : Type*} [topological_space G] [group G]
-  [topological_group G] (s : subgroup G) : subgroup G := 
+def subgroup.connected_component_of_one (G : Type*) [topological_space G] [group G]
+  [topological_group G] : subgroup G := 
 { carrier  := connected_component (1 : G),
   one_mem' := mem_connected_component,
   mul_mem' := λ g h hg hh,
