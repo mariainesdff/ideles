@@ -403,29 +403,57 @@ lemma I_K.map_to_fractional_ideals.apply (x : I_K K) : (((I_K.map_to_fractional_
     finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v) := rfl
 
 lemma foo (x : I_K K) (k : units K) (v : maximal_spectrum (ring_of_integers K))
-  (hkx: fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
+  (hkx : fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
   (((I_K.map_to_fractional_ideals K) x) :
   fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K)) :
   valued.v (((I_K.fst K) x).val.val v) = valued.v ((coe : K → K_v K v) k.val) :=
 begin
-  rw I_K.map_to_fractional_ideals.apply at hkx,
-  rw ← fractional_ideal.factorization_principal _ _ _ rfl at hkx,
-  { /- have h_exps_v: ((((associates.mk v.val.val).count 
-      (associates.mk (ideal.span {classical.some _})).factors) : ℤ) - 
-      (((associates.mk v.val.val).count
-      (associates.mk (ideal.span {↑(classical.some _)})).factors)) : ℤ) = 
-      finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v,
-    { sorry }, -/
-    rw valued_K_v.def,
-    sorry, },
-  { apply_instance },
-  { apply_instance },
-  { rw [ne.def, fractional_ideal.span_singleton_eq_zero_iff],
-    exact units.ne_zero k},
+  set nk := classical.some (is_localization.mk'_surjective (non_zero_divisors ↥(ring_of_integers K)) (k : K)) with h_nk,
+  set dk' := classical.some (classical.some_spec (is_localization.mk'_surjective (non_zero_divisors ↥(ring_of_integers K)) (k : K))),
+  set dk : ↥(ring_of_integers K) := ↑dk' with h_dk,
 
+  have h_nk_ne_zero : ¬ nk = 0 := sorry,
+  have h_dk_ne_zero : dk ≠ 0,
+  { rw h_dk,
+    exact non_zero_divisors.coe_ne_zero _, },
+
+  rw I_K.map_to_fractional_ideals.apply at hkx,
+  --If I remove the next line the error goes away.
+  rw ← fractional_ideal.factorization_principal _ _ _ rfl at hkx, 
+
+  { have h_exps_v: ((((associates.mk v.val.val).count 
+      (associates.mk (ideal.span {nk})).factors) : ℤ) - 
+      (((associates.mk v.val.val).count
+      (associates.mk (ideal.span {dk})).factors)) : ℤ) = 
+      finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v,
+    { rw ← fractional_ideal.count_finprod K v (finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x)) _,
+      rw ← hkx, -- This line causes the error
+      /- --rw fractional_ideal.count,
+      --rw dif_neg,
+      --simp only,
+      rw eq_comm,
+      apply fractional_ideal.count_well_defined K v,
+      sorry,
+      sorry, -/
+     },
+
+    simp only [finite_idele.to_add_valuations, with_zero.to_integer, eq_neg_iff_eq_neg, neg_sub] at h_exps_v,
+    conv_rhs {rw [valued_K_v.def, units.val_eq_coe], },
+    rw [valued.extension_extends, v_valued_K.def],
+    simp only [adic_valuation.def],
+    rw [← h_dk, ← h_nk, ring.adic_valuation.def, ring.adic_valuation.def, dif_neg, dif_neg,
+     ← with_zero.coe_div, ← of_add_sub, neg_sub_neg, ← h_exps_v, of_add_to_add, eq_comm],
+    exact classical.some_spec (with_zero.to_integer._proof_1 _),
+    { exact h_dk_ne_zero },
+    { exact h_nk_ne_zero }},
+  -- The next three goals appear because of the rw ← fractional_ideal.factorization_principal _ _ _ rfl at hkx, 
+  { apply_instance },
+  { apply_instance },
+  { sorry }
 end
 
-/-
+#exit
+
 lemma I_K.map_to_class_group.mem_kernel_iff (x : I_K K) : 
   I_K.map_to_class_group K x = 1 ↔ ∃ (k : K) (hk : k ≠ 0),
   ∀ v : maximal_spectrum (ring_of_integers K), 
@@ -445,9 +473,7 @@ begin
       with_zero.to_integer, injective.eq_iff multiplicative.to_add.injective],
     have h_valuations : valued.v (((I_K.fst K) x).val.val v) =
       valued.v ((coe : K → K_v K v) k.val),
-    { 
-      sorry
-    },
+    { apply foo x k v hk },
     simp_rw [h_valuations], }, 
   { obtain ⟨k, hk, h_vals⟩ := h,
     use field.units.mk' k hk,
@@ -460,7 +486,7 @@ begin
     rw h_vals v,
     refl, }
 end
--/
+
 
 variable (K)
 def C_K.map_to_class_group :
