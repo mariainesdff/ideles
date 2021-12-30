@@ -22,10 +22,9 @@ variable (v : maximal_spectrum R)
 
 variable {R}
 --Maximal spectrum lemmas
-lemma associates.irreducible_of_maximal (v : maximal_spectrum R) :
-  irreducible (associates.mk v.val.val) := 
+lemma ideal.prime_of_maximal (v : maximal_spectrum R) :
+  prime v.val.val := 
 begin
-  rw [associates.irreducible_mk _, unique_factorization_monoid.irreducible_iff_prime],
   apply ideal.prime_of_is_prime v.property v.val.property,
 end
 
@@ -33,13 +32,14 @@ lemma ideal.irreducible_of_maximal (v : maximal_spectrum R) :
   irreducible v.val.val := 
 begin
   rw [unique_factorization_monoid.irreducible_iff_prime],
-  apply ideal.prime_of_is_prime v.property v.val.property,
+  apply ideal.prime_of_maximal v,
 end
 
-lemma ideal.prime_of_maximal (v : maximal_spectrum R) :
-  prime v.val.val := 
+lemma associates.irreducible_of_maximal (v : maximal_spectrum R) :
+  irreducible (associates.mk v.val.val) := 
 begin
-  apply ideal.prime_of_is_prime v.property v.val.property,
+  rw [associates.irreducible_mk _],
+  apply ideal.irreducible_of_maximal v,
 end
 
 -- of_add lemmas
@@ -54,15 +54,19 @@ lemma of_add_inj (α : Type*) [has_add α] (x y : α)
 by rw [← to_add_of_add x, ← to_add_of_add y, hxy]
 
 -- is_localization lemmas
-lemma is_localization.mk'_eq_zero_of_num_zero {R : Type*} [comm_ring R] {M : submonoid R}
-  {S : Type*} [comm_ring S] [algebra R S] [is_localization M S] {z : S}  {x : R} {y : M}
-  (hxyz : z = is_localization.mk' S x y) (hx : x = 0) : z = 0 := 
-by rw [hxyz, hx, eq_comm, is_localization.eq_mk'_iff_mul_eq, zero_mul, ring_hom.map_zero]
+lemma is_localization.mk'_zero {R : Type*} [comm_ring R] {M : submonoid R}
+  {S : Type*} [comm_ring S] [algebra R S] [is_localization M S] {y : M} :  
+  is_localization.mk' S 0 y = 0 := 
+by rw [eq_comm, is_localization.eq_mk'_iff_mul_eq, zero_mul, map_zero]
 
 lemma is_localization.mk'_num_ne_zero_of_ne_zero {R : Type*} [comm_ring R] {M : submonoid R}
   {S : Type*} [comm_ring S] [algebra R S] [is_localization M S] {z : S}  {x : R} {y : M}
   (hxyz : z = is_localization.mk' S x y) (hz : z ≠ 0) : x ≠ 0 := 
-λ hx, hz (is_localization.eq_zero_of_fst_eq_zero (is_localization.eq_mk'_iff_mul_eq.mp hxyz) hx)
+begin
+  intro hx,
+  rw [hx, is_localization.mk'_zero] at hxyz,
+  exact hz hxyz,
+end
 
 variables {A : Type*} [comm_ring A] [is_domain A] {S : Type*} [field S] [algebra A S]
   [is_fraction_ring A S]
@@ -73,7 +77,7 @@ begin
   rw [is_fraction_ring.mk'_eq_div, div_eq_zero_iff] at h,
   apply is_fraction_ring.injective A S,
   rw (algebra_map A S).map_zero,
-  exact or.resolve_right h (is_fraction_ring.to_map_ne_zero_of_mem_non_zero_divisors s.property),
+  exact or.resolve_right h (is_fraction_ring.to_map_ne_zero_of_mem_non_zero_divisors s.property)
 end
 
 variable (S)
@@ -81,17 +85,14 @@ lemma is_localization.mk'_eq_one {r : A} {s : non_zero_divisors A}
   (h : is_localization.mk' S r s = 1) : r = s :=
 begin
   rw [is_fraction_ring.mk'_eq_div, div_eq_one_iff_eq] at h,
-  exact is_fraction_ring.injective A S h,
-  exact is_fraction_ring.to_map_ne_zero_of_mem_non_zero_divisors s.property,
+  { exact is_fraction_ring.injective A S h },
+  { exact is_fraction_ring.to_map_ne_zero_of_mem_non_zero_divisors s.property }
 end 
 
 -- Ideal associates lemmas
 @[simp] lemma associates.mk_ne_zero' {x : R} : 
   (associates.mk (ideal.span{x} : ideal R)) ≠ 0 ↔ (x ≠ 0):=
-begin
-  rw associates.mk_ne_zero,
-  rw [ideal.zero_eq_bot, ne.def, ideal.span_singleton_eq_bot],
-end
+by rw [associates.mk_ne_zero, ideal.zero_eq_bot, ne.def, ideal.span_singleton_eq_bot]
 
 lemma associates.le_singleton_iff (x : R) (n : ℕ) (I : ideal R) :
   associates.mk I^n ≤ associates.mk (ideal.span {x}) ↔ x ∈ I^n :=
@@ -109,43 +110,30 @@ begin
 end   
 
 lemma ideal.mem_le_pow {x : R}  (hx : x ≠ 0) {I : ideal R} (hI : irreducible I)
-  {n : ℕ} (hxI : x ∈ I^n) : ∀ m : ℕ, m ≤ n → x ∈ I^m :=
-begin
-  have hx' := associates.mk_ne_zero'.mpr hx,
-  intros m hm,
-  rw [← associates.le_singleton_iff x _ I, 
-    associates.prime_pow_dvd_iff_le hx' ((associates.irreducible_mk I).mpr hI)] at hxI ⊢,
-  exact le_trans hm hxI,
-end 
+  {n : ℕ} (hxI : x ∈ I^n) (m : ℕ) (hm : m ≤ n) : x ∈ I^m := ideal.pow_le_pow hm hxI
 
 /-! Adic valuation on the Dedekind domain R -/
-
 def ring.adic_valuation.def (r : R) : with_zero (multiplicative ℤ) :=
-dite (r = 0) (λ (h : r = 0), 0) (λ h : ¬ r = 0, (multiplicative.of_add
-  (-(associates.mk v.val.val).count (associates.mk (ideal.span{r} : ideal R)).factors : ℤ)))
+ite (r = 0) 0 (multiplicative.of_add
+  (-(associates.mk v.val.val).count (associates.mk (ideal.span{r} : ideal R)).factors : ℤ))
 
-lemma ring.adic_valuation.def.dif_pos {r : R} (hr : r = 0) :
+lemma ring.adic_valuation.def.if_pos {r : R} (hr : r = 0) :
   ring.adic_valuation.def v r = 0 :=
-by rw [ring.adic_valuation.def, dif_pos hr]
+if_pos hr
 
-lemma ring.adic_valuation.def.dif_neg {r : R} (hr : r ≠ 0) :
+lemma ring.adic_valuation.def.if_neg {r : R} (hr : r ≠ 0) :
   ring.adic_valuation.def v r = (multiplicative.of_add
   (-(associates.mk v.val.val).count (associates.mk (ideal.span{r} : ideal R)).factors : ℤ)) :=
-by rw [ring.adic_valuation.def, dif_neg hr]
+if_neg hr
 
 lemma ring.adic_valuation.map_zero' : ring.adic_valuation.def v 0 = 0 := 
-by { rw [ring.adic_valuation.def, dif_pos], refl, }
+by { rw [ring.adic_valuation.def, if_pos], refl, }
 
 lemma ring.adic_valuation.map_one' : ring.adic_valuation.def v 1 = 1 := 
 begin
-  rw [ring.adic_valuation.def, dif_neg (ne.symm zero_ne_one)],
-  { rw [← with_zero.coe_one, with_zero.coe_inj, ← of_add_zero],
-    apply congr_arg,
-    rw [neg_eq_zero, int.coe_nat_eq_zero, ideal.span_singleton_one, ← ideal.one_eq_top,
-      associates.mk_one, associates.factors_one,
-      associates.count_zero _],
-    apply associates.irreducible_of_maximal v },
-  { by apply_instance }
+  rw [ring.adic_valuation.def, if_neg (zero_ne_one.symm : (1 : R) ≠ 0)],
+  simp [← ideal.one_eq_top, -subtype.val_eq_coe,
+    associates.count_zero (associates.irreducible_of_maximal v)],
 end
 
 lemma ring.adic_valuation.map_mul' (x y : R) :
@@ -153,10 +141,10 @@ lemma ring.adic_valuation.map_mul' (x y : R) :
 begin
   rw [ring.adic_valuation.def, ring.adic_valuation.def, ring.adic_valuation.def],
   by_cases hx : x = 0,
-  { rw [hx, zero_mul, dif_pos (eq.refl _), zero_mul] },
+  { rw [hx, zero_mul, if_pos (eq.refl _), zero_mul] },
   { by_cases hy : y = 0,
-    { rw [hy, mul_zero, dif_pos (eq.refl _), mul_zero] },
-    { rw [dif_neg hx, dif_neg hy, dif_neg (mul_ne_zero hx hy), ← with_zero.coe_mul,
+    { rw [hy, mul_zero, if_pos (eq.refl _), mul_zero] },
+    { rw [if_neg hx, if_neg hy, if_neg (mul_ne_zero hx hy), ← with_zero.coe_mul,
         with_zero.coe_inj, ← of_add_add],
       have hx' : associates.mk (ideal.span{x} : ideal R) ≠ 0 := associates.mk_ne_zero'.mpr hx,
       have hy' : associates.mk (ideal.span{y} : ideal R) ≠ 0 := associates.mk_ne_zero'.mpr hy,
@@ -171,18 +159,18 @@ lemma ring.adic_valuation.map_add' (x y : R) : ring.adic_valuation.def v (x + y)
 begin
   by_cases hx : x = 0,
   { rw [hx, zero_add],
-    conv_rhs {rw [ring.adic_valuation.def, dif_pos (eq.refl _)]},
+    conv_rhs {rw [ring.adic_valuation.def, if_pos (eq.refl _)]},
     rw max_eq_right (with_zero.zero_le (ring.adic_valuation.def v y)),
     exact le_refl _, },
   { by_cases hy : y = 0,
     { rw [hy, add_zero],
-      conv_rhs {rw [max_comm, ring.adic_valuation.def, dif_pos (eq.refl _)]},
+      conv_rhs {rw [max_comm, ring.adic_valuation.def, if_pos (eq.refl _)]},
         rw max_eq_right (with_zero.zero_le (ring.adic_valuation.def v x)), 
         exact le_refl _ },
     { by_cases hxy : x + y = 0,
-      { rw [ring.adic_valuation.def, dif_pos hxy], exact zero_le',},
+      { rw [ring.adic_valuation.def, if_pos hxy], exact zero_le',},
       { rw [ring.adic_valuation.def, ring.adic_valuation.def, ring.adic_valuation.def,
-          dif_neg hxy, dif_neg hx, dif_neg hy],
+          if_neg hxy, if_neg hx, if_neg hy],
       rw [le_max_iff, with_zero.coe_le_coe, of_add_le, with_zero.coe_le_coe, of_add_le,
         neg_le_neg_iff, neg_le_neg_iff, int.coe_nat_le, int.coe_nat_le, ← min_le_iff],
       set nmin := min 
@@ -220,24 +208,21 @@ def ring.adic_valuation (v : maximal_spectrum R) : valuation R (with_zero (multi
   map_mul'  := ring.adic_valuation.map_mul' v,
   map_add'  := ring.adic_valuation.map_add' v }
 
-lemma ring.adic_valuation.ne_zero (v : maximal_spectrum R) (x : non_zero_divisors R) :
-  ring.adic_valuation.def v x ≠ 0 :=
-begin
-  rw [ring.adic_valuation.def, dif_neg (non_zero_divisors.coe_ne_zero x)],
-  exact with_zero.coe_ne_zero,
-end
-
 lemma ring.adic_valuation.ne_zero' (v : maximal_spectrum R) (x : R) (hx : x ≠ 0) :
   ring.adic_valuation.def v x ≠ 0 :=
 begin
-  rw [ring.adic_valuation.def, dif_neg hx],
+  rw [ring.adic_valuation.def, if_neg hx],
   exact with_zero.coe_ne_zero,
 end
+
+lemma ring.adic_valuation.ne_zero (v : maximal_spectrum R) (x : non_zero_divisors R) :
+  ring.adic_valuation.def v x ≠ 0 :=
+ring.adic_valuation.ne_zero' v x (non_zero_divisors.coe_ne_zero x)
 
 lemma ring.adic_valuation.zero_le (v : maximal_spectrum R)
 (x : non_zero_divisors R) : 0 < ring.adic_valuation.def v x :=
 begin
-  rw [ring.adic_valuation.def, dif_neg (non_zero_divisors.coe_ne_zero x)],
+  rw [ring.adic_valuation.def, if_neg (non_zero_divisors.coe_ne_zero x)],
   exact with_zero.zero_lt_coe _,
 end
 
@@ -245,8 +230,8 @@ lemma ring.adic_valuation.le_one (x : R) : ring.adic_valuation.def v x ≤ 1 :=
 begin
   rw ring.adic_valuation.def,
   by_cases hx : x = 0,
-  { rw dif_pos hx, exact with_zero.zero_le 1,},
-  { rw [dif_neg hx, ← with_zero.coe_one, ← of_add_zero, with_zero.coe_le_coe, of_add_le,
+  { rw if_pos hx, exact with_zero.zero_le 1,},
+  { rw [if_neg hx, ← with_zero.coe_one, ← of_add_zero, with_zero.coe_le_coe, of_add_le,
       right.neg_nonpos_iff],
     exact int.coe_nat_nonneg _, }
 end
@@ -256,10 +241,7 @@ lemma ring.adic_valuation.lt_one_iff_dvd (r : R) :
 begin
   rw ring.adic_valuation.def,
   split_ifs with hr,
-  { rw [hr, ideal.dvd_span_singleton], 
-    simp only [submodule.zero_mem],
-    rw [iff_true, ← with_zero.coe_one],
-     exact with_zero.zero_lt_coe 1, },
+  { simpa [hr] using (with_zero.zero_lt_coe _) },
   { rw [← with_zero.coe_one, ← of_add_zero, with_zero.coe_lt_coe, of_add_lt, neg_lt_zero,
       ← int.coe_nat_zero, int.coe_nat_lt, zero_lt_iff],
     apply associates.count_ne_zero_iff_dvd,
@@ -267,7 +249,7 @@ begin
     { apply ideal.irreducible_of_maximal v }}
 end
 
-lemma ideal.is_nonunit_iff {I : ideal R} : ¬ is_unit I ↔ I ≠ ⊤ := by rw ideal.is_unit_iff
+lemma ideal.is_nonunit_iff {I : ideal R} : ¬ is_unit I ↔ I ≠ ⊤ := not_congr ideal.is_unit_iff
 
 lemma ring.adic_valuation.exists_uniformizer : 
   ∃ (π : R), ring.adic_valuation.def v π = multiplicative.of_add (-1 : ℤ) := 
@@ -284,7 +266,7 @@ begin
     rw h at nmem,
     exact nmem (submodule.zero_mem (v.val.val^2)), },
   use π,
-  rw [ring.adic_valuation.def, dif_neg (associates.mk_ne_zero'.mp hπ), with_zero.coe_inj],
+  rw [ring.adic_valuation.def, if_neg (associates.mk_ne_zero'.mp hπ), with_zero.coe_inj],
   apply congr_arg, 
   rw [neg_inj, ← int.coe_nat_one, int.coe_nat_inj'],
   rw [← ideal.dvd_span_singleton, ← associates.mk_le_mk_iff_dvd_iff] at mem nmem,
@@ -310,13 +292,23 @@ begin
   is_fraction_ring.injective R K (is_localization.mk'_eq_iff_eq.mp h_mk)],
 end
 
+
+lemma asdf { r : R} {k : K} : k = k :=
+begin
+   have h1 := is_localization.mk'_surjective (non_zero_divisors R) k,
+   have h2 := @adic_valuation.def._proof_1 R K _ _ _ _ k,
+   obtain ⟨x, y⟩ := h1,
+   refl,
+end
+
 lemma adic_valuation.of_mk' {r : R} {s : non_zero_divisors R} :
   adic_valuation.def v (is_localization.mk' K r s) =
    (ring.adic_valuation.def v r)/(ring.adic_valuation.def v s) :=
 begin
   rw adic_valuation.def,
   exact adic_valuation.well_defined K v
-   (classical.some_spec (adic_valuation.def._proof_2 (is_localization.mk' K r s))),
+    (classical.some_spec (classical.some_spec (is_localization.mk'_surjective (non_zero_divisors R) 
+    (is_localization.mk' K r s)))),
 end
 
 variable {K}
@@ -343,21 +335,21 @@ end
 variable {K}
 
 lemma adic_valuation.map_zero' (v : maximal_spectrum R) :
-adic_valuation.def v (0 : K) = 0 := 
+  adic_valuation.def v (0 : K) = 0 := 
 begin
   rw [← (algebra_map R K).map_zero, adic_valuation.of_algebra_map v],
   exact ring.adic_valuation.map_zero' v,
 end
 
 lemma adic_valuation.map_one' (v : maximal_spectrum R) :
-adic_valuation.def v (1 : K) = 1 := 
+  adic_valuation.def v (1 : K) = 1 := 
 begin
   rw [← (algebra_map R K).map_one, adic_valuation.of_algebra_map v],
   exact ring.adic_valuation.map_one' v,
 end
 
-lemma adic_valuation.map_mul' (v : maximal_spectrum R)
-(x y : K) : adic_valuation.def v (x * y) = adic_valuation.def v x * adic_valuation.def v y :=
+lemma adic_valuation.map_mul' (v : maximal_spectrum R) (x y : K) :
+  adic_valuation.def v (x * y) = adic_valuation.def v x * adic_valuation.def v y :=
 begin
   rw [adic_valuation.def, adic_valuation.def, adic_valuation.def, div_mul_div _ _ _ _,
     ← ring.adic_valuation.map_mul', ← ring.adic_valuation.map_mul', ← submonoid.coe_mul],
@@ -370,33 +362,26 @@ begin
 end
 
 lemma adic_valuation.map_add' (v : maximal_spectrum R) (x y : K) :
-  adic_valuation.def v (x + y) ≤ max (adic_valuation.def v x)  (adic_valuation.def v y) := 
+  adic_valuation.def v (x + y) ≤ max (adic_valuation.def v x) (adic_valuation.def v y) := 
 begin
-  rw [adic_valuation.def, adic_valuation.def, adic_valuation.def, le_max_iff],
-  dsimp only,
-  let rxy : R := (classical.some (adic_valuation.def._proof_1 (x + y))),
-  let sxy : non_zero_divisors R := (classical.some (adic_valuation.def._proof_2 (x + y))),
-  let rx : R := (classical.some (adic_valuation.def._proof_1 x)),
-  let sx : non_zero_divisors R := (classical.some (adic_valuation.def._proof_2 x)),
-  let ry : R := (classical.some (adic_valuation.def._proof_1 y)),
-  let sy : non_zero_divisors R := (classical.some (adic_valuation.def._proof_2 y)),
+  obtain ⟨rx, sx, hx⟩ := is_localization.mk'_surjective (non_zero_divisors R) x,
+  obtain ⟨rxy, sxy, hxy⟩ := is_localization.mk'_surjective (non_zero_divisors R) (x + y),
+  obtain ⟨ry, sy, hy⟩ := is_localization.mk'_surjective (non_zero_divisors R) y,
+  rw [← hxy, ← hx, ← hy, adic_valuation.of_mk', adic_valuation.of_mk', adic_valuation.of_mk'],
   have h_frac_xy : is_localization.mk' K rxy sxy = 
     is_localization.mk' K (rx*(sy : R) + ry*(sx : R)) (sx*sy),
-  { rw [is_localization.mk'_add, classical.some_spec (adic_valuation.def._proof_2 (x + y)),
-    classical.some_spec (adic_valuation.def._proof_2 x),
-    classical.some_spec (adic_valuation.def._proof_2 y)] },
+  { rw [is_localization.mk'_add, hx, hy, hxy], },
   have h_frac_x : is_localization.mk' K rx sx = is_localization.mk' K (rx*(sy : R)) (sx*sy),
   { rw [is_localization.mk'_eq_iff_eq, submonoid.coe_mul, mul_assoc, mul_comm (sy : R) _], },
   have h_frac_y : is_localization.mk' K ry sy = is_localization.mk' K (ry*(sx : R)) (sx*sy),
   { rw [is_localization.mk'_eq_iff_eq, submonoid.coe_mul, mul_assoc], },
   have h_denom : 0 < ring.adic_valuation.def v ↑(sx * sy),
-  { rw [ring.adic_valuation.def, dif_neg _], 
-    exact with_zero.zero_lt_coe _,
-    exact non_zero_divisors.ne_zero
-      (submonoid.mul_mem (non_zero_divisors R) sx.property sy.property), },
-
+  { rw [ring.adic_valuation.def, if_neg _], 
+    { exact with_zero.zero_lt_coe _ },
+    { exact non_zero_divisors.ne_zero
+        (submonoid.mul_mem (non_zero_divisors R) sx.property sy.property), }},
   rw [adic_valuation.well_defined K v h_frac_x, adic_valuation.well_defined K v h_frac_y,
-    adic_valuation.well_defined K v h_frac_xy, div_le_div_right₀ (ne_of_gt h_denom), 
+    adic_valuation.well_defined K v h_frac_xy, le_max_iff, div_le_div_right₀ (ne_of_gt h_denom), 
     div_le_div_right₀ (ne_of_gt h_denom), ← le_max_iff],
   exact ring.adic_valuation.map_add' v _ _,
 end
