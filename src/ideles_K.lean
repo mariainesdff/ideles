@@ -403,7 +403,7 @@ lemma I_K.map_to_fractional_ideals.apply (x : I_K K) : (((I_K.map_to_fractional_
     finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v) := rfl
 
 
-lemma foo (x : I_K K) (k : units K) (v : maximal_spectrum (ring_of_integers K))
+lemma I_K.map_to_class_group.valuation_mem_kernel (x : I_K K) (k : units K) (v : maximal_spectrum (ring_of_integers K))
   (hkx : fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
   (((I_K.map_to_fractional_ideals K) x) :
   fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K)) :
@@ -415,7 +415,11 @@ begin
     (non_zero_divisors ↥(ring_of_integers K)) (k : K))) with h_dk',
   set dk : ↥(ring_of_integers K) := ↑dk' with h_dk,
 
-  have h_nk_ne_zero : ¬ nk = 0 := sorry,
+  have h := classical.some_spec (classical.some_spec (is_localization.mk'_surjective
+          (non_zero_divisors ↥(ring_of_integers K)) (k : K))),
+  rw [← h_dk', ← h_nk] at h,
+  have h_nk_ne_zero : nk ≠ 0,
+  { apply is_localization.mk'_num_ne_zero_of_ne_zero (eq.symm h) (units.ne_zero k), },
   have h_dk_ne_zero : dk ≠ 0,
   { rw h_dk,
     exact non_zero_divisors.coe_ne_zero _, },
@@ -431,11 +435,8 @@ begin
       { rw fractional_ideal.span_singleton_ne_zero_iff,
         exact units.ne_zero k, },
       { rw [fractional_ideal.coe_ideal_span_singleton, 
-          fractional_ideal.span_singleton_mul_span_singleton],
-        have h := classical.some_spec (classical.some_spec (is_localization.mk'_surjective
-          (non_zero_divisors ↥(ring_of_integers K)) (k : K))),
-        rw [← h_dk', ← h_nk] at h,
-        rw [← h, is_fraction_ring.mk'_eq_div, h_dk, div_eq_inv_mul], }},
+          fractional_ideal.span_singleton_mul_span_singleton, ← h, is_fraction_ring.mk'_eq_div, 
+          h_dk, div_eq_inv_mul], }},
     simp only [finite_idele.to_add_valuations, with_zero.to_integer, eq_neg_iff_eq_neg, neg_sub]
       at h_exps_v,
     conv_rhs {rw [valued_K_v.def, units.val_eq_coe], },
@@ -459,9 +460,8 @@ begin
     simp_rw [to_principal_ideal_eq_iff],
   refine ⟨λ h, _, λ h, _⟩,
  { obtain ⟨k, hk⟩ := h,
-    use k.val,
-    have hk_ne_zero : k.val ≠ 0 := by sorry,
-    use hk_ne_zero,
+    use (k : K),
+    use units.ne_zero k,
     intro v,
     rw [finite_idele.to_add_valuations, neg_inj, with_zero.to_integer,
       with_zero.to_integer, injective.eq_iff multiplicative.to_add.injective],
@@ -471,8 +471,8 @@ begin
     apply classical.some_spec2,
     intros b hb,
     have h_valuations : valued.v (((I_K.fst K) x).val.val v) =
-      valued.v ((coe : K → K_v K v) k.val),
-    { apply foo x k v hk },
+      valued.v ((coe : K → K_v K v) (k : K)),
+    { apply I_K.map_to_class_group.valuation_mem_kernel x k v hk },
     rw [← h_valuations, ← hb] at ha,
     rw ← with_zero.coe_inj,
     exact ha, }, 
