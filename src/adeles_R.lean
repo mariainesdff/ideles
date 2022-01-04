@@ -30,8 +30,6 @@ instance ss : @separated_space K (us' v) := @valued_ring.separated K _ (v_valued
 variables (K)
 def K_v := @uniform_space.completion K (us' v)
 instance : field (K_v K v) := @field_completion K _ (us' v) (tdr' v) _ (ug' v)
-instance : division_ring (K_v K v) := infer_instance
-instance : comm_ring (K_v K v) := infer_instance
 
 variables {K}
 instance valued_K_v : valued (K_v K v) := 
@@ -192,8 +190,7 @@ begin
   have h : ∀ (v : maximal_spectrum R), (-x v ∈ R_v K v) ↔ (x v ∈ R_v K v),
   { intro v,
     rw [K_v.is_integer, K_v.is_integer, valuation.map_neg], },
-  simp_rw h,
-  exact hx,
+  simpa only [h] using hx,
 end
 
 def neg' (x : finite_adele_ring' R K) : finite_adele_ring' R K := ⟨-x.val, restr_neg R K x⟩
@@ -263,20 +260,20 @@ instance : comm_ring (finite_adele_ring' R K) :=
   mul_comm      := λ x y, by { unfold_projs, rw [mul', mul', subtype.mk_eq_mk, mul_comm], },
   ..(finite_adele_ring'.add_comm_group R K)}
 
-lemma finite_adele_ring'.coe_add (x y : finite_adele_ring' R K) : 
-(coe : finite_adele_ring' R K → K_hat R K) (x + y) = ↑x + ↑y := rfl
+@[norm_cast] lemma finite_adele_ring'.coe_add (x y : finite_adele_ring' R K) :
+  (↑(x + y) : K_hat R K) = ↑x + ↑y := rfl
 
-lemma finite_adele_ring'.coe_zero : 
-(coe : finite_adele_ring' R K → K_hat R K) 0 = 0 := rfl
+@[norm_cast] lemma finite_adele_ring'.coe_zero : (↑(0 : finite_adele_ring' R K) : K_hat R K) = 0 :=
+rfl
 
-lemma finite_adele_ring'.coe_neg (x : finite_adele_ring' R K) : 
-(coe : finite_adele_ring' R K → K_hat R K) (-x) = -↑x  := rfl
+@[norm_cast] lemma finite_adele_ring'.coe_neg (x : finite_adele_ring' R K) :
+  (↑(-x) : K_hat R K) = -↑x  := rfl
 
-lemma finite_adele_ring'.coe_mul (x y : finite_adele_ring' R K) : 
-(coe : finite_adele_ring' R K → K_hat R K) (x * y) = ↑x * ↑y := rfl
+@[norm_cast] lemma finite_adele_ring'.coe_mul (x y : finite_adele_ring' R K) : 
+  (↑(x * y) : K_hat R K) = ↑x * ↑y := rfl
 
-lemma finite_adele_ring'.coe_one : 
-(coe : finite_adele_ring' R K → K_hat R K) 1 = 1 := rfl
+@[norm_cast] lemma finite_adele_ring'.coe_one : (↑(1 : finite_adele_ring' R K) : K_hat R K) = 1 :=
+rfl
 
 instance finite_adele_ring'.inhabited : inhabited (finite_adele_ring' R K) := 
 { default := ⟨0, restr_zero R K⟩ }
@@ -286,16 +283,11 @@ begin
   intros x hx,
   rw [set_like.mem_coe, K_v.is_integer] at hx,
   rw [← add_group_filter_basis.nhds_eq, valued.mem_nhds],
-  use (multiplicative.of_add (0 : ℤ) : with_zero (multiplicative ℤ)),
-  use (multiplicative.of_add (0 : ℤ) : with_zero (multiplicative ℤ)),
-  { rw [of_add_zero, with_zero.coe_one, mul_one] },
-  { rw [of_add_zero, with_zero.coe_one, mul_one] },
+  use (1 : units (with_zero (multiplicative ℤ))),
   { intros y hy,
-    rw [mem_set_of_eq, units.coe_mk, of_add_zero, with_zero.coe_one] at hy,
     rw [set_like.mem_coe, K_v.is_integer, ← sub_add_cancel y x],
-    have h_max : valued.v (y - x + x) ≤ max (valued.v (y - x)) (valued.v x) :=
-    valuation.map_add _ _ _,
-    exact le_trans h_max (max_le (le_of_lt hy) hx) }
+    refine le_trans _ (max_le (le_of_lt hy) hx),
+    exact valuation.map_add _ _ _ }
 end
 
 def finite_adele_ring'.generating_set : set (set (finite_adele_ring' R K)) :=
@@ -317,7 +309,7 @@ begin
     { exact mem_union_right _ (ha hf hg)},
     { exact mem_union_left _ (mem_union_right _ hg), }},
   { exact mem_union_left _ (mem_union_left _ hf),},
-end
+end 
 
 private lemma set_cond_finite {x y: finite_adele_ring' R K} 
   {V : Π (v : maximal_spectrum R), set (K_v K v)} 
