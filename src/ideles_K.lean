@@ -359,11 +359,12 @@ begin
 
   rw [← with_zero.coe_inj, hz, valued_K_v.def, inj_K_f.ring_hom,
     inj_K.ring_hom_apply, inj_K_apply, valued.extension_extends, units.val_eq_coe, v_valued_K.def,
-    adic_valuation.def],
+    maximal_spectrum.valuation_def],
   simp only,
-  rw [with_zero.coe_div, ring.adic_valuation.def.if_neg v (non_zero_divisors.coe_ne_zero _), 
-    ring.adic_valuation.def.if_neg],
-  { have h := (classical.some_spec (classical.some_spec (adic_valuation.def._proof_1 (k : K)))),
+  rw [with_zero.coe_div, maximal_spectrum.int_valuation_def_if_neg v
+    (non_zero_divisors.coe_ne_zero _), maximal_spectrum.int_valuation_def_if_neg],
+  { have h := (classical.some_spec (classical.some_spec
+    (maximal_spectrum.valuation_def._proof_1 (k : K)))),
     apply is_localization.mk'_num_ne_zero_of_ne_zero (eq.symm h) (units.ne_zero k)},
 end
 
@@ -403,7 +404,8 @@ lemma I_K.map_to_fractional_ideals.apply (x : I_K K) : (((I_K.map_to_fractional_
     finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v) := rfl
 
 
-lemma I_K.map_to_class_group.valuation_mem_kernel (x : I_K K) (k : units K) (v : maximal_spectrum (ring_of_integers K))
+lemma I_K.map_to_class_group.valuation_mem_kernel (x : I_K K) (k : units K)
+  (v : maximal_spectrum (ring_of_integers K))
   (hkx : fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
   (((I_K.map_to_fractional_ideals K) x) :
   fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K)) :
@@ -441,9 +443,10 @@ begin
       at h_exps_v,
     conv_rhs {rw [valued_K_v.def, units.val_eq_coe], },
     rw [valued.extension_extends, v_valued_K.def],
-    simp only [adic_valuation.def],
-    rw [← h_dk, ← h_nk, ring.adic_valuation.def.if_neg, ring.adic_valuation.def.if_neg,
-     ← with_zero.coe_div, ← of_add_sub, neg_sub_neg, ← h_exps_v, of_add_to_add, eq_comm],
+    simp only [maximal_spectrum.valuation_def],
+    rw [← h_dk, ← h_nk, maximal_spectrum.int_valuation_def_if_neg, 
+    maximal_spectrum.int_valuation_def_if_neg, ← with_zero.coe_div, ← of_add_sub, neg_sub_neg,
+    ← h_exps_v, of_add_to_add, eq_comm],
     exact classical.some_spec (with_zero.to_integer._proof_1 _),
     { exact h_dk_ne_zero },
     { exact h_nk_ne_zero }},

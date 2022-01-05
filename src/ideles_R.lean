@@ -838,7 +838,7 @@ end
 
 variables (R K)
 def pi.unif : Π v : maximal_spectrum R, K_v K v := λ v : maximal_spectrum R, (coe : K → (K_v K v))
-  (classical.some (adic_valuation.exists_uniformizer K v))
+  (classical.some (v.valuation_exists_uniformizer K))
 
 lemma pi.unif.ne_zero :
   ∀ v : maximal_spectrum R, pi.unif R K v ≠ 0 :=
@@ -846,7 +846,7 @@ begin
   intro v,
   rw [pi.unif, ← uniform_space.completion.coe_zero,
     injective.ne_iff (@uniform_space.completion.coe_inj K (us' v) (ss v))],
-  exact adic_valuation.uniformizer_ne_zero K v,
+  exact v.valuation_uniformizer_ne_zero K,
 end
 
 variables {R K}
@@ -984,7 +984,7 @@ begin
     rw ← hx_def at hx ⊢,
     simp only [idele.mk', pi.unif] at hx,
     rw [valuation.map_zpow, valued_K_v.def, valued.extension_extends,
-      v_valued_K.def, classical.some_spec (adic_valuation.exists_uniformizer K v), 
+      v_valued_K.def, classical.some_spec (v.valuation_exists_uniformizer K),
         ← with_zero.coe_zpow, with_zero.coe_inj] at hx,
     rw [hx, ← of_add_zsmul, to_add_of_add, algebra.id.smul_eq_mul, mul_neg_eq_neg_mul_symm, 
           mul_one, neg_neg], },

@@ -11,9 +11,9 @@ variables {R : Type} {K : Type} [comm_ring R] [is_domain R] [is_dedekind_domain 
 def v_valued_K (v : maximal_spectrum R) : valued K := 
 { Γ₀  := with_zero (multiplicative ℤ),
   grp := infer_instance,
-  v   := adic_valuation v }
+  v   := v.valuation }
 
-lemma v_valued_K.def {x : K} : @valued.v K _ (v_valued_K v) (x) = adic_valuation.def v  x := rfl
+lemma v_valued_K.def {x : K} : @valued.v K _ (v_valued_K v) (x) = v.valuation_def  x := rfl
 
 def ts' : topological_space K := @valued.topological_space K _ (v_valued_K v)
 lemma tdr' : @topological_division_ring K _ (ts' v) := 
@@ -86,7 +86,7 @@ def inj_R_v' : R → (K_v K v) := λ r, (coe : K → (K_v K v)) (algebra_map R K
 def inj_R_v : R → (R_v K v) := λ r, ⟨(coe : K → (K_v K v)) (algebra_map R K r), begin 
   change @valued.extension K _ (v_valued_K v) (algebra_map R K r) ≤ 1, --need a coe_to_fun?
   rw @valued.extension_extends K _ (v_valued_K v) (algebra_map R K r),
-  exact adic_valuation.le_one v _,
+  exact v.valuation_le_one _,
 end⟩
 def inj_R : R → (R_hat R K) := λ r v, inj_R_v R K v r
 
@@ -708,8 +708,8 @@ begin
       have h_val_r : valued.v ((hom_prod R K) r v) ≤ 1,
       { rw [hom_prod, ring_hom.coe_mk, ← subtype.val_eq_coe, ← K_v.is_integer],
         exact (r v).property, },
-      have h_val_d : adic_valuation.def v (algebra_map R K d)  < 1 := lt_of_lt_of_le hv h_val_r,
-      exact (adic_valuation.lt_one_iff_dvd v d).mp h_val_d, }},
+      have h_val_d : v.valuation_def (algebra_map R K d)  < 1 := lt_of_lt_of_le hv h_val_r,
+      exact (v.valuation_lt_one_iff_dvd d).mp h_val_d, }},
     exact finite.subset (finite_factors d hd) hsubset,
 end 
 
@@ -777,17 +777,17 @@ begin
     rw mem_set_of_eq at hv ⊢,
     have h_val : valued.v ((coe : K → (K_v K v)) x) = @valued.extension K _ (v_valued_K v) x := rfl,
     rw [K_v.is_integer, h_val, valued.extension_extends _, v_valued_K.def, 
-      adic_valuation.def] at hv,
-    let sx : non_zero_divisors R := (classical.some (adic_valuation.def._proof_2 x)),
-    have h_loc : is_localization.mk' K (classical.some (adic_valuation.def._proof_1 x)) sx
+      maximal_spectrum.valuation_def] at hv,
+    let sx : non_zero_divisors R := (classical.some (maximal_spectrum.valuation_def._proof_2 x)),
+    have h_loc : is_localization.mk' K (classical.some (maximal_spectrum.valuation_def._proof_1 x)) sx
        = is_localization.mk' K r ⟨d, hd⟩,
-    { rw hx, exact (classical.some_spec (adic_valuation.def._proof_2 x)) },
+    { rw hx, exact (classical.some_spec (maximal_spectrum.valuation_def._proof_2 x)) },
       dsimp only at hv,
-      rw ← ring.adic_valuation.lt_one_iff_dvd,
+      rw ← maximal_spectrum.int_valuation_lt_one_iff_dvd,
       by_contradiction h_one_le,
-      rw [adic_valuation.well_defined K v h_loc, subtype.coe_mk,
-        (le_antisymm (ring.adic_valuation.le_one v d) (not_lt.mp h_one_le)), div_one] at hv,
-      exact hv (ring.adic_valuation.le_one v r) },
+      rw [maximal_spectrum.valuation_well_defined K v h_loc, subtype.coe_mk,
+        (le_antisymm (v.int_valuation_le_one d) (not_lt.mp h_one_le)), div_one] at hv,
+      exact hv (v.int_valuation_le_one r) },
   exact finite.subset (finite_factors d hd_ne_zero) hsubset,
 end
 
