@@ -9,7 +9,7 @@ variables {R : Type} {K : Type} [comm_ring R] [is_domain R] [is_dedekind_domain 
   [algebra R K] [is_fraction_ring R K] (v : maximal_spectrum R)
 
 def v_valued_K (v : maximal_spectrum R) : valued K := 
-{ Γ₀  := with_zero (multiplicative ℤ),
+{ Γ₀  := (with_zero (multiplicative ℤ)),
   grp := infer_instance,
   v   := v.valuation }
 
@@ -57,16 +57,13 @@ variables (K)
 def R_v : subring (K_v K v) := 
 @valuation.integer (K_v K v) (with_zero (multiplicative ℤ)) _ _ (valued_K_v v).v 
 
-instance : topological_space (R_v K v) := infer_instance
---instance : topological_ring (R_v K v)  := 
+--instance : topological_space (R_v K v) := infer_instance
 
 -- Finite adele ring of R
 variables (R)
 def R_hat := (Π (v : maximal_spectrum R), (R_v K v))
 instance : comm_ring (R_hat R K) := pi.comm_ring
 instance : topological_space (R_hat R K) := Pi.topological_space
---instance tr_hat' : topological_ring (Π (v : maximal_spectrum R), (R_v K v)) := pi.topological_ring
---instance : topological_ring (R_hat R K) := tr_hat' R K
 
 def K_hat := (Π (v : maximal_spectrum R), (K_v K v))
 
@@ -75,10 +72,6 @@ instance : ring (K_hat R K) := infer_instance
 instance : topological_space (K_hat R K) := Pi.topological_space
 instance tr_hat : topological_ring (Π (v : maximal_spectrum R), (K_v K v)) := pi.topological_ring
 instance : topological_ring (K_hat R K) := tr_hat R K
-
-/- lemma valuation.is_integer {R : Type*} [ring R] {Γ₀ : Type*} 
-  [linear_ordered_comm_group_with_zero Γ₀] (v : valuation R Γ₀) (x : R) :
-  x ∈ valuation.integer v ↔ v(x) ≤ 1 := by refl -/
 
 lemma K_v.is_integer (x : K_v K v) : x ∈ R_v K v ↔ valued.v x ≤ 1 := by refl
 
@@ -136,12 +129,19 @@ instance : is_localization (diag_R R K) (finite_adele_ring R K):= localization.i
 lemma preimage_diag_R (x : diag_R R K) : ∃ r : R, r ≠ 0 ∧ inj_R R K r = (x : R_hat R K) := 
 x.property
 
+noncomputable def force_noncomputable {α : Sort*} (a : α) : α :=
+  function.const _ a (classical.choice ⟨a⟩)
+
+@[simp]
+lemma force_noncomputable_def {α} (a : α) : force_noncomputable a = a := rfl
+
 def restricted : K_hat R K → Prop := λ x, 
  ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v)
 
-def finite_adele_ring' := { x : (K_hat R K) // restricted R K x }
+def finite_adele_ring' := { x : (K_hat R K) // 
+  ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) }
 
-def coe' : (finite_adele_ring' R K) → K_hat R K := λ x, x.val
+def coe' : (finite_adele_ring' R K) → K_hat R K := force_noncomputable $ λ x, x.val
 instance has_coe' : has_coe (finite_adele_ring' R K) (K_hat R K) := {coe := coe' R K } 
 instance has_lift_t' : has_lift_t (finite_adele_ring' R K) (K_hat R K) := {lift := coe' R K } 
 
@@ -255,8 +255,8 @@ instance : comm_ring (finite_adele_ring' R K) :=
   one           := ⟨1, restr_one R K⟩,
   one_mul       := λ x, by { simp_rw [mul', one_mul, subtype.val_eq_coe, subtype.coe_eta] },
   mul_one       := λ x, by { simp_rw [mul', mul_one, subtype.val_eq_coe, subtype.coe_eta] },
-  left_distrib  := λ x y z, by { unfold_projs, simp_rw [mul', add', left_distrib], refl, },
-  right_distrib := λ x y z, by { unfold_projs, simp_rw [mul', add', right_distrib], refl, },
+  left_distrib  := λ x y z, by { unfold_projs, simp_rw [mul', add', left_distrib], },
+  right_distrib := λ x y z, by { unfold_projs, simp_rw [mul', add', right_distrib], },
   mul_comm      := λ x y, by { unfold_projs, rw [mul', mul', subtype.mk_eq_mk, mul_comm], },
   ..(finite_adele_ring'.add_comm_group R K)}
 
@@ -584,11 +584,13 @@ begin
   refl,
 end
 
-instance : comm_ring { x : (K_hat R K) // restricted R K x } := 
+instance : comm_ring { x : (K_hat R K) // 
+  ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v)  } := 
 finite_adele_ring'.comm_ring R K
 
 lemma mul_apply (x y : finite_adele_ring' R K) :  
 (⟨x.val * y.val, restr_mul R K x y⟩ : finite_adele_ring' R K) = x * y := rfl
+
 lemma mul_apply_val (x y : finite_adele_ring' R K) :  
 x.val * y.val = (x * y).val := rfl
 

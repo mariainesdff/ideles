@@ -5,11 +5,12 @@ import topology.algebra.valued_field
 noncomputable theory
 open_locale classical
 
-variables (R : Type) [comm_ring R] [is_domain R] [is_dedekind_domain R] 
+variables (R : Type*) [comm_ring R] [is_domain R] [is_dedekind_domain R] {K : Type*} [field K]
+  [algebra R K] [is_fraction_ring R K] 
 
 -- Note : not the maximal spectrum if R is a field
 def maximal_spectrum := {v : prime_spectrum R // v.val ≠ 0 }
-variables (v : maximal_spectrum R) {K : Type} [field K] [algebra R K] [is_fraction_ring R K] 
+variable (v : maximal_spectrum R)
 
 variable {R}
 --Maximal spectrum lemmas
@@ -103,11 +104,10 @@ end
 lemma ideal.mem_le_pow {x : R}  (hx : x ≠ 0) {I : ideal R} (hI : irreducible I)
   {n : ℕ} (hxI : x ∈ I^n) (m : ℕ) (hm : m ≤ n) : x ∈ I^m := ideal.pow_le_pow hm hxI
 
-
 namespace maximal_spectrum
 /-! Adic valuation on the Dedekind domain R -/
 def int_valuation_def (r : R) : with_zero (multiplicative ℤ) :=
-ite (r = 0) 0 (multiplicative.of_add
+ite (r = 0) 0 (multiplicative.of_add  
   (-(associates.mk v.val.val).count (associates.mk (ideal.span{r} : ideal R)).factors : ℤ))
 
 lemma int_valuation_def_if_pos {r : R} (hr : r = 0) :
@@ -267,13 +267,13 @@ begin
   exact nat.eq_of_le_of_lt_succ mem nmem,
 end
 
-def valuation_def (v : maximal_spectrum R) (x : K) : (with_zero (multiplicative ℤ)) :=
+def valuation_def (x : K) : (with_zero (multiplicative ℤ)) :=
 let s := classical.some (classical.some_spec (is_localization.mk'_surjective
   (non_zero_divisors R) x)) in (v.int_valuation_def (classical.some
     (is_localization.mk'_surjective (non_zero_divisors R) x)))/(v.int_valuation_def s)
 
 variable (K)
-lemma valuation_well_defined (v : maximal_spectrum R) {r r' : R} {s s' : non_zero_divisors R} 
+lemma valuation_well_defined {r r' : R} {s s' : non_zero_divisors R} 
   (h_mk : is_localization.mk' K r s = is_localization.mk' K r' s') :
   (v.int_valuation_def r)/(v.int_valuation_def s) =
   (v.int_valuation_def r')/(v.int_valuation_def s') := 
@@ -296,23 +296,15 @@ end
 variable {K}
 lemma valuation_of_algebra_map {r : R} :
   v.valuation_def (algebra_map R K r) = v.int_valuation_def r :=
-begin
-  rw [← is_localization.mk'_one K r, valuation_of_mk', submonoid.coe_one, 
-    int_valuation.map_one', div_one _],
-end
+by rw [← is_localization.mk'_one K r, valuation_of_mk', submonoid.coe_one, 
+    int_valuation.map_one', div_one _]
 
 lemma valuation_le_one (r : R) : v.valuation_def (algebra_map R K r) ≤ 1 :=
-begin
-  rw valuation_of_algebra_map v,
-  exact v.int_valuation_le_one r,
-end
+by { rw valuation_of_algebra_map, exact v.int_valuation_le_one r }
 
 lemma valuation_lt_one_iff_dvd (r : R) : 
   v.valuation_def (algebra_map R K r) < 1 ↔ v.val.val ∣ ideal.span {r} :=
-begin
-  rw valuation_of_algebra_map v,
-  exact v.int_valuation_lt_one_iff_dvd r,
-end
+by { rw valuation_of_algebra_map, exact v.int_valuation_lt_one_iff_dvd r }
 
 lemma valuation.map_zero' (v : maximal_spectrum R) :
   v.valuation_def (0 : K) = 0 := 
@@ -384,9 +376,9 @@ begin
 end
 
 lemma valuation_uniformizer_ne_zero :
-  (classical.some (valuation_exists_uniformizer v K)) ≠ 0 :=
+  (classical.some (v.valuation_exists_uniformizer K)) ≠ 0 :=
 begin
-  have hu := (classical.some_spec (valuation_exists_uniformizer v K)),
+  have hu := (classical.some_spec (v.valuation_exists_uniformizer K)),
   have h : v.valuation_def (classical.some _) = valuation v (classical.some _) := rfl,
   rw h at hu,
   exact (valuation.ne_zero_iff _).mp (ne_of_eq_of_ne hu with_zero.coe_ne_zero),
