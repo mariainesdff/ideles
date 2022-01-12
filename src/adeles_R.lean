@@ -1,4 +1,4 @@
-import valuation
+import fractional_ideal
 import ring_theory.valuation.integers
 
 noncomputable theory
@@ -636,41 +636,6 @@ end
 def map_to_K_hat (x : finite_adele_ring R K) : K_hat R K := 
 is_localization.lift (hom_prod_diag_unit R K) x
 
-variable {R}
-lemma ideal.finite_factors {I : ideal R} (hI : I ≠ 0) : 
-  finite { v : maximal_spectrum R | v.val.val ∣ I } := 
-begin
-  haveI h_fin := unique_factorization_monoid.fintype_subtype_dvd I hI,
-  let f' : finset (ideal R) := finset.map 
-    ⟨(λ J : {x // x ∣ I}, J.val), subtype.coe_injective⟩ h_fin.elems,
-  have h_eq : { v : maximal_spectrum R | v.val.val ∣ I } = 
-    { v : maximal_spectrum R | v.val.val ∈ f' },
-  { ext v,
-    rw [mem_set_of_eq, mem_set_of_eq, finset.mem_map], 
-    simp_rw exists_prop,
-    rw [subtype.exists, embedding.coe_fn_mk],
-    simp_rw [exists_and_distrib_right, exists_eq_right],
-    split,
-    { intro h, use h, exact fintype.complete ⟨v.val.val, h⟩},
-    { intro h, obtain ⟨hv, -⟩ := h, exact hv, }},    
-  rw h_eq,
-  have hv : ∀ v : maximal_spectrum R, v.val.val = v.val.val := λ v, rfl,
-  have hv_inj : injective (λ (v : maximal_spectrum R), v.val.val),
-  { intros v w hvw, 
-    dsimp only at hvw,
-    rw [hv v, hv w] at hvw,
-    ext, 
-    rw [← subtype.val_eq_coe, ← subtype.val_eq_coe, ← subtype.val_eq_coe, 
-      ← subtype.val_eq_coe, hvw],},
-  exact finite.preimage_embedding ⟨(λ v : maximal_spectrum R, v.val.val), hv_inj⟩
-    (finite_mem_finset (f')),
-end
-
-lemma finite_factors (d : R) (hd : (ideal.span{d} : ideal R) ≠ 0) : 
-  finite { v : maximal_spectrum R | v.val.val ∣ (ideal.span({d}) : ideal R)} := 
-ideal.finite_factors hd
-
-variable (R) 
 lemma restricted_image (x : finite_adele_ring R K) : 
   set.finite({ v : maximal_spectrum R | ¬ (map_to_K_hat R K x v) ∈ (R_v K v)}) :=
 begin
