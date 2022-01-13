@@ -43,9 +43,9 @@ begin
 end
 
 def inj_units_K.group_hom : monoid_hom (units K) (finite_idele_group' R K) := 
-{ to_fun    := inj_units_K R K,
+{ to_fun   := inj_units_K R K,
   map_one' := inj_units_K.map_one R K,
-  map_mul'  := inj_units_K.map_mul R K, }
+  map_mul' := inj_units_K.map_mul R K, }
 
 -- We need to assume that the maximal spectrum of R is nonempty (i.e., R is not a field) for this to
 -- work 

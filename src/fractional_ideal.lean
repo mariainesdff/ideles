@@ -56,8 +56,8 @@ begin
   rw [filter.eventually_cofinite, h_supp],
   exact ideal.finite_factors hI,
 end
-
-lemma idele.finite_mul_support {I : ideal R} (hI : I ≠ 0):
+/- 
+lemma ideal.finite_mul_support_coe {I : ideal R} (hI : I ≠ 0):
   (mul_support (λ (v : maximal_spectrum R), 
   (v.val.val : fractional_ideal (non_zero_divisors R) K)^
   ((associates.mk v.val.val).count (associates.mk I).factors : ℤ))).finite := 
@@ -75,9 +75,9 @@ begin
     { rw [h_zero, zpow_zero _],},
     exact hv hv', },
   exact finite.subset (filter.eventually_cofinite.mp (associates.finite_factors I hI)) h_subset,
-end
+end -/
 
-lemma idele.finite_mul_support' (I : ideal R) (hI : I ≠ 0):
+lemma ideal.finite_mul_support {I : ideal R} (hI : I ≠ 0):
   (mul_support (λ (v : maximal_spectrum R), 
   v.val.val^(associates.mk v.val.val).count (associates.mk I).factors)).finite := 
 begin
@@ -97,14 +97,51 @@ begin
   exact finite.subset (filter.eventually_cofinite.mp (associates.finite_factors I hI)) h_subset,
 end
 
-lemma idele.finite_mul_support_inv {I : ideal R} (hI : I ≠ 0):
+lemma fractional_ideal.coe_ideal_eq_one_iff {I : ideal R} :
+  (I : fractional_ideal (non_zero_divisors R) K) = 1 ↔ I = 1 :=
+begin
+  rw [← fractional_ideal.coe_ideal_top, ideal.one_eq_top],
+  exact injective.eq_iff fractional_ideal.coe_ideal_injective,
+end
+
+variables {A : Type*} [comm_ring A] (B : submonoid A) (C : Type*) [comm_ring C]
+variables [algebra A C]
+lemma fractional_ideal.coe_pow (I : ideal A) (n : ℕ) : 
+  (↑(I^n) : fractional_ideal B C) = (↑I)^n :=
+begin
+  induction n with n ih,
+  { simp, },
+  { simp [pow_succ, ih], },
+end
+
+variable [is_localization B C]
+lemma fractional_ideal.coe_finprod {α : Type*} {f : α → ideal A} (hB : B ≤ non_zero_divisors A) :
+  ((∏ᶠ a : α, f a : ideal A) : fractional_ideal B C) = ∏ᶠ a : α, (f a : fractional_ideal B C)  := 
+begin
+  have h_coe : ⇑(fractional_ideal.coe_ideal_hom B C).to_monoid_hom = coe := rfl,
+  rw [← h_coe,
+    monoid_hom.map_finprod_of_injective (fractional_ideal.coe_ideal_hom B C).to_monoid_hom, h_coe],
+  exact fractional_ideal.coe_to_fractional_ideal_injective hB,
+end
+
+lemma ideal.finite_mul_support_coe {I : ideal R} (hI : I ≠ 0):
+  (mul_support (λ (v : maximal_spectrum R), 
+  (v.val.val : fractional_ideal (non_zero_divisors R) K)^
+  ((associates.mk v.val.val).count (associates.mk I).factors : ℤ))).finite := 
+begin
+  rw mul_support,
+  simp_rw [ne.def, zpow_coe_nat, ← fractional_ideal.coe_pow, fractional_ideal.coe_ideal_eq_one_iff],
+  exact ideal.finite_mul_support hI,
+end
+
+lemma ideal.finite_mul_support_inv {I : ideal R} (hI : I ≠ 0):
   (mul_support (λ (v : maximal_spectrum R), 
   (v.val.val : fractional_ideal (non_zero_divisors R) K)^
   -((associates.mk v.val.val).count (associates.mk I).factors : ℤ))).finite := 
 begin
   rw mul_support, 
   simp_rw [zpow_neg₀, ne.def, inv_eq_one₀],
-  exact idele.finite_mul_support hI,
+  exact ideal.finite_mul_support_coe hI,
 end
 
 -- associates lemmas
@@ -133,7 +170,7 @@ lemma ideal.finprod_not_dvd (I : ideal R) (hI : I ≠ 0) :
     (∏ᶠ (v : maximal_spectrum R), (v.val.val)^
       (associates.mk v.val.val).count (associates.mk I).factors) :=
 begin
-  have hf := (idele.finite_mul_support' I hI),
+  have hf := ideal.finite_mul_support hI,
   have h_ne_zero : v.val.val ^
     (associates.mk v.val.val).count (associates.mk I).factors ≠ 0 := pow_ne_zero _ v.property,
   rw [← mul_finprod_cond_ne v hf, pow_add, pow_one, finprod_cond_ne _ _ hf],
@@ -167,7 +204,7 @@ lemma ideal.finprod_count (I : ideal R) (hI : I ≠ 0) :
 begin
   have h_ne_zero := ideal.finprod_count_ne_zero I,
   have hv : irreducible (associates.mk v.val.val) := associates.irreducible_of_maximal v,
-  have h_dvd := finprod_mem_dvd _ (idele.finite_mul_support' I hI),
+  have h_dvd := finprod_mem_dvd _ (ideal.finite_mul_support hI),
   have h_not_dvd := ideal.finprod_not_dvd v I hI,
   rw [← associates.mk_dvd_mk, associates.dvd_eq_le, associates.mk_pow,
     associates.prime_pow_dvd_iff_le h_ne_zero hv] at h_dvd h_not_dvd,
@@ -192,7 +229,7 @@ begin
   apply ideal.finprod_count ⟨⟨J, ideal.is_prime_of_prime hv⟩, hJ_ne_zero⟩ I hI,
 end
 
-variables {A : Type*} [comm_ring A] (B : submonoid A) (C : Type*) [comm_ring C]
+/- variables {A : Type*} [comm_ring A] (B : submonoid A) (C : Type*) [comm_ring C]
 variables [algebra A C]
 lemma fractional_ideal.coe_pow (I : ideal A) (n : ℕ) : 
   (↑(I^n) : fractional_ideal B C) = (↑I)^n :=
@@ -211,7 +248,7 @@ begin
     monoid_hom.map_finprod_of_injective (fractional_ideal.coe_ideal_hom B C).to_monoid_hom, h_coe],
   exact fractional_ideal.coe_to_fractional_ideal_injective hB,
 end
-
+ -/
 lemma ideal.factorization_coe (I : ideal R) (hI : I ≠ 0) :
   ∏ᶠ (v : maximal_spectrum R), (v.val.val : fractional_ideal (non_zero_divisors R) K)^
     ((associates.mk v.val.val).count (associates.mk I).factors : ℤ) = I := 
@@ -262,8 +299,8 @@ begin
   intro v,
   rw [← zpow_add₀ ((@fractional_ideal.coe_ideal_ne_zero_iff R _ K _ _ _ _).mpr v.property),
     sub_eq_add_neg],
-  apply idele.finite_mul_support hJ_ne_zero, 
-  apply idele.finite_mul_support_inv ha_ne_zero, 
+  apply ideal.finite_mul_support_coe hJ_ne_zero, 
+  apply ideal.finite_mul_support_inv ha_ne_zero, 
   { apply_instance },
 end
 
@@ -573,6 +610,7 @@ instance ufi_tg : topological_group (units (fractional_ideal (non_zero_divisors 
 { continuous_mul := continuous_of_discrete_topology,
   continuous_inv := continuous_of_discrete_topology, }
 
+/-! Lemmas about topological groups (to be PR'd to `topology/algebra/topological_group`). -/
 @[to_additive]
 lemma continuous_iff_continuous_at_one {α : Type*} {β : Type*} [topological_space α] 
   [topological_space β] [group α] [group β] [topological_group α] [topological_group β] {
