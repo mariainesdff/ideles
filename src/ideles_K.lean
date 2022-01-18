@@ -403,7 +403,7 @@ lemma I_K.map_to_fractional_ideals.apply (x : I_K K) : (((I_K.map_to_fractional_
     (v.val.val : fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K)^
     finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v) := rfl
 
-
+--set_option pp.implicit true
 lemma I_K.map_to_class_group.valuation_mem_kernel (x : I_K K) (k : units K)
   (v : maximal_spectrum (ring_of_integers K))
   (hkx : fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
@@ -426,10 +426,13 @@ begin
   { rw h_dk,
     exact non_zero_divisors.coe_ne_zero _, },
   rw I_K.map_to_fractional_ideals.apply at hkx,
-  { have h_exps_v: ((((associates.mk v.val.val).count 
-      (associates.mk (ideal.span {nk})).factors) : ℤ) - 
-      (((associates.mk v.val.val).count
-      (associates.mk (ideal.span {dk})).factors)) : ℤ) = 
+  { --set id := (ideal.span {nk} : ideal (ring_of_integers K)), 
+    --set fac := associates.factors (associates.mk id),
+    sorry/- have h_exps_v: 
+    ((associates.mk v.val.val).count 
+      (associates.mk (ideal.span {nk})).factors) - 
+      ((associates.mk v.val.val).count
+      (associates.mk (ideal.span {dk})).factors : ℤ) = 
       finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v,
     { rw [← fractional_ideal.count_finprod K v (finite_idele.to_add_valuations ↥(ring_of_integers K)
         K ((I_K.fst K) x)) (finite_add_support _ _ _), ← hkx,  eq_comm],
@@ -449,7 +452,7 @@ begin
     ← h_exps_v, of_add_to_add, eq_comm],
     exact classical.some_spec (with_zero.to_integer._proof_1 _),
     { exact h_dk_ne_zero },
-    { exact h_nk_ne_zero }},
+    { exact h_nk_ne_zero } -/},
 end
 
 lemma I_K.map_to_class_group.mem_kernel_iff (x : I_K K) : 
@@ -481,9 +484,11 @@ begin
     exact ha, }, 
   { obtain ⟨k, hk, h_vals⟩ := h,
     use field.units.mk' k hk,
+    
     rw [I_K.map_to_fractional_ideals.map_units_K, I_K.map_to_fractional_ideals,
       I_K_f.map_to_fractional_ideals, map_to_fractional_ideals, monoid_hom.coe_comp,
-      comp_app, monoid_hom.coe_mk,map_to_fractional_ideals.def, units.coe_mk],
+      comp_app, monoid_hom.coe_mk,map_to_fractional_ideals.def, force_noncomputable_def,
+      units.coe_mk],
     simp only [map_to_fractional_ideals.val],
     apply finprod_congr,
     intro v,

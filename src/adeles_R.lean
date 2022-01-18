@@ -421,7 +421,7 @@ begin
     rw [mem_prod, mem_set_of_eq, mem_set_of_eq] at hp,
     rw [mem_preimage, hUV],
     intro v,
-    have hp' : prod.mk (p.fst.val v) (p.snd.val v) ∈ (Vx v).prod (Vy v) := 
+    have hp' : prod.mk (p.fst.val v) (p.snd.val v) ∈ (Vx v) ×ˢ (Vy v) := 
     mem_prod.mpr ⟨hp.1 v, hp.2 v⟩,
     by_cases h_univ : V v = univ,
     { rw h_univ, exact mem_univ _},
@@ -542,7 +542,7 @@ begin
     rw [mem_prod, mem_set_of_eq, mem_set_of_eq] at hp,
     rw [mem_preimage, hUV],
     intro v,
-    have hp' : prod.mk (p.fst.val v) (p.snd.val v) ∈ (Vx v).prod (Vy v) := 
+    have hp' : prod.mk (p.fst.val v) (p.snd.val v) ∈ (Vx v) ×ˢ (Vy v) := 
     mem_prod.mpr ⟨hp.1 v, hp.2 v⟩,
     by_cases h_univ : V v = univ,
     { rw h_univ, exact mem_univ _},
