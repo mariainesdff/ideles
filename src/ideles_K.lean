@@ -94,7 +94,7 @@ instance : topological_space (I_K K) := units.topological_space
 instance : topological_group (I_K K) := units.topological_group
 
 lemma I_K_f.def : I_K_f K = units (A_K_f K) := rfl
-lemma I_K.def : I_K K = units (A_K K) := rfl
+--lemma I_K.def : I_K K = units (A_K K) := rfl
 
 def I_K.as_prod : I_K K ≃* (I_K_f K) × units (ℝ ⊗[ℚ] K) := 
 by apply prod_units.mul_equiv (A_K_f K) (ℝ ⊗[ℚ] K)
@@ -538,9 +538,15 @@ variables (Fq F : Type) [field Fq] [field F] [algebra (polynomial Fq) F] [algebr
    [is_scalar_tower (polynomial Fq) (ratfunc Fq) F] [is_separable (ratfunc Fq) F]
 
 def I_F_f := units (A_F_f Fq F)
---def I_F := units (A_F Fq F)
+def I_F := units (A_F Fq F)
 
 instance : comm_group (I_F_f Fq F) := units.comm_group
---instance : comm_group (I_F Fq F) := units.comm_group
+instance : comm_group (I_F Fq F) := units.comm_group
+instance : topological_space (I_F_f Fq F) := 
+finite_idele_group'.topological_space (ring_of_integers Fq F) F
+instance : topological_group (I_F_f Fq F) :=
+finite_idele_group'.topological_group (ring_of_integers Fq F) F
+instance : topological_space (I_F Fq F) := units.topological_space
+instance : topological_group (I_F Fq F) := units.topological_group
 
 end function_field
