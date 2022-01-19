@@ -77,7 +77,7 @@ namespace function_field
 
 variables (Fq F : Type) [field Fq] [field F] [algebra (polynomial Fq) F] [algebra (ratfunc Fq) F] 
   [function_field Fq F] [algebra (fraction_ring (polynomial Fq)) F]
-   [is_scalar_tower (polynomial Fq) (ratfunc Fq) F] [is_separable (ratfunc Fq) F]
+  [is_scalar_tower (polynomial Fq) (ratfunc Fq) F] [is_separable (ratfunc Fq) F]
 
 variables (n : ℕ) 
 instance : ring (fin n → (Fqt_infty Fq)) := pi.ring
