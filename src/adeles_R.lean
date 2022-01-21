@@ -1,5 +1,6 @@
 import fractional_ideal
 import ring_theory.valuation.integers
+import topology.algebra.localization
 
 noncomputable theory
 open_locale classical
@@ -125,6 +126,8 @@ def finite_adele_ring := localization (diag_R R K)
 instance : comm_ring (finite_adele_ring R K) := localization.comm_ring
 instance : algebra (R_hat R K) (finite_adele_ring R K) := localization.algebra
 instance : is_localization (diag_R R K) (finite_adele_ring R K):= localization.is_localization
+instance : topological_space (finite_adele_ring R K) := localization.topological_space
+instance : topological_ring (finite_adele_ring R K) := localization.topological_ring
 
 lemma preimage_diag_R (x : diag_R R K) : ∃ r : R, r ≠ 0 ∧ inj_R R K r = (x : R_hat R K) := 
 x.property
