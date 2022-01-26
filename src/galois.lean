@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2021 María Inés de Frutos-Fernández. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: María Inés de Frutos-Fernández
+-/
 import field_theory.galois
 import field_theory.is_alg_closed.algebraic_closure
 import topology.algebra.group
