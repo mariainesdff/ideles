@@ -119,88 +119,6 @@ lemma int_valuation_def_if_neg {r : R} (hr : r ≠ 0) :
   (-(associates.mk v.val.val).count (associates.mk (ideal.span{r} : ideal R)).factors : ℤ)) :=
 if_neg hr
 
-lemma int_valuation.map_zero' : v.int_valuation_def 0 = 0 := 
-by { rw [int_valuation_def, if_pos], refl, }
-
-lemma int_valuation.map_one' : v.int_valuation_def 1 = 1 := 
-begin
-  rw [int_valuation_def, if_neg (zero_ne_one.symm : (1 : R) ≠ 0)],
-  simp [← ideal.one_eq_top, -subtype.val_eq_coe,
-    associates.count_zero (associates.irreducible_of_maximal v)],
-end
-
-lemma int_valuation.map_mul' (x y : R) :
-  v.int_valuation_def (x * y) = v.int_valuation_def x * v.int_valuation_def y :=
-begin
-  rw [int_valuation_def, int_valuation_def, int_valuation_def],
-  by_cases hx : x = 0,
-  { rw [hx, zero_mul, if_pos (eq.refl _), zero_mul] },
-  { by_cases hy : y = 0,
-    { rw [hy, mul_zero, if_pos (eq.refl _), mul_zero] },
-    { rw [if_neg hx, if_neg hy, if_neg (mul_ne_zero hx hy), ← with_zero.coe_mul,
-        with_zero.coe_inj, ← of_add_add],
-      have hx' : associates.mk (ideal.span{x} : ideal R) ≠ 0 := associates.mk_ne_zero'.mpr hx,
-      have hy' : associates.mk (ideal.span{y} : ideal R) ≠ 0 := associates.mk_ne_zero'.mpr hy,
-      rw [← ideal.span_singleton_mul_span_singleton, ← associates.mk_mul_mk, ← neg_add,
-        associates.count_mul hx' hy' _],
-      { refl },
-      { apply (associates.irreducible_of_maximal v), }}}
-end
-
-lemma int_valuation.map_add' (x y : R) : v.int_valuation_def (x + y) ≤
-  max (v.int_valuation_def x) (v.int_valuation_def y) := 
-begin
-  by_cases hx : x = 0,
-  { rw [hx, zero_add],
-    conv_rhs {rw [int_valuation_def, if_pos (eq.refl _)]},
-    rw max_eq_right (with_zero.zero_le (v.int_valuation_def y)),
-    exact le_refl _, },
-  { by_cases hy : y = 0,
-    { rw [hy, add_zero],
-      conv_rhs {rw [max_comm, int_valuation_def, if_pos (eq.refl _)]},
-        rw max_eq_right (with_zero.zero_le (v.int_valuation_def x)), 
-        exact le_refl _ },
-    { by_cases hxy : x + y = 0,
-      { rw [int_valuation_def, if_pos hxy], exact zero_le',},
-      { rw [int_valuation_def, int_valuation_def, int_valuation_def,
-          if_neg hxy, if_neg hx, if_neg hy],
-      rw [le_max_iff, with_zero.coe_le_coe, of_add_le, with_zero.coe_le_coe, of_add_le,
-        neg_le_neg_iff, neg_le_neg_iff, int.coe_nat_le, int.coe_nat_le, ← min_le_iff],
-      set nmin := min 
-        ((associates.mk v.val.val).count (associates.mk (ideal.span {x})).factors)
-        ((associates.mk v.val.val).count (associates.mk (ideal.span {y})).factors),
-      have hx' : (associates.mk (ideal.span {x} : ideal R)) ≠ 0 := associates.mk_ne_zero'.mpr hx,
-      have hy' : (associates.mk (ideal.span {y} : ideal R)) ≠ 0 := associates.mk_ne_zero'.mpr hy,
-      have hxy' : (associates.mk (ideal.span {x + y} : ideal R)) ≠ 0 := 
-      associates.mk_ne_zero'.mpr hxy,
-      have h_dvd_x : x ∈ v.val.val ^ (nmin),
-      { rw [← associates.le_singleton_iff x nmin _],
-       rw [associates.prime_pow_dvd_iff_le hx' _],
-       exact min_le_left _ _,
-        apply associates.irreducible_of_maximal v,
-      },
-      have h_dvd_y : y ∈ v.val.val ^ nmin,
-      { rw [← associates.le_singleton_iff y nmin _, associates.prime_pow_dvd_iff_le hy' _],
-        exact min_le_right _ _,
-        apply associates.irreducible_of_maximal v,
-      },
-      have h_dvd_xy : associates.mk v.val.val^nmin ≤ associates.mk (ideal.span {x + y}),
-      { rw associates.le_singleton_iff,
-        exact ideal.add_mem (v.val.val^nmin) h_dvd_x h_dvd_y, },
-      rw (associates.prime_pow_dvd_iff_le hxy' _) at h_dvd_xy,
-      exact h_dvd_xy,
-      apply associates.irreducible_of_maximal v, }}}
-end
-
-/-! Adic valuation on the ring of fractions -/
-
-def int_valuation (v : maximal_spectrum R) : valuation R (with_zero (multiplicative ℤ)) :=
-{ to_fun    := v.int_valuation_def, 
-  map_zero' := int_valuation.map_zero' v,
-  map_one'  := int_valuation.map_one' v,
-  map_mul'  := int_valuation.map_mul' v,
-  map_add'  := int_valuation.map_add' v }
-
 lemma int_valuation_ne_zero' (x : R) (hx : x ≠ 0) : v.int_valuation_def x ≠ 0 :=
 begin
   rw [int_valuation_def, if_neg hx],
@@ -209,7 +127,6 @@ end
 
 lemma int_valuation_ne_zero (x : non_zero_divisors R) : v.int_valuation_def x ≠ 0 :=
 int_valuation_ne_zero' v x (non_zero_divisors.coe_ne_zero x)
-
 
 lemma int_valuation_zero_le (x : non_zero_divisors R) : 0 < v.int_valuation_def x :=
 begin
@@ -239,6 +156,103 @@ begin
     { rw [ne.def, ideal.zero_eq_bot, ideal.span_singleton_eq_bot], exact hr },
     { apply ideal.irreducible_of_maximal v }}
 end
+
+lemma int_valuation_le_pow_iff_dvd (r : R) (n : ℕ) : 
+  v.int_valuation_def r ≤ multiplicative.of_add (-(n : ℤ)) ↔ v.val.val^n ∣ ideal.span {r} :=
+begin
+  rw int_valuation_def,
+  split_ifs with hr,
+  { simp only [hr, ideal.dvd_span_singleton, zero_le', submodule.zero_mem], },
+  { norm_cast,
+    rw [of_add_le, neg_le_neg_iff, int.coe_nat_le, ideal.dvd_span_singleton, 
+    ← associates.le_singleton_iff,
+    associates.prime_pow_dvd_iff_le (associates.mk_ne_zero'.mpr hr) _],
+    { apply (associates.irreducible_of_maximal v) }} 
+end
+
+lemma int_valuation.map_zero' : v.int_valuation_def 0 = 0 := 
+by { rw [int_valuation_def, if_pos], refl, }
+
+lemma int_valuation.map_one' : v.int_valuation_def 1 = 1 := 
+begin
+  rw [int_valuation_def, if_neg (zero_ne_one.symm : (1 : R) ≠ 0)],
+  simp [← ideal.one_eq_top, -subtype.val_eq_coe,
+    associates.count_zero (associates.irreducible_of_maximal v)],
+end
+
+lemma int_valuation.map_mul' (x y : R) :
+  v.int_valuation_def (x * y) = v.int_valuation_def x * v.int_valuation_def y :=
+begin
+  rw [int_valuation_def, int_valuation_def, int_valuation_def],
+  by_cases hx : x = 0,
+  { rw [hx, zero_mul, if_pos (eq.refl _), zero_mul] },
+  { by_cases hy : y = 0,
+    { rw [hy, mul_zero, if_pos (eq.refl _), mul_zero] },
+    { rw [if_neg hx, if_neg hy, if_neg (mul_ne_zero hx hy), ← with_zero.coe_mul,
+        with_zero.coe_inj, ← of_add_add],
+      have hx' : associates.mk (ideal.span{x} : ideal R) ≠ 0 := associates.mk_ne_zero'.mpr hx,
+      have hy' : associates.mk (ideal.span{y} : ideal R) ≠ 0 := associates.mk_ne_zero'.mpr hy,
+      rw [← ideal.span_singleton_mul_span_singleton, ← associates.mk_mul_mk, ← neg_add,
+        associates.count_mul hx' hy' _],
+      { refl },
+      { apply (associates.irreducible_of_maximal v), }}}
+end
+
+lemma int_valuation.le_max_iff_min_le {a b c : ℕ} :  multiplicative.of_add(-c : ℤ) ≤ 
+  max (multiplicative.of_add(-a : ℤ)) (multiplicative.of_add(-b : ℤ)) ↔ min a b ≤ c :=
+by rw [le_max_iff, of_add_le, of_add_le, neg_le_neg_iff, neg_le_neg_iff, int.coe_nat_le,
+    int.coe_nat_le, ← min_le_iff]
+
+@[simp] lemma with_zero.le_max_iff {M : Type} [linear_ordered_comm_monoid M] {a b c : M} :
+  (a : with_zero M) ≤ max b c ↔ a ≤ max b c :=
+by simp only [with_zero.coe_le_coe, le_max_iff]
+
+lemma int_valuation.map_add' (x y : R) : v.int_valuation_def (x + y) ≤
+  max (v.int_valuation_def x) (v.int_valuation_def y) := 
+begin
+  by_cases hx : x = 0,
+  { rw [hx, zero_add],
+    conv_rhs {rw [int_valuation_def, if_pos (eq.refl _)]},
+    rw max_eq_right (with_zero.zero_le (v.int_valuation_def y)),
+    exact le_refl _, },
+  { by_cases hy : y = 0,
+    { rw [hy, add_zero],
+      conv_rhs {rw [max_comm, int_valuation_def, if_pos (eq.refl _)]},
+      rw max_eq_right (with_zero.zero_le (v.int_valuation_def x)), 
+      exact le_refl _ },
+    { by_cases hxy : x + y = 0,
+      { rw [int_valuation_def, if_pos hxy], exact zero_le',},
+      { rw [v.int_valuation_def_if_neg hxy, v.int_valuation_def_if_neg hx, 
+          v.int_valuation_def_if_neg hy, with_zero.le_max_iff, int_valuation.le_max_iff_min_le],
+      set nmin := min 
+        ((associates.mk v.val.val).count (associates.mk (ideal.span {x})).factors)
+        ((associates.mk v.val.val).count (associates.mk (ideal.span {y})).factors),
+      have h_dvd_x : x ∈ v.val.val ^ (nmin),
+      { rw [← associates.le_singleton_iff x nmin _,
+          associates.prime_pow_dvd_iff_le (associates.mk_ne_zero'.mpr hx) _],
+        exact min_le_left _ _,
+        apply associates.irreducible_of_maximal v, },
+      have h_dvd_y : y ∈ v.val.val ^ nmin,
+      { rw [← associates.le_singleton_iff y nmin _,
+          associates.prime_pow_dvd_iff_le (associates.mk_ne_zero'.mpr hy) _],
+        exact min_le_right _ _,
+        apply associates.irreducible_of_maximal v, },
+      have h_dvd_xy : associates.mk v.val.val^nmin ≤ associates.mk (ideal.span {x + y}),
+      { rw associates.le_singleton_iff,
+        exact ideal.add_mem (v.val.val^nmin) h_dvd_x h_dvd_y, },
+      rw (associates.prime_pow_dvd_iff_le (associates.mk_ne_zero'.mpr hxy) _) at h_dvd_xy,
+      exact h_dvd_xy,
+      apply associates.irreducible_of_maximal v, }}}
+end
+
+/-! Adic valuation on the ring of fractions -/
+
+def int_valuation (v : maximal_spectrum R) : valuation R (with_zero (multiplicative ℤ)) :=
+{ to_fun    := v.int_valuation_def, 
+  map_zero' := int_valuation.map_zero' v,
+  map_one'  := int_valuation.map_one' v,
+  map_mul'  := int_valuation.map_mul' v,
+  map_add'  := int_valuation.map_add' v }
 
 lemma ideal.is_nonunit_iff {I : ideal R} : ¬ is_unit I ↔ I ≠ ⊤ := not_congr ideal.is_unit_iff
 
