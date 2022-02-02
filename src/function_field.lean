@@ -6,12 +6,26 @@ Authors: María Inés de Frutos-Fernández
 import adeles_R
 import number_theory.function_field
 
+/-!
+# The valuation at infinity on Fq(t).
+The valuation at infinity is the nonarchimedean valuation on `Fq(t)` with uniformizer `1/t`. 
+Explicitly, if `f/g ∈ Fq(t)` is a nonzero quotient of polynomials, its valuation at infinity is
+`multiplicative.of_add(degree(f) - degree(g))`.
+
+## Main definitions
+- `infty_valuation` : The valuation at infinity on `Fq(t)`.
+- `Fqt_infty` : The completion `Fq((t⁻¹))` of `Fq(t)` with respect to `infty_valuation`.
+
+## Tags
+function field, valuation
+-/
+
 noncomputable theory
 
 open_locale classical
 
 variables (Fq : Type) [field Fq]
-
+/-- The valuation at infinity is the nonarchimedean valuation on `Fq(t)` with uniformizer `1/t`. -/
 def infty_valuation_def (r : ratfunc Fq) : with_zero (multiplicative ℤ) :=
 ite (r = 0) 0 (multiplicative.of_add ((r.num.nat_degree : ℤ) - r.denom.nat_degree))
 
@@ -43,13 +57,13 @@ begin
           (mul_ne_zero x.denom_ne_zero y.denom_ne_zero),
         ← polynomial.nat_degree_mul (ratfunc.num_ne_zero hx) (ratfunc.num_ne_zero hy),
         ← polynomial.nat_degree_mul (mul_ne_zero (ratfunc.num_ne_zero hx) (ratfunc.num_ne_zero hy))
-          (x * y).denom_ne_zero,
-        ratfunc.num_denom_mul],}}
+          (x * y).denom_ne_zero, ratfunc.num_denom_mul],}}
 end
 
 variable {Fq}
+/-- Equivalent fractions have the same valuation -/
 lemma infty_valuation_well_defined {r₁ r₂ s₁ s₂ : polynomial Fq} (hr₁ : r₁ ≠ 0) (hs₁ : s₁ ≠ 0) 
-  (hr₂ : r₂ ≠ 0)  (hs₂ : s₂ ≠ 0) (h_eq : r₁*s₂ = r₂*s₁) :
+  (hr₂ : r₂ ≠ 0) (hs₂ : s₂ ≠ 0) (h_eq : r₁*s₂ = r₂*s₁) :
   (r₁.nat_degree : ℤ) - s₁.nat_degree = (r₂.nat_degree : ℤ) - s₂.nat_degree :=
 begin
   rw sub_eq_sub_iff_add_eq_add,
@@ -107,6 +121,7 @@ begin
             exact polynomial.nat_degree_add_le _ _, }}},
 end
 
+/-- The valuation at infinity on `Fq(t)`. -/
 def infty_valuation  : valuation (ratfunc Fq) (with_zero (multiplicative ℤ)) :=
 { to_fun    := infty_valuation_def Fq, 
   map_zero' := infty_valuation.map_zero' Fq,
@@ -114,6 +129,7 @@ def infty_valuation  : valuation (ratfunc Fq) (with_zero (multiplicative ℤ)) :
   map_mul'  := infty_valuation.map_mul' Fq,
   map_add'  := infty_valuation.map_add' Fq }
 
+/-- The valued field `Fq(t)` with the valuation at infinity. -/
 def infty_valued_Fqt : valued (ratfunc Fq) := 
 { Γ₀  := (with_zero (multiplicative ℤ)),
   grp := infer_instance,
@@ -122,28 +138,29 @@ def infty_valued_Fqt : valued (ratfunc Fq) :=
 lemma infty_valued_Fqt.def {x : ratfunc Fq} :
   @valued.v (ratfunc Fq) _ (infty_valued_Fqt Fq) (x) = infty_valuation_def Fq x := rfl
 
-
+/-- The topology structure on `Fq(t)` induced by the valuation at infinity. -/
 def tsq' : topological_space (ratfunc Fq) :=
 @valued.topological_space (ratfunc Fq) _ (infty_valued_Fqt Fq)
 lemma tdrq' : @topological_division_ring (ratfunc Fq) _ (tsq' Fq) := 
 @valued.topological_division_ring (ratfunc Fq) _ (infty_valued_Fqt Fq)
 lemma trq' : @topological_ring (ratfunc Fq) (tsq' Fq) _ := infer_instance
 lemma tgq' : @topological_add_group (ratfunc Fq) (tsq' Fq) _ := infer_instance
-
+/-- The uniform structure on `Fq(t)` induced by the valuation at infinity. -/
 def usq' : uniform_space (ratfunc Fq) := 
 @topological_add_group.to_uniform_space (ratfunc Fq) _ (tsq' Fq) (tgq' Fq)
 lemma ugq' : @uniform_add_group (ratfunc Fq) (usq' Fq) _ := 
 @topological_add_group_is_uniform (ratfunc Fq) _ (tsq' Fq) (tgq' Fq)
 lemma cfq' : @completable_top_field (ratfunc Fq) _ (usq' Fq) :=
 @valued.completable (ratfunc Fq) _ (infty_valued_Fqt Fq)
-
-instance ssq' : @separated_space (ratfunc Fq) (usq' Fq) :=
+lemma ssq' : @separated_space (ratfunc Fq) (usq' Fq) :=
 @valued_ring.separated (ratfunc Fq) _ (infty_valued_Fqt Fq)
 
+/-- The completion `Fq((t⁻¹))`  of `Fq(t)` with respect to the valuation at infinity. -/
 def Fqt_infty := @uniform_space.completion (ratfunc Fq) (usq' Fq)
 instance : field (Fqt_infty Fq) :=
 @field_completion (ratfunc Fq) _ (usq' Fq) (tdrq' Fq) _ (ugq' Fq)
 
+/-- The valuation at infinity on `Fq(t)` extends to a valuation on `Fqt_infty`. -/
 instance valued_Fqt_infty : valued (Fqt_infty Fq) := 
 { Γ₀  := with_zero (multiplicative ℤ),
   grp := infer_instance,

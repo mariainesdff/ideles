@@ -7,13 +7,83 @@ import fractional_ideal
 import ring_theory.valuation.integers
 import topology.algebra.localization
 
+/-!
+# The finite adèle ring of a Dedekind domain.
+Given a Dedekind domain `R` with field of fractions `K` and a maximal ideal `v` of `R`,
+we define the completion of `K` with respect to its `v`-adic valuation, denoted `K_v`,and its ring
+of integers, denoted `R_v`. 
+
+We define the ring of finite adèles of a Dedekind domain. We provide two equivalent definitions of
+this ring (TODO: show that they are equivalent).
+
+We show that there is an injective ring homomorphism from the field of fractions of a Dedekind
+domain to its finite adèle ring.
+
+## Main definitions
+- `K_v`   : the completion of `K` with respect to its `v`-adic valuation.
+- `R_v`   : the ring of integers of `K_v`. 
+- `R_hat` : product of `R_v`, where `v` runs over all maximal ideals of `R`. 
+- `K_hat` : the product of `K_v`, where `v` runs over all maximal ideals of `R`. 
+- `finite_adele_ring` : The finite adèle ring of `R`, defined as the restricted product `Π'_v K_v`.
+- `inj_K` : The diagonal inclusion of `K` in `finite_adele_ring' R K`.
+- `finite_adele_ring` : The finite adèle ring of `R`, defined as the localization of `R_hat` at the
+  submonoid `R∖{0}`.
+- `finite_adele.hom` : A ring homomorphism from `finite_adele_ring R K` to `finite_adele_ring' R K`.
+
+## Main results
+- `inj_K.ring_hom` : `inj_K` is a ring homomorphism.
+- `inj_K.injective` : `inj_K` is injective for every Dedekind domain of Krull dimension 1.
+
+## Implementation notes
+We are only interested on Dedekind domains of Krull dimension 1 (i.e., not fields). If `R` is a 
+field, its finite adèle ring is just defined to be empty.
+
+## Tags
+finite adèle ring, dedekind domain, completions
+-/
+
 noncomputable theory
 open_locale classical
 open function set
 
+/- Auxiliary lemmas. -/
+private lemma subset.three_union {α : Type*} (f g h : α → Prop):
+  {a : α| ¬ (f a ∧ g a ∧ h a)} ⊆ {a : α| ¬ f a} ∪ {a : α| ¬ g a} ∪ {a : α| ¬ h a} := 
+begin
+  intros a ha,
+  rw mem_set_of_eq at ha,
+  push_neg at ha,
+  by_cases hf : f a,
+  { by_cases hg : g a,
+    { exact mem_union_right _ (ha hf hg)},
+    { exact mem_union_left _ (mem_union_right _ hg), }},
+  { exact mem_union_left _ (mem_union_left _ hf),},
+end
+
+lemma mul_le_one₀ {α : Type*} [linear_ordered_comm_group_with_zero α] {x y : α} (hx : x ≤ 1) 
+  (hy : y ≤ 1): x*y ≤ 1 := mul_le_one' hx hy
+
+/-- Auxiliary definition to force a definition to be noncomputable. This is used to avoid timeouts
+or memory errors when Lean cannot decide whether a certain definition is computable.
+Author: Gabriel Ebner. -/
+noncomputable def force_noncomputable {α : Sort*} (a : α) : α :=
+  function.const _ a (classical.choice ⟨a⟩)
+
+@[simp]
+lemma force_noncomputable_def {α} (a : α) : force_noncomputable a = a := rfl
+
+/-! ### Completions with respect to adic valuations.
+Given a Dedekind domain `R` with field of fractions `K` and a maximal ideal `v` of `R`,
+we define the completion of `K` with respect to its `v`-adic valuation, denoted `K_v`,and its ring
+of integers, denoted `R_v`. 
+
+We define `R_hat` (resp. `K_hat`) to be the product of `R_v` (resp. `K_v`), where `v` runs over all
+maximal ideals of `R`. -/
+
 variables {R : Type} {K : Type} [comm_ring R] [is_domain R] [is_dedekind_domain R] [field K]
   [algebra R K] [is_fraction_ring R K] (v : maximal_spectrum R)
 
+/-- `K` as a valued field with the `v`-adic valuation. -/
 def v_valued_K (v : maximal_spectrum R) : valued K := 
 { Γ₀  := (with_zero (multiplicative ℤ)),
   grp := infer_instance,
@@ -21,19 +91,21 @@ def v_valued_K (v : maximal_spectrum R) : valued K :=
 
 lemma v_valued_K.def {x : K} : @valued.v K _ (v_valued_K v) (x) = v.valuation_def  x := rfl
 
+/-- The topological space structure on `K` corresponding to the `v`-adic valuation. -/
 def ts' : topological_space K := @valued.topological_space K _ (v_valued_K v)
 lemma tdr' : @topological_division_ring K _ (ts' v) := 
 @valued.topological_division_ring K _ (v_valued_K v)
 lemma tr' : @topological_ring K  (ts' v) _ := infer_instance
 lemma tg' : @topological_add_group K (ts' v) _ := infer_instance
+/-- The uniform space structure on `K` corresponding to the `v`-adic valuation. -/
 def us' : uniform_space K := @topological_add_group.to_uniform_space K _ (ts' v) (tg' v)
 lemma ug' : @uniform_add_group K (us' v) _ := 
 @topological_add_group_is_uniform K _ (ts' v) (tg' v)
 lemma cf' : @completable_top_field K _ (us' v) := @valued.completable K _ (v_valued_K v)
-
-instance ss : @separated_space K (us' v) := @valued_ring.separated K _ (v_valued_K v)
+lemma ss : @separated_space K (us' v) := @valued_ring.separated K _ (v_valued_K v)
 
 variables (K)
+/-- The completion of `K` with respect to its `v`-adic valuation. -/
 def K_v := @uniform_space.completion K (us' v)
 instance : field (K_v K v) := @field_completion K _ (us' v) (tdr' v) _ (ug' v)
 
@@ -60,17 +132,17 @@ instance : has_lift_t K (@uniform_space.completion K (us' v)) := infer_instance
 instance R_v.has_lift_t : has_lift_t K (K_v K v) := uniform_space.completion.has_lift_t v
 
 variables (K)
+/-- The ring of integers of `K_v`. -/
 def R_v : subring (K_v K v) := 
 @valuation.integer (K_v K v) (with_zero (multiplicative ℤ)) _ _ (valued_K_v v).v 
 
---instance : topological_space (R_v K v) := infer_instance
-
--- Finite adele ring of R
 variables (R)
+/-- The product of all `R_v`, where `v` runs over the maximal ideals of `R`. -/
 def R_hat := (Π (v : maximal_spectrum R), (R_v K v))
 instance : comm_ring (R_hat R K) := pi.comm_ring
 instance : topological_space (R_hat R K) := Pi.topological_space
 
+/-- The product of all `K_v`, where `v` runs over the maximal ideals of `R`. -/
 def K_hat := (Π (v : maximal_spectrum R), (K_v K v))
 
 instance : comm_ring (K_hat R K) := pi.comm_ring
@@ -81,14 +153,18 @@ instance : topological_ring (K_hat R K) := tr_hat R K
 
 lemma K_v.is_integer (x : K_v K v) : x ∈ R_v K v ↔ valued.v x ≤ 1 := by refl
 
+/-- The natural inclusion of `R` in `K_v`. -/
 def inj_R_v' : R → (K_v K v) := λ r, (coe : K → (K_v K v)) (algebra_map R K r)
+
+/-- The natural inclusion of `R` in `R_v`. -/
 def inj_R_v : R → (R_v K v) := λ r, ⟨(coe : K → (K_v K v)) (algebra_map R K r), begin 
-  change @valued.extension K _ (v_valued_K v) (algebra_map R K r) ≤ 1, --need a coe_to_fun?
+  change @valued.extension K _ (v_valued_K v) (algebra_map R K r) ≤ 1,
   rw @valued.extension_extends K _ (v_valued_K v) (algebra_map R K r),
   exact v.valuation_le_one _,
 end⟩
-def inj_R : R → (R_hat R K) := λ r v, inj_R_v R K v r
 
+/-- The diagonal inclusion `r ↦ (r)_v` of `R` in `R_hat`. -/
+def inj_R : R → (R_hat R K) := λ r v, inj_R_v R K v r
 lemma uniform_space.completion.coe_inj {α : Type*} [uniform_space α] [separated_space α] :
   injective  (coe : α → uniform_space.completion α) := 
 uniform_embedding.inj (uniform_space.completion.uniform_embedding_coe _)
@@ -103,6 +179,7 @@ begin
 end
 
 lemma inj_R_v.map_one : inj_R_v R K v 1 = 1 :=  by { rw inj_R_v, simp_rw ring_hom.map_one, refl, }
+
 lemma inj_R.map_one : inj_R R K 1 = 1 := 
 by { rw inj_R, ext v, simp_rw inj_R_v.map_one R K v, refl, }
 
@@ -118,41 +195,40 @@ end
 lemma inj_R.map_mul (x y : R): inj_R R K (x*y) = (inj_R R K x) * (inj_R R K y) :=
 by { rw inj_R, ext v, apply congr_arg _ (inj_R_v.map_mul R K v x y), }
 
-def diag_R : submonoid (R_hat R K) := 
-{ carrier  := (inj_R R K) '' set.compl {0},
-  one_mem' :=  ⟨1, set.mem_compl_singleton_iff.mpr one_ne_zero, inj_R.map_one R K⟩,
-  mul_mem' := 
-  begin
-    rintros a b ⟨za, hza, rfl⟩ ⟨zb, hzb, rfl⟩,
-    exact ⟨za*zb, mul_ne_zero hza hzb, inj_R.map_mul R K za zb⟩,
-  end }
+/-- The inclusion of `R_hat` in `K_hat` is a homomorphism of additive monoids. -/
+def group_hom_prod : add_monoid_hom (R_hat R K) (K_hat R K) := 
+{ to_fun    := (λ x v, (x v)),
+  map_zero' := rfl,
+  map_add'  := λ x y, by { ext v, rw [pi.add_apply, pi.add_apply, subring.coe_add], }}
 
-def finite_adele_ring := localization (diag_R R K)
-instance : comm_ring (finite_adele_ring R K) := localization.comm_ring
-instance : algebra (R_hat R K) (finite_adele_ring R K) := localization.algebra
-instance : is_localization (diag_R R K) (finite_adele_ring R K):= localization.is_localization
-instance : topological_space (finite_adele_ring R K) := localization.topological_space
-instance : topological_ring (finite_adele_ring R K) := localization.topological_ring
+/-- The inclusion of `R_hat` in `K_hat` is a ring homomorphism. -/
+def hom_prod : ring_hom (R_hat R K) (K_hat R K)  := 
+{ to_fun   := (λ x v, x v),
+  map_one' := rfl,
+  map_mul' := λ x y, by {ext p, rw [pi.mul_apply, pi.mul_apply, subring.coe_mul], },
+  ..group_hom_prod R K }
 
-lemma preimage_diag_R (x : diag_R R K) : ∃ r : R, r ≠ 0 ∧ inj_R R K r = (x : R_hat R K) := 
-x.property
+/-! ### The finite adèle ring of a Dedekind domain
+We define the finite adèle ring of `R` as the restricted product over all maximal ideals `v` of `R`
+of `K_v` with respect to `R_v`. We prove that it is a commutative ring and give it a topology that
+makes it into a topological ring. -/
 
-noncomputable def force_noncomputable {α : Sort*} (a : α) : α :=
-  function.const _ a (classical.choice ⟨a⟩)
-
-@[simp]
-lemma force_noncomputable_def {α} (a : α) : force_noncomputable a = a := rfl
-
+/-- A tuple `(x_v)_v` is in the restricted product of the `K_v` with respect to `R_v` if for all but
+finitely many `v`, `x_v ∈ R_v`. -/
 def restricted : K_hat R K → Prop := λ x, 
  ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v)
 
+/-- The finite adèle ring of `R` is the restricted product over all maximal ideals `v` of `R`
+of `K_v` with respect to `R_v`.-/
 def finite_adele_ring' := { x : (K_hat R K) // 
   ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) }
 
+/-- The coercion map from `finite_adele_ring' R K` to `K_hat R K`. -/
 def coe' : (finite_adele_ring' R K) → K_hat R K := force_noncomputable $ λ x, x.val
 instance has_coe' : has_coe (finite_adele_ring' R K) (K_hat R K) := {coe := coe' R K } 
 instance has_lift_t' : has_lift_t (finite_adele_ring' R K) (K_hat R K) := {lift := coe' R K } 
 
+/-- The sum of two finite adèles is a finite adèle. -/
 lemma restr_add (x y : finite_adele_ring' R K) : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
   ((x.val + y.val) v ∈ R_v K v) := 
 begin
@@ -174,9 +250,11 @@ begin
   exact finite.subset (finite.union hx hy) h_subset,
 end
 
+/-- Addition on the finite adèle. ring. -/
 def add' (x y : finite_adele_ring' R K) : finite_adele_ring' R K := 
 ⟨x.val + y.val, restr_add R K x y⟩
 
+/-- The tuple `(0)_v` is a finite adèle. -/
 lemma restr_zero : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
   ((0 : K_v K v) ∈ R_v K v) := 
 begin
@@ -191,6 +269,7 @@ begin
   exact finite_empty,
 end
 
+/-- The negative of a finite adèle is a finite adèle. -/
 lemma restr_neg (x : finite_adele_ring' R K)  : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
   (-x.val v ∈ R_v K v) := 
 begin
@@ -201,8 +280,10 @@ begin
   simpa only [h] using hx,
 end
 
+/-- Negation on the finite adèle ring. -/
 def neg' (x : finite_adele_ring' R K) : finite_adele_ring' R K := ⟨-x.val, restr_neg R K x⟩
 
+/-- The product of two finite adèles is a finite adèle. -/
 lemma restr_mul (x y : finite_adele_ring' R K) : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
   ((x.val * y.val) v ∈ R_v K v) := 
 begin
@@ -227,9 +308,11 @@ begin
   exact finite.subset (finite.union hx hy) h_subset,
 end
 
+/-- Multiplication on the finite adèle ring. -/
 def mul' (x y : finite_adele_ring' R K) : finite_adele_ring' R K := 
 ⟨x.val * y.val, restr_mul R K x y⟩
 
+/-- The tuple `(1)_v` is a finite adèle. -/
 lemma restr_one : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
   ((1 : K_v K v) ∈ R_v K v) := 
 begin
@@ -243,6 +326,7 @@ begin
   exact finite_empty,
 end
 
+/-- `finite_adele_ring' R K` is a commutative additive group. -/
 instance : add_comm_group (finite_adele_ring' R K) := 
 { add          := add' R K,
   add_assoc    := λ ⟨x, hx⟩ ⟨y, hy⟩ ⟨z, hz⟩,
@@ -256,6 +340,7 @@ instance : add_comm_group (finite_adele_ring' R K) :=
   add_comm     := λ x y, by { unfold_projs,  dsimp only [add'], ext, 
     rw [subtype.coe_mk, subtype.coe_mk, pi.add_apply, pi.add_apply, add_comm], }}
 
+/-- `finite_adele_ring' R K` is a commutative ring. -/
 instance : comm_ring (finite_adele_ring' R K) := 
 { mul           := mul' R K,
   mul_assoc     := λ x y z, by { unfold_projs, simp_rw [mul'], 
@@ -286,6 +371,7 @@ rfl
 instance finite_adele_ring'.inhabited : inhabited (finite_adele_ring' R K) := 
 { default := ⟨0, restr_zero R K⟩ }
 
+/-- The ring of integers `R_v` is an open subset of `K_v`. -/
 lemma K_v.is_open_R_v : is_open (R_v K v : set (K_v K v)) := 
 begin
   intros x hx,
@@ -298,26 +384,16 @@ begin
     exact valuation.map_add _ _ _ }
 end
 
+/-- A generating set for the topology on the finite adèle ring of `R` consists on products `∏_v U_v`
+of open sets such that `U_v = R_v` for all but finitely many maximal ideals `v`. -/
 def finite_adele_ring'.generating_set : set (set (finite_adele_ring' R K)) :=
 { U : set (finite_adele_ring' R K) | ∃ (V : Π (v : maximal_spectrum R), set (K_v K v)),
   (∀ x : finite_adele_ring' R K, x ∈ U ↔ ∀ v, x.val v ∈ V v) ∧ 
   (∀ v, is_open (V v)) ∧ ∀ᶠ v in filter.cofinite, V v = R_v K v } 
 
+/-- The topology on the finite adèle ring of `R`. -/
 instance : topological_space (finite_adele_ring' R K) := topological_space.generate_from
   (finite_adele_ring'.generating_set R K)
-
-private lemma subset.three_union {α : Type*} (f g h : α → Prop):
-  {a : α| ¬ (f a ∧ g a ∧ h a)} ⊆ {a : α| ¬ f a} ∪ {a : α| ¬ g a} ∪ {a : α| ¬ h a} := 
-begin
-  intros a ha,
-  rw mem_set_of_eq at ha,
-  push_neg at ha,
-  by_cases hf : f a,
-  { by_cases hg : g a,
-    { exact mem_union_right _ (ha hf hg)},
-    { exact mem_union_left _ (mem_union_right _ hg), }},
-  { exact mem_union_left _ (mem_union_left _ hf),},
-end 
 
 private lemma set_cond_finite {x y: finite_adele_ring' R K} 
   {V : Π (v : maximal_spectrum R), set (K_v K v)} 
@@ -386,8 +462,7 @@ begin
     exact set_cond_finite R K hV_int },
 end
 
---#exit
---set_option profiler true
+/-- Addition on the finite adèle ring of `R` is continuous. -/
 lemma finite_adele_ring'.continuous_add : 
   continuous (λ (p : finite_adele_ring' R K × finite_adele_ring' R K), p.fst + p.snd) :=
 begin
@@ -503,12 +578,7 @@ begin
     exact set_cond_finite R K hV_int },
 end
 
-lemma mul_le_one₀ {α : Type*} [linear_ordered_comm_group_with_zero α] {x y : α} (hx : x ≤ 1) 
-  (hy : y ≤ 1): x*y ≤ 1 := 
-begin
-  exact mul_le_one' hx hy,
-end
-
+/-- Multiplication on the finite adèle ring of `R` is continuous. -/
 lemma finite_adele_ring'.continuous_mul : 
   continuous (λ (p : finite_adele_ring' R K × finite_adele_ring' R K), p.fst * p.snd) :=
 begin
@@ -568,10 +638,12 @@ begin
          (is_open_prod_iff.mp (hV v) _ _ (hxy' v)))).2.2.2.2 hp'}, }}}
 end
 
+/-- The finite adèle ring of `R` is a topological ring. -/
 instance : topological_ring (finite_adele_ring' R K) := 
 { continuous_add := finite_adele_ring'.continuous_add R K,
   continuous_mul := finite_adele_ring'.continuous_mul R K }
 
+/-- The product `∏_v R_v` is an open subset of the finite adèle ring of `R`. -/
 lemma finite_adele_ring'.is_open_integer_subring :
   is_open {x : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), x.val v ∈ R_v K v} :=
 begin  
@@ -602,23 +674,126 @@ lemma mul_apply (x y : finite_adele_ring' R K) :
 lemma mul_apply_val (x y : finite_adele_ring' R K) :  
 x.val * y.val = (x * y).val := rfl
 
-@[simp]
-lemma one_def : (⟨1, restr_one R K⟩ : finite_adele_ring' R K) = 1 := rfl
+@[simp] lemma one_def : (⟨1, restr_one R K⟩ : finite_adele_ring' R K) = 1 := rfl
 
-@[simp]
-lemma zero_def : (⟨0, restr_zero R K⟩ : finite_adele_ring' R K) = 0 := rfl
+@[simp] lemma zero_def : (⟨0, restr_zero R K⟩ : finite_adele_ring' R K) = 0 := rfl
 
-def group_hom_prod : add_monoid_hom (R_hat R K) (K_hat R K) := 
-{ to_fun    := (λ x v, (x v)),
-  map_zero' := rfl,
-  map_add'  := λ x y, by { ext v, rw [pi.add_apply, pi.add_apply, subring.coe_add], }}
+/-- For any `x ∈ K`, the tuple `(x)_v` is a finite adèle. -/
+lemma inj_K_image (x : K) : 
+  set.finite({ v : maximal_spectrum R | ¬ (coe : K → (K_v K v)) x ∈ (R_v K v)}) := 
+begin
+  set supp := { v : maximal_spectrum R | ¬ (coe : K → (K_v K v)) x ∈ (R_v K v)} with h_supp,
+  obtain ⟨r, ⟨d, hd⟩, hx⟩ := is_localization.mk'_surjective (non_zero_divisors R) x,
+  have hd_ne_zero : ideal.span{d} ≠ (0 : ideal R),
+  { rw [ideal.zero_eq_bot, ne.def, ideal.span_singleton_eq_bot],
+    apply non_zero_divisors.ne_zero hd, },
+  obtain ⟨f, h_irred, h_assoc⟩:= wf_dvd_monoid.exists_factors (ideal.span{d}) hd_ne_zero,
+  have hsubset : supp ⊆ { v : maximal_spectrum R | v.val.val ∣ ideal.span({d})},
+  { rw h_supp,
+    intros v hv,
+    rw mem_set_of_eq at hv ⊢,
+    have h_val : valued.v ((coe : K → (K_v K v)) x) = @valued.extension K _ (v_valued_K v) x := rfl,
+    rw [K_v.is_integer, h_val, valued.extension_extends _, v_valued_K.def, 
+      maximal_spectrum.valuation_def] at hv,
+    let sx : non_zero_divisors R := (classical.some (maximal_spectrum.valuation_def._proof_2 x)),
+    have h_loc : is_localization.mk' K (classical.some (maximal_spectrum.valuation_def._proof_1 x)) sx
+       = is_localization.mk' K r ⟨d, hd⟩,
+    { rw hx, exact (classical.some_spec (maximal_spectrum.valuation_def._proof_2 x)) },
+      dsimp only at hv,
+      rw ← maximal_spectrum.int_valuation_lt_one_iff_dvd,
+      by_contradiction h_one_le,
+      rw [maximal_spectrum.valuation_well_defined K v h_loc, subtype.coe_mk,
+        (le_antisymm (v.int_valuation_le_one d) (not_lt.mp h_one_le)), div_one] at hv,
+      exact hv (v.int_valuation_le_one r) },
+  exact finite.subset (finite_factors d hd_ne_zero) hsubset,
+end
 
-def hom_prod : ring_hom (R_hat R K) (K_hat R K)  := 
-{ to_fun   := (λ x v, x v),
-  map_one' := rfl,
-  map_mul' := λ x y, by {ext p, rw [pi.mul_apply, pi.mul_apply, subring.coe_mul], },
-  ..group_hom_prod R K }
+/-- The diagonal inclusion `k ↦ (k)_v` of `K` into the finite adèle ring of `R`. -/
+@[simps coe] def inj_K : K → finite_adele_ring' R K := 
+λ x, ⟨(λ v : maximal_spectrum R, (coe : K → (K_v K v)) x), inj_K_image R K x⟩
 
+lemma inj_K_apply (k : K) : 
+  inj_K R K  k = ⟨(λ v : maximal_spectrum R, (coe : K → (K_v K v)) k), inj_K_image R K k⟩ := rfl
+
+@[simp] lemma inj_K.map_zero : inj_K R K 0 = 0 := by { rw inj_K, ext v, rw [subtype.coe_mk], refl }
+
+@[simp] lemma inj_K.map_add (x y : K) : inj_K R K (x + y) = (inj_K R K x) + (inj_K R K y) := 
+begin
+  rw inj_K, ext v, unfold_projs, simp only [add'],
+  rw [subtype.coe_mk, subtype.coe_mk, pi.add_apply], 
+  norm_cast,
+end
+
+@[simp] lemma inj_K.map_one : inj_K R K 1 = 1 := by { rw inj_K, ext v, rw [subtype.coe_mk], refl }
+
+@[simp] lemma inj_K.map_mul (x y : K) : inj_K R K (x*y) = (inj_K R K x) * (inj_K R K y) := 
+begin
+  rw inj_K, ext v, unfold_projs, simp only [mul'],
+  rw [subtype.coe_mk, subtype.coe_mk, pi.mul_apply], 
+  norm_cast,
+end
+
+/-- The map `inj_K` is an additive group homomorphism. -/
+def inj_K.add_group_hom : add_monoid_hom K (finite_adele_ring' R K) := 
+{ to_fun    := inj_K R K,
+  map_zero' := inj_K.map_zero R K,
+  map_add'  := inj_K.map_add R K, }
+
+/-- The map `inj_K` is a ring homomorphism. -/
+def inj_K.ring_hom : ring_hom K (finite_adele_ring' R K)  := 
+{ to_fun   := inj_K R K,
+  map_one' := inj_K.map_one R K,
+  map_mul' := inj_K.map_mul R K,
+  ..inj_K.add_group_hom R K }
+
+lemma inj_K.ring_hom_apply {k : K} : inj_K.ring_hom R K k = inj_K R K k := rfl
+
+/-- If `maximal_spectrum R` is nonempty, then `inj_K` is injective. Note that the nonemptiness
+hypothesis is satisfied for every Dedekind domain that is not a field. -/
+lemma inj_K.injective [inh : nonempty (maximal_spectrum R)] : injective (inj_K.ring_hom R K) :=
+begin
+  rw ring_hom.injective_iff,
+  intros x hx,
+  rw [inj_K.ring_hom, ring_hom.coe_mk, inj_K] at hx,
+  dsimp only at hx,
+  unfold_projs at hx,
+  rw [subtype.mk_eq_mk] at hx,
+  let v : maximal_spectrum R := (classical.inhabited_of_nonempty inh).default,
+  have hv := congr_fun hx v,
+  dsimp only at hv,
+  have h_inj : function.injective (coe : K → (K_v K v)) :=
+    @uniform_space.completion.coe_inj K (us' v) (ss v),
+  apply h_inj hv,
+end
+
+/-! ### Alternative definition of the finite adèle ring
+We can also define the finite adèle ring of `R` as the localization of `R_hat` at `R∖{0}`. We denote
+this definition by `finite_adele_ring` and construct a ring homomorphism from `finite_adele_ring R`
+to `finite_adele_ring' R`. 
+TODO: show that this homomorphism is in fact an isomorphism of topological rings. -/
+
+/-- `R∖{0}` is a submonoid of `R_hat R K`, via the inclusion `r ↦ (r)_v`. -/
+def diag_R : submonoid (R_hat R K) := 
+{ carrier  := (inj_R R K) '' set.compl {0},
+  one_mem' :=  ⟨1, set.mem_compl_singleton_iff.mpr one_ne_zero, inj_R.map_one R K⟩,
+  mul_mem' := 
+  begin
+    rintros a b ⟨za, hza, rfl⟩ ⟨zb, hzb, rfl⟩,
+    exact ⟨za*zb, mul_ne_zero hza hzb, inj_R.map_mul R K za zb⟩,
+  end }
+
+/-- The finite adèle ring of `R` as the localization of `R_hat` at `R∖{0}`. -/
+def finite_adele_ring := localization (diag_R R K)
+instance : comm_ring (finite_adele_ring R K) := localization.comm_ring
+instance : algebra (R_hat R K) (finite_adele_ring R K) := localization.algebra
+instance : is_localization (diag_R R K) (finite_adele_ring R K):= localization.is_localization
+instance : topological_space (finite_adele_ring R K) := localization.topological_space
+instance : topological_ring (finite_adele_ring R K) := localization.topological_ring
+
+lemma preimage_diag_R (x : diag_R R K) : ∃ r : R, r ≠ 0 ∧ inj_R R K r = (x : R_hat R K) := 
+x.property
+
+/-- For every `r ∈ R`, `(r)_v` is a unit of `K_hat R K`. -/
 lemma hom_prod_diag_unit : ∀ x : (diag_R R K), is_unit (hom_prod R K x) :=
 begin
   rintro ⟨x, r, hr, hrx⟩,
@@ -641,9 +816,11 @@ begin
   exact hr,
 end
 
+/-- The map from `finite_adele_ring R K` to `K_hat R K` induced by `hom_prod`. -/
 def map_to_K_hat (x : finite_adele_ring R K) : K_hat R K := 
 is_localization.lift (hom_prod_diag_unit R K) x
 
+/-- The image of `map_to_K_hat R K` is contained in `finite_adele_ring' R K`. -/
 lemma restricted_image (x : finite_adele_ring R K) : 
   set.finite({ v : maximal_spectrum R | ¬ (map_to_K_hat R K x v) ∈ (R_v K v)}) :=
 begin
@@ -702,6 +879,7 @@ by { rw [map_to_K_hat, map_to_K_hat, map_to_K_hat, ring_hom.map_add], }
 lemma map_to_K_hat.map_zero : map_to_K_hat R K 0 = 0 := 
 by { rw [map_to_K_hat, ring_hom.map_zero] }
 
+/-- `map_to_K_hat` is a ring homomorphism between our two definitions of finite adèle ring.  -/
 def finite_adele.hom : (finite_adele_ring R K) →+* (finite_adele_ring' R K) := 
 { to_fun    := λ x, ⟨(map_to_K_hat R K x), restricted_image R K x⟩,
   map_one'  := begin
@@ -718,110 +896,3 @@ def finite_adele.hom : (finite_adele_ring R K) →+* (finite_adele_ring' R K) :=
   end,
   map_add'  := λ x y,
   by { unfold_projs, simp only [add'], exact subtype.mk_eq_mk.mpr (map_to_K_hat.map_add R K x y) }}
-  
-/- def finite_adele.inv : (finite_adele_ring' R K) →+* (finite_adele_ring R K) := 
-{ to_fun    := sorry,
-  map_one'  := sorry,
-  map_mul'  := sorry,
-  map_zero' := sorry,
-  map_add'  := sorry }
-
-lemma finite_adele.hom_inv_id : 
-  (finite_adele.inv R K).comp (finite_adele.hom R K) = ring_hom.id (finite_adele_ring R K) := sorry
-
-lemma finite_adele.inv_hom_id :
-  (finite_adele.hom R K).comp (finite_adele.inv R K) = ring_hom.id (finite_adele_ring' R K) := sorry 
-
-def finite_adele.eq_defs : ring_equiv (finite_adele_ring R K) (finite_adele_ring' R K) :=
-  ring_equiv.of_hom_inv (finite_adele.hom R K) (finite_adele.inv R K)
-    (finite_adele.hom_inv_id R K) (finite_adele.inv_hom_id R K)
--/
-
-lemma inj_K_image (x : K) : 
-  set.finite({ v : maximal_spectrum R | ¬ (coe : K → (K_v K v)) x ∈ (R_v K v)}) := 
-begin
-  set supp := { v : maximal_spectrum R | ¬ (coe : K → (K_v K v)) x ∈ (R_v K v)} with h_supp,
-  obtain ⟨r, ⟨d, hd⟩, hx⟩ := is_localization.mk'_surjective (non_zero_divisors R) x,
-  have hd_ne_zero : ideal.span{d} ≠ (0 : ideal R),
-  { rw [ideal.zero_eq_bot, ne.def, ideal.span_singleton_eq_bot],
-    apply non_zero_divisors.ne_zero hd, },
-  obtain ⟨f, h_irred, h_assoc⟩:= wf_dvd_monoid.exists_factors (ideal.span{d}) hd_ne_zero,
-  have hsubset : supp ⊆ { v : maximal_spectrum R | v.val.val ∣ ideal.span({d})},
-  { rw h_supp,
-    intros v hv,
-    rw mem_set_of_eq at hv ⊢,
-    have h_val : valued.v ((coe : K → (K_v K v)) x) = @valued.extension K _ (v_valued_K v) x := rfl,
-    rw [K_v.is_integer, h_val, valued.extension_extends _, v_valued_K.def, 
-      maximal_spectrum.valuation_def] at hv,
-    let sx : non_zero_divisors R := (classical.some (maximal_spectrum.valuation_def._proof_2 x)),
-    have h_loc : is_localization.mk' K (classical.some (maximal_spectrum.valuation_def._proof_1 x)) sx
-       = is_localization.mk' K r ⟨d, hd⟩,
-    { rw hx, exact (classical.some_spec (maximal_spectrum.valuation_def._proof_2 x)) },
-      dsimp only at hv,
-      rw ← maximal_spectrum.int_valuation_lt_one_iff_dvd,
-      by_contradiction h_one_le,
-      rw [maximal_spectrum.valuation_well_defined K v h_loc, subtype.coe_mk,
-        (le_antisymm (v.int_valuation_le_one d) (not_lt.mp h_one_le)), div_one] at hv,
-      exact hv (v.int_valuation_le_one r) },
-  exact finite.subset (finite_factors d hd_ne_zero) hsubset,
-end
-
-@[simps coe]
-def inj_K : K → finite_adele_ring' R K := 
-λ x, ⟨(λ v : maximal_spectrum R, (coe : K → (K_v K v)) x), inj_K_image R K x⟩
-
-lemma inj_K_apply (k : K) : 
-  inj_K R K  k = ⟨(λ v : maximal_spectrum R, (coe : K → (K_v K v)) k), inj_K_image R K k⟩ := rfl
-
-@[simp]
-lemma inj_K.map_zero : inj_K R K 0 = 0 := by { rw inj_K, ext v, rw [subtype.coe_mk], refl }
-
-@[simp]
-lemma inj_K.map_add (x y : K) : inj_K R K (x + y) = (inj_K R K x) + (inj_K R K y) := 
-begin
-  rw inj_K, ext v, unfold_projs, simp only [add'],
-  rw [subtype.coe_mk, subtype.coe_mk, pi.add_apply], 
-  norm_cast,
-end
-
-@[simp]
-lemma inj_K.map_one : inj_K R K 1 = 1 := by { rw inj_K, ext v, rw [subtype.coe_mk], refl }
-
-@[simp]
-lemma inj_K.map_mul (x y : K) : inj_K R K (x*y) = (inj_K R K x) * (inj_K R K y) := 
-begin
-  rw inj_K, ext v, unfold_projs, simp only [mul'],
-  rw [subtype.coe_mk, subtype.coe_mk, pi.mul_apply], 
-  norm_cast,
-end
-
-def inj_K.add_group_hom : add_monoid_hom K (finite_adele_ring' R K) := 
-{ to_fun    := inj_K R K,
-  map_zero' := inj_K.map_zero R K,
-  map_add'  := inj_K.map_add R K, }
-
-def inj_K.ring_hom : ring_hom K (finite_adele_ring' R K)  := 
-{ to_fun   := inj_K R K,
-  map_one' := inj_K.map_one R K,
-  map_mul' := inj_K.map_mul R K,
-  ..inj_K.add_group_hom R K }
-
-lemma inj_K.ring_hom_apply {k : K} : inj_K.ring_hom R K k = inj_K R K k := rfl
-
--- We need to assume that the maximal spectrum of R is nonempty (i.e., R is not a field) for this to
--- work 
-lemma inj_K.injective [inh : inhabited (maximal_spectrum R)] : injective (inj_K.ring_hom R K) :=
-begin
-  rw ring_hom.injective_iff,
-  intros x hx,
-  rw [inj_K.ring_hom, ring_hom.coe_mk, inj_K] at hx,
-  dsimp only at hx,
-  unfold_projs at hx,
-  rw [subtype.mk_eq_mk] at hx,
-  let v : maximal_spectrum R := inh.default,
-  have hv := congr_fun hx v,
-  dsimp only at hv,
-  have h_inj : function.injective (coe : K → (K_v K v)) :=
-    @uniform_space.completion.coe_inj K (us' v) (ss v),
-  apply h_inj hv,
-end

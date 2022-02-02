@@ -19,13 +19,13 @@ noncomputable theory
 variables (K : Type) [field K] [number_field K]
 
 /-- The first part of the theorem is the claim that `G_K_ab` is isomorphic to `C_K_1` as groups.-/
-def main_theorem_of_global_CFT.group_isomorphism :
+theorem main_theorem_of_global_CFT.group_isomorphism :
   (number_field.C_K K) ⧸ (subgroup.connected_component_of_one (number_field.C_K K)) ≃* (G_K_ab K) :=
-force_noncomputable sorry
+sorry
 
 /-- The second part claims that the above isomorphism of abstract groups is also a homeomorphism,
 and hence it is an isomorphism of topological groups. -/
-def main_theorem_of_global_CFT.homeomorph :
+theorem main_theorem_of_global_CFT.homeomorph :
   homeomorph ((number_field.C_K K) ⧸ (subgroup.connected_component_of_one (number_field.C_K K)))
     (G_K_ab K) := 
 { continuous_to_fun  := sorry,
