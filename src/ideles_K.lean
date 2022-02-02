@@ -1,5 +1,5 @@
 /-
-Copyright (c) 2021 María Inés de Frutos-Fernández. All rights reserved.
+Copyright (c) 2022 María Inés de Frutos-Fernández. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: María Inés de Frutos-Fernández
 -/
@@ -408,7 +408,8 @@ lemma I_K.map_to_fractional_ideals.apply (x : I_K K) : (((I_K.map_to_fractional_
     (v.val.val : fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K)^
     finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v) := rfl
 
-local attribute [instance, priority 10000] comm_monoid_with_zero.to_monoid_with_zero 
+--local attribute [instance, priority 10000] comm_monoid_with_zero.to_monoid_with_zero 
+local attribute [-instance] number_field.ring_of_integers_algebra
 
 --set_option pp.implicit true
 lemma I_K.map_to_class_group.valuation_mem_kernel (x : I_K K) (k : units K)

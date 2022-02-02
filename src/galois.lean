@@ -1,38 +1,20 @@
 /-
-Copyright (c) 2021 María Inés de Frutos-Fernández. All rights reserved.
+Copyright (c) 2022 María Inés de Frutos-Fernández. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: María Inés de Frutos-Fernández
 -/
-import field_theory.galois
+import krull_topology
 import field_theory.is_alg_closed.algebraic_closure
-import topology.algebra.group
-import number_theory.number_field
 import group_theory.abelianization
 
-variables (K: Type*) [field K] [number_field K] (L : Type*) [field L] [algebra K L]
-
-/-- Given a field extension `L/K`, `finite_exts K L` is the set of
-intermediate field extensions `L/E/K` such that `E/K` is finite -/
-def finite_exts : set (intermediate_field K L) := λ E, finite_dimensional K E
-
-/-- Given a field extension `L/K`, `fixed_by_finite K L` is the set of
-subsets `Gal(L/E)` of `Gal(L/K)`, where `E/K` is finite -/
-def fixed_by_finite : set (set (L ≃ₐ[K] L)) :=
-subgroup.carrier '' (intermediate_field.fixing_subgroup '' (finite_exts K L))
-
-/-- Given a field extension `L/K`, `top_on_gg K L` is the coarsest
-topology on `Gal(L/K)` such that the subgroups `Gal(L/E)` are
-open subsets -/
-def group_top_on_gg : group_topology (L ≃ₐ[K] L) :=
-Sup (λ (a : group_topology (L ≃ₐ[K] L)), ∀ (U ∈ (fixed_by_finite K L)), 
-  topological_space.is_open a.to_topological_space U)
+variables (K: Type*) [field K] (L : Type*) [field L] [algebra K L]
 
 def G_K := ((algebraic_closure K) ≃ₐ[K] (algebraic_closure K))
 noncomputable instance : group (G_K K) := alg_equiv.aut
 noncomputable instance : topological_space (G_K K) :=
-(group_top_on_gg K (algebraic_closure K)).to_topological_space
+krull_topology K (algebraic_closure K)
 instance : topological_group (G_K K) :=
-(group_top_on_gg K (algebraic_closure K)).to_topological_group
+krull_topological_group K (algebraic_closure K)
 
 lemma topological_group.continuous_conj {G : Type*} [topological_space G] [group G]
   [topological_group G] (g : G) : continuous  (λ (h : G), g*h*g⁻¹) := 
@@ -44,7 +26,7 @@ begin
   apply continuous.comp ( continuous_mul_left g) (continuous_mul_right g⁻¹),
 end
 
-def subgroup.is_normal_topological_closure {G : Type*} [topological_space G] [group G]
+lemma subgroup.is_normal_topological_closure {G : Type*} [topological_space G] [group G]
   [topological_group G] (N : subgroup G) [N.normal] :
   (subgroup.topological_closure N).normal := 
 { conj_mem := 
@@ -92,3 +74,5 @@ noncomputable instance : topological_space (G_K_ab K) :=
 quotient_group.quotient.topological_space (subgroup.topological_closure (commutator (G_K K)))
 instance : topological_group (G_K_ab K) :=
 topological_group_quotient (commutator (G_K K)).topological_closure
+
+#lint
