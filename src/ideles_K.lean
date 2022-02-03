@@ -40,6 +40,10 @@ open set function
 open_locale tensor_product
 
 namespace number_field
+/-! ### The idèle group of a number field
+We define the (finite) idèle group of a number field `K`, with its topological group structure.
+We define the idèle class group `C_K` of `K` and show that the ideal class group of `K` is
+isomorphic to an explicit quotient of `C_K` as topological groups. -/
 
 variables (K : Type) [field K] [number_field K]
 
@@ -176,13 +180,13 @@ lemma v_comp.ne_zero (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
 
 /-- For any idèle `x`, there are finitely many maximal ideals `v` of `R` for which `x_v ∉ R_v` or
 `x⁻¹_v ∉ R_v`. -/ 
-lemma restricted_product (x : I_K K) :
+lemma I_K.restricted_product (x : I_K K) :
   finite ({ v : maximal_spectrum (ring_of_integers K) | (¬ (x.val.1.val v) ∈ R_v K v) } ∪ 
     { v : maximal_spectrum (ring_of_integers K) | ¬ (x.inv.1.val v) ∈ R_v K v }) :=
 finite.union x.val.1.property x.inv.1.property
 
 /-- For any idèle `x`, there are finitely many maximal ideals `v` of `R` for which `|x_v|_v ≠ 1`. -/
-lemma finite_exponents (x : I_K K) :
+lemma I_K.finite_exponents (x : I_K K) :
   finite { v : maximal_spectrum (ring_of_integers K) | v_comp_val K x v ≠ 1 } :=
 begin
   have h_subset : { v : maximal_spectrum (ring_of_integers K) | v_comp_val K x v ≠ 1 } ⊆ 
@@ -204,7 +208,7 @@ begin
         exact hlt, },
       exact not_le.mpr h_inv,},
     { left, exact not_le.mpr hgt, }},
-  exact finite.subset (restricted_product K x) h_subset,
+  exact finite.subset (I_K.restricted_product K x) h_subset,
 end
 
 /-- The natural map from `I_K_f` to the group of invertible fractional ideals of `K`, sending a 
@@ -530,6 +534,8 @@ end
 end number_field
 
 namespace function_field
+/-! ### The idèle group of a function field
+We define the (finite) idèle group of a function field `F`, with its topological group structure. -/
 
 variables (Fq F : Type) [field Fq] [field F] [algebra (polynomial Fq) F] [algebra (ratfunc Fq) F] 
   [function_field Fq F] [is_scalar_tower (polynomial Fq) (ratfunc Fq) F] 
