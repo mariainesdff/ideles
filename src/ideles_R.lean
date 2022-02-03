@@ -225,6 +225,25 @@ def map_to_fractional_ideals.val :
   (finite_idele_group' R K) → (fractional_ideal (non_zero_divisors R) K) := λ x,
 ∏ᶠ (v : maximal_spectrum R), (v.val.val : fractional_ideal (non_zero_divisors R) K)^
   (finite_idele.to_add_valuations R K x v)
+
+def map_to_fractional_ideals.group_hom : monoid_hom
+  (finite_idele_group' R K)  (fractional_ideal (non_zero_divisors R) K) := 
+{ to_fun := map_to_fractional_ideals.val R K,
+  map_one' := by { simp_rw [map_to_fractional_ideals.val, finite_idele.to_add_valuations.map_one,
+    zpow_zero, finprod_one],},
+  map_mul' := λ x y,
+  begin
+    rw [map_to_fractional_ideals.val], 
+    dsimp only,
+    rw finite_idele.to_add_valuations.map_mul,
+    simp_rw pi.add_apply,
+    rw ← finprod_mul_distrib (finite_support R K x) (finite_support R K y),
+    apply finprod_congr,
+    intro v,
+    rw zpow_add₀,
+    { rw [ne.def, fractional_ideal.coe_ideal_eq_zero_iff],
+      exact v.property},
+  end }
   
 def map_to_fractional_ideals.inv :
   (finite_idele_group' R K) → (fractional_ideal (non_zero_divisors R) K) := λ x,
@@ -248,15 +267,11 @@ end
 
 lemma finite_idele.to_add_valuations.inv_mul (x : finite_idele_group' R K): 
   map_to_fractional_ideals.inv R K x * map_to_fractional_ideals.val R K x = 1 := 
-begin
-  rw mul_comm,
-  exact finite_idele.to_add_valuations.mul_inv R K x,
-end
+by simpa [mul_comm] using (finite_idele.to_add_valuations.mul_inv R K x)
 
 def map_to_fractional_ideals.def :
   (finite_idele_group' R K) → (units (fractional_ideal (non_zero_divisors R) K)) := 
-force_noncomputable $ λ x,
-⟨map_to_fractional_ideals.val R K x, map_to_fractional_ideals.inv R K x, 
+force_noncomputable $ λ x, ⟨map_to_fractional_ideals.val R K x, map_to_fractional_ideals.inv R K x, 
   finite_idele.to_add_valuations.mul_inv R K x, finite_idele.to_add_valuations.inv_mul R K x⟩
 
 def map_to_fractional_ideals : monoid_hom
@@ -264,23 +279,14 @@ def map_to_fractional_ideals : monoid_hom
 { to_fun := map_to_fractional_ideals.def R K,
   map_one' := by {
     rw [map_to_fractional_ideals.def, force_noncomputable_def, ← units.eq_iff, units.coe_mk,
-      units.coe_one, map_to_fractional_ideals.val],
-    simp_rw [finite_idele.to_add_valuations.map_one, zpow_zero, finprod_one],
-  },
+      units.coe_one],
+    exact (map_to_fractional_ideals.group_hom R K).map_one', },
   map_mul' := λ x y,
   begin
     rw [map_to_fractional_ideals.def,force_noncomputable_def, ← units.eq_iff, units.coe_mul,
-      units.coe_mk, units.coe_mk, units.coe_mk, map_to_fractional_ideals.val], 
-    dsimp only,
-    rw finite_idele.to_add_valuations.map_mul,
-    simp_rw pi.add_apply,
-    rw ← finprod_mul_distrib (finite_support R K x) (finite_support R K y),
-    apply finprod_congr,
-    intro v,
-    rw zpow_add₀,
-    { rw [ne.def, fractional_ideal.coe_ideal_eq_zero_iff],
-      exact v.property },
-  end}
+      units.coe_mk, units.coe_mk, units.coe_mk], 
+    exact (map_to_fractional_ideals.group_hom R K).map_mul' x y,
+  end }
 
 variables {R K}
 lemma val_property {a : Π v : maximal_spectrum R, K_v K v}
@@ -559,6 +565,3 @@ begin
     simp_rw [finite_idele.to_add_valuations.comp_eq_zero_iff, finite_idele.valuation_eq_one_iff],
     refl, },
 end
-
-
-

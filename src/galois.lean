@@ -13,7 +13,7 @@ We define the topological abelianization of the absolute Galois group of a field
 We prove some lemmas about (topological) groups needed for this definition.
 
 ## Main definitions
-- `G_K` : The Galois group of the field extension `K^al/K`, where `K^al` is the algebraic closure
+- `G_K` : The Galois group of the field extension `K^al/K`, where `K^al` is an algebraic closure
   of `K`. 
 - `G_K_ab` : The topological abelianization of `G_K`, that is, the quotient of `G_K` by the 
   topological closure of its commutator subgroup.
@@ -32,7 +32,7 @@ number field, galois group, abelianization
 variables (K: Type*) [field K]
 
 /-- The absolute Galois group of `G`, defined as the Galois group of the field extension `K^al/K`, 
-  where `K^al` is the algebraic closure of `K`. -/
+  where `K^al` is an algebraic closure of `K`. -/
 def G_K := ((algebraic_closure K) ≃ₐ[K] (algebraic_closure K))
 noncomputable instance : group (G_K K) := alg_equiv.aut
 /-- `G_K` is a topological space with the Krull topology. -/
