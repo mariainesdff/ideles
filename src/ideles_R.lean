@@ -5,6 +5,39 @@ Authors: María Inés de Frutos-Fernández
 -/
 import adeles_R
 
+/-!
+# The finite idèle group of a Dedekind domain.
+We define the finite idèle group of a Dedekind domain `R` and show that if `R` has Krull dimension 
+1, then there is an injective group homomorphism from the units of the field of fractions of `R` to 
+its finite adèle ring.
+
+We prove that there is a continuous surjective group homomorphism from the finite idèle group of `R`
+to the group of invertible fractional ideals of `R` and compute the kernel of this map.
+
+## Main definitions
+- `finite_idele_group'` : The finite idèle group of `R`, defined as unit group of `A_R_f R`.
+- `inj_units_K` : The diagonal inclusion of `K*` in `finite_idele_group' R K`.
+- `map_to_fractional_ideals` : The group homomorphism from `finite_idele_group' R K` to the group
+  of `Fr(R)` of invertible fractional_ideals of `R` sending a finite idèle `x` to the product 
+  `∏_v v^(val_v(x_v))`, where `val_v` denotes the additive `v`-adic valuation.
+
+## Main results
+- `inj_units_K.group_hom` : `inj_units_K` is a group homomorphism.
+- `inj_units_K.injective` : `inj_units_K` is injective for every Dedekind domain of Krull 
+  dimension 1.
+- `map_to_fractional_ideals.surjective` : `map_to_fractional_ideals` is surjective.
+- `map_to_fractional_ideals.continuous` : `map_to_fractional_ideals` is continuous when the group
+  of fractional ideals is given the discrete topology.
+- `map_to_fractional_ideals.mem_kernel_iff` : A finite idèle `x` is in the kernel of 
+`map_to_fractional_ideals` if and only if `|x_v|_v = 1` for all `v`. 
+
+## Implementation notes
+As in `adeles_R`, we are only interested on Dedekind domains of Krull dimension 1.
+
+## Tags
+finite idèle group, dedekind domain, fractional ideal
+-/
+
 noncomputable theory
 open_locale big_operators classical
 
@@ -13,15 +46,14 @@ variables (R : Type) (K : Type) [comm_ring R] [is_domain R] [is_dedekind_domain 
 
 open set function
 
-/-! Finite ideles of R -/
+/-! ### The finite idèle group of a Dedekind domain. -/
+
+/--The finite idèle group of `R` is the unit group of its finite adèle ring. -/
 def finite_idele_group' := units (finite_adele_ring' R K)
 
 instance : topological_space (finite_idele_group' R K) := units.topological_space
 instance : group (finite_idele_group' R K) := units.group
 instance : topological_group (finite_idele_group' R K) := units.topological_group
-
---private def map_val : units K → finite_adele_ring' R K := λ x, inj_K R K x.val
---private def map_inv : units K → finite_adele_ring' R K := λ x, inj_K R K x.inv
 
 lemma right_inv (x : units K) : inj_K R K x.val * inj_K R K x.inv = 1 := 
 begin
@@ -32,6 +64,7 @@ end
 lemma left_inv (x : units K) : inj_K R K x.inv * inj_K R K x.val = 1 := 
 by rw [mul_comm, right_inv]
 
+/-- The diagonal inclusion `k ↦ (k)_v` of `K*` into the finite idèle group of `R`. -/
 def inj_units_K : units K → finite_idele_group' R K := 
 λ x, ⟨inj_K R K x.val, inj_K R K x.inv, right_inv R K x, left_inv R K x⟩
 
@@ -47,13 +80,14 @@ begin
   simp_rw [units.val_eq_coe, units.coe_mul, units.coe_mk, inj_K.map_mul],
 end
 
+/-- The map `inj_units_K` is a group homomorphism. -/
 def inj_units_K.group_hom : monoid_hom (units K) (finite_idele_group' R K) := 
 { to_fun   := inj_units_K R K,
   map_one' := inj_units_K.map_one R K,
   map_mul' := inj_units_K.map_mul R K, }
 
--- We need to assume that the maximal spectrum of R is nonempty (i.e., R is not a field) for this to
--- work 
+/-- If `maximal_spectrum R` is nonempty, then `inj_units_K` is injective. Note that the nonemptiness
+hypothesis is satisfied for every Dedekind domain that is not a field. -/
 lemma inj_units_K.injective [inh : inhabited (maximal_spectrum R)] : 
   injective (inj_units_K.group_hom R K) :=
 begin
@@ -86,11 +120,15 @@ begin
   { exact (valuation.ne_zero_iff _).mpr (v_comp.ne_zero R K v x) } 
 end
 
+/-- For any finite idèle `x`, there are finitely many maximal ideals `v` of `R` for which
+`x_v ∉ R_v` or `x⁻¹_v ∉ R_v`. -/ 
 lemma restricted_product (x : finite_idele_group' R K) :
   finite ({ v : maximal_spectrum R | (¬ (x.val.val v) ∈ R_v K v) } ∪ 
     { v : maximal_spectrum R | ¬ (x.inv.val v) ∈ R_v K v }) :=
 finite.union x.val.property x.inv.property
 
+/-- For any finite idèle `x`, there are finitely many maximal ideals `v` of `R` for which
+`|x_v|_v ≠ 1`. -/ 
 lemma finite_exponents (x : finite_idele_group' R K) :
   finite { v : maximal_spectrum R | valued.v (x.val.val v) ≠ 1 } :=
 begin
@@ -116,6 +154,7 @@ begin
   exact finite.subset (restricted_product R K x) h_subset,
 end
 
+/-- For any `k ∈ K*` and any maximal ideal `v` of `R`, the valuation `|k|_v` is nonzero. -/
 lemma units.valuation_ne_zero {k : K} (hk : k ≠ 0) : valued.v ((coe : K → (K_v K v)) k) ≠ 0 := 
 begin
   rw [valuation.ne_zero_iff, ← uniform_space.completion.coe_zero,
@@ -124,9 +163,12 @@ begin
   apply_instance,
 end
 
-def with_zero.to_integer {x : with_zero (multiplicative ℤ )} (hx : x ≠ 0) : ℤ :=
+/-- The integer number corresponding to a nonzero `x` in `with_zero (multiplicative ℤ)`. -/
+def with_zero.to_integer {x : with_zero (multiplicative ℤ)} (hx : x ≠ 0) : ℤ :=
 multiplicative.to_add (classical.some (with_zero.ne_zero_iff_exists.mp hx))
 
+/-- Given a finite idèle `x`, for each maximal ideal `v` of `R` we obtain an integer that 
+represents the additive `v`-adic valuation of the component `x_v` of `x`. -/
 def finite_idele.to_add_valuations (x : finite_idele_group' R K) : Π (v : maximal_spectrum R), ℤ :=
 λ v, -(with_zero.to_integer ((valuation.ne_zero_iff valued.v).mpr (v_comp.ne_zero R K v x)))
 
@@ -161,6 +203,8 @@ begin
   exact valuation.map_mul valued.v _ _,
 end
 
+/-- For any finite idèle `x`, there are finitely many maximal ideals `v` of `R` for which
+the additive `v`-adic valuation of `x_v` is nonzero. -/ 
 lemma finite_add_support (x : finite_idele_group' R K ) : 
   ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, finite_idele.to_add_valuations R K x v = 0 := 
 begin
@@ -183,6 +227,8 @@ begin
   exact finite.subset (finite_exponents R K x) h_subset
 end
 
+/-- For any finite idèle `x`, there are finitely many maximal ideals `v` of `R` for which
+`v^(finite_idele.to_add_valuations R K x v)` is not the fractional ideal `(1)`.  -/ 
 lemma finite_support (x : finite_idele_group' R K ) : (mul_support (λ (v : maximal_spectrum R), 
   (v.val.val : 
     fractional_ideal (non_zero_divisors R) K) ^ finite_idele.to_add_valuations R K x v)).finite := 
@@ -206,10 +252,11 @@ begin
   exact finite.subset (finite_exponents R K x) h_subset,
 end
 
-lemma finite_support' (x : finite_idele_group' R K ) : (mul_support (λ (v : maximal_spectrum R), 
-  (v.val.val : 
-    fractional_ideal (non_zero_divisors R) K) ^ -finite_idele.to_add_valuations R K x v)).finite
-:= 
+/-- For any finite idèle `x`, there are finitely many maximal ideals `v` of `R` for which
+`v^-(finite_idele.to_add_valuations R K x v)` is not the fractional ideal `(1)`.  -/ 
+lemma finite_support' (x : finite_idele_group' R K ) : 
+  (mul_support (λ (v : maximal_spectrum R), (v.val.val : 
+    fractional_ideal (non_zero_divisors R) K) ^ -finite_idele.to_add_valuations R K x v)).finite := 
 begin
   have h : {v : maximal_spectrum R | (v.val.val : fractional_ideal (non_zero_divisors R) K) ^ 
     -finite_idele.to_add_valuations R K x v ≠ 1} =
@@ -221,6 +268,8 @@ begin
   exact finite_support R K x,
 end
 
+/-- The map from `finite_idele_group' R K` to the fractional_ideals of `R` sending a finite idèle 
+`x` to the product `∏_v v^(val_v(x_v))`, where `val_v` denotes the additive `v`-adic valuation. -/
 def map_to_fractional_ideals.val :
   (finite_idele_group' R K) → (fractional_ideal (non_zero_divisors R) K) := λ x,
 ∏ᶠ (v : maximal_spectrum R), (v.val.val : fractional_ideal (non_zero_divisors R) K)^
@@ -244,7 +293,9 @@ def map_to_fractional_ideals.group_hom : monoid_hom
     { rw [ne.def, fractional_ideal.coe_ideal_eq_zero_iff],
       exact v.property},
   end }
-  
+
+/-- The map from `finite_idele_group' R K` to the fractional_ideals of `R` sending a finite idèle 
+`x` to the product `∏_v v^-(val_v(x_v))`, where `val_v` denotes the additive `v`-adic valuation. -/
 def map_to_fractional_ideals.inv :
   (finite_idele_group' R K) → (fractional_ideal (non_zero_divisors R) K) := λ x,
 ∏ᶠ (v : maximal_spectrum R), (v.val.val : fractional_ideal (non_zero_divisors R) K)^
@@ -269,11 +320,16 @@ lemma finite_idele.to_add_valuations.inv_mul (x : finite_idele_group' R K):
   map_to_fractional_ideals.inv R K x * map_to_fractional_ideals.val R K x = 1 := 
 by simpa [mul_comm] using (finite_idele.to_add_valuations.mul_inv R K x)
 
+
+/-- The map from `finite_idele_group' R K` to the units of the fractional_ideals of `R` sending a 
+finite idèle `x` to the product `∏_v v^(val_v(x_v))`, where `val_v` denotes the additive `v`-adic
+valuation. -/
 def map_to_fractional_ideals.def :
   (finite_idele_group' R K) → (units (fractional_ideal (non_zero_divisors R) K)) := 
 force_noncomputable $ λ x, ⟨map_to_fractional_ideals.val R K x, map_to_fractional_ideals.inv R K x, 
   finite_idele.to_add_valuations.mul_inv R K x, finite_idele.to_add_valuations.inv_mul R K x⟩
 
+/-- `map_to_fractional_ideals.def` is a group homomorphism. -/
 def map_to_fractional_ideals : monoid_hom
   (finite_idele_group' R K)  (units (fractional_ideal (non_zero_divisors R) K)) := 
 { to_fun := map_to_fractional_ideals.def R K,
@@ -340,6 +396,8 @@ lemma left_inv' {a : Π v : maximal_spectrum R, K_v K v}
   ⟨a, val_property ha h_ne_zero⟩ = 1 := 
 by { rw mul_comm, exact right_inv' ha h_ne_zero}
 
+/-- If `a = (a_v)_v ∈ ∏_v K_v` is such that `|a_v|_v ≠ 1` for all but finitely many `v` and
+`a_v ≠ 0` for all `v`, then `a` is a finite idèle  of `R`. -/
 def idele.mk (a : Π v : maximal_spectrum R, K_v K v)
   (ha : ∀ᶠ v : maximal_spectrum R in filter.cofinite, valued.v (a v) = 1)
   (h_ne_zero : ∀ v : maximal_spectrum R, a v ≠ 0) :
@@ -358,11 +416,11 @@ begin
 end
 
 variables (R K)
+/-- A finite idèle `(pi_v)_v`, where each `pi_v` is a uniformizer for the `v`-adic valuation. -/
 def pi.unif : Π v : maximal_spectrum R, K_v K v := λ v : maximal_spectrum R, (coe : K → (K_v K v))
   (classical.some (v.valuation_exists_uniformizer K))
 
-lemma pi.unif.ne_zero :
-  ∀ v : maximal_spectrum R, pi.unif R K v ≠ 0 :=
+lemma pi.unif.ne_zero : ∀ v : maximal_spectrum R, pi.unif R K v ≠ 0 :=
 begin
   intro v,
   rw [pi.unif, ← uniform_space.completion.coe_zero,
@@ -429,6 +487,8 @@ begin
 end
 
 variables (R K)
+/-- Given a collection `exps` of integers indexed by the maximal ideals `v` of `R`, of which only
+finitely many are allowed to be nonzero, `(pi_v^(exps v))_v` is a finite idèle of `R`. -/
 def idele.mk' {exps : Π v : maximal_spectrum R, ℤ}
   (h_exps : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, exps v = 0) : finite_idele_group' R K :=
 ⟨⟨λ v : maximal_spectrum R, (pi.unif R K v)^exps v, idele.mk'.val h_exps⟩,
@@ -447,6 +507,7 @@ begin
 end
 
 variables (R K)
+/-- `map_to_fractional_ideals` is surjective. -/
 lemma map_to_fractional_ideals.surjective : surjective (map_to_fractional_ideals R K) :=
 begin
   rintro ⟨I, I_inv, hval_inv, hinv_val⟩,
@@ -481,6 +542,8 @@ begin
 end
 
 variables {R K}
+/-- A finite idèle `x` is in the kernel of `map_to_fractional_ideals` if and only if `|x_v|_v = 1` 
+for all `v`. -/ 
 lemma map_to_fractional_ideals.mem_kernel_iff (x : finite_idele_group' R K) : 
   map_to_fractional_ideals R K x = 1 ↔ 
   ∀ v : maximal_spectrum R, finite_idele.to_add_valuations R K x v = 0 :=
@@ -501,8 +564,9 @@ begin
 end
 
 variables (R K)
+/-- The additive `v`-adic valuation of `x_v` equals 0 if and only if `|x_v|_v = 1`-/
 lemma finite_idele.to_add_valuations.comp_eq_zero_iff (x : finite_idele_group' R K) : 
-  finite_idele.to_add_valuations R K x v = 0 ↔ valued.v ( x.val.val v) = 1 :=
+  finite_idele.to_add_valuations R K x v = 0 ↔ valued.v (x.val.val v) = 1 :=
 begin
   set y := classical.some (with_zero.to_integer._proof_1 
     (finite_idele.to_add_valuations._proof_1 R K x v)) with hy,
@@ -514,6 +578,7 @@ begin
   refine ⟨λ h_eq, by rw [← of_add_to_add y, ← of_add_to_add 1, h_eq], λ h_eq, by rw h_eq⟩,
 end
 
+/-- `|x_v|_v = 1` if and only if both `x_v` and `x⁻¹_v` are in `R_v`. -/
 lemma finite_idele.valuation_eq_one_iff (x : finite_idele_group' R K) : 
   valued.v (x.val.val v) = 1 ↔ x.val.val v ∈ R_v K v ∧ x⁻¹.val.val v ∈ R_v K v :=
 begin
@@ -530,6 +595,7 @@ begin
     { exact one_ne_zero }}
 end
 
+/-- `map_to_fractional_ideals` is continuous, where the codomain is given the discrete topology. -/
 lemma map_to_fractional_ideals.continuous : continuous (map_to_fractional_ideals R K) := 
 begin
   rw continuous_iff_open_kernel,

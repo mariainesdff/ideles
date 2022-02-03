@@ -17,14 +17,14 @@ We define the ring of finite adèles of a Dedekind domain. We provide two equiva
 this ring (TODO: show that they are equivalent).
 
 We show that there is an injective ring homomorphism from the field of fractions of a Dedekind
-domain to its finite adèle ring.
+domain of Krull dimension 1 to its finite adèle ring.
 
 ## Main definitions
 - `K_v`   : the completion of `K` with respect to its `v`-adic valuation.
 - `R_v`   : the ring of integers of `K_v`. 
 - `R_hat` : product of `R_v`, where `v` runs over all maximal ideals of `R`. 
 - `K_hat` : the product of `K_v`, where `v` runs over all maximal ideals of `R`. 
-- `finite_adele_ring` : The finite adèle ring of `R`, defined as the restricted product `Π'_v K_v`.
+- `finite_adele_ring'` : The finite adèle ring of `R`, defined as the restricted product `Π'_v K_v`.
 - `inj_K` : The diagonal inclusion of `K` in `finite_adele_ring' R K`.
 - `finite_adele_ring` : The finite adèle ring of `R`, defined as the localization of `R_hat` at the
   submonoid `R∖{0}`.
