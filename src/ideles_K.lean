@@ -12,77 +12,6 @@ noncomputable theory
 open set function
 open_locale tensor_product
 
-section units
-variables (R S : Type*) [ring R] [ topological_space R] [topological_ring R] [ring S] 
-  [topological_space S] [topological_ring S]
-
-def prod_units.mul_equiv : mul_equiv (units (R × S)) ((units R) × (units S)) := 
-{ to_fun    := λ x, prod.mk
-    (units.mk (x : R × S).1 ((x⁻¹ : units (R × S)) : R × S).1 
-      (by {rw [← prod.fst_mul, units.mul_inv, prod.fst_one]})
-      (by {rw [← prod.fst_mul, units.inv_mul, prod.fst_one]}))
-    (units.mk (x : R × S).2 ((x⁻¹ : units (R × S)) : R × S).2
-      (by {rw [← prod.snd_mul, units.mul_inv, prod.snd_one]})
-        (by {rw [← prod.snd_mul, units.inv_mul, prod.snd_one]})),
-  inv_fun   := λ x, units.mk (prod.mk (x.1 : R) (x.2 : S)) 
-    (prod.mk (((x.1)⁻¹ : units R) : R) (((x.2)⁻¹ : units S) : S))
-    (by { rw [prod.mk_mul_mk, units.mul_inv, units.mul_inv], refl })
-    (by { rw [prod.mk_mul_mk, units.inv_mul, units.inv_mul], refl }),
-  left_inv  := λ x, by simp only [prod.mk.eta, units.coe_mk, units.mk_coe],
-  right_inv := λ x, by simp only [prod.mk.eta, units.coe_mk, units.mk_coe],
-  map_mul'  := λ x y, 
-  by { simp only [prod.fst_mul, prod.snd_mul, units.coe_mk, units.coe_mul], refl }}
-
-variables {R S}
-lemma prod_units.mul_equiv.continuous : continuous ⇑(prod_units.mul_equiv R S) :=
-begin
-  apply continuous.prod_mk,
-  { apply continuous_induced_rng,
-    apply continuous.prod_mk,
-    { apply continuous.comp continuous_fst units.continuous_coe, },
-    { simp only [units.coe_mk, units.inv_mk],
-      have h_comp : (λ (x : units (R × S)), (mul_opposite.op ((x⁻¹ : units (R × S)) : R × S).1)) = 
-        (λ x : (R × S)ᵐᵒᵖ, (mul_opposite.op (mul_opposite.unop x).1)) ∘
-        (λ x : (R × S) × (R × S)ᵐᵒᵖ, x.2) ∘ (embed_product (R × S)) := rfl,
-      rw h_comp,
-      apply continuous.comp
-        (continuous.comp continuous_op (continuous.comp continuous_fst continuous_unop))
-        (continuous.comp continuous_snd continuous_induced_dom) }},
-  { apply continuous_induced_rng,
-    apply continuous.prod_mk,
-    { apply continuous.comp continuous_snd units.continuous_coe },
-    { apply continuous.comp continuous_op
-       (continuous.comp continuous_snd (continuous.comp units.continuous_coe continuous_inv)),
-      apply_instance,}},
-end
-
-lemma prod_units.mul_equiv.inv_continuous : continuous ⇑((prod_units.mul_equiv R S).symm) :=
-begin
-  simp only [prod_units.mul_equiv, ← mul_equiv.inv_fun_eq_symm],
-  apply continuous_induced_rng,
-  apply continuous.prod_mk,
-  { apply continuous.prod_mk (continuous.comp units.continuous_coe continuous_fst)
-      (continuous.comp units.continuous_coe continuous_snd), },
-  { apply continuous.comp continuous_op,
-    apply continuous.comp units.continuous_coe,
-    apply continuous_induced_rng,
-    apply continuous.prod_mk,
-    { apply continuous.prod_mk
-        (continuous.comp units.continuous_coe (continuous.comp continuous_inv continuous_fst))
-        (continuous.comp units.continuous_coe (continuous.comp continuous_inv continuous_snd));
-      apply_instance },
-    { apply continuous.comp continuous_op
-        (continuous.prod_mk (continuous.comp units.continuous_coe continuous_fst)
-          (continuous.comp units.continuous_coe continuous_snd)) }}
-end
-
-def prod_units.homeo : homeomorph (units (R × S)) ((units R) × (units S)) := 
-{ continuous_to_fun  := prod_units.mul_equiv.continuous,
-  continuous_inv_fun := prod_units.mul_equiv.inv_continuous,
-  ..prod_units.mul_equiv R S }
-
-end units
-
 namespace number_field
 
 variables (K : Type) [field K] [number_field K]
@@ -98,15 +27,11 @@ finite_idele_group'.topological_group (ring_of_integers K) K
 instance : topological_space (I_K K) := units.topological_space
 instance : topological_group (I_K K) := units.topological_group
 
-lemma I_K_f.def : I_K_f K = units (A_K_f K) := rfl
---lemma I_K.def : I_K K = units (A_K K) := rfl
-
 def I_K.as_prod : I_K K ≃* (I_K_f K) × units (ℝ ⊗[ℚ] K) := 
-by apply prod_units.mul_equiv (A_K_f K) (ℝ ⊗[ℚ] K)
-
+by apply @mul_equiv.prod_units (A_K_f K) (ℝ ⊗[ℚ] K) _ _ 
 
 def I_K.as_prod.homeo : homeomorph (I_K K) ((I_K_f K) × units (ℝ ⊗[ℚ] K)) := 
-prod_units.homeo
+units.homeomorph.prod_units
 
 variable {K}
 lemma I_K.as_prod.continuous : continuous ((I_K.as_prod K).to_fun) :=
@@ -310,7 +235,6 @@ surjective.comp quotient.surjective_quotient_mk' I_K.map_to_fractional_ideals.su
 lemma I_K.map_to_class_group.continuous : continuous (I_K.map_to_class_group K) := 
 continuous.comp continuous_bot I_K.map_to_fractional_ideals.continuous
 
--- TODO
 variable {K}
 lemma I_K.map_to_class_group.map_one : I_K.map_to_class_group K 1 = 1 :=
 by {simp only [I_K.map_to_class_group, monoid_hom.map_one] }
@@ -334,7 +258,6 @@ by rw [mul_comm, I_K_f.unit_image.mul_inv]
 
 open_locale classical
 
---set_option profiler true
 lemma I_K_f.map_to_fractional_ideal.map_units (k : units K) : 
   fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
   ((I_K_f.map_to_fractional_ideals K) (units.mk ((inj_K_f.ring_hom K) k.val)
@@ -396,22 +319,14 @@ def field.units.mk' {F : Type*} [field F] (k : F) (hk : k ≠ 0) : units F :=
   val_inv := mul_inv_cancel hk,
   inv_val := inv_mul_cancel hk}
 
-/- 
-lemma I_K.map_to_class_group.mem_kernel_iff (x : I_K K) : 
-  I_K.map_to_class_group K x = 1 ↔ ∃ (k : K) (hk : k ≠ 0),
-  ∀ v : maximal_spectrum (ring_of_integers K), 
-    valued.v ((I_K.fst K x).val.val v) = adic_valuation v k := -/
-
 lemma I_K.map_to_fractional_ideals.apply (x : I_K K) : (((I_K.map_to_fractional_ideals K) x) : 
   fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K) = 
   finprod (λ (v : maximal_spectrum ↥(ring_of_integers K)), 
     (v.val.val : fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K)^
     finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v) := rfl
 
---local attribute [instance, priority 10000] comm_monoid_with_zero.to_monoid_with_zero 
 local attribute [-instance] number_field.ring_of_integers_algebra
 
---set_option pp.implicit true
 lemma I_K.map_to_class_group.valuation_mem_kernel (x : I_K K) (k : units K)
   (v : maximal_spectrum (ring_of_integers K))
   (hkx : fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
@@ -434,13 +349,9 @@ begin
   { rw h_dk,
     exact non_zero_divisors.coe_ne_zero _, },
   rw I_K.map_to_fractional_ideals.apply at hkx,
-  { --set id := (ideal.span {nk} : ideal (ring_of_integers K)), 
-    --set fac := associates.factors (associates.mk id),
-    have h_exps_v: 
-    ((associates.mk v.val.val).count 
+  { have h_exps_v:  ((associates.mk v.val.val).count 
       (associates.mk (ideal.span {nk})).factors : ℤ) - 
-      ((associates.mk v.val.val).count
-      (associates.mk (ideal.span {dk})).factors : ℤ) = 
+      ((associates.mk v.val.val).count (associates.mk (ideal.span {dk})).factors : ℤ) = 
       finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v,
     { rw [← fractional_ideal.count_finprod K v (finite_idele.to_add_valuations ↥(ring_of_integers K)
         K ((I_K.fst K) x)) (finite_add_support _ _ _), ← hkx,  eq_comm],
@@ -492,7 +403,6 @@ begin
     exact ha, }, 
   { obtain ⟨k, hk, h_vals⟩ := h,
     use field.units.mk' k hk,
-    
     rw [I_K.map_to_fractional_ideals.map_units_K, I_K.map_to_fractional_ideals,
       I_K_f.map_to_fractional_ideals, map_to_fractional_ideals, monoid_hom.coe_comp,
       comp_app, monoid_hom.coe_mk,map_to_fractional_ideals.def, force_noncomputable_def,
@@ -529,19 +439,29 @@ continuous_quot_lift (quotient_group.lift._proof_1
   (inj_units_K.group_hom K).range I_K.monoid_hom_to_class_group
   (C_K.map_to_class_group._proof_2 K)) I_K.map_to_class_group.continuous
 
-/- lemma C_K.map_to_class_group.mem_kernel_iff (x : C_K K) : 
+lemma C_K.map_to_class_group.mem_kernel_iff (x : C_K K) : 
   C_K.map_to_class_group K x = 1 ↔ 
-  ∀ v : maximal_spectrum (ring_of_integers K), 
-    finite_idele.to_add_valuations (ring_of_integers K) K (I_K.fst K x) v = 0 :=
-I_K_f.map_to_fractional_ideals.mem_kernel_iff (I_K.fst K x) -/
+  ∃ (k : K) (hk : k ≠ 0), ∀ v : maximal_spectrum (ring_of_integers K), 
+    (finite_idele.to_add_valuations ↥(ring_of_integers K) K 
+      ((I_K.fst K) (classical.some (quot.exists_rep x))) v) 
+      = -with_zero.to_integer (units.valuation_ne_zero (ring_of_integers K) K v hk) :=
+begin
+  set y := classical.some (quot.exists_rep x) with hy_def,
+  have hy := classical.some_spec (quot.exists_rep x),
+  have : C_K.map_to_class_group K x = I_K.map_to_class_group K (classical.some (quot.exists_rep x)),
+  { rw [← hy_def, ← hy, C_K.map_to_class_group, ← hy_def, quotient_group.lift_quot_mk],
+    refl },
+  rw this,
+  exact I_K.map_to_class_group.mem_kernel_iff _,
+end
 
 end number_field
 
 namespace function_field
 
 variables (Fq F : Type) [field Fq] [field F] [algebra (polynomial Fq) F] [algebra (ratfunc Fq) F] 
-  [function_field Fq F] [algebra (fraction_ring (polynomial Fq)) F]
-   [is_scalar_tower (polynomial Fq) (ratfunc Fq) F] [is_separable (ratfunc Fq) F]
+  [function_field Fq F] [is_scalar_tower (polynomial Fq) (ratfunc Fq) F] 
+  [is_separable (ratfunc Fq) F]
 
 def I_F_f := units (A_F_f Fq F)
 def I_F := units (A_F Fq F)
@@ -556,3 +476,5 @@ instance : topological_space (I_F Fq F) := units.topological_space
 instance : topological_group (I_F Fq F) := units.topological_group
 
 end function_field
+
+--#lint
