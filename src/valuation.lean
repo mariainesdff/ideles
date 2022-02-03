@@ -34,6 +34,7 @@ We prove several properties of this valuation, including the existence of unifor
 - `valuation_of_algebra_map` : The `v`-adic valuation on `K` extends the `v`-adic valuation on `R`.
 - `valuation_exists_uniformizer` : There exists `π ∈ K` with `v`-adic valuation 
   `multiplicative.of_add (-1)`.
+  
 ## Implementation notes
 We are only interested in Dedekind domains with Krull dimension 1. Dedekind domains of Krull
 dimension 0 are fields, and for them `maximal_spectrum` is the empty set, which does not agree with

@@ -6,7 +6,7 @@ Authors: María Inés de Frutos-Fernández
 import adeles_R
 
 /-!
-# The finite idèle group of a Dedekind domain.
+# The finite idèle group of a Dedekind domain
 We define the finite idèle group of a Dedekind domain `R` and show that if `R` has Krull dimension 
 1, then there is an injective group homomorphism from the units of the field of fractions of `R` to 
 its finite adèle ring.
@@ -34,6 +34,9 @@ to the group of invertible fractional ideals of `R` and compute the kernel of th
 ## Implementation notes
 As in `adeles_R`, we are only interested on Dedekind domains of Krull dimension 1.
 
+## References
+* [J.W.S. Cassels, A. Frölich, *Algebraic Number Theory*][cassels1967algebraic]
+
 ## Tags
 finite idèle group, dedekind domain, fractional ideal
 -/
@@ -46,7 +49,7 @@ variables (R : Type) (K : Type) [comm_ring R] [is_domain R] [is_dedekind_domain 
 
 open set function
 
-/-! ### The finite idèle group of a Dedekind domain. -/
+/-! ### The finite idèle group of a Dedekind domain -/
 
 /--The finite idèle group of `R` is the unit group of its finite adèle ring. -/
 def finite_idele_group' := units (finite_adele_ring' R K)

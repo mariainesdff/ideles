@@ -11,7 +11,7 @@ import function_field
 import topology.metric_space.basic
 
 /-!
-# The ring of adèles of a global field.
+# The ring of adèles of a global field
 We define the ring of finite adèles and the ring of adèles of a global field, both of which are
 topological commutative rings.
 
@@ -20,6 +20,9 @@ topological commutative rings.
 - `number_field.A_K`   : The adèle ring of the number field `K`.
 - `function_field.A_F_f` : The finite adèle ring of the function field `F`.
 - `function_field.A_F`   : The adèle ring of the function field `F`.
+
+## References
+* [J.W.S. Cassels, A. Frölich, *Algebraic Number Theory*][cassels1967algebraic]
 
 ## Tags
 adèle ring, number field, function field

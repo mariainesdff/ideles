@@ -8,7 +8,7 @@ import ring_theory.valuation.integers
 import topology.algebra.localization
 
 /-!
-# The finite adèle ring of a Dedekind domain.
+# The finite adèle ring of a Dedekind domain
 Given a Dedekind domain `R` with field of fractions `K` and a maximal ideal `v` of `R`,
 we define the completion of `K` with respect to its `v`-adic valuation, denoted `K_v`,and its ring
 of integers, denoted `R_v`. 
@@ -37,6 +37,9 @@ domain of Krull dimension 1 to its finite adèle ring.
 ## Implementation notes
 We are only interested on Dedekind domains of Krull dimension 1 (i.e., not fields). If `R` is a 
 field, its finite adèle ring is just defined to be empty.
+
+## References
+* [J.W.S. Cassels, A. Frölich, *Algebraic Number Theory*][cassels1967algebraic]
 
 ## Tags
 finite adèle ring, dedekind domain, completions
@@ -72,7 +75,7 @@ noncomputable def force_noncomputable {α : Sort*} (a : α) : α :=
 @[simp]
 lemma force_noncomputable_def {α} (a : α) : force_noncomputable a = a := rfl
 
-/-! ### Completions with respect to adic valuations.
+/-! ### Completions with respect to adic valuations
 Given a Dedekind domain `R` with field of fractions `K` and a maximal ideal `v` of `R`,
 we define the completion of `K` with respect to its `v`-adic valuation, denoted `K_v`,and its ring
 of integers, denoted `R_v`. 

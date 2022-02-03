@@ -8,7 +8,7 @@ import adeles_K
 import ideles_R
 
 /-!
-# The group of idèles of a global field.
+# The group of idèles of a global field
 We define the group of finite idèles and the group of idèles of a global field, both of which are
 topological commutative groups.
 
@@ -29,6 +29,9 @@ computing its kernel.
 - `C_K.map_to_class_group.surjective` : The natural map `C_K → Cl(K)` is surjective.
 - `C_K.map_to_class_group.continuous` : The natural map `C_K → Cl(K)` is continuous.
 - `C_K.map_to_class_group.mem_kernel_iff` : We compute the kernel of `C_K → Cl(K)`.
+
+## References
+* [J.W.S. Cassels, A. Frölich, *Algebraic Number Theory*][cassels1967algebraic]
 
 ## Tags
 idèle group, number field, function field

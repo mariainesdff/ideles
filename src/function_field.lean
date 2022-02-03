@@ -7,7 +7,7 @@ import adeles_R
 import number_theory.function_field
 
 /-!
-# The valuation at infinity on Fq(t).
+# The valuation at infinity on Fq(t)
 The valuation at infinity is the nonarchimedean valuation on `Fq(t)` with uniformizer `1/t`. 
 Explicitly, if `f/g ∈ Fq(t)` is a nonzero quotient of polynomials, its valuation at infinity is
 `multiplicative.of_add(degree(f) - degree(g))`.
