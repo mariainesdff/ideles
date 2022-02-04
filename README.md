@@ -1,7 +1,5 @@
 # Adèles and idèles of global fields
 
-By [María Inés de Frutos-Fernández](https://www.imperial.ac.uk/people/m.de-frutos-fernandez).
-
 We formalize the finite adèle ring and finite idèle group of a Dedekind domain. Building on this, we formalize the (finite) adèle ring and (finite) idèle group of any number field or function field.
 
 In the number field case, we moreover define the idèle class group and provide two applications: the statement of the main theorem of global class field theory, and a proof that the ideal class group is isomorphic to an explicit quotient of the idèle class group.
@@ -18,3 +16,5 @@ After installation, run the command `leanproject get mariainesdff/ideles` to obt
 The documentation automatically generated from the source files of the project is available on [this link](https://mariainesdff.github.io/ideles). Note that it includes documentation for the version of mathlib used by the project.
 
 See also [Lean's general documentation](https://leanprover.github.io/documentation/) and the [current mathlib docs](https://leanprover-community.github.io/mathlib_docs).
+
+Copyright (C) 2022, María Inés de Frutos-Fernández
