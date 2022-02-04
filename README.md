@@ -15,6 +15,6 @@ After installation, run the command `leanproject get mariainesdff/ideles` to obt
 
 ## Documentation
 
-The documentation automatically generated from the source file of the project is available on [this link](https://mariainesdff.github.io/ideles). Note that it includes documentation for the version of mathlib used by the project.
+The documentation automatically generated from the source files of the project is available on [this link](https://mariainesdff.github.io/ideles). Note that it includes documentation for the version of mathlib used by the project.
 
 See also [Lean's general documentation](https://leanprover.github.io/documentation/) and the [current mathlib docs](https://leanprover-community.github.io/mathlib_docs).
