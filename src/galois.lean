@@ -3,7 +3,7 @@ Copyright (c) 2022 María Inés de Frutos-Fernández. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: María Inés de Frutos-Fernández
 -/
-import krull_topology
+import field_theory.krull_topology
 import field_theory.is_alg_closed.algebraic_closure
 import group_theory.abelianization
 
@@ -38,7 +38,8 @@ noncomputable instance : group (G_K K) := alg_equiv.aut
 /-- `G_K` is a topological space with the Krull topology. -/
 noncomputable instance : topological_space (G_K K) := krull_topology K (algebraic_closure K)
 /-- `G_K` is a topological group with the Krull topology. -/
-instance : topological_group (G_K K) := krull_topological_group K (algebraic_closure K)
+instance : topological_group (G_K K) := infer_instance
+
 
 /-- Conjugation in a topological group is continuous.-/
 @[to_additive "Conjugation in a topological additive group is continuous."]

@@ -540,22 +540,22 @@ namespace function_field
 /-! ### The idèle group of a function field
 We define the (finite) idèle group of a function field `F`, with its topological group structure. -/
 
-variables (Fq F : Type) [field Fq] [field F] [algebra (polynomial Fq) F] [algebra (ratfunc Fq) F] 
-  [function_field Fq F] [is_scalar_tower (polynomial Fq) (ratfunc Fq) F] 
-  [is_separable (ratfunc Fq) F]
+variables (k F : Type) [field k] [field F] [algebra (polynomial k) F] [algebra (ratfunc k) F] 
+  [function_field k F] [is_scalar_tower (polynomial k) (ratfunc k) F] 
+  [is_separable (ratfunc k) F]
 
 /-- The finite idèle group of the function field `F`. -/
-def I_F_f := units (A_F_f Fq F)
+def I_F_f := units (A_F_f k F)
 /-- The idèle group of the function field `F`.-/
-def I_F := units (A_F Fq F)
+def I_F := units (A_F k F)
 
-instance : comm_group (I_F_f Fq F) := units.comm_group
-instance : comm_group (I_F Fq F) := units.comm_group
-instance : topological_space (I_F_f Fq F) := 
-finite_idele_group'.topological_space (ring_of_integers Fq F) F
-instance : topological_group (I_F_f Fq F) :=
-finite_idele_group'.topological_group (ring_of_integers Fq F) F
-instance : topological_space (I_F Fq F) := units.topological_space
-instance : topological_group (I_F Fq F) := units.topological_group
+instance : comm_group (I_F_f k F) := units.comm_group
+instance : comm_group (I_F k F) := units.comm_group
+instance : topological_space (I_F_f k F) := 
+finite_idele_group'.topological_space (ring_of_integers k F) F
+instance : topological_group (I_F_f k F) :=
+finite_idele_group'.topological_group (ring_of_integers k F) F
+instance : topological_space (I_F k F) := units.topological_space
+instance : topological_group (I_F k F) := units.topological_group
 
 end function_field

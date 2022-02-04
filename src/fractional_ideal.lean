@@ -343,7 +343,7 @@ begin
   set n : R := classical.some(is_localization.mk'_surjective (non_zero_divisors R) k) with hn,
   set d : ↥(non_zero_divisors R) := (classical.some (classical.some_spec
     (is_localization.mk'_surjective (non_zero_divisors R) k))) with hd,
-  have hd_ne_zero : (algebra_map R K) (d : R) ≠ 0 := ring_hom.map_ne_zero_of_mem_non_zero_divisors
+  have hd_ne_zero : (algebra_map R K) (d : R) ≠ 0 := map_ne_zero_of_mem_non_zero_divisors
     _ (is_fraction_ring.injective R K) d.property,
   have haJ' : I = fractional_ideal.span_singleton (non_zero_divisors R) ((algebra_map R K) d)⁻¹ *
     ↑(ideal.span {n} : ideal R),
