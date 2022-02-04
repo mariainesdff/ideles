@@ -9,7 +9,7 @@ In the number field case, we moreover define the idèle class group and provide 
 As a prerequisite, we formalize adic valuations on Dedekind domains and the associated completions.
 
 ## Installation instructions
-The formalization has been developed over Lean 3 and its matemathical library `mathlib`. For detailed instructions to install Lean, mathlib, and supporting tools, visit the [Lean Community website](https://leanprover-community.github.io/get_started.html).
+The formalization has been developed over Lean 3 and its matemathical library mathlib. For detailed instructions to install Lean, mathlib, and supporting tools, visit the [Lean Community website](https://leanprover-community.github.io/get_started.html).
 
 After installation, run the command `leanproject get mariainesdff/ideles` to obtain a copy of the project's source files and dependencies. To open the project in VS Code, either run `path/to/ideles` on the command line, or use the "Open Folder" menu option to open the project's root directory.
 
