@@ -81,4 +81,5 @@ jobs:
         SINGLE_COMMIT: false
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: doc-gen/built-docs # The folder the action should deploy.
-        CLEAN_EXCLUDE: testtag
+        CLEAN_EXCLUDE: |
+          testtag
