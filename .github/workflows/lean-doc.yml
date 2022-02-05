@@ -78,6 +78,7 @@ jobs:
     - name: 🚀 Deploy
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
-        SINGLE_COMMIT: true
+        SINGLE_COMMIT: false
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: doc-gen/built-docs # The folder the action should deploy.
+        CLEAN-EXCLUDE : testtag
