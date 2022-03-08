@@ -6,6 +6,7 @@ Authors: María Inés de Frutos-Fernández
 import fractional_ideal
 import ring_theory.valuation.integers
 import topology.algebra.localization
+import topology.algebra.valued_field
 
 /-!
 # The finite adèle ring of a Dedekind domain

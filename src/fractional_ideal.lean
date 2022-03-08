@@ -4,6 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: María Inés de Frutos-Fernández
 -/
 import valuation
+import topology.algebra.group --TODO : remove with last two lemmas
 
 /-!
 # Factorization of fractional ideals of Dedekind domains
@@ -667,7 +668,7 @@ end
 continuous if and only if its kernel is open."]
 lemma continuous_iff_open_kernel {α : Type*} {β : Type*} [topological_space α] [topological_space β] 
   [discrete_topology β] [group α] [group β] [topological_group α] [topological_group β]
-  {f : α →* β} : continuous f ↔ is_open (f⁻¹' {1}) := 
+  {f : α →* β} : continuous f ↔ is_open (f.ker : set α) := 
 begin
   refine ⟨λ hf, _, λ hf, _⟩,
   { apply continuous.is_open_preimage hf _ (singletons_open_iff_discrete.mpr (infer_instance) 1) },
@@ -679,3 +680,4 @@ begin
       by rw [mem_preimage, mem_singleton_iff, monoid_hom.map_one]⟩,
     { apply_instance }}
 end
+

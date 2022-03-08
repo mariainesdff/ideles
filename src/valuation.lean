@@ -5,7 +5,7 @@ Authors: María Inés de Frutos-Fernández
 -/
 import algebraic_geometry.prime_spectrum.basic
 import ring_theory.dedekind_domain
-import topology.algebra.valued_field
+--import topology.algebra.valued_field --TODO: remove
 
 /-!
 # Adic valuations on Dedekind domains
@@ -94,19 +94,19 @@ We provide auxiliary lemmas about `multiplicative.of_add`, `is_localization`, `a
 `ideal`. They will be moved to the appropriate files when the code is integrated in `mathlib`. -/
 
 -- of_add lemmas
-lemma of_add_le (α : Type*) [partial_order α] (x y : α) :
+lemma of_add_le {α : Type*} [partial_order α] (x y : α) :
   multiplicative.of_add x ≤ multiplicative.of_add y ↔ x ≤ y := by refl
 
-lemma of_add_lt (α : Type*) [partial_order α] (x y : α) :
+lemma of_add_lt {α : Type*} [partial_order α] (x y : α) :
   multiplicative.of_add x < multiplicative.of_add y ↔ x < y := by refl
 
 lemma of_add_inj (α : Type*) (x y : α) 
   (hxy : multiplicative.of_add x = multiplicative.of_add y) : x = y := 
-by rw [← to_add_of_add x, ← to_add_of_add y, hxy]
+(embedding_like.apply_eq_iff_eq _).mp hxy
 
 -- is_localization lemmas
 lemma is_localization.mk'_zero {R : Type*} [comm_ring R] {M : submonoid R}
-  {S : Type*} [comm_ring S] [algebra R S] [is_localization M S] {y : M} :  
+  {S : Type*} [comm_ring S] [algebra R S] [is_localization M S] (y : M) :  
   is_localization.mk' S 0 y = 0 := 
 by rw [eq_comm, is_localization.eq_mk'_iff_mul_eq, zero_mul, map_zero]
 
@@ -159,9 +159,6 @@ begin
   rw [← associates.le_singleton_iff, 
     associates.prime_pow_dvd_iff_le hx' ((associates.irreducible_mk I).mpr hI)],
 end   
-
-lemma ideal.mem_le_pow {x : R} {I : ideal R} {n : ℕ} (hxI : x ∈ I^n) (m : ℕ) (hm : m ≤ n) :
-  x ∈ I^m := ideal.pow_le_pow hm hxI
 
 lemma ideal.is_nonunit_iff {I : ideal R} : ¬ is_unit I ↔ I ≠ ⊤ := not_congr ideal.is_unit_iff
 
@@ -337,7 +334,7 @@ begin
   have hlt : v.val.val^2 < v.val.val,
   { rw ← ideal.dvd_not_unit_iff_lt,
     exact ⟨v.property, v.val.val,
-     ideal.is_nonunit_iff.mpr (ideal.is_prime.ne_top v.val.property), sq v.val.val⟩ } ,
+     (not_congr ideal.is_unit_iff).mpr (ideal.is_prime.ne_top v.val.property), sq v.val.val⟩ } ,
   obtain ⟨π, mem, nmem⟩ := set_like.exists_of_lt hlt,
   have hπ : associates.mk (ideal.span {π}) ≠ 0,
   { rw associates.mk_ne_zero',
