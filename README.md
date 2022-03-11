@@ -10,7 +10,7 @@ This formalization is described in the paper "Formalizing the ring of adèles of
 
 ## Guide through the code
 
-This project is currently in the process of being integrated into `mathlib`. Please find where to find the main contributions (this list will be updated when new features are added to `mathlib`). Other small contributions developing background results are scattered throgh the library.
+This project is currently in the process of being integrated into `mathlib`. Please see below where to find the main contributions (this list will be updated when new features are added to `mathlib`). Other small contributions developing background results are scattered through the library.
 - `height_one_spectrum` : [src/ring_theory/dedekind_domain/ideal.lean](https://leanprover-community.github.io/mathlib_docs/ring_theory/dedekind_domain/ideal.html#height-one-spectrum-of-a-dedekind-domain)
 
 ## Installation instructions
