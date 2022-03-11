@@ -249,8 +249,7 @@ lemma ideal.finprod_count (I : ideal R) (hI : I ≠ 0) :
     (associates.mk v.as_ideal).count (associates.mk I).factors :=
 begin
   have h_ne_zero := associates.finprod_ne_zero I,
-  have hv : irreducible (associates.mk v.as_ideal) := height_one_spectrum.associates.irreducible v,
-  --TODO: change
+  have hv : irreducible (associates.mk v.as_ideal) := v.associates_irreducible,
   have h_dvd := finprod_mem_dvd _ (ideal.finite_mul_support hI),
   have h_not_dvd := ideal.finprod_not_dvd v I hI,
   rw [← associates.mk_dvd_mk, associates.dvd_eq_le, associates.mk_pow,
@@ -404,7 +403,7 @@ lemma fractional_ideal.count_mul {I I' : fractional_ideal (non_zero_divisors R) 
   fractional_ideal.count K v (I') :=
 begin
   have hv : irreducible (associates.mk v.as_ideal),
-  { apply height_one_spectrum.associates.irreducible },
+  { apply v.associates_irreducible },
   obtain ⟨a, J, ha, haJ⟩ := fractional_ideal.exists_eq_span_singleton_mul I,
   have ha_ne_zero : associates.mk (ideal.span {a} : ideal R) ≠ 0,
   { rw [ne.def, associates.mk_eq_zero, ideal.zero_eq_bot, ideal.span_singleton_eq_bot], exact ha },
@@ -487,7 +486,7 @@ begin
     ↑(v.as_ideal),
   { rw [(algebra_map R K).map_one, inv_one, fractional_ideal.span_singleton_one, one_mul], },
   have hv_irred : irreducible (associates.mk v.as_ideal),
-  { apply height_one_spectrum.associates.irreducible v },
+  { apply v.associates_irreducible },
   rw [fractional_ideal.count_well_defined K v hv h_self, associates.count_self hv_irred,
     ideal.span_singleton_one, ← ideal.one_eq_top, associates.mk_one, associates.factors_one,
     associates.count_zero hv_irred, int.coe_nat_zero, sub_zero, int.coe_nat_one],
@@ -542,9 +541,9 @@ begin
   { rw fractional_ideal.coe_ideal_ne_zero_iff,
     exact w.ne_bot  },
   have hv : irreducible (associates.mk v.as_ideal) := 
-  by apply height_one_spectrum.associates.irreducible v, --TODO: change
+  by apply v.associates_irreducible,
   have hw' : irreducible (associates.mk w.as_ideal) := 
-  by apply height_one_spectrum.associates.irreducible w, --TODO: change
+  by apply w.associates_irreducible,
   rw [fractional_ideal.count_well_defined K v hw_ne_zero hw_fact, ideal.span_singleton_one,
     ← ideal.one_eq_top, associates.mk_one, associates.factors_one, associates.count_zero hv,
     int.coe_nat_zero, sub_zero, int.coe_nat_eq_zero, ← pow_one (associates.mk w.as_ideal),

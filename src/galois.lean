@@ -10,20 +10,16 @@ import group_theory.abelianization
 /-!
 # The topological abelianization of the absolute Galois group.
 We define the topological abelianization of the absolute Galois group of a field `K`.
-We prove some lemmas about (topological) groups needed for this definition.
 
 ## Main definitions
 - `G_K` : The Galois group of the field extension `K^al/K`, where `K^al` is an algebraic closure
   of `K`. 
 - `G_K_ab` : The topological abelianization of `G_K`, that is, the quotient of `G_K` by the 
   topological closure of its commutator subgroup.
-- `subgroup.connected_component_of_one` : The connected component of the identity in a topological 
-  group, regarded as a subgroup.
 
 ## Main results
-- `topological_group.continuous_conj` : Conjugation in a topological group is continuous.
-- `subgroup.is_normal_topological_closure` : If `N` is a normal subgroup of the topological group
-  `G`, then the topological closure of `N` is a normal subgroup of `G`.
+- `G_K.is_normal_commutator_closure` : the topological closure of the commutation of `G_K` is a
+  normal subgroup.
 
 ## Tags
 number field, galois group, abelianization
