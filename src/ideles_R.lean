@@ -57,8 +57,10 @@ variables (R : Type) (K : Type) [comm_ring R] [is_domain R] [is_dedekind_domain 
 def finite_idele_group' := units (finite_adele_ring' R K)
 
 instance : topological_space (finite_idele_group' R K) := units.topological_space
-instance : group (finite_idele_group' R K) := units.group
+instance : comm_group (finite_idele_group' R K) := units.comm_group
 instance : topological_group (finite_idele_group' R K) := units.topological_group
+instance : uniform_space (finite_idele_group' R K) := topological_group.to_uniform_space _
+instance : uniform_group (finite_idele_group' R K) := topological_group_is_uniform
 
 lemma right_inv (x : units K) : inj_K R K x.val * inj_K R K x.inv = 1 := 
 begin
@@ -91,8 +93,8 @@ def inj_units_K.group_hom : monoid_hom (units K) (finite_idele_group' R K) :=
   map_one' := inj_units_K.map_one R K,
   map_mul' := inj_units_K.map_mul R K, }
 
-/-- If `height_one_spectrum R` is nonempty, then `inj_units_K` is injective. Note that the nonemptiness
-hypothesis is satisfied for every Dedekind domain that is not a field. -/
+/-- If `height_one_spectrum R` is nonempty, then `inj_units_K` is injective. Note that the
+nonemptiness hypothesis is satisfied for every Dedekind domain that is not a field. -/
 lemma inj_units_K.injective [inh : inhabited (height_one_spectrum R)] : 
   injective (inj_units_K.group_hom R K) :=
 begin
@@ -176,7 +178,8 @@ multiplicative.to_add (classical.some (with_zero.ne_zero_iff_exists.mp hx))
 
 /-- Given a finite idèle `x`, for each maximal ideal `v` of `R` we obtain an integer that 
 represents the additive `v`-adic valuation of the component `x_v` of `x`. -/
-def finite_idele.to_add_valuations (x : finite_idele_group' R K) : Π (v : height_one_spectrum R), ℤ :=
+def finite_idele.to_add_valuations (x : finite_idele_group' R K) : 
+  Π (v : height_one_spectrum R), ℤ :=
 λ v, -(with_zero.to_integer ((valuation.ne_zero_iff valued.v).mpr (v_comp.ne_zero R K v x)))
 
 lemma finite_idele.to_add_valuations.map_one : 
@@ -417,8 +420,9 @@ def idele.mk (a : Π v : height_one_spectrum R, K_v K v)
     (valued.v (a v) : with_zero (multiplicative ℤ)) = 1)
   (h_ne_zero : ∀ v : height_one_spectrum R, a v ≠ 0) :
   finite_idele_group' R K :=
-⟨⟨a, val_property ha h_ne_zero⟩, ⟨(λ v : height_one_spectrum R, (a v)⁻¹), inv_property ha h_ne_zero⟩,
-    right_inv' ha h_ne_zero, left_inv' ha h_ne_zero⟩
+⟨⟨a, val_property ha h_ne_zero⟩,
+  ⟨(λ v : height_one_spectrum R, (a v)⁻¹), inv_property ha h_ne_zero⟩, right_inv' ha h_ne_zero,
+  left_inv' ha h_ne_zero⟩
 
 lemma map_to_fractional_ideals.inv_eq_inv (x : finite_idele_group' R K)
   (I : units (fractional_ideal (non_zero_divisors R) K))
@@ -432,7 +436,8 @@ end
 
 variables (R K)
 /-- A finite idèle `(pi_v)_v`, where each `pi_v` is a uniformizer for the `v`-adic valuation. -/
-def pi.unif : Π v : height_one_spectrum R, K_v K v := λ v : height_one_spectrum R, (coe : K → (K_v K v))
+def pi.unif : Π v : height_one_spectrum R, K_v K v :=
+λ v : height_one_spectrum R, (coe : K → (K_v K v)) 
   (classical.some (v.valuation_exists_uniformizer K))
 
 lemma pi.unif.ne_zero : ∀ v : height_one_spectrum R, pi.unif R K v ≠ 0 :=
@@ -506,8 +511,8 @@ end
 variables (R K)
 /-- Given a collection `exps` of integers indexed by the maximal ideals `v` of `R`, of which only
 finitely many are allowed to be nonzero, `(pi_v^(exps v))_v` is a finite idèle of `R`. -/
-def idele.mk' {exps : Π v : height_one_spectrum R, ℤ}
-  (h_exps : ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, exps v = 0) : finite_idele_group' R K :=
+def idele.mk' {exps : Π v : height_one_spectrum R, ℤ} (h_exps : ∀ᶠ (v : height_one_spectrum R) in
+  filter.cofinite, exps v = 0) : finite_idele_group' R K :=
 ⟨⟨λ v : height_one_spectrum R, (pi.unif R K v)^exps v, idele.mk'.val h_exps⟩,
   ⟨λ v : height_one_spectrum R, (pi.unif R K v)^-exps v, idele.mk'.inv h_exps⟩,
   idele.mk'.mul_inv h_exps, idele.mk'.inv_mul h_exps⟩
@@ -617,7 +622,8 @@ end
 /-- `map_to_fractional_ideals` is continuous, where the codomain is given the discrete topology. -/
 lemma map_to_fractional_ideals.continuous : continuous (map_to_fractional_ideals R K) := 
 begin
-  rw continuous_iff_open_kernel,
+  apply uniform_continuous.continuous,
+  rw uniform_group.uniform_continuous_iff_open_ker,
   have h_ker : ((map_to_fractional_ideals R K).ker : set (finite_idele_group' R K)) = 
     { x : units(finite_adele_ring' R K) |
        ∀ v : height_one_spectrum R, finite_idele.to_add_valuations R K x v = 0 },
@@ -628,11 +634,11 @@ begin
     ∀ v : height_one_spectrum R, (p.1.val v) ∈ R_v K v ∧ 
     ((mul_opposite.unop p.2).val v) ∈ R_v K v},
   split,
-  { have : prod.topological_space.is_open {p : finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ 
-  | ∀ (v : height_one_spectrum R), p.fst.val v ∈ R_v K v ∧ (mul_opposite.unop p.snd).val v ∈ R_v K v}
-    ↔ is_open {p : finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ 
-  | ∀ (v : height_one_spectrum R), p.fst.val v ∈ R_v K v ∧ (mul_opposite.unop p.snd).val v ∈ R_v K v}
-    := by refl,
+  { have : prod.topological_space.is_open
+      {p : finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ | ∀ (v : height_one_spectrum R),
+        p.fst.val v ∈ R_v K v ∧ (mul_opposite.unop p.snd).val v ∈ R_v K v}  ↔ is_open
+      {p : finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ | ∀ (v : height_one_spectrum R),
+        p.fst.val v ∈ R_v K v ∧ (mul_opposite.unop p.snd).val v ∈ R_v K v} := by refl,
     rw this, clear this,
     rw [is_open_prod_iff],
     intros x y hxy,

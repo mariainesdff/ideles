@@ -219,10 +219,10 @@ end
 
 /-- The `v`-adic valuation on `R`. -/
 def int_valuation : valuation R (with_zero (multiplicative ℤ)) :=
-{ to_fun    := v.int_valuation_def, 
-  map_zero' := int_valuation.map_zero' v,
-  map_one'  := int_valuation.map_one' v,
-  map_mul'  := int_valuation.map_mul' v,
+{ to_fun           := v.int_valuation_def, 
+  map_zero'        := int_valuation.map_zero' v,
+  map_one'         := int_valuation.map_one' v,
+  map_mul'         := int_valuation.map_mul' v,
   map_add_le_max'  := int_valuation.map_add_le_max' v }
 
 /-- There exists `π ∈ R` with `v`-adic valuation `multiplicative.of_add (-1)`. -/

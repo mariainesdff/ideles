@@ -4,7 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 Authors: María Inés de Frutos-Fernández
 -/
 import valuation
-import topology.algebra.group --TODO : remove with last two lemmas
+import topology.algebra.uniform_group
 
 /-!
 # Factorization of fractional ideals of Dedekind domains
@@ -29,7 +29,7 @@ ideal of `R` such that `I = a⁻¹J`, then `I` is equal to the product `∏_v v^
 
 ## Implementation notes
 Since we are only interested in nonzero fractional ideals, we chose to define `val_v(I) = 0` so that
-every `val_v` is in `ℤ` and we can avoid having to use `with_top (ℤ)`.
+every `val_v` is in `ℤ` and we can avoid having to use `with_top ℤ`.
 
 ## Tags
 dedekind domain, fractional ideal, factorization
@@ -43,16 +43,6 @@ open set function
 /-! ### Factorization of fractional ideals of Dedekind domains -/
 
 variables {A : Type*} [comm_ring A] (B : submonoid A) (C : Type*) [comm_ring C] [algebra A C]
-
-/- lemma fractional_ideal.coe_finprod [is_localization B C] {α : Type*} {f : α → ideal A}
-  (hB : B ≤ non_zero_divisors A) :
-  ((∏ᶠ a : α, f a : ideal A) : fractional_ideal B C) = ∏ᶠ a : α, (f a : fractional_ideal B C)  := 
-begin
-  have h_coe : ⇑(fractional_ideal.coe_ideal_hom B C).to_monoid_hom = coe := rfl,
-  rw [← h_coe, monoid_hom.map_finprod_of_injective
-    (fractional_ideal.coe_ideal_hom B C).to_monoid_hom, h_coe],
-  exact fractional_ideal.coe_to_fractional_ideal_injective hB,
-end -/
 
 /-- If a prime `p` divides a `finprod`, then it must divide one of its factors. -/
 lemma prime.exists_mem_finprod_dvd {α : Type*} {N : Type*} [comm_monoid_with_zero N] {f : α → N} 
@@ -74,6 +64,12 @@ instance ufi_ts : topological_space (units (fractional_ideal (non_zero_divisors 
 instance ufi_tg : topological_group (units (fractional_ideal (non_zero_divisors R) K)) := 
 { continuous_mul := continuous_of_discrete_topology,
   continuous_inv := continuous_of_discrete_topology, }
+
+instance ufi_us : uniform_space (units (fractional_ideal (non_zero_divisors R) K)) := 
+topological_group.to_uniform_space _
+
+instance ufi_ug : uniform_group (units (fractional_ideal (non_zero_divisors R) K)) := 
+topological_group_is_uniform
 
 variables [is_fraction_ring R K]
 
@@ -626,42 +622,3 @@ begin
     (ideal.finite_factors (fractional_ideal.constant_factor_ne_zero hI haJ)))
     h_subset,
 end
-
-/-! ### Topological groups 
-These lemmas will be PR'd to `topology/algebra/topological_group`. -/
-
-/-- A homomorphism of topological groups is continuous if and only if it is continuous at 1. -/
-@[to_additive "A homomorphism of topological additive groups is continuous if and only if it is 
-continuous at 0."] 
-lemma continuous_iff_continuous_at_one {α : Type*} {β : Type*} [topological_space α] 
-  [topological_space β] [group α] [group β] [topological_group α] [topological_group β] {
-  f : α →* β} : continuous f ↔ continuous_at f 1 :=
-begin
-  rw continuous_iff_continuous_at,
-  refine ⟨λ hf, hf 1, λ hf, _⟩,
-  intros x  U hUx,
-  rw [filter.mem_map, ← map_mul_left_nhds_one, filter.mem_map],
-  rw [← map_mul_left_nhds_one, filter.mem_map, ← monoid_hom.map_one f] at hUx,
-  convert continuous_at.preimage_mem_nhds hf hUx,
-  ext y,
-  simp only [mem_preimage, monoid_hom.map_mul],
-end
-
-/-- A homomorphism of topological groups is continuous if and only if its kernel is open. -/
-@[to_additive continuous_iff_open_add_kernel "A homomorphism of topological additive groups is
-continuous if and only if its kernel is open."]
-lemma continuous_iff_open_kernel {α : Type*} {β : Type*} [topological_space α] [topological_space β] 
-  [discrete_topology β] [group α] [group β] [topological_group α] [topological_group β]
-  {f : α →* β} : continuous f ↔ is_open (f.ker : set α) := 
-begin
-  refine ⟨λ hf, _, λ hf, _⟩,
-  { apply continuous.is_open_preimage hf _ (singletons_open_iff_discrete.mpr (infer_instance) 1) },
-  { rw continuous_iff_continuous_at_one,
-    intros U hU,
-    rw [monoid_hom.map_one, discrete_topology_iff_nhds.mp, filter.mem_pure] at hU,
-    rw [filter.mem_map, mem_nhds_iff],
-    exact ⟨f ⁻¹' {1}, λ x hx, by apply (singleton_subset_iff.mpr hU) hx, hf, 
-      by rw [mem_preimage, mem_singleton_iff, monoid_hom.map_one]⟩,
-    { apply_instance }}
-end
-
