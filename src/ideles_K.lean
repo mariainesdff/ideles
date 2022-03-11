@@ -39,7 +39,7 @@ idèle group, number field, function field
 
 noncomputable theory
 
-open set function
+open set function is_dedekind_domain
 open_locale tensor_product
 
 namespace number_field
@@ -148,21 +148,21 @@ instance : topological_space (C_K K) := quotient.topological_space
 instance : topological_group (C_K K) := topological_group_quotient ((inj_units_K.group_hom K).range)
 
 /-- The `v`-adic absolute value of the `v`th component of the idèle `x`. -/
-def v_comp_val (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
+def v_comp_val (x : I_K K) (v : height_one_spectrum (ring_of_integers K)) :
   with_zero (multiplicative ℤ) := valued.v (x.val.1.val v)
 
 /-- The `v`-adic absolute value of the inverse of the `v`th component of the idèle `x`. -/
-def v_comp_inv (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
+def v_comp_inv (x : I_K K) (v : height_one_spectrum (ring_of_integers K)) :
   with_zero (multiplicative ℤ) := valued.v (x.inv.1.val v)
 
 /-- For any finite idèle `x`, there are finitely many maximal ideals `v` of `R` for which
 `x_v ∉ R_v` or `x⁻¹_v ∉ R_v`. -/ 
 lemma I_K_f.restricted_product (x : I_K_f K) :
-  finite ({ v : maximal_spectrum (ring_of_integers K) | (¬ (x.val.val v) ∈ R_v K v) } ∪ 
-    { v : maximal_spectrum (ring_of_integers K) | ¬ (x.inv.val v) ∈ R_v K v }) :=
+  finite ({ v : height_one_spectrum (ring_of_integers K) | (¬ (x.val.val v) ∈ R_v K v) } ∪ 
+    { v : height_one_spectrum (ring_of_integers K) | ¬ (x.inv.val v) ∈ R_v K v }) :=
 restricted_product (ring_of_integers K) K x
 
-lemma prod_val_inv_eq_one (x : I_K K) (v : maximal_spectrum (ring_of_integers K)): 
+lemma prod_val_inv_eq_one (x : I_K K) (v : height_one_spectrum (ring_of_integers K)): 
   (x.val.fst.val v) * (x.inv.fst.val v) = 1  :=
 begin
   rw [← pi.mul_apply, mul_apply_val, ← prod.fst_mul, units.val_inv,
@@ -170,7 +170,7 @@ begin
   refl,
 end
 
-lemma valuation.prod_val_inv_eq_one (x : I_K K) (v : maximal_spectrum (ring_of_integers K)): 
+lemma valuation.prod_val_inv_eq_one (x : I_K K) (v : height_one_spectrum (ring_of_integers K)): 
   (v_comp_val K x v) * (v_comp_inv K x v) = 1 :=
 begin
   simp only [v_comp_val, v_comp_inv],
@@ -178,23 +178,23 @@ begin
   exact valuation.map_one _,
 end
 
-lemma v_comp.ne_zero (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :
+lemma v_comp.ne_zero (x : I_K K) (v : height_one_spectrum (ring_of_integers K)) :
   (x.val.1.val v) ≠ 0 := left_ne_zero_of_mul_eq_one (prod_val_inv_eq_one K x v)
 
 /-- For any idèle `x`, there are finitely many maximal ideals `v` of `R` for which `x_v ∉ R_v` or
 `x⁻¹_v ∉ R_v`. -/ 
 lemma I_K.restricted_product (x : I_K K) :
-  finite ({ v : maximal_spectrum (ring_of_integers K) | (¬ (x.val.1.val v) ∈ R_v K v) } ∪ 
-    { v : maximal_spectrum (ring_of_integers K) | ¬ (x.inv.1.val v) ∈ R_v K v }) :=
+  finite ({ v : height_one_spectrum (ring_of_integers K) | (¬ (x.val.1.val v) ∈ R_v K v) } ∪ 
+    { v : height_one_spectrum (ring_of_integers K) | ¬ (x.inv.1.val v) ∈ R_v K v }) :=
 finite.union x.val.1.property x.inv.1.property
 
 /-- For any idèle `x`, there are finitely many maximal ideals `v` of `R` for which `|x_v|_v ≠ 1`. -/
 lemma I_K.finite_exponents (x : I_K K) :
-  finite { v : maximal_spectrum (ring_of_integers K) | v_comp_val K x v ≠ 1 } :=
+  finite { v : height_one_spectrum (ring_of_integers K) | v_comp_val K x v ≠ 1 } :=
 begin
-  have h_subset : { v : maximal_spectrum (ring_of_integers K) | v_comp_val K x v ≠ 1 } ⊆ 
-  { v : maximal_spectrum (ring_of_integers K) | ¬ (x.val.1.val v) ∈ R_v K v } ∪ 
-  { v : maximal_spectrum (ring_of_integers K) | ¬ (x.inv.1.val v) ∈ R_v K v },
+  have h_subset : { v : height_one_spectrum (ring_of_integers K) | v_comp_val K x v ≠ 1 } ⊆ 
+  { v : height_one_spectrum (ring_of_integers K) | ¬ (x.val.1.val v) ∈ R_v K v } ∪ 
+  { v : height_one_spectrum (ring_of_integers K) | ¬ (x.inv.1.val v) ∈ R_v K v },
   { intros v hv,
     rw [mem_union, mem_set_of_eq, mem_set_of_eq, K_v.is_integer, K_v.is_integer],
     rw mem_set_of_eq at hv,
@@ -231,7 +231,7 @@ lemma I_K_f.map_to_fractional_ideals.surjective :
 `|x_v|_v = 1` for all `v`. -/
 lemma I_K_f.map_to_fractional_ideals.mem_kernel_iff (x : I_K_f K) : 
   I_K_f.map_to_fractional_ideals K x = 1 ↔ 
-  ∀ v : maximal_spectrum (ring_of_integers K), 
+  ∀ v : height_one_spectrum (ring_of_integers K), 
     finite_idele.to_add_valuations (ring_of_integers K) K x v = 0 := 
 @map_to_fractional_ideals.mem_kernel_iff (ring_of_integers K) K _ _ _ _ _ _ x
 
@@ -256,7 +256,7 @@ function.surjective.comp I_K_f.map_to_fractional_ideals.surjective I_K.fst.surje
 for all `v`. -/
 lemma I_K.map_to_fractional_ideals.mem_kernel_iff (x : I_K K) : 
   I_K.map_to_fractional_ideals K x = 1 ↔ 
-  ∀ v : maximal_spectrum (ring_of_integers K), 
+  ∀ v : height_one_spectrum (ring_of_integers K), 
     finite_idele.to_add_valuations (ring_of_integers K) K (I_K.fst K x) v = 0 :=
 I_K_f.map_to_fractional_ideals.mem_kernel_iff (I_K.fst K x)
 
@@ -344,7 +344,7 @@ begin
   rw [with_zero.to_integer, ← injective.eq_iff multiplicative.of_add.injective, of_add_neg,
     of_add_to_add, ← neg_sub_neg, of_add_sub, ← inv_div'],
   apply congr_arg,
-  have hv : valued.v (((inj_K_f.ring_hom K) k.val).val v) ≠ 0,
+  have hv : valued.v (((inj_K_f.ring_hom K) k.val).val v) ≠ (0 : with_zero (multiplicative ℤ)),
   { rw [valuation.ne_zero_iff, inj_K_f.ring_hom.v_comp, units.val_eq_coe,
       ← uniform_space.completion.coe_zero,
       injective.ne_iff (@uniform_space.completion.coe_inj K (us' v) (ss v))],
@@ -353,13 +353,14 @@ begin
   let hz :=  classical.some_spec (with_zero.to_integer._proof_1 hv),
   rw [← with_zero.coe_inj, hz, valued_K_v.def, inj_K_f.ring_hom,
     inj_K.ring_hom_apply, inj_K_apply, valued.extension_extends, units.val_eq_coe, v_valued_K.def,
-    maximal_spectrum.valuation_def],
+    height_one_spectrum.valuation_def],
   simp only,
-  rw [with_zero.coe_div, maximal_spectrum.int_valuation_def_if_neg v
-    (non_zero_divisors.coe_ne_zero _), maximal_spectrum.int_valuation_def_if_neg],
-  { have h := (classical.some_spec (classical.some_spec
-    (maximal_spectrum.valuation_def._proof_1 (k : K)))),
-    apply is_localization.mk'_num_ne_zero_of_ne_zero (eq.symm h) (units.ne_zero k)},
+  rw [with_zero.coe_div, height_one_spectrum.int_valuation_def_if_neg v
+    (non_zero_divisors.coe_ne_zero _), height_one_spectrum.int_valuation_def_if_neg],
+  { rw [ne.def, ← @is_fraction_ring.mk'_eq_zero_iff_eq_zero _ _ K _ _ _ _ _],
+    convert units.ne_zero k,
+    exact classical.some_spec (classical.some_spec
+    (height_one_spectrum.valuation_def._proof_1 (k : K))), },
 end
 
 /-- `I_K.map_to_fractional_ideals` sends the principal idèle `(k)_v` corresponding to `k ∈ K*` to 
@@ -390,18 +391,18 @@ def field.units.mk' {F : Type*} [field F] (k : F) (hk : k ≠ 0) : units F :=
 
 lemma I_K.map_to_fractional_ideals.apply (x : I_K K) : (((I_K.map_to_fractional_ideals K) x) : 
   fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K) = 
-  finprod (λ (v : maximal_spectrum ↥(ring_of_integers K)), 
-    (v.val.val : fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K)^
+  finprod (λ (v : height_one_spectrum ↥(ring_of_integers K)), 
+    (v.as_ideal : fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K)^
     finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v) := rfl
 
 -- Needed to avoid a diamond in mathlib.
-local attribute [-instance] number_field.ring_of_integers_algebra
+--local attribute [-instance] number_field.ring_of_integers_algebra
 
 /-- If the image `x ∈ I_K` under `I_K.map_to_class_group` is the principal fractional ideal
 generated by `k ∈ K*`, then for every maximal ideal `v` of the ring of integers of `K`,
 `|x_v|_v = |k|_v`. -/
 lemma I_K.map_to_class_group.valuation_mem_kernel (x : I_K K) (k : units K)
-  (v : maximal_spectrum (ring_of_integers K))
+  (v : height_one_spectrum (ring_of_integers K))
   (hkx : fractional_ideal.span_singleton (non_zero_divisors ↥(ring_of_integers K)) (k : K) = 
     (((I_K.map_to_fractional_ideals K) x) :
       fractional_ideal (non_zero_divisors ↥(ring_of_integers K)) K)) :
@@ -416,14 +417,16 @@ begin
     (non_zero_divisors ↥(ring_of_integers K)) (k : K))),
   rw [← h_dk', ← h_nk] at h,
   have h_nk_ne_zero : nk ≠ 0,
-  { apply is_localization.mk'_num_ne_zero_of_ne_zero (eq.symm h) (units.ne_zero k), },
+  { intro h_contr,
+    rw [h_contr, is_localization.mk'_zero] at h,
+    exact (units.ne_zero k) (eq.symm h)},
   have h_dk_ne_zero : dk ≠ 0,
   { rw h_dk,
     exact non_zero_divisors.coe_ne_zero _, },
   rw I_K.map_to_fractional_ideals.apply at hkx,
-  { have h_exps_v:  ((associates.mk v.val.val).count 
+  { have h_exps_v:  ((associates.mk v.as_ideal).count 
       (associates.mk (ideal.span {nk})).factors : ℤ) - 
-      ((associates.mk v.val.val).count (associates.mk (ideal.span {dk})).factors : ℤ) = 
+      ((associates.mk v.as_ideal).count (associates.mk (ideal.span {dk})).factors : ℤ) = 
       finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v,
     { rw [← fractional_ideal.count_finprod K v (finite_idele.to_add_valuations ↥(ring_of_integers K)
         K ((I_K.fst K) x)) (finite_add_support _ _ _), ← hkx,  eq_comm],
@@ -437,9 +440,9 @@ begin
       at h_exps_v,
     conv_rhs {rw [valued_K_v.def, units.val_eq_coe], },
     rw [valued.extension_extends, v_valued_K.def],
-    simp only [maximal_spectrum.valuation_def],
-    rw [← h_dk, ← h_nk, maximal_spectrum.int_valuation_def_if_neg, 
-    maximal_spectrum.int_valuation_def_if_neg, ← with_zero.coe_div, ← of_add_sub, neg_sub_neg,
+    simp only [height_one_spectrum.valuation_def],
+    rw [← h_dk, ← h_nk, height_one_spectrum.int_valuation_def_if_neg, 
+    height_one_spectrum.int_valuation_def_if_neg, ← with_zero.coe_div, ← of_add_sub, neg_sub_neg,
     ← h_exps_v, of_add_to_add, eq_comm],
     exact classical.some_spec (with_zero.to_integer._proof_1 _),
     { exact h_dk_ne_zero },
@@ -450,7 +453,7 @@ end
 `y ∈ I_K` such that `x = k*y` and `|y_v|_v = 1` for all `v`. -/
 lemma I_K.map_to_class_group.mem_kernel_iff (x : I_K K) : 
   I_K.map_to_class_group K x = 1 ↔ ∃ (k : K) (hk : k ≠ 0),
-  ∀ v : maximal_spectrum (ring_of_integers K), 
+  ∀ v : height_one_spectrum (ring_of_integers K), 
     (finite_idele.to_add_valuations ↥(ring_of_integers K) K ((I_K.fst K) x) v) 
     = -with_zero.to_integer (units.valuation_ne_zero (ring_of_integers K) K v hk) :=
 begin
@@ -520,7 +523,7 @@ continuous_quot_lift (quotient_group.lift._proof_1
 of the form `k*y`, with `k ∈ K*` and `|y_v|_v = 1` for all `v`. -/
 lemma C_K.map_to_class_group.mem_kernel_iff (x : C_K K) : 
   C_K.map_to_class_group K x = 1 ↔ 
-  ∃ (k : K) (hk : k ≠ 0), ∀ v : maximal_spectrum (ring_of_integers K), 
+  ∃ (k : K) (hk : k ≠ 0), ∀ v : height_one_spectrum (ring_of_integers K), 
     (finite_idele.to_add_valuations ↥(ring_of_integers K) K 
       ((I_K.fst K) (classical.some (quot.exists_rep x))) v) 
       = -with_zero.to_integer (units.valuation_ne_zero (ring_of_integers K) K v hk) :=

@@ -48,7 +48,7 @@ finite adèle ring, dedekind domain, completions
 
 noncomputable theory
 open_locale classical
-open function set
+open function set is_dedekind_domain
 
 /- Auxiliary lemmas. -/
 private lemma subset.three_union {α : Type*} (f g h : α → Prop):
@@ -85,28 +85,25 @@ We define `R_hat` (resp. `K_hat`) to be the product of `R_v` (resp. `K_v`), wher
 maximal ideals of `R`. -/
 
 variables {R : Type} {K : Type} [comm_ring R] [is_domain R] [is_dedekind_domain R] [field K]
-  [algebra R K] [is_fraction_ring R K] (v : maximal_spectrum R)
+  [algebra R K] [is_fraction_ring R K] (v : height_one_spectrum R)
 
 /-- `K` as a valued field with the `v`-adic valuation. -/
-def v_valued_K (v : maximal_spectrum R) : valued K := 
-{ Γ₀  := (with_zero (multiplicative ℤ)),
-  grp := infer_instance,
-  v   := v.valuation }
+def v_valued_K : valued K (with_zero (multiplicative ℤ)) := ⟨v.valuation⟩ 
 
-lemma v_valued_K.def {x : K} : @valued.v K _ (v_valued_K v) (x) = v.valuation_def  x := rfl
+lemma v_valued_K.def {x : K} : @valued.v K _ _ _ (v_valued_K v) (x) = v.valuation_def x := rfl
 
 /-- The topological space structure on `K` corresponding to the `v`-adic valuation. -/
-def ts' : topological_space K := @valued.topological_space K _ (v_valued_K v)
+def ts' : topological_space K := @valued.topological_space K _ _ _ (v_valued_K v)
 lemma tdr' : @topological_division_ring K _ (ts' v) := 
-@valued.topological_division_ring K _ (v_valued_K v)
+@valued.topological_division_ring K _ _ _ (v_valued_K v)
 lemma tr' : @topological_ring K  (ts' v) _ := infer_instance
 lemma tg' : @topological_add_group K (ts' v) _ := infer_instance
 /-- The uniform space structure on `K` corresponding to the `v`-adic valuation. -/
 def us' : uniform_space K := @topological_add_group.to_uniform_space K _ (ts' v) (tg' v)
 lemma ug' : @uniform_add_group K (us' v) _ := 
 @topological_add_group_is_uniform K _ (ts' v) (tg' v)
-lemma cf' : @completable_top_field K _ (us' v) := @valued.completable K _ (v_valued_K v)
-lemma ss : @separated_space K (us' v) := @valued_ring.separated K _ (v_valued_K v)
+lemma cf' : @completable_top_field K _ (us' v) := @valued.completable K _ _ _ (v_valued_K v)
+lemma ss : @separated_space K (us' v) := @valued_ring.separated K _ _ _ (v_valued_K v)
 
 variables (K)
 /-- The completion of `K` with respect to its `v`-adic valuation. -/
@@ -114,16 +111,16 @@ def K_v := @uniform_space.completion K (us' v)
 instance : field (K_v K v) := @field_completion K _ (us' v) (tdr' v) _ (ug' v)
 
 variables {K}
-instance valued_K_v : valued (K_v K v) := 
-{ Γ₀  := with_zero (multiplicative ℤ),
-  grp := infer_instance,
-  v   := @valued.extension_valuation K _ (v_valued_K v) }
+instance valued_K_v : valued (K_v K v) (with_zero (multiplicative ℤ)):= 
+⟨@valued.extension_valuation K _ _ _ (v_valued_K v)⟩
 
-lemma valued_K_v.def {x : K_v K v} : valued.v (x) = @valued.extension K _ (v_valued_K v)  x := rfl
+lemma valued_K_v.def {x : K_v K v} : valued.v (x) = @valued.extension K _ _ _ (v_valued_K v)  x :=
+rfl
 
-instance ts : topological_space (K_v K v) := @valued.topological_space (K_v K v) _ (valued_K_v v)
+instance ts : topological_space (K_v K v) := 
+@valued.topological_space (K_v K v) _ _ _ (valued_K_v v)
 instance tdr : @topological_division_ring (K_v K v) _ (ts v) := 
-@valued.topological_division_ring (K_v K v) _ (valued_K_v v)
+@valued.topological_division_ring (K_v K v) _ _ _ (valued_K_v v)
 instance tr : @topological_ring (K_v K v) (ts v) _ := (tdr v).to_topological_ring
 instance tg : @topological_add_group (K_v K v) (ts v) _ := 
 @topological_ring.to_topological_add_group (K_v K v) _ (ts v) (tr v)
@@ -142,28 +139,29 @@ def R_v : subring (K_v K v) :=
 
 variables (R)
 /-- The product of all `R_v`, where `v` runs over the maximal ideals of `R`. -/
-def R_hat := (Π (v : maximal_spectrum R), (R_v K v))
+def R_hat := (Π (v : height_one_spectrum R), (R_v K v))
 instance : comm_ring (R_hat R K) := pi.comm_ring
 instance : topological_space (R_hat R K) := Pi.topological_space
 
 /-- The product of all `K_v`, where `v` runs over the maximal ideals of `R`. -/
-def K_hat := (Π (v : maximal_spectrum R), (K_v K v))
+def K_hat := (Π (v : height_one_spectrum R), (K_v K v))
 
 instance : comm_ring (K_hat R K) := pi.comm_ring
 instance : ring (K_hat R K) := infer_instance
 instance : topological_space (K_hat R K) := Pi.topological_space
-instance tr_hat : topological_ring (Π (v : maximal_spectrum R), (K_v K v)) := pi.topological_ring
+instance tr_hat : topological_ring (Π (v : height_one_spectrum R), (K_v K v)) := pi.topological_ring
 instance : topological_ring (K_hat R K) := tr_hat R K
 
-lemma K_v.is_integer (x : K_v K v) : x ∈ R_v K v ↔ valued.v x ≤ 1 := by refl
+lemma K_v.is_integer (x : K_v K v) :
+  x ∈ R_v K v ↔ (valued.v x : with_zero (multiplicative ℤ)) ≤ 1 := by refl
 
 /-- The natural inclusion of `R` in `K_v`. -/
 def inj_R_v' : R → (K_v K v) := λ r, (coe : K → (K_v K v)) (algebra_map R K r)
 
 /-- The natural inclusion of `R` in `R_v`. -/
 def inj_R_v : R → (R_v K v) := λ r, ⟨(coe : K → (K_v K v)) (algebra_map R K r), begin 
-  change @valued.extension K _ (v_valued_K v) (algebra_map R K r) ≤ 1,
-  rw @valued.extension_extends K _ (v_valued_K v) (algebra_map R K r),
+  change @valued.extension K _ _ _ (v_valued_K v) (algebra_map R K r) ≤ 1,
+  rw @valued.extension_extends K _ _ _ (v_valued_K v) (algebra_map R K r),
   exact v.valuation_le_one _,
 end⟩
 
@@ -220,12 +218,12 @@ makes it into a topological ring. -/
 /-- A tuple `(x_v)_v` is in the restricted product of the `K_v` with respect to `R_v` if for all but
 finitely many `v`, `x_v ∈ R_v`. -/
 def restricted : K_hat R K → Prop := λ x, 
- ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v)
+ ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, (x v ∈ R_v K v)
 
 /-- The finite adèle ring of `R` is the restricted product over all maximal ideals `v` of `R`
 of `K_v` with respect to `R_v`.-/
 def finite_adele_ring' := { x : (K_hat R K) // 
-  ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v) }
+  ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, (x v ∈ R_v K v) }
 
 /-- The coercion map from `finite_adele_ring' R K` to `K_hat R K`. -/
 def coe' : (finite_adele_ring' R K) → K_hat R K := force_noncomputable $ λ x, x.val
@@ -233,15 +231,15 @@ instance has_coe' : has_coe (finite_adele_ring' R K) (K_hat R K) := {coe := coe'
 instance has_lift_t' : has_lift_t (finite_adele_ring' R K) (K_hat R K) := {lift := coe' R K } 
 
 /-- The sum of two finite adèles is a finite adèle. -/
-lemma restr_add (x y : finite_adele_ring' R K) : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
+lemma restr_add (x y : finite_adele_ring' R K) : ∀ᶠ (v : height_one_spectrum R) in filter.cofinite,
   ((x.val + y.val) v ∈ R_v K v) := 
 begin
   cases x with x hx,
   cases y with y hy,
   simp only [restricted] at hx hy ⊢,
   rw filter.eventually_cofinite at hx hy ⊢,
-  have h_subset : {v : maximal_spectrum R | ¬ (x + y) v ∈  (R_v K v)} ⊆
-    {v : maximal_spectrum R | ¬ x v ∈ (R_v K v)} ∪ {v : maximal_spectrum R | ¬ y v ∈ (R_v K v)},
+  have h_subset : {v : height_one_spectrum R | ¬ (x + y) v ∈  (R_v K v)} ⊆
+    {v : height_one_spectrum R | ¬ x v ∈ (R_v K v)} ∪ {v : height_one_spectrum R | ¬ y v ∈ (R_v K v)},
   { intros v hv,
     rw [mem_union, mem_set_of_eq, mem_set_of_eq],
     rw mem_set_of_eq at hv,
@@ -250,7 +248,7 @@ begin
     apply hv,
     rw [K_v.is_integer, K_v.is_integer, ← max_le_iff] at h,
     rw [K_v.is_integer, pi.add_apply],
-    exact le_trans (valued.v.map_add' (x v) (y v)) h },
+    exact le_trans (valued.v.map_add_le_max' (x v) (y v)) h },
   exact finite.subset (finite.union hx hy) h_subset,
 end
 
@@ -259,14 +257,15 @@ def add' (x y : finite_adele_ring' R K) : finite_adele_ring' R K :=
 ⟨x.val + y.val, restr_add R K x y⟩
 
 /-- The tuple `(0)_v` is a finite adèle. -/
-lemma restr_zero : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
+lemma restr_zero : ∀ᶠ (v : height_one_spectrum R) in filter.cofinite,
   ((0 : K_v K v) ∈ R_v K v) := 
 begin
   rw filter.eventually_cofinite,
-  have h_empty : {v : maximal_spectrum R | ¬ ((0 : K_v K v) ∈ R_v K v)} = ∅,
+  have h_empty : {v : height_one_spectrum R | ¬ ((0 : K_v K v) ∈ R_v K v)} = ∅,
   { ext v, rw mem_empty_eq, split; intro hv,
     { rw mem_set_of_eq at hv, apply hv, rw K_v.is_integer, 
-      have h_zero : valued.v (0 : K_v K v) = 0 := valued.v.map_zero',
+      have h_zero : (valued.v (0 : K_v K v) : (with_zero(multiplicative ℤ))) = 0 :=
+      valued.v.map_zero',
       rw h_zero, exact zero_le_one' },
     { exfalso, exact hv }},
   rw h_empty,
@@ -274,11 +273,11 @@ begin
 end
 
 /-- The negative of a finite adèle is a finite adèle. -/
-lemma restr_neg (x : finite_adele_ring' R K)  : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
+lemma restr_neg (x : finite_adele_ring' R K)  : ∀ᶠ (v : height_one_spectrum R) in filter.cofinite,
   (-x.val v ∈ R_v K v) := 
 begin
   cases x with x hx,
-  have h : ∀ (v : maximal_spectrum R), (-x v ∈ R_v K v) ↔ (x v ∈ R_v K v),
+  have h : ∀ (v : height_one_spectrum R), (-x v ∈ R_v K v) ↔ (x v ∈ R_v K v),
   { intro v,
     rw [K_v.is_integer, K_v.is_integer, valuation.map_neg], },
   simpa only [h] using hx,
@@ -288,15 +287,15 @@ end
 def neg' (x : finite_adele_ring' R K) : finite_adele_ring' R K := ⟨-x.val, restr_neg R K x⟩
 
 /-- The product of two finite adèles is a finite adèle. -/
-lemma restr_mul (x y : finite_adele_ring' R K) : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
+lemma restr_mul (x y : finite_adele_ring' R K) : ∀ᶠ (v : height_one_spectrum R) in filter.cofinite,
   ((x.val * y.val) v ∈ R_v K v) := 
 begin
   cases x with x hx,
   cases y with y hy,
   simp only [restricted] at hx hy ⊢,
   rw filter.eventually_cofinite at hx hy ⊢,
-  have h_subset : {v : maximal_spectrum R | ¬ (x * y) v ∈  (R_v K v)} ⊆
-    {v : maximal_spectrum R | ¬ x v ∈ (R_v K v)} ∪ {v : maximal_spectrum R | ¬ y v ∈ (R_v K v)},
+  have h_subset : {v : height_one_spectrum R | ¬ (x * y) v ∈  (R_v K v)} ⊆
+    {v : height_one_spectrum R | ¬ x v ∈ (R_v K v)} ∪ {v : height_one_spectrum R | ¬ y v ∈ (R_v K v)},
   { intros v hv,
     rw [mem_union, mem_set_of_eq, mem_set_of_eq],
     rw mem_set_of_eq at hv,
@@ -307,7 +306,7 @@ begin
     have h_mul : valued.v (x v * y v) = (valued.v (x v)) * (valued.v (y v)) 
     := (valued.v).map_mul' (x v) (y v),
     rw [K_v.is_integer, pi.mul_apply, h_mul, ← mul_one (1 : with_zero (multiplicative ℤ ))],
-    exact @mul_le_one' (valued.Γ₀ (K_v K v)) _ _ 
+    exact @mul_le_one' (with_zero (multiplicative ℤ)) _ _ 
       (ordered_comm_monoid.to_covariant_class_left _) _ _ _ h.left h.right,  }, --TODO : ask
   exact finite.subset (finite.union hx hy) h_subset,
 end
@@ -317,11 +316,11 @@ def mul' (x y : finite_adele_ring' R K) : finite_adele_ring' R K :=
 ⟨x.val * y.val, restr_mul R K x y⟩
 
 /-- The tuple `(1)_v` is a finite adèle. -/
-lemma restr_one : ∀ᶠ (v : maximal_spectrum R) in filter.cofinite,
+lemma restr_one : ∀ᶠ (v : height_one_spectrum R) in filter.cofinite,
   ((1 : K_v K v) ∈ R_v K v) := 
 begin
   rw filter.eventually_cofinite,
-  have h_empty : {v : maximal_spectrum R | ¬ ((1 : K_v K v) ∈ R_v K v)} = ∅,
+  have h_empty : {v : height_one_spectrum R | ¬ ((1 : K_v K v) ∈ R_v K v)} = ∅,
   { ext v, rw mem_empty_eq, split; intro hv,
     { rw mem_set_of_eq at hv, apply hv, rw K_v.is_integer, 
       exact le_of_eq valued.v.map_one' },
@@ -391,7 +390,7 @@ end
 /-- A generating set for the topology on the finite adèle ring of `R` consists on products `∏_v U_v`
 of open sets such that `U_v = R_v` for all but finitely many maximal ideals `v`. -/
 def finite_adele_ring'.generating_set : set (set (finite_adele_ring' R K)) :=
-{ U : set (finite_adele_ring' R K) | ∃ (V : Π (v : maximal_spectrum R), set (K_v K v)),
+{ U : set (finite_adele_ring' R K) | ∃ (V : Π (v : height_one_spectrum R), set (K_v K v)),
   (∀ x : finite_adele_ring' R K, x ∈ U ↔ ∀ v, x.val v ∈ V v) ∧ 
   (∀ v, is_open (V v)) ∧ ∀ᶠ v in filter.cofinite, V v = R_v K v } 
 
@@ -400,9 +399,9 @@ instance : topological_space (finite_adele_ring' R K) := topological_space.gener
   (finite_adele_ring'.generating_set R K)
 
 private lemma set_cond_finite {x y: finite_adele_ring' R K} 
-  {V : Π (v : maximal_spectrum R), set (K_v K v)} 
-  (hV_int: ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, V v = ↑(R_v K v)) :
-  {v : maximal_spectrum R | ¬ (x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v)}.finite := 
+  {V : Π (v : height_one_spectrum R), set (K_v K v)} 
+  (hV_int: ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, V v = ↑(R_v K v)) :
+  {v : height_one_spectrum R | ¬ (x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v)}.finite := 
 begin
   have h_subset := subset.three_union (λ v, x.val v ∈ R_v K v) (λ v, y.val v ∈ R_v K v)
     (λ v, V v = R_v K v),
@@ -410,16 +409,16 @@ begin
 end
 
 private lemma is_open_Vx  {x y: finite_adele_ring' R K}
-  {V : Π (v : maximal_spectrum R), set (K_v K v)}
-  (hV : ∀ v : maximal_spectrum R, is_open 
+  {V : Π (v : height_one_spectrum R), set (K_v K v)}
+  (hV : ∀ v : height_one_spectrum R, is_open 
     ((λ p : ( K_v K v × K_v K v), p.fst + p.snd) ⁻¹' V v))
-  (hV_int: ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, V v = ↑(R_v K v)) 
-  (hxy : ∀ (v : maximal_spectrum R), (x.val v, y.val v) ∈
+  (hV_int: ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, V v = ↑(R_v K v)) 
+  (hxy : ∀ (v : height_one_spectrum R), (x.val v, y.val v) ∈
     (λ p : (K_v K v) × (K_v K v), p.fst + p.snd) ⁻¹' V v ) 
-  {Vx : Π (v : maximal_spectrum R), set (K_v K v)}
+  {Vx : Π (v : height_one_spectrum R), set (K_v K v)}
   (hVx : Vx = λ v, ite ( x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v ) (R_v K v) 
     (classical.some (is_open_prod_iff.mp (hV v) (x.val v) (y.val v) (hxy v)))) :
-  is_open {z : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), z.val v ∈ Vx v} :=
+  is_open {z : finite_adele_ring' R K | ∀ (v : height_one_spectrum R), z.val v ∈ Vx v} :=
 begin
   use Vx,
   refine ⟨λ x, by refl,_,_⟩,
@@ -427,7 +426,7 @@ begin
     { exact K_v.is_open_R_v R K v },
     { exact (classical.some_spec (classical.some_spec (is_open_prod_iff.mp (hV v) 
         (x.val v) (y.val v) (hxy v)))).1 },},
-    { have h_subset : {v : maximal_spectrum R | ¬ Vx v = R_v K v} ⊆ {v : maximal_spectrum R |
+    { have h_subset : {v : height_one_spectrum R | ¬ Vx v = R_v K v} ⊆ {v : height_one_spectrum R |
      ¬ (x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v)},
     { intros v hv h_cond_v,
       simp only [mem_set_of_eq, hVx, if_pos h_cond_v] at hv,
@@ -437,17 +436,17 @@ begin
 end
 
 private lemma is_open_Vy {x y : finite_adele_ring' R K}
-  {V : Π (v : maximal_spectrum R), set (K_v K v)}
-  (hV : ∀ v : maximal_spectrum R, is_open 
+  {V : Π (v : height_one_spectrum R), set (K_v K v)}
+  (hV : ∀ v : height_one_spectrum R, is_open 
     ((λ p : ( K_v K v × K_v K v), p.fst + p.snd) ⁻¹' V v))
-  (hV_int: ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, V v = ↑(R_v K v)) 
-  (hxy : ∀ (v : maximal_spectrum R), (x.val v, y.val v) ∈
+  (hV_int: ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, V v = ↑(R_v K v)) 
+  (hxy : ∀ (v : height_one_spectrum R), (x.val v, y.val v) ∈
     (λ p : (K_v K v) × (K_v K v), p.fst + p.snd) ⁻¹' V v ) 
-  {Vy : Π (v : maximal_spectrum R), set (K_v K v)}
+  {Vy : Π (v : height_one_spectrum R), set (K_v K v)}
   (hVx : Vy = λ v, ite ( x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v ) (R_v K v) 
     (classical.some (classical.some_spec 
       (is_open_prod_iff.mp (hV v) (x.val v) (y.val v) (hxy v))))) :
-  is_open {z : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), z.val v ∈ Vy v} :=
+  is_open {z : finite_adele_ring' R K | ∀ (v : height_one_spectrum R), z.val v ∈ Vy v} :=
 begin
   use Vy,
   refine ⟨λ x, by refl,_,_⟩,
@@ -455,7 +454,7 @@ begin
     { exact K_v.is_open_R_v R K v },
     { exact (classical.some_spec (classical.some_spec (is_open_prod_iff.mp (hV v) 
         (x.val v) (y.val v) (hxy v)))).2.1 },},
-    { have h_subset : {v : maximal_spectrum R | ¬ Vy v = R_v K v} ⊆ {v : maximal_spectrum R |
+    { have h_subset : {v : height_one_spectrum R | ¬ Vy v = R_v K v} ⊆ {v : height_one_spectrum R |
      ¬ (x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v)},
     { intros v hv h_cond_v,
       rw mem_set_of_eq at hv,
@@ -472,23 +471,23 @@ lemma finite_adele_ring'.continuous_add :
 begin
   apply continuous_generated_from,
   rintros U ⟨V, hUV, hV_open, hV_int⟩,
-  have hV : ∀ v : maximal_spectrum R, is_open 
+  have hV : ∀ v : height_one_spectrum R, is_open 
     ((λ p : ( K_v K v × K_v K v), p.fst + p.snd) ⁻¹' V v) := 
   λ v, continuous.is_open_preimage continuous_add (V v) (hV_open v),
   rw is_open_prod_iff,
   intros x y hxy,
-  have hxy' : ∀ (v : maximal_spectrum R), (x.val v, y.val v) ∈
+  have hxy' : ∀ (v : height_one_spectrum R), (x.val v, y.val v) ∈
      (λ p : (K_v K v) × (K_v K v), p.fst + p.snd) ⁻¹' V v := λ v, (hUV _).mp hxy v,
-  set cond := λ v : maximal_spectrum R, x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v 
+  set cond := λ v : height_one_spectrum R, x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v 
     with h_cond,
-  have hS_fin : {v : maximal_spectrum R | ¬ (cond v)}.finite := set_cond_finite R K  hV_int,
-  set Vx : Π (v : maximal_spectrum R), set (K_v K v) := λ v, 
+  have hS_fin : {v : height_one_spectrum R | ¬ (cond v)}.finite := set_cond_finite R K  hV_int,
+  set Vx : Π (v : height_one_spectrum R), set (K_v K v) := λ v, 
   ite (cond v) (R_v K v) (classical.some (is_open_prod_iff.mp (hV v) _ _ (hxy' v))) with hVx,
-  set Vy : Π (v : maximal_spectrum R), set (K_v K v) := λ v, ite (cond v) 
+  set Vy : Π (v : height_one_spectrum R), set (K_v K v) := λ v, ite (cond v) 
     (R_v K v) (classical.some (classical.some_spec (is_open_prod_iff.mp (hV v) _ _ (hxy' v)))) 
     with hVy,
-  use [{z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vx v },
-    {z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vy v }],
+  use [{z : finite_adele_ring' R K | ∀ v : height_one_spectrum R, z.val v ∈ Vx v },
+    {z : finite_adele_ring' R K | ∀ v : height_one_spectrum R, z.val v ∈ Vy v }],
   refine ⟨is_open_Vx R K hV hV_int hxy' hVx, is_open_Vy R K hV hV_int hxy' hVy, _, _,_⟩,
   { rw [mem_set_of_eq],
     intro v,
@@ -526,16 +525,16 @@ begin
 end
 
 private lemma is_open_Vx_mul  {x y: finite_adele_ring' R K}
-  {V : Π (v : maximal_spectrum R), set (K_v K v)}
-  (hV : ∀ v : maximal_spectrum R, is_open 
+  {V : Π (v : height_one_spectrum R), set (K_v K v)}
+  (hV : ∀ v : height_one_spectrum R, is_open 
     ((λ p : ( K_v K v × K_v K v), p.fst * p.snd) ⁻¹' V v))
-  (hV_int: ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, V v = ↑(R_v K v)) 
-  (hxy : ∀ (v : maximal_spectrum R), (x.val v, y.val v) ∈
+  (hV_int: ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, V v = ↑(R_v K v)) 
+  (hxy : ∀ (v : height_one_spectrum R), (x.val v, y.val v) ∈
     (λ p : (K_v K v) × (K_v K v), p.fst * p.snd) ⁻¹' V v ) 
-  {Vx : Π (v : maximal_spectrum R), set (K_v K v)}
+  {Vx : Π (v : height_one_spectrum R), set (K_v K v)}
   (hVx : Vx = λ v, ite ( x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v ) (R_v K v) 
     (classical.some (is_open_prod_iff.mp (hV v) (x.val v) (y.val v) (hxy v)))) :
-  is_open {z : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), z.val v ∈ Vx v} :=
+  is_open {z : finite_adele_ring' R K | ∀ (v : height_one_spectrum R), z.val v ∈ Vx v} :=
 begin
   use Vx,
   refine ⟨λ x, by refl,_,_⟩,
@@ -543,7 +542,7 @@ begin
     { exact K_v.is_open_R_v R K v },
     { exact (classical.some_spec (classical.some_spec (is_open_prod_iff.mp (hV v) 
         (x.val v) (y.val v) (hxy v)))).1 },},
-    { have h_subset : {v : maximal_spectrum R | ¬ Vx v = R_v K v} ⊆ {v : maximal_spectrum R |
+    { have h_subset : {v : height_one_spectrum R | ¬ Vx v = R_v K v} ⊆ {v : height_one_spectrum R |
      ¬ (x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v)},
     { intros v hv h_cond_v,
       simp only [mem_set_of_eq, hVx, if_pos h_cond_v] at hv,
@@ -553,17 +552,17 @@ begin
 end
 
 private lemma is_open_Vy_mul {x y : finite_adele_ring' R K}
-  {V : Π (v : maximal_spectrum R), set (K_v K v)}
-  (hV : ∀ v : maximal_spectrum R, is_open 
+  {V : Π (v : height_one_spectrum R), set (K_v K v)}
+  (hV : ∀ v : height_one_spectrum R, is_open 
     ((λ p : ( K_v K v × K_v K v), p.fst * p.snd) ⁻¹' V v))
-  (hV_int: ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, V v = ↑(R_v K v)) 
-  (hxy : ∀ (v : maximal_spectrum R), (x.val v, y.val v) ∈
+  (hV_int: ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, V v = ↑(R_v K v)) 
+  (hxy : ∀ (v : height_one_spectrum R), (x.val v, y.val v) ∈
     (λ p : (K_v K v) × (K_v K v), p.fst * p.snd) ⁻¹' V v ) 
-  {Vy : Π (v : maximal_spectrum R), set (K_v K v)}
+  {Vy : Π (v : height_one_spectrum R), set (K_v K v)}
   (hVx : Vy = λ v, ite ( x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v ) (R_v K v) 
     (classical.some (classical.some_spec 
       (is_open_prod_iff.mp (hV v) (x.val v) (y.val v) (hxy v))))) :
-  is_open {z : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), z.val v ∈ Vy v} :=
+  is_open {z : finite_adele_ring' R K | ∀ (v : height_one_spectrum R), z.val v ∈ Vy v} :=
 begin
   use Vy,
   refine ⟨λ x, by refl,_,_⟩,
@@ -571,7 +570,7 @@ begin
     { exact K_v.is_open_R_v R K v },
     { exact (classical.some_spec (classical.some_spec (is_open_prod_iff.mp (hV v) 
         (x.val v) (y.val v) (hxy v)))).2.1 },},
-    { have h_subset : {v : maximal_spectrum R | ¬ Vy v = R_v K v} ⊆ {v : maximal_spectrum R |
+    { have h_subset : {v : height_one_spectrum R | ¬ Vy v = R_v K v} ⊆ {v : height_one_spectrum R |
      ¬ (x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v)},
     { intros v hv h_cond_v,
       rw mem_set_of_eq at hv,
@@ -588,23 +587,23 @@ lemma finite_adele_ring'.continuous_mul :
 begin
  apply continuous_generated_from,
   rintros U ⟨V, hUV, hV_open, hV_int⟩,
-  have hV : ∀ v : maximal_spectrum R, is_open 
+  have hV : ∀ v : height_one_spectrum R, is_open 
     ((λ p : ( K_v K v × K_v K v), p.fst * p.snd) ⁻¹' V v) := 
   λ v, continuous.is_open_preimage continuous_mul (V v) (hV_open v),
   rw is_open_prod_iff,
   intros x y hxy,
-  have hxy' : ∀ (v : maximal_spectrum R), (x.val v, y.val v) ∈
+  have hxy' : ∀ (v : height_one_spectrum R), (x.val v, y.val v) ∈
      (λ p : (K_v K v) × (K_v K v), p.fst * p.snd) ⁻¹' V v := λ v, (hUV _).mp hxy v,
-  set cond := λ v : maximal_spectrum R, x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v 
+  set cond := λ v : height_one_spectrum R, x.val v ∈ R_v K v ∧ y.val v ∈ R_v K v ∧ V v = R_v K v 
     with h_cond,
-  have hS_fin : {v : maximal_spectrum R | ¬ (cond v)}.finite := set_cond_finite R K hV_int,
-  set Vx : Π (v : maximal_spectrum R), set (K_v K v) := λ v, 
+  have hS_fin : {v : height_one_spectrum R | ¬ (cond v)}.finite := set_cond_finite R K hV_int,
+  set Vx : Π (v : height_one_spectrum R), set (K_v K v) := λ v, 
   ite (cond v) (R_v K v) (classical.some (is_open_prod_iff.mp (hV v) _ _ (hxy' v))) with hVx,
-  set Vy : Π (v : maximal_spectrum R), set (K_v K v) := λ v, ite (cond v) 
+  set Vy : Π (v : height_one_spectrum R), set (K_v K v) := λ v, ite (cond v) 
     (R_v K v) (classical.some (classical.some_spec (is_open_prod_iff.mp (hV v) _ _ (hxy' v))))
     with hVy,
-  use [{z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vx v },
-    {z : finite_adele_ring' R K | ∀ v : maximal_spectrum R, z.val v ∈ Vy v }],
+  use [{z : finite_adele_ring' R K | ∀ v : height_one_spectrum R, z.val v ∈ Vx v },
+    {z : finite_adele_ring' R K | ∀ v : height_one_spectrum R, z.val v ∈ Vy v }],
   refine ⟨is_open_Vx_mul R K hV hV_int hxy' hVx, is_open_Vy_mul R K hV hV_int hxy' hVy, _, _,_⟩,
   { rw [mem_set_of_eq],
     intro v,
@@ -649,27 +648,31 @@ instance : topological_ring (finite_adele_ring' R K) :=
 
 /-- The product `∏_v R_v` is an open subset of the finite adèle ring of `R`. -/
 lemma finite_adele_ring'.is_open_integer_subring :
-  is_open {x : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), x.val v ∈ R_v K v} :=
+  is_open {x : finite_adele_ring' R K | ∀ (v : height_one_spectrum R), x.val v ∈ R_v K v} :=
 begin  
   apply topological_space.generate_open.basic,
   rw finite_adele_ring'.generating_set,
   use λ v, R_v K v,
-  refine ⟨λ v, by refl, λ v, K_v.is_open_R_v R K v,_⟩,
+  refine ⟨_, _,_⟩,
+  { intro v, refl, },
+  { intro v, exact K_v.is_open_R_v R K v },
   { rw filter.eventually_cofinite,
+    --simp,
+    --squeeze_simp,
     simp_rw [eq_self_iff_true, not_true, set_of_false, finite_empty] },
 end
 
 lemma finite_adele_ring'.is_open_integer_subring_opp : is_open
   {x : (finite_adele_ring' R K)ᵐᵒᵖ | 
-    ∀ (v : maximal_spectrum R),(mul_opposite.unop x).val v ∈ R_v K v} :=
+    ∀ (v : height_one_spectrum R),(mul_opposite.unop x).val v ∈ R_v K v} :=
 begin
-  use {x : finite_adele_ring' R K | ∀ (v : maximal_spectrum R), x.val v ∈ R_v K v},
+  use {x : finite_adele_ring' R K | ∀ (v : height_one_spectrum R), x.val v ∈ R_v K v},
   use finite_adele_ring'.is_open_integer_subring R K,
   refl,
 end
 
 instance : comm_ring { x : (K_hat R K) // 
-  ∀ᶠ (v : maximal_spectrum R) in filter.cofinite, (x v ∈ R_v K v)  } := 
+  ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, (x v ∈ R_v K v)  } := 
 finite_adele_ring'.comm_ring R K
 
 lemma mul_apply (x y : finite_adele_ring' R K) :  
@@ -684,29 +687,31 @@ x.val * y.val = (x * y).val := rfl
 
 /-- For any `x ∈ K`, the tuple `(x)_v` is a finite adèle. -/
 lemma inj_K_image (x : K) : 
-  set.finite({ v : maximal_spectrum R | ¬ (coe : K → (K_v K v)) x ∈ (R_v K v)}) := 
+  set.finite({ v : height_one_spectrum R | ¬ (coe : K → (K_v K v)) x ∈ (R_v K v)}) := 
 begin
-  set supp := { v : maximal_spectrum R | ¬ (coe : K → (K_v K v)) x ∈ (R_v K v)} with h_supp,
+  set supp := { v : height_one_spectrum R | ¬ (coe : K → (K_v K v)) x ∈ (R_v K v)} with h_supp,
   obtain ⟨r, ⟨d, hd⟩, hx⟩ := is_localization.mk'_surjective (non_zero_divisors R) x,
   have hd_ne_zero : ideal.span{d} ≠ (0 : ideal R),
   { rw [ideal.zero_eq_bot, ne.def, ideal.span_singleton_eq_bot],
     apply non_zero_divisors.ne_zero hd, },
   obtain ⟨f, h_irred, h_assoc⟩:= wf_dvd_monoid.exists_factors (ideal.span{d}) hd_ne_zero,
-  have hsubset : supp ⊆ { v : maximal_spectrum R | v.val.val ∣ ideal.span({d})},
+  have hsubset : supp ⊆ { v : height_one_spectrum R | v.as_ideal ∣ ideal.span({d})},
   { rw h_supp,
     intros v hv,
     rw mem_set_of_eq at hv ⊢,
-    have h_val : valued.v ((coe : K → (K_v K v)) x) = @valued.extension K _ (v_valued_K v) x := rfl,
+    have h_val : valued.v ((coe : K → (K_v K v)) x) = @valued.extension K _ _ _ (v_valued_K v) x :=
+    rfl,
     rw [K_v.is_integer, h_val, valued.extension_extends _, v_valued_K.def, 
-      maximal_spectrum.valuation_def] at hv,
-    let sx : non_zero_divisors R := (classical.some (maximal_spectrum.valuation_def._proof_2 x)),
-    have h_loc : is_localization.mk' K (classical.some (maximal_spectrum.valuation_def._proof_1 x)) sx
-       = is_localization.mk' K r ⟨d, hd⟩,
-    { rw hx, exact (classical.some_spec (maximal_spectrum.valuation_def._proof_2 x)) },
+      height_one_spectrum.valuation_def] at hv,
+    let sx : non_zero_divisors R := (classical.some (height_one_spectrum.valuation_def._proof_2 x)),
+    have h_loc : is_localization.mk' K 
+      (classical.some (height_one_spectrum.valuation_def._proof_1 x)) sx =
+      is_localization.mk' K r ⟨d, hd⟩,
+    { rw hx, exact (classical.some_spec (height_one_spectrum.valuation_def._proof_2 x)) },
       dsimp only at hv,
-      rw ← maximal_spectrum.int_valuation_lt_one_iff_dvd,
+      rw ← height_one_spectrum.int_valuation_lt_one_iff_dvd,
       by_contradiction h_one_le,
-      rw [maximal_spectrum.valuation_well_defined K v h_loc, subtype.coe_mk,
+      rw [height_one_spectrum.valuation_well_defined K v h_loc, subtype.coe_mk,
         (le_antisymm (v.int_valuation_le_one d) (not_lt.mp h_one_le)), div_one] at hv,
       exact hv (v.int_valuation_le_one r) },
   exact finite.subset (finite_factors d hd_ne_zero) hsubset,
@@ -714,10 +719,10 @@ end
 
 /-- The diagonal inclusion `k ↦ (k)_v` of `K` into the finite adèle ring of `R`. -/
 @[simps coe] def inj_K : K → finite_adele_ring' R K := 
-λ x, ⟨(λ v : maximal_spectrum R, (coe : K → (K_v K v)) x), inj_K_image R K x⟩
+λ x, ⟨(λ v : height_one_spectrum R, (coe : K → (K_v K v)) x), inj_K_image R K x⟩
 
 lemma inj_K_apply (k : K) : 
-  inj_K R K  k = ⟨(λ v : maximal_spectrum R, (coe : K → (K_v K v)) k), inj_K_image R K k⟩ := rfl
+  inj_K R K  k = ⟨(λ v : height_one_spectrum R, (coe : K → (K_v K v)) k), inj_K_image R K k⟩ := rfl
 
 @[simp] lemma inj_K.map_zero : inj_K R K 0 = 0 := by { rw inj_K, ext v, rw [subtype.coe_mk], refl }
 
@@ -752,9 +757,9 @@ def inj_K.ring_hom : ring_hom K (finite_adele_ring' R K)  :=
 
 lemma inj_K.ring_hom_apply {k : K} : inj_K.ring_hom R K k = inj_K R K k := rfl
 
-/-- If `maximal_spectrum R` is nonempty, then `inj_K` is injective. Note that the nonemptiness
+/-- If `height_one_spectrum R` is nonempty, then `inj_K` is injective. Note that the nonemptiness
 hypothesis is satisfied for every Dedekind domain that is not a field. -/
-lemma inj_K.injective [inh : nonempty (maximal_spectrum R)] : injective (inj_K.ring_hom R K) :=
+lemma inj_K.injective [inh : nonempty (height_one_spectrum R)] : injective (inj_K.ring_hom R K) :=
 begin
   rw ring_hom.injective_iff,
   intros x hx,
@@ -762,7 +767,7 @@ begin
   dsimp only at hx,
   unfold_projs at hx,
   rw [subtype.mk_eq_mk] at hx,
-  let v : maximal_spectrum R := (classical.inhabited_of_nonempty inh).default,
+  let v : height_one_spectrum R := (classical.inhabited_of_nonempty inh).default,
   have hv := congr_fun hx v,
   dsimp only at hv,
   have h_inj : function.injective (coe : K → (K_v K v)) :=
@@ -802,7 +807,7 @@ lemma hom_prod_diag_unit : ∀ x : (diag_R R K), is_unit (hom_prod R K x) :=
 begin
   rintro ⟨x, r, hr, hrx⟩,
   rw [is_unit_iff_exists_inv, subtype.coe_mk],
-  use (λ v : maximal_spectrum R, 1/(x v : K_v K v)),
+  use (λ v : height_one_spectrum R, 1/(x v : K_v K v)),
   ext v,
   rw [hom_prod, ring_hom.coe_mk, pi.mul_apply, pi.one_apply, ← mul_div_assoc, mul_one, 
   div_self],
@@ -826,7 +831,7 @@ is_localization.lift (hom_prod_diag_unit R K) x
 
 /-- The image of `map_to_K_hat R K` is contained in `finite_adele_ring' R K`. -/
 lemma restricted_image (x : finite_adele_ring R K) : 
-  set.finite({ v : maximal_spectrum R | ¬ (map_to_K_hat R K x v) ∈ (R_v K v)}) :=
+  set.finite({ v : height_one_spectrum R | ¬ (map_to_K_hat R K x v) ∈ (R_v K v)}) :=
 begin
   obtain ⟨r, d', hx⟩ := is_localization.mk'_surjective (diag_R R K) x,
   obtain ⟨d, hd_ne_zero, hd_inj⟩ := d'.property,
@@ -834,8 +839,8 @@ begin
   { rw [ideal.zero_eq_bot, ne.def, ideal.span_singleton_eq_bot],
     exact hd_ne_zero, },
   obtain ⟨f, h_irred, h_assoc⟩:= wf_dvd_monoid.exists_factors (ideal.span{d}) hd,
-  have hsubset : { v : maximal_spectrum R | ¬ (map_to_K_hat R K x v) ∈ (R_v K v)} ⊆ 
-    { v : maximal_spectrum R | v.val.val ∣ ideal.span({d})},
+  have hsubset : { v : height_one_spectrum R | ¬ (map_to_K_hat R K x v) ∈ (R_v K v)} ⊆ 
+    { v : height_one_spectrum R | v.as_ideal ∣ ideal.span({d})},
   { intros v hv,
     rw mem_set_of_eq at hv ⊢,
     rw [map_to_K_hat, ← hx, is_localization.lift_mk', pi.mul_apply] at hv,
@@ -850,7 +855,8 @@ begin
           pi.one_apply]},
       have h_val : (valued.v (((is_unit.lift_right ((hom_prod R K).to_monoid_hom.mrestrict 
         (diag_R R K)) (hom_prod_diag_unit R K)) d').inv v))*
-        (valued.v (((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) d' v)) = 1,
+        ((valued.v (((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) d' v)) :
+          with_zero(multiplicative ℤ)) = 1,
       { rw [← valuation.map_mul, h_inv, valuation.map_one], },
       have h_coe : (((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) d') v =
         ((d' : R_hat R K) v) := rfl,
@@ -861,7 +867,7 @@ begin
         div_le_iff₀ (right_ne_zero_of_mul_eq_one h_val), one_mul, not_le, h_coe,
         ← subtype.val_eq_coe, ← subtype.val_eq_coe, hd', valued_K_v.def, valued.extension_extends,
         v_valued_K.def] at hv,
-      have h_val_r : valued.v ((hom_prod R K) r v) ≤ 1,
+      have h_val_r : (valued.v ((hom_prod R K) r v) : with_zero (multiplicative ℤ)) ≤ 1,
       { rw [hom_prod, ring_hom.coe_mk, ← subtype.val_eq_coe, ← K_v.is_integer],
         exact (r v).property, },
       have h_val_d : v.valuation_def (algebra_map R K d)  < 1 := lt_of_lt_of_le hv h_val_r,

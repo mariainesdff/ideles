@@ -30,7 +30,7 @@ adèle ring, number field, function field
 
 noncomputable theory
 
-open function
+open function is_dedekind_domain
 
 open_locale tensor_product
 
@@ -125,7 +125,7 @@ begin
 end
 
 /-- There exists a nonzero prime ideal of the ring of integers of a number field. -/
-instance : inhabited (maximal_spectrum (ring_of_integers K)) := 
+instance : inhabited (height_one_spectrum (ring_of_integers K)) := 
 begin
   set M := classical.some(ideal.exists_maximal (ring_of_integers K)) with hM_def,
   set hM := classical.some_spec(ideal.exists_maximal (ring_of_integers K)),
@@ -144,7 +144,7 @@ lemma inj_K_f.injective : injective (inj_K_f K) := inj_K.injective _ _
 as a subring of `A_K_f K`. -/
 def inj_K_f.ring_hom : ring_hom K (A_K_f K) := inj_K.ring_hom (ring_of_integers K) K
 
-lemma inj_K_f.ring_hom.v_comp (v : maximal_spectrum (ring_of_integers K)) (k : K) :
+lemma inj_K_f.ring_hom.v_comp (v : height_one_spectrum (ring_of_integers K)) (k : K) :
   ((inj_K_f.ring_hom K) k).val v = (coe : K → (K_v K v)) k := rfl
 
 /-- The map from `K` to `A_K K` sending `k ∈ K ↦ ((k)_v, 1 ⊗ k)`. -/

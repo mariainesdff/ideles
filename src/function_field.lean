@@ -23,6 +23,7 @@ function field, valuation
 noncomputable theory
 
 open_locale classical
+open multiplicative
 
 variables (k : Type) [field k]
 /-- The valuation at infinity is the nonarchimedean valuation on `k(t)` with uniformizer `1/t`. -/
@@ -97,7 +98,7 @@ begin
 end
 
 variable (k)
-lemma infty_valuation.map_add' (x y : ratfunc k) :
+lemma infty_valuation.map_add_le_max' (x y : ratfunc k) :
   infty_valuation_def k (x + y) ≤ max (infty_valuation_def k x) (infty_valuation_def k y) :=
 begin
   by_cases hx : x = 0,
@@ -127,22 +128,20 @@ def infty_valuation  : valuation (ratfunc k) (with_zero (multiplicative ℤ)) :=
   map_zero' := infty_valuation.map_zero' k,
   map_one'  := infty_valuation.map_one' k,
   map_mul'  := infty_valuation.map_mul' k,
-  map_add'  := infty_valuation.map_add' k }
+  map_add_le_max'  := infty_valuation.map_add_le_max' k }
 
 /-- The valued field `k(t)` with the valuation at infinity. -/
-def infty_valued_kt : valued (ratfunc k) := 
-{ Γ₀  := (with_zero (multiplicative ℤ)),
-  grp := infer_instance,
-  v   := infty_valuation k }
+def infty_valued_kt : valued (ratfunc k) (with_zero (multiplicative ℤ)) := 
+⟨infty_valuation k⟩
 
 lemma infty_valued_kt.def {x : ratfunc k} :
-  @valued.v (ratfunc k) _ (infty_valued_kt k) (x) = infty_valuation_def k x := rfl
+  @valued.v (ratfunc k) _ _ _ (infty_valued_kt k) (x) = infty_valuation_def k x := rfl
 
 /-- The topology structure on `k(t)` induced by the valuation at infinity. -/
 def tsq' : topological_space (ratfunc k) :=
-@valued.topological_space (ratfunc k) _ (infty_valued_kt k)
+@valued.topological_space (ratfunc k) _ _ _ (infty_valued_kt k)
 lemma tdrq' : @topological_division_ring (ratfunc k) _ (tsq' k) := 
-@valued.topological_division_ring (ratfunc k) _ (infty_valued_kt k)
+@valued.topological_division_ring (ratfunc k) _ _ _ (infty_valued_kt k)
 lemma trq' : @topological_ring (ratfunc k) (tsq' k) _ := infer_instance
 lemma tgq' : @topological_add_group (ratfunc k) (tsq' k) _ := infer_instance
 /-- The uniform structure on `k(t)` induced by the valuation at infinity. -/
@@ -151,9 +150,9 @@ def usq' : uniform_space (ratfunc k) :=
 lemma ugq' : @uniform_add_group (ratfunc k) (usq' k) _ := 
 @topological_add_group_is_uniform (ratfunc k) _ (tsq' k) (tgq' k)
 lemma cfq' : @completable_top_field (ratfunc k) _ (usq' k) :=
-@valued.completable (ratfunc k) _ (infty_valued_kt k)
+@valued.completable (ratfunc k) _ _ _ (infty_valued_kt k)
 lemma ssq' : @separated_space (ratfunc k) (usq' k) :=
-@valued_ring.separated (ratfunc k) _ (infty_valued_kt k)
+@valued_ring.separated (ratfunc k) _ _ _ (infty_valued_kt k)
 
 /-- The completion `k((t⁻¹))`  of `k(t)` with respect to the valuation at infinity. -/
 def kt_infty := @uniform_space.completion (ratfunc k) (usq' k)
@@ -161,18 +160,16 @@ instance : field (kt_infty k) :=
 @field_completion (ratfunc k) _ (usq' k) (tdrq' k) _ (ugq' k)
 
 /-- The valuation at infinity on `k(t)` extends to a valuation on `kt_infty`. -/
-instance valued_kt_infty : valued (kt_infty k) := 
-{ Γ₀  := with_zero (multiplicative ℤ),
-  grp := infer_instance,
-  v   := @valued.extension_valuation (ratfunc k) _ (infty_valued_kt k) }
+instance valued_kt_infty : valued (kt_infty k) (with_zero (multiplicative ℤ)):= 
+⟨@valued.extension_valuation (ratfunc k) _ _ _ (infty_valued_kt k)⟩
 
 lemma valued_kt_infty.def {x : kt_infty k} :
-  valued.v (x) = @valued.extension (ratfunc k) _ (infty_valued_kt k) x := rfl
+  valued.v (x) = @valued.extension (ratfunc k) _ _ _ (infty_valued_kt k) x := rfl
 
 instance tsq : topological_space (kt_infty k) :=
-@valued.topological_space (kt_infty k) _ (valued_kt_infty k)
+@valued.topological_space (kt_infty k) _ _ _ (valued_kt_infty k)
 instance tdrq : @topological_division_ring (kt_infty k) _ (tsq k) := 
-@valued.topological_division_ring (kt_infty k) _ (valued_kt_infty k)
+@valued.topological_division_ring (kt_infty k) _ _ _(valued_kt_infty k)
 instance trq : @topological_ring (kt_infty k) (tsq k) _ := (tdrq k).to_topological_ring
 instance tgq : @topological_add_group (kt_infty k) (tsq k) _ := 
 @topological_ring.to_topological_add_group (kt_infty k) _ (tsq k) (trq k)
