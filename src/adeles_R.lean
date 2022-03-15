@@ -198,17 +198,17 @@ lemma inj_R.map_mul (x y : R): inj_R R K (x*y) = (inj_R R K x) * (inj_R R K y) :
 by { rw inj_R, ext v, apply congr_arg _ (inj_R_v.map_mul R K v x y), }
 
 /-- The inclusion of `R_hat` in `K_hat` is a homomorphism of additive monoids. -/
-def group_hom_prod : add_monoid_hom (R_hat R K) (K_hat R K) := 
-{ to_fun    := (λ x v, (x v)),
+def group_hom_prod : add_monoid_hom (R_hat R K) (K_hat R K) := force_noncomputable --TODO: ask
+{ to_fun    := λ x v, x v,
   map_zero' := rfl,
   map_add'  := λ x y, by { ext v, rw [pi.add_apply, pi.add_apply, subring.coe_add], }}
 
 /-- The inclusion of `R_hat` in `K_hat` is a ring homomorphism. -/
-def hom_prod : ring_hom (R_hat R K) (K_hat R K)  := 
-{ to_fun   := (λ x v, x v),
+def hom_prod : ring_hom (R_hat R K) (K_hat R K)  := force_noncomputable --TODO: ask
+{ to_fun   := λ x v, x v,
   map_one' := rfl,
   map_mul' := λ x y, by {ext p, rw [pi.mul_apply, pi.mul_apply, subring.coe_mul], },
-  ..group_hom_prod R K }
+  ..group_hom_prod R K, }
 
 /-! ### The finite adèle ring of a Dedekind domain
 We define the finite adèle ring of `R` as the restricted product over all maximal ideals `v` of `R`
@@ -782,7 +782,7 @@ to `finite_adele_ring' R`.
 TODO: show that this homomorphism is in fact an isomorphism of topological rings. -/
 
 /-- `R∖{0}` is a submonoid of `R_hat R K`, via the inclusion `r ↦ (r)_v`. -/
-def diag_R : submonoid (R_hat R K) := 
+def diag_R : submonoid (R_hat R K) := force_noncomputable
 { carrier  := (inj_R R K) '' set.compl {0},
   one_mem' :=  ⟨1, set.mem_compl_singleton_iff.mpr one_ne_zero, inj_R.map_one R K⟩,
   mul_mem' := 
@@ -809,8 +809,8 @@ begin
   rw [is_unit_iff_exists_inv, subtype.coe_mk],
   use (λ v : height_one_spectrum R, 1/(x v : K_v K v)),
   ext v,
-  rw [hom_prod, ring_hom.coe_mk, pi.mul_apply, pi.one_apply, ← mul_div_assoc, mul_one, 
-  div_self],
+  rw [hom_prod, force_noncomputable_def, ring_hom.coe_mk, pi.mul_apply, pi.one_apply, 
+  ← mul_div_assoc, mul_one, div_self],
   rw  [ne.def, subring.coe_eq_zero_iff, ← hrx, inj_R],
   simp only [inj_R_v], 
   have h : (0 : K_v K v) ∈ R_v K v,
@@ -868,7 +868,8 @@ begin
         ← subtype.val_eq_coe, ← subtype.val_eq_coe, hd', valued_K_v.def, valued.extension_extends,
         v_valued_K.def] at hv,
       have h_val_r : (valued.v ((hom_prod R K) r v) : with_zero (multiplicative ℤ)) ≤ 1,
-      { rw [hom_prod, ring_hom.coe_mk, ← subtype.val_eq_coe, ← K_v.is_integer],
+      { rw [hom_prod, force_noncomputable_def, ring_hom.coe_mk, ← subtype.val_eq_coe,
+          ← K_v.is_integer],
         exact (r v).property, },
       have h_val_d : v.valuation_def (algebra_map R K d)  < 1 := lt_of_lt_of_le hv h_val_r,
       exact (v.valuation_lt_one_iff_dvd d).mp h_val_d, }},
