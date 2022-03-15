@@ -12,7 +12,7 @@ This formalization is described in the paper "Formalizing the ring of adèles of
 
 This project is currently in the process of being integrated into `mathlib`. Please see below where to find the main contributions (this list will be updated when new features are added to `mathlib`). Other small contributions developing background results are scattered through the library.
 - `height_one_spectrum` : [src/ring_theory/dedekind_domain/ideal.lean](https://leanprover-community.github.io/mathlib_docs/ring_theory/dedekind_domain/ideal.html#height-one-spectrum-of-a-dedekind-domain)
-- `function_field.infty_valuation` : [src//number_theory/function_field.lean](https://leanprover-community.github.io/mathlib_docs/number_theory/function_field.html#function_field.infty_valuation_def)
+- `function_field.infty_valuation` : [src/number_theory/function_field.lean](https://leanprover-community.github.io/mathlib_docs/number_theory/function_field.html#function_field.infty_valuation_def)
 
 ## Installation instructions
 The formalization has been developed over Lean 3 and its matemathical library mathlib. For detailed instructions to install Lean, mathlib, and supporting tools, visit the [Lean Community website](https://leanprover-community.github.io/get_started.html).
