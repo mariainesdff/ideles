@@ -40,16 +40,12 @@ def tsq' : topological_space (ratfunc k) :=
 lemma tdrq' : @topological_division_ring (ratfunc k) _ (tsq' k) := 
 @valued.topological_division_ring (ratfunc k) _ _ _ (infty_valued_kt k)
 
-lemma trq' : @topological_ring (ratfunc k) (tsq' k) _ := infer_instance
-
-lemma tgq' : @topological_add_group (ratfunc k) (tsq' k) _ := infer_instance
-
 /-- The uniform structure on `k(t)` induced by the valuation at infinity. -/
 def usq' : uniform_space (ratfunc k) := 
-@topological_add_group.to_uniform_space (ratfunc k) _ (tsq' k) (tgq' k)
+@topological_add_group.to_uniform_space (ratfunc k) _ (tsq' k) _
 
 lemma ugq' : @uniform_add_group (ratfunc k) (usq' k) _ := 
-@topological_add_group_is_uniform (ratfunc k) _ (tsq' k) (tgq' k)
+@topological_add_group_is_uniform (ratfunc k) _ (tsq' k) _
 
 lemma cfq' : @completable_top_field (ratfunc k) _ (usq' k) :=
 @valued.completable (ratfunc k) _ _ _ (infty_valued_kt k)
