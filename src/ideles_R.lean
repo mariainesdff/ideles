@@ -619,16 +619,20 @@ begin
     { exact one_ne_zero }}
 end
 
+set_option pp.coercions true
 /-- `map_to_fractional_ideals` is continuous, where the codomain is given the discrete topology. -/
 lemma map_to_fractional_ideals.continuous : continuous (map_to_fractional_ideals R K) := 
 begin
   apply uniform_continuous.continuous,
   rw uniform_group.uniform_continuous_iff_open_ker,
+  set foo := @monoid_hom.monoid_hom_class R K _ _,
+  
   have h_ker : ((map_to_fractional_ideals R K).ker : set (finite_idele_group' R K)) = 
     { x : units(finite_adele_ring' R K) |
        ∀ v : height_one_spectrum R, finite_idele.to_add_valuations R K x v = 0 },
   { ext x,
     exact map_to_fractional_ideals.mem_kernel_iff x, },
+  change is_open ↑((map_to_fractional_ideals R K).ker),
   rw h_ker,
   use {p : (finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ) | 
     ∀ v : height_one_spectrum R, (p.1.val v) ∈ R_v K v ∧ 

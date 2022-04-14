@@ -51,6 +51,7 @@ instance : ring (fin n → ℝ) := pi.ring
 instance : topological_space (fin n → ℝ) := Pi.topological_space
 instance : has_continuous_add (fin n → ℝ) := pi.has_continuous_add'
 instance : has_continuous_mul (fin n → ℝ) := pi.has_continuous_mul'
+instance : topological_semiring (fin n → ℝ) := topological_semiring.mk
 instance : topological_ring (fin n → ℝ) := topological_ring.mk
 
 open_locale big_operators
@@ -170,15 +171,28 @@ We define the (finite) adèle ring of a function field `F`, with its topological
 variables (k F : Type) [field k] [field F] [algebra (polynomial k) F] [algebra (ratfunc k) F] 
   [function_field k F] 
   [is_scalar_tower (polynomial k) (ratfunc k) F] 
-  [is_separable (ratfunc k) F]
+  [is_separable (ratfunc k) F] [decidable_eq (ratfunc k)] 
 
-instance : algebra (ratfunc k) (kt_infty k) := ring_hom.to_algebra
-  (@uniform_space.completion.coe_ring_hom (ratfunc k) _ (usq' k) (trq' k) (ugq' k))
+lemma function_field.infty_valued_Fqt.topological_ring :
+  @topological_ring (ratfunc k) (function_field.infty_valued_Fqt.topological_space k) _ := 
+infer_instance
+
+lemma function_field.infty_valued_Fqt.topological_add_group :
+  @topological_add_group (ratfunc k) (function_field.infty_valued_Fqt.topological_space k) _ :=
+infer_instance
+
+instance : algebra (ratfunc k) (Fqt_infty k) := 
+begin
+  apply ring_hom.to_algebra (@uniform_space.completion.coe_ring_hom (ratfunc k) _
+    (function_field.infty_valued_Fqt.uniform_space k)
+    (function_field.infty_valued_Fqt.topological_ring k)
+    (function_field.infty_valued_Fqt.uniform_add_group k)),
+end 
 
 /-- The finite adèle ring of `F`.-/
 def A_F_f := finite_adele_ring' (ring_of_integers k F) F
 /-- The finite adèle ring of `F`.-/
-def A_F := (A_F_f k F) × ((kt_infty k) ⊗[ratfunc k] F)
+def A_F := (A_F_f k F) × ((Fqt_infty k) ⊗[ratfunc k] F)
 
 open_locale big_operators
 
@@ -188,9 +202,9 @@ def linear_equiv.kt_basis :
 linear_equiv.symm (basis.equiv_fun (finite_dimensional.fin_basis (ratfunc k) F))
 
 /-- The natural linear map from `k((t⁻¹))^n` to `k((t⁻¹)) ⊗[k(t)] k(t)^n`. -/
-def linear_map.kt_inftyn_to_kt_infty_tensor_ktn (n : ℕ):
-  (fin n → (kt_infty k)) →ₗ[(kt_infty k)] 
-    ((kt_infty k) ⊗[(ratfunc k)] (fin n→ (ratfunc k))) := 
+def linear_map.Fqt_inftyn_to_Fqt_infty_tensor_ktn (n : ℕ):
+  (fin n → (Fqt_infty k)) →ₗ[(Fqt_infty k)] 
+    ((Fqt_infty k) ⊗[(ratfunc k)] (fin n→ (ratfunc k))) := 
 { to_fun    := λ x, ∑ (m : fin n), tensor_product.mk _ _ _ (x m) 
     (λ m : (fin n), (1 : (ratfunc k))),
   map_add'  := λ x y, by simp only [map_add, tensor_product.mk_apply, pi.add_apply,
@@ -201,15 +215,15 @@ end, }
 
 /-- The linear map from `k((t⁻¹)) ⊗[k(t)] k(t)^(dim_(F_q(t))(F))` to `k((t⁻¹)) ⊗[k(t)] F`
 obtained as a base change of `linear_equiv.kt_basis`. -/
-def linear_map.base_change : ((kt_infty k) ⊗[ratfunc k]
-  (fin (finite_dimensional.finrank (ratfunc k) F) → ratfunc k)) →ₗ[kt_infty k]
-    ((kt_infty k) ⊗[ratfunc k] F) :=
-linear_map.base_change (kt_infty k) (linear_equiv.kt_basis k F).to_linear_map
+def linear_map.base_change : ((Fqt_infty k) ⊗[ratfunc k]
+  (fin (finite_dimensional.finrank (ratfunc k) F) → ratfunc k)) →ₗ[Fqt_infty k]
+    ((Fqt_infty k) ⊗[ratfunc k] F) :=
+linear_map.base_change (Fqt_infty k) (linear_equiv.kt_basis k F).to_linear_map
 
 /-- The resulting linear map from `k((t⁻¹))^(dim_(F_q(t))(F))` to `k((t⁻¹)) ⊗[k(t)] F`. -/
-def linear_map.kt_inftyn_to_kt_infty_tensor_F : (fin (finite_dimensional.finrank (ratfunc k) F) →
-  (kt_infty k)) →ₗ[kt_infty k] ((kt_infty k) ⊗[ratfunc k] F) := 
-linear_map.comp (linear_map.base_change k F) (linear_map.kt_inftyn_to_kt_infty_tensor_ktn k _)
+def linear_map.Fqt_inftyn_to_Fqt_infty_tensor_F : (fin (finite_dimensional.finrank (ratfunc k) F) →
+  (Fqt_infty k)) →ₗ[Fqt_infty k] ((Fqt_infty k) ⊗[ratfunc k] F) := 
+linear_map.comp (linear_map.base_change k F) (linear_map.Fqt_inftyn_to_Fqt_infty_tensor_ktn k _)
 
 instance : comm_ring (A_F_f k F) := finite_adele_ring'.comm_ring (ring_of_integers k F) F
 instance : comm_ring (A_F k F) := prod.comm_ring
@@ -218,11 +232,11 @@ finite_adele_ring'.topological_space (ring_of_integers k F) F
 instance : topological_ring (A_F_f k F) := 
 finite_adele_ring'.topological_ring (ring_of_integers k F) F
 /-- The topological ring structure on the infinite places of `F`. -/
-def infinite_adeles.ring_topology : ring_topology ((kt_infty k) ⊗[ratfunc k] F) :=
-ring_topology.coinduced (linear_map.kt_inftyn_to_kt_infty_tensor_F k F)
-instance : topological_space ((kt_infty k) ⊗[ratfunc k] F) :=
+def infinite_adeles.ring_topology : ring_topology ((Fqt_infty k) ⊗[ratfunc k] F) :=
+ring_topology.coinduced (linear_map.Fqt_inftyn_to_Fqt_infty_tensor_F k F)
+instance : topological_space ((Fqt_infty k) ⊗[ratfunc k] F) :=
 (infinite_adeles.ring_topology k F).to_topological_space
-instance : topological_ring ((kt_infty k) ⊗[ratfunc k] F) :=
+instance : topological_ring ((Fqt_infty k) ⊗[ratfunc k] F) :=
 (infinite_adeles.ring_topology k F).to_topological_ring
 instance : topological_space (A_F k F) := prod.topological_space
 instance : topological_ring (A_F k F) := prod.topological_ring

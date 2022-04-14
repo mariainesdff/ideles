@@ -73,13 +73,6 @@ topological_group_is_uniform
 
 variables [is_fraction_ring R K]
 
-lemma fractional_ideal.coe_ideal_eq_one_iff {I : ideal R} :
-  (I : fractional_ideal (non_zero_divisors R) K) = 1 ↔ I = 1 :=
-begin
-  rw [← fractional_ideal.coe_ideal_top, ideal.one_eq_top],
-  exact injective.eq_iff fractional_ideal.coe_ideal_injective,
-end
-
 /-- If `I` is a nonzero fractional ideal, `a ∈ R`, and `J` is an ideal of `R` such that
 `I = a⁻¹J`, then `J` is nonzero. -/
 lemma fractional_ideal.ideal_factor_ne_zero {I : fractional_ideal (non_zero_divisors R) K}

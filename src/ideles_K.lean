@@ -545,7 +545,7 @@ We define the (finite) idèle group of a function field `F`, with its topologica
 
 variables (k F : Type) [field k] [field F] [algebra (polynomial k) F] [algebra (ratfunc k) F] 
   [function_field k F] [is_scalar_tower (polynomial k) (ratfunc k) F] 
-  [is_separable (ratfunc k) F]
+  [is_separable (ratfunc k) F] [decidable_eq (ratfunc k)]
 
 /-- The finite idèle group of the function field `F`. -/
 def I_F_f := units (A_F_f k F)

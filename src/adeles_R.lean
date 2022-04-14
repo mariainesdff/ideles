@@ -641,10 +641,13 @@ begin
          (is_open_prod_iff.mp (hV v) _ _ (hxy' v)))).2.2.2.2 hp'}, }}}
 end
 
+instance : has_continuous_mul (finite_adele_ring' R K) := ⟨finite_adele_ring'.continuous_mul R K⟩
+
 /-- The finite adèle ring of `R` is a topological ring. -/
 instance : topological_ring (finite_adele_ring' R K) := 
 { continuous_add := finite_adele_ring'.continuous_add R K,
-  continuous_mul := finite_adele_ring'.continuous_mul R K }
+  continuous_neg := topological_semiring.has_continuous_neg_of_mul.continuous_neg,
+  ..finite_adele_ring'.has_continuous_mul R K }
 
 /-- The product `∏_v R_v` is an open subset of the finite adèle ring of `R`. -/
 lemma finite_adele_ring'.is_open_integer_subring :
