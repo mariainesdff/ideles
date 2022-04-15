@@ -146,7 +146,7 @@ as a subring of `A_K_f K`. -/
 def inj_K_f.ring_hom : ring_hom K (A_K_f K) := inj_K.ring_hom (ring_of_integers K) K
 
 lemma inj_K_f.ring_hom.v_comp (v : height_one_spectrum (ring_of_integers K)) (k : K) :
-  ((inj_K_f.ring_hom K) k).val v = (coe : K → (K_v K v)) k := rfl
+  ((inj_K_f.ring_hom K) k).val v = (coe : K → (v.adic_completion K)) k := rfl
 
 /-- The map from `K` to `A_K K` sending `k ∈ K ↦ ((k)_v, 1 ⊗ k)`. -/
 def inj_K : K → A_K K := λ x, ⟨inj_K_f K x, algebra.tensor_product.include_right x⟩

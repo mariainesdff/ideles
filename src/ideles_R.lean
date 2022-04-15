@@ -130,8 +130,8 @@ end
 /-- For any finite idèle `x`, there are finitely many maximal ideals `v` of `R` for which
 `x_v ∉ R_v` or `x⁻¹_v ∉ R_v`. -/ 
 lemma restricted_product (x : finite_idele_group' R K) :
-  finite ({ v : height_one_spectrum R | (¬ (x.val.val v) ∈ R_v K v) } ∪ 
-    { v : height_one_spectrum R | ¬ (x.inv.val v) ∈ R_v K v }) :=
+  finite ({ v : height_one_spectrum R | (¬ (x.val.val v) ∈ v.adic_completion_integers K) } ∪ 
+    { v : height_one_spectrum R | ¬ (x.inv.val v) ∈ v.adic_completion_integers K }) :=
 finite.union x.val.property x.inv.property
 
 /-- For any finite idèle `x`, there are finitely many maximal ideals `v` of `R` for which
@@ -141,10 +141,11 @@ lemma finite_exponents (x : finite_idele_group' R K) : finite
 begin
   have h_subset : { v : height_one_spectrum R |
     (valued.v (x.val.val v) : with_zero (multiplicative ℤ)) ≠ 1 } ⊆ 
-  { v : height_one_spectrum R | ¬ (x.val.val v) ∈ R_v K v } ∪ 
-  { v : height_one_spectrum R | ¬ (x.inv.val v) ∈ R_v K v },
+  { v : height_one_spectrum R | ¬ (x.val.val v) ∈ v.adic_completion_integers K } ∪ 
+  { v : height_one_spectrum R | ¬ (x.inv.val v) ∈ v.adic_completion_integers K },
   { intros v hv,
-    rw [mem_union, mem_set_of_eq, mem_set_of_eq, K_v.is_integer, K_v.is_integer],
+    rw [mem_union, mem_set_of_eq, mem_set_of_eq, adic_completion.is_integer,
+      adic_completion.is_integer],
     rw mem_set_of_eq at hv,
     cases (lt_or_gt_of_ne hv) with hlt hgt,
     { right,
@@ -164,7 +165,7 @@ end
 
 /-- For any `k ∈ K*` and any maximal ideal `v` of `R`, the valuation `|k|_v` is nonzero. -/
 lemma units.valuation_ne_zero {k : K} (hk : k ≠ 0) : 
-(valued.v ((coe : K → (K_v K v)) k) : with_zero (multiplicative ℤ)) ≠ 0 := 
+(valued.v ((coe : K → (v.adic_completion K)) k) : with_zero (multiplicative ℤ)) ≠ 0 := 
 begin
   rw [valuation.ne_zero_iff, ← uniform_space.completion.coe_zero,
     injective.ne_iff uniform_space.completion.coe_inj],
@@ -356,14 +357,14 @@ def map_to_fractional_ideals : monoid_hom
   end }
 
 variables {R K}
-lemma val_property {a : Π v : height_one_spectrum R, K_v K v}
+lemma val_property {a : Π v : height_one_spectrum R, v.adic_completion K}
   (ha : ∀ᶠ v : height_one_spectrum R in filter.cofinite,
     (valued.v (a v) : with_zero (multiplicative ℤ)) = 1)
   (h_ne_zero : ∀ v : height_one_spectrum R, a v ≠ 0) :
-  ∀ᶠ v : height_one_spectrum R in filter.cofinite, a v ∈ R_v K v :=
+  ∀ᶠ v : height_one_spectrum R in filter.cofinite, a v ∈ v.adic_completion_integers K :=
 begin
   rw filter.eventually_cofinite at ha ⊢,
-  simp_rw K_v.is_integer,
+  simp_rw adic_completion.is_integer,
   have h_subset :
     {x : height_one_spectrum R | ¬(valued.v (a x) : with_zero (multiplicative ℤ)) ≤ 1} ⊆ 
     {x : height_one_spectrum R | ¬(valued.v (a x) : with_zero (multiplicative ℤ)) = 1},
@@ -372,14 +373,14 @@ begin
   exact finite.subset ha h_subset,
 end
 
-lemma inv_property {a : Π v : height_one_spectrum R, K_v K v}
+lemma inv_property {a : Π v : height_one_spectrum R, v.adic_completion K}
   (ha : ∀ᶠ v : height_one_spectrum R in filter.cofinite, 
     (valued.v (a v) : with_zero (multiplicative ℤ)) = 1)
   (h_ne_zero : ∀ v : height_one_spectrum R, a v ≠ 0) :
-  ∀ᶠ v : height_one_spectrum R in filter.cofinite, (a v)⁻¹ ∈ R_v K v :=
+  ∀ᶠ v : height_one_spectrum R in filter.cofinite, (a v)⁻¹ ∈ v.adic_completion_integers K :=
 begin
   rw filter.eventually_cofinite at ha ⊢,
-  simp_rw [K_v.is_integer, not_le],
+  simp_rw [adic_completion.is_integer, not_le],
   have h_subset : {x : height_one_spectrum R |
     1 < (valued.v (a x)⁻¹ : with_zero (multiplicative ℤ)) } ⊆ 
     {x : height_one_spectrum R | ¬(valued.v (a x) : with_zero (multiplicative ℤ)) = 1},
@@ -390,7 +391,7 @@ begin
   exact finite.subset ha h_subset,
 end
 
-lemma right_inv' {a : Π v : height_one_spectrum R, K_v K v}
+lemma right_inv' {a : Π v : height_one_spectrum R, v.adic_completion K}
   (ha : ∀ᶠ v : height_one_spectrum R in filter.cofinite,
     (valued.v (a v) : with_zero (multiplicative ℤ)) = 1)
   (h_ne_zero : ∀ v : height_one_spectrum R, a v ≠ 0)  :
@@ -405,7 +406,7 @@ begin
   exact h_ne_zero v,
 end
 
-lemma left_inv' {a : Π v : height_one_spectrum R, K_v K v}
+lemma left_inv' {a : Π v : height_one_spectrum R, v.adic_completion K}
   (ha : ∀ᶠ v : height_one_spectrum R in filter.cofinite,
     (valued.v (a v) : with_zero (multiplicative ℤ)) = 1)
   (h_ne_zero : ∀ v : height_one_spectrum R, a v ≠ 0) :
@@ -415,7 +416,7 @@ by { rw mul_comm, exact right_inv' ha h_ne_zero}
 
 /-- If `a = (a_v)_v ∈ ∏_v K_v` is such that `|a_v|_v ≠ 1` for all but finitely many `v` and
 `a_v ≠ 0` for all `v`, then `a` is a finite idèle  of `R`. -/
-def idele.mk (a : Π v : height_one_spectrum R, K_v K v)
+def idele.mk (a : Π v : height_one_spectrum R, v.adic_completion K)
   (ha : ∀ᶠ v : height_one_spectrum R in filter.cofinite,
     (valued.v (a v) : with_zero (multiplicative ℤ)) = 1)
   (h_ne_zero : ∀ v : height_one_spectrum R, a v ≠ 0) :
@@ -436,25 +437,26 @@ end
 
 variables (R K)
 /-- A finite idèle `(pi_v)_v`, where each `pi_v` is a uniformizer for the `v`-adic valuation. -/
-def pi.unif : Π v : height_one_spectrum R, K_v K v :=
-λ v : height_one_spectrum R, (coe : K → (K_v K v)) 
+def pi.unif : Π v : height_one_spectrum R, v.adic_completion K :=
+λ v : height_one_spectrum R, (coe : K → (v.adic_completion K)) 
   (classical.some (v.valuation_exists_uniformizer K))
 
 lemma pi.unif.ne_zero : ∀ v : height_one_spectrum R, pi.unif R K v ≠ 0 :=
 begin
   intro v,
   rw [pi.unif, ← uniform_space.completion.coe_zero,
-    injective.ne_iff (@uniform_space.completion.coe_inj K (us' v) (ss v))],
+    injective.ne_iff (@uniform_space.completion.coe_inj K v.us' v.ss)],
   exact v.valuation_uniformizer_ne_zero K,
 end
 
 variables {R K}
 lemma idele.mk'.val {exps : Π v : height_one_spectrum R, ℤ}
   (h_exps : ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, exps v = 0) :
-   ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, pi.unif R K v ^ exps v ∈ R_v K v :=
+  ∀ᶠ (v : height_one_spectrum R) in filter.cofinite,
+    pi.unif R K v ^ exps v ∈ v.adic_completion_integers K :=
 begin
   rw filter.eventually_cofinite at h_exps ⊢,
-  simp_rw K_v.is_integer,
+  simp_rw adic_completion.is_integer,
   have h_subset : {x : height_one_spectrum R |
     ¬ (valued.v (pi.unif R K x ^ exps x) : with_zero (multiplicative ℤ)) ≤ 1} ⊆ 
     {x : height_one_spectrum R | ¬exps x = 0},
@@ -468,10 +470,11 @@ end
 
 lemma idele.mk'.inv {exps : Π v : height_one_spectrum R, ℤ}
   (h_exps : ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, exps v = 0) :
-   ∀ᶠ (v : height_one_spectrum R) in filter.cofinite, pi.unif R K v ^-exps v ∈ R_v K v :=
+  ∀ᶠ (v : height_one_spectrum R) in filter.cofinite,
+    pi.unif R K v ^-exps v ∈ v.adic_completion_integers K :=
 begin
   rw filter.eventually_cofinite at h_exps ⊢,
-  simp_rw K_v.is_integer,
+  simp_rw adic_completion.is_integer,
   have h_subset : {x : height_one_spectrum R |
     ¬ (valued.v (pi.unif R K x ^ -exps x) : with_zero (multiplicative ℤ))  ≤ 1} ⊆ 
     {x : height_one_spectrum R | ¬exps x = 0},
@@ -555,8 +558,8 @@ begin
     have hx := classical.some_spec (with_zero.to_integer._proof_1 hv),
     rw ← hx_def at hx ⊢,
     simp only [idele.mk', pi.unif] at hx,
-    rw [valuation.map_zpow, valued_K_v.def, valued.extension_extends,
-      v_valued_K.def, classical.some_spec (v.valuation_exists_uniformizer K),
+    rw [valuation.map_zpow, v.valued_adic_completion_def, valued.extension_extends,
+      v.v_valued_K_def, classical.some_spec (v.valuation_exists_uniformizer K),
         ← with_zero.coe_zpow, with_zero.coe_inj] at hx,
     rw [hx, ← of_add_zsmul, to_add_of_add, algebra.id.smul_eq_mul, mul_neg,
           mul_one, neg_neg] },
@@ -604,9 +607,9 @@ end
 /-- `|x_v|_v = 1` if and only if both `x_v` and `x⁻¹_v` are in `R_v`. -/
 lemma finite_idele.valuation_eq_one_iff (x : finite_idele_group' R K) : 
   (valued.v (x.val.val v) : with_zero (multiplicative ℤ)) = 1 ↔ 
-  x.val.val v ∈ R_v K v ∧ x⁻¹.val.val v ∈ R_v K v :=
+  x.val.val v ∈ v.adic_completion_integers K ∧ x⁻¹.val.val v ∈ v.adic_completion_integers K :=
 begin
-  rw [K_v.is_integer, K_v.is_integer],
+  rw [adic_completion.is_integer, adic_completion.is_integer],
   refine ⟨λ h_one, _, λ h_int, _⟩,
   { have h_mul := valuation_val_inv R K v x,
     rw [h_one, one_mul] at h_mul,
@@ -635,21 +638,24 @@ begin
   change is_open ↑((map_to_fractional_ideals R K).ker),
   rw h_ker,
   use {p : (finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ) | 
-    ∀ v : height_one_spectrum R, (p.1.val v) ∈ R_v K v ∧ 
-    ((mul_opposite.unop p.2).val v) ∈ R_v K v},
+    ∀ v : height_one_spectrum R, (p.1.val v) ∈ v.adic_completion_integers K ∧ 
+    ((mul_opposite.unop p.2).val v) ∈ v.adic_completion_integers K},
   split,
   { have : prod.topological_space.is_open
       {p : finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ | ∀ (v : height_one_spectrum R),
-        p.fst.val v ∈ R_v K v ∧ (mul_opposite.unop p.snd).val v ∈ R_v K v}  ↔ is_open
+        p.fst.val v ∈ v.adic_completion_integers K ∧
+        (mul_opposite.unop p.snd).val v ∈ v.adic_completion_integers K}  ↔ is_open
       {p : finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ | ∀ (v : height_one_spectrum R),
-        p.fst.val v ∈ R_v K v ∧ (mul_opposite.unop p.snd).val v ∈ R_v K v} := by refl,
+        p.fst.val v ∈ v.adic_completion_integers K ∧
+        (mul_opposite.unop p.snd).val v ∈ v.adic_completion_integers K} := by refl,
     rw this, clear this,
     rw [is_open_prod_iff],
     intros x y hxy,
     rw mem_set_of_eq at hxy,
-    use {x : finite_adele_ring' R K | ∀ (v : height_one_spectrum R), x.val v ∈ R_v K v},
+    use {x : finite_adele_ring' R K | ∀ (v : height_one_spectrum R),
+      x.val v ∈ v.adic_completion_integers K},
     use {x : (finite_adele_ring' R K )ᵐᵒᵖ | ∀ (v : height_one_spectrum R), 
-      (mul_opposite.unop x).val v ∈ R_v K v},
+      (mul_opposite.unop x).val v ∈ v.adic_completion_integers K},
     refine ⟨finite_adele_ring'.is_open_integer_subring R K, 
       finite_adele_ring'.is_open_integer_subring_opp R K, λ v, (hxy v).1, λ v, (hxy v).2, _⟩,
     { intros p hp v,

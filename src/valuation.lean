@@ -13,17 +13,9 @@ Given a Dedekind domain `R` of Krull dimension 1 and a maximal ideal `v` of `R`,
 We prove several properties of this valuation, including the existence of uniformizers.
 
 ## Main definitions
- - `height_one_spectrum.int_valuation v` is the `v`-adic valuation on `R`. 
  - `height_one_spectrum.valuation v` is the `v`-adic valuation on `K`. 
 
 ## Main results
-- `int_valuation_le_one` : The `v`-adic valuation on `R` is bounded above by 1.
-- `int_valuation_lt_one_iff_dvd` : The `v`-adic valuation of `r ∈ R` is less than 1 if and only if 
-  `v` divides the ideal `(r)`. 
-- `int_valuation_le_pow_iff_dvd` : The `v`-adic valuation of `r ∈ R` is less than or equal to
-  `multiplicative.of_add (-n)` if and only if `vⁿ` divides the ideal `(r)`. 
-- `int_valuation_exists_uniformizer` : There exists `π ∈ R` with `v`-adic valuation 
-  `multiplicative.of_add (-1)`.
 - `valuation_well_defined` : The valuation of `k ∈ K` is independent on how we express `k` 
   as a fraction.
 - `valuation_of_mk'` : The `v`-adic valuation of `r/s ∈ K` is the valuation of `r` divided by 
@@ -51,17 +43,6 @@ open multiplicative is_dedekind_domain
 
 variables {R : Type*} [comm_ring R] [is_domain R] [is_dedekind_domain R] {K : Type*} [field K]
   [algebra R K] [is_fraction_ring R K] (v : height_one_spectrum R)
-
--- Ideal associates lemmas
-/- lemma associates.mk_ne_zero' {α : Type*} [comm_ring α] {x : α} : 
-  (associates.mk (ideal.span{x} : ideal α)) ≠ 0 ↔ (x ≠ 0):=
-by rw [associates.mk_ne_zero, ideal.zero_eq_bot, ne.def, ideal.span_singleton_eq_bot] -/
-
-/- lemma associates.le_singleton_iff (x : R) (n : ℕ) (I : ideal R) :
-  associates.mk I^n ≤ associates.mk (ideal.span {x}) ↔ x ∈ I^n :=
-begin
-  rw [← associates.dvd_eq_le, ← associates.mk_pow, associates.mk_dvd_mk, ideal.dvd_span_singleton],
-end -/
 
 namespace is_dedekind_domain.height_one_spectrum
 /-! ### Adic valuations on the Dedekind domain R -/
