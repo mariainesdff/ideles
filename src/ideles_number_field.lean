@@ -63,6 +63,8 @@ instance : topological_group (I_K_f K) :=
 finite_idele_group'.topological_group (ring_of_integers K) K
 instance : topological_space (I_K K) := units.topological_space
 instance : topological_group (I_K K) := units.topological_group
+instance : inhabited (I_K_f K) := ⟨1⟩ 
+instance : inhabited (I_K K) := ⟨1⟩ 
 
 /-- `I_K` is isomorphic to the product `I_K_f × (ℝ ⊗[ℚ] K)*`, as groups. -/
 def I_K.as_prod : I_K K ≃* (I_K_f K) × units (ℝ ⊗[ℚ] K) := 
@@ -149,6 +151,8 @@ instance : comm_group (C_K K) :=
 quotient_group.has_quotient.quotient.comm_group ((inj_units_K.group_hom K).range)
 instance : topological_space (C_K K) := quotient.topological_space
 instance : topological_group (C_K K) := topological_group_quotient ((inj_units_K.group_hom K).range)
+instance : inhabited (C_K K) := ⟨1⟩
+
 
 /-- The `v`-adic absolute value of the `v`th component of the idèle `x`. -/
 def v_comp_val (x : I_K K) (v : maximal_spectrum (ring_of_integers K)) :

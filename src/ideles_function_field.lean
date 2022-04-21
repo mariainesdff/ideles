@@ -56,6 +56,8 @@ def I_F := units (A_F k F)
 
 instance : comm_group (I_F_f k F) := units.comm_group
 instance : comm_group (I_F k F) := units.comm_group
+instance : inhabited (I_F_f k F) := ⟨1⟩
+instance : inhabited (I_F k F) := ⟨1⟩
 instance : topological_space (I_F_f k F) := 
 finite_idele_group'.topological_space (ring_of_integers k F) F
 instance : topological_group (I_F_f k F) :=
@@ -145,6 +147,7 @@ def C_F := (I_F k F) ⧸ (inj_units_F.group_hom k F).range
 instance : comm_group (C_F k F) := 
 quotient_group.has_quotient.quotient.comm_group ((inj_units_F.group_hom k F).range)
 
+instance : inhabited (C_F k F) := ⟨1⟩
 instance : topological_space (C_F k F) := quotient.topological_space
 
 instance : topological_group (C_F k F) :=

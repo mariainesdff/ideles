@@ -31,8 +31,10 @@ variables (K: Type*) [field K]
 def G_K := ((algebraic_closure K) ≃ₐ[K] (algebraic_closure K))
 
 noncomputable instance : group (G_K K) := alg_equiv.aut
-/-- `G_K` is a topological space with the Krull topology. -/
 
+noncomputable instance : inhabited (G_K K) := ⟨1⟩ 
+
+/-- `G_K` is a topological space with the Krull topology. -/
 noncomputable instance : topological_space (G_K K) := krull_topology K (algebraic_closure K)
 /-- `G_K` is a topological group with the Krull topology. -/
 
@@ -49,6 +51,8 @@ def G_K_ab := (G_K K) ⧸ (subgroup.topological_closure (commutator (G_K K)))
 
 noncomputable instance : group (G_K_ab K) :=
 quotient_group.quotient.group (commutator (G_K K)).topological_closure
+
+noncomputable instance : inhabited (G_K_ab K) := ⟨1⟩ 
 
 /-- `G_K_ab` is a topological space with the quotient topology. -/
 noncomputable instance : topological_space (G_K_ab K) :=

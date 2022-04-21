@@ -56,6 +56,7 @@ def finite_idele_group' := units (finite_adele_ring' R K)
 
 instance : topological_space (finite_idele_group' R K) := units.topological_space
 instance : comm_group (finite_idele_group' R K) := units.comm_group
+instance : inhabited (finite_idele_group' R K) := ⟨1⟩
 instance : topological_group (finite_idele_group' R K) := units.topological_group
 instance : uniform_space (finite_idele_group' R K) := topological_group.to_uniform_space _
 instance : uniform_group (finite_idele_group' R K) := topological_group_is_uniform
@@ -93,7 +94,7 @@ def inj_units_K.group_hom : monoid_hom (units K) (finite_idele_group' R K) :=
 
 /-- If `maximal_spectrum R` is nonempty, then `inj_units_K` is injective. Note that the nonemptiness
 hypothesis is satisfied for every Dedekind domain that is not a field. -/
-lemma inj_units_K.injective [inh : inhabited (maximal_spectrum R)] : 
+lemma inj_units_K.injective [inh : nonempty (maximal_spectrum R)] : 
   injective (inj_units_K.group_hom R K) :=
 begin
   rw monoid_hom.injective_iff,
@@ -284,6 +285,8 @@ def map_to_fractional_ideals.val :
 ∏ᶠ (v : maximal_spectrum R), (v.as_ideal : fractional_ideal (non_zero_divisors R) K)^
   (finite_idele.to_add_valuations R K x v)
 
+/-- The group homomorphism from `finite_idele_group' R K` to the fractional_ideals of `R` sending a
+finite idèle `x` to the product `∏_v v^(val_v(x_v))` -/
 def map_to_fractional_ideals.group_hom : monoid_hom
   (finite_idele_group' R K)  (fractional_ideal (non_zero_divisors R) K) := 
 { to_fun := map_to_fractional_ideals.val R K,
@@ -355,8 +358,7 @@ def map_to_fractional_ideals : monoid_hom
 variables {R K}
 lemma val_property {a : Π v : maximal_spectrum R, v.adic_completion K}
   (ha : ∀ᶠ v : maximal_spectrum R in filter.cofinite,
-    (valued.v (a v) : with_zero (multiplicative ℤ)) = 1)
-  (h_ne_zero : ∀ v : maximal_spectrum R, a v ≠ 0) :
+    (valued.v (a v) : with_zero (multiplicative ℤ)) = 1) :
   ∀ᶠ v : maximal_spectrum R in filter.cofinite, a v ∈ v.adic_completion_integers K :=
 begin
   rw filter.eventually_cofinite at ha ⊢,
@@ -371,8 +373,7 @@ end
 
 lemma inv_property {a : Π v : maximal_spectrum R, v.adic_completion K}
   (ha : ∀ᶠ v : maximal_spectrum R in filter.cofinite, 
-    (valued.v (a v) : with_zero (multiplicative ℤ)) = 1)
-  (h_ne_zero : ∀ v : maximal_spectrum R, a v ≠ 0) :
+    (valued.v (a v) : with_zero (multiplicative ℤ)) = 1) :
   ∀ᶠ v : maximal_spectrum R in filter.cofinite, (a v)⁻¹ ∈ v.adic_completion_integers K :=
 begin
   rw filter.eventually_cofinite at ha ⊢,
@@ -391,8 +392,8 @@ lemma right_inv' {a : Π v : maximal_spectrum R, v.adic_completion K}
   (ha : ∀ᶠ v : maximal_spectrum R in filter.cofinite,
     (valued.v (a v) : with_zero (multiplicative ℤ)) = 1)
   (h_ne_zero : ∀ v : maximal_spectrum R, a v ≠ 0)  :
-  (⟨a, val_property ha h_ne_zero⟩ : finite_adele_ring' R K) *
-  ⟨(λ v : maximal_spectrum R, (a v)⁻¹), inv_property ha h_ne_zero⟩ = 1 := 
+  (⟨a, val_property ha⟩ : finite_adele_ring' R K) *
+  ⟨(λ v : maximal_spectrum R, (a v)⁻¹), inv_property ha ⟩ = 1 := 
 begin
   ext v,
   unfold_projs,
@@ -406,8 +407,8 @@ lemma left_inv' {a : Π v : maximal_spectrum R, v.adic_completion K}
   (ha : ∀ᶠ v : maximal_spectrum R in filter.cofinite,
     (valued.v (a v) : with_zero (multiplicative ℤ)) = 1)
   (h_ne_zero : ∀ v : maximal_spectrum R, a v ≠ 0) :
-  (⟨(λ v : maximal_spectrum R, (a v)⁻¹), inv_property ha h_ne_zero⟩ : finite_adele_ring' R K) *
-  ⟨a, val_property ha h_ne_zero⟩ = 1 := 
+  (⟨(λ v : maximal_spectrum R, (a v)⁻¹), inv_property ha⟩ : finite_adele_ring' R K) *
+  ⟨a, val_property ha⟩ = 1 := 
 by { rw mul_comm, exact right_inv' ha h_ne_zero}
 
 /-- If `a = (a_v)_v ∈ ∏_v K_v` is such that `|a_v|_v ≠ 1` for all but finitely many `v` and
@@ -417,9 +418,8 @@ def idele.mk (a : Π v : maximal_spectrum R, v.adic_completion K)
     (valued.v (a v) : with_zero (multiplicative ℤ)) = 1)
   (h_ne_zero : ∀ v : maximal_spectrum R, a v ≠ 0) :
   finite_idele_group' R K :=
-⟨⟨a, val_property ha h_ne_zero⟩,
-  ⟨(λ v : maximal_spectrum R, (a v)⁻¹), inv_property ha h_ne_zero⟩, right_inv' ha h_ne_zero,
-  left_inv' ha h_ne_zero⟩
+⟨⟨a, val_property ha⟩, ⟨(λ v : maximal_spectrum R, (a v)⁻¹), inv_property ha⟩,
+  right_inv' ha h_ne_zero, left_inv' ha h_ne_zero⟩
 
 lemma map_to_fractional_ideals.inv_eq_inv (x : finite_idele_group' R K)
   (I : units (fractional_ideal (non_zero_divisors R) K))

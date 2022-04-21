@@ -956,5 +956,3 @@ def finite_adele.hom : (finite_adele_ring R K) →+* (finite_adele_ring' R K) :=
   end,
   map_add'  := λ x y,
   by { unfold_projs, simp only [add'], exact subtype.mk_eq_mk.mpr (map_to_K_hat.map_add R K x y) }}
-
-  #lint

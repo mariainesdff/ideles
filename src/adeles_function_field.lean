@@ -89,6 +89,8 @@ linear_map.comp (linear_map.base_change k F) (linear_map.kt_inftyn_to_kt_infty_t
 
 instance : comm_ring (A_F_f k F) := finite_adele_ring'.comm_ring (ring_of_integers k F) F
 instance : comm_ring (A_F k F) := prod.comm_ring
+instance : inhabited (A_F_f k F) := ⟨0⟩
+instance : inhabited (A_F k F) := ⟨0⟩
 instance : topological_space (A_F_f k F) := 
 finite_adele_ring'.topological_space (ring_of_integers k F) F
 instance : topological_ring (A_F_f k F) := 
