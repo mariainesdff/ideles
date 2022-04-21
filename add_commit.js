@@ -1,4 +1,4 @@
-const commit = [["https://github.com/leanprover-community/mathlib/blob/master/src/", "https://github.com/leanprover-community/mathlib/blob/fecdd4b2008feb7e5fe584821227547367dd30ff/src/"]];
+const commit = [["https://github.com/leanprover-community/mathlib/blob/master/src/", "https://github.com/leanprover-community/mathlib/blob/874dde52f661a63e76f88e00d3f1eb59e5be04ed/src/"]];
 function redirectTo(tgt) {
   let loc = tgt;
   for (const [prefix, replacement] of commit) {

@@ -430,6 +430,8 @@
 
     <div class="nav_link"><a class="break_within" href="#polynomial.root_mul_right_of_is_root"><span class="name">polynomial</span>.<span class="name">root_mul_right_of_is_root</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#polynomial.smul_comp"><span class="name">polynomial</span>.<span class="name">smul_comp</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#polynomial.sub_comp"><span class="name">polynomial</span>.<span class="name">sub_comp</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#polynomial.support_map_subset"><span class="name">polynomial</span>.<span class="name">support_map_subset</span></a></div>
@@ -2913,11 +2915,15 @@ as long as target ring is commutative
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/polynomial/eval.html#polynomial.eval_smul"><span class="name">polynomial</span>.<span class="name">eval_smul</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type v}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> S]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> S</span> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> S</span> R</span> R]</span></span></span>
+    <span class="decl_args"><span class="fn">(s : S)</span></span>
     <span class="decl_args"><span class="fn">(p : R<a href="https://mariainesdff.github.io/ideles/data/polynomial/basic.html#polynomial" title="polynomial">[X]</a>)</span></span>
-    <span class="decl_args"><span class="fn">(x : R)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{s : R}</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/polynomial/eval.html#polynomial.eval">polynomial.eval</a> x</span> <span class="fn">(s <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> p)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">s <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/polynomial/eval.html#polynomial.eval">polynomial.eval</a> x</span> p</span></span></span></div>
+    <span class="decl_args"><span class="fn">(x : R)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/polynomial/eval.html#polynomial.eval">polynomial.eval</a> x</span> <span class="fn">(s <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> p)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">s <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/polynomial/eval.html#polynomial.eval">polynomial.eval</a> x</span> p</span></span></span></div>
 </div>
 
 
@@ -2941,7 +2947,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval_C_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L313">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L314">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2983,7 +2989,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.leval_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L323">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L324">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3024,7 +3030,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.leval">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L323">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L324">source</a></div>
 
 
 
@@ -3072,7 +3078,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval_nat_cast_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L328">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L329">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3114,7 +3120,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval_mul_X">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L331">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L332">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3155,7 +3161,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval_mul_X_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L341">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L342">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3197,7 +3203,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L348">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L349">source</a></div>
 
 
 
@@ -3237,7 +3243,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval_finset_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L352">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L353">source</a></div>
 
 
 
@@ -3278,7 +3284,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.is_root">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L356">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L357">source</a></div>
 
 
 
@@ -3327,7 +3333,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.is_root.decidable">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L359">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3378,7 +3384,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.is_root.def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L360">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L361">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3419,7 +3425,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.is_root.eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L362">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L363">source</a></div>
 
 
 
@@ -3459,7 +3465,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.coeff_zero_eq_eval_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L365">source</a></div>
 
 
 
@@ -3497,7 +3503,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.zero_is_root_of_coeff_zero_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L370">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L371">source</a></div>
 
 
 
@@ -3536,7 +3542,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.is_root.dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L374">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L375">source</a></div>
 
 
 
@@ -3577,7 +3583,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.not_is_root_C">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L378">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L379">source</a></div>
 
 
 
@@ -3616,7 +3622,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.comp">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L386">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L387">source</a></div>
 
 
 
@@ -3664,7 +3670,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.comp_eq_sum_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L388">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L389">source</a></div>
 
 
 
@@ -3702,7 +3708,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.comp_X">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L391">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L392">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3742,7 +3748,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.X_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L397">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L398">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3782,7 +3788,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.comp_C">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L399">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L400">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3823,7 +3829,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.C_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L402">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L403">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3864,7 +3870,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.nat_cast_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L404">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L405">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3905,7 +3911,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.comp_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L407">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L408">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3945,7 +3951,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.zero_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L410">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L411">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3985,7 +3991,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.comp_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L413">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L414">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4025,7 +4031,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.one_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L416">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L417">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4065,7 +4071,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.add_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L419">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L420">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4105,7 +4111,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.monomial_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L421">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L422">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4147,7 +4153,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.mul_X_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L425">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4187,7 +4193,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.X_pow_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L431">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L432">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4228,7 +4234,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.mul_X_pow_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L438">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L439">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4269,7 +4275,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.C_mul_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L445">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L446">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4310,7 +4316,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.nat_cast_mul_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L452">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L453">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4351,7 +4357,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.mul_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L455">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L456">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4391,7 +4397,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.prod_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L458">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L459">source</a></div>
 
 
 
@@ -4430,7 +4436,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.pow_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L462">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L463">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4471,7 +4477,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.bit0_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L466">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L467">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4511,7 +4517,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.bit1_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L470">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4548,10 +4554,55 @@ as long as target ring is commutative
     
         
         
+<div class="decl" id="polynomial.smul_comp">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L473">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/polynomial/eval.html#polynomial.smul_comp"><span class="name">polynomial</span>.<span class="name">smul_comp</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> S]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> S</span> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> S</span> R</span> R]</span></span></span>
+    <span class="decl_args"><span class="fn">(s : S)</span></span>
+    <span class="decl_args"><span class="fn">(p q : R<a href="https://mariainesdff.github.io/ideles/data/polynomial/basic.html#polynomial" title="polynomial">[X]</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(s <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> p)</span>.<a href="https://mariainesdff.github.io/ideles/data/polynomial/eval.html#polynomial.comp" title="polynomial.comp">comp</a></span> q</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">s <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn">p.<a href="https://mariainesdff.github.io/ideles/data/polynomial/eval.html#polynomial.comp" title="polynomial.comp">comp</a> q</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="polynomial.comp_assoc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L472">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L477">source</a></div>
 
 
 
@@ -4589,7 +4640,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.coeff_comp_degree_mul_degree">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L479">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L484">source</a></div>
 
 
 
@@ -4628,7 +4679,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L501">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L506">source</a></div>
 
 
 
@@ -4678,7 +4729,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_C">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L503">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L508">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4721,7 +4772,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_X">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L505">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L510">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4763,7 +4814,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_monomial">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L507">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L512">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4807,10 +4858,10 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L513">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L518">source</a></div>
 
 
-    <div class="attributes">@[simp]</div>
+    <div class="attributes">@[protected, simp]</div>
 
 
 <div class="decl_header">
@@ -4849,10 +4900,10 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L515">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L520">source</a></div>
 
 
-    <div class="attributes">@[simp]</div>
+    <div class="attributes">@[protected, simp]</div>
 
 
 <div class="decl_header">
@@ -4892,10 +4943,10 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L517">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L522">source</a></div>
 
 
-    <div class="attributes">@[simp]</div>
+    <div class="attributes">@[protected, simp]</div>
 
 
 <div class="decl_header">
@@ -4934,10 +4985,10 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L524">source</a></div>
 
 
-    <div class="attributes">@[simp]</div>
+    <div class="attributes">@[protected, simp]</div>
 
 
 <div class="decl_header">
@@ -4977,7 +5028,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L522">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L527">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5021,7 +5072,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_ring_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L532">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L537">source</a></div>
 
 
 
@@ -5071,7 +5122,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.coe_map_ring_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L539">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L544">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5113,7 +5164,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_nat_cast">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L542">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L547">source</a></div>
 
 
     <div class="attributes">@[protected, simp]</div>
@@ -5156,7 +5207,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.coeff_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L546">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L551">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5200,7 +5251,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_equiv">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L556">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L561">source</a></div>
 
 
 
@@ -5250,7 +5301,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_equiv_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L556">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L561">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5293,7 +5344,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_equiv_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L556">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L561">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5336,7 +5387,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L563">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L568">source</a></div>
 
 
 
@@ -5380,7 +5431,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L567">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L572">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5420,7 +5471,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval₂_eq_eval_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L569">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L574">source</a></div>
 
 
 
@@ -5462,7 +5513,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L576">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L581">source</a></div>
 
 
 
@@ -5503,7 +5554,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_surjective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L579">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L584">source</a></div>
 
 
 
@@ -5544,7 +5595,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.degree_map_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L584">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L590">source</a></div>
 
 
 
@@ -5585,7 +5636,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.nat_degree_map_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L591">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L597">source</a></div>
 
 
 
@@ -5626,7 +5677,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_monic_eq_zero_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L596">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L602">source</a></div>
 
 
 
@@ -5668,7 +5719,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_monic_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L602">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L608">source</a></div>
 
 
 
@@ -5711,7 +5762,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.degree_map_eq_of_leading_coeff_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L605">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L611">source</a></div>
 
 
 
@@ -5753,7 +5804,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.nat_degree_map_of_leading_coeff_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L615">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L621">source</a></div>
 
 
 
@@ -5795,7 +5846,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.leading_coeff_map_of_leading_coeff_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L619">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L625">source</a></div>
 
 
 
@@ -5837,7 +5888,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_ring_hom_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L628">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L634">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5876,7 +5927,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_ring_hom_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L631">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L637">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5921,7 +5972,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_list_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L635">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L641">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5964,7 +6015,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L638">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L644">source</a></div>
 
 
     <div class="attributes">@[protected, simp]</div>
@@ -6008,7 +6059,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.mem_map_srange">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L641">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L647">source</a></div>
 
 
 
@@ -6049,7 +6100,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.mem_map_range">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L654">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L660">source</a></div>
 
 
 
@@ -6090,7 +6141,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval₂_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L658">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L664">source</a></div>
 
 
 
@@ -6135,7 +6186,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L662">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L668">source</a></div>
 
 
 
@@ -6177,7 +6228,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L665">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L671">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -6222,7 +6273,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.map_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L669">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L675">source</a></div>
 
 
 
@@ -6263,7 +6314,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval_zero_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L678">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L684">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6306,7 +6357,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval_one_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L683">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L689">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6349,7 +6400,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval_nat_cast_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L692">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L698">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6393,7 +6444,7 @@ as long as target ring is commutative
 <div class="decl" id="polynomial.eval_int_cast_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L701">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L707">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6446,7 +6497,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.hom_eval₂">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L724">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L730">source</a></div>
 
 
 
@@ -6491,7 +6542,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval₂_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L739">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L745">source</a></div>
 
 
 
@@ -6533,7 +6584,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval₂_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L748">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L754">source</a></div>
 
 
 
@@ -6575,7 +6626,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L757">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L763">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6616,7 +6667,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_ring_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L760">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L766">source</a></div>
 
 
 
@@ -6663,7 +6714,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.coe_eval_ring_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L762">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L768">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6703,7 +6754,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L764">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L770">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6745,7 +6796,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L767">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L773">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6786,7 +6837,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.comp_ring_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L775">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L781">source</a></div>
 
 
 
@@ -6833,7 +6884,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.root_mul_left_of_is_root">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L778">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L784">source</a></div>
 
 
 
@@ -6873,7 +6924,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.root_mul_right_of_is_root">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L782">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L788">source</a></div>
 
 
 
@@ -6913,7 +6964,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval₂_multiset_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L786">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L792">source</a></div>
 
 
 
@@ -6955,7 +7006,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval₂_finset_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L790">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L796">source</a></div>
 
 
 
@@ -6999,7 +7050,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_list_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L797">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L803">source</a></div>
 
 
 
@@ -7039,7 +7090,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_multiset_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L804">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L810">source</a></div>
 
 
 
@@ -7079,7 +7130,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L811">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L817">source</a></div>
 
 
 
@@ -7121,7 +7172,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.is_root_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L815">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L821">source</a></div>
 
 
 
@@ -7163,7 +7214,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L820">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L826">source</a></div>
 
 
 
@@ -7202,7 +7253,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_eq_zero_of_dvd_of_eval_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L823">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L829">source</a></div>
 
 
 
@@ -7241,7 +7292,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_geom_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L827">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L833">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7282,7 +7333,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.map_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L837">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L843">source</a></div>
 
 
 
@@ -7323,7 +7374,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.support_map_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L840">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L846">source</a></div>
 
 
 
@@ -7364,7 +7415,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.map_multiset_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L850">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L856">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -7407,7 +7458,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.map_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L853">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L859">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -7452,7 +7503,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.is_root.map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L857">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L863">source</a></div>
 
 
 
@@ -7495,7 +7546,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.is_root.of_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L861">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L867">source</a></div>
 
 
 
@@ -7539,7 +7590,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.is_root_map_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L865">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L871">source</a></div>
 
 
 
@@ -7582,7 +7633,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.C_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L876">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L882">source</a></div>
 
 
 
@@ -7620,7 +7671,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.C_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L878">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L884">source</a></div>
 
 
 
@@ -7658,10 +7709,10 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.map_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L880">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L886">source</a></div>
 
 
-    <div class="attributes">@[simp]</div>
+    <div class="attributes">@[protected, simp]</div>
 
 
 <div class="decl_header">
@@ -7701,10 +7752,10 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.map_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L884">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L890">source</a></div>
 
 
-    <div class="attributes">@[simp]</div>
+    <div class="attributes">@[protected, simp]</div>
 
 
 <div class="decl_header">
@@ -7744,7 +7795,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.map_int_cast">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L888">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L894">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7787,7 +7838,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_int_cast">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L892">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L898">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7828,7 +7879,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval₂_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L895">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L901">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7872,7 +7923,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval₂_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L899">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L905">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7916,7 +7967,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L903">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L909">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7957,7 +8008,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.eval_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L906">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L912">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7998,7 +8049,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.root_X_sub_C">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L909">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L915">source</a></div>
 
 
 
@@ -8036,7 +8087,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.neg_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L912">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L918">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8076,7 +8127,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.sub_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L914">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L920">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8116,7 +8167,7 @@ we make <code>eval₂</code> irreducible.</p>
 <div class="decl" id="polynomial.cast_int_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L916">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/eval.lean#L922">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8709,10 +8760,16 @@ we make <code>eval₂</code> irreducible.</p>
         <h4>ideles</h4>
         
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_K.html">adeles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_function_field.html">adeles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/adeles_number_field.html">adeles_number_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/examples.html">examples</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/fractional_ideal.html">fractional_ideal</a>
@@ -8724,10 +8781,13 @@ we make <code>eval₂</code> irreducible.</p>
             <a href="https://mariainesdff.github.io/ideles/galois.html">galois</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_K.html">ideles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_function_field.html">ideles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/ideles_number_field.html">ideles_number_field</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/main_theorem_GCFT.html">main_theorem_GCFT</a>
@@ -9382,6 +9442,13 @@ we make <code>eval₂</code> irreducible.</p>
             <a href="https://mariainesdff.github.io/ideles/data/bool/set.html">set</a>
         </div>
         </details>
+        <details class="nav_sect" data-path="data/complex" >
+            <summary>complex</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/complex/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="data/dfinsupp" >
             <summary>dfinsupp</summary>
             
@@ -9967,6 +10034,9 @@ we make <code>eval₂</code> irreducible.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html">nnreal</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/real/sqrt.html">sqrt</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="data/set" >
             <summary>set</summary>
@@ -10336,6 +10406,9 @@ we make <code>eval₂</code> irreducible.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/abelianization.html">abelianization</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/archimedean.html">archimedean</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/commutator.html">commutator</a>
         </div>
         <div class="nav_link ">
@@ -10539,6 +10612,9 @@ we make <code>eval₂</code> irreducible.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/logic/encodable/basic.html">basic</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/logic/encodable/lattice.html">lattice</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="logic/equiv" >
             <summary>equiv</summary>
@@ -10628,11 +10704,31 @@ we make <code>eval₂</code> irreducible.</p>
         <details class="nav_sect" data-path="number_theory" >
             <summary>number_theory</summary>
             
+        <details class="nav_sect" data-path="number_theory/legendre_symbol" >
+            <summary>legendre_symbol</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/gauss_eisenstein_lemmas.html">gauss_eisenstein_lemmas</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/quadratic_reciprocity.html">quadratic_reciprocity</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="number_theory/padics" >
             <summary>padics</summary>
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/number_theory/padics/padic_norm.html">padic_norm</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="number_theory/zsqrtd" >
+            <summary>zsqrtd</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/gaussian_int.html">gaussian_int</a>
         </div>
         </details>
         <div class="nav_link ">
@@ -10651,6 +10747,9 @@ we make <code>eval₂</code> irreducible.</p>
         <details class="nav_sect" data-path="order/filter" >
             <summary>filter</summary>
             
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/order/filter/archimedean.html">archimedean</a>
+        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/order/filter/at_top_bot.html">at_top_bot</a>
         </div>
@@ -10861,9 +10960,6 @@ we make <code>eval₂</code> irreducible.</p>
         <details class="nav_sect" data-path="ring_theory/dedekind_domain" >
             <summary>dedekind_domain</summary>
             
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/adic_valuation.html">adic_valuation</a>
-        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/basic.html">basic</a>
         </div>
@@ -11471,6 +11567,15 @@ we make <code>eval₂</code> irreducible.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/intermediate_value.html">intermediate_value</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/left_right.html">left_right</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_continuity.html">monotone_continuity</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_convergence.html">monotone_convergence</a>
+        </div>
         </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/const_mul_action.html">const_mul_action</a>
@@ -11492,6 +11597,9 @@ we make <code>eval₂</code> irreducible.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/group_with_zero.html">group_with_zero</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/infinite_sum.html">infinite_sum</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/localization.html">localization</a>
@@ -11542,6 +11650,19 @@ we make <code>eval₂</code> irreducible.</p>
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/continuous_function/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="topology/instances" >
+            <summary>instances</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/int.html">int</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/nnreal.html">nnreal</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/real.html">real</a>
         </div>
         </details>
         <details class="nav_sect" data-path="topology/metric_space" >

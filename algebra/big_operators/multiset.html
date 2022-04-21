@@ -195,6 +195,8 @@
 
     <div class="nav_link"><a class="break_within" href="#multiset.prod_nsmul"><span class="name">multiset</span>.<span class="name">prod_nsmul</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#multiset.prod_pair"><span class="name">multiset</span>.<span class="name">prod_pair</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#multiset.prod_repeat"><span class="name">multiset</span>.<span class="name">prod_repeat</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#multiset.prod_singleton"><span class="name">multiset</span>.<span class="name">prod_singleton</span></a></div>
@@ -264,6 +266,8 @@
     <div class="nav_link"><a class="break_within" href="#multiset.sum_map_zsmul"><span class="name">multiset</span>.<span class="name">sum_map_zsmul</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#multiset.sum_nonneg"><span class="name">multiset</span>.<span class="name">sum_nonneg</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#multiset.sum_pair"><span class="name">multiset</span>.<span class="name">sum_pair</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#multiset.sum_repeat"><span class="name">multiset</span>.<span class="name">sum_repeat</span></a></div>
 
@@ -945,10 +949,86 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
     
         
         
-<div class="decl" id="multiset.prod_add">
+<div class="decl" id="multiset.prod_pair">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L62">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/multiset.html#multiset.prod_pair"><span class="name">multiset</span>.<span class="name">prod_pair</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">{a, b}</span>.<a href="https://mariainesdff.github.io/ideles/algebra/big_operators/multiset.html#multiset.prod" title="multiset.prod">prod</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="multiset.sum_pair">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L62">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/multiset.html#multiset.sum_pair"><span class="name">multiset</span>.<span class="name">sum_pair</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">{a, b}</span>.<a href="https://mariainesdff.github.io/ideles/algebra/big_operators/multiset.html#multiset.sum" title="multiset.sum">sum</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="multiset.prod_add">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L66">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -988,7 +1068,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L62">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L66">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1028,7 +1108,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_nsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L65">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L69">source</a></div>
 
 
 
@@ -1067,7 +1147,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_repeat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L70">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L74">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1108,7 +1188,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_repeat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L70">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L74">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1149,7 +1229,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.pow_count">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L74">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L78">source</a></div>
 
 
 
@@ -1189,7 +1269,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.nsmul_count">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L74">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L78">source</a></div>
 
 
 
@@ -1229,7 +1309,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L78">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L82">source</a></div>
 
 
 
@@ -1272,7 +1352,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L78">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L82">source</a></div>
 
 
 
@@ -1315,7 +1395,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_hom'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L83">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L87">source</a></div>
 
 
 
@@ -1360,7 +1440,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_hom'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L83">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L87">source</a></div>
 
 
 
@@ -1405,7 +1485,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_hom₂">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L88">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L92">source</a></div>
 
 
 
@@ -1453,7 +1533,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_hom₂">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L88">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L92">source</a></div>
 
 
 
@@ -1501,7 +1581,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_hom_rel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L95">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L99">source</a></div>
 
 
 
@@ -1547,7 +1627,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_hom_rel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L95">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L99">source</a></div>
 
 
 
@@ -1593,7 +1673,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L102">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L106">source</a></div>
 
 
 
@@ -1632,7 +1712,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L102">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L106">source</a></div>
 
 
 
@@ -1671,7 +1751,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L105">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L109">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1713,7 +1793,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L105">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L109">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1755,7 +1835,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L109">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L113">source</a></div>
 
 
 
@@ -1796,7 +1876,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_nsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L109">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L113">source</a></div>
 
 
 
@@ -1837,7 +1917,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_prod_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L113">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L117">source</a></div>
 
 
 
@@ -1879,7 +1959,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_sum_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L113">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L117">source</a></div>
 
 
 
@@ -1921,7 +2001,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_induction">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L118">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L122">source</a></div>
 
 
 
@@ -1963,7 +2043,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_induction">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L118">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L122">source</a></div>
 
 
 
@@ -2005,7 +2085,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_induction_nonempty">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L127">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L131">source</a></div>
 
 
 
@@ -2047,7 +2127,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_induction_nonempty">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L127">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L131">source</a></div>
 
 
 
@@ -2089,7 +2169,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.dvd_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L144">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L148">source</a></div>
 
 
 
@@ -2128,7 +2208,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_dvd_prod_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L147">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L151">source</a></div>
 
 
 
@@ -2167,7 +2247,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_dvd_prod_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L155">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L159">source</a></div>
 
 
 
@@ -2208,7 +2288,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_add_monoid_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L170">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L174">source</a></div>
 
 
 
@@ -2256,7 +2336,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.coe_sum_add_monoid_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L175">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L179">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2295,7 +2375,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L182">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L186">source</a></div>
 
 
 
@@ -2334,7 +2414,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_eq_zero_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L190">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L194">source</a></div>
 
 
 
@@ -2374,7 +2454,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L193">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L197">source</a></div>
 
 
 
@@ -2415,7 +2495,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_neg'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L201">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L205">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2457,7 +2537,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_inv'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L201">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L205">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2499,7 +2579,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L205">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L209">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2541,7 +2621,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L205">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L209">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2583,7 +2663,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_zpow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L209">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L213">source</a></div>
 
 
 
@@ -2624,7 +2704,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_zsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L209">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L213">source</a></div>
 
 
 
@@ -2665,7 +2745,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.coe_inv_monoid_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L212">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L216">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2704,7 +2784,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L215">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L219">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2744,7 +2824,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L215">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L219">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2784,7 +2864,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_inv₀">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L224">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L228">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2826,7 +2906,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_div₀">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L228">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L232">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2868,7 +2948,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_zpow₀">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L231">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L235">source</a></div>
 
 
 
@@ -2909,7 +2989,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="commute.multiset_sum_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L239">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L243">source</a></div>
 
 
 
@@ -2949,7 +3029,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="commute.multiset_sum_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L247">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L251">source</a></div>
 
 
 
@@ -2989,7 +3069,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L251">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L255">source</a></div>
 
 
 
@@ -3030,7 +3110,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L254">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L258">source</a></div>
 
 
 
@@ -3071,7 +3151,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.dvd_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L262">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L266">source</a></div>
 
 
 
@@ -3117,7 +3197,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L275">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L279">source</a></div>
 
 
 
@@ -3155,7 +3235,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.one_le_prod_of_one_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L275">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L279">source</a></div>
 
 
 
@@ -3193,7 +3273,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.single_le_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L279">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L283">source</a></div>
 
 
 
@@ -3231,7 +3311,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.single_le_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L279">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L283">source</a></div>
 
 
 
@@ -3269,7 +3349,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_le_pow_card">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L283">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L287">source</a></div>
 
 
 
@@ -3309,7 +3389,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_le_card_nsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L283">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L287">source</a></div>
 
 
 
@@ -3349,7 +3429,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.all_one_of_le_one_le_of_prod_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L290">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L294">source</a></div>
 
 
 
@@ -3387,7 +3467,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.all_zero_of_le_zero_le_of_sum_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L290">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L294">source</a></div>
 
 
 
@@ -3425,7 +3505,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_le_sum_of_rel_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L299">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L303">source</a></div>
 
 
 
@@ -3464,7 +3544,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_le_prod_of_rel_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L299">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L303">source</a></div>
 
 
 
@@ -3503,7 +3583,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_map_le_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L308">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L312">source</a></div>
 
 
 
@@ -3543,7 +3623,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_le_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L308">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L312">source</a></div>
 
 
 
@@ -3583,7 +3663,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_le_sum_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L312">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L316">source</a></div>
 
 
 
@@ -3623,7 +3703,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_le_sum_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L312">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L316">source</a></div>
 
 
 
@@ -3663,7 +3743,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.card_nsmul_le_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L316">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L320">source</a></div>
 
 
 
@@ -3703,7 +3783,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.pow_card_le_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L316">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L320">source</a></div>
 
 
 
@@ -3743,7 +3823,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L321">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L325">source</a></div>
 
 
 
@@ -3782,7 +3862,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_eq_zero_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L337">source</a></div>
 
 
 
@@ -3820,7 +3900,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.prod_eq_one_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L337">source</a></div>
 
 
 
@@ -3858,7 +3938,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.le_sum_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L338">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L342">source</a></div>
 
 
 
@@ -3898,7 +3978,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.le_prod_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L338">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L342">source</a></div>
 
 
 
@@ -3938,7 +4018,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.le_sum_of_subadditive_on_pred">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L347">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L351">source</a></div>
 
 
 
@@ -3985,7 +4065,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.le_prod_of_submultiplicative_on_pred">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L347">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L351">source</a></div>
 
 
 
@@ -4032,7 +4112,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.le_prod_of_submultiplicative">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L368">source</a></div>
 
 
 
@@ -4075,7 +4155,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.le_sum_of_subadditive">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L368">source</a></div>
 
 
 
@@ -4118,7 +4198,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.le_prod_nonempty_of_submultiplicative_on_pred">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L371">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L375">source</a></div>
 
 
 
@@ -4164,7 +4244,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.le_sum_nonempty_of_subadditive_on_pred">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L371">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L375">source</a></div>
 
 
 
@@ -4210,7 +4290,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.le_sum_nonempty_of_subadditive">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L394">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L398">source</a></div>
 
 
 
@@ -4253,7 +4333,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.le_prod_nonempty_of_submultiplicative">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L394">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L398">source</a></div>
 
 
 
@@ -4296,7 +4376,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.sum_map_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L400">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L404">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4335,7 +4415,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="multiset.abs_sum_le_sum_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L403">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L407">source</a></div>
 
 
 
@@ -4373,7 +4453,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="map_multiset_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L410">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L414">source</a></div>
 
 
 
@@ -4416,7 +4496,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="map_multiset_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L410">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L414">source</a></div>
 
 
 
@@ -4459,7 +4539,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="monoid_hom.map_multiset_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L415">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L419">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4502,7 +4582,7 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
 <div class="decl" id="add_monoid_hom.map_multiset_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L415">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/multiset.lean#L419">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5097,10 +5177,16 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
         <h4>ideles</h4>
         
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_K.html">adeles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_function_field.html">adeles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/adeles_number_field.html">adeles_number_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/examples.html">examples</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/fractional_ideal.html">fractional_ideal</a>
@@ -5112,10 +5198,13 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
             <a href="https://mariainesdff.github.io/ideles/galois.html">galois</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_K.html">ideles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_function_field.html">ideles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/ideles_number_field.html">ideles_number_field</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/main_theorem_GCFT.html">main_theorem_GCFT</a>
@@ -5770,6 +5859,13 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
             <a href="https://mariainesdff.github.io/ideles/data/bool/set.html">set</a>
         </div>
         </details>
+        <details class="nav_sect" data-path="data/complex" >
+            <summary>complex</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/complex/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="data/dfinsupp" >
             <summary>dfinsupp</summary>
             
@@ -6355,6 +6451,9 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html">nnreal</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/real/sqrt.html">sqrt</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="data/set" >
             <summary>set</summary>
@@ -6724,6 +6823,9 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
             <a href="https://mariainesdff.github.io/ideles/group_theory/abelianization.html">abelianization</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/archimedean.html">archimedean</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/commutator.html">commutator</a>
         </div>
         <div class="nav_link ">
@@ -6927,6 +7029,9 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/logic/encodable/basic.html">basic</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/logic/encodable/lattice.html">lattice</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="logic/equiv" >
             <summary>equiv</summary>
@@ -7016,11 +7121,31 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
         <details class="nav_sect" data-path="number_theory" >
             <summary>number_theory</summary>
             
+        <details class="nav_sect" data-path="number_theory/legendre_symbol" >
+            <summary>legendre_symbol</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/gauss_eisenstein_lemmas.html">gauss_eisenstein_lemmas</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/quadratic_reciprocity.html">quadratic_reciprocity</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="number_theory/padics" >
             <summary>padics</summary>
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/number_theory/padics/padic_norm.html">padic_norm</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="number_theory/zsqrtd" >
+            <summary>zsqrtd</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/gaussian_int.html">gaussian_int</a>
         </div>
         </details>
         <div class="nav_link ">
@@ -7039,6 +7164,9 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
         <details class="nav_sect" data-path="order/filter" >
             <summary>filter</summary>
             
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/order/filter/archimedean.html">archimedean</a>
+        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/order/filter/at_top_bot.html">at_top_bot</a>
         </div>
@@ -7249,9 +7377,6 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
         <details class="nav_sect" data-path="ring_theory/dedekind_domain" >
             <summary>dedekind_domain</summary>
             
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/adic_valuation.html">adic_valuation</a>
-        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/basic.html">basic</a>
         </div>
@@ -7859,6 +7984,15 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/intermediate_value.html">intermediate_value</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/left_right.html">left_right</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_continuity.html">monotone_continuity</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_convergence.html">monotone_convergence</a>
+        </div>
         </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/const_mul_action.html">const_mul_action</a>
@@ -7880,6 +8014,9 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/group_with_zero.html">group_with_zero</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/infinite_sum.html">infinite_sum</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/localization.html">localization</a>
@@ -7930,6 +8067,19 @@ the cartesian product <code><a href="https://mariainesdff.github.io/ideles/data/
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/continuous_function/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="topology/instances" >
+            <summary>instances</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/int.html">int</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/nnreal.html">nnreal</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/real.html">real</a>
         </div>
         </details>
         <details class="nav_sect" data-path="topology/metric_space" >

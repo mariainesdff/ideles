@@ -8,13 +8,13 @@
     <title>ring_theory.ideal.local_ring - mathlib docs</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Local rings. Define local rings as commutative rings having a unique maximal ideal. Main definitions. `localring`: A predicate on commutative rings, stating that every element `a` is either a unit or…" />
+    <meta name="description" content="Local rings. Define local rings as commutative rings having a unique maximal ideal. Main definitions. `localring`: A predicate on commutative semirings, stating that the set of nonunits is closed…" />
     
     <link rel="canonical" href="https://leanprover-community.github.io/mathlib_docs/ring_theory/ideal/local_ring.html" />
     
     <meta property="og:title" content="ring_theory.ideal.local_ring - mathlib docs">
     <meta property="og:site_name" content="mathlib for Lean - API documentation">
-    <meta property="og:description" content="Local rings. Define local rings as commutative rings having a unique maximal ideal. Main definitions. `localring`: A predicate on commutative rings, stating that every element `a` is either a unit or…">
+    <meta property="og:description" content="Local rings. Define local rings as commutative rings having a unique maximal ideal. Main definitions. `localring`: A predicate on commutative semirings, stating that the set of nonunits is closed…">
     <meta property="og:image" content="https://mariainesdff.github.io/ideles/meta-og.png">
     <meta name="twitter:card" content="summary">
     <script src="https://mariainesdff.github.io/ideles/color_scheme.js"></script>
@@ -95,14 +95,6 @@
 
     <div class="nav_link"><a class="break_within" href="#is_unit_of_map_unit"><span class="name">is_unit_of_map_unit</span></a></div>
 
-    <div class="nav_link"><a class="break_within" href="#local_of_nonunits_ideal"><span class="name">local_of_nonunits_ideal</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#local_of_surjective"><span class="name">local_of_surjective</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#local_of_unique_max_ideal"><span class="name">local_of_unique_max_ideal</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#local_of_unique_nonzero_prime"><span class="name">local_of_unique_nonzero_prime</span></a></div>
-
     <div class="nav_link"><a class="break_within" href="#local_ring"><span class="name">local_ring</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#local_ring.eq_maximal_ideal"><span class="name">local_ring</span>.<span class="name">eq_maximal_ideal</span></a></div>
@@ -127,7 +119,13 @@
 
     <div class="nav_link"><a class="break_within" href="#local_ring.mem_maximal_ideal"><span class="name">local_ring</span>.<span class="name">mem_maximal_ideal</span></a></div>
 
-    <div class="nav_link"><a class="break_within" href="#local_ring.nonunits_add"><span class="name">local_ring</span>.<span class="name">nonunits_add</span></a></div>
+    <div class="nav_link"><a class="break_within" href="#local_ring.of_is_unit_or_is_unit_one_sub_self"><span class="name">local_ring</span>.<span class="name">of_is_unit_or_is_unit_one_sub_self</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#local_ring.of_surjective"><span class="name">local_ring</span>.<span class="name">of_surjective</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#local_ring.of_unique_max_ideal"><span class="name">local_ring</span>.<span class="name">of_unique_max_ideal</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#local_ring.of_unique_nonzero_prime"><span class="name">local_ring</span>.<span class="name">of_unique_nonzero_prime</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#local_ring.residue"><span class="name">local_ring</span>.<span class="name">residue</span></a></div>
 
@@ -140,6 +138,8 @@
     <div class="nav_link"><a class="break_within" href="#local_ring.residue_field.inhabited"><span class="name">local_ring</span>.<span class="name">residue_field</span>.<span class="name">inhabited</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#local_ring.residue_field.map"><span class="name">local_ring</span>.<span class="name">residue_field</span>.<span class="name">map</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#map_mem_nonunits_iff"><span class="name">map_mem_nonunits_iff</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#map_nonunit"><span class="name">map_nonunit</span></a></div>
 
@@ -159,11 +159,11 @@
 <p>Define local rings as commutative rings having a unique maximal ideal.</p>
 <h2 id="main-definitions" class="markdown-heading">Main definitions <a class="hover-link" href="#main-definitions">#</a></h2>
 <ul>
-<li><code><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a></code>: A predicate on commutative rings, stating that every element <code>a</code> is either a unit
-or <code>1 - a</code> is a unit. This is shown to be equivalent to the condition that there exists a unique
+<li><code><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a></code>: A predicate on commutative semirings, stating that the set of nonunits is closed
+under the addition. This is shown to be equivalent to the condition that there exists a unique
 maximal ideal.</li>
-<li><code><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a></code>: The unique maximal ideal for a local rings. Its carrier set is the set
-of non units.</li>
+<li><code><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a></code>: The unique maximal ideal for a local rings. Its carrier set is the
+set of non units.</li>
 <li><code><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a></code>: A predicate on semiring homomorphisms, requiring that it maps nonunits
 to nonunits. For local rings, this means that the image of the unique maximal ideal is again
 contained in the unique maximal ideal.</li>
@@ -179,7 +179,7 @@ contained in the unique maximal ideal.</li>
 <div class="decl" id="local_ring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L35">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L37">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -193,7 +193,7 @@ contained in the unique maximal ideal.</li>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring"><span class="name">local_ring</span></a></span>
 
     <span class="decl_args"><span class="fn">(R : Type u)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">Prop</span></div>
 </div>
 
@@ -204,15 +204,15 @@ contained in the unique maximal ideal.</li>
             <li class="structure_field" id="local_ring.to_nontrivial">to_nontrivial : <span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/nontrivial.html#nontrivial">nontrivial</a> R</span></li>
         
             
-            <li class="structure_field" id="local_ring.is_local">is_local : <span class="fn">∀ (a : R), <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/units.html#is_unit">is_unit</a> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/units.html#is_unit">is_unit</a> <span class="fn">(1 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> a)</span></span></span></span></li>
+            <li class="structure_field" id="local_ring.nonunits_add">nonunits_add : <span class="fn">∀ {a b : R}, <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span></span> → <span class="fn"><span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span></span> → <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span></span></span></span></span></li>
         
     </ul>
 
 
 
 
-<p>A commutative ring is local if it has a unique maximal ideal. Note that
-<code><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a></code> is a predicate.</p>
+<p>A semiring is local if it is nontrivial and the set of nonunits is closed under the addition.
+Note that <code><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a></code> is a predicate.</p>
 
 
 
@@ -224,11 +224,11 @@ contained in the unique maximal ideal.</li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#field.local_ring">field.local_ring</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/ring_theory/localization/at_prime.html#localization.at_prime.local_ring">localization.at_prime.local_ring</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/power_series/basic.html#mv_power_series.local_ring">mv_power_series.local_ring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/power_series/basic.html#power_series.local_ring">power_series.local_ring</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/ring_theory/localization/at_prime.html#localization.at_prime.local_ring">localization.at_prime.local_ring</a></li>
             
         </ul>
     </details>
@@ -242,10 +242,373 @@ contained in the unique maximal ideal.</li>
     
         
         
+<div class="decl" id="local_ring.of_unique_max_ideal">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L46">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.of_unique_max_ideal"><span class="name">local_ring</span>.<span class="name">of_unique_max_ideal</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
+    <span class="decl_args"><span class="fn">(h : ∃! (I : <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R)</span>, I.<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal.is_maximal" title="ideal.is_maximal">is_maximal</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R</span></div>
+</div>
+
+
+
+
+
+<p>A semiring is local if it has a unique maximal ideal.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="local_ring.of_unique_nonzero_prime">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L58">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.of_unique_nonzero_prime"><span class="name">local_ring</span>.<span class="name">of_unique_nonzero_prime</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
+    <span class="decl_args"><span class="fn">(h : ∃! (P : <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R)</span>, <span class="fn"><span class="fn">P <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> <a href="https://mariainesdff.github.io/ideles/order/bounded_order.html#has_bot.bot" title="has_bot.bot">⊥</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> P.<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal.is_prime" title="ideal.is_prime">is_prime</a></span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="local_ring.maximal_ideal">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L72">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal"><span class="name">local_ring</span>.<span class="name">maximal_ideal</span></a></span>
+
+    <span class="decl_args"><span class="fn">(R : Type u)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R</span></div>
+</div>
+
+
+
+
+
+<p>The ideal of elements that are not units.</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.mk" title="submodule.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.carrier" title="submodule.carrier">carrier</a> := <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group_with_zero/defs.html#monoid_with_zero.to_monoid">monoid_with_zero.to_monoid</a> R)</span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.add_mem'" title="submodule.add_mem'">add_mem'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.zero_mem'" title="submodule.zero_mem'">zero_mem'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.smul_mem'" title="submodule.smul_mem'">smul_mem'</a> := _}</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="local_ring.maximal_ideal.is_maximal">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L78">source</a></div>
+
+
+    <div class="attributes">@[protected, instance]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal.is_maximal"><span class="name">local_ring</span>.<span class="name">maximal_ideal</span>.<span class="name">is_maximal</span></a></span>
+
+    <span class="decl_args"><span class="fn">(R : Type u)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R)</span>.<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal.is_maximal" title="ideal.is_maximal">is_maximal</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="local_ring.maximal_ideal_unique">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L89">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal_unique"><span class="name">local_ring</span>.<span class="name">maximal_ideal_unique</span></a></span>
+
+    <span class="decl_args"><span class="fn">(R : Type u)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">∃! (I : <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R)</span>, I.<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal.is_maximal" title="ideal.is_maximal">is_maximal</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="local_ring.eq_maximal_ideal">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L96">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.eq_maximal_ideal"><span class="name">local_ring</span>.<span class="name">eq_maximal_ideal</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{I : <a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R}</span></span></span>
+    <span class="decl_args"><span class="fn">(hI : I.<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal.is_maximal" title="ideal.is_maximal">is_maximal</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">I <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="local_ring.le_maximal_ideal">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L99">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.le_maximal_ideal"><span class="name">local_ring</span>.<span class="name">le_maximal_ideal</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{J : <a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R}</span></span></span>
+    <span class="decl_args"><span class="fn">(hJ : J <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> <a href="https://mariainesdff.github.io/ideles/order/bounded_order.html#has_top.top" title="has_top.top">⊤</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">J <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="local_ring.mem_maximal_ideal">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L105">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.mem_maximal_ideal"><span class="name">local_ring</span>.<span class="name">mem_maximal_ideal</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>
+    <span class="decl_args"><span class="fn">(x : R)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="local_ring.of_is_unit_or_is_unit_one_sub_self">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L116">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.of_is_unit_or_is_unit_one_sub_self"><span class="name">local_ring</span>.<span class="name">of_is_unit_or_is_unit_one_sub_self</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/nontrivial.html#nontrivial">nontrivial</a> R]</span></span></span>
+    <span class="decl_args"><span class="fn">(h : ∀ (a : R), <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/units.html#is_unit">is_unit</a> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/units.html#is_unit">is_unit</a> <span class="fn">(1 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> a)</span></span></span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="local_ring.is_unit_or_is_unit_one_sub_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L42">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L138">source</a></div>
 
 
 
@@ -284,7 +647,7 @@ contained in the unique maximal ideal.</li>
 <div class="decl" id="local_ring.is_unit_of_mem_nonunits_one_sub_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L46">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L141">source</a></div>
 
 
 
@@ -324,7 +687,7 @@ contained in the unique maximal ideal.</li>
 <div class="decl" id="local_ring.is_unit_one_sub_self_of_mem_nonunits">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L50">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L145">source</a></div>
 
 
 
@@ -361,410 +724,7 @@ contained in the unique maximal ideal.</li>
     
         
         
-<div class="decl" id="local_ring.nonunits_add">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L54">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.nonunits_add"><span class="name">local_ring</span>.<span class="name">nonunits_add</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{x y : R}</span></span></span>
-    <span class="decl_args"><span class="fn">(hx : x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span>)</span></span>
-    <span class="decl_args"><span class="fn">(hy : y <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> y</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="local_ring.maximal_ideal">
-<div class="def">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L75">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">def</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal"><span class="name">local_ring</span>.<span class="name">maximal_ideal</span></a></span>
-
-    <span class="decl_args"><span class="fn">(R : Type u)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R</span></div>
-</div>
-
-
-
-
-
-<p>The ideal of elements that are not units.</p>
-
-
-
-    <details>
-        <summary>Equations</summary>
-        <ul class="equations">
-            
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.mk" title="submodule.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.carrier" title="submodule.carrier">carrier</a> := <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring.to_monoid">ring.to_monoid</a> R)</span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.add_mem'" title="submodule.add_mem'">add_mem'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.zero_mem'" title="submodule.zero_mem'">zero_mem'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.smul_mem'" title="submodule.smul_mem'">smul_mem'</a> := _}</span></span></li>
-            
-        </ul>
-    </details>
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="local_ring.maximal_ideal.is_maximal">
-<div class="def">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L81">source</a></div>
-
-
-    <div class="attributes">@[protected, instance]</div>
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">def</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal.is_maximal"><span class="name">local_ring</span>.<span class="name">maximal_ideal</span>.<span class="name">is_maximal</span></a></span>
-
-    <span class="decl_args"><span class="fn">(R : Type u)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R)</span>.<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal.is_maximal" title="ideal.is_maximal">is_maximal</a></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="local_ring.maximal_ideal_unique">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L92">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal_unique"><span class="name">local_ring</span>.<span class="name">maximal_ideal_unique</span></a></span>
-
-    <span class="decl_args"><span class="fn">(R : Type u)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn">∃! (I : <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R)</span>, I.<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal.is_maximal" title="ideal.is_maximal">is_maximal</a></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="local_ring.eq_maximal_ideal">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L100">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.eq_maximal_ideal"><span class="name">local_ring</span>.<span class="name">eq_maximal_ideal</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{I : <a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R}</span></span></span>
-    <span class="decl_args"><span class="fn">(hI : I.<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal.is_maximal" title="ideal.is_maximal">is_maximal</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn">I <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R</span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="local_ring.le_maximal_ideal">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L103">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.le_maximal_ideal"><span class="name">local_ring</span>.<span class="name">le_maximal_ideal</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{J : <a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R}</span></span></span>
-    <span class="decl_args"><span class="fn">(hJ : J <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> <a href="https://mariainesdff.github.io/ideles/order/bounded_order.html#has_top.top" title="has_top.top">⊤</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn">J <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R</span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="local_ring.mem_maximal_ideal">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L109">source</a></div>
-
-
-    <div class="attributes">@[simp]</div>
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.mem_maximal_ideal"><span class="name">local_ring</span>.<span class="name">mem_maximal_ideal</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>
-    <span class="decl_args"><span class="fn">(x : R)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span></span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="local_of_nonunits_ideal">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L116">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_of_nonunits_ideal"><span class="name">local_of_nonunits_ideal</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="decl_args"><span class="fn">(hnze : 0 <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 1)</span></span>
-    <span class="decl_args"><span class="fn">(h : ∀ (x : R), <span class="fn"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span></span> → <span class="fn">∀ (y : R), <span class="fn"><span class="fn">y <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span></span> → <span class="fn"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> y</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span></span></span></span></span>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R</span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="local_of_unique_max_ideal">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L126">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_of_unique_max_ideal"><span class="name">local_of_unique_max_ideal</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="decl_args"><span class="fn">(h : ∃! (I : <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R)</span>, I.<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal.is_maximal" title="ideal.is_maximal">is_maximal</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R</span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="local_of_unique_nonzero_prime">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L138">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_of_unique_nonzero_prime"><span class="name">local_of_unique_nonzero_prime</span></a></span>
-
-    <span class="decl_args"><span class="fn">(R : Type u)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="decl_args"><span class="fn">(h : ∃! (P : <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal">ideal</a> R)</span>, <span class="fn"><span class="fn">P <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> <a href="https://mariainesdff.github.io/ideles/order/bounded_order.html#has_bot.bot" title="has_bot.bot">⊥</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> P.<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#ideal.is_prime" title="ideal.is_prime">is_prime</a></span>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R</span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="local_of_surjective">
+<div class="decl" id="local_ring.of_surjective">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L149">source</a></div>
@@ -776,7 +736,7 @@ contained in the unique maximal ideal.</li>
 
 
 <span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_of_surjective"><span class="name">local_of_surjective</span></a></span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.of_surjective"><span class="name">local_ring</span>.<span class="name">of_surjective</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type v}</span></span></span>
@@ -810,7 +770,7 @@ contained in the unique maximal ideal.</li>
 <div class="decl" id="is_local_ring_hom">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L165">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L167">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -842,9 +802,9 @@ contained in the unique maximal ideal.</li>
 
 
 
-<p>A local ring homomorphism is a homomorphism between local rings
-such that the image of the maximal ideal of the source is contained within
-the maximal ideal of the target.</p>
+<p>A local ring homomorphism is a homomorphism <code>f</code> between local rings such that <code>a</code> in the domain
+is a unit if <code>f a</code> is a unit for any <code>a</code>. See <code><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.local_hom_tfae">local_ring.local_hom_tfae</a></code> for other equivalent
+definitions.</p>
 
 
 
@@ -860,15 +820,15 @@ the maximal ideal of the target.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom_comp">is_local_ring_hom_comp</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom_equiv">is_local_ring_hom_equiv</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#CommRing.is_local_ring_hom_comp">CommRing.is_local_ring_hom_comp</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom_equiv">is_local_ring_hom_equiv</a></li>
+                <li><a href="https://mariainesdff.github.io/ideles/ring_theory/localization/at_prime.html#localization.is_local_ring_hom_local_ring_hom">localization.is_local_ring_hom_local_ring_hom</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/power_series/basic.html#mv_power_series.map.is_local_ring_hom">mv_power_series.map.is_local_ring_hom</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/power_series/basic.html#power_series.map.is_local_ring_hom">power_series.map.is_local_ring_hom</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/ring_theory/localization/at_prime.html#localization.is_local_ring_hom_local_ring_hom">localization.is_local_ring_hom_local_ring_hom</a></li>
             
         </ul>
     </details>
@@ -885,7 +845,7 @@ the maximal ideal of the target.</p>
 <div class="decl" id="is_local_ring_hom_id">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L168">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L173">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -924,7 +884,7 @@ the maximal ideal of the target.</p>
 <div class="decl" id="is_unit_map_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L171">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L176">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -965,10 +925,54 @@ the maximal ideal of the target.</p>
     
         
         
+<div class="decl" id="map_mem_nonunits_iff">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L180">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#map_mem_nonunits_iff"><span class="name">map_mem_nonunits_iff</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> S]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : R <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> S)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> f]</span></span></span>
+    <span class="decl_args"><span class="fn">(a : R)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> S</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/basic.html#nonunits">nonunits</a> R</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="is_local_ring_hom_comp">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L176">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L184">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1012,139 +1016,10 @@ the maximal ideal of the target.</p>
     
         
         
-<div class="decl" id="CommRing.is_local_ring_hom_comp">
-<div class="def">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L181">source</a></div>
-
-
-    <div class="attributes">@[protected, instance]</div>
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">def</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#CommRing.is_local_ring_hom_comp"><span class="name">CommRing</span>.<span class="name">is_local_ring_hom_comp</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R S T : <a href="https://mariainesdff.github.io/ideles/algebra/category/CommRing/basic.html#CommRing">CommRing</a>}</span></span></span>
-    <span class="decl_args"><span class="fn">(f : R <a href="https://mariainesdff.github.io/ideles/combinatorics/quiver/basic.html#quiver.hom" title="quiver.hom">⟶</a> S)</span></span>
-    <span class="decl_args"><span class="fn">(g : S <a href="https://mariainesdff.github.io/ideles/combinatorics/quiver/basic.html#quiver.hom" title="quiver.hom">⟶</a> T)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> g]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> f]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> <span class="fn">(f <a href="https://mariainesdff.github.io/ideles/category_theory/category/basic.html#category_theory.category_struct.comp" title="category_theory.category_struct.comp">≫</a> g)</span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="ring_hom.domain_local_ring">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L186">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#ring_hom.domain_local_ring"><span class="name">ring_hom</span>.<span class="name">domain_local_ring</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_1}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> S]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[H : <a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> S]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : R <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> S)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> f]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R</span></div>
-</div>
-
-
-
-
-
-<p>If <code>f : R →+* S</code> is a local ring hom, then <code>R</code> is a local ring if <code>S</code> is.</p>
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="is_local_ring_hom_of_comp">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L197">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom_of_comp"><span class="name">is_local_ring_hom_of_comp</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_1}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{T : Type u_3}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> S]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> T]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : R <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> S)</span></span>
-    <span class="decl_args"><span class="fn">(g : S <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> T)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> <span class="fn">(g.<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.comp" title="ring_hom.comp">comp</a> f)</span>]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> f</span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
 <div class="decl" id="is_local_ring_hom_equiv">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L201">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L189">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1186,7 +1061,7 @@ the maximal ideal of the target.</p>
 <div class="decl" id="is_unit_of_map_unit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L209">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L197">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1231,7 +1106,7 @@ the maximal ideal of the target.</p>
 <div class="decl" id="of_irreducible_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L213">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L201">source</a></div>
 
 
 
@@ -1271,10 +1146,139 @@ the maximal ideal of the target.</p>
     
         
         
+<div class="decl" id="is_local_ring_hom_of_comp">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L206">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom_of_comp"><span class="name">is_local_ring_hom_of_comp</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{T : Type w}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> S]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> T]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : R <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> S)</span></span>
+    <span class="decl_args"><span class="fn">(g : S <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> T)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> <span class="fn">(g.<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.comp" title="ring_hom.comp">comp</a> f)</span>]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> f</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="CommRing.is_local_ring_hom_comp">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L210">source</a></div>
+
+
+    <div class="attributes">@[protected, instance]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#CommRing.is_local_ring_hom_comp"><span class="name">CommRing</span>.<span class="name">is_local_ring_hom_comp</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R S T : <a href="https://mariainesdff.github.io/ideles/algebra/category/CommRing/basic.html#CommRing">CommRing</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : R <a href="https://mariainesdff.github.io/ideles/combinatorics/quiver/basic.html#quiver.hom" title="quiver.hom">⟶</a> S)</span></span>
+    <span class="decl_args"><span class="fn">(g : S <a href="https://mariainesdff.github.io/ideles/combinatorics/quiver/basic.html#quiver.hom" title="quiver.hom">⟶</a> T)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> g]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> f]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> <span class="fn">(f <a href="https://mariainesdff.github.io/ideles/category_theory/category/basic.html#category_theory.category_struct.comp" title="category_theory.category_struct.comp">≫</a> g)</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="ring_hom.domain_local_ring">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L215">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#ring_hom.domain_local_ring"><span class="name">ring_hom</span>.<span class="name">domain_local_ring</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> S]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[H : <a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> S]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : R <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> S)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> f]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R</span></div>
+</div>
+
+
+
+
+
+<p>If <code>f : R →+* S</code> is a local ring hom, then <code>R</code> is a local ring if <code>S</code> is.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="is_local_ring_hom_of_iso">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L221">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L229">source</a></div>
 
 
 
@@ -1311,7 +1315,7 @@ the maximal ideal of the target.</p>
 <div class="decl" id="is_local_ring_hom_of_is_iso">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L229">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L237">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1351,7 +1355,7 @@ the maximal ideal of the target.</p>
 <div class="decl" id="map_nonunit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L240">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L252">source</a></div>
 
 
 
@@ -1364,9 +1368,9 @@ the maximal ideal of the target.</p>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type v}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> S]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> S]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> S]</span></span></span>
     <span class="decl_args"><span class="fn">(f : R <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> S)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> f]</span></span></span>
@@ -1379,6 +1383,7 @@ the maximal ideal of the target.</p>
 
 
 
+<p>The image of the maximal ideal of the source is contained within the maximal ideal of the target.</p>
 
 
 
@@ -1396,7 +1401,7 @@ the maximal ideal of the target.</p>
 <div class="decl" id="local_ring.local_hom_tfae">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L252">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L267">source</a></div>
 
 
 
@@ -1409,9 +1414,9 @@ the maximal ideal of the target.</p>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type v}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> S]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> S]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> S]</span></span></span>
     <span class="decl_args"><span class="fn">(f : R <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> S)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#is_local_ring_hom">is_local_ring_hom</a> f</span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set.image" title="set.image">''</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R)</span>.<a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.carrier" title="submodule.carrier">carrier</a></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_subset.subset" title="has_subset.subset">⊆</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> S)</span></span></span>, <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/operations.html#ideal.map">ideal.map</a> f</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> S</span></span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/operations.html#ideal.comap">ideal.comap</a> f</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> S)</span></span></span>, <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/operations.html#ideal.comap">ideal.comap</a> f</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> S)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.maximal_ideal">local_ring.maximal_ideal</a> R]</span></span></span>.<a href="https://mariainesdff.github.io/ideles/data/list/tfae.html#list.tfae" title="list.tfae">tfae</a></span></div>
@@ -1440,7 +1445,7 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
 <div class="decl" id="local_ring.residue_field">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L272">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L291">source</a></div>
 
 
 
@@ -1488,7 +1493,7 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
 <div class="decl" id="local_ring.residue_field.field">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L274">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L293">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1537,7 +1542,7 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
 <div class="decl" id="local_ring.residue_field.inhabited">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L277">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L296">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1586,7 +1591,7 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
 <div class="decl" id="local_ring.residue">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L280">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L299">source</a></div>
 
 
 
@@ -1634,7 +1639,7 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
 <div class="decl" id="local_ring.residue_field.algebra">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L283">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L303">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1683,7 +1688,7 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
 <div class="decl" id="local_ring.residue_field.map">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L290">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L310">source</a></div>
 
 
 
@@ -1736,7 +1741,7 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
 <div class="decl" id="local_ring.ker_eq_maximal_ideal">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L303">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L321">source</a></div>
 
 
 
@@ -1748,9 +1753,9 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring.ker_eq_maximal_ideal"><span class="name">local_ring</span>.<span class="name">ker_eq_maximal_ideal</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{K : Type u'}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{K : Type u_1}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/field/basic.html#field">field</a> K]</span></span></span>
     <span class="decl_args"><span class="fn">(φ : R <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> K)</span></span>
     <span class="decl_args"><span class="fn">(hφ : <a href="https://mariainesdff.github.io/ideles/init/function.html#function.surjective">function.surjective</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>φ)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -1778,7 +1783,7 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
 <div class="decl" id="field.local_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L315">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/ideal/local_ring.lean#L335">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1791,9 +1796,9 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
 <span class="decl_kind">def</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#field.local_ring"><span class="name">field</span>.<span class="name">local_ring</span></a></span>
 
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/field/basic.html#field">field</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> R</span></div>
+    <span class="decl_args"><span class="fn">(K : Type u')</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/field/basic.html#field">field</a> K]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/ideal/local_ring.html#local_ring">local_ring</a> K</span></div>
 </div>
 
 
@@ -2369,10 +2374,16 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
         <h4>ideles</h4>
         
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_K.html">adeles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_function_field.html">adeles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/adeles_number_field.html">adeles_number_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/examples.html">examples</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/fractional_ideal.html">fractional_ideal</a>
@@ -2384,10 +2395,13 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
             <a href="https://mariainesdff.github.io/ideles/galois.html">galois</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_K.html">ideles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_function_field.html">ideles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/ideles_number_field.html">ideles_number_field</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/main_theorem_GCFT.html">main_theorem_GCFT</a>
@@ -3042,6 +3056,13 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
             <a href="https://mariainesdff.github.io/ideles/data/bool/set.html">set</a>
         </div>
         </details>
+        <details class="nav_sect" data-path="data/complex" >
+            <summary>complex</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/complex/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="data/dfinsupp" >
             <summary>dfinsupp</summary>
             
@@ -3627,6 +3648,9 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html">nnreal</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/real/sqrt.html">sqrt</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="data/set" >
             <summary>set</summary>
@@ -3996,6 +4020,9 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
             <a href="https://mariainesdff.github.io/ideles/group_theory/abelianization.html">abelianization</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/archimedean.html">archimedean</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/commutator.html">commutator</a>
         </div>
         <div class="nav_link ">
@@ -4199,6 +4226,9 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/logic/encodable/basic.html">basic</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/logic/encodable/lattice.html">lattice</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="logic/equiv" >
             <summary>equiv</summary>
@@ -4288,11 +4318,31 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
         <details class="nav_sect" data-path="number_theory" >
             <summary>number_theory</summary>
             
+        <details class="nav_sect" data-path="number_theory/legendre_symbol" >
+            <summary>legendre_symbol</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/gauss_eisenstein_lemmas.html">gauss_eisenstein_lemmas</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/quadratic_reciprocity.html">quadratic_reciprocity</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="number_theory/padics" >
             <summary>padics</summary>
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/number_theory/padics/padic_norm.html">padic_norm</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="number_theory/zsqrtd" >
+            <summary>zsqrtd</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/gaussian_int.html">gaussian_int</a>
         </div>
         </details>
         <div class="nav_link ">
@@ -4311,6 +4361,9 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
         <details class="nav_sect" data-path="order/filter" >
             <summary>filter</summary>
             
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/order/filter/archimedean.html">archimedean</a>
+        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/order/filter/at_top_bot.html">at_top_bot</a>
         </div>
@@ -4521,9 +4574,6 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
         <details class="nav_sect" data-path="ring_theory/dedekind_domain" >
             <summary>dedekind_domain</summary>
             
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/adic_valuation.html">adic_valuation</a>
-        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/basic.html">basic</a>
         </div>
@@ -5131,6 +5181,15 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/intermediate_value.html">intermediate_value</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/left_right.html">left_right</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_continuity.html">monotone_continuity</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_convergence.html">monotone_convergence</a>
+        </div>
         </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/const_mul_action.html">const_mul_action</a>
@@ -5152,6 +5211,9 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/group_with_zero.html">group_with_zero</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/infinite_sum.html">infinite_sum</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/localization.html">localization</a>
@@ -5202,6 +5264,19 @@ i.e. any preimage of a unit is still a unit. <a href="https://stacks.math.columb
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/continuous_function/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="topology/instances" >
+            <summary>instances</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/int.html">int</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/nnreal.html">nnreal</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/real.html">real</a>
         </div>
         </details>
         <details class="nav_sect" data-path="topology/metric_space" >

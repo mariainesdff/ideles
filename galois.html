@@ -8,11 +8,11 @@
     <title>ideles / galois - mathlib docs</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The topological abelianization of the absolute Galois group. We define the topological abelianization of the absolute Galois group of a field `K`. Main definitions. `GK` : The Galois group of the…" />
+    <meta name="description" content="The topological abelianization of the absolute Galois group. We define the topological abelianization of the absolute Galois group of a field `K`. In order to fo this, we needed to formalize the…" />
     
     <meta property="og:title" content="ideles / galois - mathlib docs">
     <meta property="og:site_name" content="mathlib for Lean - API documentation">
-    <meta property="og:description" content="The topological abelianization of the absolute Galois group. We define the topological abelianization of the absolute Galois group of a field `K`. Main definitions. `GK` : The Galois group of the…">
+    <meta property="og:description" content="The topological abelianization of the absolute Galois group. We define the topological abelianization of the absolute Galois group of a field `K`. In order to fo this, we needed to formalize the…">
     <meta property="og:image" content="https://mariainesdff.github.io/ideles/meta-og.png">
     <meta name="twitter:card" content="summary">
     <script src="https://mariainesdff.github.io/ideles/color_scheme.js"></script>
@@ -36,7 +36,7 @@
 <nav class="internal_nav">
 <h3><a class="break_within" href="#top"><span class="name">ideles</span> / <span class="name">galois</span></a></h3>
 
-<p class="gh_nav_link"><a href="https://github.com/mariainesdff/ideles/blob/9b1102e32668279d07907a6a63ac9f0f4d0e9753/src/galois.lean">source</a></p>
+<p class="gh_nav_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/galois.lean">source</a></p>
 
 <div class="imports">
     <details>
@@ -92,18 +92,16 @@
     
         <div class="mod_doc">
             <h1 id="the-topological-abelianization-of-the-absolute-galois-group" class="markdown-heading">The topological abelianization of the absolute Galois group. <a class="hover-link" href="#the-topological-abelianization-of-the-absolute-galois-group">#</a></h1>
-<p>We define the topological abelianization of the absolute Galois group of a field <code>K</code>.</p>
+<p>We define the topological abelianization of the absolute Galois group of a field <code>K</code>.
+In order to fo this, we needed to formalize the definition <code><a href="https://mariainesdff.github.io/ideles/topology/algebra/group.html#subgroup.connected_component_of_one">subgroup.connected_component_of_one</a></code> and
+the lemmas <code><a href="https://mariainesdff.github.io/ideles/topology/algebra/group.html#topological_group.continuous_conj">topological_group.continuous_conj</a></code> and <code><a href="https://mariainesdff.github.io/ideles/topology/algebra/group.html#subgroup.is_normal_topological_closure">subgroup.is_normal_topological_closure</a></code>, which
+have already been integrated into mathlib.</p>
 <h2 id="main-definitions" class="markdown-heading">Main definitions <a class="hover-link" href="#main-definitions">#</a></h2>
 <ul>
 <li><code><a href="https://mariainesdff.github.io/ideles/galois.html#G_K">G_K</a></code> : The Galois group of the field extension <code>K^al/K</code>, where <code>K^al</code> is an algebraic closure
 of <code>K</code>.</li>
 <li><code><a href="https://mariainesdff.github.io/ideles/galois.html#G_K_ab">G_K_ab</a></code> : The topological abelianization of <code><a href="https://mariainesdff.github.io/ideles/galois.html#G_K">G_K</a></code>, that is, the quotient of <code><a href="https://mariainesdff.github.io/ideles/galois.html#G_K">G_K</a></code> by the
 topological closure of its commutator subgroup.</li>
-</ul>
-<h2 id="main-results" class="markdown-heading">Main results <a class="hover-link" href="#main-results">#</a></h2>
-<ul>
-<li><code><a href="https://mariainesdff.github.io/ideles/galois.html#G_K.is_normal_commutator_closure">G_K.is_normal_commutator_closure</a></code> : the topological closure of the commutation of <code><a href="https://mariainesdff.github.io/ideles/galois.html#G_K">G_K</a></code> is a
-normal subgroup.</li>
 </ul>
 <h2 id="tags" class="markdown-heading">Tags <a class="hover-link" href="#tags">#</a></h2>
 <p>number field, galois group, abelianization</p>
@@ -117,7 +115,7 @@ normal subgroup.</li>
 <div class="decl" id="G_K">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/9b1102e32668279d07907a6a63ac9f0f4d0e9753/src/galois.lean#L32">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/galois.lean#L31">source</a></div>
 
 
 
@@ -165,7 +163,7 @@ where <code>K^al</code> is an algebraic closure of <code>K</code>.</p>
 <div class="decl" id="G_K.group">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/9b1102e32668279d07907a6a63ac9f0f4d0e9753/src/galois.lean#L33">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/galois.lean#L33">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -213,7 +211,7 @@ where <code>K^al</code> is an algebraic closure of <code>K</code>.</p>
 <div class="decl" id="G_K.topological_space">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/9b1102e32668279d07907a6a63ac9f0f4d0e9753/src/galois.lean#L35">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/galois.lean#L36">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -262,7 +260,7 @@ where <code>K^al</code> is an algebraic closure of <code>K</code>.</p>
 <div class="decl" id="G_K.topological_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/9b1102e32668279d07907a6a63ac9f0f4d0e9753/src/galois.lean#L37">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/galois.lean#L39">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -309,7 +307,7 @@ where <code>K^al</code> is an algebraic closure of <code>K</code>.</p>
 <div class="decl" id="G_K.is_normal_commutator_closure">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/9b1102e32668279d07907a6a63ac9f0f4d0e9753/src/galois.lean#L41">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/galois.lean#L43">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -348,7 +346,7 @@ where <code>K^al</code> is an algebraic closure of <code>K</code>.</p>
 <div class="decl" id="G_K_ab">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/9b1102e32668279d07907a6a63ac9f0f4d0e9753/src/galois.lean#L46">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/galois.lean#L48">source</a></div>
 
 
 
@@ -396,7 +394,7 @@ topological closure of its commutator subgroup.</p>
 <div class="decl" id="G_K_ab.group">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/9b1102e32668279d07907a6a63ac9f0f4d0e9753/src/galois.lean#L47">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/galois.lean#L50">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -444,7 +442,7 @@ topological closure of its commutator subgroup.</p>
 <div class="decl" id="G_K_ab.topological_space">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/9b1102e32668279d07907a6a63ac9f0f4d0e9753/src/galois.lean#L50">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/galois.lean#L54">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -493,7 +491,7 @@ topological closure of its commutator subgroup.</p>
 <div class="decl" id="G_K_ab.topological_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/9b1102e32668279d07907a6a63ac9f0f4d0e9753/src/galois.lean#L53">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/galois.lean#L58">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1085,10 +1083,16 @@ topological closure of its commutator subgroup.</p>
         <h4>ideles</h4>
         
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_K.html">adeles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_function_field.html">adeles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/adeles_number_field.html">adeles_number_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/examples.html">examples</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/fractional_ideal.html">fractional_ideal</a>
@@ -1100,10 +1104,13 @@ topological closure of its commutator subgroup.</p>
             <a href="https://mariainesdff.github.io/ideles/galois.html">galois</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_K.html">ideles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_function_field.html">ideles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/ideles_number_field.html">ideles_number_field</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/main_theorem_GCFT.html">main_theorem_GCFT</a>
@@ -1758,6 +1765,13 @@ topological closure of its commutator subgroup.</p>
             <a href="https://mariainesdff.github.io/ideles/data/bool/set.html">set</a>
         </div>
         </details>
+        <details class="nav_sect" data-path="data/complex" >
+            <summary>complex</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/complex/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="data/dfinsupp" >
             <summary>dfinsupp</summary>
             
@@ -2343,6 +2357,9 @@ topological closure of its commutator subgroup.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html">nnreal</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/real/sqrt.html">sqrt</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="data/set" >
             <summary>set</summary>
@@ -2712,6 +2729,9 @@ topological closure of its commutator subgroup.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/abelianization.html">abelianization</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/archimedean.html">archimedean</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/commutator.html">commutator</a>
         </div>
         <div class="nav_link ">
@@ -2915,6 +2935,9 @@ topological closure of its commutator subgroup.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/logic/encodable/basic.html">basic</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/logic/encodable/lattice.html">lattice</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="logic/equiv" >
             <summary>equiv</summary>
@@ -3004,11 +3027,31 @@ topological closure of its commutator subgroup.</p>
         <details class="nav_sect" data-path="number_theory" >
             <summary>number_theory</summary>
             
+        <details class="nav_sect" data-path="number_theory/legendre_symbol" >
+            <summary>legendre_symbol</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/gauss_eisenstein_lemmas.html">gauss_eisenstein_lemmas</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/quadratic_reciprocity.html">quadratic_reciprocity</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="number_theory/padics" >
             <summary>padics</summary>
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/number_theory/padics/padic_norm.html">padic_norm</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="number_theory/zsqrtd" >
+            <summary>zsqrtd</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/gaussian_int.html">gaussian_int</a>
         </div>
         </details>
         <div class="nav_link ">
@@ -3027,6 +3070,9 @@ topological closure of its commutator subgroup.</p>
         <details class="nav_sect" data-path="order/filter" >
             <summary>filter</summary>
             
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/order/filter/archimedean.html">archimedean</a>
+        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/order/filter/at_top_bot.html">at_top_bot</a>
         </div>
@@ -3237,9 +3283,6 @@ topological closure of its commutator subgroup.</p>
         <details class="nav_sect" data-path="ring_theory/dedekind_domain" >
             <summary>dedekind_domain</summary>
             
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/adic_valuation.html">adic_valuation</a>
-        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/basic.html">basic</a>
         </div>
@@ -3847,6 +3890,15 @@ topological closure of its commutator subgroup.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/intermediate_value.html">intermediate_value</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/left_right.html">left_right</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_continuity.html">monotone_continuity</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_convergence.html">monotone_convergence</a>
+        </div>
         </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/const_mul_action.html">const_mul_action</a>
@@ -3868,6 +3920,9 @@ topological closure of its commutator subgroup.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/group_with_zero.html">group_with_zero</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/infinite_sum.html">infinite_sum</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/localization.html">localization</a>
@@ -3918,6 +3973,19 @@ topological closure of its commutator subgroup.</p>
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/continuous_function/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="topology/instances" >
+            <summary>instances</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/int.html">int</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/nnreal.html">nnreal</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/real.html">real</a>
         </div>
         </details>
         <details class="nav_sect" data-path="topology/metric_space" >

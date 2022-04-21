@@ -391,6 +391,10 @@
 
     <div class="nav_link"><a class="break_within" href="#mul_lt_mul_right_of_neg"><span class="name">mul_lt_mul_right_of_neg</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#mul_lt_of_lt_one_left"><span class="name">mul_lt_of_lt_one_left</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#mul_lt_of_lt_one_right"><span class="name">mul_lt_of_lt_one_right</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#mul_lt_one_of_nonneg_of_lt_one_left"><span class="name">mul_lt_one_of_nonneg_of_lt_one_left</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#mul_lt_one_of_nonneg_of_lt_one_right"><span class="name">mul_lt_one_of_nonneg_of_lt_one_right</span></a></div>
@@ -1651,13 +1655,13 @@ addition is monotone and multiplication by a positive number is strictly monoton
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/rat/order.html#rat.ordered_semiring">rat.ordered_semiring</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.ordered_semiring">real.ordered_semiring</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/subsemiring/basic.html#subsemiring_class.to_ordered_semiring">subsemiring_class.to_ordered_semiring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/subsemiring/basic.html#subsemiring.to_ordered_semiring">subsemiring.to_ordered_semiring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/algebra/subalgebra/basic.html#subalgebra.to_ordered_semiring">subalgebra.to_ordered_semiring</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.ordered_semiring">real.ordered_semiring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/nonneg.html#nonneg.ordered_semiring">nonneg.ordered_semiring</a></li>
             
@@ -2369,10 +2373,90 @@ addition is monotone and multiplication by a positive number is strictly monoton
     
         
         
+<div class="decl" id="mul_lt_of_lt_one_left">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L180">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/order/ring.html#mul_lt_of_lt_one_left"><span class="name">mul_lt_of_lt_one_left</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/order/ring.html#ordered_semiring">ordered_semiring</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(hb : 0 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> b)</span></span>
+    <span class="decl_args"><span class="fn">(ha : a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> 1)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> b</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="mul_lt_of_lt_one_right">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L183">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/order/ring.html#mul_lt_of_lt_one_right"><span class="name">mul_lt_of_lt_one_right</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/order/ring.html#ordered_semiring">ordered_semiring</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(ha : 0 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> a)</span></span>
+    <span class="decl_args"><span class="fn">(hb : b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> 1)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> a</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="decidable.mul_le_mul_of_nonneg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L181">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L187">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -2415,7 +2499,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_le_mul_of_nonneg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L189">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L195">source</a></div>
 
 
 
@@ -2453,7 +2537,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_le_mul_of_nonneg_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L193">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L199">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -2496,7 +2580,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_le_mul_of_nonneg_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L201">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L207">source</a></div>
 
 
 
@@ -2534,7 +2618,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_le_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L206">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L212">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -2579,7 +2663,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_le_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L212">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L218">source</a></div>
 
 
 
@@ -2617,7 +2701,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_nonneg_le_one_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L216">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L222">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -2662,7 +2746,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_nonneg_le_one_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L221">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L227">source</a></div>
 
 
 
@@ -2700,7 +2784,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L226">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L232">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -2743,7 +2827,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L231">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L237">source</a></div>
 
 
 
@@ -2781,7 +2865,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="pow_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L233">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L239">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2823,7 +2907,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_nonpos_of_nonneg_of_nonpos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L238">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L244">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -2866,7 +2950,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_nonpos_of_nonneg_of_nonpos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L243">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L249">source</a></div>
 
 
 
@@ -2904,7 +2988,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_nonpos_of_nonpos_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L247">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L253">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -2947,7 +3031,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_nonpos_of_nonpos_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L252">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L258">source</a></div>
 
 
 
@@ -2985,7 +3069,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_lt_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L256">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L262">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3030,7 +3114,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_lt_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L262">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L268">source</a></div>
 
 
 
@@ -3068,7 +3152,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_lt_mul'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L266">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L272">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3113,7 +3197,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_lt_mul'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L272">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L278">source</a></div>
 
 
 
@@ -3151,7 +3235,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L275">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L281">source</a></div>
 
 
 
@@ -3191,7 +3275,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="pow_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L279">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L285">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3233,7 +3317,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_neg_of_pos_of_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L283">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L289">source</a></div>
 
 
 
@@ -3273,7 +3357,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_neg_of_neg_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L287">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L293">source</a></div>
 
 
 
@@ -3313,7 +3397,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_self_lt_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L292">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L298">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3356,7 +3440,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_self_lt_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L296">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L302">source</a></div>
 
 
 
@@ -3396,7 +3480,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.strict_mono_on_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L300">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L306">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3436,7 +3520,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="strict_mono_on_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L304">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L310">source</a></div>
 
 
 
@@ -3473,7 +3557,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_self_le_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L308">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L314">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3516,7 +3600,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_self_le_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L312">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L318">source</a></div>
 
 
 
@@ -3556,7 +3640,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_lt_mul''">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L316">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L322">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3601,7 +3685,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_lt_mul''">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L323">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L329">source</a></div>
 
 
 
@@ -3639,7 +3723,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.le_mul_of_one_le_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L327">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L333">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3682,7 +3766,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="le_mul_of_one_le_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L332">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L338">source</a></div>
 
 
 
@@ -3720,7 +3804,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.le_mul_of_one_le_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L336">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L342">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3763,7 +3847,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="le_mul_of_one_le_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L341">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L347">source</a></div>
 
 
 
@@ -3801,7 +3885,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.lt_mul_of_one_lt_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L345">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L351">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3844,7 +3928,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="lt_mul_of_one_lt_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L350">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L356">source</a></div>
 
 
 
@@ -3882,7 +3966,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.lt_mul_of_one_lt_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L354">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L360">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3925,7 +4009,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="lt_mul_of_one_lt_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L359">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L365">source</a></div>
 
 
 
@@ -3963,7 +4047,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="lt_two_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L362">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L368">source</a></div>
 
 
 
@@ -4003,7 +4087,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.add_le_mul_two_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L366">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L372">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4046,7 +4130,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="add_le_mul_two_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L372">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L378">source</a></div>
 
 
 
@@ -4084,7 +4168,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.one_le_mul_of_one_le_of_one_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L376">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L382">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4127,7 +4211,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="one_le_mul_of_one_le_of_one_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L380">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L386">source</a></div>
 
 
 
@@ -4165,7 +4249,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="function.injective.ordered_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L386">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L392">source</a></div>
 
 
 
@@ -4228,7 +4312,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="bit1_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L411">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L417">source</a></div>
 
 
 
@@ -4268,7 +4352,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="lt_add_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L414">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L420">source</a></div>
 
 
 
@@ -4307,7 +4391,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="lt_one_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L417">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L423">source</a></div>
 
 
 
@@ -4346,7 +4430,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="bit1_pos'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L422">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L428">source</a></div>
 
 
 
@@ -4385,7 +4469,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="decidable.one_lt_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L429">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L435">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4428,7 +4512,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="one_lt_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L436">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L442">source</a></div>
 
 
 
@@ -4466,7 +4550,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="decidable.mul_le_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L440">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L446">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4510,7 +4594,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_le_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L444">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L450">source</a></div>
 
 
 
@@ -4548,7 +4632,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="decidable.one_lt_mul_of_le_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L448">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L454">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4591,7 +4675,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="one_lt_mul_of_le_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L456">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L462">source</a></div>
 
 
 
@@ -4629,7 +4713,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="decidable.one_lt_mul_of_lt_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L460">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L466">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4672,7 +4756,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="one_lt_mul_of_lt_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L468">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L474">source</a></div>
 
 
 
@@ -4710,7 +4794,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="decidable.mul_le_of_le_one_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L472">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L478">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4753,7 +4837,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_le_of_le_one_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L477">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L483">source</a></div>
 
 
 
@@ -4791,7 +4875,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="decidable.mul_le_of_le_one_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L481">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L487">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4834,7 +4918,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_le_of_le_one_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L486">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L492">source</a></div>
 
 
 
@@ -4872,7 +4956,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="decidable.mul_lt_one_of_nonneg_of_lt_one_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L490">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L496">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4916,7 +5000,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_lt_one_of_nonneg_of_lt_one_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L495">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L501">source</a></div>
 
 
 
@@ -4954,7 +5038,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="decidable.mul_lt_one_of_nonneg_of_lt_one_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L499">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L505">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4998,7 +5082,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_lt_one_of_nonneg_of_lt_one_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L504">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L510">source</a></div>
 
 
 
@@ -5036,7 +5120,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ordered_comm_semiring.to_comm_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L514">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L520">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -5075,7 +5159,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ordered_comm_semiring.to_ordered_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L514">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L520">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -5114,7 +5198,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ordered_comm_semiring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L514">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L520">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -5281,7 +5365,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="function.injective.ordered_comm_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L525">source</a></div>
 
 
 
@@ -5344,7 +5428,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="linear_ordered_semiring.to_ordered_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L539">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L545">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -5383,7 +5467,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="linear_ordered_semiring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L539">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L545">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -5553,13 +5637,13 @@ such that addition is monotone and multiplication by a positive number is strict
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/rat/order.html#rat.linear_ordered_semiring">rat.linear_ordered_semiring</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.linear_ordered_semiring">real.linear_ordered_semiring</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/subsemiring/basic.html#subsemiring_class.to_linear_ordered_semiring">subsemiring_class.to_linear_ordered_semiring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/subsemiring/basic.html#subsemiring.to_linear_ordered_semiring">subsemiring.to_linear_ordered_semiring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/algebra/subalgebra/basic.html#subalgebra.to_linear_ordered_semiring">subalgebra.to_linear_ordered_semiring</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.linear_ordered_semiring">real.linear_ordered_semiring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/nonneg.html#nonneg.linear_ordered_semiring">nonneg.linear_ordered_semiring</a></li>
             
@@ -5580,7 +5664,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="linear_ordered_semiring.to_linear_ordered_add_comm_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L539">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L545">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -5619,7 +5703,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="linear_ordered_semiring.to_nontrivial">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L539">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L545">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -5658,7 +5742,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="zero_lt_one'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L550">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L556">source</a></div>
 
 
 
@@ -5695,7 +5779,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="lt_of_mul_lt_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L552">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L558">source</a></div>
 
 
 
@@ -5735,7 +5819,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="lt_of_mul_lt_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L558">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L564">source</a></div>
 
 
 
@@ -5775,7 +5859,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="le_of_mul_le_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L564">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L570">source</a></div>
 
 
 
@@ -5815,7 +5899,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="le_of_mul_le_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L570">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L576">source</a></div>
 
 
 
@@ -5855,7 +5939,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="pos_and_pos_or_neg_and_neg_of_mul_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L576">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L582">source</a></div>
 
 
 
@@ -5894,7 +5978,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="nonneg_and_nonneg_or_nonpos_and_nonpos_of_mul_nnonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L588">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L594">source</a></div>
 
 
 
@@ -5933,7 +6017,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="pos_of_mul_pos_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L599">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L605">source</a></div>
 
 
 
@@ -5973,7 +6057,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="pos_of_mul_pos_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L602">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L608">source</a></div>
 
 
 
@@ -6013,7 +6097,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="pos_iff_pos_of_mul_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L605">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L611">source</a></div>
 
 
 
@@ -6052,7 +6136,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="neg_of_mul_pos_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L608">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L614">source</a></div>
 
 
 
@@ -6092,7 +6176,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="neg_of_mul_pos_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L611">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L617">source</a></div>
 
 
 
@@ -6132,7 +6216,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="neg_iff_neg_of_mul_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L614">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L620">source</a></div>
 
 
 
@@ -6171,7 +6255,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="nonneg_of_mul_nonneg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L617">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L623">source</a></div>
 
 
 
@@ -6211,7 +6295,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="nonneg_of_mul_nonneg_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L620">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L626">source</a></div>
 
 
 
@@ -6251,7 +6335,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="neg_of_mul_neg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L623">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L629">source</a></div>
 
 
 
@@ -6291,7 +6375,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="neg_of_mul_neg_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L627">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L633">source</a></div>
 
 
 
@@ -6331,7 +6415,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="nonpos_of_mul_nonpos_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L631">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L637">source</a></div>
 
 
 
@@ -6371,7 +6455,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="nonpos_of_mul_nonpos_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L634">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L640">source</a></div>
 
 
 
@@ -6411,7 +6495,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="mul_le_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L637">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L643">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6452,7 +6536,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="mul_le_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L641">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L647">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6493,7 +6577,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="mul_lt_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L645">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L651">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6534,7 +6618,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="mul_lt_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L650">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L656">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6575,7 +6659,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="zero_le_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L655">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L661">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6616,7 +6700,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="zero_le_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L658">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L664">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6657,7 +6741,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="zero_lt_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L661">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L667">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6698,7 +6782,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="zero_lt_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L664">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L670">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6739,7 +6823,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="add_le_mul_of_left_le_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L667">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L673">source</a></div>
 
 
 
@@ -6779,7 +6863,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="add_le_mul_of_right_le_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L676">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L682">source</a></div>
 
 
 
@@ -6819,7 +6903,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="add_le_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L685">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L691">source</a></div>
 
 
 
@@ -6859,7 +6943,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="add_le_mul'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L689">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L695">source</a></div>
 
 
 
@@ -6899,7 +6983,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="bit0_le_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L694">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L700">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6939,7 +7023,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="bit0_lt_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L697">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L703">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6979,7 +7063,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="bit1_le_bit1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L700">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L706">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7019,7 +7103,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="bit1_lt_bit1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L703">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L709">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7059,7 +7143,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="one_le_bit1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L706">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L712">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7099,7 +7183,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="one_lt_bit1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L709">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L715">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7139,7 +7223,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="zero_le_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L712">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L718">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7179,7 +7263,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="zero_lt_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L715">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L721">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7219,7 +7303,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="le_mul_iff_one_le_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L720">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L726">source</a></div>
 
 
 
@@ -7258,7 +7342,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="lt_mul_iff_one_lt_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L724">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L730">source</a></div>
 
 
 
@@ -7297,7 +7381,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="le_mul_iff_one_le_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L728">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L734">source</a></div>
 
 
 
@@ -7336,7 +7420,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="lt_mul_iff_one_lt_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L732">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L738">source</a></div>
 
 
 
@@ -7375,7 +7459,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="mul_nonneg_iff_right_nonneg_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L736">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L742">source</a></div>
 
 
 
@@ -7414,7 +7498,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="mul_nonneg_iff_left_nonneg_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L740">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L746">source</a></div>
 
 
 
@@ -7453,7 +7537,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="mul_le_iff_le_one_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L744">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L750">source</a></div>
 
 
 
@@ -7492,7 +7576,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="mul_lt_iff_lt_one_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L748">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L754">source</a></div>
 
 
 
@@ -7531,7 +7615,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="mul_le_iff_le_one_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L751">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L757">source</a></div>
 
 
 
@@ -7570,7 +7654,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="mul_lt_iff_lt_one_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L755">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L761">source</a></div>
 
 
 
@@ -7609,7 +7693,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="nonpos_of_mul_nonneg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L760">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L766">source</a></div>
 
 
 
@@ -7649,7 +7733,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="nonpos_of_mul_nonneg_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L763">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L769">source</a></div>
 
 
 
@@ -7689,7 +7773,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="linear_ordered_semiring.to_no_max_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L767">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L773">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7728,7 +7812,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="function.injective.linear_ordered_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L774">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L780">source</a></div>
 
 
 
@@ -7791,7 +7875,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="units.inv_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L784">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L790">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7831,7 +7915,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="units.inv_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L789">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L795">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7871,7 +7955,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="monotone_mul_left_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L799">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L805">source</a></div>
 
 
 
@@ -7910,7 +7994,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="monotone_mul_right_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L803">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L809">source</a></div>
 
 
 
@@ -7949,7 +8033,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="monotone.mul_const">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L807">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L813">source</a></div>
 
 
 
@@ -7992,7 +8076,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="monotone.const_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L811">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L817">source</a></div>
 
 
 
@@ -8035,7 +8119,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="monotone.mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L815">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L821">source</a></div>
 
 
 
@@ -8079,7 +8163,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="strict_mono_mul_left_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L820">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L826">source</a></div>
 
 
 
@@ -8118,7 +8202,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="strict_mono_mul_right_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L823">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L829">source</a></div>
 
 
 
@@ -8157,7 +8241,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="strict_mono.mul_const">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L826">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L832">source</a></div>
 
 
 
@@ -8200,7 +8284,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="strict_mono.const_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L830">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L836">source</a></div>
 
 
 
@@ -8243,7 +8327,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="strict_mono.mul_monotone">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L834">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L840">source</a></div>
 
 
 
@@ -8287,7 +8371,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="monotone.mul_strict_mono">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L840">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L846">source</a></div>
 
 
 
@@ -8331,7 +8415,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="strict_mono.mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L846">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L852">source</a></div>
 
 
 
@@ -8375,7 +8459,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_max_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L857">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L863">source</a></div>
 
 
 
@@ -8415,7 +8499,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_min_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L860">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L866">source</a></div>
 
 
 
@@ -8455,7 +8539,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="max_mul_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L863">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L869">source</a></div>
 
 
 
@@ -8495,7 +8579,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="min_mul_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L866">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L872">source</a></div>
 
 
 
@@ -8535,7 +8619,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ordered_ring.to_ordered_add_comm_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L874">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L880">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -8574,7 +8658,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ordered_ring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L874">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L880">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -8726,11 +8810,13 @@ addition is monotone and multiplication by a positive number is strictly monoton
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/rat/order.html#rat.ordered_ring">rat.ordered_ring</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.ordered_ring">real.ordered_ring</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/subring/basic.html#subring.to_ordered_ring">subring.to_ordered_ring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/algebra/subalgebra/basic.html#subalgebra.to_ordered_ring">subalgebra.to_ordered_ring</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.ordered_ring">real.ordered_ring</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/basic.html#zsqrtd.ordered_ring">zsqrtd.ordered_ring</a></li>
             
         </ul>
     </details>
@@ -8747,7 +8833,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="ordered_ring.to_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L874">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L880">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -8786,7 +8872,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.ordered_ring.mul_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L882">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L888">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8829,7 +8915,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="ordered_ring.mul_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L890">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L896">source</a></div>
 
 
 
@@ -8867,7 +8953,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.ordered_ring.mul_le_mul_of_nonneg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L894">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L900">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8910,7 +8996,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="ordered_ring.mul_le_mul_of_nonneg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L901">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L907">source</a></div>
 
 
 
@@ -8948,7 +9034,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.ordered_ring.mul_le_mul_of_nonneg_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L905">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L911">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8991,7 +9077,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="ordered_ring.mul_le_mul_of_nonneg_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L912">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L918">source</a></div>
 
 
 
@@ -9029,7 +9115,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="ordered_ring.mul_lt_mul_of_pos_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L915">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L921">source</a></div>
 
 
 
@@ -9069,7 +9155,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="ordered_ring.mul_lt_mul_of_pos_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L921">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L927">source</a></div>
 
 
 
@@ -9109,7 +9195,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="ordered_ring.to_ordered_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L928">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L934">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -9157,7 +9243,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_le_mul_of_nonpos_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L938">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L944">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9200,7 +9286,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_le_mul_of_nonpos_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L945">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L951">source</a></div>
 
 
 
@@ -9238,7 +9324,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_le_mul_of_nonpos_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L949">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L955">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9281,7 +9367,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_le_mul_of_nonpos_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L956">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L962">source</a></div>
 
 
 
@@ -9319,7 +9405,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="decidable.mul_nonneg_of_nonpos_of_nonpos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L960">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L966">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9362,7 +9448,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_nonneg_of_nonpos_of_nonpos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L965">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L971">source</a></div>
 
 
 
@@ -9400,7 +9486,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_lt_mul_of_neg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L968">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L974">source</a></div>
 
 
 
@@ -9440,7 +9526,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_lt_mul_of_neg_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L974">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L980">source</a></div>
 
 
 
@@ -9480,7 +9566,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_pos_of_neg_of_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L980">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L986">source</a></div>
 
 
 
@@ -9520,7 +9606,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="function.injective.ordered_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L987">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L993">source</a></div>
 
 
 
@@ -9589,7 +9675,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="le_iff_exists_nonneg_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1000">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1006">source</a></div>
 
 
 
@@ -9627,7 +9713,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ordered_comm_ring.to_comm_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1011">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1017">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -9666,7 +9752,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ordered_comm_ring.to_ordered_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1011">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1017">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -9705,7 +9791,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ordered_comm_ring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1011">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1017">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -9856,11 +9942,13 @@ addition is monotone and multiplication by a positive number is strictly monoton
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/ring.html#linear_ordered_comm_ring.to_ordered_comm_ring">linear_ordered_comm_ring.to_ordered_comm_ring</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.ordered_comm_ring">real.ordered_comm_ring</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/subring/basic.html#subring.to_ordered_comm_ring">subring.to_ordered_comm_ring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/algebra/subalgebra/basic.html#subalgebra.to_ordered_comm_ring">subalgebra.to_ordered_comm_ring</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.ordered_comm_ring">real.ordered_comm_ring</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/data/complex/basic.html#complex.ordered_comm_ring">complex.ordered_comm_ring</a></li>
             
         </ul>
     </details>
@@ -9877,7 +9965,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="ordered_comm_ring.to_ordered_comm_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1014">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1020">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -9925,7 +10013,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="function.injective.ordered_comm_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1022">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1028">source</a></div>
 
 
 
@@ -9994,7 +10082,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="linear_ordered_ring.to_nontrivial">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1038">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1044">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -10033,7 +10121,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="linear_ordered_ring.to_linear_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1038">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1044">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -10072,7 +10160,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="linear_ordered_ring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1038">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1044">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -10249,11 +10337,13 @@ addition is monotone and multiplication by a positive number is strictly monoton
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/rat/order.html#rat.linear_ordered_ring">rat.linear_ordered_ring</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.linear_ordered_ring">real.linear_ordered_ring</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/subring/basic.html#subring.to_linear_ordered_ring">subring.to_linear_ordered_ring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/algebra/subalgebra/basic.html#subalgebra.to_linear_ordered_ring">subalgebra.to_linear_ordered_ring</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.linear_ordered_ring">real.linear_ordered_ring</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/basic.html#zsqrtd.linear_ordered_ring">zsqrtd.linear_ordered_ring</a></li>
             
         </ul>
     </details>
@@ -10270,7 +10360,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="linear_ordered_ring.to_ordered_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1038">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1044">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -10309,7 +10399,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="linear_ordered_ring.to_linear_ordered_add_comm_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1042">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1048">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -10357,7 +10447,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="le_of_mul_le_of_one_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1051">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1057">source</a></div>
 
 
 
@@ -10398,7 +10488,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="nonneg_le_nonneg_of_sq_le_sq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1058">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1064">source</a></div>
 
 
 
@@ -10438,7 +10528,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_self_le_mul_self_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1061">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1067">source</a></div>
 
 
 
@@ -10478,7 +10568,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_self_lt_mul_self_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1064">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1070">source</a></div>
 
 
 
@@ -10518,7 +10608,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_self_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1067">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1073">source</a></div>
 
 
 
@@ -10558,7 +10648,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="linear_ordered_ring.to_linear_ordered_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1076">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1082">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -10606,7 +10696,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="linear_ordered_ring.is_domain">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1087">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1093">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -10645,7 +10735,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="abs_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1098">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1104">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10684,7 +10774,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="abs_two">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1099">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1105">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10723,7 +10813,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="abs_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1101">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1107">source</a></div>
 
 
 
@@ -10761,7 +10851,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="abs_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1111">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1117">source</a></div>
 
 
 
@@ -10808,7 +10898,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="abs_mul_abs_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1113">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1119">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10848,7 +10938,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="abs_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1116">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1122">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10888,7 +10978,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_pos_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1119">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1125">source</a></div>
 
 
 
@@ -10926,7 +11016,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_neg_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1123">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1129">source</a></div>
 
 
 
@@ -10964,7 +11054,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_nonneg_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1126">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1132">source</a></div>
 
 
 
@@ -11002,7 +11092,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_nonneg_of_three">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1132">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1138">source</a></div>
 
 
 
@@ -11041,7 +11131,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_nonpos_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1137">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1143">source</a></div>
 
 
 
@@ -11079,7 +11169,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="mul_self_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1140">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1146">source</a></div>
 
 
 
@@ -11117,7 +11207,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="neg_le_self_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1143">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1149">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11157,7 +11247,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="neg_lt_self_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1146">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1152">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11197,7 +11287,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="le_neg_self_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1149">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1155">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11237,7 +11327,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="lt_neg_self_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1154">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1160">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11277,7 +11367,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="abs_eq_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1159">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1165">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11317,7 +11407,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="abs_eq_neg_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1161">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1167">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11357,7 +11447,7 @@ addition is monotone and multiplication by a positive number is strictly monoton
 <div class="decl" id="abs_cases">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1166">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1172">source</a></div>
 
 
 
@@ -11398,7 +11488,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="gt_of_mul_lt_mul_neg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1176">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1182">source</a></div>
 
 
 
@@ -11438,7 +11528,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="neg_one_lt_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1185">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1191">source</a></div>
 
 
 
@@ -11475,7 +11565,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="mul_le_mul_left_of_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1187">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1193">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11516,7 +11606,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="mul_le_mul_right_of_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1192">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1198">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11557,7 +11647,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="mul_lt_mul_left_of_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1197">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1203">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11598,7 +11688,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="mul_lt_mul_right_of_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1200">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1206">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11639,7 +11729,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="sub_one_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1203">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1209">source</a></div>
 
 
 
@@ -11677,7 +11767,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="mul_self_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1206">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1212">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11717,7 +11807,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="mul_self_le_mul_self_of_le_of_neg_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1215">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1221">source</a></div>
 
 
 
@@ -11757,7 +11847,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="nonneg_of_mul_nonpos_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1222">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1228">source</a></div>
 
 
 
@@ -11797,7 +11887,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="nonneg_of_mul_nonpos_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1225">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1231">source</a></div>
 
 
 
@@ -11837,7 +11927,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="pos_of_mul_neg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1228">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1234">source</a></div>
 
 
 
@@ -11877,7 +11967,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="pos_of_mul_neg_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1232">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1238">source</a></div>
 
 
 
@@ -11917,7 +12007,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="neg_iff_pos_of_mul_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1236">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1242">source</a></div>
 
 
 
@@ -11956,7 +12046,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="pos_iff_neg_of_mul_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1239">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1245">source</a></div>
 
 
 
@@ -11995,7 +12085,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="mul_self_add_mul_self_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1243">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1249">source</a></div>
 
 
 
@@ -12034,7 +12124,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="eq_zero_of_mul_self_add_mul_self_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1246">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1252">source</a></div>
 
 
 
@@ -12073,7 +12163,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="abs_eq_iff_mul_self_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1249">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1255">source</a></div>
 
 
 
@@ -12111,7 +12201,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="abs_lt_iff_mul_self_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1255">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1261">source</a></div>
 
 
 
@@ -12149,7 +12239,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="abs_le_iff_mul_self_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1261">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1267">source</a></div>
 
 
 
@@ -12187,7 +12277,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="abs_le_one_iff_mul_self_le_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1267">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1273">source</a></div>
 
 
 
@@ -12225,7 +12315,7 @@ Use cases on this lemma to automate linarith in inequalities</p>
 <div class="decl" id="function.injective.linear_ordered_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1273">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1279">source</a></div>
 
 
 
@@ -12294,7 +12384,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="linear_ordered_comm_ring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1291">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1297">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -12476,11 +12566,13 @@ such that addition is monotone and multiplication by a positive number is strict
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/rat/order.html#rat.linear_ordered_comm_ring">rat.linear_ordered_comm_ring</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.linear_ordered_comm_ring">real.linear_ordered_comm_ring</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/subring/basic.html#subring.to_linear_ordered_comm_ring">subring.to_linear_ordered_comm_ring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/algebra/subalgebra/basic.html#subalgebra.to_linear_ordered_comm_ring">subalgebra.to_linear_ordered_comm_ring</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real.linear_ordered_comm_ring">real.linear_ordered_comm_ring</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/basic.html#zsqrtd.linear_ordered_comm_ring">zsqrtd.linear_ordered_comm_ring</a></li>
             
         </ul>
     </details>
@@ -12497,7 +12589,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="linear_ordered_comm_ring.to_linear_ordered_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1291">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1297">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -12536,7 +12628,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="linear_ordered_comm_ring.to_comm_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1291">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1297">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -12575,7 +12667,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="linear_ordered_comm_ring.to_ordered_comm_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1294">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1300">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -12623,7 +12715,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="linear_ordered_comm_ring.to_linear_ordered_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1299">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1305">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -12671,7 +12763,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="max_mul_mul_le_max_mul_max">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1307">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1313">source</a></div>
 
 
 
@@ -12712,7 +12804,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="abs_sub_sq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1318">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1324">source</a></div>
 
 
 
@@ -12750,7 +12842,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="abs_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1329">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1335">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12791,7 +12883,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="abs_dvd_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1332">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1338">source</a></div>
 
 
 
@@ -12830,7 +12922,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="dvd_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1335">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1341">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12871,7 +12963,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="self_dvd_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1338">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1344">source</a></div>
 
 
 
@@ -12910,7 +13002,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="abs_dvd_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1341">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1347">source</a></div>
 
 
 
@@ -12949,7 +13041,7 @@ such that addition is monotone and multiplication by a positive number is strict
 <div class="decl" id="function.injective.linear_ordered_comm_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1353">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1359">source</a></div>
 
 
 
@@ -13018,7 +13110,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ring.positive_cone.to_positive_cone">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1373">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1379">source</a></div>
 
 
 
@@ -13057,7 +13149,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ring.positive_cone">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1373">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1379">source</a></div>
 
 
     <div class="attributes">@[nolint]</div>
@@ -13126,7 +13218,7 @@ which contains <code>1</code> and such that the positive elements are closed und
 <div class="decl" id="ring.total_positive_cone">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1382">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1388">source</a></div>
 
 
     <div class="attributes">@[nolint]</div>
@@ -13203,7 +13295,7 @@ which contains <code>1</code> and such that the positive elements are closed und
 <div class="decl" id="ring.total_positive_cone.to_total_positive_cone">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1382">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1388">source</a></div>
 
 
 
@@ -13242,7 +13334,7 @@ which contains <code>1</code> and such that the positive elements are closed und
 <div class="decl" id="ring.total_positive_cone.to_positive_cone">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1382">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1388">source</a></div>
 
 
 
@@ -13281,7 +13373,7 @@ which contains <code>1</code> and such that the positive elements are closed und
 <div class="decl" id="ordered_ring.mk_of_positive_cone">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1400">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1406">source</a></div>
 
 
 
@@ -13330,7 +13422,7 @@ designating a positive cone in an existing <code><a href="https://mariainesdff.g
 <div class="decl" id="linear_ordered_ring.mk_of_positive_cone">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1419">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1425">source</a></div>
 
 
 
@@ -13379,7 +13471,7 @@ designating a positive cone in an existing <code><a href="https://mariainesdff.g
 <div class="decl" id="canonically_ordered_comm_semiring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1436">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1442">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -13544,7 +13636,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="canonically_ordered_comm_semiring.to_comm_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1436">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1442">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -13583,7 +13675,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="canonically_ordered_comm_semiring.to_canonically_ordered_add_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1436">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1442">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -13622,7 +13714,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="canonically_ordered_comm_semiring.to_no_zero_divisors">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1444">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1450">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -13661,7 +13753,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="canonically_ordered_comm_semiring.to_covariant_mul_le">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1448">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1454">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -13700,7 +13792,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="canonically_ordered_comm_semiring.zero_lt_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1457">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1463">source</a></div>
 
 
 
@@ -13739,7 +13831,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="canonically_ordered_comm_semiring.mul_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1459">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1465">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13779,7 +13871,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="add_le_cancellable.mul_tsub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1473">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1479">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -13823,7 +13915,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="add_le_cancellable.tsub_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1481">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1487">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -13867,7 +13959,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="mul_tsub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1488">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1494">source</a></div>
 
 
 
@@ -13909,7 +14001,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="tsub_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1491">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1497">source</a></div>
 
 
 
@@ -13960,7 +14052,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.nontrivial">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1504">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1510">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -13999,7 +14091,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.mul_zero_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1513">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1519">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -14049,7 +14141,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.mul_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1525">source</a></div>
 
 
 
@@ -14089,7 +14181,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.mul_top">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1522">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1528">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14132,7 +14224,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.top_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1525">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1531">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14175,7 +14267,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.top_mul_top">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1528">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1534">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14216,7 +14308,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.coe_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1537">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1543">source</a></div>
 
 
     <div class="attributes">@[norm_cast]</div>
@@ -14257,7 +14349,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.mul_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1542">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1548">source</a></div>
 
 
 
@@ -14298,7 +14390,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.mul_eq_top_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1547">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1553">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14339,7 +14431,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.mul_lt_top">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1558">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1564">source</a></div>
 
 
 
@@ -14381,7 +14473,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.mul_zero_one_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1568">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1574">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -14432,7 +14524,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.no_zero_divisors">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1582">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1588">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -14473,7 +14565,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.semigroup_with_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1586">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1592">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -14523,7 +14615,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.monoid_with_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1603">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1609">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -14574,7 +14666,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.comm_monoid_with_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1606">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1612">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -14625,7 +14717,7 @@ natural numbers, for example, but not the integers or other ordered groups.</p>
 <div class="decl" id="with_top.comm_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1633">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1639">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -14678,7 +14770,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_top.canonically_ordered_comm_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1638">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1644">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -14728,7 +14820,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.nontrivial">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1647">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1653">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -14767,7 +14859,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.mul_zero_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1656">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1662">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -14817,7 +14909,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.mul_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1659">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1665">source</a></div>
 
 
 
@@ -14857,7 +14949,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.mul_bot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1662">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1668">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14900,7 +14992,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.bot_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1665">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1671">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14943,7 +15035,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.bot_mul_bot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1668">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1674">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14984,7 +15076,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.coe_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1677">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1683">source</a></div>
 
 
     <div class="attributes">@[norm_cast]</div>
@@ -15025,7 +15117,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.mul_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1682">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1688">source</a></div>
 
 
 
@@ -15066,7 +15158,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.mul_eq_bot_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1685">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1691">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15107,7 +15199,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.bot_lt_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1688">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1694">source</a></div>
 
 
 
@@ -15149,7 +15241,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.mul_zero_one_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1698">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1704">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15200,7 +15292,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.no_zero_divisors">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1701">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1707">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15241,7 +15333,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.semigroup_with_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1704">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1710">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15291,7 +15383,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.monoid_with_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1707">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1713">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15342,7 +15434,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.comm_monoid_with_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1710">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1716">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15393,7 +15485,7 @@ of which are required for distributivity.</p>
 <div class="decl" id="with_bot.comm_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1714">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/order/ring.lean#L1720">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15995,10 +16087,16 @@ of which are required for distributivity.</p>
         <h4>ideles</h4>
         
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_K.html">adeles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_function_field.html">adeles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/adeles_number_field.html">adeles_number_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/examples.html">examples</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/fractional_ideal.html">fractional_ideal</a>
@@ -16010,10 +16108,13 @@ of which are required for distributivity.</p>
             <a href="https://mariainesdff.github.io/ideles/galois.html">galois</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_K.html">ideles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_function_field.html">ideles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/ideles_number_field.html">ideles_number_field</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/main_theorem_GCFT.html">main_theorem_GCFT</a>
@@ -16668,6 +16769,13 @@ of which are required for distributivity.</p>
             <a href="https://mariainesdff.github.io/ideles/data/bool/set.html">set</a>
         </div>
         </details>
+        <details class="nav_sect" data-path="data/complex" >
+            <summary>complex</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/complex/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="data/dfinsupp" >
             <summary>dfinsupp</summary>
             
@@ -17253,6 +17361,9 @@ of which are required for distributivity.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html">nnreal</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/real/sqrt.html">sqrt</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="data/set" >
             <summary>set</summary>
@@ -17622,6 +17733,9 @@ of which are required for distributivity.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/abelianization.html">abelianization</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/archimedean.html">archimedean</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/commutator.html">commutator</a>
         </div>
         <div class="nav_link ">
@@ -17825,6 +17939,9 @@ of which are required for distributivity.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/logic/encodable/basic.html">basic</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/logic/encodable/lattice.html">lattice</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="logic/equiv" >
             <summary>equiv</summary>
@@ -17914,11 +18031,31 @@ of which are required for distributivity.</p>
         <details class="nav_sect" data-path="number_theory" >
             <summary>number_theory</summary>
             
+        <details class="nav_sect" data-path="number_theory/legendre_symbol" >
+            <summary>legendre_symbol</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/gauss_eisenstein_lemmas.html">gauss_eisenstein_lemmas</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/quadratic_reciprocity.html">quadratic_reciprocity</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="number_theory/padics" >
             <summary>padics</summary>
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/number_theory/padics/padic_norm.html">padic_norm</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="number_theory/zsqrtd" >
+            <summary>zsqrtd</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/gaussian_int.html">gaussian_int</a>
         </div>
         </details>
         <div class="nav_link ">
@@ -17937,6 +18074,9 @@ of which are required for distributivity.</p>
         <details class="nav_sect" data-path="order/filter" >
             <summary>filter</summary>
             
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/order/filter/archimedean.html">archimedean</a>
+        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/order/filter/at_top_bot.html">at_top_bot</a>
         </div>
@@ -18147,9 +18287,6 @@ of which are required for distributivity.</p>
         <details class="nav_sect" data-path="ring_theory/dedekind_domain" >
             <summary>dedekind_domain</summary>
             
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/adic_valuation.html">adic_valuation</a>
-        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/basic.html">basic</a>
         </div>
@@ -18757,6 +18894,15 @@ of which are required for distributivity.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/intermediate_value.html">intermediate_value</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/left_right.html">left_right</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_continuity.html">monotone_continuity</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_convergence.html">monotone_convergence</a>
+        </div>
         </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/const_mul_action.html">const_mul_action</a>
@@ -18778,6 +18924,9 @@ of which are required for distributivity.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/group_with_zero.html">group_with_zero</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/infinite_sum.html">infinite_sum</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/localization.html">localization</a>
@@ -18828,6 +18977,19 @@ of which are required for distributivity.</p>
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/continuous_function/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="topology/instances" >
+            <summary>instances</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/int.html">int</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/nnreal.html">nnreal</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/real.html">real</a>
         </div>
         </details>
         <details class="nav_sect" data-path="topology/metric_space" >

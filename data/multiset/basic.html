@@ -144,6 +144,8 @@
 
     <div class="nav_link"><a class="break_within" href="#multiset.card_nsmul"><span class="name">multiset</span>.<span class="name">card_nsmul</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#multiset.card_pair"><span class="name">multiset</span>.<span class="name">card_pair</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#multiset.card_pmap"><span class="name">multiset</span>.<span class="name">card_pmap</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#multiset.card_pos"><span class="name">multiset</span>.<span class="name">card_pos</span></a></div>
@@ -5896,10 +5898,47 @@ of all its elements, or simply the length of the underlying list.</p>
     
         
         
-<div class="decl" id="multiset.card_eq_one">
+<div class="decl" id="multiset.card_pair">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L496">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/multiset/basic.html#multiset.card_pair"><span class="name">multiset</span>.<span class="name">card_pair</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/multiset/basic.html#multiset.card">multiset.card</a> <span class="fn">{a, b}</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 2</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="multiset.card_eq_one">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L499">source</a></div>
 
 
 
@@ -5936,7 +5975,7 @@ of all its elements, or simply the length of the underlying list.</p>
 <div class="decl" id="multiset.card_le_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L501">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L504">source</a></div>
 
 
 
@@ -5974,7 +6013,7 @@ of all its elements, or simply the length of the underlying list.</p>
 <div class="decl" id="multiset.card_mono">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L504">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L507">source</a></div>
 
 
 
@@ -6010,7 +6049,7 @@ of all its elements, or simply the length of the underlying list.</p>
 <div class="decl" id="multiset.eq_of_le_of_card_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L506">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L509">source</a></div>
 
 
 
@@ -6048,7 +6087,7 @@ of all its elements, or simply the length of the underlying list.</p>
 <div class="decl" id="multiset.card_lt_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L509">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L512">source</a></div>
 
 
 
@@ -6086,7 +6125,7 @@ of all its elements, or simply the length of the underlying list.</p>
 <div class="decl" id="multiset.lt_iff_cons_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L512">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L515">source</a></div>
 
 
 
@@ -6123,7 +6162,7 @@ of all its elements, or simply the length of the underlying list.</p>
 <div class="decl" id="multiset.card_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L517">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L520">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6162,7 +6201,7 @@ of all its elements, or simply the length of the underlying list.</p>
 <div class="decl" id="multiset.card_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L520">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L523">source</a></div>
 
 
 
@@ -6199,7 +6238,7 @@ of all its elements, or simply the length of the underlying list.</p>
 <div class="decl" id="multiset.card_pos_iff_exists_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L523">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L526">source</a></div>
 
 
 
@@ -6236,7 +6275,7 @@ of all its elements, or simply the length of the underlying list.</p>
 <div class="decl" id="multiset.card_eq_two">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L526">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L529">source</a></div>
 
 
 
@@ -6273,7 +6312,7 @@ of all its elements, or simply the length of the underlying list.</p>
 <div class="decl" id="multiset.card_eq_three">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L530">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L533">source</a></div>
 
 
 
@@ -6317,7 +6356,7 @@ of all its elements, or simply the length of the underlying list.</p>
 <div class="decl" id="multiset.strong_induction_on">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L540">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L543">source</a></div>
 
 
 
@@ -6367,7 +6406,7 @@ you can construct a value for any multiset.</p>
 <div class="decl" id="multiset.strong_induction_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L547">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L550">source</a></div>
 
 
 
@@ -6406,7 +6445,7 @@ you can construct a value for any multiset.</p>
 <div class="decl" id="multiset.case_strong_induction_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L551">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L554">source</a></div>
 
 
 
@@ -6446,7 +6485,7 @@ you can construct a value for any multiset.</p>
 <div class="decl" id="multiset.strong_downward_induction">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L561">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L564">source</a></div>
 
 
 
@@ -6499,7 +6538,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.strong_downward_induction_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L569">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L572">source</a></div>
 
 
 
@@ -6539,7 +6578,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.strong_downward_induction_on">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L575">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L578">source</a></div>
 
 
 
@@ -6588,7 +6627,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.strong_downward_induction_on_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L580">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L583">source</a></div>
 
 
 
@@ -6628,7 +6667,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.well_founded_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L586">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L589">source</a></div>
 
 
 
@@ -6672,7 +6711,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.repeat">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L592">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L595">source</a></div>
 
 
 
@@ -6720,7 +6759,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.repeat_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L594">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L597">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6759,7 +6798,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.repeat_succ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L596">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L599">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6799,7 +6838,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.repeat_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L598">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L601">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6838,7 +6877,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.card_repeat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L601">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L604">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6878,7 +6917,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.mem_repeat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L603">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L606">source</a></div>
 
 
 
@@ -6916,7 +6955,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.eq_of_mem_repeat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L605">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L608">source</a></div>
 
 
 
@@ -6954,7 +6993,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.eq_repeat'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L607">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L610">source</a></div>
 
 
 
@@ -6992,7 +7031,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.eq_repeat_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L611">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L614">source</a></div>
 
 
 
@@ -7030,7 +7069,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.eq_repeat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L614">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L617">source</a></div>
 
 
 
@@ -7069,7 +7108,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.repeat_left_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L618">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L621">source</a></div>
 
 
 
@@ -7107,7 +7146,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.repeat_left_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L621">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L624">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7148,7 +7187,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.repeat_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L624">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L627">source</a></div>
 
 
 
@@ -7185,7 +7224,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.repeat_subset_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L627">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L630">source</a></div>
 
 
 
@@ -7223,7 +7262,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.repeat_le_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L629">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L632">source</a></div>
 
 
 
@@ -7262,7 +7301,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.nsmul_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L632">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L635">source</a></div>
 
 
 
@@ -7300,7 +7339,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.nsmul_repeat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L638">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L641">source</a></div>
 
 
 
@@ -7345,7 +7384,7 @@ can be used either to define data, or to prove properties.</p>
 <div class="decl" id="multiset.erase">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L652">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L655">source</a></div>
 
 
 
@@ -7395,7 +7434,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.coe_erase">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L656">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L659">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7436,7 +7475,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L659">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L662">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7476,7 +7515,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_cons_head">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L661">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L664">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7517,7 +7556,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_cons_tail">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L665">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L668">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7559,7 +7598,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_of_not_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L670">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L673">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7600,7 +7639,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.cons_erase">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L674">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L677">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7641,7 +7680,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.le_cons_erase">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L677">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L680">source</a></div>
 
 
 
@@ -7680,7 +7719,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_add_left_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L681">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L684">source</a></div>
 
 
 
@@ -7720,7 +7759,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_add_right_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L684">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L687">source</a></div>
 
 
 
@@ -7761,7 +7800,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_add_right_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L688">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L691">source</a></div>
 
 
 
@@ -7801,7 +7840,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_add_left_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L692">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L695">source</a></div>
 
 
 
@@ -7842,7 +7881,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L696">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L699">source</a></div>
 
 
 
@@ -7881,7 +7920,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L699">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L702">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7922,7 +7961,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L703">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L706">source</a></div>
 
 
 
@@ -7961,7 +8000,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.mem_erase_of_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L706">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L709">source</a></div>
 
 
 
@@ -8001,7 +8040,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.mem_of_mem_erase">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L709">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L712">source</a></div>
 
 
 
@@ -8040,7 +8079,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L712">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L715">source</a></div>
 
 
 
@@ -8079,7 +8118,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_le_erase">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L715">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L718">source</a></div>
 
 
 
@@ -8119,7 +8158,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.erase_le_iff_le_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L718">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L721">source</a></div>
 
 
 
@@ -8158,7 +8197,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.card_erase_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L724">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L727">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8199,7 +8238,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.card_erase_add_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L728">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L731">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8240,7 +8279,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.card_erase_lt_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L732">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L735">source</a></div>
 
 
 
@@ -8279,7 +8318,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.card_erase_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L735">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L738">source</a></div>
 
 
 
@@ -8318,7 +8357,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.card_erase_eq_ite">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L738">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L741">source</a></div>
 
 
 
@@ -8357,7 +8396,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.coe_reverse">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L748">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L751">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8403,7 +8442,7 @@ multiplicity of <code>a</code>.</p>
 <div class="decl" id="multiset.map">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L756">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L759">source</a></div>
 
 
 
@@ -8454,7 +8493,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_congr">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L761">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L764">source</a></div>
 
 
 
@@ -8493,7 +8532,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_hcongr">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L769">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L772">source</a></div>
 
 
 
@@ -8535,7 +8574,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.forall_mem_map_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L773">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L776">source</a></div>
 
 
 
@@ -8575,7 +8614,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.coe_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L777">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L780">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8616,7 +8655,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L779">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L782">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8656,7 +8695,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L781">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L784">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8698,7 +8737,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_comp_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L784">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L787">source</a></div>
 
 
 
@@ -8737,7 +8776,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L787">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L790">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8778,7 +8817,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_repeat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L789">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L792">source</a></div>
 
 
 
@@ -8818,7 +8857,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L792">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L795">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8859,7 +8898,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.can_lift">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L797">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L800">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8910,7 +8949,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_add_monoid_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L803">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L806">source</a></div>
 
 
 
@@ -8958,7 +8997,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.coe_map_add_monoid_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L808">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L811">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8998,7 +9037,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_nsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L811">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L814">source</a></div>
 
 
 
@@ -9038,7 +9077,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.mem_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L814">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L817">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9080,7 +9119,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.card_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L818">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L821">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9121,7 +9160,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L821">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L824">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9162,7 +9201,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.mem_map_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L824">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L827">source</a></div>
 
 
 
@@ -9203,7 +9242,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_eq_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L827">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L830">source</a></div>
 
 
 
@@ -9243,7 +9282,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.mem_map_of_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L840">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L843">source</a></div>
 
 
 
@@ -9284,7 +9323,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L844">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L847">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9327,7 +9366,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L848">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L851">source</a></div>
 
 
 
@@ -9364,7 +9403,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_id'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L851">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L854">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9403,7 +9442,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_const">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L853">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L856">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9444,7 +9483,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.eq_of_mem_map_const">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L856">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L859">source</a></div>
 
 
 
@@ -9484,7 +9523,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_le_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L860">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L863">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9526,7 +9565,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_lt_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L863">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L866">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9568,7 +9607,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_mono">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L870">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L873">source</a></div>
 
 
 
@@ -9606,7 +9645,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_strict_mono">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L871">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L874">source</a></div>
 
 
 
@@ -9644,7 +9683,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_subset_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L873">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L876">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9686,7 +9725,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.map_erase">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L876">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L879">source</a></div>
 
 
 
@@ -9736,7 +9775,7 @@ such that <code>f a = b</code>.</p>
 <div class="decl" id="multiset.foldl">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L892">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L895">source</a></div>
 
 
 
@@ -9789,7 +9828,7 @@ that is, <code>f (f b a₁) a₂ = f (f b a₂) a₁</code>.</p>
 <div class="decl" id="multiset.foldl_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L896">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L899">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9831,7 +9870,7 @@ that is, <code>f (f b a₁) a₂ = f (f b a₂) a₁</code>.</p>
 <div class="decl" id="multiset.foldl_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L898">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L901">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9875,7 +9914,7 @@ that is, <code>f (f b a₁) a₂ = f (f b a₂) a₁</code>.</p>
 <div class="decl" id="multiset.foldl_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L902">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L905">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9918,7 +9957,7 @@ that is, <code>f (f b a₁) a₂ = f (f b a₂) a₁</code>.</p>
 <div class="decl" id="multiset.foldr">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L909">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L912">source</a></div>
 
 
 
@@ -9971,7 +10010,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.foldr_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L913">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L916">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10013,7 +10052,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.foldr_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L915">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L918">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10057,7 +10096,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.foldr_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L919">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L922">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10100,7 +10139,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.foldr_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L923">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L926">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10143,7 +10182,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.coe_foldr">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L927">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L930">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10186,7 +10225,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.coe_foldl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L930">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L933">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10229,7 +10268,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.coe_foldr_swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L933">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L936">source</a></div>
 
 
 
@@ -10270,7 +10309,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.foldr_swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L937">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L940">source</a></div>
 
 
 
@@ -10311,7 +10350,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.foldl_swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L941">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L944">source</a></div>
 
 
 
@@ -10352,7 +10391,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.foldr_induction'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L945">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L948">source</a></div>
 
 
 
@@ -10398,7 +10437,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.foldr_induction">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L958">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L961">source</a></div>
 
 
 
@@ -10442,7 +10481,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.foldl_induction'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L963">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L966">source</a></div>
 
 
 
@@ -10488,7 +10527,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.foldl_induction">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L972">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L975">source</a></div>
 
 
 
@@ -10539,7 +10578,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.pmap">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L981">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L984">source</a></div>
 
 
 
@@ -10590,7 +10629,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.coe_pmap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L990">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L993">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10633,7 +10672,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.pmap_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L993">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L996">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10675,7 +10714,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.pmap_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L996">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L999">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10719,7 +10758,7 @@ that is, <code>f a₁ (f a₂ b) = f a₂ (f a₁ b)</code>.</p>
 <div class="decl" id="multiset.attach">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1003">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1006">source</a></div>
 
 
 
@@ -10767,7 +10806,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.coe_attach">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1005">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1008">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10806,7 +10845,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.sizeof_lt_sizeof_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1008">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1011">source</a></div>
 
 
 
@@ -10846,7 +10885,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.pmap_eq_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1012">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1015">source</a></div>
 
 
 
@@ -10887,7 +10926,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.pmap_congr">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1016">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1019">source</a></div>
 
 
 
@@ -10931,7 +10970,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.map_pmap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1021">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1024">source</a></div>
 
 
 
@@ -10974,7 +11013,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.pmap_eq_map_attach">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1025">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1028">source</a></div>
 
 
 
@@ -11015,7 +11054,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.attach_map_val">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1029">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1032">source</a></div>
 
 
 
@@ -11052,7 +11091,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.mem_attach">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1032">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1035">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11092,7 +11131,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.mem_pmap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1035">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1038">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11136,7 +11175,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.card_pmap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1039">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1042">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11179,7 +11218,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.card_attach">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1043">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1046">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11218,7 +11257,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.attach_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1045">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1048">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11256,7 +11295,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.attach_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1047">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1050">source</a></div>
 
 
 
@@ -11294,7 +11333,7 @@ a multiset on <code>{x // x ∈ s}</code>.</p>
 <div class="decl" id="multiset.decidable_forall_multiset">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1057">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1060">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -11346,7 +11385,7 @@ so is the predicate that all elements of a multiset satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.decidable_dforall_multiset">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1061">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1064">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -11396,7 +11435,7 @@ so is the predicate that all elements of a multiset satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.decidable_eq_pi_multiset">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1068">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1071">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -11447,7 +11486,7 @@ so is the predicate that all elements of a multiset satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.decidable_exists_multiset">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1074">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1077">source</a></div>
 
 
 
@@ -11497,7 +11536,7 @@ so is the existence of an element in a multiset satisfying <code>p</code>.</p>
 <div class="decl" id="multiset.decidable_dexists_multiset">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1078">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1081">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -11554,7 +11593,7 @@ so is the existence of an element in a multiset satisfying <code>p</code>.</p>
 <div class="decl" id="multiset.sub">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1093">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1096">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -11605,7 +11644,7 @@ so is the existence of an element in a multiset satisfying <code>p</code>.</p>
 <div class="decl" id="multiset.has_sub">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1097">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1100">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -11653,7 +11692,7 @@ so is the existence of an element in a multiset satisfying <code>p</code>.</p>
 <div class="decl" id="multiset.coe_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1099">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1102">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11693,7 +11732,7 @@ so is the existence of an element in a multiset satisfying <code>p</code>.</p>
 <div class="decl" id="multiset.sub_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1103">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1106">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -11735,7 +11774,7 @@ This is needed to prove <code><a href="https://mariainesdff.github.io/ideles/alg
 <div class="decl" id="multiset.sub_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1106">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1109">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11776,7 +11815,7 @@ This is needed to prove <code><a href="https://mariainesdff.github.io/ideles/alg
 <div class="decl" id="multiset.sub_le_iff_le_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1111">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1114">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -11818,7 +11857,7 @@ This is needed to prove <code><a href="https://mariainesdff.github.io/ideles/alg
 <div class="decl" id="multiset.has_ordered_sub">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1116">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1119">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -11866,7 +11905,7 @@ This is needed to prove <code><a href="https://mariainesdff.github.io/ideles/alg
 <div class="decl" id="multiset.sub_eq_fold_erase">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1119">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1122">source</a></div>
 
 
 
@@ -11904,7 +11943,7 @@ This is needed to prove <code><a href="https://mariainesdff.github.io/ideles/alg
 <div class="decl" id="multiset.card_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1124">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1127">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11952,7 +11991,7 @@ This is needed to prove <code><a href="https://mariainesdff.github.io/ideles/alg
 <div class="decl" id="multiset.union">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1132">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1135">source</a></div>
 
 
 
@@ -12002,7 +12041,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.has_union">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1134">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1137">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -12050,7 +12089,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.union_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1136">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1139">source</a></div>
 
 
 
@@ -12088,7 +12127,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.le_union_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1138">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1141">source</a></div>
 
 
 
@@ -12126,7 +12165,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.le_union_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1140">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1143">source</a></div>
 
 
 
@@ -12164,7 +12203,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.eq_union_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1142">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1145">source</a></div>
 
 
 
@@ -12202,7 +12241,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.union_le_union_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1144">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1147">source</a></div>
 
 
 
@@ -12242,7 +12281,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.union_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1147">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1150">source</a></div>
 
 
 
@@ -12282,7 +12321,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.mem_union">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1150">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1153">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12323,7 +12362,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.map_union">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1154">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1157">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12374,7 +12413,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.inter">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1165">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1168">source</a></div>
 
 
 
@@ -12424,7 +12463,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.has_inter">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1169">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1172">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -12472,7 +12511,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.inter_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1171">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1174">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12512,7 +12551,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.zero_inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1174">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1177">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12552,7 +12591,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.cons_inter_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1177">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1180">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12594,7 +12633,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.cons_inter_of_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1182">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1185">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12636,7 +12675,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.inter_le_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1187">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1190">source</a></div>
 
 
 
@@ -12674,7 +12713,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.inter_le_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1191">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1194">source</a></div>
 
 
 
@@ -12712,7 +12751,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.le_inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1197">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1200">source</a></div>
 
 
 
@@ -12752,7 +12791,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.mem_inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1208">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1211">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12793,7 +12832,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.lattice">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1212">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1215">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -12841,7 +12880,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.sup_eq_union">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1223">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1226">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12881,7 +12920,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.inf_eq_inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1224">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1227">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12921,7 +12960,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.le_inter_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1226">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1229">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12961,7 +13000,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.union_le_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1227">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1230">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13001,7 +13040,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.union_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1229">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1232">source</a></div>
 
 
 
@@ -13039,7 +13078,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.inter_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1230">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1233">source</a></div>
 
 
 
@@ -13077,7 +13116,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.eq_union_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1232">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1235">source</a></div>
 
 
 
@@ -13116,7 +13155,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.union_le_union_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1235">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1238">source</a></div>
 
 
 
@@ -13156,7 +13195,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.union_le_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1238">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1241">source</a></div>
 
 
 
@@ -13194,7 +13233,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.union_add_distrib">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1241">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1244">source</a></div>
 
 
 
@@ -13232,7 +13271,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.add_union_distrib">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1245">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1248">source</a></div>
 
 
 
@@ -13270,7 +13309,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.cons_union_distrib">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1248">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1251">source</a></div>
 
 
 
@@ -13309,7 +13348,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.inter_add_distrib">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1251">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1254">source</a></div>
 
 
 
@@ -13347,7 +13386,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.add_inter_distrib">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1263">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1266">source</a></div>
 
 
 
@@ -13385,7 +13424,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.cons_inter_distrib">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1266">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1269">source</a></div>
 
 
 
@@ -13424,7 +13463,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.union_add_inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1269">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1272">source</a></div>
 
 
 
@@ -13462,7 +13501,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.sub_add_inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1280">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1283">source</a></div>
 
 
 
@@ -13500,7 +13539,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.sub_inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1289">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1292">source</a></div>
 
 
 
@@ -13545,7 +13584,7 @@ of the multiplicities in <code>s</code> and <code>t</code>.</p>
 <div class="decl" id="multiset.filter">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1300">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1303">source</a></div>
 
 
 
@@ -13595,7 +13634,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.coe_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1304">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1307">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13636,7 +13675,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1306">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1309">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13676,7 +13715,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_congr">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1308">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1311">source</a></div>
 
 
 
@@ -13716,7 +13755,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1312">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1315">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13757,7 +13796,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1315">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1318">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13798,7 +13837,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1318">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1321">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13839,7 +13878,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_le_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1321">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1324">source</a></div>
 
 
 
@@ -13879,7 +13918,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.monotone_filter_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1324">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1327">source</a></div>
 
 
 
@@ -13917,7 +13956,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.monotone_filter_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1328">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1331">source</a></div>
 
 
 
@@ -13958,7 +13997,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_cons_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1335">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1338">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14000,7 +14039,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_cons_of_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1338">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1341">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14042,7 +14081,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.mem_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1341">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1344">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14084,7 +14123,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.of_mem_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1344">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1347">source</a></div>
 
 
 
@@ -14125,7 +14164,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.mem_of_mem_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1347">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1350">source</a></div>
 
 
 
@@ -14166,7 +14205,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.mem_filter_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1350">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1353">source</a></div>
 
 
 
@@ -14208,7 +14247,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_eq_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1353">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1356">source</a></div>
 
 
 
@@ -14247,7 +14286,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_eq_nil">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1361">source</a></div>
 
 
 
@@ -14286,7 +14325,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.le_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1363">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1366">source</a></div>
 
 
 
@@ -14325,7 +14364,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1367">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1370">source</a></div>
 
 
 
@@ -14365,7 +14404,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_nsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1375">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1378">source</a></div>
 
 
 
@@ -14405,7 +14444,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1391">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1394">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14447,7 +14486,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_union">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1409">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1412">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14489,7 +14528,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1413">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1416">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14531,7 +14570,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1421">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1424">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14574,7 +14613,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_add_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1425">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1428">source</a></div>
 
 
 
@@ -14615,7 +14654,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_add_not">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1430">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1433">source</a></div>
 
 
 
@@ -14654,7 +14693,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.map_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1434">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1437">source</a></div>
 
 
 
@@ -14702,7 +14741,7 @@ which satisfy <code>p</code>, and removes the rest.</p>
 <div class="decl" id="multiset.filter_map">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1444">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1447">source</a></div>
 
 
 
@@ -14754,7 +14793,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.coe_filter_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1448">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1451">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14795,7 +14834,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.filter_map_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1451">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1454">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14835,7 +14874,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.filter_map_cons_none">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1453">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1456">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14878,7 +14917,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.filter_map_cons_some">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1457">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1460">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14922,7 +14961,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.filter_map_eq_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1462">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1465">source</a></div>
 
 
 
@@ -14960,7 +14999,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.filter_map_eq_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1466">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1469">source</a></div>
 
 
 
@@ -14998,7 +15037,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.filter_map_filter_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1470">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1473">source</a></div>
 
 
 
@@ -15039,7 +15078,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.map_filter_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1474">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1477">source</a></div>
 
 
 
@@ -15080,7 +15119,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.filter_map_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1478">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1481">source</a></div>
 
 
 
@@ -15121,7 +15160,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.filter_filter_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1482">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1485">source</a></div>
 
 
 
@@ -15162,7 +15201,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.filter_map_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1486">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1489">source</a></div>
 
 
 
@@ -15203,7 +15242,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.filter_map_some">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1490">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1493">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15242,7 +15281,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.mem_filter_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1493">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1496">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15284,7 +15323,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.map_filter_map_of_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1497">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1500">source</a></div>
 
 
 
@@ -15325,7 +15364,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.filter_map_le_filter_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1502">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1505">source</a></div>
 
 
 
@@ -15372,7 +15411,7 @@ if <code>f a</code> is <code>some b</code> then <code>b</code> is added to the r
 <div class="decl" id="multiset.countp">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1510">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1513">source</a></div>
 
 
 
@@ -15422,7 +15461,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.coe_countp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1513">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1516">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15463,7 +15502,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1515">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1518">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15503,7 +15542,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_cons_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1522">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15545,7 +15584,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_cons_of_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1522">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1525">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15587,7 +15626,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1527">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1530">source</a></div>
 
 
 
@@ -15627,7 +15666,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_eq_card_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1533">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1536">source</a></div>
 
 
 
@@ -15666,7 +15705,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1536">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1539">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15707,7 +15746,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_add_monoid_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1541">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1544">source</a></div>
 
 
 
@@ -15756,7 +15795,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.coe_countp_add_monoid_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1546">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1549">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15796,7 +15835,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1549">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1552">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15839,7 +15878,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_le_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1553">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1556">source</a></div>
 
 
 
@@ -15879,7 +15918,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1556">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1559">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15922,7 +15961,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1560">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1563">source</a></div>
 
 
 
@@ -15963,7 +16002,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1571">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1574">source</a></div>
 
 
 
@@ -16002,7 +16041,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.countp_pos_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1574">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1577">source</a></div>
 
 
 
@@ -16051,7 +16090,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1585">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1588">source</a></div>
 
 
 
@@ -16099,7 +16138,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.coe_count">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1587">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1590">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16140,7 +16179,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1589">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1592">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16180,7 +16219,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_cons_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1591">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1594">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16221,7 +16260,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_cons_of_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1595">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1598">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16263,7 +16302,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_le_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1598">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1601">source</a></div>
 
 
 
@@ -16302,7 +16341,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_le_count_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1601">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1604">source</a></div>
 
 
 
@@ -16341,7 +16380,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1604">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1607">source</a></div>
 
 
 
@@ -16380,7 +16419,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_singleton_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1608">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1611">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16420,7 +16459,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1611">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1614">source</a></div>
 
 
 
@@ -16458,7 +16497,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1614">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1617">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16499,7 +16538,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_add_monoid_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1618">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1621">source</a></div>
 
 
 
@@ -16547,7 +16586,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.coe_count_add_monoid_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1620">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1623">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16587,7 +16626,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_nsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1623">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1626">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16629,7 +16668,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1626">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1629">source</a></div>
 
 
 
@@ -16668,7 +16707,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.one_le_count_iff_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1629">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1632">source</a></div>
 
 
 
@@ -16707,7 +16746,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_eq_zero_of_not_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1633">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1636">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16749,7 +16788,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1636">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1639">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16790,7 +16829,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1639">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1642">source</a></div>
 
 
 
@@ -16829,7 +16868,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_repeat_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1642">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1645">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16870,7 +16909,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_repeat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1645">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1648">source</a></div>
 
 
 
@@ -16909,7 +16948,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_erase_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1654">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1657">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16950,7 +16989,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_erase_of_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1663">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1666">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -16992,7 +17031,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1671">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1674">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -17033,7 +17072,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_union">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1680">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1683">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -17074,7 +17113,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1684">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1687">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -17115,7 +17154,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.le_count_iff_repeat_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1691">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1694">source</a></div>
 
 
 
@@ -17155,7 +17194,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_filter_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1694">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1697">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -17199,7 +17238,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_filter_of_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1698">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1701">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -17243,7 +17282,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_filter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1702">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1705">source</a></div>
 
 
 
@@ -17284,7 +17323,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1710">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1713">source</a></div>
 
 
 
@@ -17322,7 +17361,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.ext'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1714">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1717">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -17362,7 +17401,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.coe_inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1717">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1720">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -17402,7 +17441,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.le_iff_count">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1720">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1723">source</a></div>
 
 
 
@@ -17440,7 +17479,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.distrib_lattice">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1725">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1728">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -17488,7 +17527,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.repeat_inf">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1731">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1734">source</a></div>
 
 
 
@@ -17528,7 +17567,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1741">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1744">source</a></div>
 
 
 
@@ -17569,7 +17608,7 @@ satisfy <code>p</code>.</p>
 <div class="decl" id="multiset.count_map_eq_count">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1747">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1750">source</a></div>
 
 
 
@@ -17615,7 +17654,7 @@ the multiset</p>
 <div class="decl" id="multiset.count_map_eq_count'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1758">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1761">source</a></div>
 
 
 
@@ -17659,7 +17698,7 @@ the multiset</p>
 <div class="decl" id="multiset.filter_eq'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1769">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1772">source</a></div>
 
 
 
@@ -17698,7 +17737,7 @@ the multiset</p>
 <div class="decl" id="multiset.filter_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1776">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1779">source</a></div>
 
 
 
@@ -17737,7 +17776,7 @@ the multiset</p>
 <div class="decl" id="multiset.repeat_inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1779">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1782">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -17779,7 +17818,7 @@ the multiset</p>
 <div class="decl" id="multiset.inter_repeat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1791">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1794">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -17821,7 +17860,7 @@ the multiset</p>
 <div class="decl" id="multiset.map_le_map_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1799">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1802">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -17863,7 +17902,7 @@ the multiset</p>
 <div class="decl" id="multiset.map_embedding_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1810">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1813">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -17904,7 +17943,7 @@ the multiset</p>
 <div class="decl" id="multiset.map_embedding">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1810">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1813">source</a></div>
 
 
 
@@ -17953,7 +17992,7 @@ image under <code>f</code>.</p>
 <div class="decl" id="multiset.count_eq_card_filter_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1815">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1818">source</a></div>
 
 
 
@@ -17992,7 +18031,7 @@ image under <code>f</code>.</p>
 <div class="decl" id="multiset.map_count_true_eq_filter_card">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1827">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1830">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -18046,7 +18085,7 @@ for more discussion.</p>
 <div class="decl" id="multiset.rel_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1837">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1840">source</a></div>
 
 
 
@@ -18086,7 +18125,7 @@ for more discussion.</p>
 <div class="decl" id="multiset.rel">
 <div class="inductive">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1837">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1840">source</a></div>
 
 
 
@@ -18136,7 +18175,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_flip">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1846">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1849">source</a></div>
 
 
 
@@ -18176,7 +18215,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_refl_of_refl_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1849">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1852">source</a></div>
 
 
 
@@ -18214,7 +18253,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_eq_refl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1858">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1861">source</a></div>
 
 
 
@@ -18251,7 +18290,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1861">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1864">source</a></div>
 
 
 
@@ -18288,7 +18327,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel.mono">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1868">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1871">source</a></div>
 
 
 
@@ -18330,7 +18369,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel.add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1878">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1881">source</a></div>
 
 
 
@@ -18374,7 +18413,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_flip_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1885">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1888">source</a></div>
 
 
 
@@ -18411,7 +18450,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_zero_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1888">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1891">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -18452,7 +18491,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_zero_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1891">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1894">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -18493,7 +18532,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_cons_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1894">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1897">source</a></div>
 
 
 
@@ -18534,7 +18573,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_cons_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1910">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1913">source</a></div>
 
 
 
@@ -18575,7 +18614,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_add_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1918">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1921">source</a></div>
 
 
 
@@ -18615,7 +18654,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_add_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1935">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1938">source</a></div>
 
 
 
@@ -18655,7 +18694,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_map_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1939">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1942">source</a></div>
 
 
 
@@ -18697,7 +18736,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_map_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1943">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1946">source</a></div>
 
 
 
@@ -18739,7 +18778,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1947">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1950">source</a></div>
 
 
 
@@ -18783,7 +18822,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.card_eq_card_of_rel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1951">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1954">source</a></div>
 
 
 
@@ -18824,7 +18863,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.exists_mem_of_rel_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1955">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1958">source</a></div>
 
 
 
@@ -18867,7 +18906,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_of_forall">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1968">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1971">source</a></div>
 
 
 
@@ -18907,7 +18946,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_repeat_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1985">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1988">source</a></div>
 
 
 
@@ -18947,7 +18986,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.rel_repeat_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1994">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L1997">source</a></div>
 
 
 
@@ -18987,7 +19026,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.map_eq_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2002">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2005">source</a></div>
 
 
 
@@ -19027,7 +19066,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.map_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2006">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2009">source</a></div>
 
 
 
@@ -19066,7 +19105,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.map_mk_eq_map_mk_of_rel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2014">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2017">source</a></div>
 
 
 
@@ -19105,7 +19144,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.exists_multiset_eq_map_quot_mk">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2018">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2021">source</a></div>
 
 
 
@@ -19143,7 +19182,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.induction_on_multiset_quot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2023">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2026">source</a></div>
 
 
 
@@ -19189,7 +19228,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2033">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2036">source</a></div>
 
 
 
@@ -19236,7 +19275,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.coe_disjoint">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2035">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2038">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -19275,7 +19314,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint.symm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2037">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2040">source</a></div>
 
 
 
@@ -19313,7 +19352,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2040">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2043">source</a></div>
 
 
 
@@ -19350,7 +19389,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2043">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2046">source</a></div>
 
 
 
@@ -19387,7 +19426,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2045">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2048">source</a></div>
 
 
 
@@ -19424,7 +19463,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_iff_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2048">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2051">source</a></div>
 
 
 
@@ -19461,7 +19500,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_of_subset_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2051">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2054">source</a></div>
 
 
 
@@ -19500,7 +19539,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_of_subset_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2054">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2057">source</a></div>
 
 
 
@@ -19539,7 +19578,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_of_le_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2057">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2060">source</a></div>
 
 
 
@@ -19577,7 +19616,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_of_le_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2060">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2063">source</a></div>
 
 
 
@@ -19615,7 +19654,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.zero_disjoint">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2063">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2066">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -19654,7 +19693,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.singleton_disjoint">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2067">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2070">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -19694,7 +19733,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2071">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2074">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -19734,7 +19773,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_add_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2074">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2077">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -19773,7 +19812,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_add_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2078">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2081">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -19812,7 +19851,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_cons_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2082">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2085">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -19852,7 +19891,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_cons_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2086">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2089">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -19892,7 +19931,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.inter_eq_zero_iff_disjoint">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2090">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2093">source</a></div>
 
 
 
@@ -19930,7 +19969,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_union_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2093">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2096">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -19970,7 +20009,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_union_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2097">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2100">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -20010,7 +20049,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.add_eq_union_iff_disjoint">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2101">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2104">source</a></div>
 
 
 
@@ -20048,7 +20087,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.disjoint_map_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2106">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2109">source</a></div>
 
 
 
@@ -20090,7 +20129,7 @@ s.t. there is a one-to-one mapping betweem elements in <code>s</code> and <code>
 <div class="decl" id="multiset.pairwise">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2112">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2115">source</a></div>
 
 
 
@@ -20139,7 +20178,7 @@ list.</p>
 <div class="decl" id="multiset.pairwise_coe_iff_pairwise">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2115">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2118">source</a></div>
 
 
 
@@ -20178,7 +20217,7 @@ list.</p>
 <div class="decl" id="multiset.choose_x">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2130">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2133">source</a></div>
 
 
 
@@ -20229,7 +20268,7 @@ that <code>a</code> together with proofs of <code>a ∈ l</code> and <code>p a</
 <div class="decl" id="multiset.choose">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2145">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2148">source</a></div>
 
 
 
@@ -20280,7 +20319,7 @@ that <code>a</code>.</p>
 <div class="decl" id="multiset.choose_spec">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2147">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2150">source</a></div>
 
 
 
@@ -20320,7 +20359,7 @@ that <code>a</code>.</p>
 <div class="decl" id="multiset.choose_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2150">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2153">source</a></div>
 
 
 
@@ -20360,7 +20399,7 @@ that <code>a</code>.</p>
 <div class="decl" id="multiset.choose_property">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2152">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2155">source</a></div>
 
 
 
@@ -20400,7 +20439,7 @@ that <code>a</code>.</p>
 <div class="decl" id="multiset.subsingleton_equiv">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2159">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2162">source</a></div>
 
 
 
@@ -20447,7 +20486,7 @@ that <code>a</code>.</p>
 <div class="decl" id="multiset.coe_subsingleton_equiv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2169">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/multiset/basic.lean#L2172">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -21038,10 +21077,16 @@ that <code>a</code>.</p>
         <h4>ideles</h4>
         
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_K.html">adeles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/adeles_R.html">adeles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/adeles_function_field.html">adeles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/adeles_number_field.html">adeles_number_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/examples.html">examples</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/fractional_ideal.html">fractional_ideal</a>
@@ -21053,10 +21098,13 @@ that <code>a</code>.</p>
             <a href="https://mariainesdff.github.io/ideles/galois.html">galois</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_K.html">ideles_K</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ideles_R.html">ideles_R</a>
+            <a href="https://mariainesdff.github.io/ideles/ideles_function_field.html">ideles_function_field</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/ideles_number_field.html">ideles_number_field</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/main_theorem_GCFT.html">main_theorem_GCFT</a>
@@ -21711,6 +21759,13 @@ that <code>a</code>.</p>
             <a href="https://mariainesdff.github.io/ideles/data/bool/set.html">set</a>
         </div>
         </details>
+        <details class="nav_sect" data-path="data/complex" >
+            <summary>complex</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/complex/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="data/dfinsupp" >
             <summary>dfinsupp</summary>
             
@@ -22296,6 +22351,9 @@ that <code>a</code>.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html">nnreal</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/data/real/sqrt.html">sqrt</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="data/set" >
             <summary>set</summary>
@@ -22665,6 +22723,9 @@ that <code>a</code>.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/abelianization.html">abelianization</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/archimedean.html">archimedean</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/commutator.html">commutator</a>
         </div>
         <div class="nav_link ">
@@ -22868,6 +22929,9 @@ that <code>a</code>.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/logic/encodable/basic.html">basic</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/logic/encodable/lattice.html">lattice</a>
+        </div>
         </details>
         <details class="nav_sect" data-path="logic/equiv" >
             <summary>equiv</summary>
@@ -22957,11 +23021,31 @@ that <code>a</code>.</p>
         <details class="nav_sect" data-path="number_theory" >
             <summary>number_theory</summary>
             
+        <details class="nav_sect" data-path="number_theory/legendre_symbol" >
+            <summary>legendre_symbol</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/gauss_eisenstein_lemmas.html">gauss_eisenstein_lemmas</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/quadratic_reciprocity.html">quadratic_reciprocity</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="number_theory/padics" >
             <summary>padics</summary>
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/number_theory/padics/padic_norm.html">padic_norm</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="number_theory/zsqrtd" >
+            <summary>zsqrtd</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/number_theory/zsqrtd/gaussian_int.html">gaussian_int</a>
         </div>
         </details>
         <div class="nav_link ">
@@ -22980,6 +23064,9 @@ that <code>a</code>.</p>
         <details class="nav_sect" data-path="order/filter" >
             <summary>filter</summary>
             
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/order/filter/archimedean.html">archimedean</a>
+        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/order/filter/at_top_bot.html">at_top_bot</a>
         </div>
@@ -23190,9 +23277,6 @@ that <code>a</code>.</p>
         <details class="nav_sect" data-path="ring_theory/dedekind_domain" >
             <summary>dedekind_domain</summary>
             
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/adic_valuation.html">adic_valuation</a>
-        </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/basic.html">basic</a>
         </div>
@@ -23800,6 +23884,15 @@ that <code>a</code>.</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/intermediate_value.html">intermediate_value</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/left_right.html">left_right</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_continuity.html">monotone_continuity</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/order/monotone_convergence.html">monotone_convergence</a>
+        </div>
         </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/const_mul_action.html">const_mul_action</a>
@@ -23821,6 +23914,9 @@ that <code>a</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/group_with_zero.html">group_with_zero</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/algebra/infinite_sum.html">infinite_sum</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/algebra/localization.html">localization</a>
@@ -23871,6 +23967,19 @@ that <code>a</code>.</p>
             
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/topology/continuous_function/basic.html">basic</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="topology/instances" >
+            <summary>instances</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/int.html">int</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/nnreal.html">nnreal</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/topology/instances/real.html">real</a>
         </div>
         </details>
         <details class="nav_sect" data-path="topology/metric_space" >
