@@ -94,6 +94,8 @@
 
     <div class="nav_link"><a class="break_within" href="#add_monoid.order_of_eq_one_iff"><span class="name">add_monoid</span>.<span class="name">order_of_eq_one_iff</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#add_monoid_hom.is_of_fin_order"><span class="name">add_monoid_hom</span>.<span class="name">is_of_fin_order</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#add_order_eq_card_zmultiples"><span class="name">add_order_eq_card_zmultiples</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#add_order_of"><span class="name">add_order_of</span></a></div>
@@ -216,7 +218,7 @@
 
     <div class="nav_link"><a class="break_within" href="#is_of_fin_add_order.add"><span class="name">is_of_fin_add_order</span>.<span class="name">add</span></a></div>
 
-    <div class="nav_link"><a class="break_within" href="#is_of_fin_add_order.is_of_fin_add_order_iff_quotient"><span class="name">is_of_fin_add_order</span>.<span class="name">is_of_fin_add_order_iff_quotient</span></a></div>
+    <div class="nav_link"><a class="break_within" href="#is_of_fin_add_order.apply"><span class="name">is_of_fin_add_order</span>.<span class="name">apply</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#is_of_fin_add_order.neg"><span class="name">is_of_fin_add_order</span>.<span class="name">neg</span></a></div>
 
@@ -228,11 +230,11 @@
 
     <div class="nav_link"><a class="break_within" href="#is_of_fin_order"><span class="name">is_of_fin_order</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#is_of_fin_order.apply"><span class="name">is_of_fin_order</span>.<span class="name">apply</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#is_of_fin_order.inv"><span class="name">is_of_fin_order</span>.<span class="name">inv</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#is_of_fin_order.mul"><span class="name">is_of_fin_order</span>.<span class="name">mul</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#is_of_fin_order.quotient"><span class="name">is_of_fin_order</span>.<span class="name">quotient</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#is_of_fin_order_iff_coe"><span class="name">is_of_fin_order_iff_coe</span></a></div>
 
@@ -269,6 +271,8 @@
     <div class="nav_link"><a class="break_within" href="#mem_zmultiples_iff_mem_range_add_order_of"><span class="name">mem_zmultiples_iff_mem_range_add_order_of</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#mem_zpowers_iff_mem_range_order_of"><span class="name">mem_zpowers_iff_mem_range_order_of</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#monoid_hom.is_of_fin_order"><span class="name">monoid_hom</span>.<span class="name">is_of_fin_order</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#multiples_eq_zmultiples"><span class="name">multiples_eq_zmultiples</span></a></div>
 
@@ -818,8 +822,8 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_add_order_iff_coe"><span class="name">is_of_fin_add_order_iff_coe</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group">add_group</a> G]</span></span></span>
-    <span class="decl_args"><span class="fn">(H : <a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#add_subgroup">add_subgroup</a> G)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> G]</span></span></span>
+    <span class="decl_args"><span class="fn">(H : <a href="https://mariainesdff.github.io/ideles/group_theory/submonoid/basic.html#add_submonoid">add_submonoid</a> G)</span></span>
     <span class="decl_args"><span class="fn">(x : <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>H)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_add_order">is_of_fin_add_order</a> x</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_add_order">is_of_fin_add_order</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>x</span></span></div>
 </div>
@@ -857,8 +861,8 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_order_iff_coe"><span class="name">is_of_fin_order_iff_coe</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#group">group</a> G]</span></span></span>
-    <span class="decl_args"><span class="fn">(H : <a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#subgroup">subgroup</a> G)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> G]</span></span></span>
+    <span class="decl_args"><span class="fn">(H : <a href="https://mariainesdff.github.io/ideles/group_theory/submonoid/basic.html#submonoid">submonoid</a> G)</span></span>
     <span class="decl_args"><span class="fn">(x : <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>H)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_order">is_of_fin_order</a> x</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_order">is_of_fin_order</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>x</span></span></div>
 </div>
@@ -867,7 +871,7 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
 
 
 
-<p>Elements of finite order are of finite order in subgroups.</p>
+<p>Elements of finite order are of finite order in submonoids.</p>
 
 
 
@@ -882,10 +886,10 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
     
         
         
-<div class="decl" id="is_of_fin_order.quotient">
+<div class="decl" id="add_monoid_hom.is_of_fin_order">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L79">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L80">source</a></div>
 
 
 
@@ -894,21 +898,23 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
 
 
 <span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_order.quotient"><span class="name">is_of_fin_order</span>.<span class="name">quotient</span></a></span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#add_monoid_hom.is_of_fin_order"><span class="name">add_monoid_hom</span>.<span class="name">is_of_fin_order</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#group">group</a> G]</span></span></span>
-    <span class="decl_args"><span class="fn">(N : <a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#subgroup">subgroup</a> G)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[N.<a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#subgroup.normal" title="subgroup.normal">normal</a>]</span></span></span>
-    <span class="decl_args"><span class="fn">(x : G)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_order">is_of_fin_order</a> x</span> → <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_order">is_of_fin_order</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>x</span></span></div>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> G]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{H : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> H]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : G <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom" title="add_monoid_hom">→+</a> H)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{x : G}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : <a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_add_order">is_of_fin_add_order</a> x)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_add_order">is_of_fin_add_order</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f x)</span></span></div>
 </div>
 
 
 
 
 
-<p>Elements of finite order are of finite order in quotient groups.</p>
+<p>The image of an element of finite additive order has finite additive order.</p>
 
 
 
@@ -923,10 +929,10 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
     
         
         
-<div class="decl" id="is_of_fin_add_order.is_of_fin_add_order_iff_quotient">
+<div class="decl" id="monoid_hom.is_of_fin_order">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L79">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L80">source</a></div>
 
 
 
@@ -935,20 +941,107 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
 
 
 <span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_add_order.is_of_fin_add_order_iff_quotient"><span class="name">is_of_fin_add_order</span>.<span class="name">is_of_fin_add_order_iff_quotient</span></a></span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#monoid_hom.is_of_fin_order"><span class="name">monoid_hom</span>.<span class="name">is_of_fin_order</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group">add_group</a> G]</span></span></span>
-    <span class="decl_args"><span class="fn">(N : <a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#add_subgroup">add_subgroup</a> G)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[N.<a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#add_subgroup.normal" title="add_subgroup.normal">normal</a>]</span></span></span>
-    <span class="decl_args"><span class="fn">(x : G)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_add_order">is_of_fin_add_order</a> x</span> → <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_add_order">is_of_fin_add_order</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>x</span></span></div>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> G]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{H : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> H]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : G <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom" title="monoid_hom">→*</a> H)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{x : G}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : <a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_order">is_of_fin_order</a> x)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_order">is_of_fin_order</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f x)</span></span></div>
 </div>
 
 
 
 
 
+<p>The image of an element of finite order has finite order.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="is_of_fin_order.apply">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L90">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_order.apply"><span class="name">is_of_fin_order</span>.<span class="name">apply</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{η : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{Gs : η → <span class="fn">Type u_2</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[Π (i : η), <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> <span class="fn">(Gs i)</span></span>]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{x : Π (i : η), <span class="fn">Gs i</span>}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : <a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_order">is_of_fin_order</a> x)</span></span>
+    <span class="decl_args"><span class="fn">(i : η)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_order">is_of_fin_order</a> <span class="fn">(x i)</span></span></div>
+</div>
+
+
+
+
+
+<p>If a direct product has finite order then so does each component.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="is_of_fin_add_order.apply">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L90">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_add_order.apply"><span class="name">is_of_fin_add_order</span>.<span class="name">apply</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{η : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{Gs : η → <span class="fn">Type u_2</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[Π (i : η), <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> <span class="fn">(Gs i)</span></span>]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{x : Π (i : η), <span class="fn">Gs i</span>}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : <a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_add_order">is_of_fin_add_order</a> x)</span></span>
+    <span class="decl_args"><span class="fn">(i : η)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/order_of_element.html#is_of_fin_add_order">is_of_fin_add_order</a> <span class="fn">(x i)</span></span></div>
+</div>
+
+
+
+
+
+<p>If a direct product has finite additive order then so does each component.</p>
 
 
 
@@ -966,7 +1059,7 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
 <div class="decl" id="is_of_fin_order_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L88">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L99">source</a></div>
 
 
 
@@ -986,7 +1079,7 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
 
 
 
-<p>0 is of finite order in any additive group.</p>
+<p>0 is of finite order in any additive monoid.</p>
 
 
 
@@ -1004,7 +1097,7 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
 <div class="decl" id="is_of_fin_order_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L88">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L99">source</a></div>
 
 
 
@@ -1024,7 +1117,7 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
 
 
 
-<p>1 is of finite order in any group.</p>
+<p>1 is of finite order in any monoid.</p>
 
 
 
@@ -1042,7 +1135,7 @@ exists <code>n ≥ 1</code> such that <code>x ^ n = 1</code>.</p>
 <div class="decl" id="order_of">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L98">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L109">source</a></div>
 
 
 
@@ -1091,7 +1184,7 @@ Otherwise, i.e. if <code>x</code> is of infinite order, then <code><a href="http
 <div class="decl" id="add_order_of">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L98">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L109">source</a></div>
 
 
 
@@ -1140,7 +1233,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_of_mul_eq_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L101">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L112">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1180,7 +1273,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_of_add_eq_add_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L104">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L115">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1220,7 +1313,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_pos'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L108">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L119">source</a></div>
 
 
 
@@ -1259,7 +1352,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_pos'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L108">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L119">source</a></div>
 
 
 
@@ -1298,7 +1391,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="pow_order_of_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L112">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L123">source</a></div>
 
 
 
@@ -1336,7 +1429,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_nsmul_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L112">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L123">source</a></div>
 
 
 
@@ -1374,7 +1467,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L119">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L130">source</a></div>
 
 
 
@@ -1413,7 +1506,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L119">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L130">source</a></div>
 
 
 
@@ -1452,7 +1545,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_eq_zero_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L122">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L133">source</a></div>
 
 
 
@@ -1490,7 +1583,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_eq_zero_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L122">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L133">source</a></div>
 
 
 
@@ -1528,7 +1621,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_eq_zero_iff'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L126">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L137">source</a></div>
 
 
 
@@ -1566,7 +1659,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_eq_zero_iff'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L126">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L137">source</a></div>
 
 
 
@@ -1604,7 +1697,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_pos_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L133">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L144">source</a></div>
 
 
 
@@ -1643,7 +1736,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_pos_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L133">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L144">source</a></div>
 
 
 
@@ -1682,7 +1775,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="pow_ne_one_of_lt_order_of'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L137">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L148">source</a></div>
 
 
 
@@ -1723,7 +1816,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="nsmul_ne_zero_of_lt_add_order_of'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L137">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L148">source</a></div>
 
 
 
@@ -1764,7 +1857,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_le_of_nsmul_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L142">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L153">source</a></div>
 
 
 
@@ -1805,7 +1898,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_le_of_pow_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L142">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L153">source</a></div>
 
 
 
@@ -1846,7 +1939,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L145">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L156">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1885,7 +1978,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L145">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L156">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1924,7 +2017,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_eq_one_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L148">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L159">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1964,7 +2057,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_monoid.order_of_eq_one_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L148">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L159">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2004,7 +2097,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="pow_eq_mod_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L153">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L164">source</a></div>
 
 
 
@@ -2043,7 +2136,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="nsmul_eq_mod_add_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L153">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L164">source</a></div>
 
 
 
@@ -2082,7 +2175,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_dvd_of_pow_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L158">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L169">source</a></div>
 
 
 
@@ -2122,7 +2215,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_dvd_of_nsmul_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L158">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L169">source</a></div>
 
 
 
@@ -2162,7 +2255,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_dvd_iff_nsmul_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L162">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L173">source</a></div>
 
 
 
@@ -2201,7 +2294,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_dvd_iff_pow_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L162">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L173">source</a></div>
 
 
 
@@ -2240,7 +2333,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_map_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L166">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L177">source</a></div>
 
 
 
@@ -2281,7 +2374,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_map_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L166">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L177">source</a></div>
 
 
 
@@ -2322,7 +2415,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="exists_pow_eq_self_of_coprime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L171">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L182">source</a></div>
 
 
 
@@ -2362,7 +2455,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="exists_nsmul_eq_self_of_coprime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L171">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L182">source</a></div>
 
 
 
@@ -2402,7 +2495,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="add_order_of_eq_of_nsmul_and_div_prime_nsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L189">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L200">source</a></div>
 
 
 
@@ -2444,7 +2537,7 @@ exists. Otherwise, i.e. if <code>a</code> is of infinite order, then <code><a hr
 <div class="decl" id="order_of_eq_of_pow_and_pow_div_prime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L189">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L200">source</a></div>
 
 
 
@@ -2488,7 +2581,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_eq_order_of_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L212">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L223">source</a></div>
 
 
 
@@ -2529,7 +2622,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_order_of_eq_add_order_of_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L212">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L223">source</a></div>
 
 
 
@@ -2570,7 +2663,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L217">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L228">source</a></div>
 
 
 
@@ -2612,7 +2705,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_order_of_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L217">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L228">source</a></div>
 
 
 
@@ -2654,7 +2747,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_submonoid">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L221">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L232">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -2695,7 +2788,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_add_submonoid">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L221">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L232">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -2736,7 +2829,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_units">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L226">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L237">source</a></div>
 
 
 
@@ -2774,7 +2867,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_add_units">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L226">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L237">source</a></div>
 
 
 
@@ -2812,7 +2905,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_order_of_nsmul'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L232">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L243">source</a></div>
 
 
 
@@ -2852,7 +2945,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_pow'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L232">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L243">source</a></div>
 
 
 
@@ -2892,7 +2985,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_order_of_nsmul''">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L242">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L253">source</a></div>
 
 
 
@@ -2932,7 +3025,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_pow''">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L242">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L253">source</a></div>
 
 
 
@@ -2972,7 +3065,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="commute.order_of_mul_dvd_lcm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L250">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L261">source</a></div>
 
 
 
@@ -3011,7 +3104,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_commute.order_of_add_dvd_lcm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L250">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L261">source</a></div>
 
 
 
@@ -3050,7 +3143,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="commute.order_of_mul_dvd_mul_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L258">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L269">source</a></div>
 
 
 
@@ -3089,7 +3182,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_commute.add_order_of_add_dvd_mul_add_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L258">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L269">source</a></div>
 
 
 
@@ -3128,7 +3221,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_commute.add_order_of_add_eq_mul_add_order_of_of_coprime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L263">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L274">source</a></div>
 
 
 
@@ -3168,7 +3261,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="commute.order_of_mul_eq_mul_order_of_of_coprime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L263">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L274">source</a></div>
 
 
 
@@ -3208,7 +3301,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_commute.is_of_fin_order_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L273">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L284">source</a></div>
 
 
 
@@ -3251,7 +3344,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="commute.is_of_fin_order_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L273">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L284">source</a></div>
 
 
 
@@ -3294,7 +3387,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_order_of_eq_prime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L285">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L296">source</a></div>
 
 
 
@@ -3336,7 +3429,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_eq_prime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L285">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L296">source</a></div>
 
 
 
@@ -3378,7 +3471,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_order_of_eq_prime_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L290">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L301">source</a></div>
 
 
 
@@ -3421,7 +3514,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_eq_prime_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L290">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L301">source</a></div>
 
 
 
@@ -3464,7 +3557,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="nsmul_injective_aux">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L310">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L321">source</a></div>
 
 
 
@@ -3506,7 +3599,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="pow_injective_aux">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L310">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L321">source</a></div>
 
 
 
@@ -3548,7 +3641,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="nsmul_injective_of_lt_add_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L323">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L334">source</a></div>
 
 
 
@@ -3590,7 +3683,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="pow_injective_of_lt_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L323">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L334">source</a></div>
 
 
 
@@ -3632,7 +3725,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="mem_powers_iff_mem_range_order_of'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L330">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L341">source</a></div>
 
 
 
@@ -3672,7 +3765,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="mem_multiples_iff_mem_range_add_order_of'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L330">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L341">source</a></div>
 
 
 
@@ -3712,7 +3805,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="pow_eq_one_iff_modeq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L334">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L345">source</a></div>
 
 
 
@@ -3751,7 +3844,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="pow_eq_pow_iff_modeq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L337">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L348">source</a></div>
 
 
 
@@ -3790,7 +3883,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="is_of_fin_order.inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L352">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L363">source</a></div>
 
 
 
@@ -3830,7 +3923,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="is_of_fin_add_order.neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L352">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L363">source</a></div>
 
 
 
@@ -3870,7 +3963,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="is_of_fin_order_inv_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L360">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L371">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3911,7 +4004,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="is_of_fin_order_neg_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L360">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L371">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3952,7 +4045,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_dvd_iff_zpow_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L375">source</a></div>
 
 
 
@@ -3991,7 +4084,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_order_of_dvd_iff_zsmul_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L375">source</a></div>
 
 
 
@@ -4030,7 +4123,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L373">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L384">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4070,7 +4163,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L373">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L384">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4110,7 +4203,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_add_subgroup">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L376">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L387">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -4151,7 +4244,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_subgroup">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L376">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L387">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -4192,7 +4285,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="zsmul_eq_mod_add_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L381">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L392">source</a></div>
 
 
 
@@ -4231,7 +4324,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="zpow_eq_mod_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L381">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L392">source</a></div>
 
 
 
@@ -4270,7 +4363,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="pow_inj_iff_of_order_of_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L388">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L399">source</a></div>
 
 
 
@@ -4310,7 +4403,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="nsmul_inj_iff_of_add_order_of_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L388">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L399">source</a></div>
 
 
 
@@ -4350,7 +4443,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="nsmul_inj_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L403">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L414">source</a></div>
 
 
 
@@ -4389,7 +4482,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="pow_inj_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L403">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L414">source</a></div>
 
 
 
@@ -4428,7 +4521,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="is_of_fin_order.mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L420">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L431">source</a></div>
 
 
 
@@ -4469,7 +4562,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="is_of_fin_add_order.add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L420">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L431">source</a></div>
 
 
 
@@ -4510,7 +4603,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="sum_card_order_of_eq_card_pow_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L434">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L445">source</a></div>
 
 
 
@@ -4551,7 +4644,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="sum_card_add_order_of_eq_card_nsmul_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L434">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L445">source</a></div>
 
 
 
@@ -4592,7 +4685,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="exists_pow_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L455">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L466">source</a></div>
 
 
 
@@ -4631,7 +4724,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="exists_nsmul_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L455">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L466">source</a></div>
 
 
 
@@ -4670,7 +4763,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_le_card_univ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L467">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L478">source</a></div>
 
 
 
@@ -4709,7 +4802,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="add_order_of_le_card_univ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L467">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L478">source</a></div>
 
 
 
@@ -4748,7 +4841,7 @@ then <code>x</code> has order <code>n</code> in <code>G</code>.</p>
 <div class="decl" id="order_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L477">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L488">source</a></div>
 
 
 
@@ -4789,7 +4882,7 @@ automatic in case of a finite cancellative monoid.</p>
 <div class="decl" id="add_order_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L477">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L488">source</a></div>
 
 
 
@@ -4830,7 +4923,7 @@ automatic in case of a finite cancellative additive monoid.</p>
 <div class="decl" id="add_order_of_nsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L486">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L497">source</a></div>
 
 
 
@@ -4872,7 +4965,7 @@ which is automatic in the case of a finite cancellative additive monoid.</p>
 <div class="decl" id="order_of_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L486">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L497">source</a></div>
 
 
 
@@ -4914,7 +5007,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="mem_multiples_iff_mem_range_add_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L490">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L501">source</a></div>
 
 
 
@@ -4954,7 +5047,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="mem_powers_iff_mem_range_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L490">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L501">source</a></div>
 
 
 
@@ -4994,7 +5087,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="decidable_multiples">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L496">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L507">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5045,7 +5138,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="decidable_powers">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L496">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L507">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5096,7 +5189,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="fin_equiv_multiples">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L508">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L519">source</a></div>
 
 
 
@@ -5146,7 +5239,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="fin_equiv_powers">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L508">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L519">source</a></div>
 
 
 
@@ -5195,7 +5288,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="fin_equiv_multiples_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L515">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L526">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5237,7 +5330,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="fin_equiv_powers_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L515">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L526">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5279,7 +5372,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="fin_equiv_multiples_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L530">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5322,7 +5415,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="fin_equiv_powers_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L530">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5365,7 +5458,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="powers_equiv_powers">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L530">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L541">source</a></div>
 
 
 
@@ -5416,7 +5509,7 @@ automatic in the case of a finite cancellative monoid.</p>
 <div class="decl" id="multiples_equiv_multiples">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L530">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L541">source</a></div>
 
 
 
@@ -5467,7 +5560,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="powers_equiv_powers_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L535">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L546">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5510,7 +5603,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="multiples_equiv_multiples_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L535">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L546">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5553,7 +5646,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="add_order_of_eq_card_multiples">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L544">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L555">source</a></div>
 
 
 
@@ -5593,7 +5686,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="order_eq_card_powers">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L544">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L555">source</a></div>
 
 
 
@@ -5633,7 +5726,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="exists_zpow_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L554">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L565">source</a></div>
 
 
 
@@ -5672,7 +5765,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="exists_zsmul_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L554">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L565">source</a></div>
 
 
 
@@ -5711,7 +5804,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="mem_multiples_iff_mem_zmultiples">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L565">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L576">source</a></div>
 
 
 
@@ -5750,7 +5843,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="mem_powers_iff_mem_zpowers">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L565">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L576">source</a></div>
 
 
 
@@ -5789,7 +5882,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="multiples_eq_zmultiples">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L573">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L584">source</a></div>
 
 
 
@@ -5828,7 +5921,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="powers_eq_zpowers">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L573">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L584">source</a></div>
 
 
 
@@ -5867,7 +5960,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="mem_zmultiples_iff_mem_range_add_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L577">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L588">source</a></div>
 
 
 
@@ -5907,7 +6000,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="mem_zpowers_iff_mem_range_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L577">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L588">source</a></div>
 
 
 
@@ -5947,7 +6040,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="decidable_zmultiples">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L582">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L593">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5998,7 +6091,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="decidable_zpowers">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L582">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L593">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6049,7 +6142,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="fin_equiv_zpowers">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L594">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L605">source</a></div>
 
 
 
@@ -6098,7 +6191,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="fin_equiv_zmultiples">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L594">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L605">source</a></div>
 
 
 
@@ -6148,7 +6241,7 @@ to <code>i • a</code>.</p>
 <div class="decl" id="fin_equiv_zpowers_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L599">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L610">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6190,7 +6283,7 @@ to <code>i • a</code>.</p>
 <div class="decl" id="fin_equiv_zmultiples_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L599">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L610">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6232,7 +6325,7 @@ to <code>i • a</code>.</p>
 <div class="decl" id="fin_equiv_zmultiples_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L603">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L614">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6275,7 +6368,7 @@ to <code>i • a</code>.</p>
 <div class="decl" id="fin_equiv_zpowers_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L603">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L614">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6318,7 +6411,7 @@ to <code>i • a</code>.</p>
 <div class="decl" id="zmultiples_equiv_zmultiples">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L614">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L625">source</a></div>
 
 
 
@@ -6369,7 +6462,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="zpowers_equiv_zpowers">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L614">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L625">source</a></div>
 
 
 
@@ -6420,7 +6513,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="zmultiples_equiv_zmultiples_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L619">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L630">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6463,7 +6556,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="zpowers_equiv_zpowers_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L619">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L630">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6506,7 +6599,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="add_order_eq_card_zmultiples">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L628">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L639">source</a></div>
 
 
 
@@ -6546,7 +6639,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="order_eq_card_zpowers">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L628">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L639">source</a></div>
 
 
 
@@ -6586,7 +6679,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="order_of_dvd_card_univ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L636">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L647">source</a></div>
 
 
 
@@ -6625,7 +6718,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="add_order_of_dvd_card_univ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L636">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L647">source</a></div>
 
 
 
@@ -6664,7 +6757,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="pow_card_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L659">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L670">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6705,7 +6798,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="card_nsmul_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L659">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L670">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6746,7 +6839,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="nsmul_eq_mod_card">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L663">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L674">source</a></div>
 
 
 
@@ -6786,7 +6879,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="pow_eq_mod_card">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L663">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L674">source</a></div>
 
 
 
@@ -6826,7 +6919,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="zpow_eq_mod_card">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L668">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L679">source</a></div>
 
 
 
@@ -6866,7 +6959,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="zsmul_eq_mod_card">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L668">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L679">source</a></div>
 
 
 
@@ -6906,7 +6999,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="pow_coprime_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L675">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L686">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6949,7 +7042,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="pow_coprime">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L675">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L686">source</a></div>
 
 
 
@@ -6999,7 +7092,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="pow_coprime_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L675">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L686">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7042,7 +7135,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="nsmul_coprime_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L675">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L686">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7085,7 +7178,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="nsmul_coprime_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L675">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L686">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7128,7 +7221,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="nsmul_coprime">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L675">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L686">source</a></div>
 
 
 
@@ -7178,7 +7271,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="pow_coprime_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L687">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L698">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7220,7 +7313,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="nsmul_coprime_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L687">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L698">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7262,7 +7355,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="pow_coprime_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L690">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L701">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7305,7 +7398,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="nsmul_coprime_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L690">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L701">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7348,7 +7441,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="inf_eq_bot_of_coprime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L694">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L705">source</a></div>
 
 
 
@@ -7389,7 +7482,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="add_inf_eq_bot_of_coprime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L694">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L705">source</a></div>
 
 
 
@@ -7430,7 +7523,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="image_range_add_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L707">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L718">source</a></div>
 
 
 
@@ -7470,7 +7563,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="image_range_order_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L707">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L718">source</a></div>
 
 
 
@@ -7511,7 +7604,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="pow_gcd_card_eq_one_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L713">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L724">source</a></div>
 
 
 
@@ -7552,7 +7645,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="gcd_nsmul_card_eq_zero_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L713">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L724">source</a></div>
 
 
 
@@ -7592,7 +7685,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="add_submonoid_of_idempotent">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L726">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L737">source</a></div>
 
 
 
@@ -7643,7 +7736,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="submonoid_of_idempotent">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L726">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L737">source</a></div>
 
 
 
@@ -7694,7 +7787,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="add_subgroup_of_idempotent">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L740">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L751">source</a></div>
 
 
 
@@ -7745,7 +7838,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="subgroup_of_idempotent">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L740">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L751">source</a></div>
 
 
 
@@ -7796,7 +7889,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="smul_card_add_subgroup_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L751">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L762">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7838,7 +7931,7 @@ mapping <code>i • a</code> to <code>i • b</code>.</p>
 <div class="decl" id="smul_card_add_subgroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L751">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L762">source</a></div>
 
 
 
@@ -7889,7 +7982,7 @@ then <code>|G| • S</code> is a subgroup</p>
 <div class="decl" id="pow_card_subgroup_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L751">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L762">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7931,7 +8024,7 @@ then <code>|G| • S</code> is a subgroup</p>
 <div class="decl" id="pow_card_subgroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L751">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L762">source</a></div>
 
 
 
@@ -7981,7 +8074,7 @@ then <code>|G| • S</code> is a subgroup</p>
 <div class="decl" id="order_of_abs_ne_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L772">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L783">source</a></div>
 
 
 
@@ -8020,7 +8113,7 @@ then <code>|G| • S</code> is a subgroup</p>
 <div class="decl" id="linear_ordered_ring.order_of_le_two">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L782">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/order_of_element.lean#L793">source</a></div>
 
 
 
@@ -8074,13 +8167,6 @@ then <code>|G| • S</code> is a subgroup</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -10151,6 +10237,12 @@ then <code>|G| • S</code> is a subgroup</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -10295,6 +10387,13 @@ then <code>|G| • S</code> is a subgroup</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -10303,6 +10402,29 @@ then <code>|G| • S</code> is a subgroup</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -10385,6 +10507,9 @@ then <code>|G| • S</code> is a subgroup</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -11018,27 +11143,35 @@ then <code>|G| • S</code> is a subgroup</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

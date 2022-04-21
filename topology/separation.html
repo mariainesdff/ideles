@@ -94,6 +94,8 @@
 
     <div class="nav_link"><a class="break_within" href="#bornology.relatively_compact_eq_in_compact"><span class="name">bornology</span>.<span class="name">relatively_compact_eq_in_compact</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#closed_embedding.normal_space"><span class="name">closed_embedding</span>.<span class="name">normal_space</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#closed_nhds_basis"><span class="name">closed_nhds_basis</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#closure_singleton"><span class="name">closure_singleton</span></a></div>
@@ -162,7 +164,11 @@
 
     <div class="nav_link"><a class="break_within" href="#disjoint_pure_nhds"><span class="name">disjoint_pure_nhds</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#embedding.regular_space"><span class="name">embedding</span>.<span class="name">regular_space</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#embedding.t0_space"><span class="name">embedding</span>.<span class="name">t0_space</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#embedding.t1_space"><span class="name">embedding</span>.<span class="name">t1_space</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#embedding.t2_space"><span class="name">embedding</span>.<span class="name">t2_space</span></a></div>
 
@@ -392,6 +398,8 @@
 
     <div class="nav_link"><a class="break_within" href="#t1_space_iff_exists_open"><span class="name">t1_space_iff_exists_open</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#t1_space_of_injective_of_continuous"><span class="name">t1_space_of_injective_of_continuous</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#t1_space_tfae"><span class="name">t1_space_tfae</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#t2_5_space"><span class="name">t2_5_space</span></a></div>
@@ -407,6 +415,8 @@
     <div class="nav_link"><a class="break_within" href="#t2_separation"><span class="name">t2_separation</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#t2_separation_compact_nhds"><span class="name">t2_separation_compact_nhds</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#t2_separation_finset"><span class="name">t2_separation_finset</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#t2_separation_nhds"><span class="name">t2_separation_nhds</span></a></div>
 
@@ -2628,10 +2638,97 @@ in a compact set.</p>
     
         
         
+<div class="decl" id="t1_space_of_injective_of_continuous">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L450">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/topology/separation.html#t1_space_of_injective_of_continuous"><span class="name">t1_space_of_injective_of_continuous</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α → β}</span></span></span>
+    <span class="decl_args"><span class="fn">(hf : <a href="https://mariainesdff.github.io/ideles/init/function.html#function.injective">function.injective</a> f)</span></span>
+    <span class="decl_args"><span class="fn">(hf' : <a href="https://mariainesdff.github.io/ideles/topology/basic.html#continuous">continuous</a> f)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/separation.html#t1_space">t1_space</a> β]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/topology/separation.html#t1_space">t1_space</a> α</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="embedding.t1_space">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L459">source</a></div>
+
+
+    <div class="attributes">@[protected]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/topology/separation.html#embedding.t1_space"><span class="name">embedding</span>.<span class="name">t1_space</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/separation.html#t1_space">t1_space</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α → β}</span></span></span>
+    <span class="decl_args"><span class="fn">(hf : <a href="https://mariainesdff.github.io/ideles/topology/maps.html#embedding">embedding</a> f)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/topology/separation.html#t1_space">t1_space</a> α</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="subtype.t1_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L450">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L463">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2672,7 +2769,7 @@ in a compact set.</p>
 <div class="decl" id="t1_space.t0_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L456">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L468">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2712,7 +2809,7 @@ in a compact set.</p>
 <div class="decl" id="compl_singleton_mem_nhds_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L459">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L471">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2753,7 +2850,7 @@ in a compact set.</p>
 <div class="decl" id="compl_singleton_mem_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L462">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L474">source</a></div>
 
 
 
@@ -2793,7 +2890,7 @@ in a compact set.</p>
 <div class="decl" id="closure_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L465">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L477">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2834,7 +2931,7 @@ in a compact set.</p>
 <div class="decl" id="set.subsingleton.closure">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L481">source</a></div>
 
 
 
@@ -2874,7 +2971,7 @@ in a compact set.</p>
 <div class="decl" id="subsingleton_closure">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L473">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L485">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2915,7 +3012,7 @@ in a compact set.</p>
 <div class="decl" id="is_closed_map_const">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L477">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L489">source</a></div>
 
 
 
@@ -2956,7 +3053,7 @@ in a compact set.</p>
 <div class="decl" id="bInter_basis_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L483">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L495">source</a></div>
 
 
 
@@ -2999,7 +3096,7 @@ in a compact set.</p>
 <div class="decl" id="pure_le_nhds_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L493">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L505">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3040,7 +3137,7 @@ in a compact set.</p>
 <div class="decl" id="nhds_le_nhds_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L501">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L513">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3081,7 +3178,7 @@ in a compact set.</p>
 <div class="decl" id="nhds_eq_nhds_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L504">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L516">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3122,7 +3219,7 @@ in a compact set.</p>
 <div class="decl" id="compl_singleton_mem_nhds_set_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L507">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L519">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3164,7 +3261,7 @@ in a compact set.</p>
 <div class="decl" id="nhds_set_le_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L511">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L523">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3205,7 +3302,7 @@ in a compact set.</p>
 <div class="decl" id="nhds_set_inj_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L521">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L533">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3246,7 +3343,7 @@ in a compact set.</p>
 <div class="decl" id="injective_nhds_set">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L524">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L536">source</a></div>
 
 
 
@@ -3284,7 +3381,7 @@ in a compact set.</p>
 <div class="decl" id="strict_mono_nhds_set">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L527">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L539">source</a></div>
 
 
 
@@ -3322,7 +3419,7 @@ in a compact set.</p>
 <div class="decl" id="nhds_le_nhds_set">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L530">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L542">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3364,7 +3461,7 @@ in a compact set.</p>
 <div class="decl" id="dense.diff_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L534">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L546">source</a></div>
 
 
 
@@ -3407,7 +3504,7 @@ in a compact set.</p>
 <div class="decl" id="dense.diff_finset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L540">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L552">source</a></div>
 
 
 
@@ -3451,7 +3548,7 @@ obtains a dense set.</p>
 <div class="decl" id="dense.diff_finite">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L552">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L564">source</a></div>
 
 
 
@@ -3496,7 +3593,7 @@ obtains a dense set.</p>
 <div class="decl" id="eq_of_tendsto_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L562">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L574">source</a></div>
 
 
 
@@ -3542,7 +3639,7 @@ obtains a dense set.</p>
 <div class="decl" id="continuous_at_of_tendsto_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L571">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L583">source</a></div>
 
 
 
@@ -3588,7 +3685,7 @@ obtains a dense set.</p>
 <div class="decl" id="tendsto_const_nhds_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L575">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L587">source</a></div>
 
 
 
@@ -3629,7 +3726,7 @@ obtains a dense set.</p>
 <div class="decl" id="infinite_of_mem_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L581">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L593">source</a></div>
 
 
 
@@ -3673,7 +3770,7 @@ infinite.</p>
 <div class="decl" id="discrete_of_t1_of_finite">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L592">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L604">source</a></div>
 
 
 
@@ -3712,7 +3809,7 @@ infinite.</p>
 <div class="decl" id="singleton_mem_nhds_within_of_mem_discrete">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L601">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L613">source</a></div>
 
 
 
@@ -3753,7 +3850,7 @@ infinite.</p>
 <div class="decl" id="nhds_within_of_mem_discrete">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L612">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L624">source</a></div>
 
 
 
@@ -3796,7 +3893,7 @@ the pure <code>x</code> filter (which is the principal filter at the singleton <
 <div class="decl" id="filter.has_basis.exists_inter_eq_singleton_of_mem_discrete">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L616">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L628">source</a></div>
 
 
 
@@ -3841,7 +3938,7 @@ the pure <code>x</code> filter (which is the principal filter at the singleton <
 <div class="decl" id="nhds_inter_eq_singleton_of_mem_discrete">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L629">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L641">source</a></div>
 
 
 
@@ -3884,7 +3981,7 @@ that only meets <code>s</code> at <code>x</code>.</p>
 <div class="decl" id="disjoint_nhds_within_of_mem_discrete">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L639">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L651">source</a></div>
 
 
 
@@ -3931,7 +4028,7 @@ such that</p>
 <div class="decl" id="topological_space.subset_trans">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L648">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L660">source</a></div>
 
 
 
@@ -3973,7 +4070,7 @@ obtained by the induced topological space structure on <code>s</code>.</p>
 <div class="decl" id="discrete_topology_iff_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L660">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L672">source</a></div>
 
 
 
@@ -4012,7 +4109,7 @@ neighbourhoods.</p>
 <div class="decl" id="induced_bot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L676">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L688">source</a></div>
 
 
 
@@ -4055,7 +4152,7 @@ nor the target <code>Y</code> of the inclusion <code>f</code>.</p>
 <div class="decl" id="discrete_topology_induced">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L682">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L694">source</a></div>
 
 
 
@@ -4098,7 +4195,7 @@ is the discrete topology on <code>X</code>.</p>
 <div class="decl" id="discrete_topology.of_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L692">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L704">source</a></div>
 
 
 
@@ -4140,7 +4237,7 @@ by <code>X</code>on <code>s</code> is discrete, then also the topology induces o
 <div class="decl" id="t2_space">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L703">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L715">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -4222,7 +4319,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="t2_space_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L703">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L715">source</a></div>
 
 
 
@@ -4259,7 +4356,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="t2_separation">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L706">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L719">source</a></div>
 
 
 
@@ -4282,6 +4379,47 @@ the most widely used of the separation axioms.</p>
 
 
 
+<p>Two different points can be separated by open sets.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="t2_separation_finset">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L724">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/topology/separation.html#t2_separation_finset"><span class="name">t2_separation_finset</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/separation.html#t2_space">t2_space</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(s : <a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset">finset</a> α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">∃ (f : <span class="fn">α → <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> α)</span></span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>s.<a href="https://mariainesdff.github.io/ideles/data/set/pairwise.html#set.pairwise_disjoint" title="set.pairwise_disjoint">pairwise_disjoint</a> f</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn">∀ (x : α), <span class="fn"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> s</span> → <span class="fn"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn">f x</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/topology/basic.html#is_open">is_open</a> <span class="fn">(f x)</span></span></span></span></span></span></span></div>
+</div>
+
+
+
+
+
+<p>A finite set can be separated by open sets.</p>
 
 
 
@@ -4299,7 +4437,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="t2_space.t1_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L711">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L757">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4339,7 +4477,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="eq_of_nhds_ne_bot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L716">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L762">source</a></div>
 
 
 
@@ -4379,7 +4517,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="t2_iff_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L722">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L768">source</a></div>
 
 
 
@@ -4417,7 +4555,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="t2_space_iff_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L731">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L777">source</a></div>
 
 
 
@@ -4454,7 +4592,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="t2_separation_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L746">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L792">source</a></div>
 
 
 
@@ -4494,7 +4632,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="t2_separation_compact_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L751">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L797">source</a></div>
 
 
 
@@ -4535,7 +4673,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="t2_iff_ultrafilter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L764">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L810">source</a></div>
 
 
 
@@ -4572,7 +4710,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="is_closed_diagonal">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L768">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L814">source</a></div>
 
 
 
@@ -4610,7 +4748,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="t2_iff_is_closed_diagonal">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L783">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L829">source</a></div>
 
 
 
@@ -4647,7 +4785,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="finset_disjoint_finset_opens_of_t2">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L807">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L853">source</a></div>
 
 
 
@@ -4686,7 +4824,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="point_disjoint_finset_opens_of_t2">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L819">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L865">source</a></div>
 
 
 
@@ -4727,7 +4865,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="tendsto_nhds_unique">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L825">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L871">source</a></div>
 
 
 
@@ -4772,7 +4910,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="tendsto_nhds_unique'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L829">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L875">source</a></div>
 
 
 
@@ -4817,7 +4955,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="tendsto_nhds_unique_of_eventually_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L833">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L879">source</a></div>
 
 
 
@@ -4863,7 +5001,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="tendsto_nhds_unique_of_frequently_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L838">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L884">source</a></div>
 
 
 
@@ -4908,7 +5046,7 @@ the most widely used of the separation axioms.</p>
 <div class="decl" id="t2_5_space">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L847">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L893">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -4966,7 +5104,7 @@ empty, one containing <code>x</code> and the other <code>y</code> .</p>
 <div class="decl" id="t2_5_space.t2_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L852">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L898">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5015,7 +5153,7 @@ are useful without a <code><a href="https://mariainesdff.github.io/ideles/init/l
 <div class="decl" id="Lim_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L868">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L914">source</a></div>
 
 
 
@@ -5057,7 +5195,7 @@ are useful without a <code><a href="https://mariainesdff.github.io/ideles/init/l
 <div class="decl" id="Lim_eq_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L872">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L918">source</a></div>
 
 
 
@@ -5099,7 +5237,7 @@ are useful without a <code><a href="https://mariainesdff.github.io/ideles/init/l
 <div class="decl" id="ultrafilter.Lim_eq_iff_le_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L875">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L921">source</a></div>
 
 
 
@@ -5140,7 +5278,7 @@ are useful without a <code><a href="https://mariainesdff.github.io/ideles/init/l
 <div class="decl" id="is_open_iff_ultrafilter'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L879">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L925">source</a></div>
 
 
 
@@ -5180,7 +5318,7 @@ are useful without a <code><a href="https://mariainesdff.github.io/ideles/init/l
 <div class="decl" id="filter.tendsto.lim_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L889">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L935">source</a></div>
 
 
 
@@ -5224,7 +5362,7 @@ are useful without a <code><a href="https://mariainesdff.github.io/ideles/init/l
 <div class="decl" id="filter.lim_eq_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L893">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L939">source</a></div>
 
 
 
@@ -5268,7 +5406,7 @@ are useful without a <code><a href="https://mariainesdff.github.io/ideles/init/l
 <div class="decl" id="continuous.lim_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L897">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L943">source</a></div>
 
 
 
@@ -5311,7 +5449,7 @@ are useful without a <code><a href="https://mariainesdff.github.io/ideles/init/l
 <div class="decl" id="Lim_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L901">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L947">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5352,7 +5490,7 @@ are useful without a <code><a href="https://mariainesdff.github.io/ideles/init/l
 <div class="decl" id="lim_nhds_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L904">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L950">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5393,7 +5531,7 @@ are useful without a <code><a href="https://mariainesdff.github.io/ideles/init/l
 <div class="decl" id="Lim_nhds_within">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L907">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L953">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5436,7 +5574,7 @@ are useful without a <code><a href="https://mariainesdff.github.io/ideles/init/l
 <div class="decl" id="lim_nhds_within_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L912">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L958">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5501,7 +5639,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="t2_space_discrete">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L935">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L981">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5541,7 +5679,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="separated_by_continuous">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L940">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L986">source</a></div>
 
 
 
@@ -5585,7 +5723,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="separated_by_open_embedding">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L948">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L994">source</a></div>
 
 
 
@@ -5629,7 +5767,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="subtype.t2_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L955">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1001">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5670,7 +5808,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="prod.t2_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L958">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1004">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5713,7 +5851,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="embedding.t2_space">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L965">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1011">source</a></div>
 
 
 
@@ -5755,7 +5893,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="sum.t2_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L969">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1015">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5798,7 +5936,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="Pi.t2_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L984">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1030">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5839,7 +5977,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="sigma.t2_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L991">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1037">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5880,7 +6018,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="is_closed_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1005">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1051">source</a></div>
 
 
 
@@ -5923,7 +6061,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="set.eq_on.closure">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1011">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1057">source</a></div>
 
 
 
@@ -5970,7 +6108,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="continuous.ext_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1017">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1063">source</a></div>
 
 
 
@@ -6017,7 +6155,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="set.eq_on.of_subset_closure">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1024">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1070">source</a></div>
 
 
 
@@ -6066,7 +6204,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="function.left_inverse.closed_range">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1034">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1080">source</a></div>
 
 
 
@@ -6111,7 +6249,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="function.left_inverse.closed_embedding">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1043">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1089">source</a></div>
 
 
 
@@ -6156,7 +6294,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="diagonal_eq_range_diagonal_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1048">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1094">source</a></div>
 
 
 
@@ -6192,7 +6330,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="prod_subset_compl_diagonal_iff_disjoint">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1053">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1099">source</a></div>
 
 
 
@@ -6229,7 +6367,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="compact_compact_separated">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1058">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1104">source</a></div>
 
 
 
@@ -6271,7 +6409,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="is_compact.is_closed">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1065">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1111">source</a></div>
 
 
 
@@ -6312,7 +6450,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="filter.coclosed_compact_eq_cocompact">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1074">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1120">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6352,7 +6490,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="bornology.relatively_compact_eq_in_compact">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1078">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1124">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6392,7 +6530,7 @@ We use this lemma to prove that topological spaces defined using <code>coinduced
 <div class="decl" id="exists_subset_nhd_of_compact">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1086">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1132">source</a></div>
 
 
 
@@ -6441,7 +6579,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="compact_exhaustion.is_closed">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1091">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1137">source</a></div>
 
 
 
@@ -6481,7 +6619,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="is_compact.inter">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1095">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1141">source</a></div>
 
 
 
@@ -6522,7 +6660,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="compact_closure_of_subset_compact">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1099">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1145">source</a></div>
 
 
 
@@ -6563,7 +6701,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="exists_compact_superset_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1104">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1150">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6604,7 +6742,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="image_closure_of_compact">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1108">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1154">source</a></div>
 
 
 
@@ -6648,7 +6786,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="is_compact.binary_compact_cover">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1115">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1161">source</a></div>
 
 
 
@@ -6692,7 +6830,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="continuous.is_closed_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1125">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1171">source</a></div>
 
 
 
@@ -6735,7 +6873,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="continuous.closed_embedding">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1129">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1175">source</a></div>
 
 
 
@@ -6779,7 +6917,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="is_compact.finite_compact_cover">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1136">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1182">source</a></div>
 
 
 
@@ -6825,7 +6963,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="locally_compact_of_compact_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1161">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1207">source</a></div>
 
 
 
@@ -6864,7 +7002,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="locally_compact_of_compact">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1182">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1228">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6905,7 +7043,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="exists_open_with_compact_closure">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1186">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1232">source</a></div>
 
 
 
@@ -6946,7 +7084,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="exists_open_superset_and_is_compact_closure">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1197">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1243">source</a></div>
 
 
 
@@ -6988,7 +7126,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="is_preirreducible_iff_subsingleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1205">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1251">source</a></div>
 
 
 
@@ -7027,7 +7165,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="is_irreducible_iff_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1218">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1264">source</a></div>
 
 
 
@@ -7066,7 +7204,7 @@ assumed to be Hausdorff.</p>
 <div class="decl" id="regular_space">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1230">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1276">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -7137,7 +7275,7 @@ disjoint open sets containing <code>x</code> and <code>C</code> respectively.</p
 <div class="decl" id="regular_space.t1_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1234">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1280">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7177,7 +7315,7 @@ disjoint open sets containing <code>x</code> and <code>C</code> respectively.</p
 <div class="decl" id="nhds_is_closed">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1246">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1292">source</a></div>
 
 
 
@@ -7218,7 +7356,7 @@ disjoint open sets containing <code>x</code> and <code>C</code> respectively.</p
 <div class="decl" id="closed_nhds_basis">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1257">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1303">source</a></div>
 
 
 
@@ -7257,7 +7395,7 @@ disjoint open sets containing <code>x</code> and <code>C</code> respectively.</p
 <div class="decl" id="topological_space.is_topological_basis.exists_closure_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1262">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1308">source</a></div>
 
 
 
@@ -7300,7 +7438,7 @@ disjoint open sets containing <code>x</code> and <code>C</code> respectively.</p
 <div class="decl" id="topological_space.is_topological_basis.nhds_basis_closure">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1272">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1318">source</a></div>
 
 
 
@@ -7338,10 +7476,54 @@ disjoint open sets containing <code>x</code> and <code>C</code> respectively.</p
     
         
         
+<div class="decl" id="embedding.regular_space">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1324">source</a></div>
+
+
+    <div class="attributes">@[protected]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/topology/separation.html#embedding.regular_space"><span class="name">embedding</span>.<span class="name">regular_space</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/separation.html#regular_space">regular_space</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α → β}</span></span></span>
+    <span class="decl_args"><span class="fn">(hf : <a href="https://mariainesdff.github.io/ideles/topology/maps.html#embedding">embedding</a> f)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/topology/separation.html#regular_space">regular_space</a> α</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="subtype.regular_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1278">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1337">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7382,7 +7564,7 @@ disjoint open sets containing <code>x</code> and <code>C</code> respectively.</p
 <div class="decl" id="regular_space.t2_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1289">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1342">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7422,7 +7604,7 @@ disjoint open sets containing <code>x</code> and <code>C</code> respectively.</p
 <div class="decl" id="regular_space.t2_5_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1299">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1352">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7462,7 +7644,7 @@ disjoint open sets containing <code>x</code> and <code>C</code> respectively.</p
 <div class="decl" id="disjoint_nested_nhds">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1313">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1366">source</a></div>
 
 
 
@@ -7504,7 +7686,7 @@ with the <code>Vₖ</code> closed and the <code>Uₖ</code> open, such that the 
 <div class="decl" id="exists_compact_between">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1329">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1382">source</a></div>
 
 
 
@@ -7549,7 +7731,7 @@ compact set <code>K&#x27;</code> between these sets: <code>K</code> is inside th
 <div class="decl" id="exists_open_between_and_is_compact_closure">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1351">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1404">source</a></div>
 
 
 
@@ -7594,7 +7776,7 @@ open set <code>V</code> between these sets with compact closure: <code>K ⊆ V</
 <div class="decl" id="normal_space">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1368">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1421">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -7646,7 +7828,7 @@ there exist disjoint open sets containing <code>C</code> and <code>D</code> resp
 <div class="decl" id="normal_separation">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1372">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1425">source</a></div>
 
 
 
@@ -7688,7 +7870,7 @@ there exist disjoint open sets containing <code>C</code> and <code>D</code> resp
 <div class="decl" id="normal_exists_closure_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1377">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1430">source</a></div>
 
 
 
@@ -7730,7 +7912,7 @@ there exist disjoint open sets containing <code>C</code> and <code>D</code> resp
 <div class="decl" id="normal_space.regular_space">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1390">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1443">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7770,7 +7952,7 @@ there exist disjoint open sets containing <code>C</code> and <code>D</code> resp
 <div class="decl" id="normal_of_compact_t2">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1399">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1452">source</a></div>
 
 
 
@@ -7806,10 +7988,54 @@ there exist disjoint open sets containing <code>C</code> and <code>D</code> resp
     
         
         
+<div class="decl" id="closed_embedding.normal_space">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1459">source</a></div>
+
+
+    <div class="attributes">@[protected]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/topology/separation.html#closed_embedding.normal_space"><span class="name">closed_embedding</span>.<span class="name">normal_space</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/separation.html#normal_space">normal_space</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α → β}</span></span></span>
+    <span class="decl_args"><span class="fn">(hf : <a href="https://mariainesdff.github.io/ideles/topology/maps.html#closed_embedding">closed_embedding</a> f)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/topology/separation.html#normal_space">normal_space</a> α</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="normal_space_of_regular_second_countable">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1410">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1476">source</a></div>
 
 
 
@@ -7850,7 +8076,7 @@ This lemma is not an instance to avoid a loop.</p>
 <div class="decl" id="connected_component_eq_Inter_clopen">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1460">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1526">source</a></div>
 
 
 
@@ -7892,7 +8118,7 @@ its clopen neighbourhoods.</p>
 <div class="decl" id="tot_sep_of_zero_dim">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1533">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1599">source</a></div>
 
 
 
@@ -7932,7 +8158,7 @@ its clopen neighbourhoods.</p>
 <div class="decl" id="compact_t2_tot_disc_iff_tot_sep">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1552">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1618">source</a></div>
 
 
 
@@ -7973,7 +8199,7 @@ is also true for locally compact spaces.</p>
 <div class="decl" id="nhds_basis_clopen">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1572">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1638">source</a></div>
 
 
 
@@ -8014,7 +8240,7 @@ is also true for locally compact spaces.</p>
 <div class="decl" id="is_topological_basis_clopen">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1598">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1664">source</a></div>
 
 
 
@@ -8054,7 +8280,7 @@ is also true for locally compact spaces.</p>
 <div class="decl" id="compact_exists_clopen_in_open">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1611">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1677">source</a></div>
 
 
 
@@ -8100,7 +8326,7 @@ is contained in a clopen set contained in the open set.</p>
 <div class="decl" id="loc_compact_Haus_tot_disc_of_zero_dim">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1622">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1688">source</a></div>
 
 
 
@@ -8141,7 +8367,7 @@ is contained in a clopen set contained in the open set.</p>
 <div class="decl" id="loc_compact_t2_tot_disc_iff_tot_sep">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1662">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1728">source</a></div>
 
 
 
@@ -8182,7 +8408,7 @@ if and only if it is totally separated.</p>
 <div class="decl" id="connected_components.t2">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1674">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/separation.lean#L1740">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8240,13 +8466,6 @@ if and only if it is totally separated.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -10317,6 +10536,12 @@ if and only if it is totally separated.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -10461,6 +10686,13 @@ if and only if it is totally separated.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -10469,6 +10701,29 @@ if and only if it is totally separated.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -10551,6 +10806,9 @@ if and only if it is totally separated.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -11184,27 +11442,35 @@ if and only if it is totally separated.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

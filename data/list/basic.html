@@ -84,6 +84,16 @@
 
     <div class="nav_link"><a class="break_within" href="#decidable.list.eq_or_ne_mem_of_mem"><span class="name">decidable</span>.<span class="name">list</span>.<span class="name">eq_or_ne_mem_of_mem</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#list.all₂.decidable_pred"><span class="name">list</span>.<span class="name">all₂</span>.<span class="name">decidable_pred</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#list.all₂.imp"><span class="name">list</span>.<span class="name">all₂</span>.<span class="name">imp</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#list.all₂_cons"><span class="name">list</span>.<span class="name">all₂_cons</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#list.all₂_iff_forall"><span class="name">list</span>.<span class="name">all₂_iff_forall</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#list.all₂_map_iff"><span class="name">list</span>.<span class="name">all₂_map_iff</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#list.append_concat"><span class="name">list</span>.<span class="name">append_concat</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#list.append_eq_append_iff"><span class="name">list</span>.<span class="name">append_eq_append_iff</span></a></div>
@@ -28003,6 +28013,222 @@ with the same elements but in the type <code>{x // x ∈ l}</code>.</p>
 
     
         <div class="mod_doc">
+            <h3 id="all₂" class="markdown-heading">all₂ <a class="hover-link" href="#all₂">#</a></h3>
+
+        </div>
+    
+
+    
+        
+        
+<div class="decl" id="list.all₂_cons">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3715">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/list/basic.html#list.all₂_cons"><span class="name">list</span>.<span class="name">all₂_cons</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="decl_args"><span class="fn">(p : α → Prop)</span></span>
+    <span class="decl_args"><span class="fn">(x : α)</span></span>
+    <span class="decl_args"><span class="fn">(l : <a href="https://mariainesdff.github.io/ideles/init/core.html#list">list</a> α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> p</span> <span class="fn">(x <a href="https://mariainesdff.github.io/ideles/init/core.html#list.cons" title="list.cons">::</a> l)</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn">p x</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> p</span> l</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="list.all₂_iff_forall">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3719">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/list/basic.html#list.all₂_iff_forall"><span class="name">list</span>.<span class="name">all₂_iff_forall</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{p : α → Prop}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{l : <a href="https://mariainesdff.github.io/ideles/init/core.html#list">list</a> α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> p</span> l</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">∀ (x : α), <span class="fn"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> l</span> → <span class="fn">p x</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="list.all₂.imp">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3723">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/list/basic.html#list.all₂.imp"><span class="name">list</span>.<span class="name">all₂</span>.<span class="name">imp</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{p q : α → Prop}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : ∀ (x : α), <span class="fn"><span class="fn">p x</span> → <span class="fn">q x</span></span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{l : <a href="https://mariainesdff.github.io/ideles/init/core.html#list">list</a> α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> p</span> l</span> → <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> q</span> l</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="list.all₂_map_iff">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3727">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/list/basic.html#list.all₂_map_iff"><span class="name">list</span>.<span class="name">all₂_map_iff</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{l : <a href="https://mariainesdff.github.io/ideles/init/core.html#list">list</a> α}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{p : β → Prop}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : α → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> p</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/data/list/basic.html#list.map">list.map</a> f</span> l)</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> <span class="fn">(p <a href="https://mariainesdff.github.io/ideles/init/function.html#function.comp" title="function.comp">∘</a> f)</span></span> l</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="list.all₂.decidable_pred">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3730">source</a></div>
+
+
+    <div class="attributes">@[protected, instance]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/list/basic.html#list.all₂.decidable_pred"><span class="name">list</span>.<span class="name">all₂</span>.<span class="name">decidable_pred</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="decl_args"><span class="fn">(p : α → Prop)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_pred">decidable_pred</a> p]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_pred">decidable_pred</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> p)</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/basic.html#list.all₂.decidable_pred">list.all₂.decidable_pred</a> p</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">λ (l : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#list">list</a> α)</span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/basic.html#decidable_of_iff'">decidable_of_iff'</a> <span class="fn">(∀ (x : α), <span class="fn"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> l</span> → <span class="fn">p x)</span></span></span></span> <a href="https://mariainesdff.github.io/ideles/data/list/basic.html#list.all₂_iff_forall">list.all₂_iff_forall</a></span></span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        <div class="mod_doc">
             <h3 id="retroattributes" class="markdown-heading">Retroattributes <a class="hover-link" href="#retroattributes">#</a></h3>
 <p>The list definitions happen earlier than <code>to_additive</code>, so here we tag the few multiplicative
 definitions that couldn't be tagged earlier.</p>
@@ -28023,7 +28249,7 @@ definitions that couldn't be tagged earlier.</p>
 <div class="decl" id="list.ilast'_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3722">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3747">source</a></div>
 
 
 
@@ -28061,7 +28287,7 @@ definitions that couldn't be tagged earlier.</p>
 <div class="decl" id="list.nth_le_attach">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3726">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3751">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -28102,7 +28328,7 @@ definitions that couldn't be tagged earlier.</p>
 <div class="decl" id="list.mem_map_swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3733">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3758">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -28144,7 +28370,7 @@ definitions that couldn't be tagged earlier.</p>
 <div class="decl" id="list.slice_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3743">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3768">source</a></div>
 
 
 
@@ -28182,7 +28408,7 @@ definitions that couldn't be tagged earlier.</p>
 <div class="decl" id="list.sizeof_slice_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3751">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/basic.lean#L3776">source</a></div>
 
 
 
@@ -28239,13 +28465,6 @@ definitions that couldn't be tagged earlier.</p>
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -30316,6 +30535,12 @@ definitions that couldn't be tagged earlier.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -30460,6 +30685,13 @@ definitions that couldn't be tagged earlier.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -30468,6 +30700,29 @@ definitions that couldn't be tagged earlier.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -30550,6 +30805,9 @@ definitions that couldn't be tagged earlier.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -31183,27 +31441,35 @@ definitions that couldn't be tagged earlier.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

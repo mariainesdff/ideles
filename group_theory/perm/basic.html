@@ -52,6 +52,9 @@
         
             <li><a href="https://mariainesdff.github.io/ideles/algebra/group_power/lemmas.html">
                 algebra.group_power.lemmas</a></li>
+        
+            <li><a href="https://mariainesdff.github.io/ideles/logic/function/iterate.html">
+                logic.function.iterate</a></li>
         </ul>
     </details>
     <details>
@@ -115,6 +118,8 @@
     <div class="nav_link"><a class="break_within" href="#equiv.perm.inv_eq_iff_eq"><span class="name">equiv</span>.<span class="name">perm</span>.<span class="name">inv_eq_iff_eq</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#equiv.perm.inv_trans_self"><span class="name">equiv</span>.<span class="name">perm</span>.<span class="name">inv_trans_self</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#equiv.perm.iterate_eq_pow"><span class="name">equiv</span>.<span class="name">perm</span>.<span class="name">iterate_eq_pow</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#equiv.perm.mem_iff_of_subtype_apply_mem"><span class="name">equiv</span>.<span class="name">perm</span>.<span class="name">mem_iff_of_subtype_apply_mem</span></a></div>
 
@@ -262,7 +267,7 @@
 <div class="decl" id="equiv.perm.perm_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L22">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L23">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -309,7 +314,7 @@
 <div class="decl" id="equiv.perm.mul_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L31">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L32">source</a></div>
 
 
 
@@ -347,7 +352,7 @@
 <div class="decl" id="equiv.perm.one_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L34">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L35">source</a></div>
 
 
 
@@ -384,7 +389,7 @@
 <div class="decl" id="equiv.perm.inv_apply_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L36">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L37">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -424,7 +429,7 @@
 <div class="decl" id="equiv.perm.apply_inv_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L38">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L39">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -464,7 +469,7 @@
 <div class="decl" id="equiv.perm.one_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L40">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L41">source</a></div>
 
 
 
@@ -500,7 +505,7 @@
 <div class="decl" id="equiv.perm.mul_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L42">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L43">source</a></div>
 
 
 
@@ -537,7 +542,7 @@
 <div class="decl" id="equiv.perm.inv_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L44">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L45">source</a></div>
 
 
 
@@ -574,7 +579,7 @@
 <div class="decl" id="equiv.perm.coe_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L46">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L47">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -613,7 +618,7 @@
 <div class="decl" id="equiv.perm.coe_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L48">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L49">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -651,7 +656,7 @@
 <div class="decl" id="equiv.perm.eq_inv_iff_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L50">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L51">source</a></div>
 
 
 
@@ -689,7 +694,7 @@
 <div class="decl" id="equiv.perm.inv_eq_iff_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L52">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L53">source</a></div>
 
 
 
@@ -727,7 +732,7 @@
 <div class="decl" id="equiv.perm.zpow_apply_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L54">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L55">source</a></div>
 
 
 
@@ -761,6 +766,46 @@
     
 
     
+        
+        
+<div class="decl" id="equiv.perm.iterate_eq_pow">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L59">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/perm/basic.html#equiv.perm.iterate_eq_pow"><span class="name">equiv</span>.<span class="name">perm</span>.<span class="name">iterate_eq_pow</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.perm">equiv.perm</a> α)</span></span>
+    <span class="decl_args"><span class="fn">(n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f<a href="https://mariainesdff.github.io/ideles/init/data/nat/lemmas.html#nat.iterate" title="nat.iterate">^[</a>n<a href="https://mariainesdff.github.io/ideles/init/data/nat/lemmas.html#nat.iterate" title="nat.iterate">]</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(f <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> n)</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
         <div class="mod_doc">
             <p>Lemmas about mixing <code>perm</code> with <code><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv">equiv</a></code>. Because we have multiple ways to express
 <code><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.refl">equiv.refl</a></code>, <code><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.symm">equiv.symm</a></code>, and <code><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.trans">equiv.trans</a></code>, we want simp lemmas for every combination.
@@ -776,7 +821,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.trans_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L63">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L68">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -816,7 +861,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.mul_refl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L66">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L71">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -855,7 +900,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.one_symm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L68">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L73">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -893,7 +938,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.refl_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L70">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L75">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -931,7 +976,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.one_trans">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L72">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L77">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -971,7 +1016,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.refl_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L75">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L80">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1010,7 +1055,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.inv_trans_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L77">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L82">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1049,7 +1094,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.mul_symm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L79">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L84">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1088,7 +1133,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.self_trans_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L81">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L86">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1127,7 +1172,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.symm_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L83">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L88">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1173,7 +1218,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.sum_congr_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L87">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L92">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1216,7 +1261,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.sum_congr_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L91">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L96">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1257,7 +1302,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.sum_congr_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L95">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L100">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1296,7 +1341,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.sum_congr_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L104">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L109">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1336,7 +1381,7 @@ simp.</p>
 <div class="decl" id="equiv.perm.sum_congr_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L104">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L109">source</a></div>
 
 
 
@@ -1385,7 +1430,7 @@ permutations which do not exchange elements between <code>α</code> and <code>β
 <div class="decl" id="equiv.perm.sum_congr_hom_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L110">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L115">source</a></div>
 
 
 
@@ -1422,7 +1467,7 @@ permutations which do not exchange elements between <code>α</code> and <code>β
 <div class="decl" id="equiv.perm.sum_congr_swap_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L120">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L125">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1464,7 +1509,7 @@ permutations which do not exchange elements between <code>α</code> and <code>β
 <div class="decl" id="equiv.perm.sum_congr_one_swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L124">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L129">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1513,7 +1558,7 @@ permutations which do not exchange elements between <code>α</code> and <code>β
 <div class="decl" id="equiv.perm.sigma_congr_right_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L130">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L135">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1553,7 +1598,7 @@ permutations which do not exchange elements between <code>α</code> and <code>β
 <div class="decl" id="equiv.perm.sigma_congr_right_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L135">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L140">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1593,7 +1638,7 @@ permutations which do not exchange elements between <code>α</code> and <code>β
 <div class="decl" id="equiv.perm.sigma_congr_right_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L139">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L144">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1632,7 +1677,7 @@ permutations which do not exchange elements between <code>α</code> and <code>β
 <div class="decl" id="equiv.perm.sigma_congr_right_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L148">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L153">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1672,7 +1717,7 @@ permutations which do not exchange elements between <code>α</code> and <code>β
 <div class="decl" id="equiv.perm.sigma_congr_right_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L148">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L153">source</a></div>
 
 
 
@@ -1721,7 +1766,7 @@ permutations which do not exchange elements between fibers.</p>
 <div class="decl" id="equiv.perm.sigma_congr_right_hom_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L154">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L159">source</a></div>
 
 
 
@@ -1758,7 +1803,7 @@ permutations which do not exchange elements between fibers.</p>
 <div class="decl" id="equiv.perm.subtype_congr_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L163">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L168">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1799,7 +1844,7 @@ permutations which do not exchange elements between fibers.</p>
 <div class="decl" id="equiv.perm.subtype_congr_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L163">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L168">source</a></div>
 
 
 
@@ -1847,7 +1892,7 @@ permutations which do not exchange elements between fibers.</p>
 <div class="decl" id="equiv.perm.subtype_congr_hom_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L169">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L174">source</a></div>
 
 
 
@@ -1885,7 +1930,7 @@ permutations which do not exchange elements between fibers.</p>
 <div class="decl" id="equiv.perm.perm_congr_eq_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L181">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L186">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1933,7 +1978,7 @@ completely in terms of the group structure.</p>
 <div class="decl" id="equiv.perm.extend_domain_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L190">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L195">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1975,7 +2020,7 @@ completely in terms of the group structure.</p>
 <div class="decl" id="equiv.perm.extend_domain_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L193">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L198">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2018,7 +2063,7 @@ completely in terms of the group structure.</p>
 <div class="decl" id="equiv.perm.extend_domain_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L195">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L200">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2061,7 +2106,7 @@ completely in terms of the group structure.</p>
 <div class="decl" id="equiv.perm.extend_domain_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L200">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L205">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2104,7 +2149,7 @@ completely in terms of the group structure.</p>
 <div class="decl" id="equiv.perm.extend_domain_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L200">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L205">source</a></div>
 
 
 
@@ -2154,7 +2199,7 @@ completely in terms of the group structure.</p>
 <div class="decl" id="equiv.perm.extend_domain_hom_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L205">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L210">source</a></div>
 
 
 
@@ -2194,7 +2239,7 @@ completely in terms of the group structure.</p>
 <div class="decl" id="equiv.perm.extend_domain_eq_one_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L209">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L214">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2237,7 +2282,7 @@ completely in terms of the group structure.</p>
 <div class="decl" id="equiv.perm.subtype_perm">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L217">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L222">source</a></div>
 
 
 
@@ -2287,7 +2332,7 @@ on <code>{x // p x}</code> induced by <code>f</code>.</p>
 <div class="decl" id="equiv.perm.subtype_perm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L222">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L227">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2329,7 +2374,7 @@ on <code>{x // p x}</code> induced by <code>f</code>.</p>
 <div class="decl" id="equiv.perm.subtype_perm_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L225">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L230">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2369,7 +2414,7 @@ on <code>{x // p x}</code> induced by <code>f</code>.</p>
 <div class="decl" id="equiv.perm.of_subtype">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L231">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L236">source</a></div>
 
 
 
@@ -2418,7 +2463,7 @@ fixing the other points.</p>
 <div class="decl" id="equiv.perm.of_subtype_subtype_perm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L249">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L254">source</a></div>
 
 
 
@@ -2459,7 +2504,7 @@ fixing the other points.</p>
 <div class="decl" id="equiv.perm.of_subtype_apply_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L261">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L266">source</a></div>
 
 
 
@@ -2500,7 +2545,7 @@ fixing the other points.</p>
 <div class="decl" id="equiv.perm.of_subtype_apply_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L266">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L271">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2542,7 +2587,7 @@ fixing the other points.</p>
 <div class="decl" id="equiv.perm.of_subtype_apply_of_not_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L271">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L276">source</a></div>
 
 
 
@@ -2583,7 +2628,7 @@ fixing the other points.</p>
 <div class="decl" id="equiv.perm.mem_iff_of_subtype_apply_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L276">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L281">source</a></div>
 
 
 
@@ -2623,7 +2668,7 @@ fixing the other points.</p>
 <div class="decl" id="equiv.perm.subtype_perm_of_subtype">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L283">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L288">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2664,7 +2709,7 @@ fixing the other points.</p>
 <div class="decl" id="equiv.perm.default_perm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L288">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L293">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2702,7 +2747,7 @@ fixing the other points.</p>
 <div class="decl" id="equiv.perm.subtype_equiv_subtype_perm_apply_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L292">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L297">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2743,7 +2788,7 @@ fixing the other points.</p>
 <div class="decl" id="equiv.perm.subtype_equiv_subtype_perm_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L292">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L297">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2784,7 +2829,7 @@ fixing the other points.</p>
 <div class="decl" id="equiv.perm.subtype_equiv_subtype_perm">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L292">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L297">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -2835,7 +2880,7 @@ the rest.</p>
 <div class="decl" id="equiv.perm.subtype_equiv_subtype_perm_apply_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L302">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L307">source</a></div>
 
 
 
@@ -2876,7 +2921,7 @@ the rest.</p>
 <div class="decl" id="equiv.perm.subtype_equiv_subtype_perm_apply_of_not_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L307">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L312">source</a></div>
 
 
 
@@ -2917,7 +2962,7 @@ the rest.</p>
 <div class="decl" id="equiv.perm.via_embedding">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L317">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L322">source</a></div>
 
 
 
@@ -2966,7 +3011,7 @@ the rest.</p>
 <div class="decl" id="equiv.perm.via_embedding_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L320">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L325">source</a></div>
 
 
 
@@ -3006,7 +3051,7 @@ the rest.</p>
 <div class="decl" id="equiv.perm.via_embedding_apply_of_not_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L323">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L328">source</a></div>
 
 
 
@@ -3047,7 +3092,7 @@ the rest.</p>
 <div class="decl" id="equiv.perm.via_embedding_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L328">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L333">source</a></div>
 
 
 
@@ -3095,7 +3140,7 @@ the rest.</p>
 <div class="decl" id="equiv.perm.via_embedding_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L331">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L336">source</a></div>
 
 
 
@@ -3134,7 +3179,7 @@ the rest.</p>
 <div class="decl" id="equiv.perm.via_embedding_hom_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L338">source</a></div>
 
 
 
@@ -3172,7 +3217,7 @@ the rest.</p>
 <div class="decl" id="equiv.swap_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L341">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L346">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3212,7 +3257,7 @@ the rest.</p>
 <div class="decl" id="equiv.swap_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L343">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L348">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3252,7 +3297,7 @@ the rest.</p>
 <div class="decl" id="equiv.swap_mul_eq_mul_swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L345">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L350">source</a></div>
 
 
 
@@ -3291,7 +3336,7 @@ the rest.</p>
 <div class="decl" id="equiv.mul_swap_eq_swap_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L352">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L357">source</a></div>
 
 
 
@@ -3330,7 +3375,7 @@ the rest.</p>
 <div class="decl" id="equiv.swap_apply_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L355">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L360">source</a></div>
 
 
 
@@ -3369,7 +3414,7 @@ the rest.</p>
 <div class="decl" id="equiv.swap_mul_self_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L363">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L368">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3412,7 +3457,7 @@ the rest.</p>
 <div class="decl" id="equiv.mul_swap_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L371">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L376">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3455,7 +3500,7 @@ the rest.</p>
 <div class="decl" id="equiv.swap_mul_involutive">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L376">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L381">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3496,7 +3541,7 @@ the rest.</p>
 <div class="decl" id="equiv.mul_swap_involutive">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L381">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L386">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3537,7 +3582,7 @@ the rest.</p>
 <div class="decl" id="equiv.swap_eq_one_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L384">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L389">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3577,7 +3622,7 @@ the rest.</p>
 <div class="decl" id="equiv.swap_mul_eq_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L387">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L392">source</a></div>
 
 
 
@@ -3616,7 +3661,7 @@ the rest.</p>
 <div class="decl" id="equiv.mul_swap_eq_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L392">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L397">source</a></div>
 
 
 
@@ -3655,7 +3700,7 @@ the rest.</p>
 <div class="decl" id="equiv.swap_mul_swap_mul_swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L397">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/perm/basic.lean#L402">source</a></div>
 
 
 
@@ -3711,13 +3756,6 @@ the rest.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -5788,6 +5826,12 @@ the rest.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -5932,6 +5976,13 @@ the rest.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -5940,6 +5991,29 @@ the rest.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -6022,6 +6096,9 @@ the rest.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -6655,27 +6732,35 @@ the rest.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

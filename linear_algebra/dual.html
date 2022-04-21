@@ -62,6 +62,9 @@
         <ul>
             <li><a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_form.html">
                 linear_algebra.bilinear_form</a></li>
+        
+            <li><a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">
+                linear_algebra.contraction</a></li>
         </ul>
     </details>
 </div>
@@ -90,6 +93,8 @@
     <div class="nav_link"><a class="break_within" href="#basis.eval_ker"><span class="name">basis</span>.<span class="name">eval_ker</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#basis.eval_range"><span class="name">basis</span>.<span class="name">eval_range</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#basis.sum_dual_apply_smul_coord"><span class="name">basis</span>.<span class="name">sum_dual_apply_smul_coord</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#basis.to_dual"><span class="name">basis</span>.<span class="name">to_dual</span></a></div>
 
@@ -989,7 +994,7 @@ given a finite basis.</li>
 <div class="decl" id="basis.to_dual">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L111">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L112">source</a></div>
 
 
 
@@ -1043,7 +1048,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L114">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L115">source</a></div>
 
 
 
@@ -1087,7 +1092,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_total_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L118">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L119">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1134,7 +1139,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_total_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L129">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L130">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1181,7 +1186,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_apply_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L139">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L140">source</a></div>
 
 
 
@@ -1226,7 +1231,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_apply_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L142">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L143">source</a></div>
 
 
 
@@ -1271,7 +1276,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.coe_to_dual_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L145">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L146">source</a></div>
 
 
 
@@ -1315,7 +1320,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_flip">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L149">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L150">source</a></div>
 
 
 
@@ -1369,7 +1374,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_flip_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L151">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L152">source</a></div>
 
 
 
@@ -1413,7 +1418,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_eq_repr">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L153">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L154">source</a></div>
 
 
 
@@ -1458,7 +1463,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_eq_equiv_fun">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L156">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L157">source</a></div>
 
 
 
@@ -1504,7 +1509,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L159">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L160">source</a></div>
 
 
 
@@ -1549,7 +1554,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_ker">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L168">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L169">source</a></div>
 
 
 
@@ -1592,7 +1597,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_range">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L171">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L172">source</a></div>
 
 
 
@@ -1633,10 +1638,56 @@ taking basis elements to corresponding dual basis elements.</p>
     
         
         
+<div class="decl" id="basis.sum_dual_apply_smul_coord">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L194">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/linear_algebra/dual.html#basis.sum_dual_apply_smul_coord"><span class="name">basis</span>.<span class="name">sum_dual_apply_smul_coord</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{M : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Type u_5}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> M]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> ι]</span></span></span>
+    <span class="decl_args"><span class="fn">(b : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι</span> R</span> M)</span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dual.html#module.dual">module.dual</a> R</span> M)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∑ (x : ι), <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>b x)</span></span> <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn">b.<a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis.coord" title="basis.coord">coord</a> x</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> f</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="basis.to_dual_equiv">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L195">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L210">source</a></div>
 
 
 
@@ -1690,7 +1741,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_equiv_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L195">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L210">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1737,7 +1788,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_equiv_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L195">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L210">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1784,7 +1835,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.dual_basis">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L200">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L215">source</a></div>
 
 
 
@@ -1838,7 +1889,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.dual_basis_apply_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L204">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L219">source</a></div>
 
 
 
@@ -1883,7 +1934,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.total_dual_basis">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L208">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L223">source</a></div>
 
 
 
@@ -1929,7 +1980,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.dual_basis_repr">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L217">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L232">source</a></div>
 
 
 
@@ -1975,7 +2026,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.dual_basis_equiv_fun">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L221">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L236">source</a></div>
 
 
 
@@ -2021,7 +2072,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.dual_basis_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L225">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L240">source</a></div>
 
 
 
@@ -2067,7 +2118,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.coe_dual_basis">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L228">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L243">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2113,7 +2164,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.to_dual_to_dual">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L232">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L247">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2159,7 +2210,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.eval_ker">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L240">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L255">source</a></div>
 
 
 
@@ -2201,7 +2252,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.eval_range">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L249">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L264">source</a></div>
 
 
 
@@ -2244,7 +2295,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.eval_equiv">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L258">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L273">source</a></div>
 
 
 
@@ -2297,7 +2348,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.eval_equiv_to_linear_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L262">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L277">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2342,7 +2393,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.total_coord">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L268">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L283">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2390,7 +2441,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="basis.dual_dim_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L274">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L289">source</a></div>
 
 
 
@@ -2409,7 +2460,7 @@ taking basis elements to corresponding dual basis elements.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> ι]</span></span></span>
     <span class="decl_args"><span class="fn">(b : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι</span> K</span> V)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dual.html#module.dual">module.dual</a> K</span> V)</span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dual.html#module.dual">module.dual</a> K</span> V)</span></span></span></div>
 </div>
 
 
@@ -2433,7 +2484,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="module.eval_ker">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L292">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L307">source</a></div>
 
 
 
@@ -2473,7 +2524,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="module.dual_dim_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L296">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L311">source</a></div>
 
 
 
@@ -2490,7 +2541,7 @@ taking basis elements to corresponding dual basis elements.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/finite_dimensional.html#finite_dimensional">finite_dimensional</a> K</span> V]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dual.html#module.dual">module.dual</a> K</span> V)</span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dual.html#module.dual">module.dual</a> K</span> V)</span></span></span></div>
 </div>
 
 
@@ -2514,7 +2565,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="module.erange_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L300">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L315">source</a></div>
 
 
 
@@ -2555,7 +2606,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="module.eval_equiv">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L309">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L324">source</a></div>
 
 
 
@@ -2606,7 +2657,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="module.eval_equiv_to_linear_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L315">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L330">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2649,7 +2700,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="dual_pair">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L329">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L344">source</a></div>
 
 
     <div class="attributes">@[nolint]</div>
@@ -2709,7 +2760,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="dual_pair.coeffs">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L345">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L360">source</a></div>
 
 
 
@@ -2765,7 +2816,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="dual_pair.coeffs_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L350">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L365">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2814,7 +2865,7 @@ taking basis elements to corresponding dual basis elements.</p>
 <div class="decl" id="dual_pair.lc">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L355">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L370">source</a></div>
 
 
 
@@ -2868,7 +2919,7 @@ This is a convenient abbreviation for <code><a href="https://mariainesdff.github
 <div class="decl" id="dual_pair.lc_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L357">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L372">source</a></div>
 
 
 
@@ -2911,7 +2962,7 @@ This is a convenient abbreviation for <code><a href="https://mariainesdff.github
 <div class="decl" id="dual_pair.dual_lc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L362">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L377">source</a></div>
 
 
 
@@ -2958,7 +3009,7 @@ This is a convenient abbreviation for <code><a href="https://mariainesdff.github
 <div class="decl" id="dual_pair.coeffs_lc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L375">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L390">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3006,7 +3057,7 @@ This is a convenient abbreviation for <code><a href="https://mariainesdff.github
 <div class="decl" id="dual_pair.lc_coeffs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L380">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L395">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3055,7 +3106,7 @@ This is a convenient abbreviation for <code><a href="https://mariainesdff.github
 <div class="decl" id="dual_pair.basis_repr_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L389">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L404">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3103,7 +3154,7 @@ This is a convenient abbreviation for <code><a href="https://mariainesdff.github
 <div class="decl" id="dual_pair.basis_repr_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L389">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L404">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3151,7 +3202,7 @@ This is a convenient abbreviation for <code><a href="https://mariainesdff.github
 <div class="decl" id="dual_pair.basis">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L389">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L404">source</a></div>
 
 
 
@@ -3206,7 +3257,7 @@ This is a convenient abbreviation for <code><a href="https://mariainesdff.github
 <div class="decl" id="dual_pair.coe_basis">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L398">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L413">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3253,7 +3304,7 @@ This is a convenient abbreviation for <code><a href="https://mariainesdff.github
 <div class="decl" id="dual_pair.mem_of_mem_span">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L403">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L418">source</a></div>
 
 
 
@@ -3302,7 +3353,7 @@ This is a convenient abbreviation for <code><a href="https://mariainesdff.github
 <div class="decl" id="dual_pair.coe_dual_basis">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L412">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L427">source</a></div>
 
 
 
@@ -3348,7 +3399,7 @@ This is a convenient abbreviation for <code><a href="https://mariainesdff.github
 <div class="decl" id="submodule.dual_restrict">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L428">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L443">source</a></div>
 
 
 
@@ -3401,7 +3452,7 @@ restricted to <code>W</code>.</p>
 <div class="decl" id="submodule.dual_restrict_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L432">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L447">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3446,7 +3497,7 @@ restricted to <code>W</code>.</p>
 <div class="decl" id="submodule.dual_annihilator">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L438">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L453">source</a></div>
 
 
 
@@ -3498,7 +3549,7 @@ that <code>φ w = 0</code> for all <code>w ∈ W</code>.</p>
 <div class="decl" id="submodule.mem_dual_annihilator">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L442">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L457">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3542,7 +3593,7 @@ that <code>φ w = 0</code> for all <code>w ∈ W</code>.</p>
 <div class="decl" id="submodule.dual_restrict_ker_eq_dual_annihilator">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L450">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L465">source</a></div>
 
 
 
@@ -3583,7 +3634,7 @@ that <code>φ w = 0</code> for all <code>w ∈ W</code>.</p>
 <div class="decl" id="submodule.dual_annihilator_sup_eq_inf_dual_annihilator">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L454">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L469">source</a></div>
 
 
 
@@ -3624,7 +3675,7 @@ that <code>φ w = 0</code> for all <code>w ∈ W</code>.</p>
 <div class="decl" id="submodule.dual_annihilator_comap">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L470">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L485">source</a></div>
 
 
 
@@ -3675,7 +3726,7 @@ that <code>φ w = 0</code> for all <code>w ∈ W</code>.</p>
 <div class="decl" id="submodule.mem_dual_annihilator_comap_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L473">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L488">source</a></div>
 
 
 
@@ -3717,7 +3768,7 @@ that <code>φ w = 0</code> for all <code>w ∈ W</code>.</p>
 <div class="decl" id="subspace.dual_lift">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L491">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L506">source</a></div>
 
 
 
@@ -3770,7 +3821,7 @@ That is, <code>dual_lift W φ</code> sends <code>w ∈ W</code> to <code>φ x</c
 <div class="decl" id="subspace.dual_lift_of_subtype">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L498">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L513">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3815,7 +3866,7 @@ That is, <code>dual_lift W φ</code> sends <code>w ∈ W</code> to <code>φ x</c
 <div class="decl" id="subspace.dual_lift_of_mem">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L502">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L517">source</a></div>
 
 
 
@@ -3859,7 +3910,7 @@ That is, <code>dual_lift W φ</code> sends <code>w ∈ W</code> to <code>φ x</c
 <div class="decl" id="subspace.dual_restrict_comp_dual_lift">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L506">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L521">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3902,7 +3953,7 @@ That is, <code>dual_lift W φ</code> sends <code>w ∈ W</code> to <code>φ x</c
 <div class="decl" id="subspace.dual_restrict_left_inverse">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L510">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L525">source</a></div>
 
 
 
@@ -3943,7 +3994,7 @@ That is, <code>dual_lift W φ</code> sends <code>w ∈ W</code> to <code>φ x</c
 <div class="decl" id="subspace.dual_lift_right_inverse">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L515">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L530">source</a></div>
 
 
 
@@ -3984,7 +4035,7 @@ That is, <code>dual_lift W φ</code> sends <code>w ∈ W</code> to <code>φ x</c
 <div class="decl" id="subspace.dual_restrict_surjective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L534">source</a></div>
 
 
 
@@ -4025,7 +4076,7 @@ That is, <code>dual_lift W φ</code> sends <code>w ∈ W</code> to <code>φ x</c
 <div class="decl" id="subspace.dual_lift_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L523">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L538">source</a></div>
 
 
 
@@ -4066,7 +4117,7 @@ That is, <code>dual_lift W φ</code> sends <code>w ∈ W</code> to <code>φ x</c
 <div class="decl" id="subspace.quot_annihilator_equiv">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L528">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L543">source</a></div>
 
 
 
@@ -4118,7 +4169,7 @@ dual of that subspace.</p>
 <div class="decl" id="subspace.dual_equiv_dual">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L534">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L549">source</a></div>
 
 
 
@@ -4169,7 +4220,7 @@ dual of that subspace.</p>
 <div class="decl" id="subspace.dual_equiv_dual_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L538">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L553">source</a></div>
 
 
 
@@ -4210,7 +4261,7 @@ dual of that subspace.</p>
 <div class="decl" id="subspace.dual_equiv_dual_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L541">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L556">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4254,7 +4305,7 @@ dual of that subspace.</p>
 <div class="decl" id="subspace.module.dual.finite_dimensional">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L552">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L567">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4297,7 +4348,7 @@ dual of that subspace.</p>
 <div class="decl" id="subspace.dual_finrank_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L557">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L572">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4340,7 +4391,7 @@ dual of that subspace.</p>
 <div class="decl" id="subspace.quot_dual_equiv_annihilator">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L562">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L577">source</a></div>
 
 
 
@@ -4392,7 +4443,7 @@ dual of that subspace.</p>
 <div class="decl" id="subspace.quot_equiv_annihilator">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L568">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L583">source</a></div>
 
 
 
@@ -4444,7 +4495,7 @@ dual of that subspace.</p>
 <div class="decl" id="subspace.finrank_dual_annihilator_comap_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L579">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L594">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4488,7 +4539,7 @@ dual of that subspace.</p>
 <div class="decl" id="subspace.finrank_add_finrank_dual_annihilator_comap_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L586">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L601">source</a></div>
 
 
 
@@ -4530,7 +4581,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_map.dual_map">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L605">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L620">source</a></div>
 
 
 
@@ -4585,7 +4636,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_map.dual_map_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L608">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L623">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4633,7 +4684,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_map.dual_map_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L612">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L627">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4675,7 +4726,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_map.dual_map_comp_dual_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L616">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L631">source</a></div>
 
 
 
@@ -4723,7 +4774,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_equiv.dual_map">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L622">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L637">source</a></div>
 
 
 
@@ -4777,7 +4828,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_equiv.dual_map_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L638">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L653">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4825,7 +4876,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_equiv.dual_map_refl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L642">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L657">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4867,7 +4918,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_equiv.dual_map_symm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L646">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L661">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4913,7 +4964,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_equiv.dual_map_trans">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L649">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L664">source</a></div>
 
 
 
@@ -4961,7 +5012,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_map.ker_dual_map_eq_dual_annihilator_range">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L658">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L673">source</a></div>
 
 
 
@@ -5005,7 +5056,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_map.range_dual_map_le_dual_annihilator_ker">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L672">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L687">source</a></div>
 
 
 
@@ -5049,7 +5100,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_map.finrank_range_dual_map_eq_finrank_range">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L690">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L705">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5096,7 +5147,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_map.range_dual_map_eq_dual_annihilator_ker">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L702">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L717">source</a></div>
 
 
 
@@ -5142,7 +5193,7 @@ dual of that subspace.</p>
 <div class="decl" id="linear_map.dual_pairing_nondegenerate">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L720">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/linear_algebra/dual.lean#L735">source</a></div>
 
 
 
@@ -5198,13 +5249,6 @@ dual of that subspace.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -7275,6 +7319,12 @@ dual of that subspace.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -7419,6 +7469,13 @@ dual of that subspace.</p>
         <details class="nav_sect" data-path="linear_algebra" open>
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -7427,6 +7484,29 @@ dual of that subspace.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -7509,6 +7589,9 @@ dual of that subspace.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -8142,27 +8225,35 @@ dual of that subspace.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

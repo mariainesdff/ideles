@@ -120,6 +120,8 @@
 
     <div class="nav_link"><a class="break_within" href="#add_mul_self_eq"><span class="name">add_mul_self_eq</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#add_one_mul"><span class="name">add_one_mul</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#bit0_eq_two_mul"><span class="name">bit0_eq_two_mul</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#boole_mul"><span class="name">boole_mul</span></a></div>
@@ -308,6 +310,8 @@
 
     <div class="nav_link"><a class="break_within" href="#mul_add_eq_mul_add_iff_sub_mul_add_eq"><span class="name">mul_add_eq_mul_add_iff_sub_mul_add_eq</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#mul_add_one"><span class="name">mul_add_one</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#mul_boole"><span class="name">mul_boole</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#mul_ite"><span class="name">mul_ite</span></a></div>
@@ -315,6 +319,10 @@
     <div class="nav_link"><a class="break_within" href="#mul_neg"><span class="name">mul_neg</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#mul_neg_one"><span class="name">mul_neg_one</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#mul_one_add"><span class="name">mul_one_add</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#mul_one_sub"><span class="name">mul_one_sub</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#mul_self_eq_mul_self_iff"><span class="name">mul_self_eq_mul_self_iff</span></a></div>
 
@@ -327,6 +335,8 @@
     <div class="nav_link"><a class="break_within" href="#mul_sub"><span class="name">mul_sub</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#mul_sub_left_distrib"><span class="name">mul_sub_left_distrib</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#mul_sub_one"><span class="name">mul_sub_one</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#mul_sub_right_distrib"><span class="name">mul_sub_right_distrib</span></a></div>
 
@@ -394,7 +404,11 @@
 
     <div class="nav_link"><a class="break_within" href="#non_unital_semiring.to_semigroup_with_zero"><span class="name">non_unital_semiring</span>.<span class="name">to_semigroup_with_zero</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#one_add_mul"><span class="name">one_add_mul</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#one_add_one_eq_two"><span class="name">one_add_one_eq_two</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#one_sub_mul"><span class="name">one_sub_mul</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#pred_ne_self"><span class="name">pred_ne_self</span></a></div>
 
@@ -488,10 +502,6 @@
 
     <div class="nav_link"><a class="break_within" href="#ring_hom.inhabited"><span class="name">ring_hom</span>.<span class="name">inhabited</span></a></div>
 
-    <div class="nav_link"><a class="break_within" href="#ring_hom.injective_iff"><span class="name">ring_hom</span>.<span class="name">injective_iff</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#ring_hom.injective_iff'"><span class="name">ring_hom</span>.<span class="name">injective_iff&#x27;</span></a></div>
-
     <div class="nav_link"><a class="break_within" href="#ring_hom.is_unit_map"><span class="name">ring_hom</span>.<span class="name">is_unit_map</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#ring_hom.map_add"><span class="name">ring_hom</span>.<span class="name">map_add</span></a></div>
@@ -579,6 +589,8 @@
     <div class="nav_link"><a class="break_within" href="#sub_mul"><span class="name">sub_mul</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#sub_mul_add_eq_of_mul_add_eq_mul_add"><span class="name">sub_mul_add_eq_of_mul_add_eq_mul_add</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#sub_one_mul"><span class="name">sub_one_mul</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#succ_ne_self"><span class="name">succ_ne_self</span></a></div>
 
@@ -2603,10 +2615,162 @@ See note [reducible non-instances].</p>
     
         
         
-<div class="decl" id="two_mul">
+<div class="decl" id="add_one_mul">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L234">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#add_one_mul"><span class="name">add_one_mul</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_semiring">non_assoc_semiring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="mul_add_one">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L236">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#mul_add_one"><span class="name">mul_add_one</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_semiring">non_assoc_semiring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">(b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="one_add_mul">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L238">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#one_add_mul"><span class="name">one_add_mul</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_semiring">non_assoc_semiring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(1 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> a)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="mul_one_add">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L240">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#mul_one_add"><span class="name">mul_one_add</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_semiring">non_assoc_semiring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">(1 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> b)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="two_mul">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L243">source</a></div>
 
 
 
@@ -2644,7 +2808,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_two">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L237">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L246">source</a></div>
 
 
 
@@ -2682,7 +2846,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="one_add_one_eq_two">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L245">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L254">source</a></div>
 
 
 
@@ -2719,7 +2883,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="bit0_eq_two_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L248">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L257">source</a></div>
 
 
 
@@ -2757,7 +2921,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_ite">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L251">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L260">source</a></div>
 
 
 
@@ -2797,7 +2961,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_ite">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L251">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L260">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2839,7 +3003,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ite_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L255">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L264">source</a></div>
 
 
 
@@ -2879,7 +3043,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ite_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L255">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L264">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2921,7 +3085,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_boole">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L269">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L278">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2963,7 +3127,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="boole_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L273">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L282">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3005,7 +3169,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ite_mul_zero_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L277">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L286">source</a></div>
 
 
 
@@ -3045,7 +3209,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ite_mul_zero_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L281">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L290">source</a></div>
 
 
 
@@ -3085,7 +3249,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ite_and_mul_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L285">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L294">source</a></div>
 
 
 
@@ -3126,7 +3290,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_hom.mul_left">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L295">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L304">source</a></div>
 
 
 
@@ -3174,7 +3338,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_hom.mul_left_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L295">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L304">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3214,7 +3378,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_hom.mul_right_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L299">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L308">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3254,7 +3418,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_hom.mul_right">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L299">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L308">source</a></div>
 
 
 
@@ -3302,7 +3466,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_monoid_hom.mul_left">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L307">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L316">source</a></div>
 
 
 
@@ -3350,7 +3514,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_monoid_hom.coe_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L312">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L321">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3390,7 +3554,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_monoid_hom.mul_right">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L316">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L325">source</a></div>
 
 
 
@@ -3438,7 +3602,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_monoid_hom.coe_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L321">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L330">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3478,7 +3642,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_monoid_hom.mul_right_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L324">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L333">source</a></div>
 
 
 
@@ -3516,7 +3680,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ring_hom.to_add_monoid_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L342">source</a></div>
 
 
 
@@ -3558,7 +3722,7 @@ The <code>simp</code>-normal form is <code>(f : R →+ S)</code>.</p>
 <div class="decl" id="ring_hom.to_monoid_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L342">source</a></div>
 
 
 
@@ -3600,7 +3764,7 @@ The <code>simp</code>-normal form is <code>(f : R →* S)</code>.</p>
 <div class="decl" id="ring_hom">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L342">source</a></div>
 
 
 
@@ -3661,7 +3825,7 @@ sensible order, even though <code><a href="https://mariainesdff.github.io/ideles
 <div class="decl" id="ring_hom.to_monoid_with_zero_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L342">source</a></div>
 
 
 
@@ -3703,7 +3867,7 @@ The <code>simp</code>-normal form is <code>(f : R →*₀ S)</code>.</p>
 <div class="decl" id="ring_hom_class.to_monoid_with_zero_hom_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L367">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -3746,7 +3910,7 @@ The <code>simp</code>-normal form is <code>(f : R →*₀ S)</code>.</p>
 <div class="decl" id="ring_hom_class.to_monoid_hom_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L367">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -3789,7 +3953,7 @@ The <code>simp</code>-normal form is <code>(f : R →*₀ S)</code>.</p>
 <div class="decl" id="ring_hom_class">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L367">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -3871,7 +4035,7 @@ order to put the fields in a sensible order, even though
 <div class="decl" id="ring_hom_class.to_add_monoid_hom_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L367">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -3914,7 +4078,7 @@ order to put the fields in a sensible order, even though
 <div class="decl" id="map_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L365">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L374">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3960,7 +4124,7 @@ order to put the fields in a sensible order, even though
 <div class="decl" id="map_bit1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L369">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L378">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4006,7 +4170,7 @@ order to put the fields in a sensible order, even though
 <div class="decl" id="ring_hom.has_coe_t">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L372">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L381">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4066,7 +4230,7 @@ See <a id="noteref1" href="https://mariainesdff.github.io/ideles/notes.html#impl
 <div class="decl" id="ring_hom.ring_hom_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L390">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L399">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4116,7 +4280,7 @@ See <a id="noteref1" href="https://mariainesdff.github.io/ideles/notes.html#impl
 <div class="decl" id="ring_hom.has_coe_to_fun">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L401">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L410">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4168,7 +4332,7 @@ directly.</p>
 <div class="decl" id="ring_hom.to_fun_eq_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L405">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L414">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4210,7 +4374,7 @@ directly.</p>
 <div class="decl" id="ring_hom.coe_mk">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L407">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L416">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4256,7 +4420,7 @@ directly.</p>
 <div class="decl" id="ring_hom.coe_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L409">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L418">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4300,7 +4464,7 @@ directly.</p>
 <div class="decl" id="ring_hom.has_coe_monoid_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L412">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L421">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4350,7 +4514,7 @@ directly.</p>
 <div class="decl" id="ring_hom.coe_monoid_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L414">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L423">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -4392,7 +4556,7 @@ directly.</p>
 <div class="decl" id="ring_hom.to_monoid_hom_eq_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L416">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L425">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4434,7 +4598,7 @@ directly.</p>
 <div class="decl" id="ring_hom.to_monoid_with_zero_hom_eq_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L417">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L426">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4476,7 +4640,7 @@ directly.</p>
 <div class="decl" id="ring_hom.coe_monoid_hom_mk">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L420">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L429">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4522,7 +4686,7 @@ directly.</p>
 <div class="decl" id="ring_hom.coe_add_monoid_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L433">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -4564,7 +4728,7 @@ directly.</p>
 <div class="decl" id="ring_hom.to_add_monoid_hom_eq_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L426">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L435">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4606,7 +4770,7 @@ directly.</p>
 <div class="decl" id="ring_hom.coe_add_monoid_hom_mk">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L428">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L437">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4652,7 +4816,7 @@ directly.</p>
 <div class="decl" id="ring_hom.copy">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L434">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L443">source</a></div>
 
 
 
@@ -4705,7 +4869,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.congr_fun">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L446">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L455">source</a></div>
 
 
 
@@ -4747,7 +4911,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.congr_arg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L449">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L458">source</a></div>
 
 
 
@@ -4789,7 +4953,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.coe_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L452">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L461">source</a></div>
 
 
 
@@ -4830,7 +4994,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L455">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L464">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -4873,7 +5037,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L458">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L467">source</a></div>
 
 
 
@@ -4913,7 +5077,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.mk_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L461">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L470">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4959,7 +5123,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.coe_add_monoid_hom_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L464">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L473">source</a></div>
 
 
 
@@ -4998,7 +5162,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.coe_monoid_hom_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L467">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L476">source</a></div>
 
 
 
@@ -5037,7 +5201,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.map_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L471">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L480">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5080,7 +5244,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.map_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L474">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L483">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5123,7 +5287,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.map_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L477">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L486">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5167,7 +5331,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.map_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L480">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L489">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5211,7 +5375,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.map_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L483">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L492">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5255,7 +5419,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.map_bit1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L486">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L495">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5299,7 +5463,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.codomain_trivial_iff_map_one_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L490">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L499">source</a></div>
 
 
 
@@ -5340,7 +5504,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.codomain_trivial_iff_range_trivial">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L494">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L503">source</a></div>
 
 
 
@@ -5381,7 +5545,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.codomain_trivial_iff_range_eq_singleton_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L499">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L508">source</a></div>
 
 
 
@@ -5422,7 +5586,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.map_one_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L505">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L514">source</a></div>
 
 
 
@@ -5464,7 +5628,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.domain_nontrivial">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L509">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L518">source</a></div>
 
 
 
@@ -5506,7 +5670,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.is_unit_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L515">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L524">source</a></div>
 
 
 
@@ -5548,7 +5712,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.id">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L528">source</a></div>
 
 
 
@@ -5595,7 +5759,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L524">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L533">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5643,7 +5807,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.id_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L526">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L535">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5683,7 +5847,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.coe_add_monoid_hom_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L527">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L536">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5722,7 +5886,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.coe_monoid_hom_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L528">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L537">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5761,7 +5925,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.comp">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L534">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L543">source</a></div>
 
 
 
@@ -5814,7 +5978,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.comp_assoc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L542">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L551">source</a></div>
 
 
 
@@ -5861,7 +6025,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.coe_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L554">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5906,7 +6070,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.comp_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L547">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L556">source</a></div>
 
 
 
@@ -5950,7 +6114,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.comp_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L552">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L561">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5992,7 +6156,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.id_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L554">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L563">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6034,7 +6198,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L558">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L567">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6082,7 +6246,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.one_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L565">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L574">source</a></div>
 
 
 
@@ -6119,7 +6283,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.coe_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L567">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L576">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6158,7 +6322,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.mul_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L569">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L578">source</a></div>
 
 
 
@@ -6196,7 +6360,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.coe_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L571">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L580">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6236,7 +6400,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.cancel_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L575">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L584">source</a></div>
 
 
 
@@ -6280,7 +6444,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.cancel_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L579">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L588">source</a></div>
 
 
 
@@ -6324,7 +6488,7 @@ equalities.</p>
 <div class="decl" id="two_dvd_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L591">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L600">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6364,7 +6528,7 @@ equalities.</p>
 <div class="decl" id="ring_hom.map_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L593">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L602">source</a></div>
 
 
 
@@ -6405,7 +6569,7 @@ equalities.</p>
 <div class="decl" id="comm_semiring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L602">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L611">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -6543,7 +6707,7 @@ commutative monoid (<code><a href="https://mariainesdff.github.io/ideles/algebra
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/ring/pi.html#pi.comm_semiring">pi.comm_semiring</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.comm_semiring">cardinal.comm_semiring</a></li>
+                <li><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.comm_semiring">cardinal.comm_semiring</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/algebra/operations.html#submodule.comm_semiring">submodule.comm_semiring</a></li>
             
@@ -6592,7 +6756,7 @@ commutative monoid (<code><a href="https://mariainesdff.github.io/ideles/algebra
 <div class="decl" id="comm_semiring.to_comm_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L602">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L611">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6631,7 +6795,7 @@ commutative monoid (<code><a href="https://mariainesdff.github.io/ideles/algebra
 <div class="decl" id="comm_semiring.to_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L602">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L611">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6670,7 +6834,7 @@ commutative monoid (<code><a href="https://mariainesdff.github.io/ideles/algebra
 <div class="decl" id="comm_semiring.to_comm_monoid_with_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L605">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L614">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6718,7 +6882,7 @@ commutative monoid (<code><a href="https://mariainesdff.github.io/ideles/algebra
 <div class="decl" id="function.injective.comm_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L614">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L623">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -6783,7 +6947,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.comm_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L624">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L633">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -6848,7 +7012,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_mul_self_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L631">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L640">source</a></div>
 
 
 
@@ -6886,7 +7050,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="has_dvd.dvd.linear_comb">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L634">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L643">source</a></div>
 
 
 
@@ -6927,7 +7091,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="has_distrib_neg.to_has_involutive_neg">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L646">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L655">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6967,7 +7131,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="has_distrib_neg">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L646">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L655">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -7040,7 +7204,7 @@ lemmas.</p>
 <div class="decl" id="neg_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L653">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L662">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7081,7 +7245,7 @@ lemmas.</p>
 <div class="decl" id="mul_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L656">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L665">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7122,7 +7286,7 @@ lemmas.</p>
 <div class="decl" id="neg_mul_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L659">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L668">source</a></div>
 
 
 
@@ -7161,7 +7325,7 @@ lemmas.</p>
 <div class="decl" id="neg_mul_eq_neg_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L662">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L671">source</a></div>
 
 
 
@@ -7200,7 +7364,7 @@ lemmas.</p>
 <div class="decl" id="neg_mul_eq_mul_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L665">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L674">source</a></div>
 
 
 
@@ -7239,7 +7403,7 @@ lemmas.</p>
 <div class="decl" id="neg_mul_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L668">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L677">source</a></div>
 
 
 
@@ -7278,7 +7442,7 @@ lemmas.</p>
 <div class="decl" id="neg_eq_neg_one_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L676">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L685">source</a></div>
 
 
 
@@ -7317,7 +7481,7 @@ lemmas.</p>
 <div class="decl" id="mul_neg_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L681">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L690">source</a></div>
 
 
 
@@ -7358,7 +7522,7 @@ inverse.</p>
 <div class="decl" id="neg_one_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L685">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L694">source</a></div>
 
 
 
@@ -7399,7 +7563,7 @@ inverse.</p>
 <div class="decl" id="neg_zero'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L693">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L702">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7440,7 +7604,7 @@ inverse.</p>
 <div class="decl" id="inv_neg'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L701">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L710">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7488,7 +7652,7 @@ inverse.</p>
 <div class="decl" id="non_unital_non_assoc_ring.to_non_unital_non_assoc_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L714">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L723">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7527,7 +7691,7 @@ inverse.</p>
 <div class="decl" id="non_unital_non_assoc_ring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L714">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L723">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -7648,6 +7812,8 @@ inverse.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.non_unital_non_assoc_ring">matrix.non_unital_non_assoc_ring</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></li>
+            
         </ul>
     </details>
 
@@ -7663,7 +7829,7 @@ inverse.</p>
 <div class="decl" id="non_unital_non_assoc_ring.to_add_comm_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L714">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L723">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7702,7 +7868,7 @@ inverse.</p>
 <div class="decl" id="function.injective.non_unital_non_assoc_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L724">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L733">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -7769,7 +7935,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.non_unital_non_assoc_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L737">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L746">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -7836,7 +8002,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="non_unital_non_assoc_ring.to_has_distrib_neg">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L748">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L757">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7884,7 +8050,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_sub_left_distrib">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L754">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L763">source</a></div>
 
 
 
@@ -7922,7 +8088,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L757">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L766">source</a></div>
 
 
 
@@ -7961,7 +8127,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_sub_right_distrib">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L759">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L768">source</a></div>
 
 
 
@@ -7999,7 +8165,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="sub_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L762">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L771">source</a></div>
 
 
 
@@ -8038,7 +8204,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_add_eq_mul_add_iff_sub_mul_add_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L768">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L777">source</a></div>
 
 
 
@@ -8078,7 +8244,7 @@ of subtraction.</p>
 <div class="decl" id="sub_mul_add_eq_of_mul_add_eq_mul_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L777">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L786">source</a></div>
 
 
 
@@ -8118,7 +8284,7 @@ and the definition of subtraction.</p>
 <div class="decl" id="non_unital_ring.to_non_unital_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L787">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L796">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -8157,7 +8323,7 @@ and the definition of subtraction.</p>
 <div class="decl" id="non_unital_ring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L787">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L796">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -8279,6 +8445,8 @@ and the definition of subtraction.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.non_unital_ring">matrix.non_unital_ring</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_ring">hahn_series.non_unital_ring</a></li>
+            
         </ul>
     </details>
 
@@ -8294,7 +8462,7 @@ and the definition of subtraction.</p>
 <div class="decl" id="non_unital_ring.to_non_unital_non_assoc_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L787">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L796">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -8333,7 +8501,7 @@ and the definition of subtraction.</p>
 <div class="decl" id="function.injective.non_unital_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L796">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L805">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8400,7 +8568,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.non_unital_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L809">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L818">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8467,7 +8635,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="non_assoc_ring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L823">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L832">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -8595,6 +8763,8 @@ See note [reducible non-instances].</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.non_assoc_ring">matrix.non_assoc_ring</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_assoc_ring">hahn_series.non_assoc_ring</a></li>
+            
         </ul>
     </details>
 
@@ -8610,7 +8780,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="non_assoc_ring.to_non_assoc_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L823">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L832">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -8649,7 +8819,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="non_assoc_ring.to_non_unital_non_assoc_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L823">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L832">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -8688,7 +8858,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.injective.non_assoc_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L832">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L841">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8757,7 +8927,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.non_assoc_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L847">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L856">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8823,10 +8993,162 @@ See note [reducible non-instances].</p>
     
         
         
+<div class="decl" id="sub_one_mul">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L867">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#sub_one_mul"><span class="name">sub_one_mul</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring">non_assoc_ring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> 1)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="mul_sub_one">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L869">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#mul_sub_one"><span class="name">mul_sub_one</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring">non_assoc_ring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">(b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> 1)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="one_sub_mul">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L871">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#one_sub_mul"><span class="name">one_sub_mul</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring">non_assoc_ring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(1 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> a)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="mul_one_sub">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L873">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#mul_one_sub"><span class="name">mul_one_sub</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring">non_assoc_ring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">(1 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> b)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="ring.to_add_comm_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L864">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L882">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -8865,7 +9187,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ring.to_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L864">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L882">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -8904,7 +9226,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="ring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L864">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L882">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -9109,7 +9431,7 @@ multiplicative monoid (<code><a href="https://mariainesdff.github.io/ideles/alge
 <div class="decl" id="ring.to_distrib">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L864">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L882">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -9148,7 +9470,7 @@ multiplicative monoid (<code><a href="https://mariainesdff.github.io/ideles/alge
 <div class="decl" id="ring.to_non_unital_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L871">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L889">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -9196,7 +9518,7 @@ multiplicative monoid (<code><a href="https://mariainesdff.github.io/ideles/alge
 <div class="decl" id="ring.to_non_assoc_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L881">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L899">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -9244,7 +9566,7 @@ multiplicative monoid (<code><a href="https://mariainesdff.github.io/ideles/alge
 <div class="decl" id="ring.to_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L894">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L912">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -9292,7 +9614,7 @@ multiplicative monoid (<code><a href="https://mariainesdff.github.io/ideles/alge
 <div class="decl" id="function.injective.ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L900">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L918">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9363,7 +9685,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L915">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L933">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9434,7 +9756,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="units.has_neg">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L933">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L951">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -9483,7 +9805,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="units.coe_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L937">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L955">source</a></div>
 
 
     <div class="attributes">@[protected, simp, norm_cast]</div>
@@ -9525,7 +9847,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="units.coe_neg_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L939">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L957">source</a></div>
 
 
     <div class="attributes">@[protected, simp, norm_cast]</div>
@@ -9564,7 +9886,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="units.has_distrib_neg">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L941">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L959">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -9612,7 +9934,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="is_unit.neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L949">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L967">source</a></div>
 
 
 
@@ -9650,7 +9972,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="is_unit.neg_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L952">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L970">source</a></div>
 
 
 
@@ -9688,7 +10010,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="is_unit.sub_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L955">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L973">source</a></div>
 
 
 
@@ -9726,7 +10048,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="ring_hom.map_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L962">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L980">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9770,7 +10092,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="ring_hom.map_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L967">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L985">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9811,92 +10133,10 @@ mapping this element to its additive inverse.</p>
     
         
         
-<div class="decl" id="ring_hom.injective_iff">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L971">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.injective_iff"><span class="name">ring_hom</span>.<span class="name">injective_iff</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring">non_assoc_ring</a> α]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_semiring">non_assoc_semiring</a> β]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> β)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/function.html#function.injective">function.injective</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">∀ (a : α), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span> → <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span></span></span></span></div>
-</div>
-
-
-
-
-
-<p>A ring homomorphism is injective iff its kernel is trivial.</p>
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="ring_hom.injective_iff'">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L976">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.injective_iff'"><span class="name">ring_hom</span>.<span class="name">injective_iff&#x27;</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring">non_assoc_ring</a> α]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_semiring">non_assoc_semiring</a> β]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> β)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/function.html#function.injective">function.injective</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">∀ (a : α), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span></span></span></span></div>
-</div>
-
-
-
-
-
-<p>A ring homomorphism is injective iff its kernel is trivial.</p>
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
 <div class="decl" id="ring_hom.mk'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L981">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L989">source</a></div>
 
 
 
@@ -9947,7 +10187,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="comm_ring.to_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L991">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L999">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -9986,7 +10226,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="comm_ring">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L991">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L999">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -10228,7 +10468,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="comm_ring.to_comm_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L991">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L999">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -10267,7 +10507,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="comm_ring.to_comm_semiring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L994">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1002">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -10315,7 +10555,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="dvd_neg_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1000">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1008">source</a></div>
 
 
 
@@ -10354,7 +10594,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="dvd_of_dvd_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1005">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1013">source</a></div>
 
 
 
@@ -10393,7 +10633,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="dvd_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1009">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1017">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10434,7 +10674,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="neg_dvd_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1012">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1020">source</a></div>
 
 
 
@@ -10473,7 +10713,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="dvd_of_neg_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1017">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1025">source</a></div>
 
 
 
@@ -10512,7 +10752,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="neg_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1021">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1029">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10553,7 +10793,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="dvd_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1024">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1032">source</a></div>
 
 
 
@@ -10593,7 +10833,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="dvd_add_iff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1027">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1035">source</a></div>
 
 
 
@@ -10632,7 +10872,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="dvd_add_iff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1030">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1038">source</a></div>
 
 
 
@@ -10671,7 +10911,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="two_dvd_bit1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1033">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1041">source</a></div>
 
 
 
@@ -10709,7 +10949,7 @@ mapping this element to its additive inverse.</p>
 <div class="decl" id="dvd_add_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1037">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1045">source</a></div>
 
 
 
@@ -10750,7 +10990,7 @@ element b with c iff a divides b.</p>
 <div class="decl" id="dvd_add_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1042">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1050">source</a></div>
 
 
 
@@ -10791,7 +11031,7 @@ another element c iff a divides c.</p>
 <div class="decl" id="dvd_add_self_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1046">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1054">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10832,7 +11072,7 @@ another element c iff a divides c.</p>
 <div class="decl" id="dvd_add_self_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1050">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1058">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10873,7 +11113,7 @@ another element c iff a divides c.</p>
 <div class="decl" id="dvd_iff_dvd_of_dvd_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1053">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1061">source</a></div>
 
 
 
@@ -10912,7 +11152,7 @@ another element c iff a divides c.</p>
 <div class="decl" id="function.injective.comm_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1072">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1080">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -10983,7 +11223,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.comm_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1086">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1094">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -11054,7 +11294,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="Vieta_formula_quadratic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1103">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1111">source</a></div>
 
 
 
@@ -11097,7 +11337,7 @@ and <code>x * y</code> is the <code>a_0</code> coefficient.</p>
 <div class="decl" id="dvd_mul_sub_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1112">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1120">source</a></div>
 
 
 
@@ -11137,7 +11377,7 @@ and <code>x * y</code> is the <code>a_0</code> coefficient.</p>
 <div class="decl" id="succ_ne_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1122">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1130">source</a></div>
 
 
 
@@ -11176,7 +11416,7 @@ and <code>x * y</code> is the <code>a_0</code> coefficient.</p>
 <div class="decl" id="pred_ne_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1125">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1133">source</a></div>
 
 
 
@@ -11215,7 +11455,7 @@ and <code>x * y</code> is the <code>a_0</code> coefficient.</p>
 <div class="decl" id="is_left_regular_of_non_zero_divisor">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1130">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1138">source</a></div>
 
 
 
@@ -11256,7 +11496,7 @@ The typeclass that restricts all terms of <code>α</code> to have this property 
 <div class="decl" id="is_right_regular_of_non_zero_divisor">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1139">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1147">source</a></div>
 
 
 
@@ -11297,7 +11537,7 @@ The typeclass that restricts all terms of <code>α</code> to have this property 
 <div class="decl" id="is_regular_of_ne_zero'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1146">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1154">source</a></div>
 
 
 
@@ -11337,7 +11577,7 @@ The typeclass that restricts all terms of <code>α</code> to have this property 
 <div class="decl" id="is_regular_iff_ne_zero'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1153">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1161">source</a></div>
 
 
 
@@ -11377,7 +11617,7 @@ The typeclass that restricts all terms of <code>α</code> to have this property 
 <div class="decl" id="no_zero_divisors.to_cancel_monoid_with_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1161">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1169">source</a></div>
 
 
 
@@ -11426,7 +11666,7 @@ The typeclass that restricts all terms of <code>α</code> to have this property 
 <div class="decl" id="is_domain.to_no_zero_divisors">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1174">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1182">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -11466,7 +11706,7 @@ The typeclass that restricts all terms of <code>α</code> to have this property 
 <div class="decl" id="is_domain">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1174">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1182">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -11568,7 +11808,7 @@ To obtain an integral domain use <code>[<a href="https://mariainesdff.github.io/
 <div class="decl" id="is_domain.to_nontrivial">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1174">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1182">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -11608,7 +11848,7 @@ To obtain an integral domain use <code>[<a href="https://mariainesdff.github.io/
 <div class="decl" id="is_domain.to_cancel_monoid_with_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1183">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1191">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -11657,7 +11897,7 @@ To obtain an integral domain use <code>[<a href="https://mariainesdff.github.io/
 <div class="decl" id="function.injective.is_domain">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1187">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1195">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -11702,7 +11942,7 @@ To obtain an integral domain use <code>[<a href="https://mariainesdff.github.io/
 <div class="decl" id="is_domain.to_cancel_comm_monoid_with_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1199">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1207">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -11751,7 +11991,7 @@ To obtain an integral domain use <code>[<a href="https://mariainesdff.github.io/
 <div class="decl" id="add_monoid_hom.mk_ring_hom_of_mul_self_of_two_ne_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1206">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1214">source</a></div>
 
 
 
@@ -11806,7 +12046,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="add_monoid_hom.coe_fn_mk_ring_hom_of_mul_self_of_two_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1223">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1231">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11852,7 +12092,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="add_monoid_hom.coe_add_monoid_hom_mk_ring_hom_of_mul_self_of_two_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1228">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1236">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11898,7 +12138,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="semiconj_by.add_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1238">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1246">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11940,7 +12180,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="semiconj_by.add_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1243">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1251">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11982,7 +12222,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="semiconj_by.neg_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1251">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1259">source</a></div>
 
 
 
@@ -12022,7 +12262,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="semiconj_by.neg_right_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1254">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1262">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12063,7 +12303,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="semiconj_by.neg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1257">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1265">source</a></div>
 
 
 
@@ -12103,7 +12343,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="semiconj_by.neg_left_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1260">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1268">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12144,7 +12384,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="semiconj_by.neg_one_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1268">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1276">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12185,7 +12425,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="semiconj_by.neg_one_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1271">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1279">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12226,7 +12466,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="semiconj_by.sub_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1279">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1287">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12268,7 +12508,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="semiconj_by.sub_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1283">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1291">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12310,7 +12550,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.add_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1293">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1301">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12350,7 +12590,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.add_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1297">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1305">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12390,7 +12630,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.bit0_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1301">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1309">source</a></div>
 
 
 
@@ -12429,7 +12669,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.bit0_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1304">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1312">source</a></div>
 
 
 
@@ -12468,7 +12708,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.bit1_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1307">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1315">source</a></div>
 
 
 
@@ -12507,7 +12747,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.bit1_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1310">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1318">source</a></div>
 
 
 
@@ -12546,7 +12786,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.mul_self_sub_mul_self_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1314">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1322">source</a></div>
 
 
 
@@ -12586,7 +12826,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.mul_self_sub_mul_self_eq'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1318">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1326">source</a></div>
 
 
 
@@ -12625,7 +12865,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.mul_self_eq_mul_self_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1322">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1330">source</a></div>
 
 
 
@@ -12665,7 +12905,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.neg_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1330">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1338">source</a></div>
 
 
 
@@ -12704,7 +12944,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.neg_right_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1331">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1339">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12745,7 +12985,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.neg_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1341">source</a></div>
 
 
 
@@ -12784,7 +13024,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.neg_left_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1334">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1342">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12825,7 +13065,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.neg_one_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1341">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1349">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12866,7 +13106,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.neg_one_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1342">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1350">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12907,7 +13147,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.sub_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1349">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1357">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12947,7 +13187,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="commute.sub_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1350">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1358">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12987,7 +13227,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="mul_self_sub_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1357">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1365">source</a></div>
 
 
 
@@ -13026,7 +13266,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="mul_self_sub_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1360">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1368">source</a></div>
 
 
 
@@ -13064,7 +13304,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="mul_self_eq_mul_self_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1363">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1371">source</a></div>
 
 
 
@@ -13103,7 +13343,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="mul_self_eq_one_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1367">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1375">source</a></div>
 
 
 
@@ -13142,7 +13382,7 @@ domain that commutes with self multiplication, assumes that two is nonzero and o
 <div class="decl" id="units.inv_eq_self_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1373">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/ring/basic.lean#L1381">source</a></div>
 
 
 
@@ -13199,13 +13439,6 @@ one's additive inverse.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -15276,6 +15509,12 @@ one's additive inverse.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -15420,6 +15659,13 @@ one's additive inverse.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -15428,6 +15674,29 @@ one's additive inverse.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -15510,6 +15779,9 @@ one's additive inverse.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -16143,27 +16415,35 @@ one's additive inverse.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

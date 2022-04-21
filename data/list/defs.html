@@ -81,6 +81,8 @@
 
     <div class="nav_link"><a class="break_within" href="#list.all_some"><span class="name">list</span>.<span class="name">all_some</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#list.all₂"><span class="name">list</span>.<span class="name">all₂</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#list.alternating_prod"><span class="name">list</span>.<span class="name">alternating_prod</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#list.alternating_sum"><span class="name">list</span>.<span class="name">alternating_sum</span></a></div>
@@ -3368,10 +3370,64 @@ then <code>R a b</code> is satisfied.</p>
     
         
         
+<div class="decl" id="list.all₂">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L403">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂"><span class="name">list</span>.<span class="name">all₂</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="decl_args"><span class="fn">(p : α → Prop)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#list">list</a> α</span> → Prop</span></div>
+</div>
+
+
+
+
+
+<p><code>l.all₂ p</code> is equivalent to <code>∀ a ∈ l, p a</code>, but unfolds directly to a conjunction, i.e.
+<code><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> p [0, 1, 2] = p 0 ∧ p 1 ∧ p 2</code>.</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> p</span> <span class="fn">(x <a href="https://mariainesdff.github.io/ideles/init/core.html#list.cons" title="list.cons">::</a> <span class="fn">hd <a href="https://mariainesdff.github.io/ideles/init/core.html#list.cons" title="list.cons">::</a> tl)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(p x</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> p</span> <span class="fn">(hd <a href="https://mariainesdff.github.io/ideles/init/core.html#list.cons" title="list.cons">::</a> tl))</span></span></span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> p</span> [x]</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">p x</span></span></li>
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.all₂">list.all₂</a> p</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#list.nil">list.nil</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#true">true</a></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="list.transpose_aux">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L406">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L413">source</a></div>
 
 
 
@@ -3424,7 +3480,7 @@ each element of <code>L</code>.</p>
 <div class="decl" id="list.transpose">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L414">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L421">source</a></div>
 
 
 
@@ -3475,7 +3531,7 @@ each element of <code>L</code>.</p>
 <div class="decl" id="list.sections">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L421">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L428">source</a></div>
 
 
 
@@ -3525,7 +3581,7 @@ of <code>[L₁, L₂, ..., Lₙ]</code> is a list whose first element comes from
 <div class="decl" id="list.permutations_aux2">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L436">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L443">source</a></div>
 
 
 
@@ -3588,7 +3644,7 @@ defined) is the list of lists of the form <code>insert_nth n t (ys ++ ts)</code>
 <div class="decl" id="list.permutations_aux.rec">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L447">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L454">source</a></div>
 
 
 
@@ -3641,7 +3697,7 @@ defined) is the list of lists of the form <code>insert_nth n t (ys ++ ts)</code>
 <div class="decl" id="list.permutations_aux">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L464">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L471">source</a></div>
 
 
 
@@ -3688,7 +3744,7 @@ permutations of <code>is ++ ts</code> that do not fix <code>ts</code>.</p>
 <div class="decl" id="list.permutations">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L473">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L480">source</a></div>
 
 
 
@@ -3740,7 +3796,7 @@ permutations of <code>is ++ ts</code> that do not fix <code>ts</code>.</p>
 <div class="decl" id="list.permutations'_aux">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L487">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L494">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3801,7 +3857,7 @@ position:</p>
 <div class="decl" id="list.permutations'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L498">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L505">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3858,7 +3914,7 @@ but are equal up to permutation, as shown by <code>list.permutations_perm_permut
 <div class="decl" id="list.erasep">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L505">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L512">source</a></div>
 
 
 
@@ -3908,7 +3964,7 @@ but are equal up to permutation, as shown by <code>list.permutations_perm_permut
 <div class="decl" id="list.extractp">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L511">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L518">source</a></div>
 
 
 
@@ -3961,7 +4017,7 @@ but are equal up to permutation, as shown by <code>list.permutations_perm_permut
 <div class="decl" id="list.revzip">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L521">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L528">source</a></div>
 
 
 
@@ -4010,7 +4066,7 @@ with the elements of <code>l</code> in reverse order.</p>
 <div class="decl" id="list.product">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L526">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L533">source</a></div>
 
 
 
@@ -4062,7 +4118,7 @@ with the elements of <code>l</code> in reverse order.</p>
 <div class="decl" id="list.sigma">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L532">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L539">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4116,7 +4172,7 @@ with the elements of <code>l</code> in reverse order.</p>
 <div class="decl" id="list.of_fn_aux">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L539">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L546">source</a></div>
 
 
 
@@ -4169,7 +4225,7 @@ appended to <code>l</code></p>
 <div class="decl" id="list.of_fn">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L552">source</a></div>
 
 
 
@@ -4218,7 +4274,7 @@ appended to <code>l</code></p>
 <div class="decl" id="list.of_fn_nth_val">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L549">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L556">source</a></div>
 
 
 
@@ -4267,7 +4323,7 @@ appended to <code>l</code></p>
 <div class="decl" id="list.disjoint">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L553">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L560">source</a></div>
 
 
 
@@ -4314,7 +4370,7 @@ appended to <code>l</code></p>
 <div class="decl" id="list.pairwise">
 <div class="inductive">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L565">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L572">source</a></div>
 
 
 
@@ -4368,7 +4424,7 @@ and if <code>R = (&lt;)</code> then it asserts that <code>l</code> is (strictly)
 <div class="decl" id="list.pairwise_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L570">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L577">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4409,7 +4465,7 @@ and if <code>R = (&lt;)</code> then it asserts that <code>l</code> is (strictly)
 <div class="decl" id="list.decidable_pairwise">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L576">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L583">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4459,7 +4515,7 @@ and if <code>R = (&lt;)</code> then it asserts that <code>l</code> is (strictly)
 <div class="decl" id="list.pw_filter">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L587">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L594">source</a></div>
 
 
 
@@ -4514,7 +4570,7 @@ a maximal increasing subsequence in <code>l</code>. For example,</p>
 <div class="decl" id="list.chain">
 <div class="inductive">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L597">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L604">source</a></div>
 
 
 
@@ -4565,7 +4621,7 @@ a maximal increasing subsequence in <code>l</code>. For example,</p>
 <div class="decl" id="list.chain'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L604">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L611">source</a></div>
 
 
 
@@ -4617,7 +4673,7 @@ a maximal increasing subsequence in <code>l</code>. For example,</p>
 <div class="decl" id="list.chain_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L609">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L616">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4658,7 +4714,7 @@ a maximal increasing subsequence in <code>l</code>. For example,</p>
 <div class="decl" id="list.decidable_chain">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L615">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L622">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4709,7 +4765,7 @@ a maximal increasing subsequence in <code>l</code>. For example,</p>
 <div class="decl" id="list.decidable_chain'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L618">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L625">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4759,7 +4815,7 @@ a maximal increasing subsequence in <code>l</code>. For example,</p>
 <div class="decl" id="list.nodup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L625">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L632">source</a></div>
 
 
 
@@ -4806,7 +4862,7 @@ once in the list. It is defined as <code><a href="https://mariainesdff.github.io
 <div class="decl" id="list.nodup_decidable">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L627">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L634">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4855,7 +4911,7 @@ once in the list. It is defined as <code><a href="https://mariainesdff.github.io
 <div class="decl" id="list.dedup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L634">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L641">source</a></div>
 
 
 
@@ -4906,7 +4962,7 @@ Defined as <code>pw_filter (≠)</code>.</p>
 <div class="decl" id="list.destutter'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L639">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L646">source</a></div>
 
 
 
@@ -4958,7 +5014,7 @@ Defined as <code>pw_filter (≠)</code>.</p>
 <div class="decl" id="list.destutter">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L646">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L653">source</a></div>
 
 
 
@@ -5010,7 +5066,7 @@ Defined as <code>pw_filter (≠)</code>.</p>
 <div class="decl" id="list.range'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L652">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L659">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5060,7 +5116,7 @@ It is intended mainly for proving properties of <code>range</code> and <code>iot
 <div class="decl" id="list.reduce_option">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L657">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L664">source</a></div>
 
 
 
@@ -5106,7 +5162,7 @@ It is intended mainly for proving properties of <code>range</code> and <code>iot
 <div class="decl" id="list.ilast'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L662">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L669">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5157,7 +5213,7 @@ it returns <code>x</code> otherwise</p>
 <div class="decl" id="list.last'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L668">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L675">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5210,7 +5266,7 @@ it returns <code>none</code> otherwise</p>
 <div class="decl" id="list.rotate">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L676">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L683">source</a></div>
 
 
 
@@ -5263,7 +5319,7 @@ it returns <code>none</code> otherwise</p>
 <div class="decl" id="list.rotate'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L680">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L687">source</a></div>
 
 
 
@@ -5315,7 +5371,7 @@ it returns <code>none</code> otherwise</p>
 <div class="decl" id="list.choose_x">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L691">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L698">source</a></div>
 
 
 
@@ -5371,7 +5427,7 @@ of <code>a ∈ l</code> and <code>p a</code>.</p>
 <div class="decl" id="list.choose">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L701">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L708">source</a></div>
 
 
 
@@ -5423,7 +5479,7 @@ are given by <code>choose_mem</code> and <code>choose_property</code>.</p>
 <div class="decl" id="list.mmap_filter">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L706">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L713">source</a></div>
 
 
 
@@ -5479,7 +5535,7 @@ are given by <code>choose_mem</code> and <code>choose_property</code>.</p>
 <div class="decl" id="list.mmap_upper_triangle">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L720">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L727">source</a></div>
 
 
 
@@ -5534,7 +5590,7 @@ for each <code>e&#x27;</code> that appears after <code>e</code> in <code>l</code
 <div class="decl" id="list.mmap'_diag">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L732">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L739">source</a></div>
 
 
 
@@ -5589,7 +5645,7 @@ for each <code>e&#x27;</code> that appears after <code>e</code> in <code>l</code
 <div class="decl" id="list.traverse">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L736">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L743">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5642,7 +5698,7 @@ for each <code>e&#x27;</code> that appears after <code>e</code> in <code>l</code
 <div class="decl" id="list.get_rest">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L743">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L750">source</a></div>
 
 
 
@@ -5696,7 +5752,7 @@ If <code>l₁</code> is not a prefix of <code>l</code>, returns <code>none</code
 <div class="decl" id="list.slice">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L751">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L758">source</a></div>
 
 
 
@@ -5746,7 +5802,7 @@ If <code>l₁</code> is not a prefix of <code>l</code>, returns <code>none</code
 <div class="decl" id="list.map₂_left'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L768">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L775">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5810,7 +5866,7 @@ applications and the remaining <code>bs</code>.</p>
 <div class="decl" id="list.map₂_right'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L788">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L795">source</a></div>
 
 
 
@@ -5870,7 +5926,7 @@ applications and the remaining <code>as</code>.</p>
 <div class="decl" id="list.zip_left'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L805">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L812">source</a></div>
 
 
 
@@ -5928,7 +5984,7 @@ remaining <code>aᵢ</code> are paired with <code>none</code>. Also returns the 
 <div class="decl" id="list.zip_right'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L821">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L828">source</a></div>
 
 
 
@@ -5985,7 +6041,7 @@ remaining <code>bᵢ</code> are paired with <code>none</code>. Also returns the 
 <div class="decl" id="list.map₂_left">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L837">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L844">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6050,7 +6106,7 @@ for the remaining <code>aᵢ</code>.</p>
 <div class="decl" id="list.map₂_right">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L855">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L862">source</a></div>
 
 
 
@@ -6111,7 +6167,7 @@ pair <code>aᵢ ∈ as</code> and <code>bᵢ ‌∈ bs</code>. If <code>as</code
 <div class="decl" id="list.zip_left">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L872">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L879">source</a></div>
 
 
 
@@ -6168,7 +6224,7 @@ remaining <code>aᵢ</code> are paired with <code>none</code>.</p>
 <div class="decl" id="list.zip_right">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L888">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L895">source</a></div>
 
 
 
@@ -6225,7 +6281,7 @@ remaining <code>bᵢ</code> are paired with <code>none</code>.</p>
 <div class="decl" id="list.all_some">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L900">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L907">source</a></div>
 
 
 
@@ -6280,7 +6336,7 @@ it returns <code>none</code>.</p>
 <div class="decl" id="list.fill_nones">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L914">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L921">source</a></div>
 
 
 
@@ -6337,7 +6393,7 @@ dropped from <code>xs</code>.</p>
 <div class="decl" id="list.take_list">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L932">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L939">source</a></div>
 
 
 
@@ -6397,7 +6453,7 @@ the <code>nᵢ</code>, the corresponding sublists will have less than <code>nᵢ
 <div class="decl" id="list.to_rbmap">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L947">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L954">source</a></div>
 
 
 
@@ -6447,7 +6503,7 @@ corresponding element of <code>as</code>.</p>
 <div class="decl" id="list.to_chunks_aux">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L955">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L962">source</a></div>
 
 
 
@@ -6505,7 +6561,7 @@ sublists of length <code>n+1</code>.</p>
 <div class="decl" id="list.to_chunks">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L971">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L978">source</a></div>
 
 
 
@@ -6566,7 +6622,7 @@ such that <code>(xs.to_chunks n).join = xs</code>.</p>
 <div class="decl" id="list.map_async_chunked">
 <div class="def meta">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L979">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L986">source</a></div>
 
 
 
@@ -6619,7 +6675,7 @@ or as
 <div class="decl" id="list.zip_with3">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L992">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L999">source</a></div>
 
 
 
@@ -6675,7 +6731,7 @@ or as
 <div class="decl" id="list.zip_with4">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L997">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L1004">source</a></div>
 
 
 
@@ -6734,7 +6790,7 @@ or as
 <div class="decl" id="list.zip_with5">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L1002">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L1009">source</a></div>
 
 
 
@@ -6796,7 +6852,7 @@ or as
 <div class="decl" id="list.map_with_prefix_suffix_aux">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L1007">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L1014">source</a></div>
 
 
 
@@ -6846,7 +6902,7 @@ or as
 <div class="decl" id="list.map_with_prefix_suffix">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L1019">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L1026">source</a></div>
 
 
 
@@ -6899,7 +6955,7 @@ For each <code>a ∈ l</code> with <code>l = pref ++ [a] ++ suff</code>, <code>a
 <div class="decl" id="list.map_with_complement">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L1031">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/list/defs.lean#L1038">source</a></div>
 
 
 
@@ -6968,13 +7024,6 @@ i.e., the list input to <code>f</code> is <code>l</code> with <code>a</code> rem
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -9045,6 +9094,12 @@ i.e., the list input to <code>f</code> is <code>l</code> with <code>a</code> rem
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -9189,6 +9244,13 @@ i.e., the list input to <code>f</code> is <code>l</code> with <code>a</code> rem
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -9197,6 +9259,29 @@ i.e., the list input to <code>f</code> is <code>l</code> with <code>a</code> rem
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -9279,6 +9364,9 @@ i.e., the list input to <code>f</code> is <code>l</code> with <code>a</code> rem
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -9912,27 +10000,35 @@ i.e., the list input to <code>f</code> is <code>l</code> with <code>a</code> rem
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

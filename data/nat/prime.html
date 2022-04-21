@@ -307,6 +307,8 @@
 
     <div class="nav_link"><a class="break_within" href="#nat.prime.min_fac_eq"><span class="name">nat</span>.<span class="name">prime</span>.<span class="name">min_fac_eq</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#nat.prime.mod_two_eq_one_iff_ne_two"><span class="name">nat</span>.<span class="name">prime</span>.<span class="name">mod_two_eq_one_iff_ne_two</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#nat.prime.mul_eq_prime_sq_iff"><span class="name">nat</span>.<span class="name">prime</span>.<span class="name">mul_eq_prime_sq_iff</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#nat.prime.ne_one"><span class="name">nat</span>.<span class="name">prime</span>.<span class="name">ne_one</span></a></div>
@@ -1815,7 +1817,7 @@ If <code>n</code> is odd and <code>1 &lt; n</code>, then then <code>min_fac_aux 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
     <span class="decl_args"><span class="fn">(n2 : 2 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> n)</span></span>
     <span class="decl_args"><span class="fn">(k i : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">k <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">2 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> i</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 3</span></span> → <span class="fn"><span class="fn">(∀ (m : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><span class="fn">2 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> m</span> → <span class="fn"><span class="fn">m <a href="https://mariainesdff.github.io/ideles/init/core.html#has_dvd.dvd" title="has_dvd.dvd">∣</a> n</span> → <span class="fn">k <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> m)</span></span></span></span> → <span class="fn"><span class="fn"><span title="_private.3942963499.min_fac_prop">min_fac_prop</span> n</span> <span class="fn">(n.<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.min_fac_aux" title="nat.min_fac_aux">min_fac_aux</a> k)</span></span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn">k <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">2 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> i</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 3</span></span> → <span class="fn"><span class="fn">(∀ (m : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><span class="fn">2 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> m</span> → <span class="fn"><span class="fn">m <a href="https://mariainesdff.github.io/ideles/init/core.html#has_dvd.dvd" title="has_dvd.dvd">∣</a> n</span> → <span class="fn">k <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> m)</span></span></span></span> → <span class="fn"><span class="fn"><span title="_private.3957068507.min_fac_prop">min_fac_prop</span> n</span> <span class="fn">(n.<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.min_fac_aux" title="nat.min_fac_aux">min_fac_aux</a> k)</span></span></span></span></div>
 </div>
 
 
@@ -1852,7 +1854,7 @@ If <code>n</code> is odd and <code>1 &lt; n</code>, then then <code>min_fac_aux 
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
     <span class="decl_args"><span class="fn">(n1 : n <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 1)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span title="_private.3942963499.min_fac_prop">min_fac_prop</span> n</span> n.<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.min_fac" title="nat.min_fac">min_fac</a></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span title="_private.3957068507.min_fac_prop">min_fac_prop</span> n</span> n.<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.min_fac" title="nat.min_fac">min_fac</a></span></div>
 </div>
 
 
@@ -2741,10 +2743,48 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
     
         
         
+<div class="decl" id="nat.prime.mod_two_eq_one_iff_ne_two">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L433">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.prime.mod_two_eq_one_iff_ne_two"><span class="name">nat</span>.<span class="name">prime</span>.<span class="name">mod_two_eq_one_iff_ne_two</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{p : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.prime">nat.prime</a> p)</span>]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">p <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 2</span></span></div>
+</div>
+
+
+
+
+
+<p>A prime <code>p</code> satisfies <code>p % 2 = 1</code> if and only if <code>p ≠ 2</code>.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="nat.coprime_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L432">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L440">source</a></div>
 
 
 
@@ -2781,7 +2821,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.coprime_of_dvd'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L442">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L450">source</a></div>
 
 
 
@@ -2818,7 +2858,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.factors_lemma">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L445">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L453">source</a></div>
 
 
 
@@ -2854,7 +2894,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.factors">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L449">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L457">source</a></div>
 
 
 
@@ -2903,7 +2943,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.factors_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L456">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L464">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2940,7 +2980,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.factors_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L457">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L465">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2977,7 +3017,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime_of_mem_factors">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L459">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L467">source</a></div>
 
 
 
@@ -3013,7 +3053,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.pos_of_mem_factors">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L477">source</a></div>
 
 
 
@@ -3050,7 +3090,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prod_factors">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L472">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L480">source</a></div>
 
 
 
@@ -3086,7 +3126,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.factors_prime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L483">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L491">source</a></div>
 
 
 
@@ -3123,7 +3163,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.factors_chain">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L494">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L502">source</a></div>
 
 
 
@@ -3159,7 +3199,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.factors_chain_2">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L505">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L513">source</a></div>
 
 
 
@@ -3195,7 +3235,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.factors_chain'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L507">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L515">source</a></div>
 
 
 
@@ -3231,7 +3271,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.factors_sorted">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L510">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L518">source</a></div>
 
 
 
@@ -3267,7 +3307,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.factors_add_two">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L514">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L522">source</a></div>
 
 
 
@@ -3304,7 +3344,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.factors_eq_nil">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L527">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3342,7 +3382,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.eq_of_perm_factors">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L531">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L539">source</a></div>
 
 
 
@@ -3381,7 +3421,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.coprime_iff_not_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L534">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L542">source</a></div>
 
 
 
@@ -3418,7 +3458,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.dvd_iff_not_coprime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L538">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L546">source</a></div>
 
 
 
@@ -3455,7 +3495,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.not_coprime_iff_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L541">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L549">source</a></div>
 
 
 
@@ -3491,7 +3531,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.dvd_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L554">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L562">source</a></div>
 
 
 
@@ -3528,7 +3568,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.not_dvd_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L559">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L567">source</a></div>
 
 
 
@@ -3567,7 +3607,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L563">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L571">source</a></div>
 
 
 
@@ -3603,7 +3643,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.irreducible_iff_prime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L566">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L574">source</a></div>
 
 
 
@@ -3639,7 +3679,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.dvd_of_dvd_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L569">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L577">source</a></div>
 
 
 
@@ -3677,7 +3717,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.pow_not_prime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L576">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L584">source</a></div>
 
 
 
@@ -3714,7 +3754,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.pow_not_prime'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L583">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L591">source</a></div>
 
 
 
@@ -3750,7 +3790,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.eq_one_of_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L588">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L596">source</a></div>
 
 
 
@@ -3787,7 +3827,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.pow_eq_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L591">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L599">source</a></div>
 
 
 
@@ -3824,7 +3864,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.pow_min_fac">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L598">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L606">source</a></div>
 
 
 
@@ -3861,7 +3901,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.pow_min_fac">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L608">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L616">source</a></div>
 
 
 
@@ -3899,7 +3939,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.mul_eq_prime_sq_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L611">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L619">source</a></div>
 
 
 
@@ -3938,7 +3978,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.dvd_factorial">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L628">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L636">source</a></div>
 
 
 
@@ -3975,7 +4015,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.coprime_pow_of_not_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L637">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L645">source</a></div>
 
 
 
@@ -4013,7 +4053,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.coprime_primes">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L640">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L648">source</a></div>
 
 
 
@@ -4051,7 +4091,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.coprime_pow_primes">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L643">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L651">source</a></div>
 
 
 
@@ -4091,7 +4131,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.coprime_or_dvd_of_prime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L647">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L655">source</a></div>
 
 
 
@@ -4129,7 +4169,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.coprime_of_lt_prime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L650">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L658">source</a></div>
 
 
 
@@ -4168,7 +4208,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.eq_or_coprime_of_le_prime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L654">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L662">source</a></div>
 
 
 
@@ -4207,7 +4247,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.dvd_prime_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L658">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L666">source</a></div>
 
 
 
@@ -4245,7 +4285,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.prime.dvd_mul_of_dvd_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L661">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L669">source</a></div>
 
 
 
@@ -4286,7 +4326,7 @@ Here given in the form: for every <code>n</code>, there exists a prime number <c
 <div class="decl" id="nat.eq_prime_pow_of_dvd_least_prime_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L670">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L678">source</a></div>
 
 
 
@@ -4328,7 +4368,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.ne_one_iff_exists_prime_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L679">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L687">source</a></div>
 
 
 
@@ -4364,7 +4404,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.eq_one_iff_not_exists_prime_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L690">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L698">source</a></div>
 
 
 
@@ -4400,7 +4440,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.mem_factors_iff_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L696">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L704">source</a></div>
 
 
 
@@ -4438,7 +4478,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.dvd_of_mem_factors">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L703">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L711">source</a></div>
 
 
 
@@ -4475,7 +4515,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.mem_factors">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L710">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L718">source</a></div>
 
 
 
@@ -4512,7 +4552,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.le_of_mem_factors">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L714">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L722">source</a></div>
 
 
 
@@ -4549,7 +4589,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.factors_unique">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L722">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L730">source</a></div>
 
 
 
@@ -4589,7 +4629,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.prime.factors_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L735">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L743">source</a></div>
 
 
 
@@ -4627,7 +4667,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.eq_prime_pow_of_unique_prime_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L745">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L753">source</a></div>
 
 
 
@@ -4665,7 +4705,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.perm_factors_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L755">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L763">source</a></div>
 
 
 
@@ -4704,7 +4744,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.perm_factors_mul_of_coprime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L767">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L775">source</a></div>
 
 
 
@@ -4742,7 +4782,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.factors_sublist_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L777">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L785">source</a></div>
 
 
 
@@ -4779,7 +4819,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.factors_sublist_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L786">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L794">source</a></div>
 
 
 
@@ -4817,7 +4857,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.factors_subset_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L792">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L800">source</a></div>
 
 
 
@@ -4854,7 +4894,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.factors_subset_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L795">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L803">source</a></div>
 
 
 
@@ -4892,7 +4932,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.dvd_of_factors_subperm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L798">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L806">source</a></div>
 
 
 
@@ -4930,7 +4970,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.succ_dvd_or_succ_dvd_of_succ_sum_dvd_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L814">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L822">source</a></div>
 
 
 
@@ -4971,7 +5011,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.prime_iff_prime_int">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L827">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L835">source</a></div>
 
 
 
@@ -5007,7 +5047,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.primes">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L836">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L844">source</a></div>
 
 
 
@@ -5052,7 +5092,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.primes.has_repr">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L840">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L848">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5098,7 +5138,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.primes.inhabited_primes">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L841">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L849">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5144,7 +5184,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.primes.coe_nat">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L843">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L851">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5190,7 +5230,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.primes.coe_nat_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L845">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L853">source</a></div>
 
 
 
@@ -5226,7 +5266,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="nat.monoid.prime_pow">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L850">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L858">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5281,7 +5321,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.is_prime_helper">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L861">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L869">source</a></div>
 
 
 
@@ -5319,7 +5359,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.min_fac_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L865">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L873">source</a></div>
 
 
 
@@ -5355,7 +5395,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.min_fac_helper">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L869">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L877">source</a></div>
 
 
 
@@ -5401,7 +5441,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.min_fac_helper.n_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L872">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L880">source</a></div>
 
 
 
@@ -5438,7 +5478,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.min_fac_ne_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L876">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L884">source</a></div>
 
 
 
@@ -5474,7 +5514,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.min_fac_helper_0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L883">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L891">source</a></div>
 
 
 
@@ -5511,7 +5551,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.min_fac_helper_1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L892">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L900">source</a></div>
 
 
 
@@ -5550,7 +5590,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.min_fac_helper_2">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L904">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L912">source</a></div>
 
 
 
@@ -5589,7 +5629,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.min_fac_helper_3">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L912">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L920">source</a></div>
 
 
 
@@ -5629,7 +5669,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.min_fac_helper_4">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L922">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L930">source</a></div>
 
 
 
@@ -5667,7 +5707,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.min_fac_helper_5">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L927">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L935">source</a></div>
 
 
 
@@ -5706,7 +5746,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.prove_non_prime">
 <div class="def meta">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L940">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L948">source</a></div>
 
 
 
@@ -5744,7 +5784,7 @@ then <code>a = p^(k+1)</code>.</p>
 <div class="decl" id="tactic.norm_num.prove_min_fac_aux">
 <div class="def meta">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L952">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L960">source</a></div>
 
 
 
@@ -5783,7 +5823,7 @@ returns <code>(c, ⊢ min_fac a1 = c)</code>.</p>
 <div class="decl" id="tactic.norm_num.prove_min_fac">
 <div class="def meta">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L980">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L988">source</a></div>
 
 
 
@@ -5821,7 +5861,7 @@ returns <code>(c, ⊢ min_fac a1 = c)</code>.</p>
 <div class="decl" id="tactic.norm_num.factors_helper">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L996">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1004">source</a></div>
 
 
 
@@ -5869,7 +5909,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="tactic.norm_num.factors_helper_nil">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L999">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1007">source</a></div>
 
 
 
@@ -5905,7 +5945,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="tactic.norm_num.factors_helper_cons'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1002">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1010">source</a></div>
 
 
 
@@ -5946,7 +5986,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="tactic.norm_num.factors_helper_cons">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1011">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1019">source</a></div>
 
 
 
@@ -5987,7 +6027,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="tactic.norm_num.factors_helper_sn">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1016">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1024">source</a></div>
 
 
 
@@ -6025,7 +6065,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="tactic.norm_num.factors_helper_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1019">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1027">source</a></div>
 
 
 
@@ -6064,7 +6104,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="tactic.norm_num.factors_helper_same_sn">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1023">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1031">source</a></div>
 
 
 
@@ -6100,7 +6140,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="tactic.norm_num.factors_helper_end">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1026">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1034">source</a></div>
 
 
 
@@ -6138,7 +6178,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="tactic.norm_num.prove_factors_aux">
 <div class="def meta">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1032">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1040">source</a></div>
 
 
 
@@ -6174,7 +6214,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="tactic.norm_num.eval_prime">
 <div class="def meta">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1059">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1067">source</a></div>
 
 
 
@@ -6210,7 +6250,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.prime_three">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1094">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1102">source</a></div>
 
 
 
@@ -6245,7 +6285,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.fact_prime_two">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1096">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1104">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6282,7 +6322,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.fact_prime_three">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1098">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1106">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6319,7 +6359,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.mem_factors_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1105">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1113">source</a></div>
 
 
 
@@ -6358,7 +6398,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.factors_mul_to_finset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1113">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1121">source</a></div>
 
 
 
@@ -6397,7 +6437,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.pow_succ_factors_to_finset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1118">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1126">source</a></div>
 
 
 
@@ -6433,7 +6473,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.pow_factors_to_finset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1128">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1136">source</a></div>
 
 
 
@@ -6471,7 +6511,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.prime_pow_prime_divisor">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1137">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1145">source</a></div>
 
 
 
@@ -6510,7 +6550,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.coprime_factors_disjoint">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1142">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1150">source</a></div>
 
 
 
@@ -6548,7 +6588,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.mem_factors_mul_of_coprime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1150">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1158">source</a></div>
 
 
 
@@ -6586,7 +6626,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.factors_mul_to_finset_of_coprime">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1160">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1168">source</a></div>
 
 
 
@@ -6623,7 +6663,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.mem_factors_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1167">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1175">source</a></div>
 
 
 
@@ -6662,7 +6702,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.mem_factors_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1175">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1183">source</a></div>
 
 
 
@@ -6701,7 +6741,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="nat.eq_two_pow_or_exists_odd_prime_and_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1178">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1186">source</a></div>
 
 
 
@@ -6737,7 +6777,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="int.prime_two">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1190">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1198">source</a></div>
 
 
 
@@ -6772,7 +6812,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="int.prime_three">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1191">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1199">source</a></div>
 
 
 
@@ -6807,7 +6847,7 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
 <div class="decl" id="card_multiples">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1197">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/nat/prime.lean#L1205">source</a></div>
 
 
 
@@ -6860,13 +6900,6 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -8937,6 +8970,12 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -9081,6 +9120,13 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -9089,6 +9135,29 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -9171,6 +9240,9 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -9804,27 +9876,35 @@ prime <code>p</code>, which multiplies to <code>n</code>.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

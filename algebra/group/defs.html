@@ -443,6 +443,8 @@
 
     <div class="nav_link"><a class="break_within" href="#semigroup.to_is_associative"><span class="name">semigroup</span>.<span class="name">to_is_associative</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#simp_attr.field_simps"><span class="name">simp_attr</span>.<span class="name">field_simps</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#sub_eq_add_neg"><span class="name">sub_eq_add_neg</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#sub_neg_monoid"><span class="name">sub_neg_monoid</span></a></div>
@@ -746,10 +748,6 @@ actions and register the following instances:</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/punit_instances.html#punit.has_scalar">punit.has_scalar</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#add_con.quotient.has_nsmul">add_con.quotient.has_nsmul</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#add_con.quotient.has_zsmul">add_con.quotient.has_zsmul</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/pi.html#pi.has_scalar">pi.has_scalar</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/pi.html#pi.has_scalar'">pi.has_scalar'</a></li>
@@ -761,6 +759,10 @@ actions and register the following instances:</p>
                 <li><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.has_scalar">finsupp.has_scalar</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map.has_scalar">linear_map.has_scalar</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#add_con.quotient.has_nsmul">add_con.quotient.has_nsmul</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#add_con.quotient.has_zsmul">add_con.quotient.has_zsmul</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/sub_mul_action.html#sub_mul_action.has_scalar">sub_mul_action.has_scalar</a></li>
             
@@ -803,6 +805,12 @@ actions and register the following instances:</p>
                 <li><a href="https://mariainesdff.github.io/ideles/linear_algebra/alternating.html#alternating_map.has_scalar">alternating_map.has_scalar</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/fractional_ideal.html#fractional_ideal.has_scalar">fractional_ideal.has_scalar</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html#conj_act.has_scalar">conj_act.has_scalar</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html#conj_act.has_units_scalar">conj_act.has_units_scalar</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html#conj_act.subgroup.conj_action">conj_act.subgroup.conj_action</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/order/filter/pointwise.html#filter.has_scalar">filter.has_scalar</a></li>
             
@@ -921,10 +929,48 @@ actions and register the following instances:</p>
     
         
         
+<div class="decl" id="simp_attr.field_simps">
+<div class="def meta">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L83">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+<span class="decl_meta">meta</span>
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#simp_attr.field_simps"><span class="name">simp_attr</span>.<span class="name">field_simps</span></a></span>
+&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/meta/attribute.html#user_attribute">user_attribute</a> <a href="https://mariainesdff.github.io/ideles/init/meta/simp_tactic.html#simp_lemmas">simp_lemmas</a>)</span></span></div>
+</div>
+
+
+
+
+
+<p>The simpset <code>field_simps</code> is used by the tactic <code>field_simp</code> to
+reduce an expression in a field to an expression of the form <code>n / d</code> where <code>n</code> and <code>d</code> are
+division-free.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="left_mul">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L89">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L93">source</a></div>
 
 
 
@@ -971,7 +1017,7 @@ actions and register the following instances:</p>
 <div class="decl" id="left_add">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L89">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L93">source</a></div>
 
 
 
@@ -1018,7 +1064,7 @@ actions and register the following instances:</p>
 <div class="decl" id="right_add">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L93">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L97">source</a></div>
 
 
 
@@ -1065,7 +1111,7 @@ actions and register the following instances:</p>
 <div class="decl" id="right_mul">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L93">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L97">source</a></div>
 
 
 
@@ -1112,7 +1158,7 @@ actions and register the following instances:</p>
 <div class="decl" id="semigroup.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L98">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L102">source</a></div>
 
 
 
@@ -1149,7 +1195,7 @@ actions and register the following instances:</p>
 <div class="decl" id="semigroup.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L98">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L102">source</a></div>
 
 
 
@@ -1187,7 +1233,7 @@ actions and register the following instances:</p>
 <div class="decl" id="semigroup.to_has_mul">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L98">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L102">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1226,7 +1272,7 @@ actions and register the following instances:</p>
 <div class="decl" id="semigroup">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L98">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L102">source</a></div>
 
 
     <div class="attributes">@[ext, class]</div>
@@ -1324,7 +1370,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_semigroup.to_has_add">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L101">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L105">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1363,7 +1409,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_semigroup.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L101">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L105">source</a></div>
 
 
 
@@ -1400,7 +1446,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_semigroup.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L101">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L105">source</a></div>
 
 
 
@@ -1438,7 +1484,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_semigroup">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L101">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L105">source</a></div>
 
 
     <div class="attributes">@[ext, class]</div>
@@ -1495,11 +1541,11 @@ actions and register the following instances:</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#prod.add_semigroup">prod.add_semigroup</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#order_dual.add_semigroup">order_dual.add_semigroup</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#with_top.add_semigroup">with_top.add_semigroup</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#with_bot.add_semigroup">with_bot.add_semigroup</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#order_dual.add_semigroup">order_dual.add_semigroup</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/nat/basic.html#nat.add_semigroup">nat.add_semigroup</a></li>
             
@@ -1540,7 +1586,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_assoc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L109">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L113">source</a></div>
 
 
 
@@ -1578,7 +1624,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_assoc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L109">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L113">source</a></div>
 
 
 
@@ -1616,7 +1662,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_semigroup.to_is_associative">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L113">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L117">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1655,7 +1701,7 @@ actions and register the following instances:</p>
 <div class="decl" id="semigroup.to_is_associative">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L113">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L117">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1694,7 +1740,7 @@ actions and register the following instances:</p>
 <div class="decl" id="comm_semigroup">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L120">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L124">source</a></div>
 
 
     <div class="attributes">@[ext, class]</div>
@@ -1787,7 +1833,7 @@ actions and register the following instances:</p>
 <div class="decl" id="comm_semigroup.to_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L120">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L124">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1826,7 +1872,7 @@ actions and register the following instances:</p>
 <div class="decl" id="comm_semigroup.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L120">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L124">source</a></div>
 
 
 
@@ -1863,7 +1909,7 @@ actions and register the following instances:</p>
 <div class="decl" id="comm_semigroup.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L120">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L124">source</a></div>
 
 
 
@@ -1901,7 +1947,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_comm_semigroup.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L125">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L129">source</a></div>
 
 
 
@@ -1938,7 +1984,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_comm_semigroup.to_add_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L125">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L129">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -1977,7 +2023,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_comm_semigroup.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L125">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L129">source</a></div>
 
 
 
@@ -2015,7 +2061,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_comm_semigroup">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L125">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L129">source</a></div>
 
 
     <div class="attributes">@[ext, class]</div>
@@ -2069,11 +2115,11 @@ actions and register the following instances:</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#prod.add_comm_semigroup">prod.add_comm_semigroup</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#order_dual.add_comm_semigroup">order_dual.add_comm_semigroup</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#with_top.add_comm_semigroup">with_top.add_comm_semigroup</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#with_bot.add_comm_semigroup">with_bot.add_comm_semigroup</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#order_dual.add_comm_semigroup">order_dual.add_comm_semigroup</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/nat/basic.html#nat.add_comm_semigroup">nat.add_comm_semigroup</a></li>
             
@@ -2116,7 +2162,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L133">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L137">source</a></div>
 
 
 
@@ -2154,7 +2200,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L133">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L137">source</a></div>
 
 
 
@@ -2192,7 +2238,7 @@ actions and register the following instances:</p>
 <div class="decl" id="comm_semigroup.to_is_commutative">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L137">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L141">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2231,7 +2277,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_comm_semigroup.to_is_commutative">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L137">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L141">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2270,7 +2316,7 @@ actions and register the following instances:</p>
 <div class="decl" id="left_cancel_semigroup.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L144">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L148">source</a></div>
 
 
 
@@ -2308,7 +2354,7 @@ actions and register the following instances:</p>
 <div class="decl" id="left_cancel_semigroup.to_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L144">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L148">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -2347,7 +2393,7 @@ actions and register the following instances:</p>
 <div class="decl" id="left_cancel_semigroup">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L144">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L148">source</a></div>
 
 
     <div class="attributes">@[ext, class]</div>
@@ -2418,7 +2464,7 @@ actions and register the following instances:</p>
 <div class="decl" id="left_cancel_semigroup.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L144">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L148">source</a></div>
 
 
 
@@ -2455,7 +2501,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_left_cancel_semigroup">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L149">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L153">source</a></div>
 
 
     <div class="attributes">@[ext, class]</div>
@@ -2533,7 +2579,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_left_cancel_semigroup.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L149">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L153">source</a></div>
 
 
 
@@ -2570,7 +2616,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_left_cancel_semigroup.to_add_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L149">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L153">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -2609,7 +2655,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_left_cancel_semigroup.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L149">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L153">source</a></div>
 
 
 
@@ -2647,7 +2693,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_left_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L157">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L161">source</a></div>
 
 
 
@@ -2685,7 +2731,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_left_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L157">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L161">source</a></div>
 
 
 
@@ -2723,7 +2769,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_left_cancel_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L161">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L165">source</a></div>
 
 
 
@@ -2761,7 +2807,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_left_cancel_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L161">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L165">source</a></div>
 
 
 
@@ -2799,7 +2845,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_right_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L165">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L169">source</a></div>
 
 
 
@@ -2837,7 +2883,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_right_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L165">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L169">source</a></div>
 
 
 
@@ -2875,7 +2921,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_right_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L169">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L173">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2916,7 +2962,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_right_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L169">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L173">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2957,7 +3003,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_ne_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L173">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L177">source</a></div>
 
 
 
@@ -2996,7 +3042,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_ne_add_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L173">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L177">source</a></div>
 
 
 
@@ -3035,7 +3081,7 @@ actions and register the following instances:</p>
 <div class="decl" id="right_cancel_semigroup.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L180">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L184">source</a></div>
 
 
 
@@ -3073,7 +3119,7 @@ actions and register the following instances:</p>
 <div class="decl" id="right_cancel_semigroup">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L180">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L184">source</a></div>
 
 
     <div class="attributes">@[ext, class]</div>
@@ -3144,7 +3190,7 @@ actions and register the following instances:</p>
 <div class="decl" id="right_cancel_semigroup.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L180">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L184">source</a></div>
 
 
 
@@ -3181,7 +3227,7 @@ actions and register the following instances:</p>
 <div class="decl" id="right_cancel_semigroup.to_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L180">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L184">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -3220,7 +3266,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_right_cancel_semigroup.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L186">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L190">source</a></div>
 
 
 
@@ -3258,7 +3304,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_right_cancel_semigroup.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L186">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L190">source</a></div>
 
 
 
@@ -3295,7 +3341,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_right_cancel_semigroup">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L186">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L190">source</a></div>
 
 
     <div class="attributes">@[ext, class]</div>
@@ -3373,7 +3419,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_right_cancel_semigroup.to_add_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L186">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L190">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -3412,7 +3458,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_right_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L194">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L198">source</a></div>
 
 
 
@@ -3450,7 +3496,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_right_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L194">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L198">source</a></div>
 
 
 
@@ -3488,7 +3534,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_right_cancel_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L198">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L202">source</a></div>
 
 
 
@@ -3526,7 +3572,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_right_cancel_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L198">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L202">source</a></div>
 
 
 
@@ -3564,7 +3610,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_left_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L202">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L206">source</a></div>
 
 
 
@@ -3602,7 +3648,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_left_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L202">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L206">source</a></div>
 
 
 
@@ -3640,7 +3686,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_left_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L206">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L210">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3681,7 +3727,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_left_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L206">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L210">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3722,7 +3768,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_ne_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L210">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L214">source</a></div>
 
 
 
@@ -3761,7 +3807,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_ne_add_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L210">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L214">source</a></div>
 
 
 
@@ -3800,7 +3846,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_one_class">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L218">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L222">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -3893,7 +3939,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_one_class.to_has_one">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L218">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L222">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -3932,7 +3978,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_one_class.to_has_mul">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L218">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L222">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -3971,7 +4017,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_zero_class.to_has_add">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L225">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L229">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -4010,7 +4056,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_zero_class.to_has_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L225">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L229">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -4049,7 +4095,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_zero_class">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L225">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L229">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -4111,19 +4157,19 @@ actions and register the following instances:</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#prod.add_zero_class">prod.add_zero_class</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#order_dual.add_zero_class">order_dual.add_zero_class</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#with_top.add_zero_class">with_top.add_zero_class</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#with_bot.add_zero_class">with_bot.add_zero_class</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#order_dual.add_zero_class">order_dual.add_zero_class</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/group/pi.html#pi.add_zero_class">pi.add_zero_class</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/submonoid/operations.html#add_submonoid.to_add_zero_class">add_submonoid.to_add_zero_class</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#add_con.add_zero_class">add_con.add_zero_class</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.add_zero_class">finsupp.add_zero_class</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#add_con.add_zero_class">add_con.add_zero_class</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/dfinsupp/basic.html#dfinsupp.add_zero_class">dfinsupp.add_zero_class</a></li>
             
@@ -4154,7 +4200,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_one_class.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L232">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L236">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -4193,7 +4239,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_zero_class.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L232">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L236">source</a></div>
 
 
 
@@ -4230,7 +4276,7 @@ actions and register the following instances:</p>
 <div class="decl" id="one_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L243">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L247">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4270,7 +4316,7 @@ actions and register the following instances:</p>
 <div class="decl" id="zero_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L243">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L247">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4310,7 +4356,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L247">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L251">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4350,7 +4396,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L247">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L251">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4390,7 +4436,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_one_class.to_is_left_id">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L251">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L255">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4429,7 +4475,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_zero_class.to_is_left_id">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L251">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L255">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4468,7 +4514,7 @@ actions and register the following instances:</p>
 <div class="decl" id="mul_one_class.to_is_right_id">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L255">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L259">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4507,7 +4553,7 @@ actions and register the following instances:</p>
 <div class="decl" id="add_zero_class.to_is_right_id">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L255">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L259">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4546,7 +4592,7 @@ actions and register the following instances:</p>
 <div class="decl" id="npow_rec">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L269">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L273">source</a></div>
 
 
 
@@ -4597,7 +4643,7 @@ Use instead <code>a ^ n</code>,  which has better definitional behavior.</p>
 <div class="decl" id="nsmul_rec">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L275">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L279">source</a></div>
 
 
 
@@ -4648,7 +4694,7 @@ times. Use instead <code>n • a</code>, which has better definitional behavior.
 <div class="decl" id="try_refl_tac">
 <div class="def meta">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L336">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L340">source</a></div>
 
 
 
@@ -4716,7 +4762,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="add_monoid.to_add_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L374">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L378">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -4755,7 +4801,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="add_monoid.to_add_zero_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L374">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L378">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -4794,7 +4840,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="add_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L374">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L378">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -4873,11 +4919,11 @@ to <code>0 : ℕ</code>).</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#prod.add_monoid">prod.add_monoid</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#order_dual.add_monoid">order_dual.add_monoid</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#with_top.add_monoid">with_top.add_monoid</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#with_bot.add_monoid">with_bot.add_monoid</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#order_dual.add_monoid">order_dual.add_monoid</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/nat/basic.html#nat.add_monoid">nat.add_monoid</a></li>
             
@@ -4891,9 +4937,9 @@ to <code>0 : ℕ</code>).</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/free_monoid.html#free_add_monoid.add_monoid">free_add_monoid.add_monoid</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#add_con.add_monoid">add_con.add_monoid</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.add_monoid">finsupp.add_monoid</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#add_con.add_monoid">add_con.add_monoid</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/dfinsupp/basic.html#dfinsupp.add_monoid">dfinsupp.add_monoid</a></li>
             
@@ -4901,7 +4947,7 @@ to <code>0 : ℕ</code>).</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.add_monoid">matrix.add_monoid</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html#ordinal.add_monoid">ordinal.add_monoid</a></li>
+                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html#ordinal.add_monoid">ordinal.add_monoid</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/category/Mon/basic.html#AddMon.add_monoid">AddMon.add_monoid</a></li>
             
@@ -4940,7 +4986,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="monoid.to_mul_one_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L381">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L385">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -4979,7 +5025,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="monoid.to_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L381">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L385">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -5018,7 +5064,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L381">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L385">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -5123,11 +5169,11 @@ to <code>0 : ℕ</code>).</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/free_monoid.html#free_monoid.monoid">free_monoid.monoid</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#con.monoid">con.monoid</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#module.End.monoid">module.End.monoid</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html#ordinal.monoid">ordinal.monoid</a></li>
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#con.monoid">con.monoid</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html#ordinal.monoid">ordinal.monoid</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/category/Mon/basic.html#Mon.monoid">Mon.monoid</a></li>
             
@@ -5158,7 +5204,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="monoid.has_pow">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L386">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L390">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5206,7 +5252,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="add_monoid.has_scalar_nat">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L388">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L392">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5254,7 +5300,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="npow_eq_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L398">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L402">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5295,7 +5341,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="nsmul_eq_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L398">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L402">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5336,7 +5382,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="zero_nsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L402">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L406">source</a></div>
 
 
 
@@ -5374,7 +5420,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="pow_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L402">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L406">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5414,7 +5460,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="succ_nsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L405">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L409">source</a></div>
 
 
 
@@ -5453,7 +5499,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="pow_succ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L405">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L409">source</a></div>
 
 
 
@@ -5492,7 +5538,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="left_inv_eq_right_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L413">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L417">source</a></div>
 
 
 
@@ -5532,7 +5578,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="left_neg_eq_right_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L413">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L417">source</a></div>
 
 
 
@@ -5572,7 +5618,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="add_comm_monoid.to_add_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L420">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L424">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -5611,7 +5657,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="add_comm_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L420">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L424">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -5693,11 +5739,11 @@ to <code>0 : ℕ</code>).</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#prod.add_comm_monoid">prod.add_comm_monoid</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#order_dual.add_comm_monoid">order_dual.add_comm_monoid</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#with_top.add_comm_monoid">with_top.add_comm_monoid</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#with_bot.add_comm_monoid">with_bot.add_comm_monoid</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#order_dual.add_comm_monoid">order_dual.add_comm_monoid</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/nat/basic.html#nat.add_comm_monoid">nat.add_comm_monoid</a></li>
             
@@ -5715,11 +5761,11 @@ to <code>0 : ℕ</code>).</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/submonoid/operations.html#add_submonoid.to_add_comm_monoid">add_submonoid.to_add_comm_monoid</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#add_con.add_comm_monoid">add_con.add_comm_monoid</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.add_comm_monoid">finsupp.add_comm_monoid</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map.add_comm_monoid">linear_map.add_comm_monoid</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#add_con.add_comm_monoid">add_con.add_comm_monoid</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.add_comm_monoid">submodule.add_comm_monoid</a></li>
             
@@ -5794,7 +5840,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="add_comm_monoid.to_add_comm_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L420">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L424">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -5833,7 +5879,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="comm_monoid.to_comm_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L428">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -5872,7 +5918,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="comm_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L428">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -6013,7 +6059,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="comm_monoid.to_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L428">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6052,7 +6098,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="add_left_cancel_monoid.to_add_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L432">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L436">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6091,7 +6137,7 @@ to <code>0 : ℕ</code>).</p>
 <div class="decl" id="add_left_cancel_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L432">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L436">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -6184,7 +6230,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="add_left_cancel_monoid.to_add_left_cancel_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L432">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L436">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6223,7 +6269,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="left_cancel_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L436">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L440">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -6314,7 +6360,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="left_cancel_monoid.to_left_cancel_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L436">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L440">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6353,7 +6399,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="left_cancel_monoid.to_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L436">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L440">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6392,7 +6438,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="add_right_cancel_monoid.to_add_right_cancel_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L446">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L450">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6431,7 +6477,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="add_right_cancel_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L446">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L450">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -6522,7 +6568,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="add_right_cancel_monoid.to_add_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L446">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L450">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6561,7 +6607,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="right_cancel_monoid.to_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L450">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L454">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6600,7 +6646,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="right_cancel_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L450">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L454">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -6689,7 +6735,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="right_cancel_monoid.to_right_cancel_semigroup">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L450">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L454">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6728,7 +6774,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="add_cancel_monoid.to_add_right_cancel_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L460">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L464">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6767,7 +6813,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="add_cancel_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L460">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L464">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -6861,7 +6907,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="add_cancel_monoid.to_add_left_cancel_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L460">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L464">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6900,7 +6946,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="cancel_monoid.to_right_cancel_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L465">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L469">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -6939,7 +6985,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="cancel_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L465">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L469">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -7031,7 +7077,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="cancel_monoid.to_left_cancel_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L465">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L469">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7070,7 +7116,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="add_cancel_comm_monoid.to_add_left_cancel_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L473">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7109,7 +7155,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="add_cancel_comm_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L473">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -7201,7 +7247,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="add_cancel_comm_monoid.to_add_comm_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L473">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7240,7 +7286,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="cancel_comm_monoid.to_comm_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L473">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L477">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7279,7 +7325,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="cancel_comm_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L473">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L477">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -7371,7 +7417,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="cancel_comm_monoid.to_left_cancel_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L473">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L477">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7410,7 +7456,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="cancel_comm_monoid.to_cancel_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L476">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L480">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7458,7 +7504,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="add_cancel_comm_monoid.to_cancel_add_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L476">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L480">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7506,7 +7552,7 @@ is useful to define the sum over the empty set, so <code><a href="https://mariai
 <div class="decl" id="zpow_rec">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L485">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L489">source</a></div>
 
 
 
@@ -7558,7 +7604,7 @@ Use instead <code>a ^ n</code>,  which has better definitional behavior.</p>
 <div class="decl" id="zsmul_rec">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L491">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L495">source</a></div>
 
 
 
@@ -7610,7 +7656,7 @@ times, for integer <code>n</code>. Use instead <code>n • a</code>, which has b
 <div class="decl" id="div_inv_monoid.to_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L517">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L521">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7649,7 +7695,7 @@ times, for integer <code>n</code>. Use instead <code>n • a</code>, which has b
 <div class="decl" id="div_inv_monoid.to_has_div">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L517">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L521">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7688,7 +7734,7 @@ times, for integer <code>n</code>. Use instead <code>n • a</code>, which has b
 <div class="decl" id="div_inv_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L517">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L521">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -7804,6 +7850,8 @@ explanations on this.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/group/pi.html#pi.div_inv_monoid">pi.div_inv_monoid</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html#conj_act.div_inv_monoid">conj_act.div_inv_monoid</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/order/filter/pointwise.html#filter.div_inv_monoid">filter.div_inv_monoid</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/order/filter/pointwise.html#filter.div_inv_monoid'">filter.div_inv_monoid'</a></li>
@@ -7833,7 +7881,7 @@ explanations on this.</p>
 <div class="decl" id="div_inv_monoid.to_has_inv">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L517">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L521">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7872,7 +7920,7 @@ explanations on this.</p>
 <div class="decl" id="sub_neg_monoid.to_has_sub">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L549">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7911,7 +7959,7 @@ explanations on this.</p>
 <div class="decl" id="sub_neg_monoid.to_add_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L549">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -7950,7 +7998,7 @@ explanations on this.</p>
 <div class="decl" id="sub_neg_monoid">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L549">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -8081,7 +8129,7 @@ explanations on this.</p>
 <div class="decl" id="sub_neg_monoid.to_has_neg">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L549">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -8120,7 +8168,7 @@ explanations on this.</p>
 <div class="decl" id="div_inv_monoid.has_pow">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L557">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L561">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8168,7 +8216,7 @@ explanations on this.</p>
 <div class="decl" id="sub_neg_monoid.has_scalar_int">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L560">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L564">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8216,7 +8264,7 @@ explanations on this.</p>
 <div class="decl" id="zsmul_eq_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L570">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L574">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8257,7 +8305,7 @@ explanations on this.</p>
 <div class="decl" id="zpow_eq_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L570">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L574">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8298,7 +8346,7 @@ explanations on this.</p>
 <div class="decl" id="zero_zsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L573">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L577">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8338,7 +8386,7 @@ explanations on this.</p>
 <div class="decl" id="zpow_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L573">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L577">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8378,7 +8426,7 @@ explanations on this.</p>
 <div class="decl" id="coe_nat_zsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L576">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L580">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -8419,7 +8467,7 @@ explanations on this.</p>
 <div class="decl" id="zpow_coe_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L576">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L580">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -8460,7 +8508,7 @@ explanations on this.</p>
 <div class="decl" id="of_nat_zsmul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L584">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L588">source</a></div>
 
 
 
@@ -8499,7 +8547,7 @@ explanations on this.</p>
 <div class="decl" id="zpow_of_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L584">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L588">source</a></div>
 
 
 
@@ -8538,7 +8586,7 @@ explanations on this.</p>
 <div class="decl" id="zsmul_neg_succ_of_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L588">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L592">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8579,7 +8627,7 @@ explanations on this.</p>
 <div class="decl" id="zpow_neg_succ_of_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L588">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L592">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8620,7 +8668,7 @@ explanations on this.</p>
 <div class="decl" id="div_eq_mul_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L594">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L598">source</a></div>
 
 
 
@@ -8658,7 +8706,7 @@ explanations on this.</p>
 <div class="decl" id="sub_eq_add_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L594">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L598">source</a></div>
 
 
 
@@ -8696,7 +8744,7 @@ explanations on this.</p>
 <div class="decl" id="has_involutive_inv">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L604">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L608">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -8770,7 +8818,7 @@ explanations on this.</p>
 <div class="decl" id="has_involutive_inv.to_has_inv">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L604">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L608">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -8809,7 +8857,7 @@ explanations on this.</p>
 <div class="decl" id="has_involutive_neg">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L609">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L613">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -8881,7 +8929,7 @@ explanations on this.</p>
 <div class="decl" id="has_involutive_neg.to_has_neg">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L609">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L613">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -8920,7 +8968,7 @@ explanations on this.</p>
 <div class="decl" id="inv_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L620">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L624">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8960,7 +9008,7 @@ explanations on this.</p>
 <div class="decl" id="neg_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L620">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L624">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9000,7 +9048,7 @@ explanations on this.</p>
 <div class="decl" id="group">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L631">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L635">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -9113,13 +9161,13 @@ with a default so that <code>a / b = a * b⁻¹</code> holds by definition.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#subgroup.to_group">subgroup.to_group</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#con.group">con.group</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/quotient_group.html#quotient_group.quotient.group">quotient_group.quotient.group</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/ring/aut.html#ring_aut.group">ring_aut.group</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/module/equiv.html#linear_equiv.automorphism_group">linear_equiv.automorphism_group</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#con.group">con.group</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/quotient_group.html#quotient_group.quotient.group">quotient_group.quotient.group</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/algebra/basic.html#alg_equiv.aut">alg_equiv.aut</a></li>
             
@@ -9130,6 +9178,8 @@ with a default so that <code>a / b = a * b⁻¹</code> holds by definition.</p>
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/category/Group/basic.html#Group.group">Group.group</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/submonoid/inverses.html#submonoid.is_unit.submonoid.group">submonoid.is_unit.submonoid.group</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html#conj_act.group">conj_act.group</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/topology/algebra/module/basic.html#continuous_linear_equiv.automorphism_group">continuous_linear_equiv.automorphism_group</a></li>
             
@@ -9154,7 +9204,7 @@ with a default so that <code>a / b = a * b⁻¹</code> holds by definition.</p>
 <div class="decl" id="group.to_div_inv_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L631">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L635">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -9193,7 +9243,7 @@ with a default so that <code>a / b = a * b⁻¹</code> holds by definition.</p>
 <div class="decl" id="add_group">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L640">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L644">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -9302,11 +9352,11 @@ with a default so that <code>a - b = a + -b</code> holds by definition.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#add_subgroup.to_add_group">add_subgroup.to_add_group</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.add_group">finsupp.add_group</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/congruence.html#add_con.add_group">add_con.add_group</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/quotient_group.html#quotient_add_group.add_group">quotient_add_group.add_group</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.add_group">finsupp.add_group</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/dfinsupp/basic.html#dfinsupp.add_group">dfinsupp.add_group</a></li>
             
@@ -9343,7 +9393,7 @@ with a default so that <code>a - b = a + -b</code> holds by definition.</p>
 <div class="decl" id="add_group.to_sub_neg_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L640">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L644">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -9382,7 +9432,7 @@ with a default so that <code>a - b = a + -b</code> holds by definition.</p>
 <div class="decl" id="add_group.to_add_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L656">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L660">source</a></div>
 
 
 
@@ -9432,7 +9482,7 @@ Not an instance since it duplicates
 <div class="decl" id="group.to_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L656">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L660">source</a></div>
 
 
 
@@ -9482,7 +9532,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_left_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L663">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L667">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9522,7 +9572,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_left_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L663">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L667">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9562,7 +9612,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="neg_add_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L666">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L670">source</a></div>
 
 
 
@@ -9600,7 +9650,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="inv_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L666">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L670">source</a></div>
 
 
 
@@ -9638,7 +9688,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="inv_mul_cancel_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L669">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L673">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9678,7 +9728,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="neg_add_cancel_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L669">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L673">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9718,7 +9768,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="inv_eq_of_mul_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L673">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L677">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9759,7 +9809,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="neg_eq_of_add_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L673">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L677">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9800,7 +9850,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_group.to_has_involutive_neg">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L677">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L681">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -9848,7 +9898,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="group.to_has_involutive_inv">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L677">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L681">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -9896,7 +9946,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_right_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L682">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L686">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9936,7 +9986,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_right_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L682">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L686">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9976,7 +10026,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_neg_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L686">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L690">source</a></div>
 
 
 
@@ -10014,7 +10064,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_inv_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L686">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L690">source</a></div>
 
 
 
@@ -10052,7 +10102,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_neg_cancel_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L689">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L693">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10092,7 +10142,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_inv_cancel_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L689">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L693">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10132,7 +10182,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="group.to_cancel_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L693">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L697">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -10180,7 +10230,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_group.to_cancel_add_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L693">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L697">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -10228,7 +10278,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="group.to_div_inv_monoid_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L701">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L705">source</a></div>
 
 
 
@@ -10264,7 +10314,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_group.to_sub_neg_add_monoid_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L701">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L705">source</a></div>
 
 
 
@@ -10300,7 +10350,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="comm_group.to_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L713">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L717">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -10339,7 +10389,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="comm_group">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L713">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L717">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -10490,7 +10540,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="comm_group.to_comm_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L713">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L717">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -10529,7 +10579,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_comm_group">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L716">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L720">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -10653,11 +10703,11 @@ See note [reducible non-instances].</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/punit_instances.html#punit.add_comm_group">punit.add_comm_group</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/quotient_group.html#quotient_add_group.add_comm_group">quotient_add_group.add_comm_group</a></li>
-            
                 <li><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.add_comm_group">finsupp.add_comm_group</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map.add_comm_group">linear_map.add_comm_group</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/quotient_group.html#quotient_add_group.add_comm_group">quotient_add_group.add_comm_group</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule.add_comm_group">submodule.add_comm_group</a></li>
             
@@ -10728,7 +10778,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_comm_group.to_add_comm_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L716">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L720">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -10767,7 +10817,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_comm_group.to_add_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L716">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L720">source</a></div>
 
 
     <div class="attributes">@[instance]</div>
@@ -10806,7 +10856,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_comm_group.to_add_group_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L721">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L725">source</a></div>
 
 
 
@@ -10842,7 +10892,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="comm_group.to_group_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L721">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L725">source</a></div>
 
 
 
@@ -10878,7 +10928,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="comm_group.to_cancel_comm_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L736">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L740">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -10926,7 +10976,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_comm_group.to_cancel_add_comm_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L736">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/defs.lean#L740">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -10990,13 +11040,6 @@ See note [reducible non-instances].</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -13067,6 +13110,12 @@ See note [reducible non-instances].</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -13211,6 +13260,13 @@ See note [reducible non-instances].</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -13219,6 +13275,29 @@ See note [reducible non-instances].</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -13301,6 +13380,9 @@ See note [reducible non-instances].</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -13934,27 +14016,35 @@ See note [reducible non-instances].</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

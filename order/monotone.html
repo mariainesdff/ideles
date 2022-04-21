@@ -50,8 +50,8 @@
             <li><a href="https://mariainesdff.github.io/ideles/order/compare.html">
                 order.compare</a></li>
         
-            <li><a href="https://mariainesdff.github.io/ideles/order/order_dual.html">
-                order.order_dual</a></li>
+            <li><a href="https://mariainesdff.github.io/ideles/order/max.html">
+                order.max</a></li>
         
             <li><a href="https://mariainesdff.github.io/ideles/order/rel_classes.html">
                 order.rel_classes</a></li>
@@ -255,6 +255,10 @@
 
     <div class="nav_link"><a class="break_within" href="#strict_anti.injective"><span class="name">strict_anti</span>.<span class="name">injective</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#strict_anti.is_max_of_apply"><span class="name">strict_anti</span>.<span class="name">is_max_of_apply</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#strict_anti.is_min_of_apply"><span class="name">strict_anti</span>.<span class="name">is_min_of_apply</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#strict_anti.ite"><span class="name">strict_anti</span>.<span class="name">ite</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#strict_anti.ite'"><span class="name">strict_anti</span>.<span class="name">ite&#x27;</span></a></div>
@@ -320,6 +324,10 @@
     <div class="nav_link"><a class="break_within" href="#strict_mono.id_le"><span class="name">strict_mono</span>.<span class="name">id_le</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#strict_mono.injective"><span class="name">strict_mono</span>.<span class="name">injective</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#strict_mono.is_max_of_apply"><span class="name">strict_mono</span>.<span class="name">is_max_of_apply</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#strict_mono.is_min_of_apply"><span class="name">strict_mono</span>.<span class="name">is_min_of_apply</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#strict_mono.ite"><span class="name">strict_mono</span>.<span class="name">ite</span></a></div>
 
@@ -4120,10 +4128,182 @@ an import cycle.</p>
     
         
         
-<div class="decl" id="strict_mono.ite'">
+<div class="decl" id="strict_mono.is_max_of_apply">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L344">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/monotone.html#strict_mono.is_max_of_apply"><span class="name">strict_mono</span>.<span class="name">is_max_of_apply</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α → β}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(hf : <a href="https://mariainesdff.github.io/ideles/order/monotone.html#strict_mono">strict_mono</a> f)</span></span>
+    <span class="decl_args"><span class="fn">(ha : <a href="https://mariainesdff.github.io/ideles/order/max.html#is_max">is_max</a> <span class="fn">(f a)</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/order/max.html#is_max">is_max</a> a</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="strict_mono.is_min_of_apply">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L347">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/monotone.html#strict_mono.is_min_of_apply"><span class="name">strict_mono</span>.<span class="name">is_min_of_apply</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α → β}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(hf : <a href="https://mariainesdff.github.io/ideles/order/monotone.html#strict_mono">strict_mono</a> f)</span></span>
+    <span class="decl_args"><span class="fn">(ha : <a href="https://mariainesdff.github.io/ideles/order/max.html#is_min">is_min</a> <span class="fn">(f a)</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/order/max.html#is_min">is_min</a> a</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="strict_anti.is_max_of_apply">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L350">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/monotone.html#strict_anti.is_max_of_apply"><span class="name">strict_anti</span>.<span class="name">is_max_of_apply</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α → β}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(hf : <a href="https://mariainesdff.github.io/ideles/order/monotone.html#strict_anti">strict_anti</a> f)</span></span>
+    <span class="decl_args"><span class="fn">(ha : <a href="https://mariainesdff.github.io/ideles/order/max.html#is_min">is_min</a> <span class="fn">(f a)</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/order/max.html#is_max">is_max</a> a</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="strict_anti.is_min_of_apply">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L353">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/monotone.html#strict_anti.is_min_of_apply"><span class="name">strict_anti</span>.<span class="name">is_min_of_apply</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α → β}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(hf : <a href="https://mariainesdff.github.io/ideles/order/monotone.html#strict_anti">strict_anti</a> f)</span></span>
+    <span class="decl_args"><span class="fn">(ha : <a href="https://mariainesdff.github.io/ideles/order/max.html#is_max">is_max</a> <span class="fn">(f a)</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/order/max.html#is_min">is_min</a> a</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="strict_mono.ite'">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L356">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4171,7 +4351,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.ite">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L370">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4219,7 +4399,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.ite'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L363">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L375">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4267,7 +4447,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.ite">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L369">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L381">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4322,7 +4502,7 @@ an import cycle.</p>
 <div class="decl" id="monotone.comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L381">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L393">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4369,7 +4549,7 @@ an import cycle.</p>
 <div class="decl" id="monotone.comp_antitone">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L385">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L397">source</a></div>
 
 
 
@@ -4414,7 +4594,7 @@ an import cycle.</p>
 <div class="decl" id="antitone.comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L389">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L401">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4461,7 +4641,7 @@ an import cycle.</p>
 <div class="decl" id="antitone.comp_monotone">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L393">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L405">source</a></div>
 
 
 
@@ -4506,7 +4686,7 @@ an import cycle.</p>
 <div class="decl" id="monotone.iterate">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L397">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L409">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4548,7 +4728,7 @@ an import cycle.</p>
 <div class="decl" id="monotone.comp_monotone_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L400">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L412">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4596,7 +4776,7 @@ an import cycle.</p>
 <div class="decl" id="monotone.comp_antitone_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L404">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L416">source</a></div>
 
 
 
@@ -4642,7 +4822,7 @@ an import cycle.</p>
 <div class="decl" id="antitone.comp_antitone_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L408">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L420">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4690,7 +4870,7 @@ an import cycle.</p>
 <div class="decl" id="antitone.comp_monotone_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L412">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L424">source</a></div>
 
 
 
@@ -4736,7 +4916,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L416">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L428">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4783,7 +4963,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.comp_strict_anti">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L420">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L432">source</a></div>
 
 
 
@@ -4828,7 +5008,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L436">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4875,7 +5055,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.comp_strict_mono">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L428">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L440">source</a></div>
 
 
 
@@ -4920,7 +5100,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.iterate">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L432">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L444">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4962,7 +5142,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.comp_strict_mono_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L436">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L448">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5010,7 +5190,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.comp_strict_anti_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L440">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L452">source</a></div>
 
 
 
@@ -5056,7 +5236,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.comp_strict_anti_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L444">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L456">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5104,7 +5284,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.comp_strict_mono_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L448">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L460">source</a></div>
 
 
 
@@ -5150,7 +5330,7 @@ an import cycle.</p>
 <div class="decl" id="list.foldl_monotone">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L458">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L470">source</a></div>
 
 
 
@@ -5191,7 +5371,7 @@ an import cycle.</p>
 <div class="decl" id="list.foldr_monotone">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L462">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L474">source</a></div>
 
 
 
@@ -5232,7 +5412,7 @@ an import cycle.</p>
 <div class="decl" id="list.foldl_strict_mono">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L466">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L478">source</a></div>
 
 
 
@@ -5273,7 +5453,7 @@ an import cycle.</p>
 <div class="decl" id="list.foldr_strict_mono">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L470">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L482">source</a></div>
 
 
 
@@ -5321,7 +5501,7 @@ an import cycle.</p>
 <div class="decl" id="monotone.reflect_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L488">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L500">source</a></div>
 
 
 
@@ -5364,7 +5544,7 @@ an import cycle.</p>
 <div class="decl" id="antitone.reflect_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L491">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L503">source</a></div>
 
 
 
@@ -5407,7 +5587,7 @@ an import cycle.</p>
 <div class="decl" id="monotone_on.reflect_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L494">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L506">source</a></div>
 
 
 
@@ -5453,7 +5633,7 @@ an import cycle.</p>
 <div class="decl" id="antitone_on.reflect_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L499">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L511">source</a></div>
 
 
 
@@ -5499,7 +5679,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono_on.le_iff_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L504">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L516">source</a></div>
 
 
 
@@ -5544,7 +5724,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti_on.le_iff_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L509">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L521">source</a></div>
 
 
 
@@ -5589,7 +5769,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono_on.lt_iff_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L513">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L525">source</a></div>
 
 
 
@@ -5634,7 +5814,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti_on.lt_iff_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L517">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L529">source</a></div>
 
 
 
@@ -5679,7 +5859,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.le_iff_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L521">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L533">source</a></div>
 
 
 
@@ -5721,7 +5901,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.le_iff_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L525">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L537">source</a></div>
 
 
 
@@ -5763,7 +5943,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.lt_iff_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L529">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L541">source</a></div>
 
 
 
@@ -5805,7 +5985,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.lt_iff_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L533">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L545">source</a></div>
 
 
 
@@ -5847,7 +6027,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono_on.compares">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L537">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L549">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5895,7 +6075,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti_on.compares">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L557">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5943,7 +6123,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.compares">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L550">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L562">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5988,7 +6168,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.compares">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L554">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L566">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -6033,7 +6213,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L558">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L570">source</a></div>
 
 
 
@@ -6074,7 +6254,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L561">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L573">source</a></div>
 
 
 
@@ -6115,7 +6295,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.maximal_of_maximal_image">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L564">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L576">source</a></div>
 
 
 
@@ -6159,7 +6339,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.minimal_of_minimal_image">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L568">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L580">source</a></div>
 
 
 
@@ -6203,7 +6383,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.minimal_of_maximal_image">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L572">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L584">source</a></div>
 
 
 
@@ -6247,7 +6427,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti.maximal_of_minimal_image">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L576">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L588">source</a></div>
 
 
 
@@ -6291,7 +6471,7 @@ an import cycle.</p>
 <div class="decl" id="monotone.strict_mono_iff_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L585">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L597">source</a></div>
 
 
 
@@ -6332,7 +6512,7 @@ an import cycle.</p>
 <div class="decl" id="antitone.strict_anti_iff_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L589">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L601">source</a></div>
 
 
 
@@ -6380,7 +6560,7 @@ an import cycle.</p>
 <div class="decl" id="nat.rel_of_forall_rel_succ_of_le_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L601">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L613">source</a></div>
 
 
 
@@ -6424,7 +6604,7 @@ an import cycle.</p>
 <div class="decl" id="nat.rel_of_forall_rel_succ_of_le_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L610">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L622">source</a></div>
 
 
 
@@ -6469,7 +6649,7 @@ an import cycle.</p>
 <div class="decl" id="nat.rel_of_forall_rel_succ_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L616">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L628">source</a></div>
 
 
 
@@ -6511,7 +6691,7 @@ an import cycle.</p>
 <div class="decl" id="nat.rel_of_forall_rel_succ_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L620">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L632">source</a></div>
 
 
 
@@ -6554,7 +6734,7 @@ an import cycle.</p>
 <div class="decl" id="monotone_nat_of_le_succ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L624">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L636">source</a></div>
 
 
 
@@ -6593,7 +6773,7 @@ an import cycle.</p>
 <div class="decl" id="antitone_nat_of_succ_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L628">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L640">source</a></div>
 
 
 
@@ -6632,7 +6812,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono_nat_of_lt_succ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L632">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L644">source</a></div>
 
 
 
@@ -6671,7 +6851,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti_nat_of_succ_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L636">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L648">source</a></div>
 
 
 
@@ -6710,7 +6890,7 @@ an import cycle.</p>
 <div class="decl" id="int.rel_of_forall_rel_succ_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L640">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L652">source</a></div>
 
 
 
@@ -6752,7 +6932,7 @@ an import cycle.</p>
 <div class="decl" id="int.rel_of_forall_rel_succ_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L650">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L662">source</a></div>
 
 
 
@@ -6795,7 +6975,7 @@ an import cycle.</p>
 <div class="decl" id="monotone_int_of_le_succ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L654">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L666">source</a></div>
 
 
 
@@ -6834,7 +7014,7 @@ an import cycle.</p>
 <div class="decl" id="antitone_int_of_succ_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L657">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L669">source</a></div>
 
 
 
@@ -6873,7 +7053,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono_int_of_lt_succ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L660">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L672">source</a></div>
 
 
 
@@ -6912,7 +7092,7 @@ an import cycle.</p>
 <div class="decl" id="strict_anti_int_of_succ_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L663">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L675">source</a></div>
 
 
 
@@ -6951,7 +7131,7 @@ an import cycle.</p>
 <div class="decl" id="monotone.ne_of_lt_of_lt_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L669">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L681">source</a></div>
 
 
 
@@ -6997,7 +7177,7 @@ an import cycle.</p>
 <div class="decl" id="antitone.ne_of_lt_of_lt_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L676">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L688">source</a></div>
 
 
 
@@ -7043,7 +7223,7 @@ an import cycle.</p>
 <div class="decl" id="monotone.ne_of_lt_of_lt_int">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L682">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L694">source</a></div>
 
 
 
@@ -7089,7 +7269,7 @@ an import cycle.</p>
 <div class="decl" id="antitone.ne_of_lt_of_lt_int">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L689">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L701">source</a></div>
 
 
 
@@ -7135,7 +7315,7 @@ an import cycle.</p>
 <div class="decl" id="strict_mono.id_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L693">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L705">source</a></div>
 
 
 
@@ -7173,7 +7353,7 @@ an import cycle.</p>
 <div class="decl" id="subtype.mono_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L699">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L711">source</a></div>
 
 
 
@@ -7211,7 +7391,7 @@ an import cycle.</p>
 <div class="decl" id="subtype.strict_mono_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L702">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L714">source</a></div>
 
 
 
@@ -7249,7 +7429,7 @@ an import cycle.</p>
 <div class="decl" id="monotone_fst">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L705">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L717">source</a></div>
 
 
 
@@ -7288,7 +7468,7 @@ an import cycle.</p>
 <div class="decl" id="monotone_snd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L708">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/monotone.lean#L720">source</a></div>
 
 
 
@@ -7343,13 +7523,6 @@ an import cycle.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -9420,6 +9593,12 @@ an import cycle.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -9564,6 +9743,13 @@ an import cycle.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -9572,6 +9758,29 @@ an import cycle.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -9654,6 +9863,9 @@ an import cycle.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -10287,27 +10499,35 @@ an import cycle.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

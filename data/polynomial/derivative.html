@@ -76,8 +76,6 @@
 
     <div class="nav_link"><a class="break_within" href="#polynomial.derivative_C"><span class="name">polynomial</span>.<span class="name">derivative_C</span></a></div>
 
-    <div class="nav_link"><a class="break_within" href="#polynomial.derivative_C_mul"><span class="name">polynomial</span>.<span class="name">derivative_C_mul</span></a></div>
-
     <div class="nav_link"><a class="break_within" href="#polynomial.derivative_C_mul_X_pow"><span class="name">polynomial</span>.<span class="name">derivative_C_mul_X_pow</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#polynomial.derivative_X"><span class="name">polynomial</span>.<span class="name">derivative_X</span></a></div>
@@ -881,9 +879,13 @@
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>
-    <span class="decl_args"><span class="fn">(r : R)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> S]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> S</span> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> S</span> R</span> R]</span></span></span>
+    <span class="decl_args"><span class="fn">(s : S)</span></span>
     <span class="decl_args"><span class="fn">(p : R<a href="https://mariainesdff.github.io/ideles/data/polynomial/basic.html#polynomial" title="polynomial">[X]</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> <span class="fn">(r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> p)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> p</span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> <span class="fn">(s <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> p)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">s <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> p</span></span></span></div>
 </div>
 
 
@@ -907,7 +909,7 @@
 <div class="decl" id="polynomial.iterate_derivative_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L115">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L117">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -922,51 +924,14 @@
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>
-    <span class="decl_args"><span class="fn">(r : R)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{S : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> S]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> S</span> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> S</span> R</span> R]</span></span></span>
+    <span class="decl_args"><span class="fn">(s : S)</span></span>
     <span class="decl_args"><span class="fn">(p : R<a href="https://mariainesdff.github.io/ideles/data/polynomial/basic.html#polynomial" title="polynomial">[X]</a>)</span></span>
     <span class="decl_args"><span class="fn">(k : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a><a href="https://mariainesdff.github.io/ideles/init/data/nat/lemmas.html#nat.iterate" title="nat.iterate">^[</a>k<a href="https://mariainesdff.github.io/ideles/init/data/nat/lemmas.html#nat.iterate" title="nat.iterate">]</a> <span class="fn">(r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> p)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a><a href="https://mariainesdff.github.io/ideles/init/data/nat/lemmas.html#nat.iterate" title="nat.iterate">^[</a>k<a href="https://mariainesdff.github.io/ideles/init/data/nat/lemmas.html#nat.iterate" title="nat.iterate">]</a> p</span></span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="polynomial.derivative_C_mul">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L126">source</a></div>
-
-
-    <div class="attributes">@[simp]</div>
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative_C_mul"><span class="name">polynomial</span>.<span class="name">derivative_C_mul</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>
-    <span class="decl_args"><span class="fn">(a : R)</span></span>
-    <span class="decl_args"><span class="fn">(p : R<a href="https://mariainesdff.github.io/ideles/data/polynomial/basic.html#polynomial" title="polynomial">[X]</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> <span class="fn"><span class="fn">((<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/basic.html#polynomial.C">polynomial.C</a> a)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> p)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/basic.html#polynomial.C">polynomial.C</a> a)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> p</span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a><a href="https://mariainesdff.github.io/ideles/init/data/nat/lemmas.html#nat.iterate" title="nat.iterate">^[</a>k<a href="https://mariainesdff.github.io/ideles/init/data/nat/lemmas.html#nat.iterate" title="nat.iterate">]</a> <span class="fn">(s <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> p)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">s <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a><a href="https://mariainesdff.github.io/ideles/init/data/nat/lemmas.html#nat.iterate" title="nat.iterate">^[</a>k<a href="https://mariainesdff.github.io/ideles/init/data/nat/lemmas.html#nat.iterate" title="nat.iterate">]</a> p</span></span></span></div>
 </div>
 
 
@@ -990,7 +955,7 @@
 <div class="decl" id="polynomial.iterate_derivative_C_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L130">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L128">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1032,7 +997,7 @@
 <div class="decl" id="polynomial.of_mem_support_derivative">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L134">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L132">source</a></div>
 
 
 
@@ -1072,7 +1037,7 @@
 <div class="decl" id="polynomial.degree_derivative_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L139">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L137">source</a></div>
 
 
 
@@ -1111,7 +1076,7 @@
 <div class="decl" id="polynomial.degree_derivative_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L143">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L141">source</a></div>
 
 
 
@@ -1149,7 +1114,7 @@
 <div class="decl" id="polynomial.nat_degree_derivative_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L146">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L144">source</a></div>
 
 
 
@@ -1188,7 +1153,7 @@
 <div class="decl" id="polynomial.nat_degree_derivative_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L156">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L154">source</a></div>
 
 
 
@@ -1226,7 +1191,7 @@
 <div class="decl" id="polynomial.derivative_cast_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L163">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L161">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1266,7 +1231,7 @@
 <div class="decl" id="polynomial.iterate_derivative_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L169">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L167">source</a></div>
 
 
 
@@ -1306,7 +1271,7 @@
 <div class="decl" id="polynomial.nat_degree_eq_zero_of_derivative_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L182">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L180">source</a></div>
 
 
 
@@ -1344,10 +1309,50 @@
     
         
         
+<div class="decl" id="polynomial.derivative_mul">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L198">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative_mul"><span class="name">polynomial</span>.<span class="name">derivative_mul</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{f g : R<a href="https://mariainesdff.github.io/ideles/data/polynomial/basic.html#polynomial" title="polynomial">[X]</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> <span class="fn">(f <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> g)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> f)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> g</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn">f <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> g</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="polynomial.derivative_eval">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L205">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L230">source</a></div>
 
 
 
@@ -1383,50 +1388,10 @@
     
         
         
-<div class="decl" id="polynomial.derivative_mul">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L209">source</a></div>
-
-
-    <div class="attributes">@[simp]</div>
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative_mul"><span class="name">polynomial</span>.<span class="name">derivative_mul</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{f g : R<a href="https://mariainesdff.github.io/ideles/data/polynomial/basic.html#polynomial" title="polynomial">[X]</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> <span class="fn">(f <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> g)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> f)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> g</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn">f <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/polynomial/derivative.html#polynomial.derivative">polynomial.derivative</a> g</span></span></span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
 <div class="decl" id="polynomial.derivative_pow_succ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L236">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L234">source</a></div>
 
 
 
@@ -1465,7 +1430,7 @@
 <div class="decl" id="polynomial.derivative_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L242">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L240">source</a></div>
 
 
 
@@ -1504,7 +1469,7 @@
 <div class="decl" id="polynomial.derivative_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L247">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L245">source</a></div>
 
 
 
@@ -1542,7 +1507,7 @@
 <div class="decl" id="polynomial.derivative_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L261">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L259">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1585,7 +1550,7 @@
 <div class="decl" id="polynomial.iterate_derivative_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L274">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L272">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1629,7 +1594,7 @@
 <div class="decl" id="polynomial.derivative_eval₂_C">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L283">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L281">source</a></div>
 
 
 
@@ -1668,7 +1633,7 @@
 <div class="decl" id="polynomial.derivative_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L292">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L290">source</a></div>
 
 
 
@@ -1708,7 +1673,7 @@
 <div class="decl" id="polynomial.iterate_derivative_cast_nat_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L310">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L308">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1749,7 +1714,7 @@
 <div class="decl" id="polynomial.derivative_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L320">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L318">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1789,7 +1754,7 @@
 <div class="decl" id="polynomial.iterate_derivative_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L323">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L321">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1830,7 +1795,7 @@
 <div class="decl" id="polynomial.derivative_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L327">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L325">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1870,7 +1835,7 @@
 <div class="decl" id="polynomial.iterate_derivative_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L331">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L329">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1911,7 +1876,7 @@
 <div class="decl" id="polynomial.derivative_comp_one_sub_X">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L340">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L338">source</a></div>
 
 
 
@@ -1949,7 +1914,7 @@
 <div class="decl" id="polynomial.iterate_derivative_comp_one_sub_X">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L345">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L343">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1990,7 +1955,7 @@
 <div class="decl" id="polynomial.eval_multiset_prod_X_sub_C_derivative">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L353">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L351">source</a></div>
 
 
 
@@ -2030,7 +1995,7 @@
 <div class="decl" id="polynomial.mem_support_derivative">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L366">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L364">source</a></div>
 
 
 
@@ -2071,7 +2036,7 @@
 <div class="decl" id="polynomial.degree_derivative_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L372">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/polynomial/derivative.lean#L370">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2130,13 +2095,6 @@
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -4207,6 +4165,12 @@
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -4351,6 +4315,13 @@
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -4359,6 +4330,29 @@
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -4441,6 +4435,9 @@
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -5074,27 +5071,35 @@
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

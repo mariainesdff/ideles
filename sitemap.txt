@@ -7,7 +7,7 @@ https://mariainesdff.github.io/ideles/init/logic.html
 https://mariainesdff.github.io/ideles/init/meta/format.html
 https://mariainesdff.github.io/ideles/data/set/pointwise.html
 https://mariainesdff.github.io/ideles/data/nat/parity.html
-https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html
+https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html
 https://mariainesdff.github.io/ideles/data/finset/basic.html
 https://mariainesdff.github.io/ideles/topology/algebra/monoid.html
 https://mariainesdff.github.io/ideles/data/real/basic.html
@@ -16,6 +16,7 @@ https://mariainesdff.github.io/ideles/topology/sets/opens.html
 https://mariainesdff.github.io/ideles/algebra/order/ring.html
 https://mariainesdff.github.io/ideles/topology/metric_space/basic.html
 https://mariainesdff.github.io/ideles/algebra/hom/group_instances.html
+https://mariainesdff.github.io/ideles/order/succ_pred/basic.html
 https://mariainesdff.github.io/ideles/group_theory/submonoid/operations.html
 https://mariainesdff.github.io/ideles/data/setoid/basic.html
 https://mariainesdff.github.io/ideles/algebra/big_operators/order.html
@@ -93,6 +94,7 @@ https://mariainesdff.github.io/ideles/data/fintype/card.html
 https://mariainesdff.github.io/ideles/init/data/unsigned/basic.html
 https://mariainesdff.github.io/ideles/logic/equiv/set.html
 https://mariainesdff.github.io/ideles/algebra/star/basic.html
+https://mariainesdff.github.io/ideles/number_theory/padics/padic_norm.html
 https://mariainesdff.github.io/ideles/linear_algebra/determinant.html
 https://mariainesdff.github.io/ideles/data/real/cau_seq_completion.html
 https://mariainesdff.github.io/ideles/order/filter/basic.html
@@ -113,7 +115,7 @@ https://mariainesdff.github.io/ideles/order/locally_finite.html
 https://mariainesdff.github.io/ideles/tactic/rcases.html
 https://mariainesdff.github.io/ideles/order/rel_classes.html
 https://mariainesdff.github.io/ideles/ring_theory/int/basic.html
-https://mariainesdff.github.io/ideles/set_theory/cardinal.html
+https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html
 https://mariainesdff.github.io/ideles/init/data/list/instances.html
 https://mariainesdff.github.io/ideles/data/nat/cast.html
 https://mariainesdff.github.io/ideles/data/set/basic.html
@@ -165,7 +167,6 @@ https://mariainesdff.github.io/ideles/algebra/direct_limit.html
 https://mariainesdff.github.io/ideles/data/polynomial/field_division.html
 https://mariainesdff.github.io/ideles/topology/algebra/constructions.html
 https://mariainesdff.github.io/ideles/number_theory/function_field.html
-https://mariainesdff.github.io/ideles/logic/encodable/basic.html
 https://mariainesdff.github.io/ideles/logic/equiv/basic.html
 https://mariainesdff.github.io/ideles/ring_theory/power_basis.html
 https://mariainesdff.github.io/ideles/category_theory/isomorphism.html
@@ -242,13 +243,12 @@ https://mariainesdff.github.io/ideles/tactic/algebra.html
 https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html
 https://mariainesdff.github.io/ideles/data/list/perm.html
 https://mariainesdff.github.io/ideles/algebra/group_with_zero/power.html
-https://mariainesdff.github.io/ideles/set_theory/principal.html
+https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html
 https://mariainesdff.github.io/ideles/init/data/string/basic.html
 https://mariainesdff.github.io/ideles/init/meta/simp_tactic.html
 https://mariainesdff.github.io/ideles/meta/rb_map.html
 https://mariainesdff.github.io/ideles/data/pnat/basic.html
 https://mariainesdff.github.io/ideles/algebra/order/field.html
-https://mariainesdff.github.io/ideles/order/succ_pred/basic.html
 https://mariainesdff.github.io/ideles/algebra/group/units.html
 https://mariainesdff.github.io/ideles/order/compactly_generated.html
 https://mariainesdff.github.io/ideles/topology/algebra/infinite_sum.html
@@ -263,7 +263,7 @@ https://mariainesdff.github.io/ideles/topology/support.html
 https://mariainesdff.github.io/ideles/category_theory/essential_image.html
 https://mariainesdff.github.io/ideles/data/real/sqrt.html
 https://mariainesdff.github.io/ideles/group_theory/perm/basic.html
-https://mariainesdff.github.io/ideles/set_theory/ordinal.html
+https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html
 https://mariainesdff.github.io/ideles/algebra/group/pi.html
 https://mariainesdff.github.io/ideles/data/finset/sigma.html
 https://mariainesdff.github.io/ideles/field_theory/normal.html
@@ -304,10 +304,11 @@ https://mariainesdff.github.io/ideles/category_theory/full_subcategory.html
 https://mariainesdff.github.io/ideles/data/set/finite.html
 https://mariainesdff.github.io/ideles/linear_algebra/alternating.html
 https://mariainesdff.github.io/ideles/algebra/direct_sum/finsupp.html
+https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html
 https://mariainesdff.github.io/ideles/algebra/algebra/restrict_scalars.html
 https://mariainesdff.github.io/ideles/data/int/basic.html
 https://mariainesdff.github.io/ideles/data/nat/factorial/basic.html
-https://mariainesdff.github.io/ideles/set_theory/cofinality.html
+https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html
 https://mariainesdff.github.io/ideles/init/meta/interactive.html
 https://mariainesdff.github.io/ideles/algebra/support.html
 https://mariainesdff.github.io/ideles/algebra/group/basic.html
@@ -354,9 +355,10 @@ https://mariainesdff.github.io/ideles/ideles_R.html
 https://mariainesdff.github.io/ideles/ring_theory/free_comm_ring.html
 https://mariainesdff.github.io/ideles/ring_theory/coprime/basic.html
 https://mariainesdff.github.io/ideles/tactic/norm_fin.html
-https://mariainesdff.github.io/ideles/set_theory/fincard.html
+https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html
 https://mariainesdff.github.io/ideles/control/traversable/equiv.html
 https://mariainesdff.github.io/ideles/order/antichain.html
+https://mariainesdff.github.io/ideles/logic/encodable/basic.html
 https://mariainesdff.github.io/ideles/init/meta/float.html
 https://mariainesdff.github.io/ideles/data/list/defs.html
 https://mariainesdff.github.io/ideles/init/data/set.html
@@ -371,10 +373,9 @@ https://mariainesdff.github.io/ideles/init/meta/module_info.html
 https://mariainesdff.github.io/ideles/init/meta/smt/congruence_closure.html
 https://mariainesdff.github.io/ideles/combinatorics/composition.html
 https://mariainesdff.github.io/ideles/topology/metric_space/emetric_space.html
-https://mariainesdff.github.io/ideles/number_theory/padics/padic_norm.html
 https://mariainesdff.github.io/ideles/init/control/state.html
 https://mariainesdff.github.io/ideles/init/meta/occurrences.html
-https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html
+https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html
 https://mariainesdff.github.io/ideles/algebra/category/Mon/basic.html
 https://mariainesdff.github.io/ideles/algebra/group_power/lemmas.html
 https://mariainesdff.github.io/ideles/order/basic.html
@@ -428,7 +429,6 @@ https://mariainesdff.github.io/ideles/init/meta/attribute.html
 https://mariainesdff.github.io/ideles/topology/nhds_set.html
 https://mariainesdff.github.io/ideles/data/list/min_max.html
 https://mariainesdff.github.io/ideles/algebra/group_power/order.html
-https://mariainesdff.github.io/ideles/data/buffer/parser.html
 https://mariainesdff.github.io/ideles/ring_theory/nilpotent.html
 https://mariainesdff.github.io/ideles/group_theory/group_action/sub_mul_action.html
 https://mariainesdff.github.io/ideles/meta/expr_lens.html
@@ -553,11 +553,13 @@ https://mariainesdff.github.io/ideles/linear_algebra/trace.html
 https://mariainesdff.github.io/ideles/tactic/linarith/verification.html
 https://mariainesdff.github.io/ideles/init/meta/level.html
 https://mariainesdff.github.io/ideles/topology/algebra/valued_field.html
+https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html
 https://mariainesdff.github.io/ideles/topology/tactic.html
 https://mariainesdff.github.io/ideles/category_theory/eq_to_hom.html
 https://mariainesdff.github.io/ideles/init/data/char/basic.html
 https://mariainesdff.github.io/ideles/logic/equiv/nat.html
 https://mariainesdff.github.io/ideles/ring_theory/matrix_algebra.html
+https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html
 https://mariainesdff.github.io/ideles/topology/uniform_space/uniform_embedding.html
 https://mariainesdff.github.io/ideles/data/mv_polynomial/equiv.html
 https://mariainesdff.github.io/ideles/order/complete_boolean_algebra.html
@@ -589,6 +591,7 @@ https://mariainesdff.github.io/ideles/tactic/linarith/elimination.html
 https://mariainesdff.github.io/ideles/algebra/order/with_zero.html
 https://mariainesdff.github.io/ideles/number_theory/zsqrtd/basic.html
 https://mariainesdff.github.io/ideles/data/finset/pairwise.html
+https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html
 https://mariainesdff.github.io/ideles/data/opposite.html
 https://mariainesdff.github.io/ideles/data/list/nodup.html
 https://mariainesdff.github.io/ideles/group_theory/perm/cycles.html
@@ -654,6 +657,7 @@ https://mariainesdff.github.io/ideles/tactic/norm_swap.html
 https://mariainesdff.github.io/ideles/init/meta/rec_util.html
 https://mariainesdff.github.io/ideles/order/fixed_points.html
 https://mariainesdff.github.io/ideles/category_theory/epi_mono.html
+https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html
 https://mariainesdff.github.io/ideles/order/filter/cofinite.html
 https://mariainesdff.github.io/ideles/fractional_ideal.html
 https://mariainesdff.github.io/ideles/algebra/char_zero.html
@@ -853,6 +857,7 @@ https://mariainesdff.github.io/ideles/tactic/replacer.html
 https://mariainesdff.github.io/ideles/data/nat/count.html
 https://mariainesdff.github.io/ideles/algebra/big_operators/option.html
 https://mariainesdff.github.io/ideles/group_theory/perm/subgroup.html
+https://mariainesdff.github.io/ideles/linear_algebra/contraction.html
 https://mariainesdff.github.io/ideles/data/rbtree/default_lt.html
 https://mariainesdff.github.io/ideles/init/meta/comp_value_tactics.html
 https://mariainesdff.github.io/ideles/init/meta/pexpr.html
@@ -881,6 +886,7 @@ https://mariainesdff.github.io/ideles/logic/relator.html
 https://mariainesdff.github.io/ideles/data/fintype/fin.html
 https://mariainesdff.github.io/ideles/data/list/prime.html
 https://mariainesdff.github.io/ideles/combinatorics/partition.html
+https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html
 https://mariainesdff.github.io/ideles/tactic/trunc_cases.html
 https://mariainesdff.github.io/ideles/tactic/delta_instance.html
 https://mariainesdff.github.io/ideles/category_theory/functor/reflects_isomorphisms.html
@@ -888,6 +894,7 @@ https://mariainesdff.github.io/ideles/linear_algebra/matrix/mv_polynomial.html
 https://mariainesdff.github.io/ideles/init/meta/match_tactic.html
 https://mariainesdff.github.io/ideles/init/funext.html
 https://mariainesdff.github.io/ideles/init/meta/mk_dec_eq_instance.html
+https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html
 https://mariainesdff.github.io/ideles/tactic/generalize_proofs.html
 https://mariainesdff.github.io/ideles/linear_algebra/matrix/nondegenerate.html
 https://mariainesdff.github.io/ideles/tactic/apply_fun.html
@@ -959,6 +966,7 @@ https://mariainesdff.github.io/ideles/data/zmod/algebra.html
 https://mariainesdff.github.io/ideles/tactic/simpa.html
 https://mariainesdff.github.io/ideles/tactic/fresh_names.html
 https://mariainesdff.github.io/ideles/algebra/field/opposite.html
+https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html
 https://mariainesdff.github.io/ideles/tactic/dec_trivial.html
 https://mariainesdff.github.io/ideles/tactic/cache.html
 https://mariainesdff.github.io/ideles/tactic/lean_core_docs.html

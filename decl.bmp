@@ -17,6 +17,7 @@ lt_add_one
 nndist_triangle
 monoid_hom.compl₂_apply
 ordinal.sup_mul_nat
+order.Icc_succ_left_of_not_is_max
 submonoid.mem_map_of_mem
 setoid.refl'
 finset.sum_card_inter_le
@@ -127,6 +128,7 @@ unsigned_sz
 equiv.of_injective_apply
 group_topology.ext'
 star_injective
+padic_val_int.eq_zero_of_not_dvd
 linear_map.bot_lt_ker_of_det_eq_zero
 cau_seq.completion.of_rat_inv
 filter.generate_sets
@@ -233,7 +235,6 @@ function_field.infty_valuation_def
 add_le_cancellable.tsub_eq_of_eq_add
 tactic.eval_expr'
 list.tail_drop
-encodable.ulift
 equiv.set.sum_diff_subset_apply_inr
 tactic.mk_congr_arg
 complex.equiv_real_prod_apply
@@ -532,6 +533,7 @@ add_submonoid.localization_map.symm_comp_of_add_equiv_of_localizations_apply'
 homeomorph.t2_space
 submonoid.map_supr_comap_of_surjective
 finsupp_lequiv_direct_sum_single
+conj_act.has_scalar
 restrict_scalars.comm_ring
 int.sign_coe_nat_of_nonzero
 nat.pow_sub_lt_desc_factorial
@@ -707,6 +709,7 @@ add_le_cancellable.add_tsub_cancel_right
 option.pmap_map
 list.permutations_aux2
 or.rotate
+sigma.encodable
 matrix.transpose
 ideal.is_maximal.exists_inv
 expr.match_local_const
@@ -785,6 +788,7 @@ uniform_continuous.prod_mk
 mem_image_univ_iff_mem_range
 preorder.lift
 finset.piecewise_idem_left
+set.Ioo_insert_left
 add_monoid_hom.to_opposite_apply
 complex.one_re
 order_dual.covariant_class_mul_le
@@ -982,7 +986,9 @@ nat.prime.dvd_mul_of_dvd_ne
 linear_map.eval_add_monoid_hom
 dfinsupp_prod_mem
 add_subsemigroup.gi
+fin.encodable
 finprod_comp
+set.ord_connected_range
 set.maps_to.mono
 finsupp.indicator_apply
 finset.eq_singleton_iff_nonempty_unique_mem
@@ -1016,7 +1022,6 @@ subalgebra.set_like
 linarith.parse_into_comp_and_expr
 dfinsupp.zero_apply
 finset.sdiff_eq_sdiff_iff_inter_eq_inter
-parser.sat
 finset.piecewise_piecewise_of_subset_left
 is_nilpotent_neg_iff
 finsupp.sum_elim_apply
@@ -1086,6 +1091,7 @@ semiconj_by.reflexive
 monoid_hom.cod_mrestrict_apply_coe
 tactic.mk_const
 filter.prod_at_bot_at_bot_eq
+le_trans'
 subring_class.to_ordered_comm_ring
 list.ball_nil
 array.reverse
@@ -1134,9 +1140,11 @@ list.sorted.nth_le_mono
 con.ker_lift_mk
 linear_map.ker_prod_ker_le_ker_coprod
 linear_map.iterate_ker_coe
+conj_act.to_conj_act
 power_basis.nat_degree_minpoly
 linear_independent.total_comp_repr
 list.zip_with_distrib_drop
+pnat.encodable
 fintype.card_punit
 function.commute.self_iterate
 pi.has_vadd
@@ -1183,8 +1191,8 @@ alg_equiv.coe_alg_hom_of_alg_hom
 filter.tendsto.at_top_div_const
 CommRing.of_hom
 tactic.mk_eq_refl
+conj_act.has_units_scalar
 algebra.of_id_apply
-parser.eof
 category_theory.prod.sectr_map
 set.diff_singleton_subset_iff
 real.lt_to_nnreal_iff_coe_lt
@@ -1259,6 +1267,7 @@ mul_distrib_mul_action.ext
 nat.card_Iio
 multiset.inf_cons
 real.distrib_lattice
+int.eq_nat_abs_iff_mul_eq_zero
 set.Inter_vadd_subset
 nat.succ_eq_one_add
 power_series.coe_bit1
@@ -1470,6 +1479,7 @@ tactic.cc_dbg_core
 finset.prod_sigma
 category_theory.functor_to_types.hcomp
 nat.gcd_one_right
+conj_act.of_conj_act_to_conj_act
 one_lt_mul_of_lt_of_le
 le_add_of_nonneg_right
 filter.has_basis_pi
@@ -1568,6 +1578,7 @@ function.surjective.forall
 add_submonoid.localization_map.add_equiv_of_add_equiv_eq_map
 con.quotient_quotient_equiv_quotient
 quotient_group.range_ker_lift_injective
+with_bot.covariant_class_swap_add_le
 option.map_bind
 is_coatom.sup_eq_top_of_ne
 uniform_space.completion.has_coe_t
@@ -1801,6 +1812,7 @@ is_integral_zero
 equiv.nat_sum_nat_equiv_nat
 matrix_equiv_tensor.to_fun_alg_hom_apply
 abs_lt_abs_of_sq_lt_sq
+module.free.tensor
 distrib_mul_action.ext
 star_rat_cast
 continuous_map.map_specialization
@@ -1900,6 +1912,7 @@ local_context.is_subset
 category_theory.End.mul_action_right
 add_action.of_quotient_stabilizer_vadd
 matrix.transpose_add
+or_or_distrib_right
 commute.multiset_sum_right
 polynomial.prod_multiset_root_eq_finset_root
 monoid_with_zero_hom.congr_fun
@@ -1926,7 +1939,6 @@ prime_spectrum.exists_prime_spectrum_prod_le_and_ne_bot_of_domain
 monoid_hom.fintype_range
 uniform_embedding.prod
 mul_zpow_neg_one
-order.pred_lt_iff_lt_or_eq
 is_scalar_tower.subsemiring
 function.extend_div
 is_strict_weak_order_of_is_total_preorder
@@ -2007,6 +2019,7 @@ zsqrtd.bit1_im
 ennreal.to_real_bit1
 set.pairwise_disjoint.bUnion_finset
 semiconj_by.sub_right
+punit.encodable
 division_def
 function.support_along_fiber_finite_of_finite
 order.pred_order.subsingleton
@@ -2025,6 +2038,7 @@ int.nat_abs_pow_two
 add_action.to_perm_apply
 set.bUnion_Ioc_eq_Ioi_self_iff
 cardinal.induction_on
+module.free.rank_tensor_product'
 ordered_comm_semiring.to_comm_semiring
 perms_of_finset
 prod.swap_lt_swap
@@ -2068,7 +2082,6 @@ CommSemiRing.concrete_category
 filter.map
 subgroup.card_dvd_of_le
 equiv.perm.same_cycle_pow_left_iff
-padic_val_rat.padic_val_rat_of_int
 add_submonoid.simps.coe
 nat_smul_eq_nsmul
 dense.order_dual
@@ -2126,6 +2139,7 @@ category_theory.nat_trans.remove_left_op_id
 linear_map.det_to_matrix
 ideal.apply_coe_mem_map
 is_irreducible
+mul_one_add
 category_theory.functor.to_ess_image_map
 cancel_monoid_with_zero.to_monoid_with_zero
 at_top_countable_basis_of_archimedean
@@ -2175,6 +2189,7 @@ geom_sum_two
 zsmul_neg_succ_of_nat
 nat.bitwise_zero
 set.sigma_insert
+order.Ico_succ_left
 pi.has_vadd'
 list.ne_of_not_mem_cons
 filter.pi_ne_bot
@@ -2221,6 +2236,7 @@ set.maps_to_image
 nat.one_ne_zero
 add_left_cancel_semigroup.contravariant_add_le_of_contravariant_add_lt
 is_invariant_subring.coe_subtype_hom
+nnreal.finset_sup_mul
 set.image_mul_right_Icc'
 order_hom.Sup_apply
 antisymm_iff
@@ -2573,6 +2589,7 @@ Sup_le_Sup_of_subset_insert_bot
 finset.sdiff_idem
 list.nodup_of_fn
 subset_interior_iff_open
+matrix.block_diagonal'_add_monoid_hom
 associates.dvd_not_unit_of_lt
 superset
 set.inclusion_inclusion
@@ -2689,6 +2706,7 @@ lean.parser.get_variables
 set.image_mul_left_Ioo
 linear_map.span_singleton_sup_orthogonal_eq_top
 finsupp.sum_elim_inr
+module.free.add_monoid_hom.module.finite
 tactic.admit
 submonoid.map_injective_of_injective
 filter.eventually_eq.comp₂
@@ -2838,6 +2856,7 @@ finset.singleton_iff_unique_mem
 neg_one_smul
 monoid_hom.map_finprod_of_injective
 fin.succ_above
+hahn_series.non_assoc_ring
 monoid.exponent
 subalgebra.equiv_of_eq
 set.unbounded_gt_univ
@@ -2969,6 +2988,7 @@ real.Icc_eq_closed_ball
 print_warning
 sym.coe_inj
 set.antitone_bforall
+has_lt.lt.trans'
 set.Ioo_subset_Ioi_self
 polynomial.next_coeff_up_of_pos_nat_trailing_degree
 algebra.trace_matrix_eq_embeddings_matrix_reindex_mul_trans
@@ -3132,6 +3152,7 @@ fintype.choose
 function.mul_support_max
 multiset.to_finset
 subalgebra.restrict_scalars_top
+finsupp.single_smul
 with_bot.coe_bit0
 homeomorph.closed_embedding
 submonoid.has_top
@@ -3258,6 +3279,7 @@ diagonal_eq_range_diagonal_map
 finsupp.sum_smul_index_add_monoid_hom
 proof_irrel_heq
 part.of_to_option
+with_top.le_of_add_le_add_right
 pi.add_left_cancel_monoid
 add_opposite.unop_eq_one_iff
 norm_num.nat_succ_eq
@@ -3321,6 +3343,7 @@ add_submonoid.localization_map.neg_unique
 submodule.gi_map_comap
 prod.noncompact_space_iff
 tactic.interactive.fold_assoc
+order.pred_lt_iff_eq_or_lt
 level.lt
 simp_attr.field_simps
 tactic.find_same_type
@@ -3713,6 +3736,7 @@ is_principal_ideal_ring.mk
 multiset.nodup.filter_map
 subalgebra.map_map
 set.image_injective
+module.free.of_equiv'
 quotient_ring.quotient_map_coe_coe
 injective_pow_p
 linear_map.to_matrix_alg_equiv_transpose_apply
@@ -4131,6 +4155,7 @@ mv_power_series.coeff_zero_C
 zero_hom.comp_id
 mul_action.smul_mem_orbit_smul
 or_and_distrib_left
+conj_act.of_conj_act_inv
 uniform_space.completion.continuous_map
 is_localization.away.away_map.lift_comp
 is_lub_neg
@@ -4317,6 +4342,7 @@ nat.sum_proper_divisors_dvd
 list.filter_filter_map
 sub_eq_self
 with_zero.coe_lt_coe
+module.free.rank_matrix''
 string.iterator.set_curr
 list.pairwise_middle
 has_le.le.lt_of_ne
@@ -4351,7 +4377,6 @@ option.is_lawful_monad
 mul_semiring_action_hom.polynomial
 option.ext
 tactic.ring_exp.mul_pf_zero
-parser.one_of'
 valuation.integers.le_iff_dvd
 list.to_chunks_aux
 sum.not_lift_rel_inl_inr
@@ -4404,6 +4429,7 @@ module_polynomial_of_endo_to_distrib_mul_action_to_mul_action_to_has_scalar_smul
 int.neg_mul_eq_neg_mul
 real.cauchy_inv
 smt_tactic.set_goals
+with_top.is_total_le
 order_embedding.monotone
 environment.is_projection
 function.embedding.cod_restrict_apply
@@ -4507,7 +4533,6 @@ nat.find_greatest
 mv_polynomial.support_monomial
 multiset.powerset_len_le_powerset
 equiv.finset_congr_refl
-encodable.nat
 fin.succ_above_below
 alg_equiv.arrow_congr_trans
 associates.has_top
@@ -4631,6 +4656,7 @@ antitone_lt
 linear_ordered_comm_group.mul_lt_mul_left'
 topological_space.countable_basis
 add_submonoid.localization_map.to_map
+strict_mono.is_max_of_apply
 order_hom.lfp_le_fixed
 set.unbounded_le_inter_not_le
 add_hom.snd_comp_prod
@@ -4673,6 +4699,7 @@ dense.exists_dist_lt
 filter.map_neg'
 topological_space.clopens.has_sup
 algebra.tensor_product.congr_apply
+matrix.block_diagonal'_ring_hom
 finset.sum_preimage_of_bij
 norm_num.rat_cast_neg
 add_subgroup.normalizer_eq_top
@@ -4779,6 +4806,7 @@ finset.Icc_diff_Ioc_self
 real.uniform_continuous_neg
 pos_num.has_mul
 has_compact_support.comp₂_left
+with_bot.add_le_add_iff_left
 format.sbracket
 set.unbounded.mono
 set.range_factorization
@@ -4853,6 +4881,7 @@ tactic.subst'
 option_t.run_pure
 summable.mul_left
 tactic.interactive.field_simp
+fintype.trunc_encodable
 filter.eventually_at_bot
 add_submonoid.exists_multiset_of_mem_closure
 polynomial.derivative_one
@@ -5013,7 +5042,6 @@ rat.mk_neg_one_one
 gt_mem_nhds
 set.Inter_set_of
 bornology.ext
-parser.pure
 linarith.nlinarith_extras
 equiv.perm.card_support_conj
 fin_equiv_zmultiples_symm_apply
@@ -5323,7 +5351,6 @@ SemiRing.semiring
 list.chain'_reverse
 list.nodup.of_sublists'
 monoid_hom.ker_one
-lt_of_not_ge'
 polynomial.prime_X_sub_C
 div_right_comm'
 vm_obj.to_level
@@ -5529,8 +5556,11 @@ le_of_le_mul_of_le_one_right
 algebra.self_mem_adjoin_singleton
 char.of_nat_eq_of_not_is_valid
 tendsto_inv_nhds_within_Ioi
+filter.map_prod_eq_map₂'
 ennreal.exists_nat_pos_inv_mul_lt
+padic_val_int
 K_hat.topological_ring
+nnreal.sup_mul
 function.embedding.to_equiv_range
 nonempty_of_finprod_mem_ne_one
 monoid_hom.coe_eq_to_mul_hom
@@ -5770,6 +5800,7 @@ or_self_right
 finsupp.multiset_sum_sum_index
 subalgebra.to_subring_subtype
 polynomial.leading_coeff_C_mul_X
+list.all₂.imp
 ratfunc.of_fraction_ring_comp_algebra_map
 add_opposite.pseudo_metric_space
 submodule.mul_sup
@@ -5942,6 +5973,7 @@ set.inv_preimage
 gcd_one_left
 infi_false
 quotient.map'_mk
+conj_act.group_with_zero
 order_dual.Inf_convergence_class
 semiconj_by.mul_right
 add_subgroup.add_subgroup_class
@@ -6007,6 +6039,7 @@ inf_hom.copy
 fin.forall_iff
 function.const_apply
 finsupp.some
+order.Ioo_pred_left
 nnreal.lt_inv_iff_mul_lt
 set.Iio.set.Ioi.semilattice_sup
 set.subsingleton_is_bot
@@ -6210,6 +6243,7 @@ conv.monad
 composition.ones
 pnat.has_well_founded
 zsqrtd.of_int
+mul_add_one
 is_scalar_tower.of_algebra_map_eq
 submodule.has_Inf
 power_basis.lift_equiv'_symm_apply_apply
@@ -6374,6 +6408,7 @@ cau_seq.has_le
 tendsto_const_mul_zpow_at_top_zero_iff
 mem_subalgebra_of_subring
 right_iff_left_not_left
+order.lt_succ_iff_eq_or_lt_of_not_is_max
 list.subperm_singleton_iff
 filter.tendsto.prod_at_top
 add_submonoid_class.coe_nsmul
@@ -6417,6 +6452,7 @@ list.repeat_perm
 set.eq_of_Ico_disjoint
 set.not_mem_Iio
 nat.Inf_def
+module.free.direct_sum
 function.injective.add_cancel_monoid
 int.neg_mul_eq_neg_mul_symm
 one_pow
@@ -6475,6 +6511,7 @@ list.exists_or_eq_self_of_erasep
 fin.sum_univ_eq_sum_range
 list.map_reverse
 AddMon.of_hom
+module.free.matrix
 psigma.elim
 open_add_subgroup.coe_add_subgroup_le
 free_ring
@@ -6778,6 +6815,7 @@ finprod_mem_pair
 basis.maximal
 set.smul_union
 function.on_fun
+conj_act.of_conj_act_mul
 finsupp.to_dfinsupp_neg
 module.dual.module
 continuous_linear_map.id
@@ -6880,6 +6918,7 @@ mv_polynomial.eval₂_hom_map_hom
 matrix.block_diagonal'_zero
 prod.cancel_comm_monoid
 multiset.card_lt_of_lt
+with_bot.add_ne_bot
 finsupp.subtype_domain_add
 old_conv.failed
 ordinal.add_omega
@@ -6918,6 +6957,7 @@ power_series.coeff_zero_eq_constant_coeff
 nat.image_Ico_mod
 ring_equiv.subring_congr
 is_compl.disjoint
+with_bot.add_le_add_iff_right
 cardinal.aleph_mul_aleph
 intermediate_field.adjoin_contains_field_as_subfield
 set.maps_range_to
@@ -7023,6 +7063,7 @@ subfield.mem_map
 set.Inter₂_eq_empty_iff
 finset.induction_on'
 monotone_on.mem_lower_bounds_image
+has_lt.lt.trans_eq'
 denumerable.raise'_sorted
 dist_pi_const
 is_connected_range
@@ -7189,6 +7230,7 @@ mul_self_div_self
 mul_equiv.submonoid_map_apply_coe
 filter.coprod_ne_bot_right
 int.le.dest_sub
+real.sqrt_lt
 restrict_scalars.ring
 induced_infi
 native.rb_set.size
@@ -7472,6 +7514,7 @@ filter.nonpos_iff
 subtype.map_coe
 punit.zero_eq
 sum_has_to_format
+array.encodable
 intermediate_field.fixing_subgroup_is_open
 list.length_erasep_add_one
 category_theory.whisker_right_left
@@ -7532,6 +7575,7 @@ is_preorder
 is_preorder.to_is_refl
 is_preorder.to_is_trans
 is_preorder.mk
+add_monoid_hom.is_of_fin_order
 basis.equiv
 sup_Inf_le_infi_sup
 option_t.monad_run
@@ -7822,6 +7866,7 @@ pfun.mem_image
 function.extend_neg
 add_subgroup.mem_smul_pointwise_iff_exists
 disjoint.disjoint_sdiff_right
+order.Ioo_succ_right
 submonoid.comap_inf
 equiv.congr_fun
 multiset.repeat_left_injective
@@ -8043,6 +8088,7 @@ is_connected.closure
 with_bot.mul_eq_bot_iff
 list.nodup.pairwise_of_set_pairwise
 multiset.pairwise_coe_iff_pairwise
+add_monoid_algebra.map_domain_one
 real.of_cauchy_neg
 array.read_map₂
 finsupp.erase_sub
@@ -8064,7 +8110,6 @@ metric.nhds_within_basis_ball
 ennreal.inv_eq_top
 set.Ico_subset_Icc_self
 euclidean_domain.gcd.induction
-parser.run_string
 nnreal.coe_sub
 is_smul_regular.of_mul
 relation.trans_gen.swap
@@ -8436,6 +8481,7 @@ subfield.coe_copy
 order_dual.has_involutive_neg
 matrix.trace_transpose
 mv_polynomial.not_mem_support_iff
+order.lt_succ_iff_eq_or_lt
 nat.bodd_add
 ring_equiv.prod_comm
 basis.has_coe_to_fun
@@ -8592,7 +8638,6 @@ int.floor_le_ceil
 int.nat_abs_mul
 order_dual.add_comm_group
 finset.map_val_val_powerset_len
-parser.foldl
 bilin_form.is_adjoint_pair_iff_comp_left_eq_comp_right
 cardinal.lift_two
 number_field.I_K.map_to_fractional_ideals
@@ -8746,6 +8791,7 @@ monotone.directed_le
 pequiv.of_set
 tactic.interactive.ring_exp_eq
 old_conv.repeat
+option.encodable
 nodup_perms_of_list
 set.bind_def
 finset.range_subset
@@ -8770,6 +8816,7 @@ associates.nontrivial
 specializes_refl
 continuous_linear_equiv.equiv_of_inverse
 nat.prime.coprime_pow_of_not_dvd
+t2_separation_finset
 quotient_group.mk
 add_opposite.comap_unop_nhds
 tactic.impl_graph.dfs_at
@@ -8812,6 +8859,7 @@ array.read_push_back_left
 principal_seg.lt_le_top
 add_subgroup.is_normal_topological_closure
 is_compl.inf_eq_bot
+le_of_le_of_eq
 linear_ordered_comm_group
 linear_ordered_comm_group.mul
 linear_ordered_comm_group.mul_assoc
@@ -8869,6 +8917,7 @@ distrib_mul_action.to_add_monoid_End
 submonoid.is_unit.submonoid.coe_inv
 is_of_fin_order_of_add_iff
 sub_sq
+conj_act.to_mul_symm_eq
 add_subgroup.eq_top_of_card_eq
 submodule
 submodule.carrier
@@ -8964,7 +9013,6 @@ disjoint_symm_diff_inf
 nat.preimage_ceil_of_ne_zero
 restrict_scalars.linear_equiv
 unique_factorization_monoid.dvd_iff_normalized_factors_le_normalized_factors
-encodable.subtype
 order_iso.fun_unique
 is_scalar_tower.aeval_eq_zero_of_aeval_algebra_map_eq_zero_field
 int.has_zero
@@ -8990,6 +9038,7 @@ rel_iso.to_galois_coinsertion
 abelianization.map_map_apply
 polynomial.roots_map
 nat.coprime.mul_dvd_of_dvd_of_dvd
+smul_smul_smul_comm
 associates.order_bot
 set_of_is_preconnected_eq_of_ordered
 semiconj_by.inv_right₀
@@ -9048,6 +9097,7 @@ ring_hom.to_module
 finset.forall_mem_cons
 antitone_iff_forall_lt
 complex.im_le_abs
+order.Icc_succ_left
 order_embedding.to_order_hom
 division_ring.to_nontrivial
 linear_map.is_scalar_tower
@@ -9170,6 +9220,7 @@ polynomial.is_unit_C
 finset.map_map
 submodule.le_prod_iff
 matrix.conj_transpose_mul
+with_bot.le_of_add_le_add_left
 is_integral.nsmul
 pequiv.trans_eq_some
 add_monoid_algebra.ring
@@ -9379,6 +9430,7 @@ cardinal.one_le_iff_ne_zero
 set.preimage_const_sub_Ioc
 is_asymm_of_is_trans_of_is_irrefl
 multiset.le_prod_nonempty_of_submultiplicative_on_pred
+add_rotate'
 continuous_map.continuous_comp
 principal_seg.coe_coe_fn
 ordinal.div_lt
@@ -9388,6 +9440,7 @@ intermediate_field.coe_mul
 power_series.coeff_C
 algebra.tensor_product.comm
 gcd_eq_nat_gcd
+dual_tensor_hom_apply
 sizeof
 disjoint.subset_right_of_subset_union
 abs_eq_zero
@@ -9507,6 +9560,7 @@ nat.pow_dvd_of_le_of_pow_dvd
 polynomial.to_finsupp_erase
 tendsto_zpow_at_top_zero
 tactic.nontriviality_by_assumption
+symm_diff_left_comm
 add_valuation.supp_quot_supp
 function.is_empty
 tactic.norm_fin.normalize_fin_lt.cast_lt
@@ -9524,6 +9578,7 @@ function.right_inverse_iff_comp
 order_iso.neg_apply
 int.zero_nonneg
 int.mod_two_ne_zero
+sub_one_mul
 number_field.I_K_f.map_to_fractional_ideals.continuous
 polynomial.aeval_one
 sum_embeddings_eq_finrank_mul
@@ -9573,7 +9628,6 @@ dfinsupp.single_sub
 nat.proper_divisors_subset_divisors
 embedding_id
 finsupp.restrict_dom_comp_subtype
-parser.many'
 set.range_const
 set.Ioi_inter_Iio
 set.preimage_sub_const_Ioi
@@ -9642,6 +9696,7 @@ rel_iso.prod_lex_congr
 nat.odd.of_mul_right
 fin.Ico_eq_finset_subtype
 linear_map.coe_finsupp_sum
+monoid_hom.to_additive''_symm_apply_apply
 initial_seg.eq
 char_p.congr
 filter.ptendsto_def
@@ -9753,6 +9808,7 @@ rat.preorder
 submonoid.supr_induction
 zpow_le_one_of_nonpos
 pnat.nat_pred_add_one
+mul_aut.conj_normal_symm_apply
 pnat.Ioc_eq_finset_subtype
 equiv.subtype_equiv_of_subtype'
 direct_sum.add_subgroup_coe
@@ -9765,7 +9821,6 @@ bilin_form.sum_left
 nat.find_mono
 matrix.det_eq_of_forall_row_eq_smul_add_const_aux
 monoid_algebra.has_faithful_scalar
-monoid_hom.injective_iff
 basis.sum_coords
 add_subsemigroup.coe_top
 dense_range.topological_closure_map_add_subgroup
@@ -10136,6 +10191,7 @@ composition.coe_embedding
 option.to_finset_none
 polynomial.comp_zero
 list.length_append
+has_le.le.trans_lt'
 polynomial.is_root_of_aeval_algebra_map_eq_zero
 linear_independent_sUnion_of_directed
 monoid_algebra.add_comm_group
@@ -10203,6 +10259,7 @@ perfect_closure.has_zero
 add_order_of_map_dvd
 list.is_infix.sublist
 zsqrtd.gcd_eq_zero_iff
+t1_space_of_injective_of_continuous
 string.iterator.length_next_to_string_next
 category_theory.iso.AddCommGroup_iso_to_add_equiv_apply
 nat.modeq_zero_iff
@@ -10345,6 +10402,7 @@ omega_complete_partial_order.continuous_hom.omega_complete_partial_order
 set.mem_finset_prod
 basis.reindex_range_repr
 rsimp.rsimplify_goal
+embedding.regular_space
 polynomial.zero_mod_by_monic
 idele.mk'
 le_div_iff_mul_le
@@ -10414,8 +10472,10 @@ number_field.A_K
 quot.induction_on₃
 list.sublists_nil
 exists_unique.exists2
+padic_val_int.one
 decidable.mul_le_one
 max_chain
+dual_tensor_hom_equiv_of_basis
 tactic.hyp_directly_depends_on_local_set
 complex.has_add
 separated
@@ -10509,7 +10569,6 @@ power_series.order_mul
 symm_diff_sdiff_right
 polynomial.coeff_C_zero
 prod.cancel_add_comm_monoid
-with_bot.le_is_total
 pow_le_of_le_one
 old_conv.dsimp
 finset.is_pwo
@@ -10646,6 +10705,7 @@ int.mul_lt_mul
 alg_hom.to_linear_map_injective
 function.forall_update_iff
 multiset.dedup_cons
+with_top.covariant_class_swap_add_le
 tactic.interactive.apply_assumption
 finset.sum_powerset_apply_card
 option.eq_of_eq_some
@@ -10699,6 +10759,7 @@ set.fintype_bUnion
 is_open_sInter
 rat.eq_iff_mul_eq_mul
 list.filter
+injective_iff_map_eq_zero'
 ne_top_of_le_ne_top
 finsupp.to_multiset_zero
 finsupp.map_range.add_monoid_hom_id
@@ -10903,6 +10964,7 @@ continuous.le_induced
 add_con.induction_on_add_units
 mat_poly_equiv_eq_X_pow_sub_C
 tactic.abstract_if_success
+monoid_hom.to_additive'_apply_apply
 inv_nonneg
 ne_true_of_not
 ring_hom.is_integral_quotient_of_is_integral
@@ -10910,6 +10972,7 @@ mul_opposite.has_continuous_add
 finset.le_max_of_mem
 inf_le_right'
 is_fraction_ring.exists_reduced_fraction
+order.Icc_pred_right_of_not_is_min
 category_theory.iso.symm_eq_iff
 uniform_space.completion.extension₂
 multiset.nodup.powerset_len
@@ -10930,6 +10993,7 @@ polynomial.map_monic_ne_zero
 is_min_of_dual_iff
 rat.archimedean
 semilattice_sup.to_is_directed_le
+hahn_series.non_unital_ring
 is_coprime.of_add_mul_right_left
 rel_hom_class.acc
 filter.prod_at_top_at_top_eq
@@ -10947,6 +11011,8 @@ mv_polynomial.is_lawful_functor
 bilin_form.mul_to_matrix'_mul
 equiv.perm.is_cycle.exists_pow_eq_one
 set.Ioc_subset_Ioi_self
+has_le.le.trans'
+set.inv_Ioi
 list.nodup_repeat
 topological_space.opens.has_inter
 continuous_linear_equiv.map_neg
@@ -11017,7 +11083,6 @@ subgroup.pi_eq_bot_iff
 add_subgroup.comap_map_eq
 neg_mul_eq_neg_mul
 polynomial.mod_by_monic_eq_self_iff
-add_monoid_hom.injective_iff'
 alternating_map.map_eq_zero_of_not_injective
 set.countable_is_top
 equiv.perm.extend_domain_hom_apply
@@ -11429,6 +11494,7 @@ finset.sup_finset_image
 equiv.prod_congr
 continuous_iff_continuous_at
 ufi_ug
+nnreal.coe_supr
 multiset.singleton_disjoint
 ordinal.sup_succ_eq_lsub
 continuous_on_open_iff
@@ -11454,6 +11520,7 @@ div_le_one
 imp_self
 polynomial.coeff_eq_zero_of_degree_lt
 int.shiftl_neg
+module.free.rank_direct_sum
 pequiv.to_pequiv_mul_matrix
 zsqrtd.coe_int_re
 continuous_quot_mk
@@ -11469,6 +11536,7 @@ uniform_space.has_basis_nhds_prod
 inv_ne_zero
 list.perm.pmap
 ordered_comm_ring.to_ordered_ring
+module.free.rank_prod'
 nat.pow_sub_lt_desc_factorial'
 if_ctx_congr_prop
 con.ker_eq_lift_of_injective
@@ -11525,7 +11593,6 @@ nat.subtype.of_nat
 norm_num.zero_succ
 order_hom.subtype.val
 power_series.coeff_C_mul_X_pow
-parser.any_char
 norm_num.lt_bit1_bit1
 mul_equiv.to_additive'
 valuation.map_sum_le
@@ -11564,6 +11631,7 @@ list.update_nth
 set.restrict_ite_compl
 ennreal.inv_two_add_inv_two
 equiv.equiv_congr_trans
+conj_act.forall
 cardinal.has_one
 ring.direct_limit.of.zero_exact_aux2
 has_mul.to_has_scalar
@@ -11896,6 +11964,7 @@ function.injective.add_left_cancel_monoid
 subsingleton_rat_module
 submodule.mem_Sup_of_mem
 subalgebra.to_semiring
+ordinal.is_fundamental_sequence_succ
 multiset.mem_Ici
 polynomial.smul_C
 nat.lt_irrefl
@@ -12145,6 +12214,7 @@ finset.sum_sub_distrib
 quotient_group.preimage_mk_equiv_subgroup_times_set
 filter.ext_iff
 has_le.le.lt_or_le
+complex.not_lt_iff
 function.commute.iterate_pos_lt_iff_map_lt'
 nat.perfect
 algebra.lmul_right_mul
@@ -12344,6 +12414,7 @@ monoid_hom.to_additive'
 nat.totient_eq_div_factors_mul
 add_subgroup.map_le_iff_le_comap
 Lim
+with_bot.covariant_class_add_le
 int.neg_add_neg
 ennreal.div_lt_iff
 cardinal.mk_Union_le_sum_mk
@@ -12357,6 +12428,7 @@ inv_of_one
 interaction_monad.fail
 cardinal.mk_le_of_surjective
 set.mem_singleton
+padic_val_int.of_ne_one_ne_zero
 polynomial.X_mul_monomial
 nonneg_of_mul_nonpos_right
 subtype.has_to_format
@@ -12410,6 +12482,7 @@ perm_of_prod_eq_prod
 list.filter_map_append
 set.Inter₂_add_subset
 nat.prime.pow_dvd_iff_dvd_pow_factorization
+module.free.choose_basis_index
 multiset.coe_erase
 sup_bot_hom
 sup_bot_hom.to_sup_hom
@@ -12467,6 +12540,7 @@ cardinal.mk_compl_finset_of_infinite
 tactic.mk_simp_attr
 category_theory.functor.op_unop_equiv_inverse
 has_continuous_add.of_nhds_zero
+module.free.finrank_eq_card_choose_basis_index
 polynomial.contract
 add_monoid_hom.iterate_map_sub
 zpow_group_hom_apply
@@ -12481,6 +12555,7 @@ multiset.nodup.not_mem_erase
 function.extend_inv
 linear_map.finite_dimensional
 is_closed.mem_of_tendsto
+set.mem_set_of
 power_series.coe_zero
 set.sum.elim_range
 polynomial.degree_X_pow_add_C
@@ -12553,6 +12628,7 @@ subsemiring.mem_bot
 gaussian_int.to_complex_def'
 pnat.inhabited
 le_sub_iff_add_le'
+module.free.finsupp.free
 filter.has_basis.uniform_continuous_on_iff
 mul_distrib_mul_action.to_mul_aut
 int.sub_one_lt_floor
@@ -12870,6 +12946,7 @@ polynomial.splits
 ordinal.type_eq_zero_iff_is_empty
 matrix.empty_vec_alt0
 multiset.product
+lt_of_lt_of_eq'
 tactic.dependency_name_sets_of_hyps_inclusive
 polynomial.multiplicity_le_one_of_separable
 free_abelian_group.lift_add_group_hom
@@ -13077,6 +13154,7 @@ ordinal.is_normal.nfp_unbounded
 polynomial.reflect_monomial
 set.fintype_Icc
 norm_num.clear_denom_lt
+add_rotate
 tactic.dsimp_hyp
 to_dual_covby_to_dual_iff
 multiplicity.is_greatest'
@@ -13176,7 +13254,6 @@ pi.has_scalar'
 ordinal.nat_cast_mod
 div_inv_monoid.has_pow
 functor.comp.comp_map
-add_monoid_hom.map_add_eq_zero
 prod.ωSup_snd
 set.sUnion
 part.of_option_decidable
@@ -13206,6 +13283,7 @@ category_theory.functor.to_ess_image
 inj_adic_completion_integers.injective
 function.fixed_points_subset_range
 is_compact.bdd_below
+with_bot.none_le
 metric.compact_space_iff_bounded_univ
 classical.cases_true_false
 submodule.dual_restrict_apply
@@ -13453,6 +13531,7 @@ set.disjoint_image_image
 prime_spectrum.basic_open_mul_le_left
 ratfunc.map_apply_of_fraction_ring_mk
 polynomial.degree_C_mul_X_le
+with_top.add_ne_top
 order_dual.linear_ordered_add_comm_monoid
 rel_iso.coe_fn_to_equiv
 units.inhabited
@@ -13460,6 +13539,7 @@ cardinal.lt_succ_self
 submodule.is_compactly_generated
 ring_topology.complete_semilattice_Inf
 category_theory.functor.map_Aut
+set.insert_inter_distrib
 zsqrtd.coe_int_inj
 quiver.empty
 multiset.repeat_left_inj
@@ -13591,6 +13671,7 @@ finset.has_vsub
 with_bot.comm_monoid_with_zero
 add_lt_iff_neg_left
 equiv.to_linear_equiv
+option.cons_none_some
 category_theory.mono
 category_theory.mono.right_cancellation
 category_theory.mono.mk
@@ -13642,6 +13723,7 @@ has_sep
 has_sep.sep
 has_sep.mk
 dvd_not_unit.is_unit_of_irreducible_right
+conj_act.to_conj_act_zero
 uniform_add_group.to_topological_add_group
 add_monoid_hom.to_hom_add_units
 linear_map.commute_pow_left_of_commute
@@ -13662,6 +13744,7 @@ nat.surjective_unpair
 zsqrtd.has_add
 add_equiv.coe_to_nat_linear_equiv
 int.nat_abs_sq
+linear_map.charpoly_def
 multiset.repeat_subset_singleton
 has_sum_ite_eq
 equiv.perm.perm_inv_maps_to_iff_maps_to
@@ -13678,7 +13761,6 @@ polynomial.C_mul_X_pow_eq_self
 is_empty_elim
 nat.nat_zero_eq_zero
 inv_le_one_iff
-parser.alternative
 forall_const
 uniform_embedding_comap
 multiset.nodup_iff_pairwise
@@ -13760,7 +13842,6 @@ multiset.pi.cons_same
 zsqrtd.comm_monoid
 subring.mul_action_with_zero
 sup_assoc
-set.ord_connected.image_covby_image_iff
 finsupp_tensor_finsupp'
 dfinsupp.sum_add_hom_comm
 continuous_map.coe_id
@@ -13822,6 +13903,7 @@ multiset.bind_map_comm
 ratfunc.coe_alg_hom
 function.bij_on_pts_of_period
 ordinal
+wcovby.rfl
 is_dedekind_domain
 is_dedekind_domain.is_noetherian_ring
 is_dedekind_domain.dimension_le_one
@@ -13930,11 +14012,13 @@ subgroup.closure_induction
 subring.to_linear_ordered_ring
 add_submonoid.coe_top
 gaussian_int.to_complex_im
+cardinal.lt_omega_of_fintype
 category_theory.faithful.of_iso
 finset.prod_insert
 smt_tactic.when_tracing
 subring.pointwise_smul_subset_iff
 valued.cauchy_iff
+dual_tensor_hom_equiv_of_basis_to_linear_map
 linear_equiv.of_submodule'
 string.lt_iff_to_list_lt
 finset.subset_empty
@@ -13965,7 +14049,7 @@ not_le_of_gt
 ulower.decidable_eq
 smul_mem_smul_set_iff₀
 multiset.subset.refl
-parser.digit
+one_add_mul
 list.chain'.tail
 finset.has_union
 nat.bit1_eq_one
@@ -14024,6 +14108,7 @@ nnreal.tendsto_at_top_zero_of_summable
 add_comm_group.int_is_scalar_tower
 subgroup.has_inf
 finset.prod_range_succ_div_top
+wcovby.Icc_eq
 has_sum_zero
 equiv.apply_eq_iff_eq
 sum.inlₗ
@@ -14077,6 +14162,7 @@ topological_space.countable_cover_nhds_within
 vector.fintype
 add_neg_eq_iff_eq_add
 zmod.char_p
+conj_act.subgroup.conj_action
 composition.mem_range_embedding
 zmod.ring_hom_surjective
 module.dual_dim_eq
@@ -14104,6 +14190,7 @@ interactive.loc.try_apply
 with_top.zero_eq_coe
 user_attribute.dflt_parser
 rel.mem_core
+conj_act.to_conj_act_inv
 continuous_within_at.preimage_mem_nhds_within'
 set.Icc_subset_Icc
 set.Union₂_sub
@@ -14214,7 +14301,6 @@ parsed_projection_data.is_prefix
 parsed_projection_data.mk
 list.prod_lt_prod'
 cardinal.mk_plift_false
-parser.sep_by1
 reflexive.ne_imp_iff
 localization.lift_on_zero
 add_opposite.pseudo_emetric_space
@@ -14275,6 +14361,8 @@ linear_pmap.mk_span_singleton
 filter.tendsto_at_top_add_left_of_le
 tactic.instance_cache.mk_app
 eq_singleton_top_of_Inf_eq_top_of_nonempty
+sum.encodable
+nat.prime.mod_two_eq_one_iff_ne_two
 add_monoid_algebra.has_faithful_scalar
 zsqrtd.nonnegg
 alg_equiv.ring_equiv_class
@@ -14374,6 +14462,7 @@ mul_equiv.comp_symm_eq
 function.embedding.of_surjective
 uniform_space.completion.ext
 subgroup.topological_closure
+matrix.std_basis_matrix.diag_same
 cardinal.to_nat_mul
 equiv.perm.decompose_fin_symm_apply_one
 list.mem_foldr_permutations_aux2
@@ -14400,6 +14489,7 @@ expr.is_implicitly_included_variable
 feature_search.feature_vec.of_thm
 pure_le_nhds_iff
 monoid.End.coe_pow
+wcovby.covby_of_ne
 dfinsupp.map_range_zero
 prod.map_fst'
 tactic.library_search
@@ -14460,6 +14550,7 @@ pi.topological_add_group
 ideal.closure
 mem_perms_of_list_iff
 mul_equiv.to_CommMon_iso_inv
+module.free.choose_basis
 ideal.is_fg_degree_le
 add_con.quotient_quotient_equiv_quotient
 is_unit.neg
@@ -14482,6 +14573,7 @@ uniform_continuous.prod_map
 con.has_mul
 sdiff_eq_sdiff_iff_inf_eq_inf
 finset.prod_le_prod''
+with_bot.add_lt_add_of_lt_of_le
 finsupp.card_support_eq_one'
 multiset.infinite
 rbmap_lt
@@ -14578,6 +14670,7 @@ list.erase_subset
 sub_mul_action.smul_mem_iff'
 mul_semiring_action_hom.ext_iff
 trunc.lift
+finsupp.single_apply_ne_zero
 add_equiv.add_monoid_hom_congr_apply
 filter.principal_eq_iff_eq
 intermediate_field.coe_val
@@ -14686,6 +14779,7 @@ free_comm_ring.lift_of
 homeomorph.surjective
 finset.is_central_scalar
 le_of_pow_le_pow
+list.all₂_cons
 ring_hom.unop
 cardinal.lift_add
 mul_mem_lower_bounds_mul
@@ -14886,7 +14980,6 @@ category_theory.iso.CommRing_iso_to_ring_equiv_symm_to_ring_hom
 add_group_topology.to_topological_space_top
 monotone.le_iterate_of_le
 nat.mod_two_of_bodd
-encodable.sigma
 set.smul_set_neg
 list.lookmap_map_eq
 tactic.abel.add_g
@@ -14960,7 +15053,6 @@ set.partially_well_ordered_on.exists_monotone_subseq
 range_two_mul
 ring_hom_class.to_monoid_with_zero_hom_class
 polynomial.leading_coeff_hom_apply
-parser.inhabited
 is_simple_order.is_atomistic
 set.nonempty.inr
 is_totally_separated
@@ -15069,6 +15161,7 @@ list.find
 array.read
 symmetrize_mono
 cardinal.induction_on₃
+set.Iic_inter_Ici
 supr_option_elim
 order_iso.symm_apply_apply
 expr.binding_name
@@ -15101,7 +15194,6 @@ ennreal.mul_sub
 mul_hom.of_mdense
 list.perm_permutations'_iff
 fractional_ideal.mul_le
-parser.orelse
 filter.sup_principal
 ordered_add_comm_group
 ordered_add_comm_group.add
@@ -15186,6 +15278,7 @@ int.nat_abs_pow
 tactic.trace_macro
 polynomial.coeff_div_X
 complex.of_real
+add_monoid_hom.to_multiplicative''_symm_apply_apply
 minpoly.monic
 filter.has_inf
 monotone.csupr_mem_Inter_Icc_of_antitone
@@ -15265,6 +15358,7 @@ native.float.is_infinite
 ennreal.to_nnreal_pos_iff
 map_to_fractional_ideals.inv_eq_inv
 set.empty_disjoint
+padic_val_int_dvd_iff
 continuous_at.div
 add_valuation.supp_quot
 is_integral_of_surjective
@@ -15319,9 +15413,11 @@ set.Ici.lattice
 finset.is_lawful_singleton
 set.union_distrib_left
 multiset.le_union_left
+module.free.no_zero_smul_divisors
 category_theory.adjunction.right_adjoint_of_comp
 filter.eventually_eq.sup
 tactic.mk_mvar_list
+set.inv_Ioo_0_left
 multiset.nat.antidiagonal_succ
 ordinal.cof_eq_zero
 ge.is_linear_order
@@ -15371,6 +15467,7 @@ algebra.trace_form_to_matrix_power_basis
 mul_hom.congr_arg
 nontrivial_of_lt
 order_dual.has_div
+covby.wcovby
 equiv.swap_eq_one_iff
 list.rel_map
 tendsto_nhds_unique_of_eventually_eq
@@ -15505,6 +15602,7 @@ submonoid.left_inv_eq_inv
 finset.mem_mul_antidiagonal
 nnreal.mul_finset_sup
 multiset.prod_repeat
+wcovby.image
 right.self_lt_inv
 units.fintype
 metric.diam
@@ -15871,6 +15969,7 @@ finset.nonempty.to_set
 ordinal.nat_cast_pos
 bdd_above_iff_exists_ge
 and_congr_left
+transitive_gt
 ordinal.has_le.le.mul_covariant_class
 power_series.inhabited
 sup_hom.coe_top
@@ -15891,6 +15990,7 @@ list.find_some
 le_of_tendsto
 intermediate_field.coe_Inf
 add_hom.le_map_tsub
+module.free.finrank_linear_hom
 submodule.mem_dual_annihilator_comap_iff
 hahn_series.distrib_mul_action
 set.left_inv_on.comp
@@ -15971,7 +16071,6 @@ set.smul_comm_class_set'
 rat.nontrivial
 filter.smul_filter_eq_bot_iff
 linear_independent_insert
-monoid_hom.map_div'
 uniform_extend_subtype
 continuous_linear_equiv.skew_prod_apply
 monoid_hom.map_div
@@ -16191,12 +16290,12 @@ tactic.delta_config.mk
 list.bind_singleton
 task.monad
 cardinal.bit1_lt_bit0
+order.pred_le_iff_eq_or_le
 submodule.neg_mem
 mv_polynomial.aeval_tower_X
 finset.coe_vadd
 hahn_series.of_power_series_X_pow
 set.eval_image_univ_pi
-parser.many
 antitone_on.map_min
 bilin_form.is_refl.eq_zero
 map_add_left_nhds_zero
@@ -16426,6 +16525,7 @@ polynomial.nat_trailing_degree_X
 fin.cast_succ_zero
 int.has_repr
 continuous_at_const_smul_iff
+padic_val_int_self
 smt_tactic.interactive.add_eqn_lemmas
 norm_num.sub_neg
 subring.prod
@@ -16468,6 +16568,7 @@ star_inv_of
 function.periodic.zsmul_eq
 cau_seq.inhabited
 multiset.map_filter
+module.free.of_equiv
 mul_ne_mul_left
 minpoly.aeval_ne_zero_of_dvd_not_unit_minpoly
 nonneg_le_nonneg_of_sq_le_sq
@@ -16522,7 +16623,6 @@ pnat.rec_on_succ
 nat.strong_rec_on'
 div_mul_cancel
 function.injective.linear_ordered_comm_monoid
-parser.bind
 is_unit.lift_right_inv_mul
 gt_of_ge_of_gt
 nat.le_of_eq
@@ -16530,6 +16630,7 @@ metric.ball_eq_ball'
 int.nat_abs_inj_of_nonneg_of_nonneg
 open_embedding.map_nhds_eq
 order_of_eq_one_iff
+closed_embedding.normal_space
 multiset.eq_repeat
 matrix.is_unit_det_transpose
 filter.lift'_le
@@ -16601,6 +16702,7 @@ matrix.col_add
 cardinal.mk_option
 conv.interactive.guard_lhs
 max_default
+module.free.pi
 set.inter_is_assoc
 add_subgroup.map_zero_eq_bot
 ordinal.sup_typein_limit
@@ -16622,7 +16724,6 @@ add_left_cancel_monoid.mk
 order_hom.next_fixed
 symmetrize_rel
 infty_valuation_rw
-parser.mk_error_msg
 le_add_cinfi
 category_theory.functor.obj_mem_ess_image
 finsupp.sum_finsupp_lequiv_prod_finsupp_symm_inr
@@ -16671,6 +16772,7 @@ mul_aut.apply_has_faithful_scalar
 inf_sdiff_inf
 tactic.try_all_sorted
 ring_hom.map_bit0
+set.ord_connected.apply_wcovby_apply_iff
 filter.infi_ne_bot_iff_of_directed'
 expr.occurs
 monoid_hom.has_coe_t
@@ -17066,6 +17168,7 @@ star_semigroup.to_opposite_star_module
 is_closed_set_of_map_neg
 mv_polynomial.coeff_eq_zero_of_total_degree_lt
 fin.order_iso_unique
+module.free.finrank_prod
 is_fraction_ring.is_algebraic_iff'
 set.mk_preimage_sigma_eq_empty
 power_series.inv_of_unit_eq
@@ -17146,6 +17249,7 @@ cardinal.mk_image_eq
 list.bag_inter_nil
 subsemiring_class.to_comm_semiring
 inf_top_hom.cancel_right
+finsupp.sum_univ_single
 ordinal.add_is_normal
 equiv.perm.cycle_is_cycle_of
 equiv.subtype_quotient_equiv_quotient_subtype_mk
@@ -17483,7 +17587,6 @@ multiplicity.multiplicity_eq_zero_of_not_dvd
 finset.coe_erase
 polynomial.has_one
 Icc_mem_nhds_within_Ioi
-parser.foldr
 cardinal.lift_prod
 multiset.count_sum'
 set.piecewise_vadd
@@ -17526,6 +17629,7 @@ nat.le_rec_on'
 equiv.perm.is_cycle_of_prime_order
 ring_equiv.of_hom_inv_symm_apply
 int.pow_right_injective
+order.pred_wcovby
 filter.tendsto.inv₀
 relation.trans_gen.tail'
 set.diff_diff_cancel_left
@@ -17608,6 +17712,7 @@ continuous_on.comp
 mk_iff.compact_relation
 filter.tendsto.const_add
 equiv.sum_empty_apply_inl
+padic_val_nat.one
 tactic.get_decls_from
 has_bot_nonempty
 equiv.Pi_congr_left
@@ -17651,6 +17756,7 @@ associates.preorder
 matrix.is_unit_det_of_invertible
 widget.on_click
 nat.coprime_zero_left
+homeomorph.t1_space
 ring_hom.coe_fst
 con.has_le
 order_hom.prodₘ
@@ -17662,6 +17768,7 @@ continuous_linear_equiv.pi_fin_two_to_linear_equiv
 dfinsupp.has_int_scalar
 tactic.interactive.econstructor
 equiv.self_comp_of_injective_symm
+wcovby.eq_or_eq
 finset.image_eq_empty
 subgroup.normal
 subgroup.normal.conj_mem
@@ -17788,6 +17895,7 @@ add_subgroup.sup_eq_closure
 encodable.decode_sigma
 submodule.comap_subtype_self
 finsum_mem_union''
+ne.lt_of_le
 continuous_on.prod_map
 category_theory.functor.comp.reflects_isomorphisms
 nat.dvd_one
@@ -17925,6 +18033,7 @@ add_submonoid.localization_map.neg_inj
 cardinal.mk_fintype
 category_theory.functor.right_op_faithful
 homeomorph.prod_punit
+module.free.rank_pi_fintype
 equiv.perm.subtype_congr_hom.card_range
 tactic.cc
 list.nth_update_nth_ne
@@ -18138,6 +18247,7 @@ false_iff
 set.fintype_Union
 matrix.bit1_apply_ne
 list.chain_cons
+list.encodable
 is_coprime.of_mul_add_right_right
 Inf_le_Inf
 sym.mem_cons_of_mem
@@ -18177,6 +18287,7 @@ filter.tendsto.neg_const_mul_at_top
 has_le.le.is_partial_order
 mul_equiv.inv'_apply
 polynomial.degree_C
+monoid_algebra.map_domain_one
 linear_map.inl_injective
 tactic.unify_equations.get_sizeof
 finsupp.some_single_some
@@ -18206,6 +18317,7 @@ finset.nonempty.of_inv
 add_monoid_hom.map_one₂
 nat.gcd_dvd_left
 json.int_coe
+set.Ioi_insert
 bdd_above_Ioo
 direct_sum.add_hom_ext
 function.not_lt_argmin_on
@@ -18536,7 +18648,7 @@ add_valuation.is_equiv.refl
 equiv.swap_self
 set.subsingleton.eq_empty_or_singleton
 sum.lex.to_lex_mono
-add_monoid_hom.injective_iff
+order.Icc_pred_left
 multiset.count_add
 complex.abs_re_lt_abs
 sum.lex.to_lex_lt_to_lex
@@ -18557,6 +18669,7 @@ sdiff_le_sdiff_right
 sub_div
 function.periodic.sub_antiperiod_eq
 exists_unique
+ennreal.covariant_class_add_le
 finprod_eq_single
 add_submonoid.map_id
 add_submonoid.vadd_def
@@ -18818,7 +18931,6 @@ well_founded.sup
 nat.factorial_dvd_asc_factorial
 valuation.map_neg
 is_generic_point.mem_closed_set_iff
-parser.foldl_core
 polynomial.monomial_pow
 finset.max'_eq_sup'
 pred.rec_top
@@ -18858,6 +18970,7 @@ local_ring.maximal_ideal_unique
 environment.has_repr
 continuous.nndist
 feature_search.feature_stats.has_to_format
+conj_act.div_inv_monoid
 disjoint.mono_right
 dvd_gcd_iff
 with_zero.map_comp
@@ -18923,6 +19036,7 @@ finsupp.of_support_finite
 filter.map_inf_principal_preimage
 polynomial.eval_mul_X_pow
 set.mul_indicator_apply_le'
+order.Ico_succ_left_of_not_is_max
 set.union_eq_Union
 with_zero.group_with_zero
 finset.sum_range_add
@@ -19075,6 +19189,7 @@ surjective_of_linear_independent_of_span
 lt_iff_le_not_le
 nat.coprime.gcd_mul_left_cancel
 polynomial.of_subring
+order.Ico_succ_right
 subring.to_submonoid
 subring.to_ordered_ring
 linear_map.congr_fun₂
@@ -19151,6 +19266,7 @@ polynomial.mem_nth_roots
 list.dedup_cons_of_mem'
 lt_inv_mul_iff_mul_lt
 list.perm_append_right_iff
+linear_map.aeval_self_charpoly
 prod.swap_surjective
 linear_equiv.det_conj
 Inf_hom.Inf_hom_class
@@ -19269,7 +19385,6 @@ alg_equiv.to_linear_map_injective
 filter.mem_infi_finset
 bit1_nsmul
 set.Iio_inter_Iio
-parser.is_lawful_monad
 commute.mul_left
 set.image_neg_Ico
 zmultiples_add_hom
@@ -19347,6 +19462,7 @@ list.last_eq_nth_le
 ordering.decidable_eq
 omega_complete_partial_order.continuous_hom.ωSup_bind
 is_lub.exists_seq_strict_mono_tendsto_of_not_mem
+order.Ioc_succ_right
 monad_state
 monad_state.lift
 monad_state.mk
@@ -19433,6 +19549,7 @@ monoid_algebra.mem_closure_of_mem_span_closure
 equiv.perm.vectors_prod_eq_one.one_unique
 set.Inter_subset_Inter₂
 hahn_series.no_zero_divisors
+wcovby.Ioo_eq
 tactic.subst_core
 tactic.ring_exp.mk_pow
 set.Ici.semilattice_sup
@@ -19493,6 +19610,7 @@ disjoint.symm_diff_right
 is_compact_iff_compact_space
 algebra.top_to_subring
 is_least.lower_bounds_eq
+with_bot.lt_coe_iff
 add_submonoid.le_comap_map
 add_con.quotient.inhabited
 list.split_on_p_aux_spec
@@ -19632,6 +19750,7 @@ subsemiring.pointwise_smul_subset_iff
 native.float.asinh
 metric.sphere_union_ball
 function.injective2
+and_and_distrib_left
 add_le_add_right
 real.ordered_ring
 multiset.sup_union
@@ -19777,12 +19896,15 @@ order_dual.archimedean
 zmod.lift_cast_add_hom
 nnreal.sqrt_mul
 metric.bounded_range_of_tendsto_cofinite
+order.Ico_succ_right_eq_insert
 filter.bot_sub
 mul_right_iterate_apply_one
 filter.map₂_pure
 set.inclusion_injective
+injective_iff_map_eq_one'
 mjoin
 set.preimage_neg_Ioo
+covby.is_nonstrict_strict_order
 linear_map.iterate_succ
 non_unital_ring
 non_unital_ring.add
@@ -19823,12 +19945,10 @@ sum.map
 finsupp.card_support_le_one
 finite_dimensional.of_finset_basis
 cardinal.omega_le_lift
-with_bot.has_le.le.is_total
 algebra.finite_type.prod
 add_zero_class.to_has_zero
 prod.topological_group
 filter.has_basis.totally_bounded_iff
-parser.monad
 list.drop_eq_nth_le_cons
 alg_hom.coe_restrict_scalars
 pequiv.trans_refl
@@ -19887,7 +20007,6 @@ ordinal.lift.principal_seg_top'
 free_group.reduce.red
 tendsto_nhds_within_of_tendsto_nhds_of_eventually_within
 finset.piecewise_erase_univ
-encodable.vector
 hahn_series.order_of_ne
 set.mul_indicator_apply
 directed.extend_bot
@@ -19955,6 +20074,7 @@ linear_map.to_matrix_alg_equiv_to_lin_alg_equiv
 list.sorted.rel_of_mem_take_of_mem_drop
 monoid_with_zero_hom.map_mul
 dfinsupp.equiv_fun_on_fintype_symm_coe
+topological_space.encodable.to_separable_space
 smt_tactic.interactive.trace_state
 reflexive.rel_of_ne_imp
 subring.mul_mem
@@ -20059,6 +20179,7 @@ composition.to_composition_as_set_boundaries
 is_max.is_top
 list.map_fst_zip
 multilinear_map.to_linear_map
+linear_map.trace_eq_contract_of_basis
 function.combine
 list.rel_bind
 equiv.perm.subtype_perm_one
@@ -20136,9 +20257,11 @@ linear_equiv.has_zero
 span_le_span_iff
 order_iso.sum_dual_distrib_symm_inl
 multiset.ndinter_subset_left
+contract_right
 tendsto_const_smul_iff
 finsum_mem_eq_zero_of_infinite
 monoid_hom.coe_inj
+eq.trans_lt
 set.disjoint_iff_subset_compl_left
 continuous_induced_rng
 list.cyclic_permutations_eq_nil_iff
@@ -20201,7 +20324,6 @@ linear_map.dual_map_id
 set.nsmul_mem_nsmul
 sup_Inf_eq
 is_compact.elim_finite_subcover_image
-encodable.array
 sum.inl.inj_iff
 continuous_on.inv
 zmod.neg_val
@@ -20379,6 +20501,7 @@ tactic.ring.horner_const_mul
 category_theory.equivalence.ess_surj_induced_functor
 matrix.update_column_apply
 group.fintype_of_ker_eq_range
+le_of_eq_of_le'
 inv_le_iff_one_le_mul
 sub_mul_action.stabilizer_of_sub_mul.submonoid
 finset.sum_card_le
@@ -20872,6 +20995,7 @@ environment.is_refl_app
 finset.Ico_filter_le_of_left_le
 emetric.closed_ball
 mul_le_mul_left'
+order.Icc_succ_right
 monoid_hom.mem_mker
 int.coe_nat_mul_out
 finprod_mem_eq_to_finset_prod
@@ -20901,6 +21025,7 @@ set.add_antidiagonal
 set.image2_add
 embedding.t2_space
 polynomial.div_by_monic
+conj_act.units_smul_def
 category_theory.nat_iso.hom_app_is_iso
 finsupp.sum_option_index_smul
 false_iff_true
@@ -20946,7 +21071,6 @@ equiv.bool_arrow_equiv_prod
 state_t.monad_except
 filter.extraction_forall_of_eventually
 fin.card_filter_le_le
-is_of_fin_order.quotient
 equiv.perm.vectors_prod_eq_one.vector_equiv
 int.add_le_add
 finset.sum_range_sub_of_monotone
@@ -21208,11 +21332,13 @@ not_of_eq_false
 euclidean_domain.eq_div_of_mul_eq_right
 set.preimage_const_mul_Ioc_of_neg
 smul_cancel_of_non_zero_divisor
+set.Ici_supr
 tactic.ring.const_add_horner
 linear_equiv.coe_to_add_equiv
 linear_map.general_linear_group.to_linear_equiv
 dlist.cons
 metric.continuous_on_iff'
+order.Ioc_pred_right
 category_theory.iso.cancel_iso_inv_left
 continuous_linear_map.restrict_scalars
 nat.lt_succ_sqrt
@@ -21259,6 +21385,8 @@ add_commute.all
 subalgebra.mul_action_with_zero
 check_type
 add_monoid_hom.uniform_continuous_of_continuous_at_zero
+one_sub_mul
+linear_map.charpoly_monic
 submodule.add_mem_iff_left
 finset.prod_comp
 div_nonneg_iff
@@ -21476,6 +21604,7 @@ ideal.mem_of_polynomial
 polynomial.coeff_monomial_zero_mul
 list.is_infix.trans
 cardinal.lift_max
+with_top.well_founded_gt
 list.infix_nil_iff
 nat.mem_factors_mul_right
 basis.mk_fin_cons_of_le
@@ -21638,6 +21767,7 @@ tactic.norm_fin.eval_fin_m.run
 tactic.suggest.match_head_symbol
 filter.infi_principal_finset
 category_theory.functor.op.category_theory.faithful
+with_bot.add_lt_add_right
 subgroup.card_bot
 set.decidable_emptyset
 dense_inducing.tendsto_comap_nhds_nhds
@@ -21972,6 +22102,7 @@ set.mul_indicator_eq_self
 finset.off_diag_empty
 ratfunc.lift_monoid_with_zero_hom_apply
 real.real_sqrt_le_nat_sqrt_succ
+conj_act.rec
 bilin_form.is_alt.ortho_comm
 abstract_completion.continuous_extend
 category_theory.functor.op_hom
@@ -22299,6 +22430,7 @@ tactic.interactive.rw_rule_p
 Sup_apply
 list.head_mem_head'
 submodule.mem_map_equiv
+with_bot.add_eq_coe
 set.mul_subset_mul_right
 zmod.int_cast_zmod_cast
 matrix.cons_sub_cons
@@ -22402,6 +22534,7 @@ list.nth_range
 bornology.sUnion_bounded_univ
 bool.lt_iff
 rbmap.from_list
+plift.encodable
 ultrafilter.of_comap_inf_principal_eq_of_map
 is_compl.left_le_iff
 feature_search.feature_vec.of_proof
@@ -22417,7 +22550,6 @@ multiset.lcm_ndunion
 int.coe_nat_pow
 finset.prod_le_prod_fiberwise_of_prod_fiber_le_one'
 anti_symmetric
-parser.many1
 linarith.ineq.cmp
 eq_inv_mul_iff_mul_eq
 nhds_within_pi_ne_bot
@@ -22444,6 +22576,7 @@ set.Icc_diff_both
 tactic.interactive.elide
 add_le_cancellable.tsub_lt_iff_right
 and_and_and_comm
+conj_act.normal_of_characteristic_of_normal
 add_con.comap_rel
 units_equiv_ne_zero
 continuous_linear_map.ext_ring
@@ -22566,6 +22699,7 @@ prod.ordered_cancel_comm_monoid
 matrix.to_lin'_mul_apply
 mul_action.orbit
 tactic.interactive.filter_upwards
+iff.not_right
 cardinal.mk_denumerable
 tendsto_const_mul_pow_nhds_iff
 uniform_space_of_edist
@@ -22574,7 +22708,6 @@ t2_space_discrete
 matrix.diagonal_mul_diagonal
 finset.eq_one_of_prod_eq_one
 dvd_prime_pow
-monoid_hom.map_mul_eq_one
 set.Union_subset_iff
 rat.floor_cast
 subalgebra.to_ring
@@ -22608,6 +22741,7 @@ list.lex.is_asymm
 set.image2_eq_empty_iff
 linear_equiv.coe_inv_det
 with_top.canonically_linear_ordered_add_monoid
+set.ord_connected_image
 mul_self_le_mul_self_iff
 linear_map.to_matrix_alg_equiv'_id
 bilin_form.le_orthogonal_orthogonal
@@ -22635,6 +22769,7 @@ rat.cop
 set.zero_mem_add_center
 set.preimage_eq_empty
 set.image_mul_right
+order.Ioc_pred_left
 dense_inducing.separable_space
 inv_neg'
 list.drop_take_succ_eq_cons_nth_le
@@ -22871,6 +23006,7 @@ neg_iff_pos_of_mul_neg
 is_noetherian.finite_basis_index
 commute.order_of_mul_dvd_mul_order_of
 covby.is_atom
+padic_val_nat.zero
 power_series.order_X_pow
 basis.to_matrix_map
 ne_comm
@@ -23059,6 +23195,7 @@ list.mem_filter
 tactic.interactive.revert_target_deps
 option.pbind_eq_bind
 multiset.nat.antidiagonal
+with_bot.well_founded_gt
 localization.neg_mk
 has_scalar.comp.is_scalar_tower
 vm_decl.arity
@@ -23375,6 +23512,7 @@ category_theory.category.id_comp
 function_field.ring_of_integers.is_fraction_ring
 classical.dec_eq
 filter.frequently_or_distrib
+with_bot.is_total_le
 list.eq_or_mem_of_mem_insert
 order_dual.complete_lattice
 algebra.tensor_product.map_comp_include_left
@@ -23497,6 +23635,7 @@ ennreal.top_mem_upper_bounds
 set.mul_indicator_inv
 ordered_cancel_comm_monoid.to_partial_order
 subgroup_units_cyclic
+mul_aut.conj_normal
 normal_space.regular_space
 filter.tendsto.is_compact_insert_range
 tactic.whnf_no_delta
@@ -23555,7 +23694,6 @@ decidable.one_lt_mul_of_lt_of_le
 connected_components.range_coe
 conv.dsimp
 composition_card
-encodable.multiset
 cmp_le_eq_cmp
 finset.filter_nonempty_iff
 finset.prod_univ_pi
@@ -23608,6 +23746,7 @@ subring.range_subtype
 bor_self
 fin.cons_eq_cons
 denumerable.equiv₂
+int.encodable
 subgroup.normal_core_eq_ker
 multiplicative.of_add_lt
 finset.le_inf'
@@ -23741,7 +23880,6 @@ finset.image_insert
 setoid.has_inf
 finsum_eq_sum_of_fintype
 monotone_on.mem_upper_bounds_image
-encodable.Prop
 polynomial.algebra_map_pi_self_eq_eval
 ring_equiv.subsemiring_map
 polynomial.aeval_nat_cast
@@ -23760,6 +23898,7 @@ ring_hom.quotient_ker_equiv_of_surjective
 tactic.rcases_hint_core
 list.insert_of_not_mem
 add_units.add_left_inj
+set.ord_connected.apply_covby_apply_iff
 list.is_infix.filter
 list.sublists
 smul_card_add_subgroup
@@ -23788,12 +23927,14 @@ finset.insert_idem
 list.nth_le_zero_scanl
 basis.to_dual_total_right
 add_commute.neg_right
+finsupp.sum_filter_add_sum_filter_not
 format.color.to_string
 has_sum_fintype
 additive.linear_order
 strict_mono.order_iso
 set.eq_on_empty
 valuation.map_zero
+order.wcovby_succ
 finite_dimensional.not_linear_independent_of_infinite
 monotone_comp_of_dual_iff
 add_monoid_algebra.of'_apply
@@ -23958,6 +24099,7 @@ complex.abs_sub_comm
 complete_lattice.independent_iff_forall_dfinsupp
 polynomial.degree_eq_bot
 complex.is_cau_seq_conj
+continuous_on.exists_forall_ge'
 finsum_congr
 nat.sqrt_aux
 list.length_of_fn
@@ -24041,7 +24183,6 @@ list.join_append
 enat.coe_get
 lower_bounds_empty
 relator.left_unique.forall₂
-covariant_class_add
 set.Union_of_singleton
 multiset.to_finsupp_eq_iff
 filter.compl_mem_Coprod_iff
@@ -24105,6 +24246,7 @@ list.perm.bind_right
 bilin_form.comp_inj
 linear_map.det_aux_comp
 tactic.interactive.mk_mapp_aux'
+wcovby.to_dual
 pi.single_op
 multiset.subtype.fintype
 set.Inter₂_mono'
@@ -24295,6 +24437,7 @@ v2
 order_iso.symm_apply_le
 tactic.abel.context.iapp
 add_opposite.unop_sub
+multiset.encodable
 ulower.equiv
 monotone_on.map_bdd_above
 add_equiv.symm_trans_apply
@@ -24415,6 +24558,7 @@ matrix.add_monoid_hom_mul_right_apply
 tactic.istep
 quotient_add_group.subsingleton_quotient_top
 number_field.I_K_f.topological_space
+padic_val_nat.self
 list.mmap_accuml
 category_theory.nat_trans.left_op
 finsupp.comap_domain
@@ -24476,6 +24620,7 @@ norm_cast.label.has_to_format
 associates.dvd_not_unit_iff_lt
 function.surjective.image_preimage
 submonoid.localization_map.mul_equiv_of_mul_equiv_eq
+wcovby_iff_covby_or_eq
 subring.prod_mono
 filter.subsingleton.at_top_eq
 finset.prod_sum
@@ -24496,7 +24641,6 @@ ring_equiv.sof_left_inverse_apply
 tactic.ring_exp.ex_sum_b
 list.find_cons_of_pos
 multiset.fold_add
-encodable.int
 rat.add_semigroup
 max_zero_sub_eq_self
 fractional_ideal.count_zero
@@ -24614,6 +24758,7 @@ sum.lex.inl_mono
 add_monoid_hom.sub_apply
 ring_subgroups_basis.of_comm
 equiv.sum_arrow_equiv_prod_arrow
+order.pred_lt_iff_eq_or_lt_of_not_is_min
 sdiff_sdiff_sup_sdiff'
 bool.distrib_lattice
 nat.prime.pos
@@ -25506,6 +25651,7 @@ option.bind_eq_some
 prod.pseudo_metric_space_max
 string.to_list
 add_submonoid.add_submonoid_class
+module.free.linear_map.module.finite
 set.union_diff_right
 ennreal.mul_lt_top_iff
 tactic.contradiction_with
@@ -25646,7 +25792,6 @@ covby.is_coatom
 add_aut.conj_inv_apply
 cau_seq.le_antisymm
 subalgebra.bot_eq_top_of_dim_eq_one
-eq_top_of_maximal
 submonoid.mem_inv_pointwise_smul_iff
 ratfunc.of_fraction_ring_mk'
 finsupp.single_add_hom
@@ -25969,6 +26114,7 @@ zsqrtd.nonsquare
 zsqrtd.nonsquare.ns
 zsqrtd.nonsquare.mk
 ring_hom.ker_is_prime
+with_bot.le_of_add_le_add_right
 nat.modeq.mul_right_cancel_iff'
 mul_aut.coe_mul
 list.head_append
@@ -26177,6 +26323,7 @@ pi.neg_comp
 equiv.apply_swap_eq_self
 AddGroup.large_category
 add_monoid_hom.iterate_map_neg
+mul_aut.conj_normal_inv_apply
 topological_space.positive_compacts.coe_mk
 ideal.le_radical
 metric.emetric_ball_top
@@ -26203,6 +26350,7 @@ list.revzip
 smt_tactic.ematch
 complex.rat_cast_re
 cardinal.eq_of_add_eq_add_left
+iff.not_left
 mul_le_one₀
 polynomial.derivative_apply
 set.subset_add_center_add_units
@@ -26288,6 +26436,7 @@ sum.lex.inl_strict_mono
 add_units.vadd_def
 option.cases_on'_none_coe
 expr.lower_vars
+set.Ico_insert_right
 finsupp.tsub
 list.duplicate.ne_singleton
 mzip_with'
@@ -26409,6 +26558,7 @@ multiplicative.ordered_cancel_comm_monoid
 option.naturality
 uniform_space.ball_mem_nhds
 vector.perm.is_setoid
+set.Ioc_insert_left
 function.surjective.infi_congr
 nat.zero_mod
 infi_exists
@@ -26513,6 +26663,7 @@ ideal.comap_lt_comap_of_root_mem_sdiff
 dim_add_dim_split
 continuous_linear_equiv.coe_symm_comp_coe
 pi.add_apply
+wcovby.is_refl
 multiset.noncomm_prod_coe
 int.mul_div_assoc
 add_valuation.ext_iff
@@ -26762,7 +26913,6 @@ rtendsto'_nhds
 cardinal.card_typein_out_lt
 basis.smul_repr_mk
 nat.left_le_mkpair
-parser.fail
 tactic.unsafe.type_context.level.mk_tmp_mvar
 matrix.adjugate_adjugate
 ordinal.deriv_eq_enum_fp
@@ -26926,6 +27076,7 @@ finset.inter_sdiff
 mul_geom_sum₂_Ico
 zpow_zero
 is_open_map.preimage_frontier_eq_frontier_preimage
+monoid_hom.to_additive''_apply_apply
 list.filter_map_cons_some
 bool.bnot_bor
 decidable.and_iff_not_or_not
@@ -26968,6 +27119,7 @@ filter.map_map₂_distrib_left
 function.support_const_smul_of_ne_zero
 pnat.map_subtype_embedding_Ico
 submodule.exists_unique_add_of_is_compl
+set.Iic_Inf
 update_le_iff
 fintype.prod_bool
 function_field.I_F_f.map_to_fractional_ideals.continuous
@@ -27120,6 +27272,7 @@ set.ord_connected_Icc
 add_con.sub
 div_sub'
 mv_polynomial.coe_eval₂_hom
+covby_iff_wcovby_and_lt
 filter.tendsto.basis_right
 quotient.eq_mk_iff_out
 list.tfae_cons_of_mem
@@ -27300,7 +27453,6 @@ prime_spectrum.le_iff_specializes
 ne_zero_of_eq_one
 pequiv.refl_apply
 cardinal.lift_two_power
-with_top.has_le.le.is_total
 linear_map.comp_id
 submonoid.subsemiring_closure
 finset.noncomm_prod_mul_distrib
@@ -27340,6 +27492,7 @@ real.sqrt_nonneg
 finset.eq_of_mem_of_not_mem_erase
 rat.floor_def
 maximal_spectrum.int_valuation_lt_one_iff_dvd
+linear_map.trace_eq_contract_of_basis'
 free_group.of
 continuous_linear_map
 continuous_linear_map.to_linear_map
@@ -27447,6 +27600,7 @@ list.sublists'_cons
 continuous_at_update_of_ne
 equiv.perm.disjoint.extend_domain
 tendsto_inv
+padic_val_int.self
 tactic.interactive.derive_lawful_functor
 even.tsub_even
 ring_equiv.of_left_inverse_symm_apply
@@ -27491,7 +27645,6 @@ list.unzip_cons
 format_linter_results
 finset.image_filter
 one_le_two
-encodable.list
 fixed_points.separable
 finset.univ_product_univ
 con_gen
@@ -27587,6 +27740,7 @@ lt_div_iff_of_neg
 mul_sub
 unit_of_invertible
 add_action.ext
+linear_map.is_integral
 name_set.local_list_to_name_set
 zmultiples_hom_apply
 list.or_exists_of_exists_mem_cons
@@ -27802,6 +27956,7 @@ hahn_series.coeff.linear_map
 finsupp.to_dfinsupp
 idele.mk'.inv
 projection_rule
+conj_act.of_conj_act_one
 linarith.pcomp.maybe_minimal
 set.mem_inter
 vector.cons_head
@@ -27995,6 +28150,7 @@ ennreal.lt_top_of_sum_ne_top
 finset.le_max'
 finset.ssubset_iff_of_subset
 filter.tendsto_at_bot_add_nonpos_right'
+transitive_le
 add_monoid_hom.comap_ker
 unique_factorization_monoid.normalized_factors_of_irreducible_pow
 dfinsupp.add_apply
@@ -28131,6 +28287,7 @@ function.support_min
 is_glb_prod
 mv_polynomial.eval₂_hom_id_X_eq_join₂
 ordinal.sup_opow_nat
+add_monoid_hom.to_multiplicative_symm_apply_apply
 cardinal.le_mul_left
 zero_hom.coe_comp
 with_top.has_zero
@@ -28343,6 +28500,7 @@ tactic.interval_cases_using
 list.init_take
 dfinsupp.has_add
 is_lub_inv
+conj_act.fixed_points_eq_center
 linear_equiv.of_is_unit_det
 units.has_continuous_const_smul
 list.eq_of_sum_take_eq
@@ -28386,6 +28544,7 @@ submonoid.mrange_inl
 strict_mono.dual_right
 with_top.mul_eq_top_iff
 filter.rtendsto'_def
+has_le.le.trans_eq'
 composition.card_boundaries_eq_succ_length
 int.one_nonneg
 power_basis.degree_minpoly_gen
@@ -28396,6 +28555,7 @@ summable_sum_mul_range_of_summable_mul
 fintype.trunc_equiv_fin_of_card_eq
 set.Icc_def
 linear_map.coe_equiv_prod_of_surjective_of_is_compl
+with_bot.coe_le_iff
 polynomial.monic_sub_of_right
 with_top.locally_finite_order
 set.pairwise.imp_on
@@ -28481,6 +28641,7 @@ add_le_of_nonpos_left
 polynomial.char_zero
 tactic.interactive.subst'
 add_neg_self
+wcovby.of_image
 finsupp.smul_single_one
 native.float.round_error
 module.subsingleton_equiv_apply
@@ -28749,7 +28910,6 @@ encodable.decode
 encodable.encodek
 encodable.mk
 list.sum_const_nat
-encodable.finset
 order_dual.of_dual_inj
 nonneg.mk_div_mk
 set.prod_preimage_eq
@@ -29149,6 +29309,7 @@ cSup_pair
 set.preimage_eq_empty_iff
 finsupp.subtype_domain_sub
 cardinal
+strict_mono.apply_eq_bot_iff
 tactic.mk_constructors_arg_names
 antitone_on.image_lower_bounds_subset_upper_bounds_image
 matrix.vec_empty
@@ -29171,6 +29332,7 @@ quotient_group.lift_quot_mk
 decidable.mul_lt_mul''
 tendsto_locally_uniformly.comp
 cardinal.is_regular_cof
+conj_act.fintype
 ordinal.principal_add_one
 option.map_congr
 finset.Ioc_eq_empty_iff
@@ -29223,6 +29385,7 @@ filter.tendsto.if_nhds_within
 ideal.prod
 function.is_fixed_pt_id
 enat.has_le
+module.free.repr
 set.bounded_lt_Iio
 bounded_lattice_hom.to_sup_bot_hom
 continuous_linear_equiv.map_smul
@@ -29328,6 +29491,7 @@ finite_idele.valuation_eq_one_iff
 linear_map.flip_nondegenerate
 nat.coprime_or_dvd_of_prime
 ideal.is_domain_map_C_quotient
+conj_act.mul_action₀
 alg_hom.finite.id
 linear_map.det_comp
 ideal.is_unit_iff
@@ -29362,6 +29526,7 @@ list.length
 lub_Iio_le
 covby.ne
 function_field.infty_valued_Fqt.separated_space
+wcovby.wcovby_iff_le
 submodule.quotient.has_quotient.quotient.has_neg
 matrix.inv_of_eq_nonsing_inv
 category_theory.equivalence.trans_counit_iso
@@ -29369,6 +29534,7 @@ subfield.closure_mono
 antitone.map_sup_le
 continuous_linear_map.inr_apply
 finite_adeles_Zi
+linear_map.trace_eq_contract'
 nat.pow_dvd_pow_iff_pow_le_pow
 equiv.prod_shear_apply
 int.one_mul
@@ -29753,6 +29919,7 @@ fintype.card_unique
 mv_polynomial.degrees_X
 auto.classical.implies_iff_not_or
 le_of_le_mul_of_le_one_left
+order.Iio_succ_eq_insert
 abelianization.inhabited
 prod.has_sizeof
 fin.cast_succ_pred_eq_pred_cast_succ
@@ -30090,6 +30257,7 @@ multiset.coe_nodup
 nat.cast_max
 non_assoc_ring.to_non_assoc_semiring
 filter.ptendsto'_of_ptendsto
+is_of_fin_order.apply
 ratfunc.eval
 complex.conj_re
 part.mem_chain_of_mem_ωSup
@@ -30141,6 +30309,7 @@ fin.succ_le_succ_iff
 continuous_on.is_separable_image
 nat.not_coprime_of_dvd_of_dvd
 polynomial.units_coeff_zero_smul
+wcovby.covby_of_not_le
 rel_iso.ext_iff
 real.of_rat_lt
 cauchy_seq.tendsto_uniformity
@@ -30199,6 +30368,7 @@ ring_equiv.of_hom_inv
 set.range_splitting_injective
 int.coe_nat_inj'
 cau_seq
+injective_iff_map_eq_one
 has_sum_mul_left_iff
 linear_map.map_eq_top_iff
 name_set.inhabited
@@ -30367,6 +30537,7 @@ fractional_ideal.span_finset_eq_zero
 ordinal.family_of_bfamily_enum
 category_theory.iso.inv_hom_id
 zsqrtd.coe_nat_val
+and_and_distrib_right
 tactic.var_names
 nhds_infi
 nat.dvd_add_iff_right
@@ -30517,7 +30688,6 @@ enat.with_top_equiv_zero
 ge_iff_le
 set.bUnion_insert
 ring_hom.map_iterate_pth_root
-parser.fix_core
 R_hat.comm_ring
 linear_independent_empty
 is_least_pair
@@ -30603,6 +30773,7 @@ list.sublist.sublist_forall₂
 order_dual.non_unital_ring
 add_group_filter_basis.nhds_has_basis
 continuous_map.prod_map
+conj_act.card
 power_series.coeff_one_X
 nat.lt_size
 prime_spectrum.preimage_comap_zero_locus_aux
@@ -30627,6 +30798,7 @@ set.pairwise_sUnion
 list.choose
 antitone.comp_monotone
 tsum_comm
+add_monoid_hom.to_multiplicative''_apply_apply
 partial_sups_mono
 std.prec.max_plus
 list.cons_bag_inter_of_pos
@@ -30885,6 +31057,7 @@ minpoly.coeff_zero_eq_zero
 tactic.interactive.assumption'
 localization.inhabited
 pnat.card_Ioc
+mul_sub_one
 multiset.prod_map_div
 is_symm
 is_symm.symm
@@ -30916,7 +31089,6 @@ list.rotate'_mod
 tactic.get_app_args_whnf
 omega_complete_partial_order.subtype
 coinduced_compose
-parser.eps
 sum.traverse_map
 category_theory.reflects_isomorphisms_forget₂
 strict_mono.order_iso_of_right_inverse
@@ -31178,6 +31350,7 @@ nhds_bot
 list.nth_le
 rel_iso.inhabited
 order_embedding.of_map_le_iff
+set.Iio_inter_Ioi
 add_submonoid.localization_map.map_spec
 monoid_add_hom.map_add_cyclic
 function.smul_comm_class
@@ -31478,7 +31651,6 @@ nat.floor_eq_on_Ico
 equiv.symm_image_image
 is_atomic.is_coatomic_dual
 subsemiring.closure_eq
-is_of_fin_add_order.is_of_fin_add_order_iff_quotient
 ring_hom.map_finsupp_sum
 set.Ico_eq_empty
 is_noetherian_ring_of_surjective
@@ -31487,6 +31659,7 @@ add_submonoid.comap_inf_map_of_injective
 int.induction_on'
 monotone.sup
 algebra.adjoin_eq_span_of_subset
+homeomorph.t0_space
 nat.choose_succ_self
 option.subsingleton_iff_is_empty
 tagged_format.m_untag
@@ -31512,6 +31685,7 @@ subsemiring.topological_closure
 inf_sdiff_self_right
 free_monoid.monoid
 con.hrec_on₂_coe
+module.free.rank_lt_omega
 normalize_associated
 tactic.olean_doc_strings
 tensor_product.smul_tmul
@@ -31588,6 +31762,7 @@ linarith.mul_zero_eq
 cardinal.mk_compl_eq_mk_compl_finite_same
 le_of_one_div_le_one_div
 int.cast_pos
+add_monoid_hom.to_multiplicative_apply_apply
 filter.eventually_at_top_curry
 has_dvd.dvd.modeq_zero_int
 tactic.mk_local_pis
@@ -31801,6 +31976,7 @@ filter.lift'_lift'_assoc
 function_field.A_F.comm_ring
 bot_hom.id
 bilin_form.congr_symm
+linear_map.pow_eq_aeval_mod_charpoly
 polynomial.map_ne_zero
 nat.decidable_eq
 multiset.card_product
@@ -31826,6 +32002,7 @@ continuous.surjective'
 polynomial.monic_of_degree_le
 multiplicity.pow_dvd_iff_le_multiplicity
 hahn_series.C_eq_algebra_map
+contract_left
 int.coe_nat_bit0
 set.range
 set.piecewise_le
@@ -31931,6 +32108,7 @@ algebra.bit0_smul_bit1
 list.sorted.merge
 tactic.dunfold_target
 inf_le_right
+real.sqrt_lt'
 set.nonempty.left
 prod.has_continuous_const_smul
 initial_seg.subsingleton
@@ -32105,6 +32283,7 @@ to_bool_ff
 finite_adele_ring.topological_ring
 adjoin_root.lift_hom_mk
 subalgebra.coe_val
+conj_act.subgroup.coe_conj_smul
 set.add_center_eq_univ
 pseudo_emetric_space.induced
 not_iff_comm
@@ -32226,6 +32405,7 @@ ennreal.le_of_top_imp_top_of_to_nnreal_le
 finset.subset_vsub
 Ico_mem_nhds_within_Ici
 exists_seq_of_forall_finset_exists
+matrix.block_diagonal_add_monoid_hom_apply
 upper_bounds_empty
 linear_map.general_linear_group.general_linear_equiv_to_linear_map
 tactic.mk_local
@@ -32241,6 +32421,8 @@ continuous_map.pi_eval
 cardinal.eq
 order.max_of_succ_le
 is_of_fin_order_neg_iff
+module.free.choose_basis_index.fintype
+dual_tensor_hom_equiv_of_basis_symm_apply
 ideal.mul_le_right
 group.covconv
 subalgebra.finite_dimensional_bot
@@ -32347,6 +32529,7 @@ ennreal.lt_iff_exists_real_btwn
 mv_polynomial.C_pow
 fractional_ideal.is_noetherian_span_singleton_inv_to_map_mul
 continuous_linear_map.proj_ker_of_right_inverse_comp_inv
+fintype.to_encodable
 subgroup.closure_le
 function.injective.group
 tactic.mk_mvar
@@ -32364,7 +32547,6 @@ int.coe_nat_one
 int.preimage_Ioi
 to_string
 equiv.perm.cycle_factors_finset_one
-encodable.bool
 equiv.coe_add_left
 expr.is_or
 real.sqrt_eq_zero'
@@ -32463,6 +32645,7 @@ set.Icc_ssubset_Icc_left
 list.exists_perm_sublist
 parsed_projection_data.has_to_format
 complex.mul_I_re
+lt_of_le_of_lt'
 multiset.coe_inter
 int.mul_zero
 set.eq_left_or_mem_Ioo_of_mem_Ico
@@ -32588,6 +32771,7 @@ category_theory.is_iso_of_fully_faithful
 expr.replace_with
 multiplicative.linear_ordered_comm_group_with_zero
 is_galois.self
+with_top.le_of_add_le_add_left
 add_units.add_neg_of_eq
 prime_spectrum.zero_locus_empty_iff_eq_top
 list.join_split_wrt_composition
@@ -32616,7 +32800,6 @@ order.lt_of_pred_lt_pred
 comm_group.inv_monoid_hom
 category_theory.is_equivalence.equiv_of_iso_apply
 mul_dvd_mul_iff_left
-parser.one_of
 filter.semigroup
 finset.comp_inf_eq_inf_comp_of_is_total
 category_theory.equiv_of_fully_faithful_apply
@@ -32768,7 +32951,6 @@ finset.single_lt_prod'
 nat.prime.exists_order_of_eq_pow_factorization_exponent
 continuous_on_of_locally_continuous_on
 linarith.mk_linarith_structure
-order.le_succ_iff_lt_or_eq
 zsqrtd.has_one
 ordinal.infinite_pigeonhole_set
 exceptional.fail
@@ -32824,6 +33006,7 @@ is_nonstrict_strict_order
 is_nonstrict_strict_order.right_iff_left_not_left
 is_nonstrict_strict_order.mk
 multiset.prod_map_prod_map
+padic_val_rat.of_int_multiplicity
 set.maps_univ_to
 neg_pow_bit0
 int.gcd_dvd_left
@@ -32833,6 +33016,7 @@ AddGroup.forget_reflects_isos
 norm_num.le_neg_pos
 list.subperm.exists_of_length_lt
 open_subgroup.is_open
+complex.not_lt_zero_iff
 lean.parser.emit_code_here
 ordering.swap_swap
 filter.le_map_of_right_inverse
@@ -32877,6 +33061,7 @@ supr_eq_supr_finset'
 filter.map_lift_eq
 part.eq_of_chain
 set.centralizer_subset
+add_one_mul
 cau_seq.exists_lt
 divp_eq_iff_mul_eq
 prod.forall'
@@ -32975,6 +33160,7 @@ is_unit_smul_iff
 le_cinfi_mul
 add_submonoid.comap_supr_map_of_injective
 well_founded_tactics.unfold_sizeof
+order.Ici_pred
 coe_decidable_eq
 category_theory.equivalence.fun_inv_id_assoc_hom_app
 decidable.one_le_mul_of_one_le_of_one_le
@@ -33349,6 +33535,7 @@ monoid_hom.restrict_apply
 subring.inclusion
 order_iso.with_bot_congr_refl
 matrix.to_linear_equiv'_symm_apply
+set.inter_insert_of_mem
 equiv.coe_mul_right
 dense_range.closure_range
 finsupp.sigma_finsupp_add_equiv_pi_finsupp_apply
@@ -33556,6 +33743,7 @@ algebra_rat_subsingleton
 tactic.apply_fun_to_hyp
 char.is_alpha
 sup_eq_sdiff_sup_sdiff_sup_inf
+order.Icc_pred_right
 fin.mk.inj_iff
 function_field.I_F.fst
 name_set.erase
@@ -33572,6 +33760,7 @@ prod_map
 localization.r_eq_r'
 enat.get_coe'
 finset.is_pwo_sup
+conj_act.subgroup.conj_mul_distrib_mul_action
 non_unital_ring.to_non_unital_non_assoc_ring
 subgroup.is_open_of_one_mem_interior
 tactic.unsafe.type_context.print_mvars
@@ -33777,6 +33966,7 @@ add_semiconj_by.zero_left
 is_antichain.insert_of_symmetric
 subgroup.characteristic_iff_map_eq
 finsupp.prod_finset_sum_index
+set.wcovby_insert
 list.mem_of_mem_erasep
 zsqrtd.smul_re
 set.Ici_inter_Iic
@@ -33807,7 +33997,6 @@ real.has_inf
 equiv.perm.mem_support_swap_mul_imp_mem_support_ne
 add_action.regular.is_pretransitive
 ideal.rank_eq
-parser.many_char1
 bot_hom.has_coe_t
 order_dual.forall
 subfield.coe_add
@@ -33867,6 +34056,7 @@ nonempty_of_inhabited
 is_lub.mem_upper_bounds_of_tendsto
 bilin_form.apply_dual_basis_left
 dfinsupp.filter_pos_add_filter_neg
+conj_act.smul_def
 nat.test_bit_lxor
 finsupp.supported_union
 matrix.transpose_zero
@@ -33932,7 +34122,9 @@ function.embedding.inv_fun_restrict
 expr.list_constant'
 native.nat_map.mk
 mem_closure_of_mem_closure_union
+not_lt_top_iff
 coe_frobenius_equiv
+order.Ico_pred_left
 smul_ne_zero
 io_core_is_monad_fail
 list.has_decidable_le
@@ -34311,6 +34503,7 @@ neg_nonpos_of_nonneg
 le_of_lt_or_eq
 map_supr_of_continuous_at_of_monotone'
 zmod.inv_zero
+ordinal.is_fundamental_sequence_zero
 tsub_add_cancel_of_le
 function.periodic.add_antiperiod_eq
 list.eq_nil_of_suffix_nil
@@ -34330,6 +34523,7 @@ int.add_mul_div_left
 monoid_with_zero_hom.map_ne_zero
 has_le.le.exists_succ_iterate
 distrib_mul_action.to_linear_equiv
+with_bot.contravariant_class_swap_add_lt
 of_not_imp
 finset.subset_product
 prod.neg_mk
@@ -34410,6 +34604,7 @@ finset.prod_range_one
 equiv.perm.via_fintype_embedding
 max_chain_spec
 matrix.neg_dot_product
+matrix.block_diagonal'_ring_hom_apply
 ordinal.lt
 int.add_left_cancel
 prod.smul_swap
@@ -34487,6 +34682,7 @@ semilattice_inf.inf_le_left
 semilattice_inf.inf_le_right
 semilattice_inf.le_inf
 semilattice_inf.mk
+with_bot.no_top_order
 neg_of_mul_neg_right
 add_opposite.non_unital_semiring
 linear_ordered_comm_monoid.to_ordered_comm_monoid
@@ -34497,6 +34693,7 @@ has_sum.tsum_eq
 num.psub
 basis.dual_basis_apply
 right_inv'
+div_div_div_comm
 div_pow
 order.succ_eq_infi
 finsupp.add_hom_ext'
@@ -34617,7 +34814,6 @@ alg_equiv.arrow_congr
 list.map_filter_map_of_inv
 zsqrtd.sq_le_of_le
 fin.partial_order
-encodable.unit
 con.le_iff
 continuous_mul_right
 matrix.to_lin'_of_inv_symm_apply
@@ -34662,6 +34858,7 @@ submonoid.localization_map.mul_equiv_of_mul_equiv_eq_map
 set.indicator_range_comp
 list.nil_eq_rotate_iff
 map_seq
+padic_val_rat.of_nat
 fin_one_equiv
 nat.distrib
 tactic.norm_num.squarefree_helper_2
@@ -34893,7 +35090,6 @@ set.Ioo_subset_Icc_self
 polynomial.induction_on
 add_subgroup.comap_subtype_normalizer_eq
 decidable.mul_lt_mul'
-padic_val_nat_zero
 rel.core_univ
 fintype.prod_eq_one
 filter.tendsto_at_top_of_add_const_right
@@ -35032,6 +35228,7 @@ tactic.interactive.functor_derive_handler
 add_commute.add_units_of_coe
 subalgebra.smul_comm_class_right
 ennreal.of_real_lt_top
+ulift.encodable
 left_add_coset_equivalence_rel
 is_greatest.cSup_eq
 polynomial.trailing_degree_X
@@ -35145,6 +35342,7 @@ filter.tendsto.inf
 monad.cond
 equiv.prod_comm_preimage
 tendsto_nhds_bot_mono
+apply_wcovby_apply_iff
 category_theory.functor.map_inv_hom
 ideal.comap_le_map_of_inverse
 linear_map.splitting_of_finsupp_surjective_injective
@@ -35588,6 +35786,7 @@ fin.add_cases_left
 add_valuation.of
 submodule.sup_span
 finset.card_le_univ
+linear_map.charpoly
 vector.to_list_map
 pi.non_unital_non_assoc_ring
 equiv.perm.cycle_of_apply_apply_zpow_self
@@ -35704,6 +35903,7 @@ mul_opposite.coe_op_linear_equiv_symm
 name_set
 finset.nat.filter_fst_eq_antidiagonal
 set.has_coe_to_sort
+injective_iff_map_eq_zero
 map_div
 submonoid.localization_map.map_comp_map
 order_iso.dual_dual_symm_apply
@@ -35815,6 +36015,7 @@ subgroup.one_lt_card_iff_ne_bot
 zsqrtd.linear_order
 rel_iso.coe_fn_mk
 quotient_add_group.quotient_quotient_equiv_quotient_aux
+ennreal.covariant_class_mul_le
 set.neg_preimage
 set.Ici_inter_Iio
 ordinal.lt_sub
@@ -35822,6 +36023,7 @@ decidable.has_to_string
 int.modeq.add_left
 nat.div_eq_zero
 filter.preimage_mem_comap
+eq.wcovby
 cardinal.mk_range_le
 is_lub_Iic
 list.duplicate.duplicate_cons
@@ -35854,6 +36056,7 @@ list.insert_nth_injective
 ring_hom.prod_unique
 fixed_points.is_integral
 tactic.all_goals
+add_monoid_hom.to_multiplicative'_apply_apply
 Ioo_mem_nhds
 commute_inv_of
 category_theory.prod.braiding
@@ -36121,7 +36324,6 @@ left_div_gcd_ne_zero
 submonoid.top_equiv_to_monoid_hom
 irreducible_pow_sup_of_ge
 ordinal.dvd_add
-parser.sep_by
 finset.sum_range_by_parts
 pairwise_on_bool
 is_coprime_mul_unit_right
@@ -36161,6 +36363,7 @@ set.empty_sub
 set.indicator_inter_support
 real.cast_nat_abs_eq_nnabs_cast
 basis.eq_of_apply_eq
+padic_val_nat_dvd_iff
 monoid_hom.coe_ker
 interactive.inductive_decl.parse
 finset.of_dual_max_eq_min_of_dual
@@ -36228,6 +36431,7 @@ category_theory.forget
 equiv.perm.same_cycle_zpow_left_iff
 ring_topology.ext'
 list.of_fn_aux
+covby_iff_wcovby_and_ne
 fin.cons_le_cons
 finsupp.has_le
 add_subgroup.le_pointwise_smul_iff₀
@@ -36340,6 +36544,7 @@ with_top.is_lub_Sup
 alg_hom.map_adjugate
 rel.image_univ
 linter.doc_blame_thm
+subtype.encodable
 filter.tendsto.comp
 add_subsemigroup.mem_top
 nnreal.ordered_semiring
@@ -36408,6 +36613,7 @@ sum.lift_rel_inl_inl
 mv_polynomial.mem_support_not_mem_vars_zero
 category_theory.functor.ess_image_inclusion.faithful
 mul_action.regular.is_pretransitive
+lt_of_lt_of_eq
 alg_hom.map_matrix_comp
 Sup_hom.Sup_hom_class
 finset.sum_ite_eq'
@@ -36750,6 +36956,7 @@ category_theory.functor_to_types.map_hom_map_inv_apply
 omega_complete_partial_order.continuous_hom.ite_continuous'
 add_le_cancellable.add_le_add_iff_right
 add_units.add_right_inj
+module.free.rank_prod
 valuation.map_units_inv
 inv_mul_le_iff_le_mul
 int.bit0_pos
@@ -36776,6 +36983,7 @@ int.shiftl_add
 ring_hom.id
 add_monoid_hom.gclosure_preimage_le
 sup_hom.order_bot
+with_bot.add_coe_eq_bot_iff
 ideal.le_comap_mul
 sym.mk
 filter.has_basis.has_basis_self_subset
@@ -36792,6 +37000,7 @@ iff
 iff.mp
 iff.mpr
 iff.mk
+conj_act.smul_eq_mul_aut_conj
 supr₂_eq_bot
 fin.Icc_eq_finset_subtype
 finset.nonempty_encodable
@@ -37023,6 +37232,7 @@ not_forall_of_exists_not
 ordinal.one_ne_zero
 matrix.col_smul
 filter.is_lawful_applicative
+dual_tensor_hom_equiv_of_basis_apply
 polynomial.comp_one
 subgroup.fg_iff
 list.subperm
@@ -37296,6 +37506,7 @@ tactic.step
 fractional_ideal.coe_ideal_le_coe_ideal
 valuation.is_equiv_of_val_le_one
 set.div_inv_monoid
+module.finite.of_basis
 real.dist_le_of_mem_pi_Icc
 cluster_pt.of_inf_right
 dfinsupp.comap_domain
@@ -37360,6 +37571,7 @@ function.surjective.exists
 set.mem_prod_eq
 maximal_spectrum.cf'
 ordinal.add_sub_cancel
+covby_iff_wcovby_and_not_le
 nat.div2_val
 polynomial.X_mul
 le_compl_of_le_compl
@@ -37538,6 +37750,7 @@ subsingleton_info.is_subsingleton
 subsingleton_info.mk
 option.bind_eq_none
 ideal.finite_mul_support_inv
+with_top.add_le_add_iff_left
 ring_equiv.trans
 set.pi_eq_empty_iff
 tendsto_comp_coe_Ioo_at_top
@@ -37558,6 +37771,7 @@ prod.partial_order
 submodule.map_subtype.order_embedding
 subgroup.normal.eq_bot_or_eq_top
 powers_hom_symm_apply
+add_monoid_hom.to_multiplicative'_symm_apply_apply
 sup_bot_eq
 function.surjective.iterate
 euclidean_domain.mul_div_cancel_left
@@ -37633,6 +37847,7 @@ free_abelian_group.map_id_apply
 strict_mono_on_mul_self
 function_field.valued_Fqt_infty.def
 pow_inv_comm
+ne.lt_of_le'
 complex.nat_cast_re
 znum.div
 set.mem_div
@@ -37851,6 +38066,7 @@ environment.projection_info.idx
 environment.projection_info.is_class
 environment.projection_info.mk
 fintype.card_eq_one_of_forall_eq
+list.all₂.decidable_pred
 complex.abs_neg
 list.exists_erase_eq
 lean.parser.pop_local_scope
@@ -37951,6 +38167,7 @@ neg_lt_self_iff
 finprod_mem_insert
 class_group.mk0_apply
 finsupp.equiv_map_domain_apply
+with_bot.bot_lt_add
 linear_equiv.Pi_congr_right_symm
 group_topology.coinduced
 multiset.repeat_inf
@@ -38283,6 +38500,7 @@ is_simple_order.complete_lattice
 continuous_at.inv
 name.append_after
 disjoint.sup_left
+mul_aut.conj_normal_apply
 nat.prime_def_lt
 add_pow_char_of_commute
 list.mem_inter_of_mem_of_mem
@@ -38313,6 +38531,7 @@ function.embedding.coe_with_top
 int.lnot
 continuous_linear_map.comp_smul
 nat.factorization_disjoint_of_coprime
+monoid_hom.to_additive_symm_apply_apply
 disjoint.sup_right
 attribute.fingerprint
 filter.tendsto_map'
@@ -38527,6 +38746,7 @@ denumerable
 denumerable.to_encodable
 denumerable.decode_inv
 denumerable.mk
+conj_act.distrib_mul_action₀
 subtype_or_left_embedding
 mem_nhds_within_iff_exists_mem_nhds_inter
 equiv.perm.trans_one
@@ -38714,6 +38934,7 @@ subspace.dual_equiv_dual_apply
 has_continuous_mul_infi
 topological_space.closeds.coe_sup
 equiv.nonempty_congr
+conj_act.units_mul_semiring_action
 int.nat_abs_bit1_nonneg
 continuous.continuous_within_at
 list.to_string_aux
@@ -38766,6 +38987,7 @@ int.add_mod
 alternating_map.module
 continuous_ulift_down
 linear_map.mk₂'_apply
+lt_of_eq_of_lt
 submodule.quotient_quotient_equiv_quotient_aux
 cofinite_topology
 linear_map.injective_of_iterate_injective
@@ -38791,6 +39013,7 @@ set.Ici_disjoint_Iic
 list.prod_ne_zero
 pos_of_mul_pos_left
 prod.algebra
+module.free.rank_finsupp
 matrix.minor_mul_equiv
 equiv.perm.apply_has_faithful_scalar
 specializes
@@ -38882,6 +39105,7 @@ infi_infi_eq_right
 add_con.mem_coe
 homeomorph.prod_congr_symm
 fin.fintype
+wcovby.covby_of_lt
 tactic.retrieve
 locally_finite.exists_finset_support
 linter.check_type
@@ -39038,11 +39262,13 @@ bounded_lattice_hom.map_bot'
 bounded_lattice_hom.mk
 nat.lcm_one_left
 group.swap.covariant_class_le.to_contravariant_class_le
+with_top.add_lt_add_right
 multiset.map_single_le_powerset
 mem_lower_bounds
 exists_pos_rat_lt
 is_localization.mk'_mul_mk'_eq_one
 list.erasep_subset
+padic_val_int.zero
 finite_field.pow_card_sub_one_eq_one
 unique.mk'
 options.has_add
@@ -39128,6 +39354,7 @@ finset.sort_sorted_lt
 continuous_subtype_coe
 separated.empty_right
 native.float.atanh
+strict_anti.is_min_of_apply
 int.of_nat_eq_coe
 mul_equiv_iso_CommGroup_iso
 exists_le_and_iff_exists
@@ -39153,6 +39380,7 @@ is_coprime.of_mul_add_left_left
 add_submonoid.localization_map.away_map
 ring_hom.op_symm_apply_apply
 filter.empty_mem_iff_bot
+basis.sum_dual_apply_smul_coord
 int.dvd_of_dvd_mul_left_of_gcd_one
 tsum_congr
 superset_antisymm_iff
@@ -39248,6 +39476,7 @@ add_monoid.exponent_nsmul_eq_zero
 complex.norm_sq_pos
 subgroup.pi
 failure
+finsupp.prod_filter_mul_prod_filter_not
 user_attribute.set
 discrete_topology_iff_open_singleton_zero
 quotient_add_group.has_continuous_const_vadd
@@ -39262,6 +39491,7 @@ interactive.parse_binders
 mul_equiv.subgroup_map
 option.is_some_some
 localization.away.mul_equiv_of_quotient
+finsupp.sum_sub_sum_filter
 option.inhabited
 function.apply_update₂
 function.argmin
@@ -39360,7 +39590,6 @@ localization.away
 nat.bit0_succ_eq
 norm_num.le_bit0_bit1
 matrix_equiv_tensor.to_fun_linear
-with_top.le_is_total
 tactic.interactive.abel.mode
 tactic.mk_specialized_congr_lemma_simp
 lt_of_mul_lt_mul_left
@@ -39371,6 +39600,7 @@ module.fintype_of_fintype
 list.lex.imp
 ordinal.lsub_eq_zero_iff
 multiset.Iic
+conj_act.to_conj_act_of_conj_act
 finset.gcd_mono
 finsupp.mem_antidiagonal
 quotient.exists_rep
@@ -39401,6 +39631,7 @@ sub_neg_monoid.to_has_neg
 topological_space.nonempty_of_mem_countable_basis
 int.preimage_floor_singleton
 nat.even_mul_self_pred
+module.free_def
 mul_zpow_neg_one₀
 cauchy_seq_of_controlled
 subgroup_class.to_comm_group
@@ -39440,6 +39671,7 @@ cancel_factors.add_subst
 mv_polynomial.C_dvd_iff_dvd_coeff
 group_topology.complete_semilattice_Inf
 add_equiv_iso_AddCommMon_iso
+mul_rotate'
 finset.smul_finset_nonempty_iff
 dfinsupp.to_finsupp_support
 filter.mem_iff_ultrafilter
@@ -39647,6 +39879,7 @@ finset.singleton_inj
 inv_mul_lt_one_iff
 inf_le_left'
 map_to_fractional_ideals
+with_bot.add_lt_add_left
 int.preimage_closed_ball
 nat.even_div
 function_field.infty_valuation_apply
@@ -39683,6 +39916,7 @@ polynomial.coeff_to_subring
 vector.nth_update_nth_of_ne
 mul_self_inj
 add_valuation.valuation
+homeomorph.regular_space
 linear_map.range_dual_map_le_dual_annihilator_ker
 equiv.option_congr_refl
 ring_equiv.map_eq_zero_iff
@@ -39733,6 +39967,7 @@ add_subgroup.disjoint_def'
 nat.one_pos
 set.to_finset_range
 add_subsemigroup.mem_infi
+is_of_fin_add_order.apply
 int.neg_neg_of_nat_succ
 category_theory.nat_iso.op_hom
 category_theory.adjunction.adjunction_of_equiv_right
@@ -39848,6 +40083,7 @@ neg_one_eq_one_iff
 equiv.to_homeomorph_of_inducing
 fin.find_eq_some_iff
 tactic.intros
+padic_val_int.of_nat
 module.direct_limit
 environment.get
 category_theory.End.inhabited
@@ -39960,6 +40196,7 @@ list.disjoint_of_nodup_append
 finset.piecewise_mem_set_pi
 add_submonoid.monotone_comap
 prime.coprime_iff_not_dvd
+mul_aut.conj_normal_coe
 tactic.back_lemmas
 filter.mem_sub
 list.diff_append
@@ -40202,7 +40439,6 @@ category_theory.adjunction.inhabited
 nat.count_le_cardinal
 list.repeat_add
 add_monoid_algebra
-parser.monad_fail
 matrix.add_monoid_hom_mul_right
 pos_num.of_znum
 mv_polynomial.degree_of_mul_le
@@ -40271,6 +40507,7 @@ matrix.to_lin_self
 finsupp.support_update_ne_zero
 algebra.algebra_map_eq_smul_one'
 continuous.comp_div_cases
+basis.tensor_product_apply'
 pi.mul_single_op
 sym.mem_cons
 interaction_monad.failed
@@ -40331,7 +40568,6 @@ set.sigma_preimage_eq
 iff_iff_implies_and_implies
 Sup_Prop_eq
 list.mem_enum_from
-parser.decorate_errors
 add_subgroup.map_inf_eq
 set.preimage_eq_preimage'
 is_unit.ne_zero
@@ -40483,6 +40719,7 @@ int.gcd_a_modeq
 rel_hom.ext_iff
 int.coe_nat_lcm
 cardinal.card_le_of
+with_top.no_bot_order
 set.apply_piecewise
 ring_hom.coe_monoid_hom_id
 sigma_compact_space_of_locally_compact_second_countable
@@ -40518,6 +40755,7 @@ function.embedding.option_elim_apply
 set.preimage_sigma_map_sigma
 tactic.interactive.apply_rel
 finset.card_sdiff_add_card_eq_card
+list.all₂_map_iff
 add_subgroup.normal_inf_normal
 set.mem_Iic_of_Iio
 is_smul_regular.not_zero_iff
@@ -40572,6 +40810,7 @@ pnat.mod_div_aux_spec
 filter.map_sub_at_top_eq_nat
 complete_lattice.is_Sup_finite_compact.is_sup_closed_compact
 topological_space.second_countable_topology.to_first_countable_topology
+set.Iio_inter_Ici
 heq.symm
 mv_polynomial.is_domain
 pnat.bot_eq_one
@@ -40657,6 +40896,7 @@ metric.diam_union'
 tactic.dependencies_of_hyp_inclusive
 fin.prod_univ_eq_prod_range
 set.image_image2_antidistrib
+module.free.pi.free
 old_conv.monad
 mul_equiv.has_coe_to_fun
 nat.dvd_lcm_left
@@ -40995,6 +41235,7 @@ basis.constr_apply
 absolute_value.abs_apply
 ring_equiv.has_coe_to_fun
 multiset.coe_sub
+padic_val_int.mul
 list.scanl
 alg_equiv.to_ring_equiv_eq_coe
 one_add_mul_sub_le_pow
@@ -41042,6 +41283,7 @@ polynomial.le_trailing_degree_monomial
 with_top.untop_coe
 dense_range.induction_on₃
 tactic.head_eta_expand
+strict_anti.apply_eq_top_iff
 set.Ioi_subset_Ioc_union_Ioi
 nat.choose_le_succ_of_lt_half_left
 polynomial.to_subring
@@ -41209,7 +41451,6 @@ int.succ_neg_nat_succ
 add_submonoid.mem_bot
 tactic.norm_num.factors_helper
 nat.Inf_eq_zero
-parser.run
 rat.zero_add
 finset.piecewise_mem_Icc
 complex.abs_pos
@@ -41342,6 +41583,7 @@ polynomial.leading_coeff_div
 inducing_infi_to_pi
 exists_prop_of_true
 list.inter_eq_nil_iff_disjoint
+order.Ioi_pred_eq_insert
 finset.prod_insert_of_eq_one_if_not_mem
 group_topology.has_top
 set.add_semigroup
@@ -41460,6 +41702,7 @@ zpow_inj
 subgroup.mem_sup_left
 finset.one_lt_card
 set.Ioi_subset_Ici
+conj_act.mul_distrib_mul_action
 finsum_mem_zero
 is_per
 is_per.to_is_symm
@@ -41524,6 +41767,7 @@ is_irreducible_iff_sInter
 order.pred_order.is_empty
 multiset.foldr_swap
 subring.coe_zero
+lt_iff_not_le
 list.zip
 multiset.coe_ndinter
 ideal.span_univ
@@ -41553,6 +41797,7 @@ is_sup_closed_compact.is_Sup_finite_compact
 mv_polynomial.kill_compl
 set.nonempty.vadd
 equiv.prod_assoc_symm_image
+padic_val_rat.multiplicity_sub_multiplicity
 list.countp
 finset.prod_powerset
 function.injective.comm_semigroup
@@ -41581,6 +41826,7 @@ multiset.le_inter
 tactic.fsplit
 fin.Ici_eq_finset_subtype
 part.not_mem_none
+set.Iic_inter_Ioi
 array.mmap
 finsupp.add_sum_erase
 subring.to_ordered_comm_ring
@@ -41721,6 +41967,7 @@ multiset.card_eq_one
 prod.is_total_left
 nat.div_le_of_le_mul'
 one_smul_eq_id
+mul_one_sub
 linear_independent_iff''
 ennreal.to_nnreal_pos
 free_group.red
@@ -41833,6 +42080,7 @@ neq_of_not_iff
 finset.exists_minimal
 nat.shiftl_succ
 finset.div_mem_div
+nat.encodable
 continuous_linear_map.coe_prod
 finset.mem_add_antidiagonal
 list.take'_nil
@@ -42031,6 +42279,7 @@ lean.parser.reflectable.has_reflect
 associates.eq_pow_of_mul_eq_pow
 add_monoid_algebra.of'_mem_span
 initial_seg.coe_coe_fn
+module.free.of_subsingleton
 hahn_series.summable_family.has_zero
 sub_div'
 is_clopen.bUnion_connected_component_eq
@@ -42419,6 +42668,7 @@ composition_as_set.blocks_sum
 K_hat.comm_ring
 finsupp.dom_lcongr_trans
 norm_num.lt_bit0_bit0
+lt_trans'
 list.prod_take_succ
 strict_anti_on.dual_right
 compl_singleton_mem_nhds_set_iff
@@ -42676,6 +42926,7 @@ euclidean_domain.div_self
 order.pred_lt_of_not_is_min
 set.preimage_const_mul_Icc_of_neg
 map_ne_zero_of_mem_non_zero_divisors
+set.insert_union_distrib
 polynomial.monic_X_pow
 set.finite_Icc
 pow_pos
@@ -42711,7 +42962,6 @@ mul_inv_eq_one
 tactic.mk_assoc
 monotone_on.reflect_lt
 lt_of_neg_of_one_div_lt_one_div
-set.insert_inter
 alternating_map.comp_linear_map_inj
 equiv.nat_sum_punit_equiv_nat
 submonoid.inv_order_iso_apply_coe
@@ -42724,6 +42974,7 @@ multiset.mem_product
 nat.add_mod_left
 intermediate_field.fixing_subgroup_equiv
 rat.cast_max
+has_le.le.wcovby_of_le
 linear_map.mem_range_self
 tr_hat
 ratfunc.subsingleton
@@ -42822,6 +43073,7 @@ unsigned.has_div
 expr.mk_false
 dvd_of_one_le_padic_val_nat
 rank_comp_le2
+lt_of_eq_of_lt'
 expr.is_aux_decl
 Ring.inhabited
 set.indicator_empty
@@ -42834,6 +43086,7 @@ widget_override.tactic_view_action.out
 widget_override.tactic_view_action.filter
 bilin_form.linear_independent_of_is_Ortho
 expr.has_var
+has_lt.lt.trans_le'
 ennreal.of_real_pow
 tactic.itauto.context.add
 fractional_ideal.le_div_iff_of_nonzero
@@ -43059,6 +43312,7 @@ tactic.induction
 nnreal.coe_div
 sub_mul_action.coe_smul
 free_comm_ring.exists_finset_support
+has_le.le.lt_of_ne'
 add_hom.comp_add
 filter.tendsto_at_top
 add_monoid_hom.inr
@@ -43069,6 +43323,7 @@ basis.to_dual_apply_left
 finset.inf_id_eq_Inf
 category_theory.split_epi.of_iso
 nhds_prod_eq
+module.free.rank_tensor_product
 rel_hom.ext
 sup_sdiff_cancel_right
 expr.is_local_constant
@@ -43077,6 +43332,7 @@ submonoid.mrange_inr'
 is_connected.Icc_subset
 tactic.abel.normal_expr.has_coe_to_fun
 nsmul_neg
+strict_mono.is_min_of_apply
 polynomial.coeff_X_pow_mul'
 add_opposite.unop_vadd
 Icc_mem_nhds_within_Iio
@@ -43302,6 +43558,7 @@ equiv.sigma_equiv_prod_apply
 filter.at_top_Ici_eq
 linear_map.self_adjoint_submodule
 subring.coe_prod
+wcovby.refl
 fin.exists_succ_above_eq_iff
 tactic.interactive.assoc_rewrite
 or_congr_right
@@ -43320,15 +43577,16 @@ fin.is_some_find_iff
 ratfunc.denom_one
 submodules_ring_basis.to_ring_subgroups_basis
 set.alternative
+not_bot_lt_iff
 pow_le_pow
 function.uncurry
 unification_hint.inhabited
-parser.ch
 add_monoid_algebra.lift_unique
 local_ring.of_unique_nonzero_prime
 tactic.impl_graph.collapse
 add_localization.has_zero
 set.subsingleton.is_preirreducible
+le_of_le_of_eq'
 mul_opposite.group_with_zero
 continuous_linear_map.map_sub
 polynomial.splitting_field_aux.field
@@ -43385,6 +43643,7 @@ norm_num.prove_pos_nat
 fractional_ideal.count_pow_self
 nat.cast_two
 tactic.open_n_lambdas
+set.Ici_Sup
 basis.coe_of_repr
 fin_congr_apply_mk
 separated_equiv
@@ -43460,6 +43719,7 @@ options.set_string
 le_of_forall_le
 tendsto_at_bot_of_eventually_const
 set.univ_prod_univ
+has_lt.lt.trans_eq
 set.has_insert.insert.nonempty
 list.eq_of_sublist_of_length_le
 has_dvd.dvd.multiplicity_pos
@@ -43524,7 +43784,6 @@ hinst_lemmas.pp
 tactic.guard_mem_fin
 linear_map.is_alt.neg
 matrix.minor_sub
-parser.remaining
 covariant.flip
 fin_zero_elim
 finset.card_le_of_interleaved
@@ -43849,6 +44108,7 @@ associates.associated_map_mk
 filter.eq_Inf_of_mem_iff_exists_mem
 polynomial.factor_dvd_of_nat_degree_ne_zero
 linear_map.is_Ortho.separating_left_of_not_is_ortho_basis_self
+module.free.rank_matrix'
 equiv.option_is_some_equiv_apply
 or_iff_not_imp_right
 list.zip_map_right
@@ -43866,6 +44126,7 @@ add_monoid_hom.to_multiplicative'
 matrix.map
 function.semiconj₂.id_left
 continuous_at_left_of_monotone_on_of_image_mem_nhds_within
+with_bot.lt_iff_exists_coe
 distrib_mul_action.comp_hom
 zsqrtd.nontrivial
 mv_power_series.constant_coeff_zero
@@ -43973,6 +44234,7 @@ semiconj_by.inv_inv_symm_iff
 equiv.refl_symm
 is_integral_closure.mk'_algebra_map
 nat.sub_sub
+with_top.add_lt_add_of_lt_of_le
 sup_sdiff_left
 set.fintype_prod
 nat.totient_le
@@ -44003,6 +44265,7 @@ set.indicator_const_smul_apply
 ordered_comm_monoid.to_covariant_class_right
 squarefree
 nat.le_floor
+module.free.finrank_pi
 pairwise_coprime_iff_coprime_prod
 tactic.ring.get_cache
 finset.insert_erase
@@ -44045,7 +44308,6 @@ ssubset_of_ssubset_of_subset
 is_glb_Icc
 padic_val_rat.neg
 mul_le_cancellable
-order.le_pred_iff_lt_or_eq
 array.push_back_rev_list
 nat.mul_left_injective
 polynomial.has_sub
@@ -44263,6 +44525,7 @@ equiv.perm.sign_surjective
 equiv.perm.via_fintype_embedding_sign
 list.is_rotated_reverse_iff
 cau_seq.completion.Cauchy.has_neg
+list.all₂_iff_forall
 set.Ico_subset_Icc_union_Ioo
 guard_true
 norm_num.prove_pow
@@ -44308,6 +44571,7 @@ order_dual.le_to_dual
 pos_num.has_add
 ordinal.principal_add_omega_opow
 field.direct_limit.inv_mul_cancel
+linear_map.trace_eq_contract
 filter.at_bot
 field.primitive_element_inf_aux_exists_c
 add_submonoid.coe_add_self_eq
@@ -44840,6 +45104,7 @@ nonempty_invertible_iff_is_unit
 AddCommGroup.one.unique
 finprod_mem_mul_distrib
 array.rev_list_foldr_aux
+ennreal.add_le_add_iff_right
 category_theory.equivalence.symm_functor
 eq_div_of_mul_eq'
 list.subperm_cons_diff
@@ -44880,6 +45145,7 @@ matrix.map_zero
 subgroup.has_faithful_scalar
 finsupp.single_tsub
 continuous_within_at.tendsto_nhds_within
+wcovby.le_and_le_iff
 polynomial.disjoint_ker_aeval_of_coprime
 submodule.map_top
 list.to_finset_eq_of_perm
@@ -45027,6 +45293,7 @@ set.image_add_left'
 multiset.gcd_singleton
 basis.to_matrix_reindex'
 tactic.unsafe.type_context.instantiate_mvars
+set.Iic_infi₂
 multilinear_map.curry_sum_apply
 ring_hom.iterate_map_one
 euclidean_domain.xgcd
@@ -45158,6 +45425,7 @@ finset.cons_subset
 iff.and
 dense_embedding.subtype
 list.chain.iff_mem
+prod.encodable
 linear_independent.injective
 intermediate_field.mem_to_subalgebra
 submodule.apply_mem_span_image_of_mem_span
@@ -45178,6 +45446,7 @@ finset.Ioo_eq_empty
 submodule.quotient.distrib_mul_action'
 cardinal.two_le_iff
 prod.discrete_topology
+conj_act.of_mul_symm_eq
 ring_hom.copy
 polynomial.map_sum
 submonoid_class.to_linear_ordered_comm_monoid
@@ -45257,6 +45526,7 @@ hahn_series.support_eq_empty_iff
 polynomial.is_splitting_field.map
 complete_lattice.well_founded_characterisations
 subgroup.mem_map_iff_mem
+conj_act.of_conj_act
 ideal.eq_zero_of_polynomial_mem_map_range
 nat.succ_ne_self
 multiset.powerset_cons
@@ -45623,6 +45893,7 @@ supr_bool_eq
 fin.cast
 subgroup.coe_supr_of_directed
 nat.decreasing_induction_trans
+not_wcovby_iff
 set.compl_union_self
 hahn_series.summable_family.coe_of_finsupp
 filter.map_const
@@ -45673,6 +45944,7 @@ interaction_monad_orelse
 subgroup.list_prod_mem
 set.prod_Union₂
 arrow_mul_distrib_mul_action
+with_top.add_lt_add_of_le_of_lt
 dvd_sub
 function.iterate_add
 continuous_on.surj_on_of_tendsto'
@@ -45720,6 +45992,7 @@ bounded_order_hom.comp_id
 has_coe_t
 has_coe_t.coe
 has_coe_t.mk
+module.free.finrank_tensor_product
 squarefree.ne_zero
 has_le.le.is_trichotomous
 complex.abs_im_div_abs_le_one
@@ -45836,6 +46109,7 @@ mul_zpow
 lean.parser.reflectable.expr
 mul_equiv.of_bijective
 tactic.interactive.match_target
+with_top.covariant_class_add_le
 le_sub_self_iff
 list.length_mem_cyclic_permutations
 multiset.dedup_eq_zero
@@ -45936,6 +46210,7 @@ finset.univ_eq_attach
 submonoid.to_add_submonoid
 polynomial.euclidean_domain
 is_prime_pow_nat_iff_bounded
+is_empty.to_encodable
 string.starts_with
 ideal.quotient.factor
 subsingleton.discrete_topology
@@ -46079,6 +46354,7 @@ complete_lattice.Sup_continuous
 eq_mul_of_inv_mul_eq
 finsupp_tensor_finsupp'_single_tmul_single
 filter.map_mono
+eq.trans_ge
 list.zip_of_prod
 iff_true_left
 Sup_eq_top
@@ -46280,6 +46556,7 @@ bounded_lattice_hom.has_coe_t
 homeomorph.coe_prod_congr
 sizeof_measure_wf
 dfinsupp.subtype_domain_def
+div_div_div_comm₀
 finset.decidable_exists_of_decidable_subsets
 exists_zero_lt
 one_lt_two
@@ -46662,6 +46939,7 @@ supr_partial_sups_eq
 monoid_hom.prod_unique
 subring.closure_eq_of_le
 of_mul_inv
+nnreal.coe_infi
 Ico_to_dual
 gcd_eq_normalize
 tactic.iterate_at_most_on_all_goals
@@ -46762,6 +47040,7 @@ continuous_linear_map.coe_cod_restrict
 add_monoid_algebra.lift_nc_mul
 pfun.preimage_as_subtype
 basis.equiv_apply
+cardinal.set.Iic.small
 int.nat_abs_eq_iff_mul_self_eq
 finset.powerset_insert
 finset.coe_nsmul
@@ -46791,6 +47070,7 @@ widget.on_mouse_leave
 filter.tendsto_at_bot_mono
 fin.succ_above_above
 sup_lt_of_lt_sdiff_left
+with_bot.le_coe_iff
 filter.has_antitone_basis.tendsto
 module.direct_limit.module
 ordinal.log_le_log
@@ -46881,6 +47161,7 @@ function.involutive.ite_not
 subalgebra.neg_mem
 nat.modeq.of_modeq_mul_right
 affine_homeomorph_apply
+filter.map_prod_eq_map₂
 ordinal.mul_succ
 tensor_product.algebra_tensor_module.ext
 add_hom.id_comp
@@ -46902,6 +47183,7 @@ set.fst_image_prod
 multiset.filter_map_cons_none
 finsupp.support_on_finset_subset
 covariant_lt_iff_contravariant_le
+matrix.block_diagonal_add_monoid_hom
 alg_hom.injective_cod_restrict
 polynomial.div_wf_lemma
 equiv.to_order_iso_to_equiv
@@ -47046,7 +47328,6 @@ multiset.nat.map_swap_antidiagonal
 basis.of_dim_eq_zero
 enat.with_top_equiv
 nat.zero_div
-parser.fix
 neg_eq_zero
 set.add_centralizer_eq_univ
 Sup_le_Sup
@@ -47090,6 +47371,7 @@ ennreal.add_lt_top
 equiv.sum_compl_apply_inr
 function.is_fixed_pt.iterate
 homeomorph.compact_image
+order.Ioo_succ_right_eq_insert
 int.discrete_topology
 list.rel_perm_imp
 bsupr_inf_bsupr
@@ -47105,6 +47387,7 @@ multiset.countp_pos
 function_field.I_F.map_to_class_group.mem_kernel_iff
 finite_dimensional.basis_singleton
 set.range_factorization_coe
+module.free.of_basis
 nnreal.coe_Inf
 native.float.has_repr
 pnat.pos
@@ -47230,6 +47513,7 @@ add_monoid_hom.to_zero_hom_coe
 finset.union_sdiff_self_eq_union
 tactic.mllist.take
 polynomial.degree_X_pow_sub_C
+map_div'
 quotient_group.quotient_lift_on_coe
 finset.filter
 add_con.add_ker_mk_eq
@@ -47266,6 +47550,7 @@ list.duplicate.elim_singleton
 set.exists_seq_supr_eq_top_iff_countable
 free_group.sum.map_inv
 is_open_iff_continuous_mem
+Prop.encodable
 tactic.ring_exp.ex_info.set
 set.mul_indicator_union_mul_inter
 tendsto_comp_of_locally_uniform_limit_within
@@ -47440,6 +47725,7 @@ complex.I_pow_bit0
 inv_mul_le_one_iff
 ideal.leading_coeff_nth_mono
 native.float.div
+conj_act.of_conj_act_zero
 equiv.pi_equiv_subtype_sigma
 prod.is_refl_right
 function.comp.left_id
@@ -47452,12 +47738,14 @@ real.cinfi_empty
 continuous_linear_map.has_zero
 list.has_mem
 pi.add_def
+ennreal.add_lt_add_of_le_of_lt
 linear_order.to_lattice
 decidable_eq_of_bool_pred
 tactic.interactive.has_to_tactic_format_mono_function
 ordinal.deriv_mul_zero
 set.image_sub_const_Iio
 linear_map.llcomp
+set.Iic_infi
 infi_mono
 dfinsupp.equiv_fun_on_fintype_single
 finset.Iio_insert
@@ -47999,6 +48287,7 @@ mul_action_hom.congr_fun
 quotient_group.quotient_map_subgroup_of_of_le
 add_equiv.apply_symm_apply
 category_theory.equivalence.cancel_unit_right_assoc'
+padic_val_nat.eq_zero_of_not_dvd
 nat.succ_eq_succ
 filter.low_scores
 set.pairwise_Union
@@ -48230,7 +48519,6 @@ is_alg_closed.exists_root
 nat.subtype.order_iso_of_nat_apply
 add_con.Inf_to_setoid
 continuous.div
-encodable.pnat
 multiset.noncomm_sum_eq_card_nsmul
 ennreal.mul_infi_of_ne
 list.not_mem_of_not_mem_cons
@@ -48309,6 +48597,7 @@ matrix.det_smul_of_tower
 mv_polynomial.vars_eq_support_bUnion_support
 multiset.mem_sup
 edist_dist
+contract_left_apply
 order_dual.comm_monoid
 filter.tendsto_of_subseq_tendsto
 linear_independent.repr
@@ -48317,7 +48606,6 @@ add_self_eq_zero
 set.image_image2_distrib_left
 equiv.perm.sign_sum_congr
 finsum_mem_add_distrib'
-alg_hom.injective_iff
 subset_upper_bounds_mul
 le_sup_iff
 array.inhabited
@@ -48460,6 +48748,7 @@ decidable.not_and_iff_or_not
 fin.snoc_comp_cast_succ
 subalgebra.coe_restrict_scalars
 fractional_ideal.bot_eq_zero
+order.Ioc_pred_right_of_not_is_min
 ratfunc.eval_C
 with_zero.inv_zero
 set.mul_indicator_eq_one
@@ -48535,6 +48824,7 @@ punit.discrete_topology
 tactic.interactive.swap
 module.dual.has_coe_to_fun
 mem_pair_self_adjoint_matrices_submodule
+wcovby
 linear_map.inl
 is_lub.mem_of_is_closed
 finset.nonempty.vadd
@@ -48927,6 +49217,7 @@ ordered_comm_ring.mul_comm
 ordered_comm_ring.mk
 lcm_comm'
 add_valuation.is_equiv.of_eq
+set.covby_insert
 nat.mod_eq_sub_mod
 tactic.match_pattern
 sub_mul_action.mem_carrier
@@ -49008,9 +49299,7 @@ subgroup.center
 pi.has_continuous_inv'
 hahn_series.is_wf_support
 is_compl.of_eq
-parser.nat
 monoid_algebra.to_additive_alg_equiv
-parser.failure
 mul_equiv.op_apply_symm_apply
 category_theory.inv_eq_to_hom
 submonoid.mem_top
@@ -49362,6 +49651,7 @@ set.quot_mk_range_eq
 tactic.interactive.try
 add_submonoid_class.mk_add_mk
 submodule.map_comap_subtype
+cardinal.bdd_above_iff_small
 module.ext'
 filter.mem_neg
 has_le.le.eq_or_lt_dec
@@ -49397,9 +49687,6 @@ power_series.inv_mul_cancel
 Inf_hom.to_fun_eq_coe
 nat.canonically_linear_ordered_add_monoid
 transcendental
-parse_result
-parse_result.done
-parse_result.fail
 function.id_def
 tactic.interactive.get_equations_of
 complex.abs.is_absolute_value
@@ -49430,6 +49717,7 @@ subtype.has_lt
 dfinsupp.zsmul_apply
 cau_seq.completion.of_rat
 filter.tendsto_infi
+symm_diff_symm_diff_symm_diff_comm
 monoid_algebra.mv_polynomial_aeval_of_surjective_of_closure
 equiv.perm.is_swap
 valued.loc_const
@@ -49685,6 +49973,7 @@ nat.le_pred_of_lt
 polynomial.eval_bit0
 equiv.perm.disjoint.order_of
 nat.mkpair_equiv_symm_apply
+to_dual_wcovby_to_dual_iff
 self_le_mul_left
 has_scalar
 has_scalar.smul
@@ -49736,6 +50025,7 @@ set.singleton_mul
 fractional_ideal.coe_span_singleton
 add_opposite.op_mul_equiv
 subgroup.closure_induction₂
+module.free_iff_set
 filter.map_at_bot_eq
 get_ext_lemmas
 polynomial.iterate_derivative_neg
@@ -49834,7 +50124,6 @@ rel.image_id
 list.mfoldr_with_index
 filter.mul_bot
 topological_group.of_nhds_aux
-parser.str
 complex.real_lt_real
 list.alternating_sum_singleton
 fun_info
@@ -49845,7 +50134,6 @@ native.rb_set.inhabited
 pi.has_faithful_scalar_at
 add_monoid_hom.mrestrict
 finprod_mem_image'
-parser.many_char
 add_con.trans
 is_compact.prod
 continuous_linear_map.range_coe
@@ -49862,6 +50150,7 @@ multiset.map_mono
 equiv.arrow_punit_equiv_punit
 norm_num.prove_mul_rat
 with_bot.semigroup_with_zero
+finset.encodable
 forall_apply_eq_imp_iff₂
 old_conv.bind
 finset.filter_union_right
@@ -49884,6 +50173,7 @@ bit1_zsmul
 not_bdd_below_iff'
 filter.comap_supr
 multiset.sum_eq_zero_iff
+set.Iio_insert
 mul_action_hom.comp_id
 algebra.tensor_product.assoc_aux_1
 ratfunc.denom_div_dvd
@@ -50107,6 +50397,7 @@ with_zero.coe_zpow
 with_zero.coe_mul
 finset.prod_range_succ_div_prod
 set.has_zsmul
+conj_act.to_conj_act_one
 int.mul_nonneg
 one_div_le_one_div_of_le
 int.to_nat_sub
@@ -50220,6 +50511,7 @@ set.Inter_Inter_eq'
 finset.sup_erase_bot
 set.seq_singleton
 set.image_sub_const_Ioi
+conj_act.units_mul_distrib_mul_action
 nat.totient_lt
 add_action.orbit_eq_iff
 monoid_hom.mrange_restrict
@@ -50247,6 +50539,7 @@ monoid_algebra.op_ring_equiv_symm_single
 cardinal.mul_le_max_of_omega_le_left
 add_monoid.fg_iff_mul_fg
 add_left_cancel_monoid.to_add_left_cancel_semigroup
+mul_rotate
 bool.decidable_exists_bool
 mul_equiv.refl
 hahn_series.mul_coeff_order_add_order
@@ -50364,6 +50657,7 @@ is_add_unit
 finset.choose_property
 multiset.powerset_len_cons
 disjoint.inf_left
+of_dual_wcovby_of_dual_iff
 set.Icc.lattice
 units.mul_right_bijective
 cardinal.power
@@ -50375,7 +50669,6 @@ native.float.has_float_pow
 tsum_bool
 hahn_series.summable_family.smul_apply
 nat.lt_one_add_iff
-parser.foldr_core
 polynomial.degree_lt_eq_span_X_pow
 function.antitone_iterate_of_le_id
 finset.eq_singleton_iff_unique_mem
@@ -50405,6 +50698,7 @@ polynomial.nat_degree_of_subsingleton
 nat.gcd_mul_of_coprime_of_dvd
 finsupp.lsum_symm_apply
 continuous_linear_map.copy
+or_or_distrib_left
 function.embedding.can_lift
 set.mul_indicator_apply_le_one
 add_submonoid.to_submonoid
@@ -50437,6 +50731,7 @@ add_units.coe_nsmul
 cau_seq.completion.cau_seq_zero_ne_one
 tactic.rexact
 bex_of_exists
+transitive_lt
 compact_iff_compact_in_subtype
 function.fixed_points.decidable
 le_iff_atom_le_imp
@@ -50503,6 +50798,7 @@ nat.add_pos_left
 finset.coe_sigma
 finset.sum_filter
 tactic.generalizes.step2
+ennreal.add_lt_add_of_lt_of_le
 category_theory.Aut.iso_perm
 is_lub.upper_bounds_eq
 finset.prod_Ico_eq_prod_range
@@ -50546,6 +50842,7 @@ canonically_linear_ordered_add_monoid.to_canonically_ordered_add_monoid
 finset.card_attach
 quotient.fintype
 tactic.mk_fresh_name
+set.Ici_supr₂
 fin.le_coe_nat_add
 order_hom.order_bot
 algebra.mem_adjoin_of_map_mul
@@ -50670,6 +50967,7 @@ cardinal.mul_comm
 pi.eval_alg_hom_apply
 string.iterator.inhabited
 set.diff_subset_diff_right
+monoid_hom.is_of_fin_order
 hahn_series.C_one
 sdiff_le
 adjoin_root.polynomial.quot_quot_equiv_comm_mk_mk
@@ -50759,6 +51057,7 @@ smt_pre_config.mk
 linear_map.general_linear_group.general_linear_equiv
 multiset.eq_union_left
 rat.cast_mul_of_ne_zero
+module.free.of_division_ring
 direct_sum.ext_iff
 not_is_max_of_lt
 fractional_ideal.comm_semiring
@@ -50858,6 +51157,7 @@ strict_mono_nhds_set
 CommRing.comm_ring
 linear_equiv.injective
 zmod.prime_ne_zero
+equiv.perm.iterate_eq_pow
 function.const
 submodule.mul_subset_mul
 subgroup.characteristic
@@ -50912,7 +51212,6 @@ cardinal.bit1_le_bit0
 continuous_on.sqrt
 uniform_space.completion.nonempty_completion_iff
 ordered_add_comm_monoid.to_covariant_class_right
-padic_val_rat_def
 set.image_add_right
 submodule.comap_op_pow
 fixing_subgroup_Union
@@ -50934,6 +51233,7 @@ topological_space.is_topological_basis.inducing
 multiset.cons_inter_of_pos
 eq_inv_of_mul_eq_one
 prod.swap_prod_mk
+option.cons
 ennreal.coe_nonneg
 bdd_above_union
 subring.range_snd
@@ -50993,6 +51293,7 @@ mul_equiv.symm_comp_eq
 order_hom.id_comp
 fin.decidable_eq
 supr_eq_supr_of_partial_sups_eq_partial_sups
+matrix.block_diagonal_ring_hom_apply
 subsemiring.mem_pointwise_smul_iff_inv_smul_mem₀
 finsupp.ext_iff
 prod.mul_action_with_zero
@@ -51130,6 +51431,7 @@ tactic.add_decl
 norm_num.match_sign
 submonoid.bot_prod_bot
 restrict_scalars.is_scalar_tower
+order.Ico_pred_right_eq_insert
 matrix.transpose_one
 category_theory.split_mono.mono
 set.mem_image_of_mem
@@ -51203,6 +51505,7 @@ ring_aut.to_perm
 continuous_within_at_Ioi_iff_Ici
 monoid_algebra.of_apply
 mv_polynomial.rename
+wcovby_iff_covby_or_le_and_le
 mul_action_hom.comp
 smt_tactic.to_cc_state
 finset.sum_eq_zero
@@ -51284,6 +51587,7 @@ conv.step
 tactic.interactive.mono_cfg.inhabited
 filter.map_lift'_eq2
 monotone.inf
+strict_anti.apply_eq_bot_iff
 subalgebra.inv_mem_of_root_of_coeff_zero_ne_zero
 fin.cast_succ_lt_cast_succ_iff
 basis.coe_sum_coords_eq_finsum
@@ -51321,6 +51625,7 @@ forall₃_imp
 expr.is_not
 finsupp.sum_finsupp_equiv_prod_finsupp_symm_inr
 is_localization.coe_submodule_mono
+linear_map.minpoly_coeff_zero_of_injective
 left_inverse_inv
 cauchy_map_iff
 alg_equiv.coe_ring_equiv
@@ -51452,6 +51757,7 @@ finset.inf_mono
 tactic.mk_constructors_fresh_names
 complex.norm_sq
 finset.sum_update_of_not_mem
+finsupp.filter_eq_self_iff
 add_opposite.right_cancel_add_monoid
 subalgebra.map_mono
 polynomial.nat_cast_coeff_zero
@@ -51554,7 +51860,6 @@ compact_iff_totally_bounded_complete
 frontier_union_subset
 homeomorph.is_closed_preimage
 zorn_nonempty_partial_order₀
-add_monoid_hom.map_sub'
 sum.lex.inr_strict_mono
 nat.binary_rec
 mul_action.of_quotient_stabilizer_mk
@@ -51846,6 +52151,7 @@ localization.mk
 group_with_zero.mul_left_injective
 mv_power_series.coeff_monomial_ne
 ultrafilter.eventually_imp
+int.abs_lt_one_iff
 function.periodic.const_inv_smul
 ff_bxor
 fractional_ideal.mul_left_mono
@@ -52000,6 +52306,7 @@ list.head_le_sum
 dense_univ
 fin.insert_nth_zero'
 set.Iic_disjoint_Ioc
+set.Ioo_insert_right
 ideal.prime_ideals_equiv_symm_inr
 matrix.det_ne_zero_of_left_inverse
 nat.infi_lt_succ
@@ -52122,7 +52429,6 @@ part.has_inter
 monoid_algebra.non_unital_ring
 inv_mul_cancel_right₀
 free_group.lift.unique
-set.image_inv_Ioo_0_left
 zmod.subsingleton_ring_hom
 with_one.lift
 continuous_linear_map.fst_prod_snd
@@ -52277,6 +52583,7 @@ ordinal.sup_add_nat
 add_monoid_hom.map_finsum_of_preimage_zero
 list.nodup_iff_nth_le_inj
 function.commute.comp_right
+module.free.rank_eq_card_choose_basis_index
 free_group.map.id
 int.nat_abs
 order_iso.preimage_Ioc
@@ -52289,6 +52596,7 @@ alg_equiv.map_div
 complete_lattice.independent_def'
 polynomial.nat_degree_mul_le
 vector.singleton_tail
+basis.tensor_product_apply
 add_subgroup.mem_centralizer_iff_commutator_eq_zero
 zmod.val_le
 antitone_on.is_lub_image_le
@@ -52424,6 +52732,8 @@ add_subsemigroup.carrier
 add_subsemigroup.add_mem'
 add_subsemigroup.mk
 mv_polynomial.constant_coeff_map
+map_sub'
+with_bot.add_lt_add_of_le_of_lt
 add_con.quotient.has_coe_t
 algebra.bot_equiv_of_injective
 equiv.Pi_congr_left'
@@ -52455,6 +52765,7 @@ matrix.det_is_empty
 try_refl_tac
 tactic.interactive.match_imp
 finsum_mem_coe_finset
+conj_act.to_conj_act_mul
 bilin_form.dual_basis
 mul_equiv.to_equiv_eq_coe
 cardinal.prod_const'
@@ -52855,6 +53166,7 @@ set.unique_empty
 name.update_prefix
 mul_action.quotient
 zmod.int_cast_right_inverse
+lt_of_le_of_ne'
 coe_nat_zsmul
 perfect_closure
 add_subgroup.coe_mk
@@ -52902,7 +53214,6 @@ prime_spectrum.is_open_basic_open
 matrix.block_diagonal'_one
 list.index_of
 tactic.trace_algebra_info
-parser.char_buf
 submonoid.coe_inf
 sym.has_coe
 finset.prod_sigma'
@@ -53044,6 +53355,7 @@ with_zero.coe_inv
 with_top.has_coe_t
 cardinal.mk_Union_le
 category_theory.concrete_category.congr_arg
+order.Ioc_pred_left_of_not_is_min
 list.attach_map_val
 int.add_sub_cancel
 le_sup_left
@@ -53063,7 +53375,6 @@ multiset.inter_add_distrib
 summable_subtype_and_compl
 nat.find_greatest_mono_left
 multilinear_map.curry_fin_finset_symm_apply_const
-encodable.trunc_encodable_of_fintype
 ne.nhds_within_diff_singleton
 add_subgroup.map_equiv_normalizer_eq
 function.embedding.coe_option
@@ -53185,6 +53496,7 @@ ordered_semiring.to_char_zero
 filter.eventually.ne_of_lt
 nat.Inf_add'
 lt_mul_of_one_lt_right'
+sub_sub_sub_comm
 div_le_div₀
 alg_hom.coe_restrict_scalars'
 is_algebraic_of_larger_base_of_injective
@@ -53449,7 +53761,6 @@ linear_equiv.map_matrix_refl
 algebra.tensor_product.mul_assoc
 cau_seq.const_equiv
 is_open_singleton_nhds_adjoint
-polynomial.derivative_C_mul
 int.is_unit_iff_nat_abs_eq
 relation.trans_gen.lift'
 finset.preimage_empty
@@ -53458,7 +53769,6 @@ polynomial.integral_normalization_support
 set.surj_on_iff_exists_map_subtype
 is_empty_iff
 prod.fst_nat_cast
-parser
 ordinal.le_lift_iff
 continuous_within_at
 basis.of_equiv_fun
@@ -53514,6 +53824,7 @@ nhds_within_restrict''
 set.Inter_eq_compl_Union_compl
 instance_derive_handler
 is_unit_mul_self_iff
+wcovby.of_dual
 basis.fintype_index_of_dim_lt_omega
 mv_polynomial.constant_coeff_eq
 doc_category
@@ -53644,7 +53955,6 @@ ring_equiv.to_ring_hom_comp_symm_to_ring_hom
 polynomial.C_mul_dvd
 set.subsingleton_iff_singleton
 polynomial.degree_restriction
-int.eq_zero_iff_abs_lt_one
 semiconj_by.neg_left_iff
 hahn_series.single_eq_zero
 vadd_vadd
@@ -53879,6 +54189,7 @@ nat.div_lt_of_lt_mul
 finset.nonempty.fst
 alternating_map.congr_fun
 set.maps_to_iff_exists_map_subtype
+conj_act.inhabited
 has_lift_t
 has_lift_t.lift
 has_lift_t.mk
@@ -54003,6 +54314,7 @@ tactic.interactive.mono_selection
 tactic.interactive.mono_selection.left
 tactic.interactive.mono_selection.right
 tactic.interactive.mono_selection.both
+linear_map.aeval_eq_aeval_mod_charpoly
 summable.summable_compl_iff
 topological_space.compacts.ext
 tactic.solve_by_elim.on_failure
@@ -54034,7 +54346,6 @@ forall_3_true_iff
 finset.mem_Ico
 nat.size_zero
 linear_map.to_bilin_aux
-encodable.prod
 norm_cast.norm_cast_cache.inhabited
 fractional_ideal.count_finprod_coprime
 param_info.inhabited
@@ -54330,6 +54641,7 @@ complete_lattice.to_complete_semilattice_Sup
 set.mul_indicator_of_not_mem
 module.direct_limit.of
 has_one.nonempty
+transitive_of_trans
 function.update_smul
 add_subgroup.zero_mem
 mv_power_series.coeff_mul_C
@@ -54802,7 +55114,6 @@ finset.vadd_finset_singleton
 prime_spectrum.comap_singleton_is_closed_of_surjective
 monoid_hom.coe_fn_apply
 matrix.adjugate_zero
-ring_hom.injective_iff'
 right_inv
 topological_add_group.tendsto_locally_uniformly_on_iff
 tactic.ring_exp.resolve_atom_aux
@@ -54892,7 +55203,6 @@ finset.order_iso_of_fin
 ultrafilter.ext
 finset.sup_indep_pair
 set.empty_add
-monoid_hom.injective_iff'
 con.lift_mk'
 function.injective.pprod_map
 zero_le_mul_right
@@ -55067,6 +55377,7 @@ padic_val_rat.div
 int.two_mul_div_two_add_one_of_odd
 alg_hom.map_sub
 subsemiring.to_ordered_semiring
+with_bot.coe_add_eq_bot_iff
 distrib_mul_action_hom.inhabited
 fin.add_cases_right
 tendsto_of_uniform_continuous_subtype
@@ -55305,6 +55616,7 @@ ordinal.zero_dvd
 finite_adele_ring'.topological_ring
 ordinal.blsub
 norm_num.bit1_succ
+finsupp.sum_univ_single'
 fin.succ_above_pos
 is_lub.is_lub_of_tendsto
 list.countp_true
@@ -55313,6 +55625,7 @@ nat.add_mul_mod_self_left
 subalgebra.pointwise_smul_to_subsemiring
 rat.linear_ordered_semiring
 directed_of_inf
+module.free.rank_matrix
 nat.eq_of_factorization_eq
 multiset.dedup
 set.image_mul_left_Icc'
@@ -55498,11 +55811,11 @@ set.compl_range_inl
 list.split_wrt_composition_aux_cons
 multiset.erase_of_not_mem
 nhds_set_le_iff
-padic_val_nat_one
 equiv.perm.support_cycle_of_le
 mul_lt_mul_of_lt_of_le
 polynomial.sum_eq_of_subset
 or_congr
+monoid_hom.to_additive_apply_apply
 nat.card_fintype_Ioo
 finsum_mem_of_eq_on_zero
 polynomial.coeff_reverse
@@ -55805,6 +56118,7 @@ set.countable_insert
 tendsto_uniformly_on.mono
 units.mul_right_inj
 set.image_const_add_Ico
+set.has_mem.mem.out
 subspace.dual_restrict_surjective
 imp_true_iff
 format.group
@@ -56013,6 +56327,8 @@ ordinal.lift_one
 list.foldl_hom
 ne.lt_top
 add_subgroup.to_int_submodule_to_add_subgroup
+order.Ioo_succ_right_of_not_is_max
+module.free.constr
 matrix.minor_mul
 mem_gal_basis_iff
 complete_lattice.is_sup_closed_compact
@@ -56216,6 +56532,7 @@ reader_t.equiv
 ordinal.nfp_add_zero
 cardinal.to_nat
 ring_hom.restrict
+int.abs_le_one_iff
 cardinal.can_lift_cardinal_nat
 environment.is_constructor_app
 alg_hom.coe_mk
@@ -56238,6 +56555,7 @@ tactic.norm_num.is_prime_helper
 rat.div_lt_div_iff_mul_lt_mul
 add_monoid_hom.map_finsum_plift
 option.none_bind'
+with_top.add_lt_add_left
 tactic.struct.to_tactic_format
 open_embedding.continuous
 native.float.has_lt
@@ -56366,6 +56684,7 @@ with_top.top_ne_nat
 map_eq_one_iff
 rat.cast_le
 preimage_vadd
+lt_of_not_le
 metric.bounded_range_iff
 submonoid.coe_multiset_prod
 bilin_form.to_matrix_symm
@@ -56577,7 +56896,6 @@ cardinal.mk_range_eq
 le_sup_of_le_right
 complete_lattice.set_independent_pair
 ordinal.CNF_rec
-encodable.option
 continuous_mul_left
 tactic.interactive.apply_rules
 add_monoid_hom.comp_apply
@@ -56627,6 +56945,7 @@ algebra.coe_inf
 exists_imp_distrib
 filter.mem_cocompact
 mul_action_with_zero.to_smul_with_zero
+module.free.linear_map.free
 ring.inverse_eq_inv
 set.Icc_subset_Ioo
 add_submonoid.map_surjective_of_surjective
@@ -57034,9 +57353,11 @@ add_localization.rec
 algebra.lmul_left
 polynomial.monic.eq_one_of_map_eq_one
 function.surjective.exists₃
+padic_val_int_dvd
 add_opposite.op_injective
 finset.erase_none_map_some
 continuous_supr_rng
+module.free.prod
 bifunctor.comp_fst
 equiv.symm_swap
 pow_mul_comm'
@@ -57162,7 +57483,6 @@ list.diff_nil
 nat.bits
 subgroup.commutator_prod_prod
 znum.has_zero
-order.lt_succ_iff_lt_or_eq
 finset.gcd_singleton
 rat.num_denom'
 nat.mul_div_le
@@ -57466,6 +57786,7 @@ fin.val_one
 le_bot_iff
 open_embedding.comp
 is_localization.mem_map_algebra_map_iff
+finsupp.prod_filter_index
 bornology.of_bounded'_cobounded_sets
 filter.is_countably_generated.prod
 finsupp.total_range
@@ -57686,6 +58007,7 @@ mv_polynomial.rename_id
 submonoid.closure_induction'
 subtype.preimage_coe_eq_preimage_coe_iff
 to_topological_space_comap
+module.free.finrank_finsupp
 mv_polynomial.bind₂_comp_bind₂
 filter.has_basis.uniform_continuous_iff
 is_scalar_tower
@@ -58150,6 +58472,7 @@ mv_polynomial.fin_succ_equiv_comp_C_eq_C
 is_closed.mem_iff_closure_subset
 int.nat_abs_gcd
 bornology.is_cobounded
+strict_mono.apply_eq_top_iff
 continuous_id
 commutator_element
 finset.erase_none_none
@@ -58321,6 +58644,7 @@ free_abelian_group.map_comp_apply
 finset.sup_mem
 con.lift_range
 generate_from_union
+strict_anti.is_max_of_apply
 bot_lt_iff_ne_bot
 saturate_fun
 int.eq_one_of_mul_eq_one_left
@@ -58682,6 +59006,7 @@ eq_neg_vadd_iff
 padic_val_rat.defn
 list.revzip_sublists'
 set.union_inter_distrib_left
+comm_ring_strong_rank_condition
 factorization_zero
 pequiv.to_matrix
 coe_option
@@ -58797,6 +59122,7 @@ list.is_prefix.length_le
 pred.rec_iff
 finset.max_insert
 euclidean_domain.mod_lt
+bool.encodable
 complete_lattice_hom.complete_lattice_hom_class
 number_field.inj_K.injective
 ring_hom.comp_left_apply
@@ -58898,6 +59224,7 @@ ordinal.card_succ
 multiset.coe_foldr_swap
 is_compact.is_least_Inf
 of_not_not
+conj_act.units_has_continuous_const_smul
 fin.succ_ne_zero
 pi.single_injective
 finprod_pow
@@ -58909,6 +59236,7 @@ function.surjective.add_zero_class
 set.vadd_Union
 uniform_space.separation_quotient.map_id
 option.iget_some
+wcovby_of_le_of_le
 tactic.interactive.case_tag.from_tag_pi
 multiset.le_smul_dedup
 list.length_pmap
@@ -58959,6 +59287,7 @@ matrix.trace_mul_comm
 submonoid.fg.map_injective
 dist_le_tsum_dist_of_tendsto₀
 function.embedding.left_inv_of_inv_of_mem_range
+module.free.add_monoid_hom.free
 sup_sup_sup_comm
 set.bounded_ge_Ico
 category_theory.adjunction.adjunction_of_equiv_left
@@ -59131,7 +59460,6 @@ even.neg_pow
 finset.sum_erase_none
 rel_embedding.is_linear_order
 filter.lift'_bot
-parser.decorate_error
 bornology.is_cobounded_univ
 mem_list_primes_of_dvd_prod
 add_opposite.non_unital_non_assoc_ring
@@ -59221,6 +59549,7 @@ cc_config.ho_fns
 cc_config.em
 cc_config.mk
 nnreal.bdd_below_coe
+homeomorph.normal_space
 ideal.prime_of_is_prime
 mul_left_inj
 is_galois.tower_top_of_is_galois
@@ -59320,6 +59649,7 @@ open_add_subgroup.ext
 dfinsupp.subtype_domain_sub
 relator.left_unique
 list.infix_append
+conj_act.group
 finsupp.to_multiset_apply
 submodule.comap_infi
 tactic.ring_exp.add_pf_sum_overlap_zero
@@ -59380,7 +59710,6 @@ absurd
 is_coprime.mul_add_left_right
 topological_space.compact_opens.to_clopens
 set.has_singleton
-covariant_class_mul
 nat.totient_mul
 ordinal.bsup_not_succ_of_ne_bsup
 iff.elim
@@ -59503,6 +59832,7 @@ embedding.is_totally_disconnected
 Group.coe_of
 continuous_within_at.mul
 continuous_uncurry_left
+le_of_eq_of_le
 canonically_ordered_add_monoid.has_exists_add_of_le
 list.tail_eq_of_cons_eq
 algebra.mem_top
@@ -59536,7 +59866,6 @@ hahn_series.coeff_fun_eq_zero_iff
 linear_map.map_add
 finite_dimensional.span_finset
 int.le_of_sub_one_lt
-encodable.fin
 set.image_div_prod
 basis.extend
 tensor_product.smul_add
@@ -59573,6 +59902,7 @@ with_top.top_sub_coe
 pequiv.to_matrix_injective
 cardinal.mk_Union_eq_sum_mk
 set.Ioc_subset_Ioc
+wcovby.Ioc_subset
 lt_tsub_iff_right
 two_dvd_bit0
 filter.tendsto_supr
@@ -59879,6 +60209,7 @@ finset.sdiff_sdiff_eq_self
 directed_on.directed_coe
 finset.sum_eq_add_sum_diff_singleton
 equiv.psigma_congr_right
+module.free.finrank_matrix
 linear_map.to_bilin
 fintype.univ_unit
 prod_zero_iff_exists_zero
@@ -60053,6 +60384,7 @@ add_monoid_hom_of_tendsto
 bex_eq_left
 nhds_mul_hom
 complex.re_le_abs
+order.Ico_succ_right_of_not_is_max
 monoid_hom.range
 idele.mk'.mul_inv
 add_submonoid.inclusion
@@ -60126,6 +60458,7 @@ ring_equiv.snd_comp_coe_prod_comm
 right.one_lt_mul
 tactic.try_all
 finset.diag_card
+vector.encodable
 open_subgroup.mem_coe_opens
 finset.sub_nonempty_iff
 fractional_ideal.count_pow
@@ -60153,6 +60486,7 @@ set.preimage_mul_const_Ici
 function.semiconj₂.is_idempotent_left
 pfun.fix
 tactic.induction'
+finsupp.filter_eq_zero_iff
 add_lt_of_lt_of_neg
 basis.ext_alternating
 set.Ico_union_Ici'
@@ -60248,6 +60582,7 @@ zmod.has_coe_t
 nat.lcm_ne_zero
 set.Ioc_disjoint_Ioc_same
 con.ker_apply_eq_preimage
+module.free.finrank_pi_fintype
 ring_hom.coe_one
 associates.mem_factors'_of_dvd
 disjoint.sup_sdiff_cancel_right
@@ -60259,6 +60594,7 @@ max_eq_right_of_lt
 complete_lattice.well_founded.is_Sup_finite_compact
 filter.hyperfilter
 finset.nat.antidiagonal
+wcovby.le
 finset.sup_singleton'
 set.preimage_neg_Ioi
 tactic.unsafe.type_context.kdepends_on
@@ -60555,6 +60891,7 @@ mul_action.of_End_hom
 submodule.prod_sup_prod
 mul_le_cancellable.le_mul_iff_one_le_left
 linear_equiv.coord
+matrix.block_diagonal'_add_monoid_hom_apply
 add_equiv.coe_mk
 function.disjoint_mul_support_iff
 pequiv.single_apply
@@ -60581,6 +60918,7 @@ interactive.single_inductive_decl.intros
 interactive.single_inductive_decl.mk
 add_hom.id
 polynomial.nat_degree_quadratic_le
+matrix.block_diagonal_ring_hom
 nat.modeq.add_left
 list.sublists'_nil
 fintype.sum_eq_zero
@@ -60596,6 +60934,7 @@ hahn_series.mul_coeff_left'
 subgroup.closure_univ
 list.sizeof_lt_sizeof_of_mem
 pi.nontrivial
+module.free.finrank_direct_sum
 order_of_pow''
 algebra.tensor_product.include_right
 part.some_decidable
@@ -60690,6 +61029,7 @@ list.mem_permutations_of_perm_lemma
 set.compl_singleton_eq
 matrix.det_monoid_hom
 pnat.coe_coe_monoid_hom
+list.all₂
 category_theory.full_subcategory.lift_comp_map
 list.alternating_sum_cons_cons
 uniform_space.completion.cpkg
@@ -60999,6 +61339,7 @@ tactic.unsafe.type_context.fail
 zsqrtd.norm_eq_mul_conj
 group.fg_range
 set.subsingleton_of_image
+order.Ioo_pred_right_eq_insert
 set.add_Union
 interactive.executor.execute_explicit
 int.bodd_one
@@ -61019,6 +61360,7 @@ polynomial.erase
 tactic.interactive.classical
 multiplicative.has_continuous_mul
 metric.bounded_of_bdd_above_of_bdd_below
+with_bot.lt_iff_exists_coe_btwn
 category_theory.full.of_comp_faithful_iso
 set.partially_well_ordered_on.min_bad_seq_of_bad_seq
 set.left_inv_on.congr_left
@@ -61115,6 +61457,7 @@ comm_semigroup.ext
 continuous_within_at_Ioo_iff_Ioi
 ordinal.sub_eq_of_add_eq
 subgroup.subgroup_of_bot_eq_bot
+order.Ioo_pred_left_of_not_is_min
 add_monoid_hom.mem_mker
 has_le.le.ge
 subring.mem_map
@@ -61371,7 +61714,6 @@ with_top.top_ne_zero
 submonoid.center.comm_monoid
 inf_lt_sup
 complete_distrib_lattice.to_frame
-fintype.encodable
 linear_map.smul_comp
 part.subsingleton
 submodule.span_eq_of_le
@@ -61541,7 +61883,6 @@ quotient_add_group.fintype_quotient_right_rel
 fails_quickly
 abs_eq_abs
 matrix.vec_mul_one
-encodable.is_empty
 polynomial.coeff_expand
 part.some_mul_some
 quotient.eq
@@ -61701,7 +62042,6 @@ finprod_mem_eq_prod
 add_con.coe_add
 continuous_map.continuous_curry'
 int.le
-ring_hom.injective_iff
 subalgebra.to_submodule_equiv
 alg_equiv.congr_arg
 map_continuous_within_at
@@ -61940,6 +62280,7 @@ ring_hom.from_opposite
 multiset.count_ne_zero
 mul_self_eq_one_iff
 equiv.sigma_congr
+symm_diff_right_comm
 list.split_on_p_spec
 has_mem
 has_mem.mem
@@ -62071,6 +62412,7 @@ pos_and_pos_or_neg_and_neg_of_mul_pos
 polynomial.is_root.map
 submodule.liftq_mkq
 subgroup.map_mono
+nnreal.coe_image
 alg_equiv.map_one
 prod.fst_inv
 add_con.correspondence
@@ -62397,6 +62739,8 @@ filter.pi_inf_principal_pi_eq_bot
 CommRing.concrete_category
 add_submonoid_class.to_linear_ordered_cancel_add_comm_monoid
 list.unzip_enum_eq_prod
+eq.trans_gt
+module.free.finrank_eq_rank
 filter.countable_binfi_eq_infi_seq'
 add_opposite.add_group
 mv_polynomial.coeff_C_mul
@@ -62495,7 +62839,6 @@ subgroup.prod_mono
 mem_nhds_within_insert
 set.partially_well_ordered_on.is_min_bad_seq
 uniformity_dist_of_mem_uniformity
-padic_val_rat.padic_val_rat_self
 set.Ico_subset_Ico_right
 tactic.abel.normal_expr.pp
 add_monoid_algebra.add_comm_monoid
@@ -62582,6 +62925,7 @@ div_inv_monoid.to_has_inv
 linear_map.of_is_compl_zero
 linear_map.is_unit_iff_range_eq_top
 bool.injective_iff
+transitive_ge
 filter.tendsto_Ioc_Ici_Ioi
 equiv.traverse
 add_subsemigroup.has_bot
@@ -62962,7 +63306,6 @@ add_right_cancel_monoid.mk
 matrix.block_diagonal'_eq_block_diagonal
 category_theory.nat_iso.is_iso_inv_app
 int.le_of_dvd
-padic_val_nat_of_not_dvd
 add_monoid.End.has_coe_to_fun
 tactic.itauto.prop.has_reflect
 unop_map_list_prod
@@ -63223,6 +63566,9 @@ fin.cast_add_nat_right
 environment.add_eqn_lemma
 string.linear_order
 padic_norm.add_eq_max_of_ne
+module.free
+module.free.exists_basis
+module.free.mk
 is_closed_map_add_left
 ratfunc.add
 preimage_vadd_neg
@@ -63354,6 +63700,7 @@ real.to_nnreal_mul
 inv_mul_lt_iff_lt_mul'
 multiset.map_le_map_iff
 uniform_continuous.dist
+lt_of_lt_of_le'
 multiset.card_powerset
 nat.gcd_gcd_self_left_left
 pi_proper_space
@@ -63387,6 +63734,7 @@ intermediate_field.finrank_eq_one_iff
 coe_sort_ff
 multiset.nsmul_count
 rat.linear_ordered_field
+contract_right_apply
 nat.floor_eq_on_Ico'
 zsqrtd.coe_int_im
 ordinal.min_eq
@@ -63467,6 +63815,7 @@ set.mem_Icc_of_Ico
 equiv.perm.is_cycle.support_pow_eq_iff
 order_dual.of_dual_le_of_dual
 tactic.interactive.sorry
+finsupp.sum_filter_index
 declaration.instantiate_type_univ_params
 free_group.red.sublist
 add_hom.fst_comp_prod
@@ -63521,6 +63870,7 @@ con.hrec_on₂
 ennreal.to_nnreal_bit1
 polynomial.supp_subset_range
 monoid_hom.to_opposite
+ennreal.add_le_add_iff_left
 is_open_map_iff_nhds_le
 set.finite.induction_on
 d_array.beq_aux
@@ -63711,6 +64061,7 @@ submodule.mkq
 equiv.mul_right₀
 set.surj_on.inter_inter
 algebra.commute_lmul_left_right
+padic_val_rat.self
 list.take_append_eq_append_take
 list.nth_zip_eq_some
 free_group.map_inv
@@ -63795,6 +64146,7 @@ mv_polynomial.coeff_coe
 linear_map.coe_ltensor_hom
 filter.map_equiv_symm
 category_theory.bundled.map
+embedding.t1_space
 quotient.out
 metric.finite_approx_of_totally_bounded
 mul_action.stabilizer_smul_eq_stabilizer_map_conj
@@ -63832,6 +64184,7 @@ filter.comap_fst_ne_bot_iff
 ideal.polynomial_quotient_equiv_quotient_polynomial_map_mk
 linear_map.coe_dfinsupp_sum
 cardinal.map₂
+hahn_series.non_unital_non_assoc_ring
 tendsto_uniformly.tendsto_at
 lint_mathlib_cmd
 tensor_product.map_pow
@@ -63858,7 +64211,6 @@ matrix.map_mul
 int.preimage_Ici
 sub_neg_eq_add
 add_group_filter_basis.N_zero
-encodable.sum
 equiv.swap_swap
 is_glb.neg
 finset.has_zpow
@@ -63969,12 +64321,12 @@ linear_map.std_basis_ne
 linear_map.exists_right_inverse_of_surjective
 antitone_on.map_bdd_above
 group_topology.continuous_mul'
+of_eq
 finset.pairwise_cons'
 zsqrtd.coe_int_mul
 tactic.success_if_fail_with_msg
 equiv.trans_to_embedding
 monoid_hom.map_mul₂
-encodable.plift
 int.of_nat_is_unit
 list.singleton_eq
 polynomial.sum_X_index
@@ -64061,6 +64413,7 @@ tactic.itauto.and_kind.and
 tactic.itauto.and_kind.iff
 tactic.itauto.and_kind.eq
 quotient_add_group.map_mk'
+monoid_hom.to_additive'_symm_apply_apply
 denumerable.of_nat_encode
 function_field.algebra_map_injective
 sub_add_eq_sub_sub_swap
@@ -64078,6 +64431,7 @@ tactic.id_tag.rw
 int.image_Ico_mod
 intermediate_field.neg_mem
 cauchy_seq.const_mul
+ordinal.is_fundamental_sequence_id_of_le_cof
 mt
 finsupp.mem_span_iff_total
 tactic.apply_iff_congr_core
@@ -64098,6 +64452,7 @@ nat.le_of_mul_le_mul_left
 matrix.block_diagonal'_mul
 is_galois.integral
 function.embedding.image_apply
+wcovby.Ico_subset
 nonneg.has_ordered_sub
 sub_mul_action.is_central_scalar
 ordering.compares_iff_of_compares_impl
@@ -64451,6 +64806,7 @@ inv_mul_eq_div
 intermediate_field.set_range_subset
 linear_map.lcomp
 expr.of_nat
+finsupp.prod_div_prod_filter
 nat.choose_le_choose
 filter.eventually_inf_principal
 set.image_sInter_subset
@@ -64487,6 +64843,7 @@ real.has_inv
 tendsto_nhds_unique_of_frequently_eq
 polynomial.iterate_derivative_comp_one_sub_X
 submonoid.left_inv_equiv_symm_from_left_inv
+linear_map.minpoly_dvd_charpoly
 polynomial.leading_coeff
 finset.dvd_lcm
 set.inv_mem_centralizer₀
@@ -64546,6 +64903,7 @@ nat.rel_of_forall_rel_succ_of_le_of_lt
 topological_space.compacts.coe_bot
 is_of_fin_order_iff_coe
 polynomial.aeval_tower_comp_C
+continuous_on.exists_forall_le'
 mul_opposite.star_ring
 list.mmap'
 prod.lex.decidable_eq
@@ -64654,6 +65012,7 @@ tactic.interactive.case_parser
 map_zsmul'
 cau_seq.bounded
 quotient_add_group.range_ker_lift_injective
+order.Iic_succ
 sym.equiv_congr_symm_apply
 is_fraction_ring.num_mul_denom_eq_num_mul_denom_iff_eq
 list.is_rotated.reverse
@@ -64685,6 +65044,7 @@ with_zero.has_div
 finset.has_subset.subset.is_trans
 ordering.or_else
 polynomial.leading_coeff_div_by_monic_of_monic
+dual_tensor_hom
 finset.inf_sup_distrib_left
 cardinal.powerlt_max
 subsemiring.subset_closure
@@ -64753,6 +65113,7 @@ enat.dom_of_lt
 filter.rmap_rmap
 nnreal.sub_def
 option.ball_ne_none
+module.finite.matrix
 finsupp.subtype_domain_eq_zero_iff
 order_hom.map_lfp
 fin.pred_above_right_monotone
@@ -64779,6 +65140,7 @@ continuous_linear_map.map_zero
 tactic.fail_macro
 subgroup.comap_comap
 category_theory.evaluation_obj_map
+padic_val_rat.of_int
 ordinal.family_of_bfamily'_enum
 is_fraction_ring.is_fraction_ring_iff_of_base_ring_equiv
 polynomial.eq_C_of_degree_le_zero
@@ -64795,6 +65157,7 @@ is_solvable.solvable
 is_solvable.mk
 interaction_monad.monad_fail
 multilinear_map.dom_dom_congr_equiv_symm_apply
+set.inter_insert_of_not_mem
 subgroup_class.to_linear_ordered_comm_group
 add_monoid_hom.cancel_left
 le_inv_iff_mul_le_one_right
@@ -64849,6 +65212,7 @@ is_lawful_applicative.mk
 submodule.quotient.has_quotient.quotient.has_add
 finset.Ioo_subset_Ico_self
 set.preimage_const_add_Icc
+padic_val_int_mul_eq_succ
 filter.has_basis.separation_rel
 finsupp.map_domain_support_of_inj_on
 set.smul_subset_smul_right
@@ -64927,6 +65291,7 @@ continuous_inf_dom_right₂
 filter.div_inv_monoid
 subsemiring.centralizer
 pfun.id
+module.free.self
 multiset.zero_disjoint
 monoid_hom.map_one
 filter.tendsto_top
@@ -64984,6 +65349,7 @@ mv_power_series.map
 Ring.coe_of
 invariant_basis_number_of_nontrivial_of_comm_ring
 matrix.inv_of_eq
+dual_tensor_hom_equiv
 fin.cycle_range_symm_zero
 nat.le_mul_of_pos_right
 linear_equiv.of_injective_endo
@@ -65396,6 +65762,7 @@ canonically_linear_ordered_monoid.max_def
 canonically_linear_ordered_monoid.min
 canonically_linear_ordered_monoid.min_def
 canonically_linear_ordered_monoid.mk
+module.free.rank_finsupp'
 complete_lattice.Iic_coatomic_of_compact_element
 list.take_repeat
 add_submonoid.localization_map.add_mk'_eq_mk'_of_add
@@ -65915,6 +66282,7 @@ sum.inl
 sum.inr
 is_integral_closure.algebra_map_mk'
 finset.mem_product
+order.le_succ_iff_eq_or_le
 fintype.coe_pi_finset
 equiv.perm.subtype_perm_of_fintype_apply
 open_add_subgroup.coe_subset
@@ -66152,6 +66520,7 @@ set.Iic.order_top
 nat.prime_of_coprime
 list.pw_filter_idempotent
 set.pairwise_disjoint.subset
+conj_act
 with_bot.coe_zero
 finprod_subtype_eq_finprod_cond
 linear_map.comp_assoc
@@ -66193,6 +66562,7 @@ nat.partition.parts_sum
 nat.partition.mk
 finset.bUnion_image
 zmod.expand_card
+module.free.dfinsupp
 tensor_product.algebra_tensor_module.mk
 ordinal.pred_le_self
 finset.nonempty.ne_empty
@@ -66216,7 +66586,6 @@ is_simple_order.order_iso_bool
 set.image_add_right'
 linear_map.id_pow
 int.inj_on_nat_abs_Iic
-topological_space.encodable.separable_space
 encodable.encode_sigma
 linear_map.dom_restrict₂_apply
 submodule.nontrivial_span_singleton
@@ -66323,7 +66692,6 @@ ring_hom_surjective
 ring_hom_surjective.is_surjective
 ring_hom_surjective.mk
 mv_power_series.algebra_map_apply
-lt_iff_not_ge'
 add_subgroup.to_add_group
 exists_mem_ne_zero_of_dim_pos
 finite_dimensional.finrank_eq_of_dim_eq
@@ -66427,6 +66795,7 @@ add_semigroup.add_assoc
 add_semigroup.mk
 filter.distrib_lattice
 cau_seq.has_zero
+wcovby_of_eq_or_eq
 associates.prod_le
 submonoid_class.coe_one
 order_dual.has_one
@@ -66460,6 +66829,7 @@ module.to_module_End_apply
 set.Ioo_inter_Ioc_of_left_le
 ideal.comap_map_of_surjective
 order_hom.compₘ_coe_coe_coe
+with_top.add_le_add_iff_right
 boolean_algebra.core.sdiff_eq
 tactic.hyp_depends_on_local_name_set'
 multiset.coe_subset
@@ -66506,6 +66876,7 @@ left_comm
 set.add_mem_Ioo_iff_right
 order_hom.has_sup_sup_coe
 mem_left_add_coset
+with_top.contravariant_class_swap_add_lt
 tactic.note_anon
 tactic.fail
 equiv.perm.disjoint_prod_right
@@ -66581,6 +66952,7 @@ subgroup.map_comap_eq_self_of_surjective
 induced_top
 basis.reindex_apply
 ring_equiv.to_semilinear_equiv_symm_apply
+to_matrix_dual_tensor_hom
 ennreal.ne_top_equiv_nnreal
 dlist.to_list_singleton
 tactic.match_fn

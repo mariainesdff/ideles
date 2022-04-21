@@ -127,8 +127,6 @@
 
     <div class="nav_link"><a class="break_within" href="#set.image_const_sub_Ioo"><span class="name">set</span>.<span class="name">image_const_sub_Ioo</span></a></div>
 
-    <div class="nav_link"><a class="break_within" href="#set.image_inv_Ioo_0_left"><span class="name">set</span>.<span class="name">image_inv_Ioo_0_left</span></a></div>
-
     <div class="nav_link"><a class="break_within" href="#set.image_mul_left_Icc"><span class="name">set</span>.<span class="name">image_mul_left_Icc</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.image_mul_left_Icc'"><span class="name">set</span>.<span class="name">image_mul_left_Icc&#x27;</span></a></div>
@@ -172,6 +170,10 @@
     <div class="nav_link"><a class="break_within" href="#set.image_sub_const_Ioi"><span class="name">set</span>.<span class="name">image_sub_const_Ioi</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.image_sub_const_Ioo"><span class="name">set</span>.<span class="name">image_sub_const_Ioo</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.inv_Ioi"><span class="name">set</span>.<span class="name">inv_Ioi</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.inv_Ioo_0_left"><span class="name">set</span>.<span class="name">inv_Ioo_0_left</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.preimage_add_const_Icc"><span class="name">set</span>.<span class="name">preimage_add_const_Icc</span></a></div>
 
@@ -5510,7 +5512,7 @@ lemmas about preimages and images of all intervals. We also prove a few lemmas a
     
         
         
-<div class="decl" id="set.image_inv_Ioo_0_left">
+<div class="decl" id="set.inv_Ioo_0_left">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/image_preimage.lean#L524">source</a></div>
@@ -5522,20 +5524,59 @@ lemmas about preimages and images of all intervals. We also prove a few lemmas a
 
 
 <span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/image_preimage.html#set.image_inv_Ioo_0_left"><span class="name">set</span>.<span class="name">image_inv_Ioo_0_left</span></a></span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/image_preimage.html#set.inv_Ioo_0_left"><span class="name">set</span>.<span class="name">inv_Ioo_0_left</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{k : Type u}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/order/field.html#linear_ordered_field">linear_ordered_field</a> k]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{a : k}</span></span></span>
     <span class="decl_args"><span class="fn">(ha : 0 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> a)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#has_inv.inv">has_inv.inv</a> <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set.image" title="set.image">''</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioo">set.Ioo</a> 0</span> a</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioi">set.Ioi</a> a<a href="https://mariainesdff.github.io/ideles/init/core.html#has_inv.inv" title="has_inv.inv">⁻¹</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioo">set.Ioo</a> 0</span> a)</span><a href="https://mariainesdff.github.io/ideles/init/core.html#has_inv.inv" title="has_inv.inv">⁻¹</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioi">set.Ioi</a> a<a href="https://mariainesdff.github.io/ideles/init/core.html#has_inv.inv" title="has_inv.inv">⁻¹</a></span></span></div>
 </div>
 
 
 
 
 
-<p>The image under <code>inv</code> of <code>Ioo 0 a</code> is <code>Ioi a⁻¹</code>.</p>
+<p>The (pre)image under <code>inv</code> of <code>Ioo 0 a</code> is <code>Ioi a⁻¹</code>.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.inv_Ioi">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/image_preimage.lean#L531">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/image_preimage.html#set.inv_Ioi"><span class="name">set</span>.<span class="name">inv_Ioi</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{k : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/order/field.html#linear_ordered_field">linear_ordered_field</a> k]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a : k}</span></span></span>
+    <span class="decl_args"><span class="fn">(ha : 0 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> a)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioi">set.Ioi</a> a)</span><a href="https://mariainesdff.github.io/ideles/init/core.html#has_inv.inv" title="has_inv.inv">⁻¹</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioo">set.Ioo</a> 0</span> a<a href="https://mariainesdff.github.io/ideles/init/core.html#has_inv.inv" title="has_inv.inv">⁻¹</a></span></span></div>
+</div>
+
+
+
+
+
 
 
 
@@ -5560,7 +5601,7 @@ lemmas about preimages and images of all intervals. We also prove a few lemmas a
 <div class="decl" id="set.image_affine_Icc'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/image_preimage.lean#L536">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/image_preimage.lean#L538">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5618,13 +5659,6 @@ lemmas about preimages and images of all intervals. We also prove a few lemmas a
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -7695,6 +7729,12 @@ lemmas about preimages and images of all intervals. We also prove a few lemmas a
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -7839,6 +7879,13 @@ lemmas about preimages and images of all intervals. We also prove a few lemmas a
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -7847,6 +7894,29 @@ lemmas about preimages and images of all intervals. We also prove a few lemmas a
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -7929,6 +7999,9 @@ lemmas about preimages and images of all intervals. We also prove a few lemmas a
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -8562,27 +8635,35 @@ lemmas about preimages and images of all intervals. We also prove a few lemmas a
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

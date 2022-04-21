@@ -377,6 +377,10 @@
 
     <div class="nav_link"><a class="break_within" href="#complex.not_le_zero_iff"><span class="name">complex</span>.<span class="name">not_le_zero_iff</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#complex.not_lt_iff"><span class="name">complex</span>.<span class="name">not_lt_iff</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#complex.not_lt_zero_iff"><span class="name">complex</span>.<span class="name">not_lt_zero_iff</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#complex.of_real"><span class="name">complex</span>.<span class="name">of_real</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#complex.of_real_add"><span class="name">complex</span>.<span class="name">of_real_add</span></a></div>
@@ -8144,10 +8148,46 @@ Complex numbers with different imaginary parts are incomparable.</p>
     
         
         
-<div class="decl" id="complex.not_le_zero_iff">
+<div class="decl" id="complex.not_lt_iff">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L602">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/complex/basic.html#complex.not_lt_iff"><span class="name">complex</span>.<span class="name">not_lt_iff</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{z w : <a href="https://mariainesdff.github.io/ideles/data/complex/basic.html#complex" title="complex">ℂ</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#not" title="not">¬</a><span class="fn">z <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> w</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn">w.<a href="https://mariainesdff.github.io/ideles/data/complex/basic.html#complex.re" title="complex.re">re</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> z.<a href="https://mariainesdff.github.io/ideles/data/complex/basic.html#complex.re" title="complex.re">re</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn">z.<a href="https://mariainesdff.github.io/ideles/data/complex/basic.html#complex.im" title="complex.im">im</a> <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> w.<a href="https://mariainesdff.github.io/ideles/data/complex/basic.html#complex.im" title="complex.im">im</a></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="complex.not_le_zero_iff">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L605">source</a></div>
 
 
 
@@ -8180,10 +8220,46 @@ Complex numbers with different imaginary parts are incomparable.</p>
     
         
         
+<div class="decl" id="complex.not_lt_zero_iff">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L606">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/complex/basic.html#complex.not_lt_zero_iff"><span class="name">complex</span>.<span class="name">not_lt_zero_iff</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{z : <a href="https://mariainesdff.github.io/ideles/data/complex/basic.html#complex" title="complex">ℂ</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#not" title="not">¬</a><span class="fn">z <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> 0</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn">0 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> z.<a href="https://mariainesdff.github.io/ideles/data/complex/basic.html#complex.re" title="complex.re">re</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn">z.<a href="https://mariainesdff.github.io/ideles/data/complex/basic.html#complex.im" title="complex.im">im</a> <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 0</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="complex.ordered_comm_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L607">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L611">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8230,7 +8306,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.star_ordered_ring">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L621">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L625">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8285,7 +8361,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.is_cau_seq_re">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L641">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L645">source</a></div>
 
 
 
@@ -8321,7 +8397,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.is_cau_seq_im">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L645">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L649">source</a></div>
 
 
 
@@ -8357,7 +8433,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.cau_seq_re">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L650">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L654">source</a></div>
 
 
 
@@ -8403,7 +8479,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.cau_seq_im">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L654">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L658">source</a></div>
 
 
 
@@ -8449,7 +8525,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.is_cau_seq_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L657">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L661">source</a></div>
 
 
 
@@ -8486,7 +8562,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.lim_aux">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L663">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L667">source</a></div>
 
 
 
@@ -8532,7 +8608,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.equiv_lim_aux">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L666">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L670">source</a></div>
 
 
 
@@ -8568,7 +8644,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.abs.cau_seq.is_complete">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L678">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L682">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8605,7 +8681,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.lim_eq_lim_im_add_lim_re">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L683">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L687">source</a></div>
 
 
 
@@ -8641,7 +8717,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.lim_re">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L690">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L694">source</a></div>
 
 
 
@@ -8677,7 +8753,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.lim_im">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L693">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L697">source</a></div>
 
 
 
@@ -8713,7 +8789,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.is_cau_seq_conj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L696">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L700">source</a></div>
 
 
 
@@ -8749,7 +8825,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.cau_seq_conj">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L701">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L705">source</a></div>
 
 
 
@@ -8795,7 +8871,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.lim_conj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L704">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L708">source</a></div>
 
 
 
@@ -8831,7 +8907,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.cau_seq_abs">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L709">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L713">source</a></div>
 
 
 
@@ -8877,7 +8953,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.lim_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L712">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L716">source</a></div>
 
 
 
@@ -8913,7 +8989,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.of_real_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L717">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L721">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -8953,7 +9029,7 @@ Complex numbers with different imaginary parts are incomparable.</p>
 <div class="decl" id="complex.of_real_sum">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L721">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/complex/basic.lean#L725">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -9009,13 +9085,6 @@ Complex numbers with different imaginary parts are incomparable.</p>
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -11086,6 +11155,12 @@ Complex numbers with different imaginary parts are incomparable.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -11230,6 +11305,13 @@ Complex numbers with different imaginary parts are incomparable.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -11238,6 +11320,29 @@ Complex numbers with different imaginary parts are incomparable.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -11320,6 +11425,9 @@ Complex numbers with different imaginary parts are incomparable.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -11953,27 +12061,35 @@ Complex numbers with different imaginary parts are incomparable.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

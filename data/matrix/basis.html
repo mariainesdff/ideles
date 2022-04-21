@@ -90,6 +90,8 @@
 
     <div class="nav_link"><a class="break_within" href="#matrix.std_basis_matrix.apply_same"><span class="name">matrix</span>.<span class="name">std_basis_matrix</span>.<span class="name">apply_same</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#matrix.std_basis_matrix.diag_same"><span class="name">matrix</span>.<span class="name">std_basis_matrix</span>.<span class="name">diag_same</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#matrix.std_basis_matrix.diag_zero"><span class="name">matrix</span>.<span class="name">std_basis_matrix</span>.<span class="name">diag_zero</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#matrix.std_basis_matrix.mul_left_apply_of_ne"><span class="name">matrix</span>.<span class="name">std_basis_matrix</span>.<span class="name">mul_left_apply_of_ne</span></a></div>
@@ -338,10 +340,10 @@ and zeroes elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> m]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> n]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> α]</span></span></span>
-    <span class="decl_args"><span class="fn">(x : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> m]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> n]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> m]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∑ (i : n) (j : m), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basis.html#matrix.std_basis_matrix">matrix.std_basis_matrix</a> i</span> j</span> <span class="fn"><span class="fn">(x i</span> j)</span></span></span></span></div>
+    <span class="decl_args"><span class="fn">(x : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∑ (i : m) (j : n), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basis.html#matrix.std_basis_matrix">matrix.std_basis_matrix</a> i</span> j</span> <span class="fn"><span class="fn">(x i</span> j)</span></span></span></span></div>
 </div>
 
 
@@ -737,10 +739,53 @@ and zeroes elsewhere.</p>
     
         
         
+<div class="decl" id="matrix.std_basis_matrix.diag_same">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L127">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/basis.html#matrix.std_basis_matrix.diag_same"><span class="name">matrix</span>.<span class="name">std_basis_matrix</span>.<span class="name">diag_same</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_5}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> n]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(i : n)</span></span>
+    <span class="decl_args"><span class="fn">(c : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/matrix/trace.html#matrix.diag">matrix.diag</a> n</span> α</span> α)</span></span> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/basis.html#matrix.std_basis_matrix">matrix.std_basis_matrix</a> i</span> i</span> c)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/pi.html#pi.single">pi.single</a> i</span> c</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="matrix.std_basis_matrix.trace_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L129">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L132">source</a></div>
 
 
 
@@ -783,7 +828,7 @@ and zeroes elsewhere.</p>
 <div class="decl" id="matrix.std_basis_matrix.mul_left_apply_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L131">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L134">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -829,7 +874,7 @@ and zeroes elsewhere.</p>
 <div class="decl" id="matrix.std_basis_matrix.mul_right_apply_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L135">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L138">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -875,7 +920,7 @@ and zeroes elsewhere.</p>
 <div class="decl" id="matrix.std_basis_matrix.mul_left_apply_of_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L139">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L142">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -922,7 +967,7 @@ and zeroes elsewhere.</p>
 <div class="decl" id="matrix.std_basis_matrix.mul_right_apply_of_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L143">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L146">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -969,7 +1014,7 @@ and zeroes elsewhere.</p>
 <div class="decl" id="matrix.std_basis_matrix.mul_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L147">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L150">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1015,7 +1060,7 @@ and zeroes elsewhere.</p>
 <div class="decl" id="matrix.std_basis_matrix.mul_of_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L156">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/basis.lean#L159">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1078,13 +1123,6 @@ and zeroes elsewhere.</p>
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -3155,6 +3193,12 @@ and zeroes elsewhere.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -3299,6 +3343,13 @@ and zeroes elsewhere.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -3307,6 +3358,29 @@ and zeroes elsewhere.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -3389,6 +3463,9 @@ and zeroes elsewhere.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -4022,27 +4099,35 @@ and zeroes elsewhere.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

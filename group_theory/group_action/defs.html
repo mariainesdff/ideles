@@ -66,6 +66,9 @@
             <li><a href="https://mariainesdff.github.io/ideles/algebra/group_power/basic.html">
                 algebra.group_power.basic</a></li>
         
+            <li><a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html">
+                algebra.hom.group_action</a></li>
+        
             <li><a href="https://mariainesdff.github.io/ideles/algebra/punit_instances.html">
                 algebra.punit_instances</a></li>
         
@@ -74,6 +77,9 @@
         
             <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">
                 group_theory.group_action.basic</a></li>
+        
+            <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">
+                group_theory.group_action.big_operators</a></li>
         
             <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/opposite.html">
                 group_theory.group_action.opposite</a></li>
@@ -330,6 +336,8 @@
 
     <div class="nav_link"><a class="break_within" href="#smul_smul"><span class="name">smul_smul</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#smul_smul_smul_comm"><span class="name">smul_smul_smul_comm</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#smul_sub"><span class="name">smul_sub</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#smul_zero"><span class="name">smul_zero</span></a></div>
@@ -420,8 +428,8 @@ More sophisticated lemmas belong in <code>group_theory.group_action</code>.</p>
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#has_faithful_vadd"><span class="name">has_faithful_vadd</span></a></span>
 
-    <span class="decl_args"><span class="fn">(G : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(P : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(G : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(P : Type u_11)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_vadd">has_vadd</a> G</span> P]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">Prop</span></div>
 </div>
@@ -487,8 +495,8 @@ More sophisticated lemmas belong in <code>group_theory.group_action</code>.</p>
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#has_faithful_scalar"><span class="name">has_faithful_scalar</span></a></span>
 
-    <span class="decl_args"><span class="fn">(M : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(α : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(M : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_11)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> M</span> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">Prop</span></div>
 </div>
@@ -849,8 +857,8 @@ More sophisticated lemmas belong in <code>group_theory.group_action</code>.</p>
 <span class="decl_kind">theorem</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#add_action.ext"><span class="name">add_action</span>.<span class="name">ext</span></a></span>
 
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{P : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{P : Type u_11}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_1 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> G}</span></span></span>
     <span class="decl_args"><span class="fn">(x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#add_action">add_action</a> G</span> P)</span></span>
     <span class="decl_args"><span class="fn">(h : <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#add_action.to_has_vadd">add_action.to_has_vadd</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#add_action.to_has_vadd">add_action.to_has_vadd</a>)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -891,10 +899,10 @@ More sophisticated lemmas belong in <code>group_theory.group_action</code>.</p>
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#add_action"><span class="name">add_action</span></a></span>
 
-    <span class="decl_args"><span class="fn">(G : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(P : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(G : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(P : Type u_11)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> G]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn">Type (max u_10 u_9)</span></div>
+<div class="decl_type"><span class="fn">Type (max u_10 u_11)</span></div>
 </div>
 
 
@@ -940,15 +948,15 @@ More sophisticated lemmas belong in <code>group_theory.group_action</code>.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#add_subgroup.add_action">add_subgroup.add_action</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/pi.html#pi.add_action">pi.add_action</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/pi.html#pi.add_action'">pi.add_action'</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#add_action.orbit.add_action">add_action.orbit.add_action</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#add_action.quotient">add_action.quotient</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#add_action.add_left_cosets_comp_subtype_val">add_action.add_left_cosets_comp_subtype_val</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/pi.html#pi.add_action">pi.add_action</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/pi.html#pi.add_action'">pi.add_action'</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/order/filter/pointwise.html#filter.add_action">filter.add_action</a></li>
             
@@ -982,8 +990,8 @@ More sophisticated lemmas belong in <code>group_theory.group_action</code>.</p>
 <span class="decl_kind">theorem</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#add_action.ext_iff"><span class="name">add_action</span>.<span class="name">ext_iff</span></a></span>
 
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{P : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{P : Type u_11}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_1 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> G}</span></span></span>
     <span class="decl_args"><span class="fn">(x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#add_action">add_action</a> G</span> P)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> y</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#add_action.to_has_vadd">add_action.to_has_vadd</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#add_action.to_has_vadd">add_action.to_has_vadd</a></span></span></div>
@@ -1021,8 +1029,8 @@ More sophisticated lemmas belong in <code>group_theory.group_action</code>.</p>
 <span class="decl_kind">theorem</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_action.ext"><span class="name">mul_action</span>.<span class="name">ext</span></a></span>
 
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_11}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_1 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> α}</span></span></span>
     <span class="decl_args"><span class="fn">(x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_action">mul_action</a> α</span> β)</span></span>
     <span class="decl_args"><span class="fn">(h : <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_action.to_has_scalar">mul_action.to_has_scalar</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_action.to_has_scalar">mul_action.to_has_scalar</a>)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -1063,10 +1071,10 @@ More sophisticated lemmas belong in <code>group_theory.group_action</code>.</p>
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_action"><span class="name">mul_action</span></a></span>
 
-    <span class="decl_args"><span class="fn">(α : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(β : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(β : Type u_11)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn">Type (max u_10 u_9)</span></div>
+<div class="decl_type"><span class="fn">Type (max u_10 u_11)</span></div>
 </div>
 
 
@@ -1128,15 +1136,15 @@ More sophisticated lemmas belong in <code>group_theory.group_action</code>.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/algebra/punit_instances.html#punit.mul_action">punit.mul_action</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/pi.html#pi.mul_action">pi.mul_action</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/pi.html#pi.mul_action'">pi.mul_action'</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#mul_action.orbit.mul_action">mul_action.orbit.mul_action</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#mul_action.quotient">mul_action.quotient</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#mul_action.mul_left_cosets_comp_subtype_val">mul_action.mul_left_cosets_comp_subtype_val</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/pi.html#pi.mul_action">pi.mul_action</a></li>
-            
-                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/pi.html#pi.mul_action'">pi.mul_action'</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/sub_mul_action.html#sub_mul_action.mul_action'">sub_mul_action.mul_action'</a></li>
             
@@ -1155,6 +1163,8 @@ More sophisticated lemmas belong in <code>group_theory.group_action</code>.</p>
                 <li><a href="https://mariainesdff.github.io/ideles/category_theory/endomorphism.html#category_theory.End.mul_action_right">category_theory.End.mul_action_right</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/category_theory/endomorphism.html#category_theory.End.mul_action_left">category_theory.End.mul_action_left</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html#conj_act.mul_action₀">conj_act.mul_action₀</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/order/filter/pointwise.html#filter.mul_action">filter.mul_action</a></li>
             
@@ -1208,8 +1218,8 @@ More sophisticated lemmas belong in <code>group_theory.group_action</code>.</p>
 <span class="decl_kind">theorem</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_action.ext_iff"><span class="name">mul_action</span>.<span class="name">ext_iff</span></a></span>
 
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_11}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_1 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> α}</span></span></span>
     <span class="decl_args"><span class="fn">(x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_action">mul_action</a> α</span> β)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> y</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_action.to_has_scalar">mul_action.to_has_scalar</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_action.to_has_scalar">mul_action.to_has_scalar</a></span></span></div>
@@ -1263,8 +1273,8 @@ property. We do not provide typeclasses <code>*_action.is_transitive</code>; use
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#add_action.is_pretransitive"><span class="name">add_action</span>.<span class="name">is_pretransitive</span></a></span>
 
-    <span class="decl_args"><span class="fn">(M : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(α : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(M : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_11)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_vadd">has_vadd</a> M</span> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">Prop</span></div>
 </div>
@@ -1327,8 +1337,8 @@ A transitive action should furthermore have <code>α</code> nonempty.</p>
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_action.is_pretransitive"><span class="name">mul_action</span>.<span class="name">is_pretransitive</span></a></span>
 
-    <span class="decl_args"><span class="fn">(M : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(α : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(M : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_11)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> M</span> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">Prop</span></div>
 </div>
@@ -1637,9 +1647,9 @@ A transitive action should furthermore have <code>α</code> nonempty.</p>
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#vadd_comm_class"><span class="name">vadd_comm_class</span></a></span>
 
-    <span class="decl_args"><span class="fn">(M : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(N : Type u_10)</span></span>
-    <span class="decl_args"><span class="fn">(α : Type u_11)</span></span>
+    <span class="decl_args"><span class="fn">(M : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(N : Type u_11)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_12)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_vadd">has_vadd</a> M</span> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_vadd">has_vadd</a> N</span> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">Prop</span></div>
@@ -1740,9 +1750,9 @@ A transitive action should furthermore have <code>α</code> nonempty.</p>
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#smul_comm_class"><span class="name">smul_comm_class</span></a></span>
 
-    <span class="decl_args"><span class="fn">(M : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(N : Type u_10)</span></span>
-    <span class="decl_args"><span class="fn">(α : Type u_11)</span></span>
+    <span class="decl_args"><span class="fn">(M : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(N : Type u_11)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_12)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> M</span> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> N</span> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">Prop</span></div>
@@ -2127,9 +2137,9 @@ because this would cause a loop in the instance search graph.</p>
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower"><span class="name">is_scalar_tower</span></a></span>
 
-    <span class="decl_args"><span class="fn">(M : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(N : Type u_10)</span></span>
-    <span class="decl_args"><span class="fn">(α : Type u_11)</span></span>
+    <span class="decl_args"><span class="fn">(M : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(N : Type u_11)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_12)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> M</span> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> N</span> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> M</span> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
@@ -2453,8 +2463,8 @@ and <code>N</code> on <code>α</code>.</p>
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_central_scalar"><span class="name">is_central_scalar</span></a></span>
 
-    <span class="decl_args"><span class="fn">(M : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(α : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(M : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_11)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> M</span> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> M<a href="https://mariainesdff.github.io/ideles/algebra/opposites.html#mul_opposite" title="mul_opposite">ᵐᵒᵖ</a></span> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">Prop</span></div>
@@ -3262,10 +3272,61 @@ are still metavariables.</p>
     
         
         
+<div class="decl" id="smul_smul_smul_comm">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L293">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#smul_smul_smul_comm"><span class="name">smul_smul_smul_comm</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_6}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_7}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{γ : Type u_8}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{δ : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> α</span> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> α</span> γ]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> β</span> δ]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> α</span> δ]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> γ</span> δ]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> α</span> β</span> δ]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> α</span> γ</span> δ]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#smul_comm_class">smul_comm_class</a> β</span> γ</span> δ]</span></span></span>
+    <span class="decl_args"><span class="fn">(a : α)</span></span>
+    <span class="decl_args"><span class="fn">(b : β)</span></span>
+    <span class="decl_args"><span class="fn">(c : γ)</span></span>
+    <span class="decl_args"><span class="fn">(d : δ)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(a <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> b)</span> <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn">c <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> d</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(a <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> c)</span> <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> d</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="commute.smul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L295">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L300">source</a></div>
 
 
 
@@ -3309,7 +3370,7 @@ are still metavariables.</p>
 <div class="decl" id="commute.smul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L300">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L305">source</a></div>
 
 
 
@@ -3353,7 +3414,7 @@ are still metavariables.</p>
 <div class="decl" id="ite_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L310">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L315">source</a></div>
 
 
 
@@ -3395,7 +3456,7 @@ are still metavariables.</p>
 <div class="decl" id="ite_vadd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L310">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L315">source</a></div>
 
 
 
@@ -3437,7 +3498,7 @@ are still metavariables.</p>
 <div class="decl" id="smul_ite">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L313">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L318">source</a></div>
 
 
 
@@ -3479,7 +3540,7 @@ are still metavariables.</p>
 <div class="decl" id="vadd_ite">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L313">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L318">source</a></div>
 
 
 
@@ -3521,7 +3582,7 @@ are still metavariables.</p>
 <div class="decl" id="smul_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L321">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L326">source</a></div>
 
 
 
@@ -3562,7 +3623,7 @@ are still metavariables.</p>
 <div class="decl" id="vadd_vadd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L321">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L326">source</a></div>
 
 
 
@@ -3603,7 +3664,7 @@ are still metavariables.</p>
 <div class="decl" id="one_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L325">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L330">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3645,7 +3706,7 @@ are still metavariables.</p>
 <div class="decl" id="zero_vadd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L325">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L330">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3687,7 +3748,7 @@ are still metavariables.</p>
 <div class="decl" id="one_smul_eq_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L329">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L334">source</a></div>
 
 
 
@@ -3727,7 +3788,7 @@ are still metavariables.</p>
 <div class="decl" id="zero_vadd_eq_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L329">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L334">source</a></div>
 
 
 
@@ -3766,7 +3827,7 @@ are still metavariables.</p>
 <div class="decl" id="comp_smul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L338">source</a></div>
 
 
 
@@ -3807,7 +3868,7 @@ are still metavariables.</p>
 <div class="decl" id="comp_vadd_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L338">source</a></div>
 
 
 
@@ -3847,7 +3908,7 @@ are still metavariables.</p>
 <div class="decl" id="function.injective.mul_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L341">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L346">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3904,7 +3965,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.injective.add_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L341">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L346">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3960,7 +4021,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.add_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L351">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L356">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4016,7 +4077,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.mul_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L351">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L356">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4073,7 +4134,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.mul_action_left">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L369">source</a></div>
 
 
 
@@ -4129,7 +4190,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.add_action_left">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L369">source</a></div>
 
 
 
@@ -4185,7 +4246,7 @@ surjective map <code>f : R →+ S</code>.</p>
 <div class="decl" id="monoid.to_mul_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L380">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L385">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4235,7 +4296,7 @@ surjective map <code>f : R →+ S</code>.</p>
 <div class="decl" id="add_monoid.to_add_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L380">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L385">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4285,7 +4346,7 @@ surjective map <code>f : R →+ S</code>.</p>
 <div class="decl" id="is_scalar_tower.left">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L390">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L395">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4326,7 +4387,7 @@ surjective map <code>f : R →+ S</code>.</p>
 <div class="decl" id="smul_mul_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L397">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L402">source</a></div>
 
 
 
@@ -4372,7 +4433,7 @@ usually satisfied by <code><a href="https://mariainesdff.github.io/ideles/algebr
 <div class="decl" id="mul_action.to_fun">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L409">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L414">source</a></div>
 
 
 
@@ -4421,7 +4482,7 @@ usually satisfied by <code><a href="https://mariainesdff.github.io/ideles/algebr
 <div class="decl" id="add_action.to_fun">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L409">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L414">source</a></div>
 
 
 
@@ -4470,7 +4531,7 @@ usually satisfied by <code><a href="https://mariainesdff.github.io/ideles/algebr
 <div class="decl" id="mul_action.to_fun_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L417">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L422">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4513,7 +4574,7 @@ usually satisfied by <code><a href="https://mariainesdff.github.io/ideles/algebr
 <div class="decl" id="add_action.to_fun_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L417">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L422">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4556,7 +4617,7 @@ usually satisfied by <code><a href="https://mariainesdff.github.io/ideles/algebr
 <div class="decl" id="mul_action.comp_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L426">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L431">source</a></div>
 
 
 
@@ -4610,7 +4671,7 @@ a multiplicative action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="add_action.comp_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L426">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L431">source</a></div>
 
 
 
@@ -4664,7 +4725,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="smul_one_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L444">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L449">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4711,7 +4772,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="smul_one_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L449">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L454">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4755,7 +4816,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="add_vadd_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L453">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L458">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4799,7 +4860,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="mul_smul_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L453">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L458">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4843,7 +4904,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="is_scalar_tower.of_smul_one_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L458">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L463">source</a></div>
 
 
 
@@ -4883,7 +4944,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="smul_comm_class.of_mul_smul_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L463">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L468">source</a></div>
 
 
 
@@ -4923,7 +4984,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="vadd_comm_class.of_add_vadd_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L463">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L468">source</a></div>
 
 
 
@@ -4963,7 +5024,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="distrib_mul_action.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L470">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L475">source</a></div>
 
 
 
@@ -4974,8 +5035,8 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <span class="decl_kind">theorem</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action.ext"><span class="name">distrib_mul_action</span>.<span class="name">ext</span></a></span>
 
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{M : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{M : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u_11}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_1 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> M}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_2 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> A}</span></span></span>
     <span class="decl_args"><span class="fn">(x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> M</span> A)</span></span>
@@ -5004,7 +5065,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="distrib_mul_action">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L470">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L475">source</a></div>
 
 
     <div class="attributes">@[ext, class]</div>
@@ -5017,11 +5078,11 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action"><span class="name">distrib_mul_action</span></a></span>
 
-    <span class="decl_args"><span class="fn">(M : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(A : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(M : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(A : Type u_11)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> A]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn">Type (max u_10 u_9)</span></div>
+<div class="decl_type"><span class="fn">Type (max u_10 u_11)</span></div>
 </div>
 
 
@@ -5119,6 +5180,8 @@ an additive action of <code>N</code> on <code>α</code>.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/linear_algebra/alternating.html#alternating_map.distrib_mul_action">alternating_map.distrib_mul_action</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html#conj_act.distrib_mul_action₀">conj_act.distrib_mul_action₀</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/topology/algebra/module/basic.html#continuous_linear_map.distrib_mul_action">continuous_linear_map.distrib_mul_action</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.distrib_mul_action">hahn_series.distrib_mul_action</a></li>
@@ -5146,7 +5209,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="distrib_mul_action.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L470">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L475">source</a></div>
 
 
 
@@ -5157,8 +5220,8 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <span class="decl_kind">theorem</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action.ext_iff"><span class="name">distrib_mul_action</span>.<span class="name">ext_iff</span></a></span>
 
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{M : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{M : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u_11}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_1 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> M}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_2 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> A}</span></span></span>
     <span class="decl_args"><span class="fn">(x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> M</span> A)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -5186,7 +5249,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="smul_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L478">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L483">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5230,7 +5293,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="smul_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L481">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L486">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5273,7 +5336,7 @@ an additive action of <code>N</code> on <code>α</code>.</p>
 <div class="decl" id="function.injective.distrib_mul_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L488">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L493">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5333,7 +5396,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.distrib_mul_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L500">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L505">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5393,7 +5456,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.distrib_mul_action_left">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L514">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L519">source</a></div>
 
 
 
@@ -5450,7 +5513,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="distrib_mul_action.comp_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L527">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L532">source</a></div>
 
 
 
@@ -5504,7 +5567,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="distrib_mul_action.to_add_monoid_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L536">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L541">source</a></div>
 
 
 
@@ -5555,7 +5618,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="distrib_mul_action.to_add_monoid_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L536">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L541">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5599,7 +5662,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="distrib_mul_action.to_add_monoid_End_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L550">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5642,7 +5705,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="distrib_mul_action.to_add_monoid_End">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L550">source</a></div>
 
 
 
@@ -5692,7 +5755,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_monoid.nat_smul_comm_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L550">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L555">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5734,7 +5797,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_monoid.nat_smul_comm_class'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L554">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L559">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5776,7 +5839,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_group.int_smul_comm_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L562">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L567">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5818,7 +5881,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_group.int_smul_comm_class'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L566">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L571">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5860,7 +5923,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="smul_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L569">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L574">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5904,7 +5967,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="smul_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L572">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L577">source</a></div>
 
 
 
@@ -5946,7 +6009,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_distrib_mul_action.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L579">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L584">source</a></div>
 
 
 
@@ -5957,8 +6020,8 @@ See note [reducible non-instances].</p>
 <span class="decl_kind">theorem</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_distrib_mul_action.ext"><span class="name">mul_distrib_mul_action</span>.<span class="name">ext</span></a></span>
 
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{M : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{M : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u_11}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_1 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> M}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_2 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> A}</span></span></span>
     <span class="decl_args"><span class="fn">(x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_distrib_mul_action">mul_distrib_mul_action</a> M</span> A)</span></span>
@@ -5987,7 +6050,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_distrib_mul_action.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L579">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L584">source</a></div>
 
 
 
@@ -5998,8 +6061,8 @@ See note [reducible non-instances].</p>
 <span class="decl_kind">theorem</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_distrib_mul_action.ext_iff"><span class="name">mul_distrib_mul_action</span>.<span class="name">ext_iff</span></a></span>
 
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{M : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{M : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u_11}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_1 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> M}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{_inst_2 : <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> A}</span></span></span>
     <span class="decl_args"><span class="fn">(x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_distrib_mul_action">mul_distrib_mul_action</a> M</span> A)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -6027,7 +6090,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_distrib_mul_action">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L579">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L584">source</a></div>
 
 
     <div class="attributes">@[ext, class]</div>
@@ -6040,11 +6103,11 @@ See note [reducible non-instances].</p>
 <span class="decl_kind">structure</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_distrib_mul_action"><span class="name">mul_distrib_mul_action</span></a></span>
 
-    <span class="decl_args"><span class="fn">(M : Type u_9)</span></span>
-    <span class="decl_args"><span class="fn">(A : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(M : Type u_10)</span></span>
+    <span class="decl_args"><span class="fn">(A : Type u_11)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> A]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn">Type (max u_10 u_9)</span></div>
+<div class="decl_type"><span class="fn">Type (max u_10 u_11)</span></div>
 </div>
 
 
@@ -6103,6 +6166,12 @@ conjugation actions.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/monoid_localization.html#localization.mul_distrib_mul_action">localization.mul_distrib_mul_action</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html#conj_act.units_mul_distrib_mul_action">conj_act.units_mul_distrib_mul_action</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html#conj_act.mul_distrib_mul_action">conj_act.mul_distrib_mul_action</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html#conj_act.subgroup.conj_mul_distrib_mul_action">conj_act.subgroup.conj_mul_distrib_mul_action</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/data/set/pointwise.html#set.mul_distrib_mul_action_set">set.mul_distrib_mul_action_set</a></li>
             
         </ul>
@@ -6120,7 +6189,7 @@ conjugation actions.</p>
 <div class="decl" id="smul_mul'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L589">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L594">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6164,7 +6233,7 @@ conjugation actions.</p>
 <div class="decl" id="function.injective.mul_distrib_mul_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L596">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L601">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -6224,7 +6293,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.surjective.mul_distrib_mul_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L608">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L613">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -6284,7 +6353,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_distrib_mul_action.comp_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L621">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L626">source</a></div>
 
 
 
@@ -6338,7 +6407,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_distrib_mul_action.to_monoid_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L629">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L634">source</a></div>
 
 
 
@@ -6389,7 +6458,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_distrib_mul_action.to_monoid_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L636">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L641">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6433,7 +6502,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_distrib_mul_action.to_monoid_End_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L643">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L648">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6476,7 +6545,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_distrib_mul_action.to_monoid_End">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L643">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L648">source</a></div>
 
 
 
@@ -6526,7 +6595,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="smul_inv'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L653">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L658">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6570,7 +6639,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="smul_div'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L656">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L661">source</a></div>
 
 
 
@@ -6612,7 +6681,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.End">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L666">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L671">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -6661,7 +6730,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.End.monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L668">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L673">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6708,7 +6777,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.End.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L675">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L680">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6755,7 +6824,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.End.apply_mul_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L692">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L697">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6815,7 +6884,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.End.smul_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L697">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L702">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6855,7 +6924,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="function.End.apply_has_faithful_scalar">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L700">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L705">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6894,7 +6963,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_monoid.End.apply_distrib_mul_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L706">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L711">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6944,7 +7013,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_monoid.End.smul_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L714">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L719">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6985,7 +7054,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_monoid.End.apply_has_faithful_scalar">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L718">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L723">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7025,7 +7094,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_action.to_End_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L725">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L730">source</a></div>
 
 
 
@@ -7075,7 +7144,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="mul_action.of_End_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L734">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L739">source</a></div>
 
 
 
@@ -7125,7 +7194,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_action.function_End">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L738">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L743">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7173,7 +7242,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_action.to_End_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L746">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L751">source</a></div>
 
 
 
@@ -7223,7 +7292,7 @@ See note [reducible non-instances].</p>
 <div class="decl" id="add_action.of_End_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L755">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/defs.lean#L760">source</a></div>
 
 
 
@@ -7289,13 +7358,6 @@ See note [reducible non-instances].</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -9365,6 +9427,12 @@ See note [reducible non-instances].</p>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
         <div class="nav_link visible">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
@@ -9510,6 +9578,13 @@ See note [reducible non-instances].</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -9518,6 +9593,29 @@ See note [reducible non-instances].</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -9600,6 +9698,9 @@ See note [reducible non-instances].</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -10233,27 +10334,35 @@ See note [reducible non-instances].</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

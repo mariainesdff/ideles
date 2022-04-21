@@ -8,13 +8,13 @@
     <title>order.cover - mathlib docs</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The covering relation. This file defines the covering relation in an order. `b` is said to cover `a` if `a < b` and there is no element in between. ∃ b, a < b. Notation. `a ⋖ b` means that `b` covers…" />
+    <meta name="description" content="The covering relation. This file defines the covering relation in an order. `b` is said to cover `a` if `a < b` and there is no element in between. We say that `b` weakly covers `a` if `a ≤ b` and…" />
     
     <link rel="canonical" href="https://leanprover-community.github.io/mathlib_docs/order/cover.html" />
     
     <meta property="og:title" content="order.cover - mathlib docs">
     <meta property="og:site_name" content="mathlib for Lean - API documentation">
-    <meta property="og:description" content="The covering relation. This file defines the covering relation in an order. `b` is said to cover `a` if `a < b` and there is no element in between. ∃ b, a < b. Notation. `a ⋖ b` means that `b` covers…">
+    <meta property="og:description" content="The covering relation. This file defines the covering relation in an order. `b` is said to cover `a` if `a < b` and there is no element in between. We say that `b` weakly covers `a` if `a ≤ b` and…">
     <meta property="og:image" content="https://mariainesdff.github.io/ideles/meta-og.png">
     <meta name="twitter:card" content="summary">
     <script src="https://mariainesdff.github.io/ideles/color_scheme.js"></script>
@@ -66,6 +66,8 @@
 
     <div class="nav_link"><a class="break_within" href="#apply_covby_apply_iff"><span class="name">apply_covby_apply_iff</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#apply_wcovby_apply_iff"><span class="name">apply_wcovby_apply_iff</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#covby"><span class="name">covby</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#covby.Icc_eq"><span class="name">covby</span>.<span class="name">Icc_eq</span></a></div>
@@ -79,6 +81,8 @@
     <div class="nav_link"><a class="break_within" href="#covby.image"><span class="name">covby</span>.<span class="name">image</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#covby.is_irrefl"><span class="name">covby</span>.<span class="name">is_irrefl</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#covby.is_nonstrict_strict_order"><span class="name">covby</span>.<span class="name">is_nonstrict_strict_order</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#covby.le"><span class="name">covby</span>.<span class="name">le</span></a></div>
 
@@ -94,9 +98,21 @@
 
     <div class="nav_link"><a class="break_within" href="#covby.to_dual"><span class="name">covby</span>.<span class="name">to_dual</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#covby.wcovby"><span class="name">covby</span>.<span class="name">wcovby</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#covby_iff_wcovby_and_lt"><span class="name">covby_iff_wcovby_and_lt</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#covby_iff_wcovby_and_ne"><span class="name">covby_iff_wcovby_and_ne</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#covby_iff_wcovby_and_not_le"><span class="name">covby_iff_wcovby_and_not_le</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#densely_ordered_iff_forall_not_covby"><span class="name">densely_ordered_iff_forall_not_covby</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#eq.wcovby"><span class="name">eq</span>.<span class="name">wcovby</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#exists_lt_lt_of_not_covby"><span class="name">exists_lt_lt_of_not_covby</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#has_le.le.wcovby_of_le"><span class="name">has_le</span>.<span class="name">le</span>.<span class="name">wcovby_of_le</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#has_lt.lt.exists_lt_lt"><span class="name">has_lt</span>.<span class="name">lt</span>.<span class="name">exists_lt_lt</span></a></div>
 
@@ -104,11 +120,69 @@
 
     <div class="nav_link"><a class="break_within" href="#not_covby_iff"><span class="name">not_covby_iff</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#not_wcovby_iff"><span class="name">not_wcovby_iff</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#of_dual_covby_of_dual_iff"><span class="name">of_dual_covby_of_dual_iff</span></a></div>
 
-    <div class="nav_link"><a class="break_within" href="#set.ord_connected.image_covby_image_iff"><span class="name">set</span>.<span class="name">ord_connected</span>.<span class="name">image_covby_image_iff</span></a></div>
+    <div class="nav_link"><a class="break_within" href="#of_dual_wcovby_of_dual_iff"><span class="name">of_dual_wcovby_of_dual_iff</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.covby_insert"><span class="name">set</span>.<span class="name">covby_insert</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.ord_connected.apply_covby_apply_iff"><span class="name">set</span>.<span class="name">ord_connected</span>.<span class="name">apply_covby_apply_iff</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.ord_connected.apply_wcovby_apply_iff"><span class="name">set</span>.<span class="name">ord_connected</span>.<span class="name">apply_wcovby_apply_iff</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.wcovby_insert"><span class="name">set</span>.<span class="name">wcovby_insert</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#to_dual_covby_to_dual_iff"><span class="name">to_dual_covby_to_dual_iff</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#to_dual_wcovby_to_dual_iff"><span class="name">to_dual_wcovby_to_dual_iff</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby"><span class="name">wcovby</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.Icc_eq"><span class="name">wcovby</span>.<span class="name">Icc_eq</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.Ico_subset"><span class="name">wcovby</span>.<span class="name">Ico_subset</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.Ioc_subset"><span class="name">wcovby</span>.<span class="name">Ioc_subset</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.Ioo_eq"><span class="name">wcovby</span>.<span class="name">Ioo_eq</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.covby_of_lt"><span class="name">wcovby</span>.<span class="name">covby_of_lt</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.covby_of_ne"><span class="name">wcovby</span>.<span class="name">covby_of_ne</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.covby_of_not_le"><span class="name">wcovby</span>.<span class="name">covby_of_not_le</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.eq_or_eq"><span class="name">wcovby</span>.<span class="name">eq_or_eq</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.image"><span class="name">wcovby</span>.<span class="name">image</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.is_refl"><span class="name">wcovby</span>.<span class="name">is_refl</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.le"><span class="name">wcovby</span>.<span class="name">le</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.le_and_le_iff"><span class="name">wcovby</span>.<span class="name">le_and_le_iff</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.of_dual"><span class="name">wcovby</span>.<span class="name">of_dual</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.of_image"><span class="name">wcovby</span>.<span class="name">of_image</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.refl"><span class="name">wcovby</span>.<span class="name">refl</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.rfl"><span class="name">wcovby</span>.<span class="name">rfl</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.to_dual"><span class="name">wcovby</span>.<span class="name">to_dual</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby.wcovby_iff_le"><span class="name">wcovby</span>.<span class="name">wcovby_iff_le</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby_iff_covby_or_eq"><span class="name">wcovby_iff_covby_or_eq</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby_iff_covby_or_le_and_le"><span class="name">wcovby_iff_covby_or_le_and_le</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby_of_eq_or_eq"><span class="name">wcovby_of_eq_or_eq</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#wcovby_of_le_of_le"><span class="name">wcovby_of_le_of_le</span></a></div>
 
 </nav>
 
@@ -120,11 +194,1026 @@
         <div class="mod_doc">
             <h1 id="the-covering-relation" class="markdown-heading">The covering relation <a class="hover-link" href="#the-covering-relation">#</a></h1>
 <p>This file defines the covering relation in an order. <code>b</code> is said to cover <code>a</code> if <code>a &lt; b</code> and there
-is no element in between. ∃ b, a &lt; b</p>
+is no element in between. We say that <code>b</code> weakly covers <code>a</code> if <code>a ≤ b</code> and there is no element
+between <code>a</code> and <code>b</code>. In a partial order this is equivalent to <code>a ⋖ b ∨ a = b</code>, in a preorder this
+is equivalent to <code>a ⋖ b ∨ (a ≤ b ∧ b ≤ a)</code></p>
 <h2 id="notation" class="markdown-heading">Notation <a class="hover-link" href="#notation">#</a></h2>
-<p><code>a ⋖ b</code> means that <code>b</code> covers <code>a</code>.</p>
+<ul>
+<li><code>a ⋖ b</code> means that <code>b</code> covers <code>a</code>.</li>
+<li><code>a ⩿ b</code> means that <code>b</code> weakly covers <code>a</code>.</li>
+</ul>
 
         </div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L34">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby"><span class="name">wcovby</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">Prop</span></div>
+</div>
+
+
+
+
+
+<p><code><a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby">wcovby</a> a b</code> means that <code>a = b</code> or <code>b</code> covers <code>a</code>.
+This means that <code>a ≤ b</code> and there is no element in between.</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn">∀ ⦃c : α⦄, <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> c</span> → <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#not" title="not">¬</a><span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> b)</span></span></span></span></span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.le">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L38">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.le"><span class="name">wcovby</span>.<span class="name">le</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.refl">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L40">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.refl"><span class="name">wcovby</span>.<span class="name">refl</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> a</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.rfl">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L41">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.rfl"><span class="name">wcovby</span>.<span class="name">rfl</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> a</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="eq.wcovby">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L43">source</a></div>
+
+
+    <div class="attributes">@[protected]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#eq.wcovby"><span class="name">eq</span>.<span class="name">wcovby</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby_of_le_of_le">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L45">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby_of_le_of_le"><span class="name">wcovby_of_le_of_le</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h1 : a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b)</span></span>
+    <span class="decl_args"><span class="fn">(h2 : b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> a)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="has_le.le.wcovby_of_le">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L48">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#has_le.le.wcovby_of_le"><span class="name">has_le</span>.<span class="name">le</span>.<span class="name">wcovby_of_le</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h1 : a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b)</span></span>
+    <span class="decl_args"><span class="fn">(h2 : b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> a)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span></div>
+</div>
+
+
+
+
+
+<p><strong>Alias</strong> of <code><a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby_of_le_of_le">wcovby_of_le_of_le</a></code>.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.wcovby_iff_le">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L50">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.wcovby_iff_le"><span class="name">wcovby</span>.<span class="name">wcovby_iff_le</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(hab : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">b <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> a</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby_of_eq_or_eq">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L53">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby_of_eq_or_eq"><span class="name">wcovby_of_eq_or_eq</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(hab : a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b)</span></span>
+    <span class="decl_args"><span class="fn">(h : ∀ (c : α), <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> c</span> → <span class="fn"><span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b</span> → <span class="fn"><span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> b</span></span></span></span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="not_wcovby_iff">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L57">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#not_wcovby_iff"><span class="name">not_wcovby_iff</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#not" title="not">¬</a><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">∃ (c : α), <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> c</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> b</span></span></span></span></div>
+</div>
+
+
+
+
+
+<p>If <code>a ≤ b</code>, then <code>b</code> does not cover <code>a</code> iff there's an element in between.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.is_refl">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L60">source</a></div>
+
+
+    <div class="attributes">@[protected, instance]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.is_refl"><span class="name">wcovby</span>.<span class="name">is_refl</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/algebra/classes.html#is_refl">is_refl</a> α</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby">wcovby</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.Ioo_eq">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L62">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.Ioo_eq"><span class="name">wcovby</span>.<span class="name">Ioo_eq</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioo">set.Ioo</a> a</span> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_emptyc.emptyc" title="has_emptyc.emptyc">∅</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.of_image">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L65">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.of_image"><span class="name">wcovby</span>.<span class="name">of_image</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_embedding" title="order_embedding">↪o</a> β)</span></span>
+    <span class="decl_args"><span class="fn">(h : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f a</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f b</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.image">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L68">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.image"><span class="name">wcovby</span>.<span class="name">image</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_embedding" title="order_embedding">↪o</a> β)</span></span>
+    <span class="decl_args"><span class="fn">(hab : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>
+    <span class="decl_args"><span class="fn">(h : <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f)</span>.<a href="https://mariainesdff.github.io/ideles/data/set/intervals/ord_connected.html#set.ord_connected" title="set.ord_connected">ord_connected</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f a</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.ord_connected.apply_wcovby_apply_iff">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L76">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#set.ord_connected.apply_wcovby_apply_iff"><span class="name">set</span>.<span class="name">ord_connected</span>.<span class="name">apply_wcovby_apply_iff</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_embedding" title="order_embedding">↪o</a> β)</span></span>
+    <span class="decl_args"><span class="fn">(h : <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f)</span>.<a href="https://mariainesdff.github.io/ideles/data/set/intervals/ord_connected.html#set.ord_connected" title="set.ord_connected">ord_connected</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f a</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f b</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="apply_wcovby_apply_iff">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L80">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#apply_wcovby_apply_iff"><span class="name">apply_wcovby_apply_iff</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{E : Type u_3}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_iso_class">order_iso_class</a> E</span> α</span> β]</span></span></span>
+    <span class="decl_args"><span class="fn">(e : E)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>e a</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>e b</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="to_dual_wcovby_to_dual_iff">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L84">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#to_dual_wcovby_to_dual_iff"><span class="name">to_dual_wcovby_to_dual_iff</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/order/order_dual.html#order_dual.to_dual">order_dual.to_dual</a> b</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/order/order_dual.html#order_dual.to_dual">order_dual.to_dual</a> a</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="of_dual_wcovby_of_dual_iff">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L87">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#of_dual_wcovby_of_dual_iff"><span class="name">of_dual_wcovby_of_dual_iff</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : <a href="https://mariainesdff.github.io/ideles/order/basic.html#order_dual">order_dual</a> α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/order/order_dual.html#order_dual.of_dual">order_dual.of_dual</a> a</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/order/order_dual.html#order_dual.of_dual">order_dual.of_dual</a> b</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.to_dual">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L91">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.to_dual"><span class="name">wcovby</span>.<span class="name">to_dual</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span> → <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/order/order_dual.html#order_dual.to_dual">order_dual.to_dual</a> b</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/order/order_dual.html#order_dual.to_dual">order_dual.to_dual</a> a</span></span></span></div>
+</div>
+
+
+
+
+
+<p><strong>Alias</strong> of <code><a href="https://mariainesdff.github.io/ideles/order/cover.html#to_dual_wcovby_to_dual_iff">to_dual_wcovby_to_dual_iff</a></code>.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.of_dual">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L92">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.of_dual"><span class="name">wcovby</span>.<span class="name">of_dual</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : <a href="https://mariainesdff.github.io/ideles/order/basic.html#order_dual">order_dual</a> α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">b <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> a</span> → <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/order/order_dual.html#order_dual.of_dual">order_dual.of_dual</a> a</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/order/order_dual.html#order_dual.of_dual">order_dual.of_dual</a> b</span></span></span></div>
+</div>
+
+
+
+
+
+<p><strong>Alias</strong> of <code><a href="https://mariainesdff.github.io/ideles/order/cover.html#of_dual_wcovby_of_dual_iff">of_dual_wcovby_of_dual_iff</a></code>.</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.eq_or_eq">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L99">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.eq_or_eq"><span class="name">wcovby</span>.<span class="name">eq_or_eq</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b c : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>
+    <span class="decl_args"><span class="fn">(h2 : a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> c)</span></span>
+    <span class="decl_args"><span class="fn">(h3 : c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.le_and_le_iff">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L106">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.le_and_le_iff"><span class="name">wcovby</span>.<span class="name">le_and_le_iff</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b c : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> c</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> b</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.Icc_eq">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L111">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.Icc_eq"><span class="name">wcovby</span>.<span class="name">Icc_eq</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Icc">set.Icc</a> a</span> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">{a, b}</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.Ico_subset">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L114">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.Ico_subset"><span class="name">wcovby</span>.<span class="name">Ico_subset</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ico">set.Ico</a> a</span> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_subset.subset" title="has_subset.subset">⊆</a> {a}</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.Ioc_subset">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L117">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.Ioc_subset"><span class="name">wcovby</span>.<span class="name">Ioc_subset</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioc">set.Ioc</a> a</span> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_subset.subset" title="has_subset.subset">⊆</a> {b}</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
     
 
     
@@ -133,7 +1222,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L27">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L128">source</a></div>
 
 
 
@@ -181,7 +1270,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L31">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L132">source</a></div>
 
 
 
@@ -220,7 +1309,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="not_covby_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L34">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L135">source</a></div>
 
 
 
@@ -260,7 +1349,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="exists_lt_lt_of_not_covby">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L37">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L138">source</a></div>
 
 
 
@@ -300,7 +1389,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="has_lt.lt.exists_lt_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L38">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L139">source</a></div>
 
 
 
@@ -340,7 +1429,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="not_covby">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L41">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L142">source</a></div>
 
 
 
@@ -380,7 +1469,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="densely_ordered_iff_forall_not_covby">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L44">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L145">source</a></div>
 
 
 
@@ -417,7 +1506,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="to_dual_covby_to_dual_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L49">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L148">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -457,7 +1546,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="of_dual_covby_of_dual_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L52">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L151">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -497,7 +1586,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.to_dual">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L56">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L155">source</a></div>
 
 
 
@@ -536,7 +1625,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.of_dual">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L57">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L156">source</a></div>
 
 
 
@@ -575,7 +1664,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L64">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L163">source</a></div>
 
 
 
@@ -614,7 +1703,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L65">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L164">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -655,7 +1744,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.ne'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L66">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L165">source</a></div>
 
 
 
@@ -691,10 +1780,293 @@ is no element in between. ∃ b, a &lt; b</p>
     
         
         
+<div class="decl" id="covby.wcovby">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L167">source</a></div>
+
+
+    <div class="attributes">@[protected]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#covby.wcovby"><span class="name">covby</span>.<span class="name">wcovby</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.covby_of_not_le">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L168">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.covby_of_not_le"><span class="name">wcovby</span>.<span class="name">covby_of_not_le</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>
+    <span class="decl_args"><span class="fn">(h2 : <a href="https://mariainesdff.github.io/ideles/init/core.html#not" title="not">¬</a><span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> a</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.covby_of_lt">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L169">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.covby_of_lt"><span class="name">wcovby</span>.<span class="name">covby_of_lt</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>
+    <span class="decl_args"><span class="fn">(h2 : a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="covby_iff_wcovby_and_lt">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L171">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#covby_iff_wcovby_and_lt"><span class="name">covby_iff_wcovby_and_lt</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> b</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="covby_iff_wcovby_and_not_le">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L174">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#covby_iff_wcovby_and_not_le"><span class="name">covby_iff_wcovby_and_not_le</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#not" title="not">¬</a><span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> a</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby_iff_covby_or_le_and_le">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L177">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby_iff_covby_or_le_and_le"><span class="name">wcovby_iff_covby_or_le_and_le</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> a</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="covby.is_nonstrict_strict_order">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L181">source</a></div>
+
+
+    <div class="attributes">@[protected, instance]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#covby.is_nonstrict_strict_order"><span class="name">covby</span>.<span class="name">is_nonstrict_strict_order</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/order/rel_classes.html#is_nonstrict_strict_order">is_nonstrict_strict_order</a> α</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby">wcovby</a></span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby">covby</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><a href="https://mariainesdff.github.io/ideles/order/cover.html#covby.is_nonstrict_strict_order">covby.is_nonstrict_strict_order</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/order/rel_classes.html#is_nonstrict_strict_order.mk" title="is_nonstrict_strict_order.mk">{</a><a href="https://mariainesdff.github.io/ideles/order/rel_classes.html#is_nonstrict_strict_order.right_iff_left_not_left" title="is_nonstrict_strict_order.right_iff_left_not_left">right_iff_left_not_left</a> := _}</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="covby.is_irrefl">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L68">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L184">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -733,7 +2105,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.Ioo_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L70">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L186">source</a></div>
 
 
 
@@ -772,7 +2144,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.of_image">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L73">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L189">source</a></div>
 
 
 
@@ -788,7 +2160,7 @@ is no element in between. ∃ b, a &lt; b</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α <a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_embedding" title="order_embedding">↪o</a> β}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_embedding" title="order_embedding">↪o</a> β)</span></span>
     <span class="decl_args"><span class="fn">(h : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f a</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f b</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b</span></div>
 </div>
@@ -814,7 +2186,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.image">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L82">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L192">source</a></div>
 
 
 
@@ -830,7 +2202,7 @@ is no element in between. ∃ b, a &lt; b</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α <a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_embedding" title="order_embedding">↪o</a> β}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_embedding" title="order_embedding">↪o</a> β)</span></span>
     <span class="decl_args"><span class="fn">(hab : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b)</span></span>
     <span class="decl_args"><span class="fn">(h : <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f)</span>.<a href="https://mariainesdff.github.io/ideles/data/set/intervals/ord_connected.html#set.ord_connected" title="set.ord_connected">ord_connected</a>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f a</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f b</span></span></div>
@@ -854,13 +2226,11 @@ is no element in between. ∃ b, a &lt; b</p>
     
         
         
-<div class="decl" id="set.ord_connected.image_covby_image_iff">
+<div class="decl" id="set.ord_connected.apply_covby_apply_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L90">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L195">source</a></div>
 
-
-    <div class="attributes">@[protected]</div>
 
 
 <div class="decl_header">
@@ -868,14 +2238,14 @@ is no element in between. ∃ b, a &lt; b</p>
 
 
 <span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#set.ord_connected.image_covby_image_iff"><span class="name">set</span>.<span class="name">ord_connected</span>.<span class="name">image_covby_image_iff</span></a></span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#set.ord_connected.apply_covby_apply_iff"><span class="name">set</span>.<span class="name">ord_connected</span>.<span class="name">apply_covby_apply_iff</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α <a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_embedding" title="order_embedding">↪o</a> β}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_embedding" title="order_embedding">↪o</a> β)</span></span>
     <span class="decl_args"><span class="fn">(h : <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f)</span>.<a href="https://mariainesdff.github.io/ideles/data/set/intervals/ord_connected.html#set.ord_connected" title="set.ord_connected">ord_connected</a>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f a</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f b</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b</span></span></div>
 </div>
@@ -901,7 +2271,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="apply_covby_apply_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L94">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L199">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -919,8 +2289,126 @@ is no element in between. ∃ b, a &lt; b</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> β]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{e : α <a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_iso" title="order_iso">≃o</a> β}</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{E : Type u_3}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/order/hom/basic.html#order_iso_class">order_iso_class</a> E</span> α</span> β]</span></span></span>
+    <span class="decl_args"><span class="fn">(e : E)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>e a</span> <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>e b</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby.covby_of_ne">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L208">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby.covby_of_ne"><span class="name">wcovby</span>.<span class="name">covby_of_ne</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b)</span></span>
+    <span class="decl_args"><span class="fn">(h2 : a <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="covby_iff_wcovby_and_ne">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L210">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#covby_iff_wcovby_and_ne"><span class="name">covby_iff_wcovby_and_ne</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> b</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="wcovby_iff_covby_or_eq">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L213">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby_iff_covby_or_eq"><span class="name">wcovby_iff_covby_or_eq</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> b</span></span></span></div>
 </div>
 
 
@@ -944,7 +2432,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.Ico_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L106">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L216">source</a></div>
 
 
 
@@ -983,7 +2471,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.Ioc_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L109">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L219">source</a></div>
 
 
 
@@ -1022,7 +2510,7 @@ is no element in between. ∃ b, a &lt; b</p>
 <div class="decl" id="covby.Icc_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L112">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L222">source</a></div>
 
 
 
@@ -1038,6 +2526,83 @@ is no element in between. ∃ b, a &lt; b</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
     <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Icc">set.Icc</a> a</span> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">{a, b}</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.wcovby_insert">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L229">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#set.wcovby_insert"><span class="name">set</span>.<span class="name">wcovby_insert</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="decl_args"><span class="fn">(x : α)</span></span>
+    <span class="decl_args"><span class="fn">(s : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">s <a href="https://mariainesdff.github.io/ideles/order/cover.html#wcovby" title="wcovby">⩿</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#has_insert.insert" title="has_insert.insert">insert</a> x</span> s</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.covby_insert">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/cover.lean#L238">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/cover.html#set.covby_insert"><span class="name">set</span>.<span class="name">covby_insert</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{x : α}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{s : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> α}</span></span></span>
+    <span class="decl_args"><span class="fn">(hx : x <a href="https://mariainesdff.github.io/ideles/init/core.html#not" title="not">∉</a> s)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">s <a href="https://mariainesdff.github.io/ideles/order/cover.html#covby" title="covby">⋖</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#has_insert.insert" title="has_insert.insert">insert</a> x</span> s</span></span></div>
 </div>
 
 
@@ -1077,13 +2642,6 @@ is no element in between. ∃ b, a &lt; b</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -3154,6 +4712,12 @@ is no element in between. ∃ b, a &lt; b</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -3298,6 +4862,13 @@ is no element in between. ∃ b, a &lt; b</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -3306,6 +4877,29 @@ is no element in between. ∃ b, a &lt; b</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -3388,6 +4982,9 @@ is no element in between. ∃ b, a &lt; b</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -4021,27 +5618,35 @@ is no element in between. ∃ b, a &lt; b</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

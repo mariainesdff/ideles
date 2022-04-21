@@ -282,6 +282,8 @@
 
     <div class="nav_link"><a class="break_within" href="#set.Ico_eq_empty_of_le"><span class="name">set</span>.<span class="name">Ico_eq_empty_of_le</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#set.Ico_insert_right"><span class="name">set</span>.<span class="name">Ico_insert_right</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#set.Ico_inter_Ici"><span class="name">set</span>.<span class="name">Ico_inter_Ici</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.Ico_inter_Ico"><span class="name">set</span>.<span class="name">Ico_inter_Ico</span></a></div>
@@ -342,9 +344,13 @@
 
     <div class="nav_link"><a class="break_within" href="#set.Iic_diff_right"><span class="name">set</span>.<span class="name">Iic_diff_right</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#set.Iic_inter_Ici"><span class="name">set</span>.<span class="name">Iic_inter_Ici</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#set.Iic_inter_Iic"><span class="name">set</span>.<span class="name">Iic_inter_Iic</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.Iic_inter_Ioc_of_le"><span class="name">set</span>.<span class="name">Iic_inter_Ioc_of_le</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.Iic_inter_Ioi"><span class="name">set</span>.<span class="name">Iic_inter_Ioi</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.Iic_prod_Iic"><span class="name">set</span>.<span class="name">Iic_prod_Iic</span></a></div>
 
@@ -394,7 +400,13 @@
 
     <div class="nav_link"><a class="break_within" href="#set.Iio_diff_Iio"><span class="name">set</span>.<span class="name">Iio_diff_Iio</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#set.Iio_insert"><span class="name">set</span>.<span class="name">Iio_insert</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.Iio_inter_Ici"><span class="name">set</span>.<span class="name">Iio_inter_Ici</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#set.Iio_inter_Iio"><span class="name">set</span>.<span class="name">Iio_inter_Iio</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.Iio_inter_Ioi"><span class="name">set</span>.<span class="name">Iio_inter_Ioi</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.Iio_subset_Iic"><span class="name">set</span>.<span class="name">Iio_subset_Iic</span></a></div>
 
@@ -447,6 +459,8 @@
     <div class="nav_link"><a class="break_within" href="#set.Ioc_eq_empty_iff"><span class="name">set</span>.<span class="name">Ioc_eq_empty_iff</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.Ioc_eq_empty_of_le"><span class="name">set</span>.<span class="name">Ioc_eq_empty_of_le</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.Ioc_insert_left"><span class="name">set</span>.<span class="name">Ioc_insert_left</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.Ioc_inter_Iic"><span class="name">set</span>.<span class="name">Ioc_inter_Iic</span></a></div>
 
@@ -524,6 +538,8 @@
 
     <div class="nav_link"><a class="break_within" href="#set.Ioi_diff_Ioi"><span class="name">set</span>.<span class="name">Ioi_diff_Ioi</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#set.Ioi_insert"><span class="name">set</span>.<span class="name">Ioi_insert</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#set.Ioi_inter_Iic"><span class="name">set</span>.<span class="name">Ioi_inter_Iic</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.Ioi_inter_Iio"><span class="name">set</span>.<span class="name">Ioi_inter_Iio</span></a></div>
@@ -563,6 +579,10 @@
     <div class="nav_link"><a class="break_within" href="#set.Ioo_eq_empty_iff"><span class="name">set</span>.<span class="name">Ioo_eq_empty_iff</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.Ioo_eq_empty_of_le"><span class="name">set</span>.<span class="name">Ioo_eq_empty_of_le</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.Ioo_insert_left"><span class="name">set</span>.<span class="name">Ioo_insert_left</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.Ioo_insert_right"><span class="name">set</span>.<span class="name">Ioo_insert_right</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.Ioo_inter_Ioc_of_left_le"><span class="name">set</span>.<span class="name">Ioo_inter_Ioc_of_left_le</span></a></div>
 
@@ -5716,10 +5736,162 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
     
         
         
-<div class="decl" id="set.mem_Icc_of_Ioo">
+<div class="decl" id="set.Iic_inter_Ici">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L352">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iic_inter_Ici"><span class="name">set</span>.<span class="name">Iic_inter_Ici</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iic">set.Iic</a> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_inter.inter" title="has_inter.inter">∩</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ici">set.Ici</a> b</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Icc">set.Icc</a> b</span> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Iio_inter_Ici">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L353">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iio_inter_Ici"><span class="name">set</span>.<span class="name">Iio_inter_Ici</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iio">set.Iio</a> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_inter.inter" title="has_inter.inter">∩</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ici">set.Ici</a> b</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ico">set.Ico</a> b</span> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Iic_inter_Ioi">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L354">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iic_inter_Ioi"><span class="name">set</span>.<span class="name">Iic_inter_Ioi</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iic">set.Iic</a> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_inter.inter" title="has_inter.inter">∩</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioi">set.Ioi</a> b</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioc">set.Ioc</a> b</span> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Iio_inter_Ioi">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L355">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iio_inter_Ioi"><span class="name">set</span>.<span class="name">Iio_inter_Ioi</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iio">set.Iio</a> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_inter.inter" title="has_inter.inter">∩</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioi">set.Ioi</a> b</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioo">set.Ioo</a> b</span> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.mem_Icc_of_Ioo">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L357">source</a></div>
 
 
 
@@ -5758,7 +5930,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.mem_Ico_of_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L354">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L358">source</a></div>
 
 
 
@@ -5797,7 +5969,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.mem_Ioc_of_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L355">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L359">source</a></div>
 
 
 
@@ -5836,7 +6008,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.mem_Icc_of_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L356">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L360">source</a></div>
 
 
 
@@ -5875,7 +6047,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.mem_Icc_of_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L357">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L361">source</a></div>
 
 
 
@@ -5914,7 +6086,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.mem_Ici_of_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L362">source</a></div>
 
 
 
@@ -5953,7 +6125,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.mem_Iic_of_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L359">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L363">source</a></div>
 
 
 
@@ -5992,7 +6164,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_eq_empty_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L361">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L365">source</a></div>
 
 
 
@@ -6030,7 +6202,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_eq_empty_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L368">source</a></div>
 
 
 
@@ -6068,7 +6240,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_eq_empty_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L367">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L371">source</a></div>
 
 
 
@@ -6106,7 +6278,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_eq_empty_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L370">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L374">source</a></div>
 
 
 
@@ -6145,7 +6317,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="is_top.Iic_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L373">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L377">source</a></div>
 
 
 
@@ -6184,7 +6356,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="is_bot.Ici_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L374">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L378">source</a></div>
 
 
 
@@ -6223,7 +6395,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="is_max.Ioi_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L375">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L379">source</a></div>
 
 
 
@@ -6262,7 +6434,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="is_min.Iio_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L376">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L380">source</a></div>
 
 
 
@@ -6301,7 +6473,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_inter_Ioc_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L378">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L382">source</a></div>
 
 
 
@@ -6340,7 +6512,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L386">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L390">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6380,7 +6552,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_eq_singleton_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L389">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L393">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6420,7 +6592,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_diff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L399">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L403">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6460,7 +6632,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_diff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L402">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L406">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6500,7 +6672,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_diff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L405">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L409">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6540,7 +6712,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_diff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L408">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L412">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6580,7 +6752,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_diff_both">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L411">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L415">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6620,7 +6792,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ici_diff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L414">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L418">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6660,7 +6832,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_diff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L417">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L421">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6700,7 +6872,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_diff_Ioo_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L420">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L424">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6741,7 +6913,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_diff_Ioo_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L423">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L427">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6782,7 +6954,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_diff_Ico_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L426">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L430">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6823,7 +6995,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_diff_Ioc_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L429">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L433">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6864,7 +7036,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_diff_Ioo_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L432">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L436">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6905,7 +7077,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ici_diff_Ioi_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L435">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L439">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6945,7 +7117,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_diff_Iio_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L438">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L442">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6985,7 +7157,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioi_union_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L441">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L445">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7025,7 +7197,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_union_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L443">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L447">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7065,7 +7237,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_union_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L445">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L449">source</a></div>
 
 
 
@@ -7104,7 +7276,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_union_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L449">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L453">source</a></div>
 
 
 
@@ -7143,7 +7315,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_union_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L452">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L456">source</a></div>
 
 
 
@@ -7182,7 +7354,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_union_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L456">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L460">source</a></div>
 
 
 
@@ -7218,10 +7390,254 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
     
         
         
+<div class="decl" id="set.Ico_insert_right">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L463">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ico_insert_right"><span class="name">set</span>.<span class="name">Ico_insert_right</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#has_insert.insert" title="has_insert.insert">insert</a> b</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ico">set.Ico</a> a</span> b)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Icc">set.Icc</a> a</span> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Ioc_insert_left">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L466">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioc_insert_left"><span class="name">set</span>.<span class="name">Ioc_insert_left</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#has_insert.insert" title="has_insert.insert">insert</a> a</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioc">set.Ioc</a> a</span> b)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Icc">set.Icc</a> a</span> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Ioo_insert_left">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L469">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioo_insert_left"><span class="name">set</span>.<span class="name">Ioo_insert_left</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#has_insert.insert" title="has_insert.insert">insert</a> a</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioo">set.Ioo</a> a</span> b)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ico">set.Ico</a> a</span> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Ioo_insert_right">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L472">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioo_insert_right"><span class="name">set</span>.<span class="name">Ioo_insert_right</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>
+    <span class="decl_args"><span class="fn">(h : a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> b)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#has_insert.insert" title="has_insert.insert">insert</a> b</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioo">set.Ioo</a> a</span> b)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioc">set.Ioc</a> a</span> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Iio_insert">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L475">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iio_insert"><span class="name">set</span>.<span class="name">Iio_insert</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#has_insert.insert" title="has_insert.insert">insert</a> a</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iio">set.Iio</a> a)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iic">set.Iic</a> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Ioi_insert">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L477">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioi_insert"><span class="name">set</span>.<span class="name">Ioi_insert</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#partial_order">partial_order</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#has_insert.insert" title="has_insert.insert">insert</a> a</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ioi">set.Ioi</a> a)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ici">set.Ici</a> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="set.mem_Ici_Ioi_of_subset_of_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L459">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L480">source</a></div>
 
 
 
@@ -7262,7 +7678,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.mem_Iic_Iio_of_subset_of_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L465">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L486">source</a></div>
 
 
 
@@ -7303,7 +7719,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.mem_Icc_Ico_Ioc_Ioo_of_subset_of_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L490">source</a></div>
 
 
 
@@ -7344,7 +7760,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.eq_left_or_mem_Ioo_of_mem_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L490">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L511">source</a></div>
 
 
 
@@ -7383,7 +7799,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.eq_right_or_mem_Ioo_of_mem_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L494">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L515">source</a></div>
 
 
 
@@ -7422,7 +7838,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.eq_endpoints_or_mem_Ioo_of_mem_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L498">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L519">source</a></div>
 
 
 
@@ -7461,7 +7877,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="is_max.Ici_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L502">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L523">source</a></div>
 
 
 
@@ -7500,7 +7916,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="is_min.Iic_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L505">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L526">source</a></div>
 
 
 
@@ -7539,7 +7955,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ici_top">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L511">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L532">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7579,7 +7995,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioi_top">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L516">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L537">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7619,7 +8035,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_top">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L517">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L538">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7659,7 +8075,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_top">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L518">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L539">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7700,7 +8116,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_top">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L540">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7741,7 +8157,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_bot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L525">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L546">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7781,7 +8197,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_bot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L530">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L551">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7821,7 +8237,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ici_bot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L531">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L552">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7861,7 +8277,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_bot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L532">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L553">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7902,7 +8318,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_bot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L533">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L554">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7943,7 +8359,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L540">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L561">source</a></div>
 
 
 
@@ -7981,7 +8397,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L542">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L563">source</a></div>
 
 
 
@@ -8019,7 +8435,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Icc_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L544">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L565">source</a></div>
 
 
 
@@ -8058,7 +8474,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Icc_of_gt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L547">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L568">source</a></div>
 
 
 
@@ -8097,7 +8513,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Ico_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L550">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L571">source</a></div>
 
 
 
@@ -8136,7 +8552,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Ioc_of_gt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L553">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L574">source</a></div>
 
 
 
@@ -8175,7 +8591,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L556">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L577">source</a></div>
 
 
 
@@ -8213,7 +8629,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L558">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L579">source</a></div>
 
 
 
@@ -8251,7 +8667,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Ioc_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L560">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L581">source</a></div>
 
 
 
@@ -8290,7 +8706,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Ico_of_ge">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L563">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L584">source</a></div>
 
 
 
@@ -8329,7 +8745,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Ioo_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L566">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L587">source</a></div>
 
 
 
@@ -8368,7 +8784,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.not_mem_Ioo_of_ge">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L569">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L590">source</a></div>
 
 
 
@@ -8407,7 +8823,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.compl_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L572">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L593">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8447,7 +8863,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.compl_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L573">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L594">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8487,7 +8903,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.compl_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L574">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L595">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8527,7 +8943,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.compl_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L575">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L596">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8567,7 +8983,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ici_diff_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L577">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L598">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8607,7 +9023,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ici_diff_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L580">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L601">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8647,7 +9063,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioi_diff_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L583">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L604">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8687,7 +9103,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioi_diff_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L586">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L607">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8727,7 +9143,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_diff_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L589">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L610">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8767,7 +9183,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_diff_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L592">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L613">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8807,7 +9223,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_diff_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L595">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L616">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8847,7 +9263,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_diff_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L598">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L619">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8887,7 +9303,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_subset_Ico_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L601">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L622">source</a></div>
 
 
 
@@ -8926,7 +9342,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_subset_Ioc_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L607">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L628">source</a></div>
 
 
 
@@ -8965,7 +9381,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_subset_Ioo_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L611">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L632">source</a></div>
 
 
 
@@ -9005,7 +9421,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_eq_Ico_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L622">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L643">source</a></div>
 
 
 
@@ -9044,7 +9460,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioi_subset_Ioi_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L633">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L654">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9084,7 +9500,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioi_subset_Ici_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L640">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L661">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9125,7 +9541,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_subset_Iio_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L648">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L669">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9165,7 +9581,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_subset_Iic_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L655">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L676">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9220,7 +9636,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_union_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L662">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L683">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9260,7 +9676,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_union_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L664">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L685">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9300,7 +9716,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_union_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L666">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L687">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9347,7 +9763,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_union_Ioi'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L670">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L691">source</a></div>
 
 
 
@@ -9386,7 +9802,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_union_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L681">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L702">source</a></div>
 
 
 
@@ -9425,7 +9841,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioi_subset_Ioo_union_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L690">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L711">source</a></div>
 
 
 
@@ -9463,7 +9879,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_union_Ici_eq_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L693">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L714">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9504,7 +9920,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ici_subset_Ico_union_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L696">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L717">source</a></div>
 
 
 
@@ -9542,7 +9958,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_union_Ici_eq_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L699">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L720">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9583,7 +9999,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_union_Ici'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L702">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L723">source</a></div>
 
 
 
@@ -9622,7 +10038,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_union_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L713">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L734">source</a></div>
 
 
 
@@ -9661,7 +10077,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioi_subset_Ioc_union_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L721">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L742">source</a></div>
 
 
 
@@ -9699,7 +10115,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_union_Ioi_eq_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L724">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L745">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9740,7 +10156,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_union_Ioi'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L727">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L748">source</a></div>
 
 
 
@@ -9779,7 +10195,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_union_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L738">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L759">source</a></div>
 
 
 
@@ -9818,7 +10234,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ici_subset_Icc_union_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L746">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L767">source</a></div>
 
 
 
@@ -9856,7 +10272,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_union_Ioi_eq_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L749">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L770">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9897,7 +10313,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioi_subset_Ioc_union_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L752">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L773">source</a></div>
 
 
 
@@ -9935,7 +10351,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_union_Ici_eq_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L755">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L776">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9976,7 +10392,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ici_subset_Icc_union_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L758">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L779">source</a></div>
 
 
 
@@ -10014,7 +10430,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_union_Ici_eq_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L761">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L782">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10055,7 +10471,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_union_Ici'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L764">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L785">source</a></div>
 
 
 
@@ -10094,7 +10510,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_union_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L775">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L796">source</a></div>
 
 
 
@@ -10140,7 +10556,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_subset_Iio_union_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L788">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L809">source</a></div>
 
 
 
@@ -10178,7 +10594,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_union_Icc_eq_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L791">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L812">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10219,7 +10635,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_subset_Iio_union_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L795">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L816">source</a></div>
 
 
 
@@ -10257,7 +10673,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_union_Ico_eq_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L798">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L819">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10298,7 +10714,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_union_Ico'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L801">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L822">source</a></div>
 
 
 
@@ -10337,7 +10753,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_union_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L812">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L833">source</a></div>
 
 
 
@@ -10376,7 +10792,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_subset_Iic_union_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L820">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L841">source</a></div>
 
 
 
@@ -10414,7 +10830,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_union_Ioc_eq_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L823">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L844">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10455,7 +10871,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_union_Ioc'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L826">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L847">source</a></div>
 
 
 
@@ -10494,7 +10910,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_union_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L837">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L858">source</a></div>
 
 
 
@@ -10533,7 +10949,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_subset_Iic_union_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L846">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L867">source</a></div>
 
 
 
@@ -10571,7 +10987,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_union_Ioo_eq_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L849">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L870">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10612,7 +11028,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_union_Ioo'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L852">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L873">source</a></div>
 
 
 
@@ -10651,7 +11067,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_union_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L863">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L884">source</a></div>
 
 
 
@@ -10690,7 +11106,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_subset_Iic_union_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L872">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L893">source</a></div>
 
 
 
@@ -10728,7 +11144,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_union_Icc_eq_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L875">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L896">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10769,7 +11185,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_union_Icc'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L878">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L899">source</a></div>
 
 
 
@@ -10808,7 +11224,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_union_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L889">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L910">source</a></div>
 
 
 
@@ -10847,7 +11263,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iio_subset_Iic_union_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L900">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L921">source</a></div>
 
 
 
@@ -10885,7 +11301,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Iic_union_Ico_eq_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L903">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L924">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10933,7 +11349,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_subset_Ioo_union_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L908">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L929">source</a></div>
 
 
 
@@ -10971,7 +11387,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_union_Ico_eq_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L911">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L932">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11013,7 +11429,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_subset_Ico_union_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L916">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L937">source</a></div>
 
 
 
@@ -11051,7 +11467,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_union_Ico_eq_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L919">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L940">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11093,7 +11509,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_union_Ico'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L924">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L945">source</a></div>
 
 
 
@@ -11133,7 +11549,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_union_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L938">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L959">source</a></div>
 
 
 
@@ -11173,7 +11589,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_subset_Ico_union_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L946">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L967">source</a></div>
 
 
 
@@ -11211,7 +11627,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_union_Icc_eq_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L949">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L970">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11253,7 +11669,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_subset_Ioo_union_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L954">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L975">source</a></div>
 
 
 
@@ -11291,7 +11707,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_union_Icc_eq_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L957">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L978">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11340,7 +11756,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_subset_Ioc_union_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L965">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L986">source</a></div>
 
 
 
@@ -11378,7 +11794,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_union_Ioo_eq_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L968">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L989">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11420,7 +11836,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_subset_Icc_union_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L973">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L994">source</a></div>
 
 
 
@@ -11458,7 +11874,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_union_Ioo_eq_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L976">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L997">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11500,7 +11916,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_subset_Icc_union_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L982">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1003">source</a></div>
 
 
 
@@ -11538,7 +11954,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_union_Ioc_eq_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L985">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1006">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11580,7 +11996,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_subset_Ioc_union_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L990">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1011">source</a></div>
 
 
 
@@ -11618,7 +12034,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_union_Ioc_eq_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L993">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1014">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11660,7 +12076,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_union_Ioc'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L998">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1019">source</a></div>
 
 
 
@@ -11700,7 +12116,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_union_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1012">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1033">source</a></div>
 
 
 
@@ -11747,7 +12163,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioo_subset_Ioc_union_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1022">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1043">source</a></div>
 
 
 
@@ -11785,7 +12201,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ioc_union_Ico_eq_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1025">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1046">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11827,7 +12243,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Ico_subset_Icc_union_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1030">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1051">source</a></div>
 
 
 
@@ -11865,7 +12281,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_union_Ico_eq_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1033">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1054">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11907,7 +12323,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_subset_Icc_union_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1038">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1059">source</a></div>
 
 
 
@@ -11945,7 +12361,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_union_Icc_eq_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1041">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1062">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11987,7 +12403,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_union_Icc'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1046">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1067">source</a></div>
 
 
 
@@ -12027,7 +12443,7 @@ the equivalence in dense linear orders, use <code>Iio_subset_Iic_iff</code>.</p>
 <div class="decl" id="set.Icc_union_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1064">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1085">source</a></div>
 
 
 
@@ -12069,7 +12485,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_subset_Ioc_union_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1075">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1096">source</a></div>
 
 
 
@@ -12107,7 +12523,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_union_Icc_eq_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1078">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1099">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12149,7 +12565,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioo_union_Ioo'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1083">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1104">source</a></div>
 
 
 
@@ -12189,7 +12605,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioo_union_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1097">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1118">source</a></div>
 
 
 
@@ -12229,7 +12645,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Iic_inter_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1116">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1137">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12269,7 +12685,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Iio_inter_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1119">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1140">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12310,7 +12726,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_inter_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1122">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1143">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12350,7 +12766,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ici_inter_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1131">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1152">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12390,7 +12806,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ico_inter_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1134">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1155">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12430,7 +12846,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioi_inter_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1137">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1158">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12471,7 +12887,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_inter_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1140">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1161">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12512,7 +12928,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Icc_inter_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1150">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1171">source</a></div>
 
 
 
@@ -12550,7 +12966,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Icc_inter_Icc_eq_singleton">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1153">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1174">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12592,7 +13008,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ico_inter_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1159">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1180">source</a></div>
 
 
 
@@ -12631,7 +13047,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_inter_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1162">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1183">source</a></div>
 
 
 
@@ -12670,7 +13086,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioo_inter_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1165">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1186">source</a></div>
 
 
 
@@ -12709,7 +13125,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Icc_bot_top">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1170">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1191">source</a></div>
 
 
 
@@ -12747,7 +13163,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_inter_Ioo_of_left_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1177">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1198">source</a></div>
 
 
 
@@ -12786,7 +13202,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_inter_Ioo_of_right_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1181">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1202">source</a></div>
 
 
 
@@ -12825,7 +13241,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioo_inter_Ioc_of_left_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1185">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1206">source</a></div>
 
 
 
@@ -12864,7 +13280,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioo_inter_Ioc_of_right_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1188">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1209">source</a></div>
 
 
 
@@ -12903,7 +13319,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ico_diff_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1191">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1212">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12943,7 +13359,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_diff_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1194">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1215">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12983,7 +13399,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ico_inter_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1197">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1218">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13023,7 +13439,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_diff_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1200">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1221">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13063,7 +13479,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_union_Ioc_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1203">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1224">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13103,7 +13519,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_union_Ioc_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1206">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1227">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13143,7 +13559,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_union_Ioc_symm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1209">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1230">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13183,7 +13599,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc_union_Ioc_union_Ioc_cycle">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1212">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1233">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13230,7 +13646,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Iic_prod_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1231">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1252">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13273,7 +13689,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ici_prod_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1233">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1254">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13316,7 +13732,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ici_prod_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1235">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1256">source</a></div>
 
 
 
@@ -13356,7 +13772,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Iic_prod_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1237">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1258">source</a></div>
 
 
 
@@ -13396,7 +13812,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Icc_prod_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1239">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1260">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13439,7 +13855,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Icc_prod_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1243">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1264">source</a></div>
 
 
 
@@ -13493,7 +13909,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.neg_mem_Icc_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1256">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1277">source</a></div>
 
 
 
@@ -13531,7 +13947,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.inv_mem_Icc_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1256">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1277">source</a></div>
 
 
 
@@ -13569,7 +13985,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.neg_mem_Ico_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1258">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1279">source</a></div>
 
 
 
@@ -13607,7 +14023,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.inv_mem_Ico_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1258">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1279">source</a></div>
 
 
 
@@ -13645,7 +14061,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.inv_mem_Ioc_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1260">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1281">source</a></div>
 
 
 
@@ -13683,7 +14099,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.neg_mem_Ioc_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1260">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1281">source</a></div>
 
 
 
@@ -13721,7 +14137,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.inv_mem_Ioo_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1262">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1283">source</a></div>
 
 
 
@@ -13759,7 +14175,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.neg_mem_Ioo_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1262">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1283">source</a></div>
 
 
 
@@ -13804,7 +14220,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.add_mem_Icc_iff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1272">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1293">source</a></div>
 
 
 
@@ -13842,7 +14258,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.add_mem_Ico_iff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1274">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1295">source</a></div>
 
 
 
@@ -13880,7 +14296,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.add_mem_Ioc_iff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1276">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1297">source</a></div>
 
 
 
@@ -13918,7 +14334,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.add_mem_Ioo_iff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1278">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1299">source</a></div>
 
 
 
@@ -13963,7 +14379,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.add_mem_Icc_iff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1282">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1303">source</a></div>
 
 
 
@@ -14001,7 +14417,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.add_mem_Ico_iff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1284">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1305">source</a></div>
 
 
 
@@ -14039,7 +14455,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.add_mem_Ioc_iff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1286">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1307">source</a></div>
 
 
 
@@ -14077,7 +14493,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.add_mem_Ioo_iff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1288">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1309">source</a></div>
 
 
 
@@ -14122,7 +14538,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.sub_mem_Icc_iff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1292">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1313">source</a></div>
 
 
 
@@ -14160,7 +14576,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.sub_mem_Ico_iff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1294">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1315">source</a></div>
 
 
 
@@ -14198,7 +14614,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.sub_mem_Ioc_iff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1296">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1317">source</a></div>
 
 
 
@@ -14236,7 +14652,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.sub_mem_Ioo_iff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1298">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1319">source</a></div>
 
 
 
@@ -14281,7 +14697,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.sub_mem_Icc_iff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1302">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1323">source</a></div>
 
 
 
@@ -14319,7 +14735,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.sub_mem_Ico_iff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1304">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1325">source</a></div>
 
 
 
@@ -14357,7 +14773,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.sub_mem_Ioc_iff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1306">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1327">source</a></div>
 
 
 
@@ -14395,7 +14811,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.sub_mem_Ioo_iff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1308">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1329">source</a></div>
 
 
 
@@ -14433,7 +14849,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.mem_Icc_iff_abs_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1313">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1334">source</a></div>
 
 
 
@@ -14471,7 +14887,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.nonempty_Ico_sdiff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1324">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1345">source</a></div>
 
 
 
@@ -14512,7 +14928,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.preimage_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1344">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1365">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14555,7 +14971,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.preimage_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1347">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1368">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14598,7 +15014,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.preimage_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1350">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1371">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14641,7 +15057,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.preimage_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1353">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1374">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14684,7 +15100,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.preimage_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1356">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1377">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14727,7 +15143,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.preimage_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1359">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1380">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14770,7 +15186,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.preimage_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1362">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1383">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14813,7 +15229,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.preimage_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1365">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1386">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14856,7 +15272,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.image_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1368">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1389">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14899,7 +15315,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.image_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1371">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1392">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14942,7 +15358,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.image_Iio">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1374">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1395">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -14985,7 +15401,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.image_Ioi">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1377">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1398">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15028,7 +15444,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.image_Ioo">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1380">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1401">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15071,7 +15487,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.image_Ioc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1383">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1404">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15114,7 +15530,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.image_Ico">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1386">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1407">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15157,7 +15573,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.image_Icc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1389">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1410">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -15200,7 +15616,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.Iic_top">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1395">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1416">source</a></div>
 
 
 
@@ -15248,7 +15664,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="order_iso.Ici_bot">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1400">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1421">source</a></div>
 
 
 
@@ -15303,7 +15719,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioo.no_min_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1412">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1433">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15344,7 +15760,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioc.no_min_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1418">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1439">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15385,7 +15801,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioi.no_min_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1445">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15426,7 +15842,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ioo.no_max_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1430">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1451">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15467,7 +15883,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Ico.no_max_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1436">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1457">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15508,7 +15924,7 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
 <div class="decl" id="set.Iio.no_max_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1442">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/intervals/basic.lean#L1463">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -15565,13 +15981,6 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -17642,6 +18051,12 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -17786,6 +18201,13 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -17794,6 +18216,29 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -17876,6 +18321,9 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -18509,27 +18957,35 @@ Otherwise for <code>b &lt; a = d &lt; c</code> the l.h.s. is <code>∅</code> an
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

@@ -206,6 +206,8 @@
 
     <div class="nav_link"><a class="break_within" href="#homeomorph.nhds_eq_comap"><span class="name">homeomorph</span>.<span class="name">nhds_eq_comap</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#homeomorph.normal_space"><span class="name">homeomorph</span>.<span class="name">normal_space</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#homeomorph.of_embedding"><span class="name">homeomorph</span>.<span class="name">of_embedding</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#homeomorph.open_embedding"><span class="name">homeomorph</span>.<span class="name">open_embedding</span></a></div>
@@ -254,6 +256,8 @@
 
     <div class="nav_link"><a class="break_within" href="#homeomorph.refl_symm"><span class="name">homeomorph</span>.<span class="name">refl_symm</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#homeomorph.regular_space"><span class="name">homeomorph</span>.<span class="name">regular_space</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#homeomorph.second_countable_topology"><span class="name">homeomorph</span>.<span class="name">second_countable_topology</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#homeomorph.self_comp_symm"><span class="name">homeomorph</span>.<span class="name">self_comp_symm</span></a></div>
@@ -279,6 +283,10 @@
     <div class="nav_link"><a class="break_within" href="#homeomorph.symm_comp_self"><span class="name">homeomorph</span>.<span class="name">symm_comp_self</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#homeomorph.symm_map_nhds_eq"><span class="name">homeomorph</span>.<span class="name">symm_map_nhds_eq</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#homeomorph.t0_space"><span class="name">homeomorph</span>.<span class="name">t0_space</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#homeomorph.t1_space"><span class="name">homeomorph</span>.<span class="name">t1_space</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#homeomorph.t2_space"><span class="name">homeomorph</span>.<span class="name">t2_space</span></a></div>
 
@@ -2082,10 +2090,96 @@ because it is a composition of multiple projections.</p>
     
         
         
-<div class="decl" id="homeomorph.t2_space">
+<div class="decl" id="homeomorph.t0_space">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L181">source</a></div>
+
+
+    <div class="attributes">@[protected]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/topology/homeomorph.html#homeomorph.t0_space"><span class="name">homeomorph</span>.<span class="name">t0_space</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/separation.html#t0_space">t0_space</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(h : α <a href="https://mariainesdff.github.io/ideles/topology/homeomorph.html#homeomorph" title="homeomorph">≃ₜ</a> β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/topology/separation.html#t0_space">t0_space</a> β</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="homeomorph.t1_space">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L184">source</a></div>
+
+
+    <div class="attributes">@[protected]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/topology/homeomorph.html#homeomorph.t1_space"><span class="name">homeomorph</span>.<span class="name">t1_space</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/separation.html#t1_space">t1_space</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(h : α <a href="https://mariainesdff.github.io/ideles/topology/homeomorph.html#homeomorph" title="homeomorph">≃ₜ</a> β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/topology/separation.html#t1_space">t1_space</a> β</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="homeomorph.t2_space">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L187">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -2105,6 +2199,49 @@ because it is a composition of multiple projections.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/separation.html#t2_space">t2_space</a> α]</span></span></span>
     <span class="decl_args"><span class="fn">(h : α <a href="https://mariainesdff.github.io/ideles/topology/homeomorph.html#homeomorph" title="homeomorph">≃ₜ</a> β)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/topology/separation.html#t2_space">t2_space</a> β</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="homeomorph.regular_space">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L190">source</a></div>
+
+
+    <div class="attributes">@[protected]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/topology/homeomorph.html#homeomorph.regular_space"><span class="name">homeomorph</span>.<span class="name">regular_space</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/separation.html#regular_space">regular_space</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(h : α <a href="https://mariainesdff.github.io/ideles/topology/homeomorph.html#homeomorph" title="homeomorph">≃ₜ</a> β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/topology/separation.html#regular_space">regular_space</a> β</span></div>
 </div>
 
 
@@ -2507,10 +2644,53 @@ because it is a composition of multiple projections.</p>
     
         
         
-<div class="decl" id="homeomorph.preimage_closure">
+<div class="decl" id="homeomorph.normal_space">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L219">source</a></div>
+
+
+    <div class="attributes">@[protected]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/topology/homeomorph.html#homeomorph.normal_space"><span class="name">homeomorph</span>.<span class="name">normal_space</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/basic.html#topological_space">topological_space</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/topology/separation.html#normal_space">normal_space</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(h : α <a href="https://mariainesdff.github.io/ideles/topology/homeomorph.html#homeomorph" title="homeomorph">≃ₜ</a> β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/topology/separation.html#normal_space">normal_space</a> β</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="homeomorph.preimage_closure">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L222">source</a></div>
 
 
 
@@ -2551,7 +2731,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.image_closure">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L222">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L225">source</a></div>
 
 
 
@@ -2592,7 +2772,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.preimage_interior">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L225">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L228">source</a></div>
 
 
 
@@ -2633,7 +2813,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.image_interior">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L228">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L231">source</a></div>
 
 
 
@@ -2674,7 +2854,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.preimage_frontier">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L231">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L234">source</a></div>
 
 
 
@@ -2715,7 +2895,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="has_compact_support.comp_homeomorph">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L235">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L238">source</a></div>
 
 
 
@@ -2759,7 +2939,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="has_compact_mul_support.comp_homeomorph">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L235">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L238">source</a></div>
 
 
 
@@ -2803,7 +2983,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.map_nhds_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L239">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L242">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2846,7 +3026,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.symm_map_nhds_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L242">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L245">source</a></div>
 
 
 
@@ -2887,7 +3067,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.nhds_eq_comap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L245">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L248">source</a></div>
 
 
 
@@ -2928,7 +3108,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.comap_nhds_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L248">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L251">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2971,7 +3151,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.homeomorph_of_continuous_open">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L252">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L255">source</a></div>
 
 
 
@@ -3023,7 +3203,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.comp_continuous_on_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L263">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L266">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3069,7 +3249,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.comp_continuous_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L267">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L270">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3114,7 +3294,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.comp_continuous_iff'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L271">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L274">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3159,7 +3339,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.comp_continuous_at_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L275">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L278">source</a></div>
 
 
 
@@ -3203,7 +3383,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.comp_continuous_at_iff'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L279">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L282">source</a></div>
 
 
 
@@ -3247,7 +3427,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.comp_continuous_within_at_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L283">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L286">source</a></div>
 
 
 
@@ -3292,7 +3472,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.comp_is_open_map_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L287">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L290">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3337,7 +3517,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.comp_is_open_map_iff'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L296">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L299">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3382,7 +3562,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.set_congr">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L306">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L309">source</a></div>
 
 
 
@@ -3431,7 +3611,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.sum_congr">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L312">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L315">source</a></div>
 
 
 
@@ -3486,7 +3666,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.prod_congr">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L328">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L331">source</a></div>
 
 
 
@@ -3541,7 +3721,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.prod_congr_symm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L335">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L338">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3588,7 +3768,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.coe_prod_congr">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L338">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L341">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3635,7 +3815,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.prod_comm">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L345">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L348">source</a></div>
 
 
 
@@ -3684,7 +3864,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.prod_comm_symm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L350">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L353">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3725,7 +3905,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.coe_prod_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L351">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L354">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3766,7 +3946,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.prod_assoc">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L354">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L357">source</a></div>
 
 
 
@@ -3817,7 +3997,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.prod_punit_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L363">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L366">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3856,7 +4036,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.prod_punit">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L363">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L366">source</a></div>
 
 
 
@@ -3903,7 +4083,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.punit_prod">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L369">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L372">source</a></div>
 
 
 
@@ -3950,7 +4130,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.coe_punit_prod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L372">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L375">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3989,7 +4169,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.ulift">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L377">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L380">source</a></div>
 
 
 
@@ -4036,7 +4216,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.sum_prod_distrib">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L385">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L388">source</a></div>
 
 
 
@@ -4087,7 +4267,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.prod_sum_distrib">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L398">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L401">source</a></div>
 
 
 
@@ -4138,7 +4318,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.sigma_prod_distrib">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L406">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L409">source</a></div>
 
 
 
@@ -4188,7 +4368,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.fun_unique">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L418">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L421">source</a></div>
 
 
 
@@ -4237,7 +4417,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.fun_unique_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L418">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L421">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4278,7 +4458,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.fun_unique_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L418">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L421">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4319,7 +4499,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.pi_fin_two_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L425">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L428">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4358,7 +4538,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.pi_fin_two">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L425">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L428">source</a></div>
 
 
 
@@ -4405,7 +4585,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.pi_fin_two_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L425">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L428">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4444,7 +4624,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.fin_two_arrow_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L431">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L434">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4483,7 +4663,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.fin_two_arrow_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L431">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L434">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4522,7 +4702,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.fin_two_arrow">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L431">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L434">source</a></div>
 
 
 
@@ -4569,7 +4749,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="homeomorph.image">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L437">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L440">source</a></div>
 
 
 
@@ -4620,7 +4800,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="equiv.to_homeomorph_of_inducing_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L445">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L448">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4664,7 +4844,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="equiv.to_homeomorph_of_inducing_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L445">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L448">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4708,7 +4888,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="equiv.to_homeomorph_of_inducing">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L445">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L448">source</a></div>
 
 
 
@@ -4759,7 +4939,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="continuous.continuous_symm_of_equiv_compact_to_t2">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L455">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L458">source</a></div>
 
 
 
@@ -4802,7 +4982,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="continuous.homeo_of_equiv_compact_to_t2">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L472">source</a></div>
 
 
 
@@ -4857,7 +5037,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="continuous.homeo_of_equiv_compact_to_t2_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L472">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4903,7 +5083,7 @@ because it is a composition of multiple projections.</p>
 <div class="decl" id="continuous.homeo_of_equiv_compact_to_t2_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/topology/homeomorph.lean#L472">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4965,13 +5145,6 @@ because it is a composition of multiple projections.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -7042,6 +7215,12 @@ because it is a composition of multiple projections.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -7186,6 +7365,13 @@ because it is a composition of multiple projections.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -7194,6 +7380,29 @@ because it is a composition of multiple projections.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -7276,6 +7485,9 @@ because it is a composition of multiple projections.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -7909,27 +8121,35 @@ because it is a composition of multiple projections.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

@@ -252,9 +252,15 @@
 
     <div class="nav_link"><a class="break_within" href="#hahn_series.no_zero_divisors"><span class="name">hahn_series</span>.<span class="name">no_zero_divisors</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#hahn_series.non_assoc_ring"><span class="name">hahn_series</span>.<span class="name">non_assoc_ring</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#hahn_series.non_assoc_semiring"><span class="name">hahn_series</span>.<span class="name">non_assoc_semiring</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#hahn_series.non_unital_non_assoc_ring"><span class="name">hahn_series</span>.<span class="name">non_unital_non_assoc_ring</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#hahn_series.non_unital_non_assoc_semiring"><span class="name">hahn_series</span>.<span class="name">non_unital_non_assoc_semiring</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#hahn_series.non_unital_ring"><span class="name">hahn_series</span>.<span class="name">non_unital_ring</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#hahn_series.non_unital_semiring"><span class="name">hahn_series</span>.<span class="name">non_unital_semiring</span></a></div>
 
@@ -5027,10 +5033,160 @@ nonzero coefficient, the order of 0 is 0.</p>
     
         
         
-<div class="decl" id="hahn_series.ring">
+<div class="decl" id="hahn_series.non_unital_non_assoc_ring">
 <div class="def noncomputable">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L756">source</a></div>
+
+
+    <div class="attributes">@[protected, instance]</div>
+
+
+<div class="decl_header">
+    
+<span class="decl_noncomputable" title="This definition depends on the noncomputable `hahn_series.non_unital_non_assoc_semiring`">noncomputable</span>
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring"><span class="name">hahn_series</span>.<span class="name">non_unital_non_assoc_ring</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{Γ : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#ordered_cancel_add_comm_monoid">ordered_cancel_add_comm_monoid</a> Γ]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring">non_unital_non_assoc_ring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring">non_unital_non_assoc_ring</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series">hahn_series</a> Γ</span> R)</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.mk" title="non_unital_non_assoc_ring.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.add" title="non_unital_non_assoc_ring.add">add</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_semiring.add">non_unital_non_assoc_semiring.add</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_semiring">hahn_series.non_unital_non_assoc_semiring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.add_assoc" title="non_unital_non_assoc_ring.add_assoc">add_assoc</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.zero" title="non_unital_non_assoc_ring.zero">zero</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_semiring.zero">non_unital_non_assoc_semiring.zero</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_semiring">hahn_series.non_unital_non_assoc_semiring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.zero_add" title="non_unital_non_assoc_ring.zero_add">zero_add</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.add_zero" title="non_unital_non_assoc_ring.add_zero">add_zero</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.nsmul" title="non_unital_non_assoc_ring.nsmul">nsmul</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_semiring.nsmul">non_unital_non_assoc_semiring.nsmul</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_semiring">hahn_series.non_unital_non_assoc_semiring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.nsmul_zero'" title="non_unital_non_assoc_ring.nsmul_zero'">nsmul_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.nsmul_succ'" title="non_unital_non_assoc_ring.nsmul_succ'">nsmul_succ'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.neg" title="non_unital_non_assoc_ring.neg">neg</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group.neg">add_group.neg</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.add_group">hahn_series.add_group</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.sub" title="non_unital_non_assoc_ring.sub">sub</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group.sub">add_group.sub</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.add_group">hahn_series.add_group</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.sub_eq_add_neg" title="non_unital_non_assoc_ring.sub_eq_add_neg">sub_eq_add_neg</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.zsmul" title="non_unital_non_assoc_ring.zsmul">zsmul</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group.zsmul">add_group.zsmul</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.add_group">hahn_series.add_group</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.zsmul_zero'" title="non_unital_non_assoc_ring.zsmul_zero'">zsmul_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.zsmul_succ'" title="non_unital_non_assoc_ring.zsmul_succ'">zsmul_succ'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.zsmul_neg'" title="non_unital_non_assoc_ring.zsmul_neg'">zsmul_neg'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.add_left_neg" title="non_unital_non_assoc_ring.add_left_neg">add_left_neg</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.add_comm" title="non_unital_non_assoc_ring.add_comm">add_comm</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.mul" title="non_unital_non_assoc_ring.mul">mul</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_semiring.mul">non_unital_non_assoc_semiring.mul</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_semiring">hahn_series.non_unital_non_assoc_semiring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.left_distrib" title="non_unital_non_assoc_ring.left_distrib">left_distrib</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.right_distrib" title="non_unital_non_assoc_ring.right_distrib">right_distrib</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.zero_mul" title="non_unital_non_assoc_ring.zero_mul">zero_mul</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.mul_zero" title="non_unital_non_assoc_ring.mul_zero">mul_zero</a> := _}</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="hahn_series.non_unital_ring">
+<div class="def noncomputable">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L760">source</a></div>
+
+
+    <div class="attributes">@[protected, instance]</div>
+
+
+<div class="decl_header">
+    
+<span class="decl_noncomputable" title="This definition depends on the noncomputable `hahn_series.non_unital_non_assoc_ring`">noncomputable</span>
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_ring"><span class="name">hahn_series</span>.<span class="name">non_unital_ring</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{Γ : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#ordered_cancel_add_comm_monoid">ordered_cancel_add_comm_monoid</a> Γ]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring">non_unital_ring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring">non_unital_ring</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series">hahn_series</a> Γ</span> R)</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_ring">hahn_series.non_unital_ring</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.mk" title="non_unital_ring.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.add" title="non_unital_ring.add">add</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.add">non_unital_non_assoc_ring.add</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.add_assoc" title="non_unital_ring.add_assoc">add_assoc</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.zero" title="non_unital_ring.zero">zero</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.zero">non_unital_non_assoc_ring.zero</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.zero_add" title="non_unital_ring.zero_add">zero_add</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.add_zero" title="non_unital_ring.add_zero">add_zero</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.nsmul" title="non_unital_ring.nsmul">nsmul</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.nsmul">non_unital_non_assoc_ring.nsmul</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.nsmul_zero'" title="non_unital_ring.nsmul_zero'">nsmul_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.nsmul_succ'" title="non_unital_ring.nsmul_succ'">nsmul_succ'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.neg" title="non_unital_ring.neg">neg</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.neg">non_unital_non_assoc_ring.neg</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.sub" title="non_unital_ring.sub">sub</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.sub">non_unital_non_assoc_ring.sub</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.sub_eq_add_neg" title="non_unital_ring.sub_eq_add_neg">sub_eq_add_neg</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.zsmul" title="non_unital_ring.zsmul">zsmul</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.zsmul">non_unital_non_assoc_ring.zsmul</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.zsmul_zero'" title="non_unital_ring.zsmul_zero'">zsmul_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.zsmul_succ'" title="non_unital_ring.zsmul_succ'">zsmul_succ'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.zsmul_neg'" title="non_unital_ring.zsmul_neg'">zsmul_neg'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.add_left_neg" title="non_unital_ring.add_left_neg">add_left_neg</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.add_comm" title="non_unital_ring.add_comm">add_comm</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.mul" title="non_unital_ring.mul">mul</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.mul">non_unital_non_assoc_ring.mul</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.left_distrib" title="non_unital_ring.left_distrib">left_distrib</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.right_distrib" title="non_unital_ring.right_distrib">right_distrib</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.zero_mul" title="non_unital_ring.zero_mul">zero_mul</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.mul_zero" title="non_unital_ring.mul_zero">mul_zero</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_ring.mul_assoc" title="non_unital_ring.mul_assoc">mul_assoc</a> := _}</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="hahn_series.non_assoc_ring">
+<div class="def noncomputable">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L764">source</a></div>
+
+
+    <div class="attributes">@[protected, instance]</div>
+
+
+<div class="decl_header">
+    
+<span class="decl_noncomputable" title="This definition depends on the noncomputable `hahn_series.non_unital_non_assoc_ring`">noncomputable</span>
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_assoc_ring"><span class="name">hahn_series</span>.<span class="name">non_assoc_ring</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{Γ : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/order/monoid.html#ordered_cancel_add_comm_monoid">ordered_cancel_add_comm_monoid</a> Γ]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring">non_assoc_ring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring">non_assoc_ring</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series">hahn_series</a> Γ</span> R)</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_assoc_ring">hahn_series.non_assoc_ring</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.mk" title="non_assoc_ring.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.add" title="non_assoc_ring.add">add</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.add">non_unital_non_assoc_ring.add</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.add_assoc" title="non_assoc_ring.add_assoc">add_assoc</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.zero" title="non_assoc_ring.zero">zero</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.zero">non_unital_non_assoc_ring.zero</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.zero_add" title="non_assoc_ring.zero_add">zero_add</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.add_zero" title="non_assoc_ring.add_zero">add_zero</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.nsmul" title="non_assoc_ring.nsmul">nsmul</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.nsmul">non_unital_non_assoc_ring.nsmul</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.nsmul_zero'" title="non_assoc_ring.nsmul_zero'">nsmul_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.nsmul_succ'" title="non_assoc_ring.nsmul_succ'">nsmul_succ'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.neg" title="non_assoc_ring.neg">neg</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.neg">non_unital_non_assoc_ring.neg</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.sub" title="non_assoc_ring.sub">sub</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.sub">non_unital_non_assoc_ring.sub</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.sub_eq_add_neg" title="non_assoc_ring.sub_eq_add_neg">sub_eq_add_neg</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.zsmul" title="non_assoc_ring.zsmul">zsmul</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.zsmul">non_unital_non_assoc_ring.zsmul</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.zsmul_zero'" title="non_assoc_ring.zsmul_zero'">zsmul_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.zsmul_succ'" title="non_assoc_ring.zsmul_succ'">zsmul_succ'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.zsmul_neg'" title="non_assoc_ring.zsmul_neg'">zsmul_neg'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.add_left_neg" title="non_assoc_ring.add_left_neg">add_left_neg</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.add_comm" title="non_assoc_ring.add_comm">add_comm</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.mul" title="non_assoc_ring.mul">mul</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring.mul">non_unital_non_assoc_ring.mul</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_unital_non_assoc_ring">hahn_series.non_unital_non_assoc_ring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.left_distrib" title="non_assoc_ring.left_distrib">left_distrib</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.right_distrib" title="non_assoc_ring.right_distrib">right_distrib</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.zero_mul" title="non_assoc_ring.zero_mul">zero_mul</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.mul_zero" title="non_assoc_ring.mul_zero">mul_zero</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.one" title="non_assoc_ring.one">one</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_semiring.one">non_assoc_semiring.one</a> <a href="https://mariainesdff.github.io/ideles/ring_theory/hahn_series.html#hahn_series.non_assoc_semiring">hahn_series.non_assoc_semiring</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.one_mul" title="non_assoc_ring.one_mul">one_mul</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_ring.mul_one" title="non_assoc_ring.mul_one">mul_one</a> := _}</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="hahn_series.ring">
+<div class="def noncomputable">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L768">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5080,7 +5236,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.comm_ring">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L760">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L772">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5130,7 +5286,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.no_zero_divisors">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L764">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L776">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5172,7 +5328,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.is_domain">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L777">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L789">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5214,7 +5370,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.order_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L784">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L796">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5259,7 +5415,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.order_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L797">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L809">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5303,7 +5459,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.single_mul_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L811">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L823">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5346,7 +5502,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.C_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L831">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L843">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5388,7 +5544,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.C">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L831">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L843">source</a></div>
 
 
 
@@ -5437,7 +5593,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.C_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L839">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L851">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5478,7 +5634,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.C_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L842">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L854">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5519,7 +5675,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.C_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L844">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L856">source</a></div>
 
 
 
@@ -5558,7 +5714,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.C_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L852">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L864">source</a></div>
 
 
 
@@ -5599,7 +5755,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.order_C">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L859">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L871">source</a></div>
 
 
 
@@ -5639,7 +5795,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.C_mul_eq_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L871">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L883">source</a></div>
 
 
 
@@ -5680,7 +5836,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.emb_domain_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L879">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L891">source</a></div>
 
 
 
@@ -5724,7 +5880,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.emb_domain_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L916">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L928">source</a></div>
 
 
 
@@ -5767,7 +5923,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.emb_domain_ring_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L921">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L933">source</a></div>
 
 
 
@@ -5821,7 +5977,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.emb_domain_ring_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L921">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L933">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5868,7 +6024,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.emb_domain_ring_hom_C">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L930">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L942">source</a></div>
 
 
 
@@ -5913,7 +6069,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.algebra">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L940">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L952">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5966,7 +6122,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.C_eq_algebra_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L947">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L959">source</a></div>
 
 
 
@@ -6005,7 +6161,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.algebra_map_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L949">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L961">source</a></div>
 
 
 
@@ -6048,7 +6204,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.subalgebra.nontrivial">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L952">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L964">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6091,7 +6247,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.emb_domain_alg_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L969">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L981">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6141,7 +6297,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.emb_domain_alg_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L969">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L981">source</a></div>
 
 
 
@@ -6198,7 +6354,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.to_power_series_symm_apply_coeff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L985">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L997">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6239,7 +6395,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.to_power_series">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L985">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L997">source</a></div>
 
 
 
@@ -6286,7 +6442,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.to_power_series_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L985">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L997">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6326,7 +6482,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.coeff_to_power_series">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1006">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1018">source</a></div>
 
 
 
@@ -6365,7 +6521,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.coeff_to_power_series_symm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1010">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1022">source</a></div>
 
 
 
@@ -6404,7 +6560,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.of_power_series">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1015">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1027">source</a></div>
 
 
 
@@ -6454,7 +6610,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.of_power_series_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1022">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1034">source</a></div>
 
 
 
@@ -6494,7 +6650,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.of_power_series_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1025">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1037">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6537,7 +6693,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.of_power_series_apply_coeff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1032">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1044">source</a></div>
 
 
 
@@ -6579,7 +6735,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.of_power_series_C">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1036">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1048">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6622,7 +6778,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.of_power_series_X">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1052">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1064">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6664,7 +6820,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.of_power_series_X_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1068">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1080">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6707,7 +6863,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.to_mv_power_series_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1084">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1096">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6750,7 +6906,7 @@ nonzero coefficient, the order of 0 is 0.</p>
 <div class="decl" id="hahn_series.to_mv_power_series">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1084">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1096">source</a></div>
 
 
 
@@ -6802,7 +6958,7 @@ After importing <code>algebra.order.pi</code> the ring <code><a href="https://ma
 <div class="decl" id="hahn_series.to_mv_power_series_symm_apply_coeff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1084">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1096">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6844,7 +7000,7 @@ After importing <code>algebra.order.pi</code> the ring <code><a href="https://ma
 <div class="decl" id="hahn_series.coeff_to_mv_power_series">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1108">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1120">source</a></div>
 
 
 
@@ -6885,7 +7041,7 @@ After importing <code>algebra.order.pi</code> the ring <code><a href="https://ma
 <div class="decl" id="hahn_series.coeff_to_mv_power_series_symm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1112">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1124">source</a></div>
 
 
 
@@ -6926,7 +7082,7 @@ After importing <code>algebra.order.pi</code> the ring <code><a href="https://ma
 <div class="decl" id="hahn_series.to_power_series_alg_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1121">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1133">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6969,7 +7125,7 @@ After importing <code>algebra.order.pi</code> the ring <code><a href="https://ma
 <div class="decl" id="hahn_series.to_power_series_alg">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1121">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1133">source</a></div>
 
 
 
@@ -7019,7 +7175,7 @@ After importing <code>algebra.order.pi</code> the ring <code><a href="https://ma
 <div class="decl" id="hahn_series.to_power_series_alg_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1121">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1133">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7062,7 +7218,7 @@ After importing <code>algebra.order.pi</code> the ring <code><a href="https://ma
 <div class="decl" id="hahn_series.of_power_series_alg">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1137">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1149">source</a></div>
 
 
 
@@ -7116,7 +7272,7 @@ is an algebra homomorphism.</p>
 <div class="decl" id="hahn_series.of_power_series_alg_apply_coeff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1137">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1149">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7163,7 +7319,7 @@ is an algebra homomorphism.</p>
 <div class="decl" id="hahn_series.power_series_algebra">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1142">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1154">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7217,7 +7373,7 @@ is an algebra homomorphism.</p>
 <div class="decl" id="hahn_series.algebra_map_apply'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1148">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1160">source</a></div>
 
 
 
@@ -7261,7 +7417,7 @@ is an algebra homomorphism.</p>
 <div class="decl" id="polynomial.algebra_map_hahn_series_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1151">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1163">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7304,7 +7460,7 @@ is an algebra homomorphism.</p>
 <div class="decl" id="polynomial.algebra_map_hahn_series_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1154">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1166">source</a></div>
 
 
 
@@ -7344,7 +7500,7 @@ is an algebra homomorphism.</p>
 <div class="decl" id="hahn_series.multiplicative.linear_ordered_comm_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1164">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1176">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7392,7 +7548,7 @@ is an algebra homomorphism.</p>
 <div class="decl" id="hahn_series.with_zero.linear_ordered_comm_group_with_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1168">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1180">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7440,7 +7596,7 @@ is an algebra homomorphism.</p>
 <div class="decl" id="hahn_series.add_val">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1178">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1190">source</a></div>
 
 
 
@@ -7491,7 +7647,7 @@ a Hahn Series has a nonzero coefficient, or <code>⊤</code> for the 0 series.</
 <div class="decl" id="hahn_series.add_val_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1204">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1216">source</a></div>
 
 
 
@@ -7532,7 +7688,7 @@ a Hahn Series has a nonzero coefficient, or <code>⊤</code> for the 0 series.</
 <div class="decl" id="hahn_series.add_val_apply_of_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1209">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1221">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7576,7 +7732,7 @@ a Hahn Series has a nonzero coefficient, or <code>⊤</code> for the 0 series.</
 <div class="decl" id="hahn_series.add_val_le_of_coeff_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1213">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1225">source</a></div>
 
 
 
@@ -7619,7 +7775,7 @@ a Hahn Series has a nonzero coefficient, or <code>⊤</code> for the 0 series.</
 <div class="decl" id="hahn_series.is_pwo_Union_support_powers">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1222">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1234">source</a></div>
 
 
 
@@ -7661,7 +7817,7 @@ a Hahn Series has a nonzero coefficient, or <code>⊤</code> for the 0 series.</
 <div class="decl" id="hahn_series.summable_family">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1247">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1259">source</a></div>
 
 
 
@@ -7717,7 +7873,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.has_coe_to_fun">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1259">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1271">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7768,7 +7924,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.is_pwo_Union_support">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1262">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1274">source</a></div>
 
 
 
@@ -7809,7 +7965,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.finite_co_support">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1265">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1277">source</a></div>
 
 
 
@@ -7851,7 +8007,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.coe_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1269">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1281">source</a></div>
 
 
 
@@ -7891,7 +8047,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1277">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1289">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -7935,7 +8091,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.has_add">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1280">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1292">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7986,7 +8142,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.has_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1294">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1306">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8037,7 +8193,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1297">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1309">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8088,7 +8244,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.coe_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1300">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1312">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8131,7 +8287,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.add_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1302">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1314">source</a></div>
 
 
 
@@ -8173,7 +8329,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.coe_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1305">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1317">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8215,7 +8371,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.zero_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1307">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1319">source</a></div>
 
 
 
@@ -8256,7 +8412,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.add_comm_monoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1309">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1321">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8307,7 +8463,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.hsum">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1318">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1330">source</a></div>
 
 
 
@@ -8358,7 +8514,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.hsum_coeff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1330">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1342">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8402,7 +8558,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.support_hsum_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1345">source</a></div>
 
 
 
@@ -8443,7 +8599,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.hsum_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1343">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1355">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8486,7 +8642,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.add_comm_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1355">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1367">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8537,7 +8693,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.coe_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1376">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8580,7 +8736,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.neg_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1366">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1378">source</a></div>
 
 
 
@@ -8622,7 +8778,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.coe_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1369">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1381">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8665,7 +8821,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.sub_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1371">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1383">source</a></div>
 
 
 
@@ -8707,7 +8863,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.has_scalar">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1379">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1391">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8758,7 +8914,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.smul_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1400">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1412">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8803,7 +8959,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.module">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1403">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1415">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8854,7 +9010,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.hsum_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1413">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1425">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8898,7 +9054,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.lsum_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1445">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1457">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8941,7 +9097,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.lsum">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1445">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1457">source</a></div>
 
 
 
@@ -8991,7 +9147,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.hsum_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1449">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1461">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9034,7 +9190,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.of_finsupp">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1459">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1471">source</a></div>
 
 
 
@@ -9085,7 +9241,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.coe_of_finsupp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1483">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1495">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9128,7 +9284,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.hsum_of_finsupp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1486">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1498">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9171,7 +9327,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.emb_domain">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1505">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1517">source</a></div>
 
 
 
@@ -9224,7 +9380,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.emb_domain_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1526">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1538">source</a></div>
 
 
 
@@ -9268,7 +9424,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.emb_domain_image">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1529">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1541">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9314,7 +9470,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.emb_domain_notin_range">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1535">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1547">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9361,7 +9517,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.hsum_emb_domain">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1538">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1550">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9406,7 +9562,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.powers">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1553">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1565">source</a></div>
 
 
 
@@ -9458,7 +9614,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.coe_powers">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1582">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1594">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9502,7 +9658,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.emb_domain_succ_smul_powers">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1584">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1596">source</a></div>
 
 
 
@@ -9544,7 +9700,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.summable_family.one_sub_self_mul_hsum_powers">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1599">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1611">source</a></div>
 
 
 
@@ -9586,7 +9742,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.unit_aux">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1619">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1631">source</a></div>
 
 
 
@@ -9629,7 +9785,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.is_unit_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1641">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1653">source</a></div>
 
 
 
@@ -9670,7 +9826,7 @@ and that only finitely many series are nonzero at any given coefficient.</p>
 <div class="decl" id="hahn_series.field">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1661">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/ring_theory/hahn_series.lean#L1673">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -9736,13 +9892,6 @@ and that only finitely many series are nonzero at any given coefficient.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -11813,6 +11962,12 @@ and that only finitely many series are nonzero at any given coefficient.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -11957,6 +12112,13 @@ and that only finitely many series are nonzero at any given coefficient.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -11965,6 +12127,29 @@ and that only finitely many series are nonzero at any given coefficient.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -12047,6 +12232,9 @@ and that only finitely many series are nonzero at any given coefficient.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -12680,27 +12868,35 @@ and that only finitely many series are nonzero at any given coefficient.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

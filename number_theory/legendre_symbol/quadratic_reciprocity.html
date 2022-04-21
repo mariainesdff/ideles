@@ -471,7 +471,7 @@ that <code>legendre_sym p</code> is a multiplicative function <code>ℤ → ℤ<
     <span class="decl_args"><span class="fn">(p : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.prime">nat.prime</a> p)</span>]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{a : <a href="https://mariainesdff.github.io/ideles/init/data/int/basic.html#int" title="int">ℤ</a>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn"><span class="fn">(p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1)</span>]</span></span></span>
+    <span class="decl_args"><span class="fn">(hp : p <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 2)</span></span>
     <span class="decl_args"><span class="fn">(ha0 : <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>a <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 0)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/quadratic_reciprocity.html#zmod.legendre_sym">zmod.legendre_sym</a> p</span> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">(-1) <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset.filter">finset.filter</a> <span class="fn">(λ (x : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>), <span class="fn"><span class="fn">p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> <span class="fn"><span class="fn">((<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>a) <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>x)</span>.<a href="https://mariainesdff.github.io/ideles/data/zmod/basic.html#zmod.val" title="zmod.val">val</a>)</span></span></span></span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/order/locally_finite.html#finset.Ico">finset.Ico</a> 1</span> <span class="fn"><span class="fn">(p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> 2)</span>.<a href="https://mariainesdff.github.io/ideles/init/core.html#nat.succ" title="nat.succ">succ</a>))</span></span></span>.<a href="https://mariainesdff.github.io/ideles/data/finset/card.html#finset.card" title="finset.card">card</a></span></span></span></div>
 </div>
@@ -499,7 +499,7 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
 <div class="decl" id="zmod.legendre_sym_eq_one_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L172">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L173">source</a></div>
 
 
 
@@ -538,7 +538,7 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
 <div class="decl" id="zmod.eisenstein_lemma">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L181">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L182">source</a></div>
 
 
 
@@ -551,7 +551,7 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
 
     <span class="decl_args"><span class="fn">(p : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.prime">nat.prime</a> p)</span>]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn"><span class="fn">(p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1)</span>]</span></span></span>
+    <span class="decl_args"><span class="fn">(hp : p <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 2)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{a : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
     <span class="decl_args"><span class="fn">(ha1 : <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1)</span></span>
     <span class="decl_args"><span class="fn">(ha0 : <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>a <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 0)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -579,7 +579,7 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
 <div class="decl" id="zmod.quadratic_reciprocity">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L191">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L193">source</a></div>
 
 
 
@@ -593,8 +593,8 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
     <span class="decl_args"><span class="fn">(p q : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.prime">nat.prime</a> p)</span>]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.prime">nat.prime</a> q)</span>]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[hp1 : <a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn"><span class="fn">(p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1)</span>]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[hq1 : <a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn"><span class="fn">(q <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1)</span>]</span></span></span>
+    <span class="decl_args"><span class="fn">(hp1 : p <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 2)</span></span>
+    <span class="decl_args"><span class="fn">(hq1 : q <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 2)</span></span>
     <span class="decl_args"><span class="fn">(hpq : p <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> q)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/quadratic_reciprocity.html#zmod.legendre_sym">zmod.legendre_sym</a> q</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>p)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/quadratic_reciprocity.html#zmod.legendre_sym">zmod.legendre_sym</a> p</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>q</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">(-1) <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> <span class="fn"><span class="fn">(p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> 2)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">(q <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> 2)</span></span></span></span></div>
 </div>
@@ -621,7 +621,7 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
 <div class="decl" id="zmod.legendre_sym_two">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L198">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L201">source</a></div>
 
 
 
@@ -634,7 +634,7 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
 
     <span class="decl_args"><span class="fn">(p : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.prime">nat.prime</a> p)</span>]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[hp1 : <a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn"><span class="fn">(p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1)</span>]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(hp2 : p <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 2)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/number_theory/legendre_symbol/quadratic_reciprocity.html#zmod.legendre_sym">zmod.legendre_sym</a> p</span> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">(-1) <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> <span class="fn"><span class="fn">(p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> 4</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn">p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> 2)</span></span></span></span></div>
 </div>
 
@@ -659,7 +659,7 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
 <div class="decl" id="zmod.exists_sq_eq_two_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L233">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L236">source</a></div>
 
 
 
@@ -672,7 +672,7 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
 
     <span class="decl_args"><span class="fn">(p : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.prime">nat.prime</a> p)</span>]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[hp1 : <a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn"><span class="fn">(p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1)</span>]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(hp1 : p <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 2)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn">(∃ (a : <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/zmod/basic.html#zmod">zmod</a> p)</span>, <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 2)</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn"><span class="fn">p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 8</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn"><span class="fn">p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 8</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 7</span></span></span></div>
 </div>
 
@@ -697,7 +697,7 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
 <div class="decl" id="zmod.exists_sq_eq_prime_iff_of_mod_four_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L251">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L254">source</a></div>
 
 
 
@@ -712,7 +712,7 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.prime">nat.prime</a> p)</span>]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/nat/prime.html#nat.prime">nat.prime</a> q)</span>]</span></span></span>
     <span class="decl_args"><span class="fn">(hp1 : <span class="fn">p <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 4</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[hq1 : <a href="https://mariainesdff.github.io/ideles/logic/basic.html#fact">fact</a> <span class="fn"><span class="fn">(q <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mod.mod" title="has_mod.mod">%</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1)</span>]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(hq1 : q <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 2)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn">(∃ (a : <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/zmod/basic.html#zmod">zmod</a> p)</span>, <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>q)</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">∃ (b : <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/zmod/basic.html#zmod">zmod</a> q)</span>, <span class="fn"><span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> 2</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>p</span></span></span></div>
 </div>
 
@@ -737,7 +737,7 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
 <div class="decl" id="zmod.exists_sq_eq_prime_iff_of_mod_four_eq_three">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L269">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/number_theory/legendre_symbol/quadratic_reciprocity.lean#L272">source</a></div>
 
 
 
@@ -794,13 +794,6 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -2871,6 +2864,12 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -3015,6 +3014,13 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -3023,6 +3029,29 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -3105,6 +3134,9 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -3738,27 +3770,35 @@ than <code>p/2</code> such that <code>(a * x) % p &gt; p / 2</code></p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

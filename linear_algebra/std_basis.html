@@ -66,6 +66,9 @@
             <li><a href="https://mariainesdff.github.io/ideles/linear_algebra/finsupp_vector_space.html">
                 linear_algebra.finsupp_vector_space</a></li>
         
+            <li><a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">
+                linear_algebra.free_module.basic</a></li>
+        
             <li><a href="https://mariainesdff.github.io/ideles/linear_algebra/matrix/to_lin.html">
                 linear_algebra.matrix.to_lin</a></li>
         
@@ -1266,19 +1269,19 @@ given by <code>s j</code> on each component.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/linear_algebra/std_basis.html#matrix.std_basis"><span class="name">matrix</span>.<span class="name">std_basis</span></a></span>
 
     <span class="decl_args"><span class="fn">(R : Type u_1)</span></span>
-    <span class="decl_args"><span class="fn">(n : Type u_2)</span></span>
-    <span class="decl_args"><span class="fn">(m : Type u_3)</span></span>
+    <span class="decl_args"><span class="fn">(m : Type u_2)</span></span>
+    <span class="decl_args"><span class="fn">(n : Type u_3)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> m]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> n]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> m)</span></span> R</span> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> R)</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> <span class="fn">(m <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> n)</span></span> R</span> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> R)</span></span></div>
 </div>
 
 
 
 
 
-<p>The standard basis of <code><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n m R</code>.</p>
+<p>The standard basis of <code><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m n R</code>.</p>
 
 
 
@@ -1286,7 +1289,7 @@ given by <code>s j</code> on each component.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/std_basis.html#matrix.std_basis">matrix.std_basis</a> R</span> n</span> m</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/std_basis.html#pi.basis">pi.basis</a> <span class="fn">(λ (i : n), <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/std_basis.html#pi.basis_fun">pi.basis_fun</a> R</span> m))</span></span></span>.<a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis.reindex" title="basis.reindex">reindex</a></span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.sigma_equiv_prod">equiv.sigma_equiv_prod</a> n</span> m)</span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/std_basis.html#matrix.std_basis">matrix.std_basis</a> R</span> m</span> n</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/std_basis.html#pi.basis">pi.basis</a> <span class="fn">(λ (i : m), <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/std_basis.html#pi.basis_fun">pi.basis_fun</a> R</span> n))</span></span></span>.<a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis.reindex" title="basis.reindex">reindex</a></span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.sigma_equiv_prod">equiv.sigma_equiv_prod</a> m</span> n)</span></span></span></li>
             
         </ul>
     </details>
@@ -1317,8 +1320,8 @@ given by <code>s j</code> on each component.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/linear_algebra/std_basis.html#matrix.std_basis_eq_std_basis_matrix"><span class="name">matrix</span>.<span class="name">std_basis_eq_std_basis_matrix</span></a></span>
 
     <span class="decl_args"><span class="fn">(R : Type u_1)</span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_3}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> m]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> n]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>
@@ -1366,13 +1369,6 @@ given by <code>s j</code> on each component.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -3443,6 +3439,12 @@ given by <code>s j</code> on each component.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -3587,6 +3589,13 @@ given by <code>s j</code> on each component.</p>
         <details class="nav_sect" data-path="linear_algebra" open>
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -3595,6 +3604,29 @@ given by <code>s j</code> on each component.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -3677,6 +3709,9 @@ given by <code>s j</code> on each component.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -4310,27 +4345,35 @@ given by <code>s j</code> on each component.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

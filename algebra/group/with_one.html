@@ -2165,7 +2165,7 @@ information about these structures (which are not that standard in informal math
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one">with_one</a> α)</span></span></div>
+<div class="decl_type"><span class="fn">α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one">with_one</a> α</span></span></div>
 </div>
 
 
@@ -2263,7 +2263,7 @@ information about these structures (which are not that standard in informal math
     <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#mul_one_class">mul_one_class</a> β]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> β</span> <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv" title="equiv">≃</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one">with_one</a> α</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom" title="monoid_hom">→*</a> β)</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn">(α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> β)</span> <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv" title="equiv">≃</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one">with_one</a> α</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom" title="monoid_hom">→*</a> β)</span></span></div>
 </div>
 
 
@@ -2278,7 +2278,7 @@ information about these structures (which are not that standard in informal math
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.lift">with_one.lift</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.mk" title="equiv.mk">{</a><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.to_fun" title="equiv.to_fun">to_fun</a> := <span class="fn">λ (f : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> β)</span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom.mk" title="monoid_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom.to_fun" title="monoid_hom.to_fun">to_fun</a> := <span class="fn">λ (x : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one">with_one</a> α)</span>, <span class="fn"><span class="fn"><span class="fn">option.cases_on x</span> 1</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom.map_one'" title="monoid_hom.map_one'">map_one'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom.map_mul'" title="monoid_hom.map_mul'">map_mul'</a> := _}</span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.inv_fun" title="equiv.inv_fun">inv_fun</a> := <span class="fn">λ (F : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one">with_one</a> α</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom" title="monoid_hom">→*</a> β)</span>, <span class="fn">F.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom.to_mul_hom" title="monoid_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.coe_mul_hom">with_one.coe_mul_hom</a></span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.left_inv" title="equiv.left_inv">left_inv</a> := _, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.right_inv" title="equiv.right_inv">right_inv</a> := _}</span></span></li>
+                <li class="equation"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.lift">with_one.lift</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.mk" title="equiv.mk">{</a><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.to_fun" title="equiv.to_fun">to_fun</a> := <span class="fn">λ (f : <span class="fn">α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> β)</span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom.mk" title="monoid_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom.to_fun" title="monoid_hom.to_fun">to_fun</a> := <span class="fn">λ (x : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one">with_one</a> α)</span>, <span class="fn"><span class="fn"><span class="fn">option.cases_on x</span> 1</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom.map_one'" title="monoid_hom.map_one'">map_one'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom.map_mul'" title="monoid_hom.map_mul'">map_mul'</a> := _}</span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.inv_fun" title="equiv.inv_fun">inv_fun</a> := <span class="fn">λ (F : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one">with_one</a> α</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom" title="monoid_hom">→*</a> β)</span>, <span class="fn">F.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom.to_mul_hom" title="monoid_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.coe_mul_hom">with_one.coe_mul_hom</a></span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.left_inv" title="equiv.left_inv">left_inv</a> := _, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.right_inv" title="equiv.right_inv">right_inv</a> := _}</span></span></li>
             
         </ul>
     </details>
@@ -2357,7 +2357,7 @@ information about these structures (which are not that standard in informal math
     <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#mul_one_class">mul_one_class</a> β]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> β)</span></span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> β)</span></span>
     <span class="decl_args"><span class="fn">(x : α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.lift">with_one.lift</a> f)</span></span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>x</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f x</span></span></div>
 </div>
@@ -2442,7 +2442,7 @@ information about these structures (which are not that standard in informal math
     <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#mul_one_class">mul_one_class</a> β]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> β)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> β)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.lift">with_one.lift</a> f)</span></span> 1</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span></div>
 </div>
 
@@ -2562,7 +2562,7 @@ information about these structures (which are not that standard in informal math
     <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> β]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> β)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> β)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one">with_one</a> α</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom" title="monoid_hom">→*</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one">with_one</a> β</span></span></div>
 </div>
 
@@ -2666,7 +2666,7 @@ from <code><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one
     <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> β]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> β)</span></span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> β)</span></span>
     <span class="decl_args"><span class="fn">(a : α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.map">with_one.map</a> f)</span></span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f a)</span></span></span></div>
 </div>
@@ -2830,8 +2830,8 @@ from <code><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> β]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> γ]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> β)</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> β</span> γ)</span></span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> β)</span></span>
+    <span class="decl_args"><span class="fn">(g : β <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> γ)</span></span>
     <span class="decl_args"><span class="fn">(x : <a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one">with_one</a> α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.map">with_one.map</a> g)</span></span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.map">with_one.map</a> f)</span></span> x)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.map">with_one.map</a> <span class="fn">(g.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> f))</span></span></span> x</span></span></div>
 </div>
@@ -2965,8 +2965,8 @@ from <code><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> β]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> γ]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> β)</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> β</span> γ)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(f : α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> β)</span></span>
+    <span class="decl_args"><span class="fn">(g : β <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> γ)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.map">with_one.map</a> <span class="fn">(g.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> f)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.map">with_one.map</a> g)</span>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom.comp" title="monoid_hom.comp">comp</a></span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.html#with_one.map">with_one.map</a> f)</span></span></span></div>
 </div>
 
@@ -4618,13 +4618,6 @@ on <code><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.h
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -6695,6 +6688,12 @@ on <code><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.h
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -6839,6 +6838,13 @@ on <code><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.h
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -6847,6 +6853,29 @@ on <code><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.h
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -6929,6 +6958,9 @@ on <code><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.h
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -7562,27 +7594,35 @@ on <code><a href="https://mariainesdff.github.io/ideles/algebra/group/with_one.h
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

@@ -8,13 +8,13 @@
     <title>group_theory.group_action.basic - mathlib docs</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Basic properties of group actions" />
+    <meta name="description" content="Basic properties of group actions. This file primarily concerns itself with orbits, stabilizers, and other objects defined in terms of actions. Despite this file being called `basic`, low-level…" />
     
     <link rel="canonical" href="https://leanprover-community.github.io/mathlib_docs/group_theory/group_action/basic.html" />
     
     <meta property="og:title" content="group_theory.group_action.basic - mathlib docs">
     <meta property="og:site_name" content="mathlib for Lean - API documentation">
-    <meta property="og:description" content="Basic properties of group actions">
+    <meta property="og:description" content="Basic properties of group actions. This file primarily concerns itself with orbits, stabilizers, and other objects defined in terms of actions. Despite this file being called `basic`, low-level…">
     <meta property="og:image" content="https://mariainesdff.github.io/ideles/meta-og.png">
     <meta name="twitter:card" content="summary">
     <script src="https://mariainesdff.github.io/ideles/color_scheme.js"></script>
@@ -47,6 +47,9 @@
             <li><a href="https://mariainesdff.github.io/ideles/init/default.html">
                 init.default</a></li>
         
+            <li><a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html">
+                algebra.hom.group_action</a></li>
+        
             <li><a href="https://mariainesdff.github.io/ideles/data/fintype/card.html">
                 data.fintype.card</a></li>
         
@@ -66,8 +69,8 @@
     <details>
         <summary>Imported by</summary>
         <ul>
-            <li><a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html">
-                algebra.hom.group_action</a></li>
+            <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">
+                group_theory.group_action.conj_act</a></li>
         
             <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/fixing_subgroup.html">
                 group_theory.group_action.fixing_subgroup</a></li>
@@ -203,14 +206,6 @@
 
     <div class="nav_link"><a class="break_within" href="#add_action.vadd_orbit_subset"><span class="name">add_action</span>.<span class="name">vadd_orbit_subset</span></a></div>
 
-    <div class="nav_link"><a class="break_within" href="#finset.smul_prod"><span class="name">finset</span>.<span class="name">smul_prod</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#finset.smul_sum"><span class="name">finset</span>.<span class="name">smul_sum</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#list.smul_prod"><span class="name">list</span>.<span class="name">smul_prod</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#list.smul_sum"><span class="name">list</span>.<span class="name">smul_sum</span></a></div>
-
     <div class="nav_link"><a class="break_within" href="#mul_action.card_eq_sum_card_group_div_card_stabilizer"><span class="name">mul_action</span>.<span class="name">card_eq_sum_card_group_div_card_stabilizer</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#mul_action.card_eq_sum_card_group_div_card_stabilizer'"><span class="name">mul_action</span>.<span class="name">card_eq_sum_card_group_div_card_stabilizer&#x27;</span></a></div>
@@ -329,9 +324,9 @@
 
     <div class="nav_link"><a class="break_within" href="#mul_action.sum_card_fixed_by_eq_card_orbits_mul_card_group"><span class="name">mul_action</span>.<span class="name">sum_card_fixed_by_eq_card_orbits_mul_card_group</span></a></div>
 
-    <div class="nav_link"><a class="break_within" href="#multiset.smul_prod"><span class="name">multiset</span>.<span class="name">smul_prod</span></a></div>
+    <div class="nav_link"><a class="break_within" href="#mul_action_hom.to_quotient"><span class="name">mul_action_hom</span>.<span class="name">to_quotient</span></a></div>
 
-    <div class="nav_link"><a class="break_within" href="#multiset.smul_sum"><span class="name">multiset</span>.<span class="name">smul_sum</span></a></div>
+    <div class="nav_link"><a class="break_within" href="#mul_action_hom.to_quotient_apply"><span class="name">mul_action_hom</span>.<span class="name">to_quotient_apply</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#smul_cancel_of_non_zero_divisor"><span class="name">smul_cancel_of_non_zero_divisor</span></a></div>
 
@@ -348,6 +343,16 @@
     
         <div class="mod_doc">
             <h1 id="basic-properties-of-group-actions" class="markdown-heading">Basic properties of group actions <a class="hover-link" href="#basic-properties-of-group-actions">#</a></h1>
+<p>This file primarily concerns itself with orbits, stabilizers, and other objects defined in terms of
+actions. Despite this file being called <code>basic</code>, low-level helper lemmas for algebraic manipulation
+of <code>•</code> belong elsewhere.</p>
+<h2 id="main-definitions" class="markdown-heading">Main definitions <a class="hover-link" href="#main-definitions">#</a></h2>
+<ul>
+<li><code><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#mul_action.orbit">mul_action.orbit</a></code></li>
+<li><code><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#mul_action.fixed_points">mul_action.fixed_points</a></code></li>
+<li><code><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#mul_action.fixed_by">mul_action.fixed_by</a></code></li>
+<li><code><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#mul_action.stabilizer">mul_action.stabilizer</a></code></li>
+</ul>
 
         </div>
     
@@ -358,7 +363,7 @@
 <div class="decl" id="mul_action.orbit">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L28">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L41">source</a></div>
 
 
 
@@ -408,7 +413,7 @@
 <div class="decl" id="add_action.orbit">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L28">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L41">source</a></div>
 
 
 
@@ -458,7 +463,7 @@
 <div class="decl" id="add_action.mem_orbit_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L32">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L45">source</a></div>
 
 
 
@@ -498,7 +503,7 @@
 <div class="decl" id="mul_action.mem_orbit_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L32">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L45">source</a></div>
 
 
 
@@ -538,7 +543,7 @@
 <div class="decl" id="mul_action.mem_orbit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L35">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L48">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -581,7 +586,7 @@
 <div class="decl" id="add_action.mem_orbit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L35">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L48">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -624,7 +629,7 @@
 <div class="decl" id="mul_action.mem_orbit_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L38">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L51">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -666,7 +671,7 @@
 <div class="decl" id="add_action.mem_orbit_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L38">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L51">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -708,7 +713,7 @@
 <div class="decl" id="mul_action.orbit_nonempty">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L41">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L54">source</a></div>
 
 
 
@@ -748,7 +753,7 @@
 <div class="decl" id="add_action.orbit_nonempty">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L41">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L54">source</a></div>
 
 
 
@@ -788,7 +793,7 @@
 <div class="decl" id="add_action.maps_to_vadd_orbit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L43">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L56">source</a></div>
 
 
 
@@ -829,7 +834,7 @@
 <div class="decl" id="mul_action.maps_to_smul_orbit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L43">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L56">source</a></div>
 
 
 
@@ -870,7 +875,7 @@
 <div class="decl" id="add_action.vadd_orbit_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L47">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L60">source</a></div>
 
 
 
@@ -911,7 +916,7 @@
 <div class="decl" id="mul_action.smul_orbit_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L47">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L60">source</a></div>
 
 
 
@@ -952,7 +957,7 @@
 <div class="decl" id="mul_action.orbit_smul_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L50">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L63">source</a></div>
 
 
 
@@ -993,7 +998,7 @@
 <div class="decl" id="add_action.orbit_vadd_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L50">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L63">source</a></div>
 
 
 
@@ -1034,7 +1039,7 @@
 <div class="decl" id="mul_action.orbit.mul_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L53">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L66">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1085,7 +1090,7 @@
 <div class="decl" id="add_action.orbit.add_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L53">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L66">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1136,7 +1141,7 @@
 <div class="decl" id="add_action.orbit.coe_vadd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L58">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L71">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1180,7 +1185,7 @@
 <div class="decl" id="mul_action.orbit.coe_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L58">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L71">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1224,7 +1229,7 @@
 <div class="decl" id="add_action.fixed_points">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L66">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L79">source</a></div>
 
 
 
@@ -1273,7 +1278,7 @@
 <div class="decl" id="mul_action.fixed_points">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L66">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L79">source</a></div>
 
 
 
@@ -1322,7 +1327,7 @@
 <div class="decl" id="add_action.fixed_by">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L70">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L83">source</a></div>
 
 
 
@@ -1372,7 +1377,7 @@
 <div class="decl" id="mul_action.fixed_by">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L70">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L83">source</a></div>
 
 
 
@@ -1422,7 +1427,7 @@
 <div class="decl" id="mul_action.fixed_eq_Inter_fixed_by">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L73">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L86">source</a></div>
 
 
 
@@ -1461,7 +1466,7 @@
 <div class="decl" id="add_action.fixed_eq_Inter_fixed_by">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L73">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L86">source</a></div>
 
 
 
@@ -1500,7 +1505,7 @@
 <div class="decl" id="mul_action.mem_fixed_points">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L78">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L91">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1542,7 +1547,7 @@
 <div class="decl" id="add_action.mem_fixed_points">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L78">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L91">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1584,7 +1589,7 @@
 <div class="decl" id="mul_action.mem_fixed_by">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L81">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L94">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1627,7 +1632,7 @@
 <div class="decl" id="add_action.mem_fixed_by">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L81">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L94">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1670,7 +1675,7 @@
 <div class="decl" id="mul_action.mem_fixed_points'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L84">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L97">source</a></div>
 
 
 
@@ -1710,7 +1715,7 @@
 <div class="decl" id="add_action.mem_fixed_points'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L84">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L97">source</a></div>
 
 
 
@@ -1750,7 +1755,7 @@
 <div class="decl" id="mul_action.stabilizer.submonoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L93">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L106">source</a></div>
 
 
 
@@ -1800,7 +1805,7 @@
 <div class="decl" id="add_action.stabilizer.add_submonoid">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L93">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L106">source</a></div>
 
 
 
@@ -1850,7 +1855,7 @@
 <div class="decl" id="add_action.mem_stabilizer_add_submonoid_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L99">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L112">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1893,7 +1898,7 @@
 <div class="decl" id="mul_action.mem_stabilizer_submonoid_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L99">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L112">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1936,7 +1941,7 @@
 <div class="decl" id="add_action.orbit_eq_univ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L102">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L115">source</a></div>
 
 
 
@@ -1977,7 +1982,7 @@
 <div class="decl" id="mul_action.orbit_eq_univ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L102">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L115">source</a></div>
 
 
 
@@ -2018,7 +2023,7 @@
 <div class="decl" id="add_action.mem_fixed_points_iff_card_orbit_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L108">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L121">source</a></div>
 
 
 
@@ -2059,7 +2064,7 @@
 <div class="decl" id="mul_action.mem_fixed_points_iff_card_orbit_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L108">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L121">source</a></div>
 
 
 
@@ -2100,7 +2105,7 @@
 <div class="decl" id="mul_action.stabilizer">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L130">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L143">source</a></div>
 
 
 
@@ -2151,7 +2156,7 @@ A subgroup.</p>
 <div class="decl" id="add_action.stabilizer">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L130">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L143">source</a></div>
 
 
 
@@ -2202,7 +2207,7 @@ An additive subgroup.</p>
 <div class="decl" id="add_action.mem_stabilizer_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L136">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L149">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2245,7 +2250,7 @@ An additive subgroup.</p>
 <div class="decl" id="mul_action.mem_stabilizer_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L136">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L149">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2288,7 +2293,7 @@ An additive subgroup.</p>
 <div class="decl" id="mul_action.smul_orbit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L139">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L152">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2331,7 +2336,7 @@ An additive subgroup.</p>
 <div class="decl" id="add_action.vadd_orbit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L139">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L152">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2374,7 +2379,7 @@ An additive subgroup.</p>
 <div class="decl" id="mul_action.orbit_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L145">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L158">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2417,7 +2422,7 @@ An additive subgroup.</p>
 <div class="decl" id="add_action.orbit_vadd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L145">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L158">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2460,7 +2465,7 @@ An additive subgroup.</p>
 <div class="decl" id="mul_action.orbit.is_pretransitive">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L152">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L165">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2503,7 +2508,7 @@ An additive subgroup.</p>
 <div class="decl" id="add_action.orbit.is_pretransitive">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L152">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L165">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2546,7 +2551,7 @@ An additive subgroup.</p>
 <div class="decl" id="mul_action.orbit_eq_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L155">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L168">source</a></div>
 
 
 
@@ -2586,7 +2591,7 @@ An additive subgroup.</p>
 <div class="decl" id="add_action.orbit_eq_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L155">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L168">source</a></div>
 
 
 
@@ -2626,7 +2631,7 @@ An additive subgroup.</p>
 <div class="decl" id="add_action.mem_orbit_vadd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L161">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L174">source</a></div>
 
 
 
@@ -2667,7 +2672,7 @@ An additive subgroup.</p>
 <div class="decl" id="mul_action.mem_orbit_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L161">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L174">source</a></div>
 
 
 
@@ -2708,7 +2713,7 @@ An additive subgroup.</p>
 <div class="decl" id="mul_action.smul_mem_orbit_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L164">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L177">source</a></div>
 
 
 
@@ -2749,7 +2754,7 @@ An additive subgroup.</p>
 <div class="decl" id="add_action.vadd_mem_orbit_vadd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L164">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L177">source</a></div>
 
 
 
@@ -2790,7 +2795,7 @@ An additive subgroup.</p>
 <div class="decl" id="mul_action.orbit_rel">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L170">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L183">source</a></div>
 
 
 
@@ -2839,7 +2844,7 @@ An additive subgroup.</p>
 <div class="decl" id="add_action.orbit_rel">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L170">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L183">source</a></div>
 
 
 
@@ -2888,7 +2893,7 @@ An additive subgroup.</p>
 <div class="decl" id="mul_action.quotient_preimage_image_eq_union_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L181">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L194">source</a></div>
 
 
 
@@ -2930,7 +2935,7 @@ of the orbit of <code>U</code> under <code>α</code>.</p>
 <div class="decl" id="add_action.quotient_preimage_image_eq_union_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L181">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L194">source</a></div>
 
 
 
@@ -2970,7 +2975,7 @@ of the orbit of <code>U</code> under <code>α</code>.</p>
 <div class="decl" id="add_action.image_inter_image_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L202">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L215">source</a></div>
 
 
 
@@ -3010,7 +3015,7 @@ of the orbit of <code>U</code> under <code>α</code>.</p>
 <div class="decl" id="mul_action.image_inter_image_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L202">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L215">source</a></div>
 
 
 
@@ -3050,7 +3055,7 @@ of the orbit of <code>U</code> under <code>α</code>.</p>
 <div class="decl" id="mul_action.self_equiv_sigma_orbits'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L230">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L243">source</a></div>
 
 
 
@@ -3104,7 +3109,7 @@ a special case.</p>
 <div class="decl" id="add_action.self_equiv_sigma_orbits'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L230">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L243">source</a></div>
 
 
 
@@ -3158,7 +3163,7 @@ as a special case.</p>
 <div class="decl" id="mul_action.self_equiv_sigma_orbits">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L241">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L254">source</a></div>
 
 
 
@@ -3207,7 +3212,7 @@ as a special case.</p>
 <div class="decl" id="add_action.self_equiv_sigma_orbits">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L241">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L254">source</a></div>
 
 
 
@@ -3257,7 +3262,7 @@ action.</p>
 <div class="decl" id="mul_action.stabilizer_smul_eq_stabilizer_map_conj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L247">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L260">source</a></div>
 
 
 
@@ -3299,7 +3304,7 @@ action.</p>
 <div class="decl" id="mul_action.stabilizer_equiv_stabilizer_of_orbit_rel">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L256">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L269">source</a></div>
 
 
 
@@ -3350,7 +3355,7 @@ action.</p>
 <div class="decl" id="add_action.stabilizer_vadd_eq_stabilizer_map_conj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L271">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L284">source</a></div>
 
 
 
@@ -3392,7 +3397,7 @@ action.</p>
 <div class="decl" id="add_action.stabilizer_equiv_stabilizer_of_orbit_rel">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L281">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L294">source</a></div>
 
 
 
@@ -3443,7 +3448,7 @@ action.</p>
 <div class="decl" id="mul_action.quotient_action">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L304">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L317">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -3505,7 +3510,7 @@ action.</p>
 <div class="decl" id="add_action.quotient_action">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L308">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L321">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -3567,7 +3572,7 @@ action.</p>
 <div class="decl" id="mul_action.left_quotient_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L314">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L327">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3607,7 +3612,7 @@ action.</p>
 <div class="decl" id="add_action.left_quotient_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L314">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L327">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3647,7 +3652,7 @@ action.</p>
 <div class="decl" id="add_action.right_quotient_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L317">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L330">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3687,7 +3692,7 @@ action.</p>
 <div class="decl" id="mul_action.right_quotient_action">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L317">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L330">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3727,7 +3732,7 @@ action.</p>
 <div class="decl" id="add_action.quotient">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L321">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L334">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3780,7 +3785,7 @@ action.</p>
 <div class="decl" id="mul_action.quotient">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L321">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L334">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3833,7 +3838,7 @@ action.</p>
 <div class="decl" id="mul_action.quotient.smul_mk">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L328">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L341">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3879,7 +3884,7 @@ action.</p>
 <div class="decl" id="add_action.quotient.vadd_mk">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L328">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L341">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3925,7 +3930,7 @@ action.</p>
 <div class="decl" id="mul_action.quotient.smul_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L331">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L344">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3971,7 +3976,7 @@ action.</p>
 <div class="decl" id="add_action.quotient.vadd_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L331">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L344">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4014,10 +4019,99 @@ action.</p>
     
         
         
+<div class="decl" id="mul_action_hom.to_quotient">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L352">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#mul_action_hom.to_quotient"><span class="name">mul_action_hom</span>.<span class="name">to_quotient</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#group">group</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(H : <a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#subgroup">subgroup</a> α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom" title="mul_action_hom">→[</a>α<a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom" title="mul_action_hom">]</a> <span class="fn">α <a href="https://mariainesdff.github.io/ideles/algebra/quotient.html#has_quotient.quotient" title="has_quotient.quotient">⧸</a> H</span></span></div>
+</div>
+
+
+
+
+
+<p>The canonical map to the left cosets.</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#mul_action_hom.to_quotient">mul_action_hom.to_quotient</a> H</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom.mk" title="mul_action_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom.to_fun" title="mul_action_hom.to_fun">to_fun</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe">coe</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_to_lift">coe_to_lift</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom.map_smul'" title="mul_action_hom.map_smul'">map_smul'</a> := _}</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="mul_action_hom.to_quotient_apply">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L355">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#mul_action_hom.to_quotient_apply"><span class="name">mul_action_hom</span>.<span class="name">to_quotient_apply</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#group">group</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(H : <a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#subgroup">subgroup</a> α)</span></span>
+    <span class="decl_args"><span class="fn">(g : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#mul_action_hom.to_quotient">mul_action_hom.to_quotient</a> H)</span></span> g</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>g</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="mul_action.mul_left_cosets_comp_subtype_val">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L338">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L358">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4066,7 +4160,7 @@ action.</p>
 <div class="decl" id="add_action.add_left_cosets_comp_subtype_val">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L338">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L358">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -4115,7 +4209,7 @@ action.</p>
 <div class="decl" id="add_action.of_quotient_stabilizer">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L346">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L366">source</a></div>
 
 
 
@@ -4166,7 +4260,7 @@ action.</p>
 <div class="decl" id="mul_action.of_quotient_stabilizer">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L346">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L366">source</a></div>
 
 
 
@@ -4217,7 +4311,7 @@ action.</p>
 <div class="decl" id="add_action.of_quotient_stabilizer_mk">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L352">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L372">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4260,7 +4354,7 @@ action.</p>
 <div class="decl" id="mul_action.of_quotient_stabilizer_mk">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L352">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L372">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4303,7 +4397,7 @@ action.</p>
 <div class="decl" id="mul_action.of_quotient_stabilizer_mem_orbit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L356">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L376">source</a></div>
 
 
 
@@ -4344,7 +4438,7 @@ action.</p>
 <div class="decl" id="add_action.of_quotient_stabilizer_mem_orbit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L356">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L376">source</a></div>
 
 
 
@@ -4385,7 +4479,7 @@ action.</p>
 <div class="decl" id="add_action.of_quotient_stabilizer_vadd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L360">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L380">source</a></div>
 
 
 
@@ -4427,7 +4521,7 @@ action.</p>
 <div class="decl" id="mul_action.of_quotient_stabilizer_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L360">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L380">source</a></div>
 
 
 
@@ -4469,7 +4563,7 @@ action.</p>
 <div class="decl" id="mul_action.injective_of_quotient_stabilizer">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L365">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L385">source</a></div>
 
 
 
@@ -4509,7 +4603,7 @@ action.</p>
 <div class="decl" id="add_action.injective_of_quotient_stabilizer">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L365">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L385">source</a></div>
 
 
 
@@ -4549,7 +4643,7 @@ action.</p>
 <div class="decl" id="add_action.orbit_equiv_quotient_stabilizer">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L372">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L392">source</a></div>
 
 
 
@@ -4599,7 +4693,7 @@ action.</p>
 <div class="decl" id="mul_action.orbit_equiv_quotient_stabilizer">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L372">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L392">source</a></div>
 
 
 
@@ -4649,7 +4743,7 @@ action.</p>
 <div class="decl" id="add_action.orbit_sum_stabilizer_equiv_add_group">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L381">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L401">source</a></div>
 
 
 
@@ -4699,7 +4793,7 @@ action.</p>
 <div class="decl" id="mul_action.orbit_prod_stabilizer_equiv_group">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L381">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L401">source</a></div>
 
 
 
@@ -4749,7 +4843,7 @@ action.</p>
 <div class="decl" id="add_action.card_orbit_add_card_stabilizer_eq_card_add_group">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L388">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L408">source</a></div>
 
 
 
@@ -4793,7 +4887,7 @@ action.</p>
 <div class="decl" id="mul_action.card_orbit_mul_card_stabilizer_eq_card_group">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L388">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L408">source</a></div>
 
 
 
@@ -4837,7 +4931,7 @@ action.</p>
 <div class="decl" id="add_action.orbit_equiv_quotient_stabilizer_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L393">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L413">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4880,7 +4974,7 @@ action.</p>
 <div class="decl" id="mul_action.orbit_equiv_quotient_stabilizer_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L393">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L413">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4923,7 +5017,7 @@ action.</p>
 <div class="decl" id="add_action.stabilizer_quotient">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L397">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L417">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4963,7 +5057,7 @@ action.</p>
 <div class="decl" id="mul_action.stabilizer_quotient">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L397">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L417">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5003,7 +5097,7 @@ action.</p>
 <div class="decl" id="mul_action.self_equiv_sigma_orbits_quotient_stabilizer'">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L416">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L436">source</a></div>
 
 
 
@@ -5058,7 +5152,7 @@ provide <code><a href="https://mariainesdff.github.io/ideles/group_theory/group_
 <div class="decl" id="add_action.self_equiv_sigma_orbits_quotient_stabilizer'">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L416">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L436">source</a></div>
 
 
 
@@ -5114,7 +5208,7 @@ as a special case.</p>
 <div class="decl" id="add_action.card_eq_sum_card_add_group_sub_card_stabilizer'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L429">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L449">source</a></div>
 
 
 
@@ -5162,7 +5256,7 @@ as a special case.</p>
 <div class="decl" id="mul_action.card_eq_sum_card_group_div_card_stabilizer'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L429">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L449">source</a></div>
 
 
 
@@ -5210,7 +5304,7 @@ as a special case.</p>
 <div class="decl" id="add_action.self_equiv_sigma_orbits_quotient_stabilizer">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L448">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L468">source</a></div>
 
 
 
@@ -5260,7 +5354,7 @@ as a special case.</p>
 <div class="decl" id="mul_action.self_equiv_sigma_orbits_quotient_stabilizer">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L448">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L468">source</a></div>
 
 
 
@@ -5310,7 +5404,7 @@ as a special case.</p>
 <div class="decl" id="mul_action.card_eq_sum_card_group_div_card_stabilizer">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L454">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L474">source</a></div>
 
 
 
@@ -5354,7 +5448,7 @@ as a special case.</p>
 <div class="decl" id="add_action.card_eq_sum_card_add_group_sub_card_stabilizer">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L454">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L474">source</a></div>
 
 
 
@@ -5398,7 +5492,7 @@ as a special case.</p>
 <div class="decl" id="add_action.sigma_fixed_by_equiv_orbits_sum_add_group">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L465">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L485">source</a></div>
 
 
 
@@ -5451,7 +5545,7 @@ on <code>X</code> and <code>X/G</code>denotes the quotient of <code>X</code> by 
 <div class="decl" id="mul_action.sigma_fixed_by_equiv_orbits_prod_group">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L465">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L485">source</a></div>
 
 
 
@@ -5504,7 +5598,7 @@ on <code>X</code> and <code>X/G</code>denotes the quotient of <code>X</code> by 
 <div class="decl" id="add_action.sum_card_fixed_by_eq_card_orbits_add_card_add_group">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L492">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L512">source</a></div>
 
 
 
@@ -5548,7 +5642,7 @@ the average number of elements fixed by each <code>g ∈ G</code> is the number 
 <div class="decl" id="mul_action.sum_card_fixed_by_eq_card_orbits_mul_card_group">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L492">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L512">source</a></div>
 
 
 
@@ -5592,7 +5686,7 @@ elements fixed by each <code>g ∈ G</code> is the number of orbits.</p>
 <div class="decl" id="add_action.is_pretransitive_quotient">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L498">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L518">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5632,7 +5726,7 @@ elements fixed by each <code>g ∈ G</code> is the number of orbits.</p>
 <div class="decl" id="mul_action.is_pretransitive_quotient">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L498">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L518">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5669,52 +5763,10 @@ elements fixed by each <code>g ∈ G</code> is the number of orbits.</p>
     
         
         
-<div class="decl" id="list.smul_sum">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L511">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#list.smul_sum"><span class="name">list</span>.<span class="name">smul_sum</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> α]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> α</span> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{r : α}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{l : <a href="https://mariainesdff.github.io/ideles/init/core.html#list">list</a> β}</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> l.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.sum" title="list.sum">sum</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/data/list/basic.html#list.map">list.map</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul">has_scalar.smul</a> r)</span></span> l)</span>.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.sum" title="list.sum">sum</a></span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
 <div class="decl" id="smul_cancel_of_non_zero_divisor">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L518">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L531">source</a></div>
 
 
 
@@ -5728,7 +5780,7 @@ elements fixed by each <code>g ∈ G</code> is the number of orbits.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{M : Type u_1}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> M]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring">ring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_ring">non_unital_non_assoc_ring</a> R]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> M</span> R]</span></span></span>
     <span class="decl_args"><span class="fn">(k : M)</span></span>
     <span class="decl_args"><span class="fn">(h : ∀ (x : R), <span class="fn"><span class="fn"><span class="fn">k <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> x</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span> → <span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span></span>)</span></span>
@@ -5758,224 +5810,10 @@ The typeclass that restricts all terms of <code>M</code> to have this property i
     
         
         
-<div class="decl" id="list.smul_prod">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L532">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#list.smul_prod"><span class="name">list</span>.<span class="name">smul_prod</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> α]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_distrib_mul_action">mul_distrib_mul_action</a> α</span> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{r : α}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{l : <a href="https://mariainesdff.github.io/ideles/init/core.html#list">list</a> β}</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> l.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.prod" title="list.prod">prod</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/data/list/basic.html#list.map">list.map</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul">has_scalar.smul</a> r)</span></span> l)</span>.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.prod" title="list.prod">prod</a></span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="multiset.smul_sum">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L541">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#multiset.smul_sum"><span class="name">multiset</span>.<span class="name">smul_sum</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> α]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> α</span> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{r : α}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{s : <a href="https://mariainesdff.github.io/ideles/data/multiset/basic.html#multiset">multiset</a> β}</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> s.<a href="https://mariainesdff.github.io/ideles/algebra/big_operators/multiset.html#multiset.sum" title="multiset.sum">sum</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/multiset/basic.html#multiset.map">multiset.map</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul">has_scalar.smul</a> r)</span></span> s)</span>.<a href="https://mariainesdff.github.io/ideles/algebra/big_operators/multiset.html#multiset.sum" title="multiset.sum">sum</a></span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="finset.smul_sum">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L545">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#finset.smul_sum"><span class="name">finset</span>.<span class="name">smul_sum</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{γ : Type w}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> α]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> α</span> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{r : α}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : γ → β}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{s : <a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset">finset</a> γ}</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn">∑ (x : γ) in s, <span class="fn">f x</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∑ (x : γ) in s, <span class="fn">r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn">f x</span></span></span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="multiset.smul_prod">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L554">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#multiset.smul_prod"><span class="name">multiset</span>.<span class="name">smul_prod</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> α]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_distrib_mul_action">mul_distrib_mul_action</a> α</span> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{r : α}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{s : <a href="https://mariainesdff.github.io/ideles/data/multiset/basic.html#multiset">multiset</a> β}</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> s.<a href="https://mariainesdff.github.io/ideles/algebra/big_operators/multiset.html#multiset.prod" title="multiset.prod">prod</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/multiset/basic.html#multiset.map">multiset.map</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul">has_scalar.smul</a> r)</span></span> s)</span>.<a href="https://mariainesdff.github.io/ideles/algebra/big_operators/multiset.html#multiset.prod" title="multiset.prod">prod</a></span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="finset.smul_prod">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L558">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html#finset.smul_prod"><span class="name">finset</span>.<span class="name">smul_prod</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type v}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{γ : Type w}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> α]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#mul_distrib_mul_action">mul_distrib_mul_action</a> α</span> β]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{r : α}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : γ → β}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{s : <a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset">finset</a> γ}</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn">∏ (x : γ) in s, <span class="fn">f x</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∏ (x : γ) in s, <span class="fn">r <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn">f x</span></span></span></span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
 <div class="decl" id="subgroup.normal_core_eq_ker">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L568">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L545">source</a></div>
 
 
 
@@ -6013,7 +5851,7 @@ The typeclass that restricts all terms of <code>M</code> to have this property i
 <div class="decl" id="subgroup.fintype_quotient_normal_core">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L580">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/group_theory/group_action/basic.lean#L557">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6079,13 +5917,6 @@ The typeclass that restricts all terms of <code>M</code> to have this property i
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -8156,6 +7987,12 @@ The typeclass that restricts all terms of <code>M</code> to have this property i
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -8300,6 +8137,13 @@ The typeclass that restricts all terms of <code>M</code> to have this property i
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -8308,6 +8152,29 @@ The typeclass that restricts all terms of <code>M</code> to have this property i
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -8390,6 +8257,9 @@ The typeclass that restricts all terms of <code>M</code> to have this property i
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -9023,27 +8893,35 @@ The typeclass that restricts all terms of <code>M</code> to have this property i
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

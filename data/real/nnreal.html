@@ -115,7 +115,11 @@
 
     <div class="nav_link"><a class="break_within" href="#nnreal.coe_eq_zero"><span class="name">nnreal</span>.<span class="name">coe_eq_zero</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#nnreal.coe_image"><span class="name">nnreal</span>.<span class="name">coe_image</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#nnreal.coe_indicator"><span class="name">nnreal</span>.<span class="name">coe_indicator</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#nnreal.coe_infi"><span class="name">nnreal</span>.<span class="name">coe_infi</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#nnreal.coe_injective"><span class="name">nnreal</span>.<span class="name">coe_injective</span></a></div>
 
@@ -162,6 +166,8 @@
     <div class="nav_link"><a class="break_within" href="#nnreal.coe_sub_def"><span class="name">nnreal</span>.<span class="name">coe_sub_def</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#nnreal.coe_sum"><span class="name">nnreal</span>.<span class="name">coe_sum</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#nnreal.coe_supr"><span class="name">nnreal</span>.<span class="name">coe_supr</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#nnreal.coe_to_real_hom"><span class="name">nnreal</span>.<span class="name">coe_to_real_hom</span></a></div>
 
@@ -222,6 +228,8 @@
     <div class="nav_link"><a class="break_within" href="#nnreal.exists_pow_lt_of_lt_one"><span class="name">nnreal</span>.<span class="name">exists_pow_lt_of_lt_one</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#nnreal.finset_sup_div"><span class="name">nnreal</span>.<span class="name">finset_sup_div</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#nnreal.finset_sup_mul"><span class="name">nnreal</span>.<span class="name">finset_sup_mul</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#nnreal.floor_semiring"><span class="name">nnreal</span>.<span class="name">floor_semiring</span></a></div>
 
@@ -328,6 +336,8 @@
     <div class="nav_link"><a class="break_within" href="#nnreal.sub_div"><span class="name">nnreal</span>.<span class="name">sub_div</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#nnreal.sum_div"><span class="name">nnreal</span>.<span class="name">sum_div</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#nnreal.sup_mul"><span class="name">nnreal</span>.<span class="name">sup_mul</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#nnreal.to_nnreal_coe_nat"><span class="name">nnreal</span>.<span class="name">to_nnreal_coe_nat</span></a></div>
 
@@ -3365,10 +3375,46 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
     
         
         
+<div class="decl" id="nnreal.coe_image">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L287">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal.coe_image"><span class="name">nnreal</span>.<span class="name">coe_image</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{s : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal" title="nnreal">ℝ≥0</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe">coe</a> <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set.image" title="set.image">''</a> s</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">{x : <a href="https://mariainesdff.github.io/ideles/data/real/basic.html#real" title="real">ℝ</a> | <span class="fn">∃ (h : <span class="fn">0 <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> x)</span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#subtype.mk" title="subtype.mk">⟨</a>x, h⟩</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> s}</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="nnreal.bdd_above_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L286">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L290">source</a></div>
 
 
 
@@ -3404,7 +3450,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.bdd_below_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L292">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L296">source</a></div>
 
 
 
@@ -3440,7 +3486,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.conditionally_complete_linear_order_bot">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L295">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L299">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3486,8 +3532,10 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.coe_Sup">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L298">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L302">source</a></div>
 
+
+    <div class="attributes">@[norm_cast]</div>
 
 
 <div class="decl_header">
@@ -3519,11 +3567,52 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
     
         
         
+<div class="decl" id="nnreal.coe_supr">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L306">source</a></div>
+
+
+    <div class="attributes">@[norm_cast]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal.coe_supr"><span class="name">nnreal</span>.<span class="name">coe_supr</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Sort u_1}</span></span></span>
+    <span class="decl_args"><span class="fn">(s : ι → <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal" title="nnreal">ℝ≥0</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">⨆ (i : ι), <span class="fn">s i)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">⨆ (i : ι), <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(s i)</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="nnreal.coe_Inf">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L302">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L309">source</a></div>
 
+
+    <div class="attributes">@[norm_cast]</div>
 
 
 <div class="decl_header">
@@ -3555,10 +3644,49 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
     
         
         
+<div class="decl" id="nnreal.coe_infi">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L313">source</a></div>
+
+
+    <div class="attributes">@[norm_cast]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal.coe_infi"><span class="name">nnreal</span>.<span class="name">coe_infi</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Sort u_1}</span></span></span>
+    <span class="decl_args"><span class="fn">(s : ι → <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal" title="nnreal">ℝ≥0</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">⨅ (i : ι), <span class="fn">s i)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">⨅ (i : ι), <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(s i)</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="nnreal.covariant_add">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L309">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L319">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3595,7 +3723,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.contravariant_add">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L312">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L322">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3632,7 +3760,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.covariant_mul">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L315">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L325">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3669,7 +3797,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.le_of_forall_pos_le_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L318">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L328">source</a></div>
 
 
 
@@ -3706,7 +3834,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.le_of_add_le_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L326">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L336">source</a></div>
 
 
 
@@ -3743,7 +3871,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.le_of_add_le_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L329">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L339">source</a></div>
 
 
 
@@ -3780,7 +3908,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.lt_iff_exists_rat_btwn">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L332">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L342">source</a></div>
 
 
 
@@ -3816,7 +3944,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.bot_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L342">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L352">source</a></div>
 
 
 
@@ -3851,7 +3979,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.mul_sup">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L344">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L354">source</a></div>
 
 
 
@@ -3884,10 +4012,46 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
     
         
         
+<div class="decl" id="nnreal.sup_mul">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L357">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal.sup_mul"><span class="name">nnreal</span>.<span class="name">sup_mul</span></a></span>
+
+    <span class="decl_args"><span class="fn">(a b c : <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal" title="nnreal">ℝ≥0</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(a <a href="https://mariainesdff.github.io/ideles/order/lattice.html#has_sup.sup" title="has_sup.sup">⊔</a> b)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> c</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> c</span> <a href="https://mariainesdff.github.io/ideles/order/lattice.html#has_sup.sup" title="has_sup.sup">⊔</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> c</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="nnreal.mul_finset_sup">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L351">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L360">source</a></div>
 
 
 
@@ -3899,10 +4063,49 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal.mul_finset_sup"><span class="name">nnreal</span>.<span class="name">mul_finset_sup</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : α → <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal" title="nnreal">ℝ≥0</a>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{s : <a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset">finset</a> α}</span></span></span>
-    <span class="decl_args"><span class="fn">(r : <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal" title="nnreal">ℝ≥0</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(r : <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal" title="nnreal">ℝ≥0</a>)</span></span>
+    <span class="decl_args"><span class="fn">(s : <a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset">finset</a> α)</span></span>
+    <span class="decl_args"><span class="fn">(f : α → <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal" title="nnreal">ℝ≥0</a>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn">r <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">s.<a href="https://mariainesdff.github.io/ideles/data/finset/lattice.html#finset.sup" title="finset.sup">sup</a> f</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">s.<a href="https://mariainesdff.github.io/ideles/data/finset/lattice.html#finset.sup" title="finset.sup">sup</a> <span class="fn">(λ (a : α), <span class="fn">r <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">f a)</span></span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="nnreal.finset_sup_mul">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L364">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal.finset_sup_mul"><span class="name">nnreal</span>.<span class="name">finset_sup_mul</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="decl_args"><span class="fn">(s : <a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset">finset</a> α)</span></span>
+    <span class="decl_args"><span class="fn">(f : α → <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal" title="nnreal">ℝ≥0</a>)</span></span>
+    <span class="decl_args"><span class="fn">(r : <a href="https://mariainesdff.github.io/ideles/data/real/nnreal.html#nnreal" title="nnreal">ℝ≥0</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(s.<a href="https://mariainesdff.github.io/ideles/data/finset/lattice.html#finset.sup" title="finset.sup">sup</a> f)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> r</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">s.<a href="https://mariainesdff.github.io/ideles/data/finset/lattice.html#finset.sup" title="finset.sup">sup</a> <span class="fn">(λ (a : α), <span class="fn"><span class="fn">(f a)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> r)</span></span></span></span></div>
 </div>
 
 
@@ -3926,7 +4129,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.finset_sup_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L359">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L368">source</a></div>
 
 
 
@@ -3965,7 +4168,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.coe_max">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L363">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L372">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -4003,7 +4206,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.coe_min">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L367">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L376">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -4041,7 +4244,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.zero_le_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L371">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L380">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4079,7 +4282,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L379">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L388">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4116,7 +4319,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L382">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L391">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4153,7 +4356,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L385">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L394">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4191,7 +4394,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L388">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L397">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4229,7 +4432,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_of_nonpos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L391">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L400">source</a></div>
 
 
 
@@ -4265,7 +4468,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.coe_to_nnreal'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L394">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L403">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4303,7 +4506,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_le_to_nnreal_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L396">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L405">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4342,7 +4545,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_lt_to_nnreal_iff'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L400">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L409">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4380,7 +4583,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_lt_to_nnreal_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L404">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L413">source</a></div>
 
 
 
@@ -4417,7 +4620,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_lt_to_nnreal_iff_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L408">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L417">source</a></div>
 
 
 
@@ -4454,7 +4657,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L412">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L421">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4494,7 +4697,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_add_to_nnreal">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L416">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L425">source</a></div>
 
 
 
@@ -4532,7 +4735,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_le_to_nnreal">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L420">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L429">source</a></div>
 
 
 
@@ -4569,7 +4772,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_add_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L433">source</a></div>
 
 
 
@@ -4605,7 +4808,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_le_iff_le_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L428">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L437">source</a></div>
 
 
 
@@ -4642,7 +4845,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.le_to_nnreal_iff_coe_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L431">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L440">source</a></div>
 
 
 
@@ -4680,7 +4883,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.le_to_nnreal_iff_coe_le'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L434">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L443">source</a></div>
 
 
 
@@ -4718,7 +4921,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_lt_iff_lt_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L438">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L447">source</a></div>
 
 
 
@@ -4756,7 +4959,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.lt_to_nnreal_iff_coe_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L441">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L450">source</a></div>
 
 
 
@@ -4793,7 +4996,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L451">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L460">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4832,7 +5035,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_bit1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L455">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L464">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4871,7 +5074,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.mul_eq_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L478">source</a></div>
 
 
 
@@ -4908,7 +5111,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="real.to_nnreal_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L476">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L485">source</a></div>
 
 
 
@@ -4945,7 +5148,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.pow_antitone_exp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L490">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L499">source</a></div>
 
 
 
@@ -4984,7 +5187,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.exists_pow_lt_of_lt_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L494">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L503">source</a></div>
 
 
 
@@ -5022,7 +5225,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.exists_mem_Ico_zpow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L498">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L507">source</a></div>
 
 
 
@@ -5060,7 +5263,7 @@ of <code>x</code> with <code>↑x</code>. This tactic also works for a function 
 <div class="decl" id="nnreal.exists_mem_Ioc_zpow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L508">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L517">source</a></div>
 
 
 
@@ -5108,7 +5311,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.sub_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L528">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L537">source</a></div>
 
 
 
@@ -5144,7 +5347,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.coe_sub_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L530">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L539">source</a></div>
 
 
 
@@ -5180,7 +5383,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.sub_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L534">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L543">source</a></div>
 
 
 
@@ -5216,7 +5419,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.sum_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L541">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L550">source</a></div>
 
 
 
@@ -5255,7 +5458,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.inv_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L554">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5293,7 +5496,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L548">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L557">source</a></div>
 
 
 
@@ -5331,7 +5534,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.mul_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L551">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L560">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5369,7 +5572,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_self_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L553">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L562">source</a></div>
 
 
 
@@ -5405,7 +5608,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.inv_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L555">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L564">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5444,7 +5647,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.inv_le_of_le_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L558">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L567">source</a></div>
 
 
 
@@ -5481,7 +5684,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.le_inv_iff_mul_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L561">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L570">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5520,7 +5723,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.lt_inv_iff_mul_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L564">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L573">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5559,7 +5762,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.mul_le_iff_le_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L567">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L576">source</a></div>
 
 
 
@@ -5596,7 +5799,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.le_div_iff_mul_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L571">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L580">source</a></div>
 
 
 
@@ -5633,7 +5836,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_le_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L574">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L583">source</a></div>
 
 
 
@@ -5670,7 +5873,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_le_iff'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L577">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L586">source</a></div>
 
 
 
@@ -5707,7 +5910,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_le_of_le_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L580">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L589">source</a></div>
 
 
 
@@ -5744,7 +5947,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_le_of_le_mul'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L583">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L592">source</a></div>
 
 
 
@@ -5781,7 +5984,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.le_div_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L586">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L595">source</a></div>
 
 
 
@@ -5818,7 +6021,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.le_div_iff'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L589">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L598">source</a></div>
 
 
 
@@ -5855,7 +6058,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_lt_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L592">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L601">source</a></div>
 
 
 
@@ -5892,7 +6095,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_lt_iff'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L595">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L604">source</a></div>
 
 
 
@@ -5929,7 +6132,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.lt_div_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L598">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L607">source</a></div>
 
 
 
@@ -5966,7 +6169,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.lt_div_iff'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L601">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L610">source</a></div>
 
 
 
@@ -6003,7 +6206,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.mul_lt_of_lt_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L604">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L613">source</a></div>
 
 
 
@@ -6040,7 +6243,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_le_div_left_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L611">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L620">source</a></div>
 
 
 
@@ -6079,7 +6282,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_le_div_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L621">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L630">source</a></div>
 
 
 
@@ -6118,7 +6321,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.le_of_forall_lt_one_mul_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L626">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L635">source</a></div>
 
 
 
@@ -6155,7 +6358,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_add_div_same">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L634">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L643">source</a></div>
 
 
 
@@ -6191,7 +6394,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.half_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L637">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L646">source</a></div>
 
 
 
@@ -6228,7 +6431,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.add_halves">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L639">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L648">source</a></div>
 
 
 
@@ -6264,7 +6467,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.half_lt_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L641">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L650">source</a></div>
 
 
 
@@ -6301,7 +6504,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.two_inv_lt_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L645">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L654">source</a></div>
 
 
 
@@ -6336,7 +6539,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_lt_one_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L648">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L657">source</a></div>
 
 
 
@@ -6373,7 +6576,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_add_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L654">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L663">source</a></div>
 
 
 
@@ -6414,7 +6617,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.add_div'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L662">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L671">source</a></div>
 
 
 
@@ -6451,7 +6654,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.div_add'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L666">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L675">source</a></div>
 
 
 
@@ -6488,7 +6691,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="real.to_nnreal_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L670">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L679">source</a></div>
 
 
 
@@ -6524,7 +6727,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="real.to_nnreal_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L680">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L689">source</a></div>
 
 
 
@@ -6561,7 +6764,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="real.to_nnreal_div'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L684">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L693">source</a></div>
 
 
 
@@ -6598,7 +6801,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.inv_lt_one_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L688">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L697">source</a></div>
 
 
 
@@ -6635,7 +6838,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.inv_lt_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L691">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L700">source</a></div>
 
 
 
@@ -6672,7 +6875,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.zpow_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L694">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L703">source</a></div>
 
 
 
@@ -6710,7 +6913,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.inv_lt_inv_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L701">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L710">source</a></div>
 
 
 
@@ -6748,7 +6951,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.inv_lt_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L705">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L714">source</a></div>
 
 
 
@@ -6786,7 +6989,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="nnreal.abs_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L710">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L719">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6824,7 +7027,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="real.nnabs">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L718">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L727">source</a></div>
 
 
 
@@ -6869,7 +7072,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="real.coe_nnabs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L724">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L733">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -6907,7 +7110,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="real.nnabs_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L727">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L736">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6946,7 +7149,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="real.coe_to_nnreal_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L730">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L739">source</a></div>
 
 
 
@@ -6982,7 +7185,7 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
 <div class="decl" id="real.cast_nat_abs_eq_nnabs_cast">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L733">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/real/nnreal.lean#L742">source</a></div>
 
 
 
@@ -7034,13 +7237,6 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -9111,6 +9307,12 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -9255,6 +9457,13 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -9263,6 +9472,29 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -9345,6 +9577,9 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -9978,27 +10213,35 @@ about <code><a href="https://mariainesdff.github.io/ideles/algebra/order/sub.htm
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

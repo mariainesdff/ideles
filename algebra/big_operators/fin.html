@@ -8,13 +8,13 @@
     <title>algebra.big_operators.fin - mathlib docs</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Big operators and `fin`. Some results about products and sums over the type `fin`." />
+    <meta name="description" content="Big operators and `fin`. Some results about products and sums over the type `fin`. The most important results are the induction formulas `fin.produnivcastsucc` and `fin.produnivsucc`, and the formula…" />
     
     <link rel="canonical" href="https://leanprover-community.github.io/mathlib_docs/algebra/big_operators/fin.html" />
     
     <meta property="og:title" content="algebra.big_operators.fin - mathlib docs">
     <meta property="og:site_name" content="mathlib for Lean - API documentation">
-    <meta property="og:description" content="Big operators and `fin`. Some results about products and sums over the type `fin`.">
+    <meta property="og:description" content="Big operators and `fin`. Some results about products and sums over the type `fin`. The most important results are the induction formulas `fin.produnivcastsucc` and `fin.produnivsucc`, and the formula…">
     <meta property="og:image" content="https://mariainesdff.github.io/ideles/meta-og.png">
     <meta name="twitter:card" content="summary">
     <script src="https://mariainesdff.github.io/ideles/color_scheme.js"></script>
@@ -50,6 +50,9 @@
             <li><a href="https://mariainesdff.github.io/ideles/algebra/big_operators/basic.html">
                 algebra.big_operators.basic</a></li>
         
+            <li><a href="https://mariainesdff.github.io/ideles/data/fintype/card.html">
+                data.fintype.card</a></li>
+        
             <li><a href="https://mariainesdff.github.io/ideles/data/fintype/fin.html">
                 data.fintype.fin</a></li>
         </ul>
@@ -57,6 +60,9 @@
     <details>
         <summary>Imported by</summary>
         <ul>
+            <li><a href="https://mariainesdff.github.io/ideles/combinatorics/composition.html">
+                combinatorics.composition</a></li>
+        
             <li><a href="https://mariainesdff.github.io/ideles/linear_algebra/vandermonde.html">
                 linear_algebra.vandermonde</a></li>
         </ul>
@@ -64,13 +70,67 @@
 </div>
 
 
+    <div class="nav_link"><a class="break_within" href="#fin.prod_const"><span class="name">fin</span>.<span class="name">prod_const</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#fin.prod_filter_succ_lt"><span class="name">fin</span>.<span class="name">prod_filter_succ_lt</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#fin.prod_filter_zero_lt"><span class="name">fin</span>.<span class="name">prod_filter_zero_lt</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#fin.prod_of_fn"><span class="name">fin</span>.<span class="name">prod_of_fn</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.prod_univ_cast_succ"><span class="name">fin</span>.<span class="name">prod_univ_cast_succ</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.prod_univ_def"><span class="name">fin</span>.<span class="name">prod_univ_def</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.prod_univ_one"><span class="name">fin</span>.<span class="name">prod_univ_one</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.prod_univ_succ"><span class="name">fin</span>.<span class="name">prod_univ_succ</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.prod_univ_succ_above"><span class="name">fin</span>.<span class="name">prod_univ_succ_above</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.prod_univ_two"><span class="name">fin</span>.<span class="name">prod_univ_two</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.prod_univ_zero"><span class="name">fin</span>.<span class="name">prod_univ_zero</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.sum_const"><span class="name">fin</span>.<span class="name">sum_const</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#fin.sum_filter_succ_lt"><span class="name">fin</span>.<span class="name">sum_filter_succ_lt</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#fin.sum_filter_zero_lt"><span class="name">fin</span>.<span class="name">sum_filter_zero_lt</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.sum_of_fn"><span class="name">fin</span>.<span class="name">sum_of_fn</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.sum_pow_mul_eq_add_pow"><span class="name">fin</span>.<span class="name">sum_pow_mul_eq_add_pow</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.sum_univ_cast_succ"><span class="name">fin</span>.<span class="name">sum_univ_cast_succ</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.sum_univ_def"><span class="name">fin</span>.<span class="name">sum_univ_def</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.sum_univ_one"><span class="name">fin</span>.<span class="name">sum_univ_one</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.sum_univ_succ"><span class="name">fin</span>.<span class="name">sum_univ_succ</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.sum_univ_succ_above"><span class="name">fin</span>.<span class="name">sum_univ_succ_above</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.sum_univ_two"><span class="name">fin</span>.<span class="name">sum_univ_two</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#fin.sum_univ_zero"><span class="name">fin</span>.<span class="name">sum_univ_zero</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#finset.prod_range"><span class="name">finset</span>.<span class="name">prod_range</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#finset.sum_range"><span class="name">finset</span>.<span class="name">sum_range</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#list.alternating_prod_eq_finset_prod"><span class="name">list</span>.<span class="name">alternating_prod_eq_finset_prod</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#list.alternating_sum_eq_finset_sum"><span class="name">list</span>.<span class="name">alternating_sum_eq_finset_sum</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#list.prod_of_fn"><span class="name">list</span>.<span class="name">prod_of_fn</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#list.prod_take_of_fn"><span class="name">list</span>.<span class="name">prod_take_of_fn</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#list.sum_of_fn"><span class="name">list</span>.<span class="name">sum_of_fn</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#list.sum_take_of_fn"><span class="name">list</span>.<span class="name">sum_take_of_fn</span></a></div>
 
 </nav>
 
@@ -82,8 +142,834 @@
         <div class="mod_doc">
             <h1 id="big-operators-and-codefincode" class="markdown-heading">Big operators and <code><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a></code> <a class="hover-link" href="#big-operators-and-codefincode">#</a></h1>
 <p>Some results about products and sums over the type <code><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a></code>.</p>
+<p>The most important results are the induction formulas <code><a href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_univ_cast_succ">fin.prod_univ_cast_succ</a></code>
+and <code><a href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_univ_succ">fin.prod_univ_succ</a></code>, and the formula <code><a href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_const">fin.prod_const</a></code> for the product of a
+constant function. These results have variants for sums instead of products.</p>
 
         </div>
+    
+
+    
+        
+        
+<div class="decl" id="finset.sum_range">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L29">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#finset.sum_range"><span class="name">finset</span>.<span class="name">sum_range</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∑ (i : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>) in <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset.range">finset.range</a> n</span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>i</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="finset.prod_range">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L29">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#finset.prod_range"><span class="name">finset</span>.<span class="name">prod_range</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∏ (i : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>) in <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset.range">finset.range</a> n</span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>i</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.prod_univ_def">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L45">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_univ_def"><span class="name">fin</span>.<span class="name">prod_univ_def</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n</span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/data/list/basic.html#list.map">list.map</a> f</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/list/range.html#list.fin_range">list.fin_range</a> n))</span></span>.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.prod" title="list.prod">prod</a></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.sum_univ_def">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L45">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.sum_univ_def"><span class="name">fin</span>.<span class="name">sum_univ_def</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n</span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/data/list/basic.html#list.map">list.map</a> f</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/list/range.html#list.fin_range">list.fin_range</a> n))</span></span>.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.sum" title="list.sum">sum</a></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.sum_of_fn">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L50">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.sum_of_fn"><span class="name">fin</span>.<span class="name">sum_of_fn</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n</span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.of_fn">list.of_fn</a> f)</span>.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.sum" title="list.sum">sum</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f i</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.prod_of_fn">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L50">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_of_fn"><span class="name">fin</span>.<span class="name">prod_of_fn</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n</span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.of_fn">list.of_fn</a> f)</span>.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.prod" title="list.prod">prod</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f i</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.sum_univ_zero">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L56">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.sum_univ_zero"><span class="name">fin</span>.<span class="name">sum_univ_zero</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> β]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 0</span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 0)</span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span></div>
+</div>
+
+
+
+
+
+<p>A sum of a function <code>f : <a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 0 → β</code> is <code>0</code> because <code><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 0</code> is empty</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.prod_univ_zero">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L56">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_univ_zero"><span class="name">fin</span>.<span class="name">prod_univ_zero</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> β]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 0</span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 0)</span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span></div>
+</div>
+
+
+
+
+
+<p>A product of a function <code>f : <a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 0 → β</code> is <code>1</code> because <code><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 0</code> is empty</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.prod_univ_succ_above">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L63">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_univ_succ_above"><span class="name">fin</span>.<span class="name">prod_univ_succ_above</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> → β)</span></span>
+    <span class="decl_args"><span class="fn">(x : <a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(f x)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>(x.<a href="https://mariainesdff.github.io/ideles/data/fin/basic.html#fin.succ_above" title="fin.succ_above">succ_above</a>) i)</span></span></span></span></span></div>
+</div>
+
+
+
+
+
+<p>A product of a function <code>f : <a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> (n + 1) → β</code> over all <code><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> (n + 1)</code>
+is the product of <code>f x</code>, for some <code>x : <a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> (n + 1)</code> times the remaining product</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.sum_univ_succ_above">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L63">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.sum_univ_succ_above"><span class="name">fin</span>.<span class="name">sum_univ_succ_above</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> → β)</span></span>
+    <span class="decl_args"><span class="fn">(x : <a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">f x</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>(x.<a href="https://mariainesdff.github.io/ideles/data/fin/basic.html#fin.succ_above" title="fin.succ_above">succ_above</a>) i)</span></span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.prod_univ_succ">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L76">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_univ_succ"><span class="name">fin</span>.<span class="name">prod_univ_succ</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(f 0)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f i.<a href="https://mariainesdff.github.io/ideles/init/data/fin/ops.html#fin.succ" title="fin.succ">succ</a></span></span></span></span></div>
+</div>
+
+
+
+
+
+<p>A product of a function <code>f : <a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> (n + 1) → β</code> over all <code><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> (n + 1)</code>
+is the product of <code>f 0</code> plus the remaining product</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.sum_univ_succ">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L76">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.sum_univ_succ"><span class="name">fin</span>.<span class="name">sum_univ_succ</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">f 0</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f i.<a href="https://mariainesdff.github.io/ideles/init/data/fin/ops.html#fin.succ" title="fin.succ">succ</a></span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.sum_univ_cast_succ">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L85">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.sum_univ_cast_succ"><span class="name">fin</span>.<span class="name">sum_univ_cast_succ</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/fin/basic.html#fin.cast_succ">fin.cast_succ</a> i)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn">f <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/fin/basic.html#fin.last">fin.last</a> n)</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.prod_univ_cast_succ">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L85">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_univ_cast_succ"><span class="name">fin</span>.<span class="name">prod_univ_cast_succ</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1)</span></span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> 1))</span></span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/data/fin/basic.html#fin.cast_succ">fin.cast_succ</a> i))</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">f <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/fin/basic.html#fin.last">fin.last</a> n)</span></span></span></span></div>
+</div>
+
+
+
+
+
+<p>A product of a function <code>f : <a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> (n + 1) → β</code> over all <code><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> (n + 1)</code>
+is the product of <code>f (<a href="https://mariainesdff.github.io/ideles/data/fin/basic.html#fin.last">fin.last</a> n)</code> plus the remaining product</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.prod_univ_one">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L89">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_univ_one"><span class="name">fin</span>.<span class="name">prod_univ_one</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> β]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 1</span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 1)</span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">f 0</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.sum_univ_one">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L89">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.sum_univ_one"><span class="name">fin</span>.<span class="name">sum_univ_one</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> β]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 1</span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 1)</span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">f 0</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.prod_univ_two">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L93">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_univ_two"><span class="name">fin</span>.<span class="name">prod_univ_two</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> β]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 2</span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 2)</span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(f 0)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">f 1</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.sum_univ_two">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L93">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.sum_univ_two"><span class="name">fin</span>.<span class="name">sum_univ_two</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> β]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 2</span> → β)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> 2)</span>, <span class="fn">f i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">f 0</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn">f 1</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.sum_pow_mul_eq_add_pow">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L97">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.sum_pow_mul_eq_add_pow"><span class="name">fin</span>.<span class="name">sum_pow_mul_eq_add_pow</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_semiring">comm_semiring</a> R]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b : R)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∑ (s : <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset">finset</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n))</span></span>, <span class="fn"><span class="fn">(a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> s.<a href="https://mariainesdff.github.io/ideles/data/finset/card.html#finset.card" title="finset.card">card</a>)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> s.<a href="https://mariainesdff.github.io/ideles/data/finset/card.html#finset.card" title="finset.card">card</a>)</span></span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> b)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> n</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.prod_const">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L101">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.prod_const"><span class="name">fin</span>.<span class="name">prod_const</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>
+    <span class="decl_args"><span class="fn">(x : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, x</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> n</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="fin.sum_const">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L103">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#fin.sum_const"><span class="name">fin</span>.<span class="name">sum_const</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>
+    <span class="decl_args"><span class="fn">(x : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, x</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">n <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> x</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
     
 
     
@@ -92,7 +978,7 @@
 <div class="decl" id="fin.sum_filter_zero_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L21">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L106">source</a></div>
 
 
 
@@ -131,7 +1017,7 @@
 <div class="decl" id="fin.prod_filter_zero_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L21">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L106">source</a></div>
 
 
 
@@ -170,7 +1056,7 @@
 <div class="decl" id="fin.prod_filter_succ_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L26">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L111">source</a></div>
 
 
 
@@ -210,7 +1096,7 @@
 <div class="decl" id="fin.sum_filter_succ_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L26">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L111">source</a></div>
 
 
 
@@ -227,6 +1113,240 @@
     <span class="decl_args"><span class="fn">(j : <a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span></span>
     <span class="decl_args"><span class="fn">(v : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n.<a href="https://mariainesdff.github.io/ideles/init/core.html#nat.succ" title="nat.succ">succ</a></span> → M)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n.<a href="https://mariainesdff.github.io/ideles/init/core.html#nat.succ" title="nat.succ">succ</a>)</span> in <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset.filter">finset.filter</a> <span class="fn">(λ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n.<a href="https://mariainesdff.github.io/ideles/init/core.html#nat.succ" title="nat.succ">succ</a>)</span>, <span class="fn">j.<a href="https://mariainesdff.github.io/ideles/init/data/fin/ops.html#fin.succ" title="fin.succ">succ</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> i)</span></span></span> <a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#finset.univ">finset.univ</a></span>, <span class="fn">v i</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∑ (j : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span> in <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset.filter">finset.filter</a> <span class="fn">(λ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">j <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> i)</span></span></span> <a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#finset.univ">finset.univ</a></span>, <span class="fn">v j.<a href="https://mariainesdff.github.io/ideles/init/data/fin/ops.html#fin.succ" title="fin.succ">succ</a></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="list.sum_take_of_fn">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L121">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#list.sum_take_of_fn"><span class="name">list</span>.<span class="name">sum_take_of_fn</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n</span> → α)</span></span>
+    <span class="decl_args"><span class="fn">(i : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/data/list/basic.html#list.take">list.take</a> i</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.of_fn">list.of_fn</a> f))</span></span>.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.sum" title="list.sum">sum</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∑ (j : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span> in <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset.filter">finset.filter</a> <span class="fn">(λ (j : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">j.<a href="https://mariainesdff.github.io/ideles/init/core.html#subtype.val" title="subtype.val">val</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> i)</span></span></span> <a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#finset.univ">finset.univ</a></span>, <span class="fn">f j</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="list.prod_take_of_fn">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L121">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#list.prod_take_of_fn"><span class="name">list</span>.<span class="name">prod_take_of_fn</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n</span> → α)</span></span>
+    <span class="decl_args"><span class="fn">(i : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/data/list/basic.html#list.take">list.take</a> i</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.of_fn">list.of_fn</a> f))</span></span>.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.prod" title="list.prod">prod</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∏ (j : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span> in <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset.filter">finset.filter</a> <span class="fn">(λ (j : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">j.<a href="https://mariainesdff.github.io/ideles/init/core.html#subtype.val" title="subtype.val">val</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> i)</span></span></span> <a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#finset.univ">finset.univ</a></span>, <span class="fn">f j</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="list.sum_of_fn">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L148">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#list.sum_of_fn"><span class="name">list</span>.<span class="name">sum_of_fn</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n</span> → α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.of_fn">list.of_fn</a> f)</span>.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.sum" title="list.sum">sum</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f i</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="list.prod_of_fn">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L148">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#list.prod_of_fn"><span class="name">list</span>.<span class="name">prod_of_fn</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_monoid">comm_monoid</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n</span> → α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.of_fn">list.of_fn</a> f)</span>.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.prod" title="list.prod">prod</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n)</span>, <span class="fn">f i</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="list.alternating_sum_eq_finset_sum">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L157">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#list.alternating_sum_eq_finset_sum"><span class="name">list</span>.<span class="name">alternating_sum_eq_finset_sum</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> G]</span></span></span>
+    <span class="decl_args"><span class="fn">(L : <a href="https://mariainesdff.github.io/ideles/init/core.html#list">list</a> G)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">L.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.alternating_sum" title="list.alternating_sum">alternating_sum</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∑ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> L.<a href="https://mariainesdff.github.io/ideles/init/data/list/basic.html#list.length" title="list.length">length</a>)</span>, <span class="fn"><span class="fn">(-1) <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>i</span> <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><span class="fn">L.<a href="https://mariainesdff.github.io/ideles/init/data/list/basic.html#list.nth_le" title="list.nth_le">nth_le</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>i</span> _</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="list.alternating_prod_eq_finset_prod">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/big_operators/fin.lean#L178">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/big_operators/fin.html#list.alternating_prod_eq_finset_prod"><span class="name">list</span>.<span class="name">alternating_prod_eq_finset_prod</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_group">comm_group</a> G]</span></span></span>
+    <span class="decl_args"><span class="fn">(L : <a href="https://mariainesdff.github.io/ideles/init/core.html#list">list</a> G)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">L.<a href="https://mariainesdff.github.io/ideles/data/list/defs.html#list.alternating_prod" title="list.alternating_prod">alternating_prod</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">∏ (i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> L.<a href="https://mariainesdff.github.io/ideles/init/data/list/basic.html#list.length" title="list.length">length</a>)</span>, <span class="fn"><span class="fn"><span class="fn">L.<a href="https://mariainesdff.github.io/ideles/init/data/list/basic.html#list.nth_le" title="list.nth_le">nth_le</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>i</span> _</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> <span class="fn">(-1) <a href="https://mariainesdff.github.io/ideles/init/core.html#has_pow.pow" title="has_pow.pow">^</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>i</span></span></span></span></div>
 </div>
 
 
@@ -266,13 +1386,6 @@
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -2343,6 +3456,12 @@
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -2487,6 +3606,13 @@
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -2495,6 +3621,29 @@
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -2577,6 +3726,9 @@
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -3210,27 +4362,35 @@
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

@@ -1214,7 +1214,11 @@ together with a proof that everything of type <code>α</code> is in the list.</p
             
                 <li><a href="https://mariainesdff.github.io/ideles/linear_algebra/matrix/to_lin.html#matrix.fintype">matrix.fintype</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html#conj_act.fintype">conj_act.fintype</a></li>
+            
                 <li><a href="https://mariainesdff.github.io/ideles/data/zmod/basic.html#zmod.fintype">zmod.fintype</a></li>
+            
+                <li><a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html#module.free.choose_basis_index.fintype">module.free.choose_basis_index.fintype</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/group_theory/free_group.html#free_group.subtype.fintype">free_group.subtype.fintype</a></li>
             
@@ -3398,7 +3402,7 @@ the assumption <code><a href="https://mariainesdff.github.io/ideles/data/fintype
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> β]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> β)</span></span></div>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> <span class="fn">(α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> β)</span></span></div>
 </div>
 
 
@@ -3412,7 +3416,7 @@ the assumption <code><a href="https://mariainesdff.github.io/ideles/data/fintype
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype.decidable_eq_mul_hom_fintype">fintype.decidable_eq_mul_hom_fintype</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">λ (a b : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> β)</span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/basic.html#decidable_of_iff">decidable_of_iff</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>a <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>b)</span></span> _</span></span></span></li>
+                <li class="equation"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype.decidable_eq_mul_hom_fintype">fintype.decidable_eq_mul_hom_fintype</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">λ (a b : <span class="fn">α <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> β)</span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/basic.html#decidable_of_iff">decidable_of_iff</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>a <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>b)</span></span> _</span></span></span></li>
             
         </ul>
     </details>
@@ -16490,7 +16494,7 @@ Note that <code><a href="https://mariainesdff.github.io/ideles/data/fintype/basi
 
 <div class="decl_header">
     
-<span class="decl_noncomputable" title="This definition depends on the noncomputable `_private.4173830711.nat_embedding_aux`">noncomputable</span>
+<span class="decl_noncomputable" title="This definition depends on the noncomputable `_private.1627146215.nat_embedding_aux`">noncomputable</span>
 
 <span class="decl_kind">def</span>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#infinite.nat_embedding"><span class="name">infinite</span>.<span class="name">nat_embedding</span></a></span>
@@ -16512,7 +16516,7 @@ Note that <code><a href="https://mariainesdff.github.io/ideles/data/fintype/basi
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#infinite.nat_embedding">infinite.nat_embedding</a> α</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/embedding.html#function.embedding.mk" title="function.embedding.mk">{</a><a href="https://mariainesdff.github.io/ideles/logic/embedding.html#function.embedding.to_fun" title="function.embedding.to_fun">to_fun</a> := <span class="fn"><span class="fn"><span title="_private.4173830711.nat_embedding_aux">nat_embedding_aux</span> α</span> _inst_1</span>, <a href="https://mariainesdff.github.io/ideles/logic/embedding.html#function.embedding.inj'" title="function.embedding.inj'">inj'</a> := _}</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#infinite.nat_embedding">infinite.nat_embedding</a> α</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/embedding.html#function.embedding.mk" title="function.embedding.mk">{</a><a href="https://mariainesdff.github.io/ideles/logic/embedding.html#function.embedding.to_fun" title="function.embedding.to_fun">to_fun</a> := <span class="fn"><span class="fn"><span title="_private.1627146215.nat_embedding_aux">nat_embedding_aux</span> α</span> _inst_1</span>, <a href="https://mariainesdff.github.io/ideles/logic/embedding.html#function.embedding.inj'" title="function.embedding.inj'">inj'</a> := _}</span></span></li>
             
         </ul>
     </details>
@@ -17456,13 +17460,6 @@ to that instance and use that name.</p>
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -19533,6 +19530,12 @@ to that instance and use that name.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -19677,6 +19680,13 @@ to that instance and use that name.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -19685,6 +19695,29 @@ to that instance and use that name.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -19767,6 +19800,9 @@ to that instance and use that name.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -20400,27 +20436,35 @@ to that instance and use that name.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

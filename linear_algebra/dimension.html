@@ -59,8 +59,8 @@
             <li><a href="https://mariainesdff.github.io/ideles/linear_algebra/std_basis.html">
                 linear_algebra.std_basis</a></li>
         
-            <li><a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">
-                set_theory.cofinality</a></li>
+            <li><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">
+                set_theory.cardinal.cofinality</a></li>
         </ul>
     </details>
     <details>
@@ -298,7 +298,7 @@
 <h2 id="main-definitions" class="markdown-heading">Main definitions <a class="hover-link" href="#main-definitions">#</a></h2>
 <ul>
 <li>
-<p>The rank of a module is defined as <code><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> : <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal">cardinal</a></code>.
+<p>The rank of a module is defined as <code><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> : <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal">cardinal</a></code>.
 This is defined as the supremum of the cardinalities of linearly independent subsets.</p>
 </li>
 <li>
@@ -382,14 +382,14 @@ and <code>V₁</code>, <code>V₂</code>, ... all live in the same universe.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> K]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal">cardinal</a></span></div>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal">cardinal</a></span></div>
 </div>
 
 
 
 
 
-<p>The rank of a module, defined as a term of type <code><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal">cardinal</a></code>.</p>
+<p>The rank of a module, defined as a term of type <code><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal">cardinal</a></code>.</p>
 <p>We define this as the supremum of the cardinalities of linearly independent subsets.</p>
 <p>For a free module over any ring satisfying the strong rank condition
 (e.g. left-noetherian rings, commutative rings, and in particular division rings and fields),
@@ -404,7 +404,7 @@ the rank of a linear map.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.sup">cardinal.sup</a> <span class="fn">(λ (ι : <span class="fn">{s // <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> K</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe">coe</a>})</span></span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>(ι.<a href="https://mariainesdff.github.io/ideles/init/core.html#subtype.val" title="subtype.val">val</a>))</span></span></span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.sup">cardinal.sup</a> <span class="fn">(λ (ι : <span class="fn">{s // <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> K</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe">coe</a>})</span></span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>(ι.<a href="https://mariainesdff.github.io/ideles/init/core.html#subtype.val" title="subtype.val">val</a>))</span></span></span></span></li>
             
         </ul>
     </details>
@@ -444,7 +444,7 @@ the rank of a linear map.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M']</span></span></span>
     <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map" title="linear_map">→ₗ[</a>R<a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map" title="linear_map">]</a> M')</span></span>
     <span class="decl_args"><span class="fn">(i : <a href="https://mariainesdff.github.io/ideles/init/function.html#function.injective">function.injective</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
 </div>
 
 
@@ -575,7 +575,7 @@ the rank of a linear map.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> M']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M']</span></span></span>
     <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map" title="linear_map">→ₗ[</a>R<a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map" title="linear_map">]</a> M')</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>(f.<a href="https://mariainesdff.github.io/ideles/linear_algebra/basic.html#linear_map.range" title="linear_map.range">range</a>))</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>(f.<a href="https://mariainesdff.github.io/ideles/linear_algebra/basic.html#linear_map.range" title="linear_map.range">range</a>))</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
 </div>
 
 
@@ -664,7 +664,7 @@ the rank of a linear map.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M']</span></span></span>
     <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map" title="linear_map">→ₗ[</a>R<a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map" title="linear_map">]</a> M')</span></span>
     <span class="decl_args"><span class="fn">(p : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule">submodule</a> R</span> M)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/basic.html#submodule.map">submodule.map</a> f</span> p))</span></span></span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>p)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/basic.html#submodule.map">submodule.map</a> f</span> p))</span></span></span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>p)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
 </div>
 
 
@@ -795,7 +795,7 @@ the rank of a linear map.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> M']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M']</span></span></span>
     <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/module/equiv.html#linear_equiv" title="linear_equiv">≃ₗ[</a>R<a href="https://mariainesdff.github.io/ideles/algebra/module/equiv.html#linear_equiv" title="linear_equiv">]</a> M')</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
 </div>
 
 
@@ -1191,7 +1191,7 @@ universes.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Type w}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{v : ι → M}</span></span></span>
     <span class="decl_args"><span class="fn">(hv : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> R</span> v)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
 </div>
 
 
@@ -1235,7 +1235,7 @@ universes.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Type w}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{v : ι → M}</span></span></span>
     <span class="decl_args"><span class="fn">(hv : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> R</span> v)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
 </div>
 
 
@@ -1279,7 +1279,7 @@ universes.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Type v}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{v : ι → M}</span></span></span>
     <span class="decl_args"><span class="fn">(hv : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> R</span> v)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span></span></div>
 </div>
 
 
@@ -1322,7 +1322,7 @@ universes.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/logic/nontrivial.html#nontrivial">nontrivial</a> R]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{s : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> M}</span></span></span>
     <span class="decl_args"><span class="fn">(hs : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> R</span> <span class="fn">(λ (x : <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s), <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>x)</span>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span></span></div>
 </div>
 
 
@@ -1559,7 +1559,7 @@ then the union of the supports of <code>x ∈ s</code> (when written out in the 
     <span class="decl_args"><span class="fn">(v : κ → M)</span></span>
     <span class="decl_args"><span class="fn">(i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> R</span> v)</span></span>
     <span class="decl_args"><span class="fn">(m : i.<a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent.maximal" title="linear_independent.maximal">maximal</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> κ)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> κ)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
 </div>
 
 
@@ -1610,7 +1610,7 @@ then the cardinality of <code>b</code> is bounded by the cardinality of <code>s<
     <span class="decl_args"><span class="fn">(v : κ → M)</span></span>
     <span class="decl_args"><span class="fn">(i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> R</span> v)</span></span>
     <span class="decl_args"><span class="fn">(m : i.<a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent.maximal" title="linear_independent.maximal">maximal</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> κ</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> κ</span></span></div>
 </div>
 
 
@@ -1658,7 +1658,7 @@ then the cardinality of <code>b</code> is bounded by the cardinality of <code>s<
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#no_zero_smul_divisors">no_zero_smul_divisors</a> R</span> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{V : ι → <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/submodule.html#submodule">submodule</a> R</span> M</span>}</span></span></span>
     <span class="decl_args"><span class="fn">(hV : <a href="https://mariainesdff.github.io/ideles/order/sup_indep.html#complete_lattice.independent">complete_lattice.independent</a> V)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> <span class="fn">{i // <span class="fn"><span class="fn">V i</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> <a href="https://mariainesdff.github.io/ideles/order/bounded_order.html#has_bot.bot" title="has_bot.bot">⊥</a>})</span></span></span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> <span class="fn">{i // <span class="fn"><span class="fn">V i</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> <a href="https://mariainesdff.github.io/ideles/order/bounded_order.html#has_bot.bot" title="has_bot.bot">⊥</a>})</span></span></span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
 </div>
 
 
@@ -1914,7 +1914,7 @@ then the cardinality of <code>b</code> is bounded by the cardinality of <code>s<
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M]</span></span></span>
     <span class="decl_args"><span class="fn">(v : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι</span> R</span> M)</span></span>
     <span class="decl_args"><span class="fn">(v' : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι'</span> R</span> M)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
 </div>
 
 
@@ -2017,7 +2017,7 @@ basis number property, an equiv <code>ι ≃ ι&#x27;</code>.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{ι' : Type w}</span></span></span>
     <span class="decl_args"><span class="fn">(v : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι</span> R</span> M)</span></span>
     <span class="decl_args"><span class="fn">(v' : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι'</span> R</span> M)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι'</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι'</span></span></div>
 </div>
 
 
@@ -2115,7 +2115,7 @@ the cardinality of <code>ι</code> is bounded by the cardinality of <code>w</cod
     <span class="impl_arg"><span class="decl_args"><span class="fn">{w : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> M}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>w]</span></span></span>
     <span class="decl_args"><span class="fn">(s : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> R</span> w</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/order/bounded_order.html#has_top.top" title="has_top.top">⊤</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype.card">fintype.card</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>w)</span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype.card">fintype.card</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>w)</span></span></span></div>
 </div>
 
 
@@ -2162,7 +2162,7 @@ but still assumes we have a finite spanning set.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{J : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> M}</span></span></span>
     <span class="decl_args"><span class="fn">(v : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι</span> R</span> M)</span></span>
     <span class="decl_args"><span class="fn">(hJ : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> R</span> J</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/order/bounded_order.html#has_top.top" title="has_top.top">⊤</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>v)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>J</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>v)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>J</span></span></div>
 </div>
 
 
@@ -2319,7 +2319,7 @@ is itself finite.</p>
     <span class="decl_args"><span class="fn">(w : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> M)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>w]</span></span></span>
     <span class="decl_args"><span class="fn">(s : <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> v</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> R</span> w)</span></span>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype.card">fintype.card</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>w)</span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype.card">fintype.card</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>w)</span></span></span></div>
 </div>
 
 
@@ -2370,7 +2370,7 @@ the cardinality of <code>ι</code> is bounded by the cardinality of <code>w</cod
     <span class="decl_args"><span class="fn">(w : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> M)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>w]</span></span></span>
     <span class="decl_args"><span class="fn">(s : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> R</span> w</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/order/bounded_order.html#has_top.top" title="has_top.top">⊤</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype.card">fintype.card</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>w)</span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype.card">fintype.card</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>w)</span></span></span></div>
 </div>
 
 
@@ -2523,7 +2523,7 @@ must be finite if the module is Noetherian.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{κ : Type u_1}</span></span></span>
     <span class="decl_args"><span class="fn">(v : κ → M)</span></span>
     <span class="decl_args"><span class="fn">(i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> R</span> v)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> κ</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> κ</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι</span></span></div>
 </div>
 
 
@@ -2571,7 +2571,7 @@ we handle the case where the basis <code>b</code> is infinite.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{κ : Type u_1}</span></span></span>
     <span class="decl_args"><span class="fn">(v : κ → M)</span></span>
     <span class="decl_args"><span class="fn">(i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> R</span> v)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> κ</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> κ</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι</span></span></div>
 </div>
 
 
@@ -2665,7 +2665,7 @@ then the cardinality of <code>s</code> is bounded by the cardinality of <code>b<
     <span class="decl_args"><span class="fn">(v : κ → M)</span></span>
     <span class="decl_args"><span class="fn">(i : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> R</span> v)</span></span>
     <span class="decl_args"><span class="fn">(m : i.<a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent.maximal" title="linear_independent.maximal">maximal</a>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> κ</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> κ</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι</span></span></div>
 </div>
 
 
@@ -2713,7 +2713,7 @@ then every maximal linearly independent set has the same cardinality as <code>b<
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Type v}</span></span></span>
     <span class="decl_args"><span class="fn">(v : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι</span> R</span> M)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span></span></div>
 </div>
 
 
@@ -2756,7 +2756,7 @@ then every maximal linearly independent set has the same cardinality as <code>b<
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M]</span></span></span>
     <span class="decl_args"><span class="fn">(v : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι</span> R</span> M)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>v)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>v)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span></span></div>
 </div>
 
 
@@ -2990,7 +2990,7 @@ cardinality of the basis.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M]</span></span></span>
     <span class="decl_args"><span class="fn">(v : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι</span> R</span> M)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
 </div>
 
 
@@ -3033,7 +3033,7 @@ cardinality of the basis.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M]</span></span></span>
     <span class="decl_args"><span class="fn">(v : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι</span> R</span> M)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> ι)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></div>
 </div>
 
 
@@ -3076,7 +3076,7 @@ cardinality of the basis.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Type u_1}</span></span></span>
     <span class="decl_args"><span class="fn">(b : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι</span> R</span> M)</span></span>
-    <span class="decl_args"><span class="fn">(h : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.omega" title="cardinal.omega">ω</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(h : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.omega" title="cardinal.omega">ω</a>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#nonempty">nonempty</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> ι)</span></span></div>
 </div>
 
@@ -3121,7 +3121,7 @@ cardinality of the basis.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Type u_1}</span></span></span>
     <span class="decl_args"><span class="fn">(b : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> ι</span> R</span> M)</span></span>
-    <span class="decl_args"><span class="fn">(h : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.omega" title="cardinal.omega">ω</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(h : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.omega" title="cardinal.omega">ω</a>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> ι</span></div>
 </div>
 
@@ -3176,7 +3176,7 @@ cardinality of the basis.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Type u_1}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{s : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> ι}</span></span></span>
     <span class="decl_args"><span class="fn">(b : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis">basis</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s</span> R</span> M)</span></span>
-    <span class="decl_args"><span class="fn">(h : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.omega" title="cardinal.omega">ω</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(h : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.omega" title="cardinal.omega">ω</a>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">s.<a href="https://mariainesdff.github.io/ideles/data/set/finite.html#set.finite" title="set.finite">finite</a></span></div>
 </div>
 
@@ -3222,7 +3222,7 @@ cardinality of the basis.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{v : ι → M}</span></span></span>
     <span class="decl_args"><span class="fn">(hv : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> R</span> v)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> R</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> v))</span></span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> v)</span></span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> R</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> v))</span></span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/set/basic.html#set.range">set.range</a> v)</span></span></span></span></div>
 </div>
 
 
@@ -3265,7 +3265,7 @@ cardinality of the basis.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{s : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> M}</span></span></span>
     <span class="decl_args"><span class="fn">(hs : <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> R</span> <span class="fn">(λ (x : <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s), <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>x)</span>)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> R</span> s)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> R</span> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> R</span> s)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s</span></span></div>
 </div>
 
 
@@ -3456,7 +3456,7 @@ then the rank of an ideal <code>I</code> of <code>S</code> over <code>R</code> i
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/field/basic.html#division_ring">division_ring</a> K]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>
-    <span class="decl_args"><span class="fn">(h : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.omega" title="cardinal.omega">ω</a>)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(h : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.omega" title="cardinal.omega">ω</a>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/basis.html#basis.of_vector_space_index">basis.of_vector_space_index</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/data/set/finite.html#set.finite" title="set.finite">finite</a></span></div>
 </div>
 
@@ -3501,7 +3501,7 @@ then the rank of an ideal <code>I</code> of <code>S</code> over <code>R</code> i
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> V']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V']</span></span></span>
-    <span class="decl_args"><span class="fn">(cond : <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span>)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(cond : <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#nonempty">nonempty</a> <span class="fn">(V <a href="https://mariainesdff.github.io/ideles/algebra/module/equiv.html#linear_equiv" title="linear_equiv">≃ₗ[</a>K<a href="https://mariainesdff.github.io/ideles/algebra/module/equiv.html#linear_equiv" title="linear_equiv">]</a> V')</span></span></div>
 </div>
 
@@ -3590,7 +3590,7 @@ then the rank of an ideal <code>I</code> of <code>S</code> over <code>R</code> i
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> V']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V']</span></span></span>
-    <span class="decl_args"><span class="fn">(cond : <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span>)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(cond : <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">V <a href="https://mariainesdff.github.io/ideles/algebra/module/equiv.html#linear_equiv" title="linear_equiv">≃ₗ[</a>K<a href="https://mariainesdff.github.io/ideles/algebra/module/equiv.html#linear_equiv" title="linear_equiv">]</a> V'</span></div>
 </div>
 
@@ -3697,7 +3697,7 @@ then the rank of an ideal <code>I</code> of <code>S</code> over <code>R</code> i
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> V']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V']</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#nonempty">nonempty</a> <span class="fn">(V <a href="https://mariainesdff.github.io/ideles/algebra/module/equiv.html#linear_equiv" title="linear_equiv">≃ₗ[</a>K<a href="https://mariainesdff.github.io/ideles/algebra/module/equiv.html#linear_equiv" title="linear_equiv">]</a> V')</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#nonempty">nonempty</a> <span class="fn">(V <a href="https://mariainesdff.github.io/ideles/algebra/module/equiv.html#linear_equiv" title="linear_equiv">≃ₗ[</a>K<a href="https://mariainesdff.github.io/ideles/algebra/module/equiv.html#linear_equiv" title="linear_equiv">]</a> V')</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V')</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></span></div>
 </div>
 
 
@@ -3782,7 +3782,7 @@ then the rank of an ideal <code>I</code> of <code>S</code> over <code>R</code> i
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>
     <span class="decl_args"><span class="fn">(s : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> V)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> K</span> s)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> K</span> s)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s</span></span></div>
 </div>
 
 
@@ -3823,7 +3823,7 @@ then the rank of an ideal <code>I</code> of <code>S</code> over <code>R</code> i
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>
     <span class="decl_args"><span class="fn">(s : <a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset">finset</a> V)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> K</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>s)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.omega" title="cardinal.omega">ω</a></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/span.html#submodule.span">submodule.span</a> K</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>s)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.omega" title="cardinal.omega">ω</a></span></div>
 </div>
 
 
@@ -3907,7 +3907,7 @@ then the rank of an ideal <code>I</code> of <code>S</code> over <code>R</code> i
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> η]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[Π (i : η), <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> <span class="fn">(φ i)</span></span>]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[Π (i : η), <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> <span class="fn">(φ i)</span></span>]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn">(Π (i : η), <span class="fn">φ i)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.sum">cardinal.sum</a> <span class="fn">(λ (i : η), <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn">(φ i))</span></span></span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn">(Π (i : η), <span class="fn">φ i)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.sum">cardinal.sum</a> <span class="fn">(λ (i : η), <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn">(φ i))</span></span></span></span></span></div>
 </div>
 
 
@@ -3990,7 +3990,7 @@ then the rank of an ideal <code>I</code> of <code>S</code> over <code>R</code> i
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> η]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn">(η → V)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype.card">fintype.card</a> η))</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> <span class="fn">(η → V)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype.card">fintype.card</a> η))</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span></span></span></div>
 </div>
 
 
@@ -4419,7 +4419,7 @@ then the rank of an ideal <code>I</code> of <code>S</code> over <code>R</code> i
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> V']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V']</span></span></span>
     <span class="decl_args"><span class="fn">(f : V <a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map" title="linear_map">→ₗ[</a>K<a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map" title="linear_map">]</a> V')</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal">cardinal</a></span></div>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal">cardinal</a></span></div>
 </div>
 
 
@@ -4885,8 +4885,8 @@ then the rank of an ideal <code>I</code> of <code>S</code> over <code>R</code> i
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/field/basic.html#field">field</a> K]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{c : <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal">cardinal</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">∃ (s : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> V)</span>, <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> c</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> K</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe">coe</a></span></span></span></span></div>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{c : <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal">cardinal</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#module.rank">module.rank</a> K</span> V</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">∃ (s : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> V)</span>, <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> c</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> K</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe">coe</a></span></span></span></span></div>
 </div>
 
 
@@ -4970,9 +4970,9 @@ then the rank of an ideal <code>I</code> of <code>S</code> over <code>R</code> i
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> V']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> K</span> V']</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{c : <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal">cardinal</a>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{c : <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal">cardinal</a>}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{f : V <a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map" title="linear_map">→ₗ[</a>K<a href="https://mariainesdff.github.io/ideles/algebra/module/linear_map.html#linear_map" title="linear_map">]</a> V'}</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#rank">rank</a> f</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">∃ (s : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> V)</span>, <span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> c.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> K</span> <span class="fn">(λ (x : <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s), <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>x)</span></span></span></span></span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/dimension.html#rank">rank</a> f</span></span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">∃ (s : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> V)</span>, <span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.mk" title="cardinal.mk">#</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s)</span>.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> c.<a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.lift" title="cardinal.lift">lift</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#and" title="and">∧</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/linear_algebra/linear_independent.html#linear_independent">linear_independent</a> K</span> <span class="fn">(λ (x : <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_sort" title="coe_sort">↥</a>s), <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>x)</span></span></span></span></span></span></div>
 </div>
 
 
@@ -5187,13 +5187,6 @@ submodule is contained in its span.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -7264,6 +7257,12 @@ submodule is contained in its span.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -7408,6 +7407,13 @@ submodule is contained in its span.</p>
         <details class="nav_sect" data-path="linear_algebra" open>
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -7416,6 +7422,29 @@ submodule is contained in its span.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -7498,6 +7527,9 @@ submodule is contained in its span.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -8131,27 +8163,35 @@ submodule is contained in its span.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

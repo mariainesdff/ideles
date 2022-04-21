@@ -105,6 +105,10 @@
 
     <div class="nav_link"><a class="break_within" href="#add_right_surjective"><span class="name">add_right_surjective</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#add_rotate"><span class="name">add_rotate</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#add_rotate'"><span class="name">add_rotate&#x27;</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#add_sub"><span class="name">add_sub</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#add_sub_add_left_eq_sub"><span class="name">add_sub_add_left_eq_sub</span></a></div>
@@ -162,6 +166,8 @@
     <div class="nav_link"><a class="break_within" href="#div_div_div_cancel_left"><span class="name">div_div_div_cancel_left</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#div_div_div_cancel_right'"><span class="name">div_div_div_cancel_right&#x27;</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#div_div_div_comm"><span class="name">div_div_div_comm</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#div_div_self'"><span class="name">div_div_self&#x27;</span></a></div>
 
@@ -443,6 +449,10 @@
 
     <div class="nav_link"><a class="break_within" href="#mul_right_surjective"><span class="name">mul_right_surjective</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#mul_rotate"><span class="name">mul_rotate</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#mul_rotate'"><span class="name">mul_rotate&#x27;</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#neg_add"><span class="name">neg_add</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#neg_add'"><span class="name">neg_add&#x27;</span></a></div>
@@ -578,6 +588,8 @@
     <div class="nav_link"><a class="break_within" href="#sub_sub_sub_cancel_left"><span class="name">sub_sub_sub_cancel_left</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#sub_sub_sub_cancel_right"><span class="name">sub_sub_sub_cancel_right</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#sub_sub_sub_comm"><span class="name">sub_sub_sub_comm</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#sub_zero"><span class="name">sub_zero</span></a></div>
 
@@ -1470,10 +1482,162 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
     
         
         
+<div class="decl" id="add_rotate">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L108">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/group/basic.html#add_rotate"><span class="name">add_rotate</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_semigroup">add_comm_semigroup</a> G]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b c : G)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> c</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> c</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="mul_rotate">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L108">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/group/basic.html#mul_rotate"><span class="name">mul_rotate</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_semigroup">comm_semigroup</a> G]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b c : G)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> b)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> c</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> c)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> a</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="add_rotate'">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L112">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/group/basic.html#add_rotate'"><span class="name">add_rotate&#x27;</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_semigroup">add_comm_semigroup</a> G]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b c : G)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn">(b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> c)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn">(c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> a)</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="mul_rotate'">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L112">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/group/basic.html#mul_rotate'"><span class="name">mul_rotate&#x27;</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_semigroup">comm_semigroup</a> G]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b c : G)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> c</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> a</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="bit0_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L114">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L122">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1512,7 +1676,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="bit1_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L115">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L123">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1552,7 +1716,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_unique">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L123">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L131">source</a></div>
 
 
 
@@ -1592,7 +1756,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_unique">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L123">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L131">source</a></div>
 
 
 
@@ -1632,7 +1796,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_right_eq_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L132">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L140">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1672,7 +1836,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_right_eq_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L132">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L140">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1712,7 +1876,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="self_eq_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L136">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L144">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1752,7 +1916,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="self_eq_add_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L136">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L144">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1792,7 +1956,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_left_eq_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L145">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L153">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1832,7 +1996,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_left_eq_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L145">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L153">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1872,7 +2036,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="self_eq_add_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L149">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L157">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1912,7 +2076,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="self_eq_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L149">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L157">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1952,7 +2116,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_involutive">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L158">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L166">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1991,7 +2155,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_involutive">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L158">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L166">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2030,7 +2194,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_surjective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L161">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L169">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2069,7 +2233,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_surjective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L161">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L169">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2108,7 +2272,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L165">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L173">source</a></div>
 
 
 
@@ -2145,7 +2309,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L165">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L173">source</a></div>
 
 
 
@@ -2182,7 +2346,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L168">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L176">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2222,7 +2386,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L168">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L176">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2262,7 +2426,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_inv_of_eq_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L171">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L179">source</a></div>
 
 
 
@@ -2301,7 +2465,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_neg_of_eq_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L171">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L179">source</a></div>
 
 
 
@@ -2340,7 +2504,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_inv_iff_eq_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L175">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L183">source</a></div>
 
 
 
@@ -2378,7 +2542,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_neg_iff_eq_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L175">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L183">source</a></div>
 
 
 
@@ -2416,7 +2580,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_eq_iff_neg_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L179">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L187">source</a></div>
 
 
 
@@ -2454,7 +2618,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_eq_iff_inv_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L179">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L187">source</a></div>
 
 
 
@@ -2492,7 +2656,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_eq_zero_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L189">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L197">source</a></div>
 
 
 
@@ -2530,7 +2694,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_eq_one_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L189">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L197">source</a></div>
 
 
 
@@ -2568,7 +2732,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_zero_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L194">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L202">source</a></div>
 
 
 
@@ -2606,7 +2770,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_one_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L194">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L202">source</a></div>
 
 
 
@@ -2644,7 +2808,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_div_assoc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L199">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L207">source</a></div>
 
 
 
@@ -2682,7 +2846,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_sub_assoc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L199">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L207">source</a></div>
 
 
 
@@ -2720,7 +2884,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_sub_assoc'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L203">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L211">source</a></div>
 
 
 
@@ -2758,7 +2922,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_div_assoc'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L203">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L211">source</a></div>
 
 
 
@@ -2796,7 +2960,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="one_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L206">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L214">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2836,7 +3000,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="zero_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L206">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L214">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2876,7 +3040,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L210">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L218">source</a></div>
 
 
 
@@ -2914,7 +3078,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L210">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L218">source</a></div>
 
 
 
@@ -2952,7 +3116,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_add_cancel_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L219">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L227">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2992,7 +3156,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_mul_cancel_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L219">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L227">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3032,7 +3196,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="one_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L223">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L231">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3071,7 +3235,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L223">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L231">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3110,7 +3274,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="left_inverse_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L227">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L235">source</a></div>
 
 
 
@@ -3147,7 +3311,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="left_inverse_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L227">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L235">source</a></div>
 
 
 
@@ -3184,7 +3348,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L232">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L240">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3224,7 +3388,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L232">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L240">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3264,7 +3428,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="one_eq_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L235">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L243">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3304,7 +3468,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="zero_eq_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L235">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L243">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3344,7 +3508,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_ne_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L238">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L246">source</a></div>
 
 
 
@@ -3382,7 +3546,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L238">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L246">source</a></div>
 
 
 
@@ -3420,7 +3584,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_neg_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L240">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L248">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3460,7 +3624,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_inv_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L240">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L248">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3500,7 +3664,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_inv_cancel_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L244">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L252">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3540,7 +3704,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_neg_cancel_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L244">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L252">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3580,7 +3744,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_left_surjective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L248">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L256">source</a></div>
 
 
 
@@ -3618,7 +3782,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_left_surjective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L248">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L256">source</a></div>
 
 
 
@@ -3656,7 +3820,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_right_surjective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L252">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L260">source</a></div>
 
 
 
@@ -3694,7 +3858,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_right_surjective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L252">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L260">source</a></div>
 
 
 
@@ -3732,7 +3896,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_inv_rev">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L256">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L264">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3772,7 +3936,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_add_rev">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L256">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L264">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3812,7 +3976,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_inv_of_mul_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L260">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L268">source</a></div>
 
 
 
@@ -3851,7 +4015,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_neg_of_add_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L260">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L268">source</a></div>
 
 
 
@@ -3890,7 +4054,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_add_neg_of_add_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L265">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L273">source</a></div>
 
 
 
@@ -3929,7 +4093,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_mul_inv_of_mul_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L265">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L273">source</a></div>
 
 
 
@@ -3968,7 +4132,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_neg_add_of_add_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L269">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L277">source</a></div>
 
 
 
@@ -4007,7 +4171,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_inv_mul_of_mul_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L269">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L277">source</a></div>
 
 
 
@@ -4046,7 +4210,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_mul_eq_of_eq_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L273">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L281">source</a></div>
 
 
 
@@ -4085,7 +4249,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_add_eq_of_eq_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L273">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L281">source</a></div>
 
 
 
@@ -4124,7 +4288,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_neg_eq_of_eq_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L277">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L285">source</a></div>
 
 
 
@@ -4163,7 +4327,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_inv_eq_of_eq_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L277">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L285">source</a></div>
 
 
 
@@ -4202,7 +4366,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_add_of_add_neg_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L281">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L289">source</a></div>
 
 
 
@@ -4241,7 +4405,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_mul_of_mul_inv_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L281">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L289">source</a></div>
 
 
 
@@ -4280,7 +4444,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_mul_of_inv_mul_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L285">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L293">source</a></div>
 
 
 
@@ -4319,7 +4483,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_add_of_neg_add_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L285">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L293">source</a></div>
 
 
 
@@ -4358,7 +4522,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_eq_of_eq_inv_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L289">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L297">source</a></div>
 
 
 
@@ -4397,7 +4561,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_eq_of_eq_neg_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L289">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L297">source</a></div>
 
 
 
@@ -4436,7 +4600,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_eq_of_eq_mul_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L293">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L301">source</a></div>
 
 
 
@@ -4475,7 +4639,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_eq_of_eq_add_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L293">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L301">source</a></div>
 
 
 
@@ -4514,7 +4678,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_eq_one_iff_eq_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L297">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L305">source</a></div>
 
 
 
@@ -4552,7 +4716,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_eq_zero_iff_eq_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L297">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L305">source</a></div>
 
 
 
@@ -4590,7 +4754,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_eq_one_iff_inv_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L301">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L309">source</a></div>
 
 
 
@@ -4628,7 +4792,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_eq_zero_iff_neg_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L301">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L309">source</a></div>
 
 
 
@@ -4666,7 +4830,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_inv_iff_mul_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L305">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L313">source</a></div>
 
 
 
@@ -4704,7 +4868,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_neg_iff_add_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L305">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L313">source</a></div>
 
 
 
@@ -4742,7 +4906,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_eq_iff_add_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L309">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L317">source</a></div>
 
 
 
@@ -4780,7 +4944,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_eq_iff_mul_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L309">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L317">source</a></div>
 
 
 
@@ -4818,7 +4982,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_add_neg_iff_add_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L313">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L321">source</a></div>
 
 
 
@@ -4856,7 +5020,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_mul_inv_iff_mul_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L313">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L321">source</a></div>
 
 
 
@@ -4894,7 +5058,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_inv_mul_iff_mul_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L317">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L325">source</a></div>
 
 
 
@@ -4932,7 +5096,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_neg_add_iff_add_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L317">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L325">source</a></div>
 
 
 
@@ -4970,7 +5134,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_add_eq_iff_eq_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L321">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L329">source</a></div>
 
 
 
@@ -5008,7 +5172,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_mul_eq_iff_eq_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L321">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L329">source</a></div>
 
 
 
@@ -5046,7 +5210,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_neg_eq_iff_eq_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L325">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L333">source</a></div>
 
 
 
@@ -5084,7 +5248,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_inv_eq_iff_eq_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L325">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L333">source</a></div>
 
 
 
@@ -5122,7 +5286,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_inv_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L329">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L337">source</a></div>
 
 
 
@@ -5160,7 +5324,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_neg_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L329">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L337">source</a></div>
 
 
 
@@ -5198,7 +5362,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_mul_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L341">source</a></div>
 
 
 
@@ -5236,7 +5400,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_add_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L341">source</a></div>
 
 
 
@@ -5274,7 +5438,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_left_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L337">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L345">source</a></div>
 
 
 
@@ -5312,7 +5476,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_left_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L337">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L345">source</a></div>
 
 
 
@@ -5350,7 +5514,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_right_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L341">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L349">source</a></div>
 
 
 
@@ -5388,7 +5552,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_right_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L341">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L349">source</a></div>
 
 
 
@@ -5426,7 +5590,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_div'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L345">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L353">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5466,7 +5630,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L345">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L353">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5506,7 +5670,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_add_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L349">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L357">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5546,7 +5710,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_mul_cancel'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L349">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L357">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5586,7 +5750,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_self'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L353">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L361">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5626,7 +5790,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L353">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L361">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5666,7 +5830,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_div_cancel''">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L357">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L365">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5706,7 +5870,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_sub_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L357">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L365">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5746,7 +5910,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_of_sub_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L361">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L369">source</a></div>
 
 
 
@@ -5785,7 +5949,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_of_div_eq_one'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L361">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L369">source</a></div>
 
 
 
@@ -5824,7 +5988,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_ne_one_of_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L366">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L374">source</a></div>
 
 
 
@@ -5863,7 +6027,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_ne_zero_of_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L366">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L374">source</a></div>
 
 
 
@@ -5902,7 +6066,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_neg_eq_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L370">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L378">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5942,7 +6106,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_inv_eq_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L370">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L378">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5982,7 +6146,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_mul_eq_div_div_swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L374">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L382">source</a></div>
 
 
 
@@ -6020,7 +6184,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_add_eq_sub_sub_swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L374">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L382">source</a></div>
 
 
 
@@ -6058,7 +6222,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_div_mul_right_eq_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L378">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L386">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6098,7 +6262,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_sub_add_right_eq_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L378">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L386">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6138,7 +6302,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_sub_of_add_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L382">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L390">source</a></div>
 
 
 
@@ -6177,7 +6341,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_div_of_mul_eq'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L382">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L390">source</a></div>
 
 
 
@@ -6216,7 +6380,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_of_eq_mul''">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L386">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L394">source</a></div>
 
 
 
@@ -6255,7 +6419,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_of_eq_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L386">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L394">source</a></div>
 
 
 
@@ -6294,7 +6458,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_mul_of_div_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L390">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L398">source</a></div>
 
 
 
@@ -6333,7 +6497,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_add_of_sub_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L390">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L398">source</a></div>
 
 
 
@@ -6372,7 +6536,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_eq_of_eq_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L394">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L402">source</a></div>
 
 
 
@@ -6411,7 +6575,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_eq_of_eq_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L394">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L402">source</a></div>
 
 
 
@@ -6450,7 +6614,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_right_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L398">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L406">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6490,7 +6654,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_right_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L398">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L406">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6530,7 +6694,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_left_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L402">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L410">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6570,7 +6734,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_left_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L402">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L410">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6610,7 +6774,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_mul_div_cancel'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L406">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L414">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6650,7 +6814,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_add_sub_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L406">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L414">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6690,7 +6854,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_div_div_cancel_right'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L410">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L418">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6730,7 +6894,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_sub_sub_cancel_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L410">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L418">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6770,7 +6934,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_sub_assoc_swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L414">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L422">source</a></div>
 
 
 
@@ -6808,7 +6972,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_div_assoc_swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L414">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L422">source</a></div>
 
 
 
@@ -6846,7 +7010,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L418">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L426">source</a></div>
 
 
 
@@ -6884,7 +7048,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L418">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L426">source</a></div>
 
 
 
@@ -6922,7 +7086,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_one_of_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L421">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L429">source</a></div>
 
 
 
@@ -6961,7 +7125,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_zero_of_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L422">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L430">source</a></div>
 
 
 
@@ -7000,7 +7164,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L425">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L433">source</a></div>
 
 
 
@@ -7038,7 +7202,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_ne_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L425">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L433">source</a></div>
 
 
 
@@ -7076,7 +7240,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L429">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L437">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7116,7 +7280,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L429">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L437">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7156,7 +7320,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L435">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L443">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7196,7 +7360,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_one'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L435">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L443">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7236,7 +7400,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_div_iff_mul_eq'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L439">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L447">source</a></div>
 
 
 
@@ -7274,7 +7438,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_sub_iff_add_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L439">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L447">source</a></div>
 
 
 
@@ -7312,7 +7476,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_iff_eq_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L443">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L451">source</a></div>
 
 
 
@@ -7350,7 +7514,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_iff_eq_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L443">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L451">source</a></div>
 
 
 
@@ -7388,7 +7552,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_iff_eq_of_sub_eq_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L447">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L455">source</a></div>
 
 
 
@@ -7427,7 +7591,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_iff_eq_of_div_eq_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L447">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L455">source</a></div>
 
 
 
@@ -7466,7 +7630,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="left_inverse_sub_add_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L451">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L459">source</a></div>
 
 
 
@@ -7504,7 +7668,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="left_inverse_div_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L451">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L459">source</a></div>
 
 
 
@@ -7542,7 +7706,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="left_inverse_add_left_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L455">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L463">source</a></div>
 
 
 
@@ -7580,7 +7744,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="left_inverse_mul_left_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L455">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L463">source</a></div>
 
 
 
@@ -7618,7 +7782,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="left_inverse_add_right_neg_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L459">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L467">source</a></div>
 
 
 
@@ -7656,7 +7820,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="left_inverse_mul_right_inv_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L459">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L467">source</a></div>
 
 
 
@@ -7694,7 +7858,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="left_inverse_neg_add_add_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L464">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L472">source</a></div>
 
 
 
@@ -7732,7 +7896,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="left_inverse_inv_mul_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L464">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L472">source</a></div>
 
 
 
@@ -7770,7 +7934,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="exists_npow_eq_one_of_zpow_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L477">source</a></div>
 
 
 
@@ -7811,7 +7975,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="exists_nsmul_eq_zero_of_zsmul_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L477">source</a></div>
 
 
 
@@ -7852,7 +8016,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L487">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L495">source</a></div>
 
 
 
@@ -7890,7 +8054,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L487">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L495">source</a></div>
 
 
 
@@ -7928,7 +8092,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_of_eq_mul'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L491">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L499">source</a></div>
 
 
 
@@ -7967,7 +8131,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_of_eq_add'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L491">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L499">source</a></div>
 
 
 
@@ -8006,7 +8170,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_sub_left_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L495">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L503">source</a></div>
 
 
 
@@ -8044,7 +8208,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_div_left_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L495">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L503">source</a></div>
 
 
 
@@ -8082,7 +8246,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_mul_div_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L499">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L507">source</a></div>
 
 
 
@@ -8120,7 +8284,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_add_sub_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L499">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L507">source</a></div>
 
 
 
@@ -8155,10 +8319,86 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
     
         
         
+<div class="decl" id="div_div_div_comm">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L511">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/group/basic.html#div_div_div_comm"><span class="name">div_div_div_comm</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_group">comm_group</a> G]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b c d : G)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> <span class="fn">(c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> d)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> c</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> <span class="fn">(b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_div.div" title="has_div.div">/</a> d)</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="sub_sub_sub_comm">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L511">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/group/basic.html#sub_sub_sub_comm"><span class="name">sub_sub_sub_comm</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_group">add_comm_group</a> G]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b c d : G)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> b</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> <span class="fn">(c <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> d)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> c</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> <span class="fn">(b <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> d)</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="div_mul_eq_div_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L503">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L514">source</a></div>
 
 
 
@@ -8196,7 +8436,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_add_eq_sub_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L503">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L514">source</a></div>
 
 
 
@@ -8234,7 +8474,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_add_eq_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L507">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L518">source</a></div>
 
 
 
@@ -8272,7 +8512,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_mul_eq_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L507">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L518">source</a></div>
 
 
 
@@ -8310,7 +8550,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_mul_eq_mul_div'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L511">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L522">source</a></div>
 
 
 
@@ -8348,7 +8588,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_add_eq_add_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L511">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L522">source</a></div>
 
 
 
@@ -8386,7 +8626,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L515">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L526">source</a></div>
 
 
 
@@ -8424,7 +8664,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L515">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L526">source</a></div>
 
 
 
@@ -8462,7 +8702,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L530">source</a></div>
 
 
 
@@ -8500,7 +8740,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L519">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L530">source</a></div>
 
 
 
@@ -8538,7 +8778,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_sub_add_left_eq_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L523">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L534">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8578,7 +8818,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_div_mul_left_eq_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L523">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L534">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8618,7 +8858,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_div_of_mul_eq''">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L527">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L538">source</a></div>
 
 
 
@@ -8657,7 +8897,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_sub_of_add_eq'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L527">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L538">source</a></div>
 
 
 
@@ -8696,7 +8936,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_mul_of_div_eq'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L531">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L542">source</a></div>
 
 
 
@@ -8735,7 +8975,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_add_of_sub_eq'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L531">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L542">source</a></div>
 
 
 
@@ -8774,7 +9014,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_eq_of_eq_sub'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L535">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L546">source</a></div>
 
 
 
@@ -8813,7 +9053,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_eq_of_eq_div'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L535">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L546">source</a></div>
 
 
 
@@ -8852,7 +9092,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_sub_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L539">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L550">source</a></div>
 
 
 
@@ -8890,7 +9130,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_div_self'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L539">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L550">source</a></div>
 
 
 
@@ -8928,7 +9168,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_sub_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L543">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L554">source</a></div>
 
 
 
@@ -8966,7 +9206,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_div_comm'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L543">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L554">source</a></div>
 
 
 
@@ -9004,7 +9244,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_div_mul_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L547">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L558">source</a></div>
 
 
 
@@ -9042,7 +9282,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_sub_add_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L547">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L558">source</a></div>
 
 
 
@@ -9080,7 +9320,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_neg_sub_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L551">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L562">source</a></div>
 
 
 
@@ -9118,7 +9358,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_inv_div_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L551">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L562">source</a></div>
 
 
 
@@ -9156,7 +9396,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_sub_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L555">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L566">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9196,7 +9436,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_div_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L555">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L566">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9236,7 +9476,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_inv_mul'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L558">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L569">source</a></div>
 
 
 
@@ -9274,7 +9514,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_neg_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L558">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L569">source</a></div>
 
 
 
@@ -9312,7 +9552,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_div_cancel_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L562">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L573">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9352,7 +9592,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_sub_cancel_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L562">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L573">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9392,7 +9632,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_mul'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L565">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L576">source</a></div>
 
 
 
@@ -9430,7 +9670,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_add'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L565">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L576">source</a></div>
 
 
 
@@ -9468,7 +9708,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="inv_div_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L569">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L580">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9508,7 +9748,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="neg_sub_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L569">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L580">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9548,7 +9788,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_div_iff_mul_eq''">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L573">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L584">source</a></div>
 
 
 
@@ -9586,7 +9826,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="eq_sub_iff_add_eq'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L573">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L584">source</a></div>
 
 
 
@@ -9624,7 +9864,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_iff_eq_mul'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L577">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L588">source</a></div>
 
 
 
@@ -9662,7 +9902,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_iff_eq_add'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L577">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L588">source</a></div>
 
 
 
@@ -9700,7 +9940,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_sub_cancel'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L581">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L592">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9740,7 +9980,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_div_cancel'''">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L581">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L592">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9780,7 +10020,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_sub_cancel'_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L585">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L596">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9820,7 +10060,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_div_cancel'_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L585">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L596">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9860,7 +10100,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_add_cancel'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L589">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L600">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9900,7 +10140,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_mul_cancel''">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L589">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L600">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9940,7 +10180,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_mul_inv_cancel'_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L596">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L607">source</a></div>
 
 
 
@@ -9978,7 +10218,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_add_neg_cancel'_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L596">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L607">source</a></div>
 
 
 
@@ -10016,7 +10256,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_right_comm'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L600">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L611">source</a></div>
 
 
 
@@ -10054,7 +10294,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_right_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L600">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L611">source</a></div>
 
 
 
@@ -10092,7 +10332,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_add_sub_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L604">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L615">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10132,7 +10372,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_mul_div_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L604">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L615">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10172,7 +10412,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_add_add_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L608">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L619">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10212,7 +10452,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_mul_mul_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L608">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L619">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10252,7 +10492,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_mul_div_cancel''">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L612">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L623">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10292,7 +10532,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_add_sub_cancel'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L612">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L623">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10332,7 +10572,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="add_sub_sub_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L616">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L627">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10372,7 +10612,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="mul_div_div_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L616">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L627">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10412,7 +10652,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_sub_sub_cancel_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L620">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L631">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10452,7 +10692,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_div_div_cancel_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L620">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L631">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10492,7 +10732,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_sub_iff_add_eq_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L623">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L634">source</a></div>
 
 
 
@@ -10530,7 +10770,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_div_iff_mul_eq_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L623">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L634">source</a></div>
 
 
 
@@ -10568,7 +10808,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="sub_eq_sub_iff_sub_eq_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L629">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L640">source</a></div>
 
 
 
@@ -10606,7 +10846,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="div_eq_div_iff_div_eq_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L629">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L640">source</a></div>
 
 
 
@@ -10644,7 +10884,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="commutator_element">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L637">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L648">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -10693,7 +10933,7 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
 <div class="decl" id="commutator_element_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L640">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/group/basic.lean#L651">source</a></div>
 
 
 
@@ -10747,13 +10987,6 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -12824,6 +13057,12 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -12968,6 +13207,13 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -12976,6 +13222,29 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -13058,6 +13327,9 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -13691,27 +13963,35 @@ is equal to a multiplication on the right by <code>y * x</code>.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

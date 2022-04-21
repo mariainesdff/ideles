@@ -70,6 +70,10 @@
 
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal'_add"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_add</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal'_add_monoid_hom"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_add_monoid_hom</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal'_add_monoid_hom_apply"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_add_monoid_hom_apply</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal'_apply"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_apply</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal'_apply_eq"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_apply_eq</span></a></div>
@@ -92,6 +96,10 @@
 
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal'_one"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_one</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal'_ring_hom"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_ring_hom</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal'_ring_hom_apply"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_ring_hom_apply</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal'_smul"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_smul</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal'_sub"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_sub</span></a></div>
@@ -101,6 +109,10 @@
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal'_zero"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_zero</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal_add"><span class="name">matrix</span>.<span class="name">block_diagonal_add</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal_add_monoid_hom"><span class="name">matrix</span>.<span class="name">block_diagonal_add_monoid_hom</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal_add_monoid_hom_apply"><span class="name">matrix</span>.<span class="name">block_diagonal_add_monoid_hom_apply</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal_apply"><span class="name">matrix</span>.<span class="name">block_diagonal_apply</span></a></div>
 
@@ -119,6 +131,10 @@
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal_neg"><span class="name">matrix</span>.<span class="name">block_diagonal_neg</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal_one"><span class="name">matrix</span>.<span class="name">block_diagonal_one</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal_ring_hom"><span class="name">matrix</span>.<span class="name">block_diagonal_ring_hom</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal_ring_hom_apply"><span class="name">matrix</span>.<span class="name">block_diagonal_ring_hom_apply</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#matrix.block_diagonal_smul"><span class="name">matrix</span>.<span class="name">block_diagonal_smul</span></a></div>
 
@@ -204,8 +220,10 @@
 <li><code><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.from_blocks">matrix.from_blocks</a></code>: build a block matrix out of 4 blocks</li>
 <li><code><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_blocks₁₁">matrix.to_blocks₁₁</a></code>, <code><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_blocks₁₂">matrix.to_blocks₁₂</a></code>, <code><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_blocks₂₁">matrix.to_blocks₂₁</a></code>, <code><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_blocks₂₂">matrix.to_blocks₂₂</a></code>:
 extract each of the four blocks from <code><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.from_blocks">matrix.from_blocks</a></code>.</li>
-<li><code><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a></code>: block diagonal of equally sized blocks</li>
-<li><code>matrix.block_diagonal&#x27;</code>: block diagonal of unequally sized blocks</li>
+<li><code><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a></code>: block diagonal of equally sized blocks. On square blocks, this is a
+ring homomorphisms, <code><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal_ring_hom">matrix.block_diagonal_ring_hom</a></code>.</li>
+<li><code>matrix.block_diagonal&#x27;</code>: block diagonal of unequally sized blocks. On square blocks, this is a
+ring homomorphisms, <code>matrix.block_diagonal&#x27;_ring_hom</code>.</li>
 </ul>
 
         </div>
@@ -217,7 +235,7 @@ extract each of the four blocks from <code><a href="https://mariainesdff.github.
 <div class="decl" id="matrix.from_blocks">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L32">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L34">source</a></div>
 
 
 
@@ -232,7 +250,7 @@ extract each of the four blocks from <code><a href="https://mariainesdff.github.
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -272,7 +290,7 @@ dimensions.</p>
 <div class="decl" id="matrix.from_blocks_apply₁₁">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L37">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L39">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -289,7 +307,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -320,7 +338,7 @@ dimensions.</p>
 <div class="decl" id="matrix.from_blocks_apply₁₂">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L42">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L44">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -337,7 +355,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -368,7 +386,7 @@ dimensions.</p>
 <div class="decl" id="matrix.from_blocks_apply₂₁">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L47">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L49">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -385,7 +403,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -416,7 +434,7 @@ dimensions.</p>
 <div class="decl" id="matrix.from_blocks_apply₂₂">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L52">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L54">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -433,7 +451,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -464,7 +482,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_blocks₁₁">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L59">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L61">source</a></div>
 
 
 
@@ -479,7 +497,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> o)</span></span> <span class="fn">(l <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> m)</span></span> α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α</span></div>
 </div>
@@ -516,7 +534,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_blocks₁₂">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L64">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L66">source</a></div>
 
 
 
@@ -531,7 +549,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> o)</span></span> <span class="fn">(l <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> m)</span></span> α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α</span></div>
 </div>
@@ -568,7 +586,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_blocks₂₁">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L69">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L71">source</a></div>
 
 
 
@@ -583,7 +601,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> o)</span></span> <span class="fn">(l <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> m)</span></span> α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α</span></div>
 </div>
@@ -620,7 +638,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_blocks₂₂">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L74">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L76">source</a></div>
 
 
 
@@ -635,7 +653,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> o)</span></span> <span class="fn">(l <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> m)</span></span> α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> m</span> α</span></div>
 </div>
@@ -672,7 +690,7 @@ dimensions.</p>
 <div class="decl" id="matrix.from_blocks_to_blocks">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L77">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L79">source</a></div>
 
 
 
@@ -687,7 +705,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> o)</span></span> <span class="fn">(l <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> m)</span></span> α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.from_blocks">matrix.from_blocks</a> M.<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_blocks₁₁" title="matrix.to_blocks₁₁">to_blocks₁₁</a></span> M.<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_blocks₁₂" title="matrix.to_blocks₁₂">to_blocks₁₂</a></span> M.<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_blocks₂₁" title="matrix.to_blocks₂₁">to_blocks₂₁</a></span> M.<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_blocks₂₂" title="matrix.to_blocks₂₂">to_blocks₂₂</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> M</span></div>
 </div>
@@ -713,7 +731,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_blocks_from_blocks₁₁">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L83">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L85">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -730,7 +748,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -759,7 +777,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_blocks_from_blocks₁₂">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L88">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L90">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -776,7 +794,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -805,7 +823,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_blocks_from_blocks₂₁">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L93">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L95">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -822,7 +840,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -851,7 +869,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_blocks_from_blocks₂₂">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L98">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L100">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -868,7 +886,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -897,7 +915,7 @@ dimensions.</p>
 <div class="decl" id="matrix.from_blocks_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L103">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L105">source</a></div>
 
 
 
@@ -912,8 +930,8 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_13}</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -943,7 +961,7 @@ dimensions.</p>
 <div class="decl" id="matrix.from_blocks_transpose">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L110">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L112">source</a></div>
 
 
 
@@ -958,7 +976,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -987,7 +1005,7 @@ dimensions.</p>
 <div class="decl" id="matrix.from_blocks_conj_transpose">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L117">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L119">source</a></div>
 
 
 
@@ -1002,7 +1020,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/star/basic.html#has_star">has_star</a> α]</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
@@ -1032,7 +1050,7 @@ dimensions.</p>
 <div class="decl" id="matrix.is_two_block_diagonal">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L125">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L127">source</a></div>
 
 
 
@@ -1047,7 +1065,7 @@ dimensions.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> o)</span></span> <span class="fn">(l <a href="https://mariainesdff.github.io/ideles/init/core.html#sum" title="sum">⊕</a> m)</span></span> α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">Prop</span></div>
@@ -1084,7 +1102,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_block">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L130">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L132">source</a></div>
 
 
 
@@ -1097,7 +1115,7 @@ dimensions.</p>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α)</span></span>
     <span class="decl_args"><span class="fn">(p : m → Prop)</span></span>
     <span class="decl_args"><span class="fn">(q : n → Prop)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -1136,7 +1154,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_block_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L133">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L135">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1151,7 +1169,7 @@ dimensions.</p>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α)</span></span>
     <span class="decl_args"><span class="fn">(p : m → Prop)</span></span>
     <span class="decl_args"><span class="fn">(q : n → Prop)</span></span>
@@ -1181,7 +1199,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_square_block">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L138">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L140">source</a></div>
 
 
 
@@ -1193,7 +1211,7 @@ dimensions.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_square_block"><span class="name">matrix</span>.<span class="name">to_square_block</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> m</span> α)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
     <span class="decl_args"><span class="fn">(b : m → <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n</span>)</span></span>
@@ -1233,7 +1251,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_square_block_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L141">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L143">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1247,7 +1265,7 @@ dimensions.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_square_block_def"><span class="name">matrix</span>.<span class="name">to_square_block_def</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> m</span> α)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>
     <span class="decl_args"><span class="fn">(b : m → <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/fin/basic.html#fin">fin</a> n</span>)</span></span>
@@ -1276,7 +1294,7 @@ dimensions.</p>
 <div class="decl" id="matrix.to_square_block'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L146">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L148">source</a></div>
 
 
 
@@ -1288,7 +1306,7 @@ dimensions.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_square_block'"><span class="name">matrix</span>.<span class="name">to_square_block&#x27;</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(b : m → <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>
     <span class="decl_args"><span class="fn">(k : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -1327,7 +1345,7 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
 <div class="decl" id="matrix.to_square_block_def'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L149">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L151">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1341,7 +1359,7 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_square_block_def'"><span class="name">matrix</span>.<span class="name">to_square_block_def&#x27;</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(b : m → <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>
     <span class="decl_args"><span class="fn">(k : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -1369,7 +1387,7 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
 <div class="decl" id="matrix.to_square_block_prop">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L154">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L156">source</a></div>
 
 
 
@@ -1381,7 +1399,7 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_square_block_prop"><span class="name">matrix</span>.<span class="name">to_square_block_prop</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(p : m → Prop)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">{a // <span class="fn">p a}</span></span></span> <span class="fn">{a // <span class="fn">p a}</span></span></span> α</span></div>
@@ -1419,7 +1437,7 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
 <div class="decl" id="matrix.to_square_block_prop_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L157">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L159">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1433,7 +1451,7 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_square_block_prop_def"><span class="name">matrix</span>.<span class="name">to_square_block_prop_def</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="decl_args"><span class="fn">(M : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(p : m → Prop)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn">M.<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.to_square_block_prop" title="matrix.to_square_block_prop">to_square_block_prop</a> p</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">λ (i j : <span class="fn">{a // <span class="fn">p a})</span></span>, <span class="fn"><span class="fn">M <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>i</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>j</span></span></span></div>
@@ -1475,9 +1493,10 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> α]</span></span></span>
-    <span class="decl_args"><span class="fn">(x : α)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_10}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar">has_scalar</a> R</span> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(x : R)</span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -1521,8 +1540,8 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_add">has_add</a> α]</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -1570,12 +1589,12 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{p : Type u_5}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{q : Type u_6}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> l]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> m]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_semiring">non_unital_non_assoc_semiring</a> α]</span></span></span>
     <span class="decl_args"><span class="fn">(A : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> l</span> α)</span></span>
     <span class="decl_args"><span class="fn">(B : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> m</span> α)</span></span>
     <span class="decl_args"><span class="fn">(C : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> o</span> l</span> α)</span></span>
@@ -1623,10 +1642,10 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{l : Type u_1}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> l]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> m]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
     <span class="decl_args"><span class="fn">(d₁ : l → α)</span></span>
     <span class="decl_args"><span class="fn">(d₂ : m → α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.from_blocks">matrix.from_blocks</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.diagonal">matrix.diagonal</a> d₁)</span></span> 0</span> 0</span> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.diagonal">matrix.diagonal</a> d₂)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.diagonal">matrix.diagonal</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/sum/basic.html#sum.elim">sum.elim</a> d₁</span> d₂)</span></span></span></div>
@@ -1668,10 +1687,11 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{l : Type u_1}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> l]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> m]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> m]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_one">has_one</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.from_blocks">matrix.from_blocks</a> 1</span> 0</span> 0</span> 1</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span></div>
 </div>
 
@@ -1696,7 +1716,7 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
 <div class="decl" id="matrix.block_diagonal">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L218">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L217">source</a></div>
 
 
 
@@ -1710,10 +1730,10 @@ blocks. Then <code>to_square_block&#x27; M b k</code> is the block <code>k</code
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> o)</span></span> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> o)</span></span> α</span></div>
 </div>
 
@@ -1751,7 +1771,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L221">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L220">source</a></div>
 
 
 
@@ -1765,10 +1785,10 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
     <span class="decl_args"><span class="fn">(ik : m <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> o)</span></span>
     <span class="decl_args"><span class="fn">(jk : n <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> o)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> M</span> ik</span> jk</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#ite">ite</a> <span class="fn">(ik.<a href="https://mariainesdff.github.io/ideles/init/core.html#prod.snd" title="prod.snd">snd</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> jk.<a href="https://mariainesdff.github.io/ideles/init/core.html#prod.snd" title="prod.snd">snd</a>)</span></span> <span class="fn"><span class="fn"><span class="fn">(M ik.<a href="https://mariainesdff.github.io/ideles/init/core.html#prod.snd" title="prod.snd">snd</a></span> ik.<a href="https://mariainesdff.github.io/ideles/init/core.html#prod.fst" title="prod.fst">fst</a></span> jk.<a href="https://mariainesdff.github.io/ideles/init/core.html#prod.fst" title="prod.fst">fst</a>)</span></span> 0</span></span></div>
@@ -1795,7 +1815,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_apply_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L226">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L225">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1811,10 +1831,10 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
     <span class="decl_args"><span class="fn">(i : m)</span></span>
     <span class="decl_args"><span class="fn">(j : n)</span></span>
     <span class="decl_args"><span class="fn">(k : o)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -1842,7 +1862,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_apply_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L230">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L229">source</a></div>
 
 
 
@@ -1856,10 +1876,10 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
     <span class="decl_args"><span class="fn">(i : m)</span></span>
     <span class="decl_args"><span class="fn">(j : n)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{k k' : o}</span></span></span>
@@ -1888,7 +1908,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L234">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L233">source</a></div>
 
 
 
@@ -1902,12 +1922,12 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_10}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_13}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> β]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
     <span class="decl_args"><span class="fn">(f : α → β)</span></span>
     <span class="decl_args"><span class="fn">(hf : <span class="fn">f 0</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> M)</span>.<a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.map" title="matrix.map">map</a></span> f</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> <span class="fn">(λ (k : o), <span class="fn"><span class="fn"><span class="fn">(M k)</span>.<a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.map" title="matrix.map">map</a></span> f)</span></span></span></span></div>
@@ -1934,7 +1954,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_transpose">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L242">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L241">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1950,10 +1970,10 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> M)</span><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.transpose" title="matrix.transpose">ᵀ</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> <span class="fn">(λ (k : o), <span class="fn"><span class="fn">(M k)</span><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.transpose" title="matrix.transpose">ᵀ</a>)</span></span></span></span></div>
 </div>
 
@@ -1978,7 +1998,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_conj_transpose">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L252">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L251">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1996,8 +2016,8 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> α]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/star/basic.html#star_ring">star_ring</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/star/basic.html#star_add_monoid">star_add_monoid</a> α]</span></span></span>
     <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> M)</span><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.conj_transpose" title="matrix.conj_transpose">ᴴ</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> <span class="fn">(λ (k : o), <span class="fn"><span class="fn">(M k)</span><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.conj_transpose" title="matrix.conj_transpose">ᴴ</a>)</span></span></span></span></div>
 </div>
@@ -2023,7 +2043,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L260">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L259">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2039,7 +2059,7 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> 0</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span></div>
@@ -2066,7 +2086,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_diagonal">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L264">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L263">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2081,7 +2101,7 @@ the diagonal and zero elsewhere.</p>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> m]</span></span></span>
@@ -2110,7 +2130,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L273">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L272">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2125,7 +2145,7 @@ the diagonal and zero elsewhere.</p>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> m]</span></span></span>
@@ -2154,7 +2174,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L280">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L279">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2170,10 +2190,10 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M N : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_zero_class">add_zero_class</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M N : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> <span class="fn">(M <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> N)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> N</span></span></span></div>
 </div>
 
@@ -2195,10 +2215,105 @@ the diagonal and zero elsewhere.</p>
     
         
         
+<div class="decl" id="matrix.block_diagonal_add_monoid_hom_apply">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L290">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal_add_monoid_hom_apply"><span class="name">matrix</span>.<span class="name">block_diagonal_add_monoid_hom_apply</span></a></span>
+
+    <span class="decl_args"><span class="fn">(m : Type u_2)</span></span>
+    <span class="decl_args"><span class="fn">(n : Type u_3)</span></span>
+    <span class="decl_args"><span class="fn">(o : Type u_4)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_12)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_zero_class">add_zero_class</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal_add_monoid_hom">matrix.block_diagonal_add_monoid_hom</a> m</span> n</span> o</span> α)</span></span> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> M</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="matrix.block_diagonal_add_monoid_hom">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L290">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal_add_monoid_hom"><span class="name">matrix</span>.<span class="name">block_diagonal_add_monoid_hom</span></a></span>
+
+    <span class="decl_args"><span class="fn">(m : Type u_2)</span></span>
+    <span class="decl_args"><span class="fn">(n : Type u_3)</span></span>
+    <span class="decl_args"><span class="fn">(o : Type u_4)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_12)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_zero_class">add_zero_class</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">(o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α)</span></span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom" title="add_monoid_hom">→+</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> o)</span></span> <span class="fn">(n <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> o)</span></span> α</span></span></div>
+</div>
+
+
+
+
+
+<p><code><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a></code> as an <code><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom">add_monoid_hom</a></code>.</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal_add_monoid_hom">matrix.block_diagonal_add_monoid_hom</a> m</span> n</span> o</span> α</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom.mk" title="add_monoid_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom.to_fun" title="add_monoid_hom.to_fun">to_fun</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_zero_class.to_has_zero">add_zero_class.to_has_zero</a> α)</span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom.map_zero'" title="add_monoid_hom.map_zero'">map_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom.map_add'" title="add_monoid_hom.map_add'">map_add'</a> := _}</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="matrix.block_diagonal_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L288">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L297">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2214,10 +2329,10 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group">add_group</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group">add_group</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> (<a href="https://mariainesdff.github.io/ideles/init/core.html#has_neg.neg" title="has_neg.neg">-</a>M)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#has_neg.neg" title="has_neg.neg">-</a><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> M</span></span></span></div>
 </div>
 
@@ -2242,7 +2357,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L296">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L301">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2258,10 +2373,10 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M N : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group">add_group</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group">add_group</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M N : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> <span class="fn">(M <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> N)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> N</span></span></span></div>
 </div>
 
@@ -2286,7 +2401,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L300">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L305">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2302,13 +2417,13 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{p : Type u_5}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{p : Type u_1}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> n]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_semiring">non_unital_non_assoc_semiring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
     <span class="decl_args"><span class="fn">(N : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> n</span> p</span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> <span class="fn">(λ (k : o), <span class="fn"><span class="fn">M k</span> <a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.mul" title="matrix.mul">⬝</a> <span class="fn">N k)</span></span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> M</span> <a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.mul" title="matrix.mul">⬝</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> N</span></span></span></div>
 </div>
@@ -2331,10 +2446,109 @@ the diagonal and zero elsewhere.</p>
     
         
         
+<div class="decl" id="matrix.block_diagonal_ring_hom_apply">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L318">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal_ring_hom_apply"><span class="name">matrix</span>.<span class="name">block_diagonal_ring_hom_apply</span></a></span>
+
+    <span class="decl_args"><span class="fn">(m : Type u_2)</span></span>
+    <span class="decl_args"><span class="fn">(o : Type u_4)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_12)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> m]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> m]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_semiring">non_assoc_semiring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> m</span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal_ring_hom">matrix.block_diagonal_ring_hom</a> m</span> o</span> α)</span></span> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> M</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="matrix.block_diagonal_ring_hom">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L318">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal_ring_hom"><span class="name">matrix</span>.<span class="name">block_diagonal_ring_hom</span></a></span>
+
+    <span class="decl_args"><span class="fn">(m : Type u_2)</span></span>
+    <span class="decl_args"><span class="fn">(o : Type u_4)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_12)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> m]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> m]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_semiring">non_assoc_semiring</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">(o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> m</span> α)</span></span> <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> o)</span></span> <span class="fn">(m <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> o)</span></span> α</span></span></div>
+</div>
+
+
+
+
+
+<p><code><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a></code> as a <code><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom">ring_hom</a></code>.</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal_ring_hom">matrix.block_diagonal_ring_hom</a> m</span> o</span> α</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.mk" title="ring_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.to_fun" title="ring_hom.to_fun">to_fun</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group_with_zero/defs.html#mul_zero_class.to_has_zero">mul_zero_class.to_has_zero</a> α)</span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.map_one'" title="ring_hom.map_one'">map_one'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.map_mul'" title="ring_hom.map_mul'">map_mul'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.map_zero'" title="ring_hom.map_zero'">map_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.map_add'" title="ring_hom.map_add'">map_add'</a> := _}</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="matrix.block_diagonal_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L309">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L326">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2350,14 +2564,14 @@ the diagonal and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_1}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> α]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> α]</span></span></span>
-    <span class="decl_args"><span class="fn">(x : R)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#monoid">monoid</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> R</span> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(x : R)</span></span>
+    <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> <span class="fn">(x <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> M)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">x <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal">matrix.block_diagonal</a> M</span></span></span></div>
 </div>
 
@@ -2382,7 +2596,7 @@ the diagonal and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L328">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L345">source</a></div>
 
 
 
@@ -2394,12 +2608,12 @@ the diagonal and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(Σ (i : o), <span class="fn">m' i)</span></span></span> <span class="fn">(Σ (i : o), <span class="fn">n' i)</span></span></span> α</span></div>
 </div>
 
@@ -2437,7 +2651,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_eq_block_diagonal">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L331">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L348">source</a></div>
 
 
 
@@ -2451,7 +2665,7 @@ and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
     <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>
@@ -2482,7 +2696,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_minor_eq_block_diagonal">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L335">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L352">source</a></div>
 
 
 
@@ -2496,7 +2710,7 @@ and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{m : Type u_2}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{n : Type u_3}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
     <span class="decl_args"><span class="fn">(M : o → <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> m</span> n</span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -2524,7 +2738,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L340">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L357">source</a></div>
 
 
 
@@ -2536,12 +2750,12 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_apply"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_apply</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
     <span class="decl_args"><span class="fn">(ik : Σ (i : o), <span class="fn">m' i</span>)</span></span>
     <span class="decl_args"><span class="fn">(jk : Σ (i : o), <span class="fn">n' i</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> M</span> ik</span> jk</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#dite">dite</a> <span class="fn">(ik.<a href="https://mariainesdff.github.io/ideles/init/core.html#sigma.fst" title="sigma.fst">fst</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> jk.<a href="https://mariainesdff.github.io/ideles/init/core.html#sigma.fst" title="sigma.fst">fst</a>)</span></span> <span class="fn">(λ (h : <span class="fn">ik.<a href="https://mariainesdff.github.io/ideles/init/core.html#sigma.fst" title="sigma.fst">fst</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> jk.<a href="https://mariainesdff.github.io/ideles/init/core.html#sigma.fst" title="sigma.fst">fst</a>)</span>, <span class="fn"><span class="fn"><span class="fn">M ik.<a href="https://mariainesdff.github.io/ideles/init/core.html#sigma.fst" title="sigma.fst">fst</a></span> ik.<a href="https://mariainesdff.github.io/ideles/init/core.html#sigma.snd" title="sigma.snd">snd</a></span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/logic.html#cast">cast</a> _</span> jk.<a href="https://mariainesdff.github.io/ideles/init/core.html#sigma.snd" title="sigma.snd">snd</a>))</span></span></span></span> <span class="fn">(λ (h : <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#not" title="not">¬</a><span class="fn">ik.<a href="https://mariainesdff.github.io/ideles/init/core.html#sigma.fst" title="sigma.fst">fst</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> jk.<a href="https://mariainesdff.github.io/ideles/init/core.html#sigma.fst" title="sigma.fst">fst</a>)</span></span>, 0)</span></span></span></div>
@@ -2568,7 +2782,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_apply_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L346">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L363">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2582,12 +2796,12 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_apply_eq"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_apply_eq</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
     <span class="decl_args"><span class="fn">(k : o)</span></span>
     <span class="decl_args"><span class="fn">(i : m' k)</span></span>
     <span class="decl_args"><span class="fn">(j : n' k)</span></span>&nbsp;<span class="decl_args">:</span>
@@ -2615,7 +2829,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_apply_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L350">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L367">source</a></div>
 
 
 
@@ -2627,12 +2841,12 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_apply_ne"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_apply_ne</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{k k' : o}</span></span></span>
     <span class="decl_args"><span class="fn">(i : m' k)</span></span>
     <span class="decl_args"><span class="fn">(j : n' k')</span></span>
@@ -2661,7 +2875,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L354">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L371">source</a></div>
 
 
 
@@ -2673,14 +2887,14 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_map"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_map</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_10}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_13}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> β]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
     <span class="decl_args"><span class="fn">(f : α → β)</span></span>
     <span class="decl_args"><span class="fn">(hf : <span class="fn">f 0</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> M)</span>.<a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.map" title="matrix.map">map</a></span> f</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> <span class="fn">(λ (k : o), <span class="fn"><span class="fn"><span class="fn">(M k)</span>.<a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.map" title="matrix.map">map</a></span> f)</span></span></span></span></div>
@@ -2707,7 +2921,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_transpose">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L362">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L379">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2721,12 +2935,12 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_transpose"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_transpose</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> M)</span><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.transpose" title="matrix.transpose">ᵀ</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> <span class="fn">(λ (k : o), <span class="fn"><span class="fn">(M k)</span><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.transpose" title="matrix.transpose">ᵀ</a>)</span></span></span></span></div>
 </div>
 
@@ -2751,7 +2965,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_conj_transpose">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L370">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L387">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2765,12 +2979,12 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_conj_transpose"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_conj_transpose</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> α]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/star/basic.html#star_ring">star_ring</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/star/basic.html#star_add_monoid">star_add_monoid</a> α]</span></span></span>
     <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> M)</span><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.conj_transpose" title="matrix.conj_transpose">ᴴ</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> <span class="fn">(λ (k : o), <span class="fn"><span class="fn">(M k)</span><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.conj_transpose" title="matrix.conj_transpose">ᴴ</a>)</span></span></span></span></div>
 </div>
@@ -2796,7 +3010,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L378">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L395">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2810,9 +3024,9 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_zero"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_zero</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> 0</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span></div>
@@ -2839,7 +3053,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_diagonal">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L382">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L399">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2853,8 +3067,8 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_diagonal"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_diagonal</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[Π (i : o), <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> <span class="fn">(m' i)</span></span>]</span></span></span>
@@ -2883,7 +3097,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L390">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L409">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2897,8 +3111,8 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_one"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_one</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[Π (i : o), <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> <span class="fn">(m' i)</span></span>]</span></span></span>
@@ -2927,7 +3141,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L397">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L416">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2941,13 +3155,108 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_add"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_add</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M N : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_monoid">add_monoid</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_zero_class">add_zero_class</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M N : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> <span class="fn">(M <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> N)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> N</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="matrix.block_diagonal'_add_monoid_hom">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L428">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_add_monoid_hom"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_add_monoid_hom</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
+    <span class="decl_args"><span class="fn">(m' : o → <span class="fn">Type u_7</span>)</span></span>
+    <span class="decl_args"><span class="fn">(n' : o → <span class="fn">Type u_8</span>)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_12)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_zero_class">add_zero_class</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">(Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α)</span></span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom" title="add_monoid_hom">→+</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(Σ (i : o), <span class="fn">m' i)</span></span></span> <span class="fn">(Σ (i : o), <span class="fn">n' i)</span></span></span> α</span></span></div>
+</div>
+
+
+
+
+
+<p><code>matrix.block_diagonal&#x27;</code> as an <code><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom">add_monoid_hom</a></code>.</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_add_monoid_hom">matrix.block_diagonal'_add_monoid_hom</a> m'</span> n'</span> α</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom.mk" title="add_monoid_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom.to_fun" title="add_monoid_hom.to_fun">to_fun</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_zero_class.to_has_zero">add_zero_class.to_has_zero</a> α)</span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom.map_zero'" title="add_monoid_hom.map_zero'">map_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_monoid_hom.map_add'" title="add_monoid_hom.map_add'">map_add'</a> := _}</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="matrix.block_diagonal'_add_monoid_hom_apply">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L428">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_add_monoid_hom_apply"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_add_monoid_hom_apply</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
+    <span class="decl_args"><span class="fn">(m' : o → <span class="fn">Type u_7</span>)</span></span>
+    <span class="decl_args"><span class="fn">(n' : o → <span class="fn">Type u_8</span>)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_12)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_zero_class">add_zero_class</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn"><span class="fn">((λ (i : o), <span class="fn">m' i)</span></span> i)</span></span> <span class="fn"><span class="fn">((λ (i : o), <span class="fn">n' i)</span></span> i)</span></span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_add_monoid_hom">matrix.block_diagonal'_add_monoid_hom</a> m'</span> n'</span> α)</span></span> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> M</span></span></div>
 </div>
 
 
@@ -2971,7 +3280,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L405">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L435">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2985,12 +3294,12 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_neg"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_neg</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group">add_group</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group">add_group</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> (<a href="https://mariainesdff.github.io/ideles/init/core.html#has_neg.neg" title="has_neg.neg">-</a>M)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#has_neg.neg" title="has_neg.neg">-</a><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> M</span></span></span></div>
 </div>
 
@@ -3015,7 +3324,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L413">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L439">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3029,12 +3338,12 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_sub"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_sub</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M N : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group">add_group</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_group">add_group</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M N : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> <span class="fn">(M <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> N)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> N</span></span></span></div>
 </div>
 
@@ -3059,7 +3368,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L417">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L443">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3073,17 +3382,116 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_mul"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_mul</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{p' : o → <span class="fn">Type u_9</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{p : o → <span class="fn">Type u_1</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_semiring">non_unital_non_assoc_semiring</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[Π (i : o), <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> <span class="fn">(n' i)</span></span>]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> o]</span></span></span>
-    <span class="decl_args"><span class="fn">(N : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(n' i)</span></span> <span class="fn">(p i)</span></span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="decl_args"><span class="fn">(N : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(n' i)</span></span> <span class="fn">(p' i)</span></span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> <span class="fn">(λ (k : o), <span class="fn"><span class="fn">M k</span> <a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.mul" title="matrix.mul">⬝</a> <span class="fn">N k)</span></span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> M</span> <a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix.mul" title="matrix.mul">⬝</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> N</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="matrix.block_diagonal'_ring_hom">
+<div class="def">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L459">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_ring_hom"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_ring_hom</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
+    <span class="decl_args"><span class="fn">(m' : o → <span class="fn">Type u_7</span>)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_12)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[Π (i : o), <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> <span class="fn">(m' i)</span></span>]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[Π (i : o), <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> <span class="fn">(m' i)</span></span>]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_semiring">non_assoc_semiring</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">(Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(m' i)</span></span> α)</span></span> <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom" title="ring_hom">→+*</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(Σ (i : o), <span class="fn">m' i)</span></span></span> <span class="fn">(Σ (i : o), <span class="fn">m' i)</span></span></span> α</span></span></div>
+</div>
+
+
+
+
+
+<p><code>matrix.block_diagonal&#x27;</code> as a <code><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom">ring_hom</a></code>.</p>
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_ring_hom">matrix.block_diagonal'_ring_hom</a> m'</span> α</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.mk" title="ring_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.to_fun" title="ring_hom.to_fun">to_fun</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group_with_zero/defs.html#mul_zero_class.to_has_zero">mul_zero_class.to_has_zero</a> α)</span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.map_one'" title="ring_hom.map_one'">map_one'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.map_mul'" title="ring_hom.map_mul'">map_mul'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.map_zero'" title="ring_hom.map_zero'">map_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#ring_hom.map_add'" title="ring_hom.map_add'">map_add'</a> := _}</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="matrix.block_diagonal'_ring_hom_apply">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L459">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_ring_hom_apply"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_ring_hom_apply</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
+    <span class="decl_args"><span class="fn">(m' : o → <span class="fn">Type u_7</span>)</span></span>
+    <span class="decl_args"><span class="fn">(α : Type u_12)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[Π (i : o), <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> <span class="fn">(m' i)</span></span>]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> o]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[Π (i : o), <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/fintype/basic.html#fintype">fintype</a> <span class="fn">(m' i)</span></span>]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_assoc_semiring">non_assoc_semiring</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn"><span class="fn">((λ (i : o), <span class="fn">m' i)</span></span> i)</span></span> <span class="fn"><span class="fn">((λ (i : o), <span class="fn">m' i)</span></span> i)</span></span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_ring_hom">matrix.block_diagonal'_ring_hom</a> m'</span> α)</span></span> M</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> M</span></span></div>
 </div>
 
 
@@ -3107,7 +3515,7 @@ and zero elsewhere.</p>
 <div class="decl" id="matrix.block_diagonal'_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L428">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/matrix/block.lean#L468">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3121,16 +3529,16 @@ and zero elsewhere.</p>
 <span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'_smul"><span class="name">matrix</span>.<span class="name">block_diagonal&#x27;_smul</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{o : Type u_4}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_5</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_6</span>}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_9}</span></span></span>
-    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{m' : o → <span class="fn">Type u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n' : o → <span class="fn">Type u_8</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_12}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#decidable_eq">decidable_eq</a> o]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{R : Type u_1}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> R]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#add_comm_monoid">add_comm_monoid</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> R</span> α]</span></span></span>
-    <span class="decl_args"><span class="fn">(x : R)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(x : R)</span></span>
+    <span class="decl_args"><span class="fn">(M : Π (i : o), <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/basic.html#matrix">matrix</a> <span class="fn">(m' i)</span></span> <span class="fn">(n' i)</span></span> α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> <span class="fn">(x <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> M)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">x <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/matrix/block.html#matrix.block_diagonal'">matrix.block_diagonal'</a> M</span></span></span></div>
 </div>
 
@@ -3171,13 +3579,6 @@ and zero elsewhere.</p>
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -5248,6 +5649,12 @@ and zero elsewhere.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -5392,6 +5799,13 @@ and zero elsewhere.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -5400,6 +5814,29 @@ and zero elsewhere.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -5482,6 +5919,9 @@ and zero elsewhere.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -6115,27 +6555,35 @@ and zero elsewhere.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

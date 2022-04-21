@@ -89,6 +89,10 @@
 
     <div class="nav_link"><a class="break_within" href="#int.abs_eq_nat_abs"><span class="name">int</span>.<span class="name">abs_eq_nat_abs</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#int.abs_le_one_iff"><span class="name">int</span>.<span class="name">abs_le_one_iff</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#int.abs_lt_one_iff"><span class="name">int</span>.<span class="name">abs_lt_one_iff</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#int.abs_sign_of_nonzero"><span class="name">int</span>.<span class="name">abs_sign_of_nonzero</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#int.add_comm_group"><span class="name">int</span>.<span class="name">add_comm_group</span></a></div>
@@ -327,6 +331,8 @@
 
     <div class="nav_link"><a class="break_within" href="#int.eq_mul_of_div_eq_right"><span class="name">int</span>.<span class="name">eq_mul_of_div_eq_right</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#int.eq_nat_abs_iff_mul_eq_zero"><span class="name">int</span>.<span class="name">eq_nat_abs_iff_mul_eq_zero</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#int.eq_of_mod_eq_of_nat_abs_sub_lt_nat_abs"><span class="name">int</span>.<span class="name">eq_of_mod_eq_of_nat_abs_sub_lt_nat_abs</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#int.eq_one_of_dvd_one"><span class="name">int</span>.<span class="name">eq_one_of_dvd_one</span></a></div>
@@ -334,8 +340,6 @@
     <div class="nav_link"><a class="break_within" href="#int.eq_one_of_mul_eq_one_left"><span class="name">int</span>.<span class="name">eq_one_of_mul_eq_one_left</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#int.eq_one_of_mul_eq_one_right"><span class="name">int</span>.<span class="name">eq_one_of_mul_eq_one_right</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#int.eq_zero_iff_abs_lt_one"><span class="name">int</span>.<span class="name">eq_zero_iff_abs_lt_one</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#int.eq_zero_of_abs_lt_dvd"><span class="name">int</span>.<span class="name">eq_zero_of_abs_lt_dvd</span></a></div>
 
@@ -3421,7 +3425,7 @@ these instances non-computably.</p>
     
         
         
-<div class="decl" id="int.eq_zero_iff_abs_lt_one">
+<div class="decl" id="int.abs_lt_one_iff">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L217">source</a></div>
@@ -3435,7 +3439,7 @@ these instances non-computably.</p>
 
 
 <span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/int/basic.html#int.eq_zero_iff_abs_lt_one"><span class="name">int</span>.<span class="name">eq_zero_iff_abs_lt_one</span></a></span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/int/basic.html#int.abs_lt_one_iff"><span class="name">int</span>.<span class="name">abs_lt_one_iff</span></a></span>
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{a : <a href="https://mariainesdff.github.io/ideles/init/data/int/basic.html#int" title="int">ℤ</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/abs.html#has_abs.abs" title="has_abs.abs">|</a>a<a href="https://mariainesdff.github.io/ideles/algebra/abs.html#has_abs.abs" title="has_abs.abs">|</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt" title="has_lt.lt"><</a> 1</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span></span></div>
@@ -3459,10 +3463,46 @@ these instances non-computably.</p>
     
         
         
-<div class="decl" id="int.induction_on">
+<div class="decl" id="int.abs_le_one_iff">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L221">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/int/basic.html#int.abs_le_one_iff"><span class="name">int</span>.<span class="name">abs_le_one_iff</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a : <a href="https://mariainesdff.github.io/ideles/init/data/int/basic.html#int" title="int">ℤ</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/abs.html#has_abs.abs" title="has_abs.abs">|</a>a<a href="https://mariainesdff.github.io/ideles/algebra/abs.html#has_abs.abs" title="has_abs.abs">|</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le" title="has_le.le">≤</a> 1</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#or" title="or">∨</a> <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> -1</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="int.induction_on">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L224">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3504,7 +3544,7 @@ these instances non-computably.</p>
 <div class="decl" id="int.induction_on'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L237">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L240">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3557,7 +3597,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.le_induction">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L257">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L260">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3600,7 +3640,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.le_induction_down">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L270">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L273">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3650,7 +3690,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_add_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L287">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L292">source</a></div>
 
 
 
@@ -3686,7 +3726,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_sub_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L302">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L307">source</a></div>
 
 
 
@@ -3722,7 +3762,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_neg_of_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L305">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L310">source</a></div>
 
 
 
@@ -3758,7 +3798,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L308">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L313">source</a></div>
 
 
 
@@ -3794,7 +3834,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_mul_nat_abs_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L312">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L317">source</a></div>
 
 
 
@@ -3832,7 +3872,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_mul_self'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L316">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L321">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3870,7 +3910,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.neg_succ_of_nat_eq'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L319">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L324">source</a></div>
 
 
 
@@ -3906,7 +3946,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_ne_zero_of_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L322">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L327">source</a></div>
 
 
 
@@ -3943,7 +3983,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L325">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L330">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3981,7 +4021,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L328">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L333">source</a></div>
 
 
 
@@ -4017,7 +4057,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_lt_nat_abs_of_nonneg_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L330">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L335">source</a></div>
 
 
 
@@ -4055,7 +4095,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_eq_nat_abs_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L338">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L343">source</a></div>
 
 
 
@@ -4091,7 +4131,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_eq_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L346">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L351">source</a></div>
 
 
 
@@ -4128,7 +4168,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_eq_iff_mul_self_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L349">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L354">source</a></div>
 
 
 
@@ -4161,10 +4201,47 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
     
         
         
+<div class="decl" id="int.eq_nat_abs_iff_mul_eq_zero">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L360">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/int/basic.html#int.eq_nat_abs_iff_mul_eq_zero"><span class="name">int</span>.<span class="name">eq_nat_abs_iff_mul_eq_zero</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a : <a href="https://mariainesdff.github.io/ideles/init/data/int/basic.html#int" title="int">ℤ</a>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{n : <a href="https://mariainesdff.github.io/ideles/init/core.html#nat" title="nat">ℕ</a>}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a.<a href="https://mariainesdff.github.io/ideles/init/data/int/basic.html#int.nat_abs" title="int.nat_abs">nat_abs</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> n</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#iff" title="iff">↔</a> <span class="fn"><span class="fn"><span class="fn">(a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_sub.sub" title="has_sub.sub">-</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>n)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn">(a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_add.add" title="has_add.add">+</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>n)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 0</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="int.nat_abs_lt_iff_mul_self_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L355">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L363">source</a></div>
 
 
 
@@ -4200,7 +4277,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_le_iff_mul_self_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L361">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L369">source</a></div>
 
 
 
@@ -4236,7 +4313,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_eq_iff_sq_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L367">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L375">source</a></div>
 
 
 
@@ -4272,7 +4349,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_lt_iff_sq_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L370">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L378">source</a></div>
 
 
 
@@ -4308,7 +4385,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_le_iff_sq_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L373">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L381">source</a></div>
 
 
 
@@ -4344,7 +4421,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_dvd_iff_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L376">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L384">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4382,7 +4459,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_inj_of_nonneg_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L384">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L392">source</a></div>
 
 
 
@@ -4420,7 +4497,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_inj_of_nonpos_of_nonpos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L388">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L396">source</a></div>
 
 
 
@@ -4458,7 +4535,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_inj_of_nonneg_of_nonpos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L394">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L402">source</a></div>
 
 
 
@@ -4496,7 +4573,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_inj_of_nonpos_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L399">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L407">source</a></div>
 
 
 
@@ -4534,7 +4611,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.strict_mono_on_nat_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L407">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L415">source</a></div>
 
 
 
@@ -4569,7 +4646,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.strict_anti_on_nat_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L410">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L418">source</a></div>
 
 
 
@@ -4604,7 +4681,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.inj_on_nat_abs_Ici">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L414">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L422">source</a></div>
 
 
 
@@ -4639,7 +4716,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.inj_on_nat_abs_Iic">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L416">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L424">source</a></div>
 
 
 
@@ -4681,7 +4758,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.of_nat_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L422">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L430">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4719,7 +4796,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.coe_nat_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L432">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -4757,7 +4834,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.neg_succ_of_nat_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L426">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L434">source</a></div>
 
 
 
@@ -4795,7 +4872,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.zero_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L432">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L440">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4833,7 +4910,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L437">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L445">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4871,7 +4948,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L441">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L449">source</a></div>
 
 
     <div class="attributes">@[protected, simp]</div>
@@ -4909,7 +4986,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_of_neg_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L450">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L458">source</a></div>
 
 
 
@@ -4947,7 +5024,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L456">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L464">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -4987,7 +5064,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_nonpos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L461">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L469">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5027,7 +5104,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_neg'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L464">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L472">source</a></div>
 
 
 
@@ -5065,7 +5142,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L469">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L477">source</a></div>
 
 
     <div class="attributes">@[protected, simp]</div>
@@ -5103,7 +5180,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_eq_zero_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L473">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L481">source</a></div>
 
 
 
@@ -5141,7 +5218,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_eq_zero_of_lt_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L479">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L487">source</a></div>
 
 
 
@@ -5179,7 +5256,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_mul_div_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L485">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L493">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5219,7 +5296,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_mul_div_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L521">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L529">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5260,7 +5337,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_div_of_dvd_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L525">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L533">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5299,7 +5376,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_div_of_dvd_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L537">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L545">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5338,7 +5415,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_div_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L541">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L549">source</a></div>
 
 
     <div class="attributes">@[protected, simp]</div>
@@ -5378,7 +5455,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_div_cancel_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L553">source</a></div>
 
 
     <div class="attributes">@[protected, simp]</div>
@@ -5418,7 +5495,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L548">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L556">source</a></div>
 
 
     <div class="attributes">@[protected, simp]</div>
@@ -5464,7 +5541,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.of_nat_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L553">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L561">source</a></div>
 
 
 
@@ -5500,7 +5577,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.coe_nat_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L555">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L563">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -5538,7 +5615,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.neg_succ_of_nat_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L557">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L565">source</a></div>
 
 
 
@@ -5576,7 +5653,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L562">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L570">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5614,7 +5691,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L566">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L574">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5652,7 +5729,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.zero_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L570">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L578">source</a></div>
 
 
 
@@ -5688,7 +5765,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L573">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L581">source</a></div>
 
 
 
@@ -5724,7 +5801,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L578">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L586">source</a></div>
 
 
 
@@ -5760,7 +5837,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_eq_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L582">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L590">source</a></div>
 
 
 
@@ -5798,7 +5875,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L588">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L596">source</a></div>
 
 
 
@@ -5835,7 +5912,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_lt_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L593">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L601">source</a></div>
 
 
 
@@ -5873,7 +5950,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L599">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L607">source</a></div>
 
 
 
@@ -5911,7 +5988,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_add_div_aux">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L602">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L610">source</a></div>
 
 
 
@@ -5947,7 +6024,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_add_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L610">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L618">source</a></div>
 
 
 
@@ -5983,7 +6060,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_add_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L618">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L626">source</a></div>
 
 
 
@@ -6019,7 +6096,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_add_div'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L621">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L629">source</a></div>
 
 
 
@@ -6055,7 +6132,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_add_mod'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L624">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L632">source</a></div>
 
 
 
@@ -6091,7 +6168,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L627">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L635">source</a></div>
 
 
 
@@ -6127,7 +6204,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_mul_mod_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L630">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L638">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6165,7 +6242,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_mul_mod_self_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L635">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L643">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6203,7 +6280,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_mod_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L638">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L646">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6241,7 +6318,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_mod_self_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L641">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L649">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6279,7 +6356,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_add_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L644">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L652">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6317,7 +6394,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_mod_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L648">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L656">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6355,7 +6432,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L651">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L659">source</a></div>
 
 
 
@@ -6391,7 +6468,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_mod_eq_add_mod_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L654">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L662">source</a></div>
 
 
 
@@ -6429,7 +6506,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.add_mod_eq_add_mod_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L658">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L666">source</a></div>
 
 
 
@@ -6467,7 +6544,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_add_cancel_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L662">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L670">source</a></div>
 
 
 
@@ -6504,7 +6581,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_add_cancel_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L668">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L676">source</a></div>
 
 
 
@@ -6540,7 +6617,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_sub_cancel_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L672">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L680">source</a></div>
 
 
 
@@ -6577,7 +6654,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_eq_mod_iff_mod_sub_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L676">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L684">source</a></div>
 
 
 
@@ -6613,7 +6690,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_mod_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L679">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L687">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6651,7 +6728,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_mod_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L682">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L690">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6689,7 +6766,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L685">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L693">source</a></div>
 
 
 
@@ -6725,7 +6802,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.neg_mod_two">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L693">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L701">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6763,7 +6840,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L701">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L709">source</a></div>
 
 
 
@@ -6799,7 +6876,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_mod_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L704">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L712">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6839,7 +6916,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L710">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L718">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6877,7 +6954,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.sub_mod">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L713">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L721">source</a></div>
 
 
 
@@ -6920,7 +6997,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_div_mul_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L721">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L729">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -6960,7 +7037,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_div_mul_of_pos_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L746">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L754">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7001,7 +7078,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_mod_mul_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L750">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L758">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7041,7 +7118,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.lt_div_add_one_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L753">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L761">source</a></div>
 
 
 
@@ -7079,7 +7156,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.abs_div_le_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L757">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L765">source</a></div>
 
 
 
@@ -7115,7 +7192,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_le_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L770">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L778">source</a></div>
 
 
 
@@ -7153,7 +7230,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_div_cancel_of_mod_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L774">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L782">source</a></div>
 
 
 
@@ -7190,7 +7267,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_mul_cancel_of_mod_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L777">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L785">source</a></div>
 
 
 
@@ -7227,7 +7304,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_two_eq_zero_or_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L780">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L788">source</a></div>
 
 
 
@@ -7270,7 +7347,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.coe_nat_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L792">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L800">source</a></div>
 
 
     <div class="attributes">@[norm_cast]</div>
@@ -7308,7 +7385,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.coe_nat_dvd_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L801">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L809">source</a></div>
 
 
 
@@ -7345,7 +7422,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.coe_nat_dvd_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L804">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L812">source</a></div>
 
 
 
@@ -7382,7 +7459,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.dvd_antisymm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L807">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L815">source</a></div>
 
 
 
@@ -7420,7 +7497,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.dvd_of_mod_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L814">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L822">source</a></div>
 
 
 
@@ -7457,7 +7534,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mod_eq_zero_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L817">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L825">source</a></div>
 
 
 
@@ -7493,7 +7570,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.dvd_iff_mod_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L820">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L828">source</a></div>
 
 
 
@@ -7529,7 +7606,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.dvd_sub_of_mod_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L824">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L832">source</a></div>
 
 
 
@@ -7567,7 +7644,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L831">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L839">source</a></div>
 
 
 
@@ -7603,7 +7680,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.dvd_nat_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L834">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L842">source</a></div>
 
 
 
@@ -7639,7 +7716,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.decidable_dvd">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L837">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L845">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -7685,7 +7762,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_mul_cancel">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L840">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L848">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -7724,7 +7801,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_div_cancel'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L843">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L851">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -7763,7 +7840,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_div_assoc">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L846">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L854">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -7802,7 +7879,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_div_assoc'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L850">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L858">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -7842,7 +7919,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_dvd_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L853">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L861">source</a></div>
 
 
 
@@ -7880,7 +7957,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.eq_mul_of_div_eq_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L858">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L866">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -7920,7 +7997,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_eq_of_eq_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L862">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L870">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -7960,7 +8037,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.eq_div_of_mul_eq_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L866">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L874">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8000,7 +8077,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_eq_iff_eq_mul_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L870">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L878">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8040,7 +8117,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_eq_iff_eq_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L874">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L882">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8080,7 +8157,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.eq_mul_of_div_eq_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L878">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L886">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8120,7 +8197,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_eq_of_eq_mul_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L882">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L890">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8160,7 +8237,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.eq_zero_of_div_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L886">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L894">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8200,7 +8277,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.neg_div_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L889">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L897">source</a></div>
 
 
 
@@ -8237,7 +8314,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.sub_div_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L893">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L901">source</a></div>
 
 
 
@@ -8275,7 +8352,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.sub_div_of_dvd_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L900">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L908">source</a></div>
 
 
 
@@ -8312,7 +8389,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_sign">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L903">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L911">source</a></div>
 
 
 
@@ -8348,7 +8425,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.nat_abs_sign_of_nonzero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L907">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L915">source</a></div>
 
 
 
@@ -8385,7 +8462,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.abs_sign_of_nonzero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L911">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L919">source</a></div>
 
 
 
@@ -8422,7 +8499,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.sign_coe_nat_of_nonzero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L914">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L922">source</a></div>
 
 
 
@@ -8459,7 +8536,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.sign_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L921">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L929">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8497,7 +8574,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.div_sign">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L925">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L933">source</a></div>
 
 
 
@@ -8533,7 +8610,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.sign_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L930">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L938">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8571,7 +8648,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.sign_eq_div_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L938">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L946">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8609,7 +8686,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.mul_sign">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L943">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L951">source</a></div>
 
 
 
@@ -8645,7 +8722,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.sign_pow_bit1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L949">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L957">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8684,7 +8761,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.le_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L954">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L962">source</a></div>
 
 
 
@@ -8722,7 +8799,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.eq_one_of_dvd_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L962">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L970">source</a></div>
 
 
 
@@ -8760,7 +8837,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.eq_one_of_mul_eq_one_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L968">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L976">source</a></div>
 
 
 
@@ -8798,7 +8875,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.eq_one_of_mul_eq_one_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L971">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L979">source</a></div>
 
 
 
@@ -8836,7 +8913,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.of_nat_dvd_of_dvd_nat_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L974">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L982">source</a></div>
 
 
 
@@ -8874,7 +8951,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.dvd_nat_abs_of_of_nat_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L984">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L992">source</a></div>
 
 
 
@@ -8912,7 +8989,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.pow_dvd_of_le_of_pow_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L990">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L998">source</a></div>
 
 
 
@@ -8951,7 +9028,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.dvd_of_pow_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1006">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1014">source</a></div>
 
 
 
@@ -8990,7 +9067,7 @@ than <code>b</code>, and the <code>pred</code> of a number less than <code>b</co
 <div class="decl" id="int.exists_lt_and_lt_iff_not_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1011">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1019">source</a></div>
 
 
 
@@ -9037,7 +9114,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.div_mul_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1026">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1034">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9077,7 +9154,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.div_le_of_le_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1029">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1037">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9117,7 +9194,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.mul_lt_of_lt_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1032">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1040">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9157,7 +9234,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.mul_le_of_le_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1035">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1043">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9197,7 +9274,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.le_div_of_mul_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1038">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1046">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9237,7 +9314,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.le_div_iff_mul_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1042">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1050">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9276,7 +9353,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.div_le_div">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1045">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1053">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9316,7 +9393,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.div_lt_of_lt_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1048">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1056">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9356,7 +9433,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.lt_mul_of_div_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1051">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1059">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9396,7 +9473,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.div_lt_iff_lt_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1054">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1062">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9435,7 +9512,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.le_mul_of_div_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1057">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1065">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9476,7 +9553,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.lt_div_of_mul_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1061">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1069">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9517,7 +9594,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.lt_div_iff_mul_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1065">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1073">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -9558,7 +9635,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.div_pos_of_pos_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1069">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1077">source</a></div>
 
 
 
@@ -9597,7 +9674,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.div_eq_div_of_mul_eq_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1072">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1080">source</a></div>
 
 
 
@@ -9637,7 +9714,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.eq_mul_div_of_mul_eq_mul_of_dvd_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1079">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1087">source</a></div>
 
 
 
@@ -9676,7 +9753,7 @@ for some <code>k</code>.</p>
 <div class="decl" id="int.eq_zero_of_dvd_of_nat_abs_lt_nat_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1092">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1100">source</a></div>
 
 
 
@@ -9716,7 +9793,7 @@ zero.</p>
 <div class="decl" id="int.eq_zero_of_dvd_of_nonneg_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1100">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1108">source</a></div>
 
 
 
@@ -9755,7 +9832,7 @@ zero.</p>
 <div class="decl" id="int.eq_of_mod_eq_of_nat_abs_sub_lt_nat_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1105">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1113">source</a></div>
 
 
 
@@ -9795,7 +9872,7 @@ they are equal.</p>
 <div class="decl" id="int.of_nat_add_neg_succ_of_nat_of_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1110">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1118">source</a></div>
 
 
 
@@ -9832,7 +9909,7 @@ they are equal.</p>
 <div class="decl" id="int.of_nat_add_neg_succ_of_nat_of_ge">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1120">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1128">source</a></div>
 
 
 
@@ -9869,7 +9946,7 @@ they are equal.</p>
 <div class="decl" id="int.neg_add_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1129">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1137">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9907,7 +9984,7 @@ they are equal.</p>
 <div class="decl" id="int.nat_abs_le_of_dvd_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1131">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1139">source</a></div>
 
 
 
@@ -9945,7 +10022,7 @@ they are equal.</p>
 <div class="decl" id="int.nat_abs_eq_of_dvd_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1134">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1142">source</a></div>
 
 
 
@@ -9983,7 +10060,7 @@ they are equal.</p>
 <div class="decl" id="int.div_dvd_of_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1137">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1145">source</a></div>
 
 
 
@@ -10020,7 +10097,7 @@ they are equal.</p>
 <div class="decl" id="int.dvd_div_of_mul_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1145">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1153">source</a></div>
 
 
 
@@ -10064,7 +10141,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_eq_max">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1156">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1164">source</a></div>
 
 
 
@@ -10100,7 +10177,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1160">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1168">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10137,7 +10214,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1162">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1170">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10174,7 +10251,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_of_nonneg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1164">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1172">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10213,7 +10290,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_sub_of_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1167">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1175">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10252,7 +10329,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_coe_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1170">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1178">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10290,7 +10367,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_coe_nat_add_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1172">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1180">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10328,7 +10405,7 @@ they are equal.</p>
 <div class="decl" id="int.le_to_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1174">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1182">source</a></div>
 
 
 
@@ -10364,7 +10441,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_le">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1177">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1185">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10403,7 +10480,7 @@ they are equal.</p>
 <div class="decl" id="int.lt_to_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1181">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1189">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10442,7 +10519,7 @@ they are equal.</p>
 <div class="decl" id="int.le_to_nat_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1184">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1192">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10482,7 +10559,7 @@ they are equal.</p>
 <div class="decl" id="int.coe_nat_nonpos_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1188">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1196">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10520,7 +10597,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_le_to_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1192">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1200">source</a></div>
 
 
 
@@ -10557,7 +10634,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_lt_to_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1195">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1203">source</a></div>
 
 
 
@@ -10594,7 +10671,7 @@ they are equal.</p>
 <div class="decl" id="int.lt_of_to_nat_lt">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1199">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1207">source</a></div>
 
 
 
@@ -10631,7 +10708,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1202">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1210">source</a></div>
 
 
 
@@ -10669,7 +10746,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_add_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1210">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1218">source</a></div>
 
 
 
@@ -10707,7 +10784,7 @@ they are equal.</p>
 <div class="decl" id="int.pred_to_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1217">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1225">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10745,7 +10822,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_pred_coe_of_pos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1223">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1231">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10784,7 +10861,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_sub_to_nat_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1226">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1234">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10822,7 +10899,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_add_to_nat_neg_eq_nat_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1231">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1239">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -10860,7 +10937,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1238">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1246">source</a></div>
 
 
 
@@ -10907,7 +10984,7 @@ they are equal.</p>
 <div class="decl" id="int.mem_to_nat'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1242">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1250">source</a></div>
 
 
 
@@ -10944,7 +11021,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_of_nonpos">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1246">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1254">source</a></div>
 
 
 
@@ -10980,7 +11057,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_neg_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1252">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1260">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11018,7 +11095,7 @@ they are equal.</p>
 <div class="decl" id="int.to_nat_eq_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1257">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1265">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11063,7 +11140,7 @@ they are equal.</p>
 <div class="decl" id="int.units_nat_abs">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1266">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1274">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11101,7 +11178,7 @@ they are equal.</p>
 <div class="decl" id="int.units_eq_one_or">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1271">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1279">source</a></div>
 
 
 
@@ -11137,7 +11214,7 @@ they are equal.</p>
 <div class="decl" id="int.is_unit_eq_one_or">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1274">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1282">source</a></div>
 
 
 
@@ -11173,7 +11250,7 @@ they are equal.</p>
 <div class="decl" id="int.is_unit_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1277">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1285">source</a></div>
 
 
 
@@ -11209,7 +11286,7 @@ they are equal.</p>
 <div class="decl" id="int.is_unit_iff_nat_abs_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1285">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1293">source</a></div>
 
 
 
@@ -11245,7 +11322,7 @@ they are equal.</p>
 <div class="decl" id="int.is_unit_iff_abs_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1288">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1296">source</a></div>
 
 
 
@@ -11281,7 +11358,7 @@ they are equal.</p>
 <div class="decl" id="int.of_nat_is_unit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1292">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1300">source</a></div>
 
 
     <div class="attributes">@[norm_cast]</div>
@@ -11319,7 +11396,7 @@ they are equal.</p>
 <div class="decl" id="int.units_inv_eq_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1295">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1303">source</a></div>
 
 
 
@@ -11355,7 +11432,7 @@ they are equal.</p>
 <div class="decl" id="int.units_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1298">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1306">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11393,7 +11470,7 @@ they are equal.</p>
 <div class="decl" id="int.units_coe_mul_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1302">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1310">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11431,7 +11508,7 @@ they are equal.</p>
 <div class="decl" id="int.neg_one_pow_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1305">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1313">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11476,7 +11553,7 @@ they are equal.</p>
 <div class="decl" id="int.bodd_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1310">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1318">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11513,7 +11590,7 @@ they are equal.</p>
 <div class="decl" id="int.bodd_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1311">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1319">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11550,7 +11627,7 @@ they are equal.</p>
 <div class="decl" id="int.bodd_two">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1312">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1320">source</a></div>
 
 
 
@@ -11585,7 +11662,7 @@ they are equal.</p>
 <div class="decl" id="int.bodd_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1314">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1322">source</a></div>
 
 
     <div class="attributes">@[simp, norm_cast]</div>
@@ -11623,7 +11700,7 @@ they are equal.</p>
 <div class="decl" id="int.bodd_sub_nat_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1316">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1324">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11661,7 +11738,7 @@ they are equal.</p>
 <div class="decl" id="int.bodd_neg_of_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1320">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1328">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11699,7 +11776,7 @@ they are equal.</p>
 <div class="decl" id="int.bodd_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1323">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1331">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11737,7 +11814,7 @@ they are equal.</p>
 <div class="decl" id="int.bodd_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1326">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1334">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11775,7 +11852,7 @@ they are equal.</p>
 <div class="decl" id="int.bodd_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1330">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1338">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -11813,7 +11890,7 @@ they are equal.</p>
 <div class="decl" id="int.bodd_add_div2">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1334">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1342">source</a></div>
 
 
 
@@ -11849,7 +11926,7 @@ they are equal.</p>
 <div class="decl" id="int.div2_val">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1345">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1353">source</a></div>
 
 
 
@@ -11885,7 +11962,7 @@ they are equal.</p>
 <div class="decl" id="int.bit0_val">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1349">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1357">source</a></div>
 
 
 
@@ -11921,7 +11998,7 @@ they are equal.</p>
 <div class="decl" id="int.bit1_val">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1351">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1359">source</a></div>
 
 
 
@@ -11957,7 +12034,7 @@ they are equal.</p>
 <div class="decl" id="int.bit_val">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1353">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1361">source</a></div>
 
 
 
@@ -11994,7 +12071,7 @@ they are equal.</p>
 <div class="decl" id="int.bit_decomp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1356">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1364">source</a></div>
 
 
 
@@ -12030,7 +12107,7 @@ they are equal.</p>
 <div class="decl" id="int.bit_cases_on">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1361">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1369">source</a></div>
 
 
 
@@ -12079,7 +12156,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bit_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1372">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12116,7 +12193,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bit_coe_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1366">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1374">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12155,7 +12232,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bit_neg_succ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1369">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1377">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12194,7 +12271,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bodd_bit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1372">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1380">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12233,7 +12310,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bodd_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1375">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1383">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12271,7 +12348,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bodd_bit1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1377">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1385">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12309,7 +12386,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.div2_bit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1379">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1387">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12348,7 +12425,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bit0_ne_bit1">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1388">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1396">source</a></div>
 
 
 
@@ -12384,7 +12461,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bit1_ne_bit0">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1391">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1399">source</a></div>
 
 
 
@@ -12420,7 +12497,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bit1_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1394">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1402">source</a></div>
 
 
 
@@ -12456,7 +12533,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.test_bit_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1397">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1405">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12495,7 +12572,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.test_bit_succ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1402">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1410">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12535,7 +12612,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bitwise_or">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1432">source</a></div>
 
 
 
@@ -12570,7 +12647,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bitwise_and">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1425">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1433">source</a></div>
 
 
 
@@ -12605,7 +12682,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bitwise_diff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1426">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1434">source</a></div>
 
 
 
@@ -12640,7 +12717,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bitwise_xor">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1427">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1435">source</a></div>
 
 
 
@@ -12675,7 +12752,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.bitwise_bit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1429">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1437">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12717,7 +12794,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.lor_bit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1445">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1453">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12758,7 +12835,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.land_bit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1448">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1456">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12799,7 +12876,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.ldiff_bit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1451">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1459">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12840,7 +12917,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.lxor_bit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1454">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1462">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12881,7 +12958,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.lnot_bit">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1457">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1465">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12920,7 +12997,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.test_bit_bitwise">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1461">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1469">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12960,7 +13037,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.test_bit_lor">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1472">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1480">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -12999,7 +13076,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.test_bit_land">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1475">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1483">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13038,7 +13115,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.test_bit_ldiff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1479">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1487">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13077,7 +13154,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.test_bit_lxor">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1482">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1490">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13116,7 +13193,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.test_bit_lnot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1485">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1493">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13155,7 +13232,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.shiftl_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1489">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1497">source</a></div>
 
 
 
@@ -13193,7 +13270,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.shiftl_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1505">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1513">source</a></div>
 
 
 
@@ -13231,7 +13308,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.shiftl_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1508">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1516">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13269,7 +13346,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.shiftr_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1509">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1517">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13307,7 +13384,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.shiftl_coe_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1511">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1519">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13345,7 +13422,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.shiftr_coe_nat">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1512">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1520">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13383,7 +13460,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.shiftl_neg_succ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1514">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1522">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13421,7 +13498,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.shiftr_neg_succ">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1516">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1524">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13459,7 +13536,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.shiftr_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1518">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1526">source</a></div>
 
 
 
@@ -13496,7 +13573,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.shiftl_eq_mul_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1524">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1532">source</a></div>
 
 
 
@@ -13533,7 +13610,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.shiftr_eq_div_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1528">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1536">source</a></div>
 
 
 
@@ -13570,7 +13647,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.one_shiftl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1535">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1543">source</a></div>
 
 
 
@@ -13606,7 +13683,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.zero_shiftl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1538">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1546">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13644,7 +13721,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.zero_shiftr">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1542">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1550">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -13682,7 +13759,7 @@ using <code>bit</code>.</p>
 <div class="decl" id="int.eq_zero_of_abs_lt_dvd">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1544">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/int/basic.lean#L1552">source</a></div>
 
 
 
@@ -13736,13 +13813,6 @@ using <code>bit</code>.</p>
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -15813,6 +15883,12 @@ using <code>bit</code>.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -15957,6 +16033,13 @@ using <code>bit</code>.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -15965,6 +16048,29 @@ using <code>bit</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -16047,6 +16153,9 @@ using <code>bit</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -16680,27 +16789,35 @@ using <code>bit</code>.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

@@ -130,7 +130,11 @@
 
     <div class="nav_link"><a class="break_within" href="#symm_diff_le_sup"><span class="name">symm_diff_le_sup</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#symm_diff_left_comm"><span class="name">symm_diff_left_comm</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#symm_diff_left_inj"><span class="name">symm_diff_left_inj</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#symm_diff_right_comm"><span class="name">symm_diff_right_comm</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#symm_diff_right_inj"><span class="name">symm_diff_right_inj</span></a></div>
 
@@ -153,6 +157,8 @@
     <div class="nav_link"><a class="break_within" href="#symm_diff_symm_diff_self"><span class="name">symm_diff_symm_diff_self</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#symm_diff_symm_diff_self'"><span class="name">symm_diff_symm_diff_self&#x27;</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#symm_diff_symm_diff_symm_diff_comm"><span class="name">symm_diff_symm_diff_symm_diff_comm</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#symm_diff_top"><span class="name">symm_diff_top</span></a></div>
 
@@ -1255,10 +1261,124 @@ Proof from the Book&quot; by John McCuan:</p>
     
         
         
-<div class="decl" id="symm_diff_symm_diff_self">
+<div class="decl" id="symm_diff_left_comm">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L157">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff_left_comm"><span class="name">symm_diff_left_comm</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/order/boolean_algebra.html#generalized_boolean_algebra">generalized_boolean_algebra</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b c : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> <span class="fn">(b <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> c)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">b <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> <span class="fn">(a <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> c)</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="symm_diff_right_comm">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L160">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff_right_comm"><span class="name">symm_diff_right_comm</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/order/boolean_algebra.html#generalized_boolean_algebra">generalized_boolean_algebra</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b c : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> b</span> <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> c</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> c</span> <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="symm_diff_symm_diff_symm_diff_comm">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L162">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff_symm_diff_symm_diff_comm"><span class="name">symm_diff_symm_diff_symm_diff_comm</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/order/boolean_algebra.html#generalized_boolean_algebra">generalized_boolean_algebra</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(a b c d : α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> b</span> <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> <span class="fn">(c <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> d)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> c</span> <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> <span class="fn">(b <a href="https://mariainesdff.github.io/ideles/order/symm_diff.html#symm_diff" title="symm_diff">∆</a> d)</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="symm_diff_symm_diff_self">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L165">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1298,7 +1418,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_symm_diff_self'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L159">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L167">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1338,7 +1458,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_right_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L162">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L170">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1378,7 +1498,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_left_inj">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L170">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L178">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1418,7 +1538,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_eq_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L173">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L181">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1458,7 +1578,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_eq_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L177">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L185">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1498,7 +1618,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_eq_bot">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L179">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L187">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1538,7 +1658,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_symm_diff_inf">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L183">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L191">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1578,7 +1698,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="inf_symm_diff_symm_diff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L186">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L194">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1618,7 +1738,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="disjoint.symm_diff_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L191">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L199">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -1660,7 +1780,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="disjoint.symm_diff_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L195">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L203">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -1702,7 +1822,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L204">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L212">source</a></div>
 
 
 
@@ -1740,7 +1860,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_top">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L206">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L214">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1780,7 +1900,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="top_symm_diff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L207">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L215">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1820,7 +1940,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="compl_symm_diff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L209">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L217">source</a></div>
 
 
 
@@ -1858,7 +1978,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_eq_top_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L212">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L220">source</a></div>
 
 
 
@@ -1896,7 +2016,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="is_compl.symm_diff_eq_top">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L215">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L223">source</a></div>
 
 
 
@@ -1935,7 +2055,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="compl_symm_diff_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L217">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L225">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1975,7 +2095,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_compl_self">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L220">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L228">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2015,7 +2135,7 @@ Proof from the Book&quot; by John McCuan:</p>
 <div class="decl" id="symm_diff_symm_diff_right'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L222">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/symm_diff.lean#L230">source</a></div>
 
 
 
@@ -2069,13 +2189,6 @@ Proof from the Book&quot; by John McCuan:</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -4146,6 +4259,12 @@ Proof from the Book&quot; by John McCuan:</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -4290,6 +4409,13 @@ Proof from the Book&quot; by John McCuan:</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -4298,6 +4424,29 @@ Proof from the Book&quot; by John McCuan:</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -4380,6 +4529,9 @@ Proof from the Book&quot; by John McCuan:</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -5013,27 +5165,35 @@ Proof from the Book&quot; by John McCuan:</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

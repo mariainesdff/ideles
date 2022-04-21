@@ -291,6 +291,8 @@
 
     <div class="nav_link"><a class="break_within" href="#not_subset_of_ssubset"><span class="name">not_subset_of_ssubset</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#of_eq"><span class="name">of_eq</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#order_dual.is_total_le"><span class="name">order_dual</span>.<span class="name">is_total_le</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#partial_order_of_SO"><span class="name">partial_order_of_SO</span></a></div>
@@ -367,6 +369,16 @@
 
     <div class="nav_link"><a class="break_within" href="#trans_trichotomous_right"><span class="name">trans_trichotomous_right</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#transitive_ge"><span class="name">transitive_ge</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#transitive_gt"><span class="name">transitive_gt</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#transitive_le"><span class="name">transitive_le</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#transitive_lt"><span class="name">transitive_lt</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#transitive_of_trans"><span class="name">transitive_of_trans</span></a></div>
+
 </nav>
 
 <main>
@@ -386,10 +398,49 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
     
         
         
-<div class="decl" id="comm">
+<div class="decl" id="of_eq">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L23">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/rel_classes.html#of_eq"><span class="name">of_eq</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{r : α → <span class="fn">α → Prop</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/init/algebra/classes.html#is_refl">is_refl</a> α</span> r]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{a b : α}</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> b</span> → <span class="fn"><span class="fn">r a</span> b</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="comm">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L25">source</a></div>
 
 
 
@@ -428,7 +479,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="antisymm'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L24">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L26">source</a></div>
 
 
 
@@ -467,7 +518,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="antisymm_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L26">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L28">source</a></div>
 
 
 
@@ -507,7 +558,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="antisymm_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L33">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L35">source</a></div>
 
 
 
@@ -548,7 +599,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="antisymm_of'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L39">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L41">source</a></div>
 
 
 
@@ -589,7 +640,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="comm_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L45">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L47">source</a></div>
 
 
 
@@ -630,7 +681,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_refl.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L47">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L49">source</a></div>
 
 
 
@@ -668,7 +719,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_irrefl.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L48">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L50">source</a></div>
 
 
 
@@ -706,7 +757,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_trans.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L49">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L51">source</a></div>
 
 
 
@@ -744,7 +795,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_antisymm.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L51">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L53">source</a></div>
 
 
 
@@ -782,7 +833,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_asymm.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L53">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L55">source</a></div>
 
 
 
@@ -820,7 +871,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_total.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L55">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L57">source</a></div>
 
 
 
@@ -858,7 +909,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_trichotomous.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L57">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L59">source</a></div>
 
 
 
@@ -896,7 +947,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_preorder.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L59">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L61">source</a></div>
 
 
 
@@ -934,7 +985,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_strict_order.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L61">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L63">source</a></div>
 
 
 
@@ -972,7 +1023,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_partial_order.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L63">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L65">source</a></div>
 
 
 
@@ -1010,7 +1061,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_total_preorder.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L65">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L67">source</a></div>
 
 
 
@@ -1048,7 +1099,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_linear_order.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L67">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L69">source</a></div>
 
 
 
@@ -1086,7 +1137,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_asymm.is_antisymm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L70">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L72">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -1126,7 +1177,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_asymm.is_irrefl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L72">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L74">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -1166,7 +1217,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_total.is_trichotomous">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L74">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L76">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -1206,7 +1257,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_total.to_is_refl">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L78">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L80">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1246,7 +1297,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="ne_of_irrefl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L81">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L83">source</a></div>
 
 
 
@@ -1285,7 +1336,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="ne_of_irrefl'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L82">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L84">source</a></div>
 
 
 
@@ -1324,7 +1375,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="trans_trichotomous_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L84">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L86">source</a></div>
 
 
 
@@ -1364,7 +1415,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="trans_trichotomous_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L91">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L93">source</a></div>
 
 
 
@@ -1401,10 +1452,48 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
     
         
         
+<div class="decl" id="transitive_of_trans">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L100">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/rel_classes.html#transitive_of_trans"><span class="name">transitive_of_trans</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="decl_args"><span class="fn">(r : α → <span class="fn">α → Prop</span>)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/init/algebra/classes.html#is_trans">is_trans</a> α</span> r]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#transitive">transitive</a> r</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="partial_order_of_SO">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L101">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L105">source</a></div>
 
 
 
@@ -1453,7 +1542,7 @@ extend <code><a href="https://mariainesdff.github.io/ideles/init/core.html#has_l
 <div class="decl" id="is_strict_total_order'">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L125">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L129">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -1517,7 +1606,7 @@ assumption <code><a href="https://mariainesdff.github.io/ideles/init/algebra/cla
 <div class="decl" id="linear_order_of_STO'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L132">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L136">source</a></div>
 
 
 
@@ -1567,7 +1656,7 @@ assumption <code><a href="https://mariainesdff.github.io/ideles/init/algebra/cla
 <div class="decl" id="is_strict_total_order'.swap">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L145">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L149">source</a></div>
 
 
 
@@ -1612,7 +1701,7 @@ assumption <code><a href="https://mariainesdff.github.io/ideles/init/algebra/cla
 <div class="decl" id="is_order_connected">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L155">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L159">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -1675,7 +1764,7 @@ since the contrapositive asserts transitivity of the relation <code>¬ a &lt; b<
 <div class="decl" id="is_order_connected.neg_trans">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L158">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L162">source</a></div>
 
 
 
@@ -1716,7 +1805,7 @@ since the contrapositive asserts transitivity of the relation <code>¬ a &lt; b<
 <div class="decl" id="is_strict_weak_order_of_is_order_connected">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L162">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L166">source</a></div>
 
 
 
@@ -1755,7 +1844,7 @@ since the contrapositive asserts transitivity of the relation <code>¬ a &lt; b<
 <div class="decl" id="is_order_connected_of_is_strict_total_order'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L170">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L174">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1795,7 +1884,7 @@ since the contrapositive asserts transitivity of the relation <code>¬ a &lt; b<
 <div class="decl" id="is_strict_total_order_of_is_strict_total_order'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L176">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L180">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1842,7 +1931,7 @@ since the contrapositive asserts transitivity of the relation <code>¬ a &lt; b<
 <div class="decl" id="is_extensional">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L185">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L189">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -1902,7 +1991,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="is_extensional_of_is_strict_total_order'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L189">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L193">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1949,7 +2038,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="is_well_order">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L198">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L202">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -2003,17 +2092,17 @@ extensionality is one of the first axioms of ZFC.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/fin/basic.html#fin.fin.lt.is_well_order">fin.fin.lt.is_well_order</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html#cardinal.wo">cardinal.wo</a></li>
+                <li><a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html#cardinal.wo">cardinal.wo</a></li>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/sum/order.html#sum.lex.is_well_order">sum.lex.is_well_order</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html#well_ordering_rel.is_well_order">well_ordering_rel.is_well_order</a></li>
+                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html#well_ordering_rel.is_well_order">well_ordering_rel.is_well_order</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html#Well_order.wo">Well_order.wo</a></li>
+                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html#Well_order.wo">Well_order.wo</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html#has_lt.lt.is_well_order">has_lt.lt.is_well_order</a></li>
+                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html#has_lt.lt.is_well_order">has_lt.lt.is_well_order</a></li>
             
-                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html#ordinal.has_lt.lt.is_well_order">ordinal.has_lt.lt.is_well_order</a></li>
+                <li><a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html#ordinal.has_lt.lt.is_well_order">ordinal.has_lt.lt.is_well_order</a></li>
             
         </ul>
     </details>
@@ -2030,7 +2119,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="is_well_order.is_strict_total_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L203">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L207">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2070,7 +2159,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="is_well_order.is_extensional">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L206">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L210">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2110,7 +2199,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="is_well_order.is_trichotomous">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L209">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L213">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2150,7 +2239,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="is_well_order.is_trans">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L212">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L216">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2190,7 +2279,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="is_well_order.is_irrefl">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L215">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L219">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2230,7 +2319,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="is_well_order.is_asymm">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L218">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L222">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2270,7 +2359,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="is_well_order.linear_order">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L222">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L226">source</a></div>
 
 
 
@@ -2318,7 +2407,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="empty_relation.is_well_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L226">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L230">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2357,7 +2446,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="prod.lex.is_well_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L232">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L236">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2400,7 +2489,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="set.unbounded">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L259">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L263">source</a></div>
 
 
 
@@ -2448,7 +2537,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="set.bounded">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L261">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L265">source</a></div>
 
 
 
@@ -2496,7 +2585,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="set.not_bounded_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L263">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L267">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2536,7 +2625,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="set.not_unbounded_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L266">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L270">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2576,7 +2665,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="prod.is_refl_preimage_fst">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L273">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L277">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2616,7 +2705,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="prod.is_refl_preimage_snd">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L276">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L280">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2656,7 +2745,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="prod.is_trans_preimage_fst">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L279">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L283">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2696,7 +2785,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="prod.is_trans_preimage_snd">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L282">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L286">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2743,7 +2832,7 @@ extensionality is one of the first axioms of ZFC.</p>
 <div class="decl" id="is_nonstrict_strict_order">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L292">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L296">source</a></div>
 
 
     <div class="attributes">@[class]</div>
@@ -2790,6 +2879,8 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
             
                 <li><a href="https://mariainesdff.github.io/ideles/data/finset/basic.html#finset.has_ssubset.ssubset.is_nonstrict_strict_order">finset.has_ssubset.ssubset.is_nonstrict_strict_order</a></li>
             
+                <li><a href="https://mariainesdff.github.io/ideles/order/cover.html#covby.is_nonstrict_strict_order">covby.is_nonstrict_strict_order</a></li>
+            
         </ul>
     </details>
 
@@ -2805,7 +2896,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="right_iff_left_not_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L295">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L299">source</a></div>
 
 
 
@@ -2844,7 +2935,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="right_iff_left_not_left_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L300">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L304">source</a></div>
 
 
 
@@ -2884,7 +2975,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="is_nonstrict_strict_order.to_is_irrefl">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L307">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L311">source</a></div>
 
 
     <div class="attributes">@[protected, nolint, instance]</div>
@@ -2931,7 +3022,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="subset_refl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L317">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L321">source</a></div>
 
 
 
@@ -2970,7 +3061,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="subset_rfl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L318">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L322">source</a></div>
 
 
 
@@ -3009,7 +3100,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="subset_of_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L319">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L323">source</a></div>
 
 
 
@@ -3048,7 +3139,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="superset_of_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L320">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L324">source</a></div>
 
 
 
@@ -3087,7 +3178,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ne_of_not_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L321">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L325">source</a></div>
 
 
 
@@ -3126,7 +3217,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ne_of_not_superset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L322">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L326">source</a></div>
 
 
 
@@ -3165,7 +3256,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="subset_trans">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L323">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L327">source</a></div>
 
 
 
@@ -3204,7 +3295,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="subset_antisymm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L325">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L329">source</a></div>
 
 
 
@@ -3245,7 +3336,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="superset_antisymm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L328">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L332">source</a></div>
 
 
 
@@ -3286,7 +3377,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="eq.subset'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L331">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L335">source</a></div>
 
 
 
@@ -3326,7 +3417,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="eq.superset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L332">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L336">source</a></div>
 
 
 
@@ -3366,7 +3457,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_subset.subset.trans">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L337">source</a></div>
 
 
 
@@ -3406,7 +3497,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_subset.subset.antisymm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L334">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L338">source</a></div>
 
 
 
@@ -3448,7 +3539,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_subset.subset.antisymm'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L335">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L339">source</a></div>
 
 
 
@@ -3490,7 +3581,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="subset_antisymm_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L337">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L341">source</a></div>
 
 
 
@@ -3530,7 +3621,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="superset_antisymm_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L340">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L344">source</a></div>
 
 
 
@@ -3570,7 +3661,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_irrefl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L348">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L352">source</a></div>
 
 
 
@@ -3609,7 +3700,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_irrfl">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L349">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L353">source</a></div>
 
 
 
@@ -3648,7 +3739,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ne_of_ssubset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L350">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L354">source</a></div>
 
 
 
@@ -3687,7 +3778,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ne_of_ssuperset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L351">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L355">source</a></div>
 
 
 
@@ -3726,7 +3817,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_trans">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L352">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L356">source</a></div>
 
 
 
@@ -3765,7 +3856,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_asymm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L353">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L357">source</a></div>
 
 
 
@@ -3805,7 +3896,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_ssubset.ssubset.false">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L355">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L359">source</a></div>
 
 
 
@@ -3845,7 +3936,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_ssubset.ssubset.ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L356">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L360">source</a></div>
 
 
 
@@ -3885,7 +3976,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_ssubset.ssubset.ne'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L357">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L361">source</a></div>
 
 
 
@@ -3925,7 +4016,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_ssubset.ssubset.trans">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L362">source</a></div>
 
 
 
@@ -3965,7 +4056,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_ssubset.ssubset.asymm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L359">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L363">source</a></div>
 
 
 
@@ -4006,7 +4097,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_iff_subset_not_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L366">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L370">source</a></div>
 
 
 
@@ -4046,7 +4137,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="subset_of_ssubset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L367">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L371">source</a></div>
 
 
 
@@ -4087,7 +4178,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="not_subset_of_ssubset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L368">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L372">source</a></div>
 
 
 
@@ -4128,7 +4219,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="not_ssubset_of_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L369">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L373">source</a></div>
 
 
 
@@ -4169,7 +4260,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_of_subset_not_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L371">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L375">source</a></div>
 
 
 
@@ -4211,7 +4302,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_ssubset.ssubset.subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L374">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L378">source</a></div>
 
 
 
@@ -4253,7 +4344,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_ssubset.ssubset.not_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L375">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L379">source</a></div>
 
 
 
@@ -4295,7 +4386,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_subset.subset.not_ssubset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L376">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L380">source</a></div>
 
 
 
@@ -4337,7 +4428,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_subset.subset.ssubset_of_not_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L377">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L381">source</a></div>
 
 
 
@@ -4380,7 +4471,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_of_subset_of_ssubset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L379">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L383">source</a></div>
 
 
 
@@ -4423,7 +4514,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_of_ssubset_of_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L382">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L386">source</a></div>
 
 
 
@@ -4466,7 +4557,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_of_subset_of_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L385">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L389">source</a></div>
 
 
 
@@ -4509,7 +4600,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_of_ne_of_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L388">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L392">source</a></div>
 
 
 
@@ -4552,7 +4643,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="eq_or_ssubset_of_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L391">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L395">source</a></div>
 
 
 
@@ -4594,7 +4685,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_or_eq_of_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L394">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L398">source</a></div>
 
 
 
@@ -4636,7 +4727,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_subset.subset.trans_ssubset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L397">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L401">source</a></div>
 
 
 
@@ -4680,7 +4771,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_ssubset.ssubset.trans_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L398">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L402">source</a></div>
 
 
 
@@ -4724,7 +4815,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_subset.subset.ssubset_of_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L399">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L403">source</a></div>
 
 
 
@@ -4768,7 +4859,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ne.ssubset_of_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L400">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L404">source</a></div>
 
 
 
@@ -4812,7 +4903,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_subset.subset.eq_or_ssubset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L401">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L405">source</a></div>
 
 
 
@@ -4855,7 +4946,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_subset.subset.ssubset_or_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L402">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L406">source</a></div>
 
 
 
@@ -4898,7 +4989,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ssubset_iff_subset_ne">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L404">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L408">source</a></div>
 
 
 
@@ -4939,7 +5030,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="subset_iff_ssubset_or_eq">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L407">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L411">source</a></div>
 
 
 
@@ -4988,7 +5079,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_le.le.is_refl">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L414">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L418">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5027,7 +5118,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ge.is_refl">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L415">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L419">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5066,7 +5157,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_le.le.is_trans">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L416">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L420">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5105,7 +5196,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ge.is_trans">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L417">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L421">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5144,7 +5235,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_le.le.is_preorder">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L418">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L422">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5183,7 +5274,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ge.is_preorder">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L419">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L423">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5222,7 +5313,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_irrefl">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L420">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L424">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5261,7 +5352,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="gt.is_irrefl">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L421">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L425">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5300,7 +5391,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_trans">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L422">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L426">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5339,7 +5430,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="gt.is_trans">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L423">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L427">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5378,7 +5469,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_asymm">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L428">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5417,7 +5508,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="gt.is_asymm">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L425">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L429">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5456,7 +5547,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_antisymm">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L426">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L430">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5495,7 +5586,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="gt.is_antisymm">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L427">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L431">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5534,7 +5625,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_strict_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L428">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L432">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5573,7 +5664,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="gt.is_strict_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L429">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L433">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5612,7 +5703,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_nonstrict_strict_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L430">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L434">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5660,7 +5751,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_le.le.is_antisymm">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L431">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L435">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5699,7 +5790,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ge.is_antisymm">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L432">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L436">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5738,7 +5829,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_le.le.is_partial_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L433">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L437">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5777,7 +5868,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ge.is_partial_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L434">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L438">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5816,7 +5907,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_le.le.is_total">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L435">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L439">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5855,7 +5946,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ge.is_total">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L436">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L440">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5894,7 +5985,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="linear_order.is_total_preorder">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L437">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L441">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5933,7 +6024,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ge.is_total_preorder">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L439">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L443">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5972,7 +6063,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_le.le.is_linear_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L440">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L444">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6011,7 +6102,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ge.is_linear_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L441">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L445">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6050,7 +6141,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_trichotomous">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L442">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L446">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6089,7 +6180,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="gt.is_trichotomous">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L443">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L447">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6128,7 +6219,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_le.le.is_trichotomous">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L444">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L448">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6167,7 +6258,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="ge.is_trichotomous">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L445">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L449">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6206,7 +6297,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_strict_total_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L446">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L450">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6245,7 +6336,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_strict_total_order'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L447">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L451">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6284,7 +6375,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_order_connected">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L448">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L452">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6323,7 +6414,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_incomp_trans">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L449">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L453">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6362,7 +6453,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="has_lt.lt.is_strict_weak_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L450">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L454">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6398,10 +6489,158 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
     
         
         
+<div class="decl" id="transitive_le">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L456">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/rel_classes.html#transitive_le"><span class="name">transitive_le</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#transitive">transitive</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_le.le">has_le.le</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="transitive_lt">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L457">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/rel_classes.html#transitive_lt"><span class="name">transitive_lt</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#transitive">transitive</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_lt.lt">has_lt.lt</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="transitive_ge">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L458">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/rel_classes.html#transitive_ge"><span class="name">transitive_ge</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#transitive">transitive</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#ge">ge</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="transitive_gt">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L459">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/order/rel_classes.html#transitive_gt"><span class="name">transitive_gt</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/algebra/order.html#preorder">preorder</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#transitive">transitive</a> <a href="https://mariainesdff.github.io/ideles/init/core.html#gt">gt</a></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="order_dual.is_total_le">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L452">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L461">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6441,7 +6680,7 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
 <div class="decl" id="nat.lt.is_well_order">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L455">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/order/rel_classes.lean#L464">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6494,13 +6733,6 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -8571,6 +8803,12 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -8715,6 +8953,13 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -8723,6 +8968,29 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -8805,6 +9073,9 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -9438,27 +9709,35 @@ notation on <code>(⊆)</code> and <code>(⊂)</code>.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

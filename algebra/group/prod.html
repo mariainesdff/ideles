@@ -4154,7 +4154,7 @@ homomorphism.</li>
     <span class="decl_args"><span class="fn">(N : Type u_6)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> <span class="fn">(M <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> N)</span></span> M</span></div>
+<div class="decl_type"><span class="fn"><span class="fn">M <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> N</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> M</span></div>
 </div>
 
 
@@ -4303,7 +4303,7 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="decl_args"><span class="fn">(N : Type u_6)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> <span class="fn">(M <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> N)</span></span> N</span></div>
+<div class="decl_type"><span class="fn"><span class="fn">M <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> N</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> N</span></div>
 </div>
 
 
@@ -4520,17 +4520,17 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> P]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> N)</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> P)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> <span class="fn">(N <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> P)</span></span></div>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> N)</span></span>
+    <span class="decl_args"><span class="fn">(g : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn">M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> <span class="fn">N <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> P</span></span></div>
 </div>
 
 
 
 
 
-<p>Combine two <code><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom">monoid_hom</a></code>s <code>f : <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M N</code>, <code>g : <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M P</code> into
-<code>f.prod g : <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M (N × P)</code> given by <code>(f.prod g) x = (f x, g x)</code>.</p>
+<p>Combine two <code><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#monoid_hom">monoid_hom</a></code>s <code>f : M →ₙ* N</code>, <code>g : M →ₙ* P</code> into
+<code>f.prod g : M →ₙ* (N × P)</code> given by <code>(f.prod g) x = (f x, g x)</code>.</p>
 
 
 
@@ -4673,8 +4673,8 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> P]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> N)</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> P)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> N)</span></span>
+    <span class="decl_args"><span class="fn">(g : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(f.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.prod" title="mul_hom.prod">prod</a> g)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/pi.html#pi.prod">pi.prod</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>g</span></span></div>
 </div>
 
@@ -4764,8 +4764,8 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> P]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> N)</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> P)</span></span>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> N)</span></span>
+    <span class="decl_args"><span class="fn">(g : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P)</span></span>
     <span class="decl_args"><span class="fn">(x : M)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(f.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.prod" title="mul_hom.prod">prod</a> g)</span></span> x</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f x</span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>g x)</span></span></span></div>
 </div>
@@ -4810,8 +4810,8 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> P]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> N)</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> P)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> N)</span></span>
+    <span class="decl_args"><span class="fn">(g : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.fst">mul_hom.fst</a> N</span> P)</span>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a></span> <span class="fn">(f.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.prod" title="mul_hom.prod">prod</a> g)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> f</span></div>
 </div>
 
@@ -4945,8 +4945,8 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> P]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> N)</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> P)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> N)</span></span>
+    <span class="decl_args"><span class="fn">(g : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.snd">mul_hom.snd</a> N</span> P)</span>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a></span> <span class="fn">(f.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.prod" title="mul_hom.prod">prod</a> g)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> g</span></div>
 </div>
 
@@ -5034,7 +5034,7 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> P]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> <span class="fn">(N <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> P)</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> <span class="fn">N <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> P</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">((<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.fst">mul_hom.fst</a> N</span> P)</span>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a></span> f)</span>.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.prod" title="mul_hom.prod">prod</a></span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">((<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.snd">mul_hom.snd</a> N</span> P)</span>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a></span> f)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> f</span></div>
 </div>
 
@@ -5133,9 +5133,9 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N']</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> M')</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> N</span> N')</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> <span class="fn">(M <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> N)</span></span> <span class="fn">(M' <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> N')</span></span></div>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> M')</span></span>
+    <span class="decl_args"><span class="fn">(g : N <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> N')</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">M <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> N</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> <span class="fn">M' <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> N'</span></span></div>
 </div>
 
 
@@ -5233,8 +5233,8 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N']</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> M')</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> N</span> N')</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> M')</span></span>
+    <span class="decl_args"><span class="fn">(g : N <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> N')</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn">f.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.prod_map" title="mul_hom.prod_map">prod_map</a> g</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(f.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.fst">mul_hom.fst</a> M</span> N))</span></span>.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.prod" title="mul_hom.prod">prod</a></span> <span class="fn">(g.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.snd">mul_hom.snd</a> M</span> N))</span></span></span></span></div>
 </div>
 
@@ -5327,8 +5327,8 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N']</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> M')</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> N</span> N')</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> M')</span></span>
+    <span class="decl_args"><span class="fn">(g : N <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> N')</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(f.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.prod_map" title="mul_hom.prod_map">prod_map</a> g)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/data/prod.html#prod.map">prod.map</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>g</span></span></div>
 </div>
 
@@ -5374,10 +5374,10 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N']</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> P]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> P</span> M)</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> P</span> N)</span></span>
-    <span class="decl_args"><span class="fn">(f' : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> M')</span></span>
-    <span class="decl_args"><span class="fn">(g' : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> N</span> N')</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(f : P <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> M)</span></span>
+    <span class="decl_args"><span class="fn">(g : P <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> N)</span></span>
+    <span class="decl_args"><span class="fn">(f' : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> M')</span></span>
+    <span class="decl_args"><span class="fn">(g' : N <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> N')</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(f'.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.prod_map" title="mul_hom.prod_map">prod_map</a> g')</span>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a></span> <span class="fn">(f.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.prod" title="mul_hom.prod">prod</a> g)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(f'.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> f)</span>.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.prod" title="mul_hom.prod">prod</a></span> <span class="fn">(g'.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> g)</span></span></span></div>
 </div>
 
@@ -5468,9 +5468,9 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_semigroup">comm_semigroup</a> P]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> P)</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> N</span> P)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> <span class="fn">(M <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> N)</span></span> P</span></div>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P)</span></span>
+    <span class="decl_args"><span class="fn">(g : N <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn">M <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> N</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P</span></div>
 </div>
 
 
@@ -5624,8 +5624,8 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> M]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> N]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_semigroup">comm_semigroup</a> P]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> P)</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> N</span> P)</span></span>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P)</span></span>
+    <span class="decl_args"><span class="fn">(g : N <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P)</span></span>
     <span class="decl_args"><span class="fn">(p : M <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> N)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(f.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.coprod" title="mul_hom.coprod">coprod</a> g)</span></span> p</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f p.<a href="https://mariainesdff.github.io/ideles/init/core.html#prod.fst" title="prod.fst">fst</a>)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>g p.<a href="https://mariainesdff.github.io/ideles/init/core.html#prod.snd" title="prod.snd">snd</a></span></span></span></div>
 </div>
@@ -5670,9 +5670,9 @@ from <code>A × B</code> to <code>B</code></p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_semigroup">comm_semigroup</a> P]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{Q : Type u_1}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_semigroup">comm_semigroup</a> Q]</span></span></span>
-    <span class="decl_args"><span class="fn">(h : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> P</span> Q)</span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> M</span> P)</span></span>
-    <span class="decl_args"><span class="fn">(g : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> N</span> P)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(h : P <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> Q)</span></span>
+    <span class="decl_args"><span class="fn">(f : M <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P)</span></span>
+    <span class="decl_args"><span class="fn">(g : N <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> P)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn">h.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn">(f.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.coprod" title="mul_hom.coprod">coprod</a> g)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(h.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> f)</span>.<a href="https://mariainesdff.github.io/ideles/algebra/group/prod.html#mul_hom.coprod" title="mul_hom.coprod">coprod</a></span> <span class="fn">(h.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> g)</span></span></span></div>
 </div>
 
@@ -8951,7 +8951,7 @@ Used mainly to define the natural topology of <code><a href="https://mariainesdf
 
     <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_8}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#comm_semigroup">comm_semigroup</a> α]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> <span class="fn">(α <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> α)</span></span> α</span></div>
+<div class="decl_type"><span class="fn"><span class="fn">α <a href="https://mariainesdff.github.io/ideles/init/core.html#prod" title="prod">×</a> α</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> α</span></div>
 </div>
 
 
@@ -9570,13 +9570,6 @@ Used mainly to define the natural topology of <code><a href="https://mariainesdf
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -11647,6 +11640,12 @@ Used mainly to define the natural topology of <code><a href="https://mariainesdf
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -11791,6 +11790,13 @@ Used mainly to define the natural topology of <code><a href="https://mariainesdf
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -11799,6 +11805,29 @@ Used mainly to define the natural topology of <code><a href="https://mariainesdf
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -11881,6 +11910,9 @@ Used mainly to define the natural topology of <code><a href="https://mariainesdf
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -12514,27 +12546,35 @@ Used mainly to define the natural topology of <code><a href="https://mariainesdf
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

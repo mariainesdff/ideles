@@ -139,6 +139,18 @@
 
     <div class="nav_link"><a class="break_within" href="#monotone.union"><span class="name">monotone</span>.<span class="name">union</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#set.Ici_Sup"><span class="name">set</span>.<span class="name">Ici_Sup</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.Ici_supr"><span class="name">set</span>.<span class="name">Ici_supr</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.Ici_supr₂"><span class="name">set</span>.<span class="name">Ici_supr₂</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.Iic_Inf"><span class="name">set</span>.<span class="name">Iic_Inf</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.Iic_infi"><span class="name">set</span>.<span class="name">Iic_infi</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#set.Iic_infi₂"><span class="name">set</span>.<span class="name">Iic_infi₂</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#set.Inf_eq_sInter"><span class="name">set</span>.<span class="name">Inf_eq_sInter</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#set.Infi_eq_dif"><span class="name">set</span>.<span class="name">Infi_eq_dif</span></a></div>
@@ -15642,12 +15654,253 @@ all <code>f ∈ s</code>.</p>
     
 
     
+        <div class="mod_doc">
+            <h3 id="intervals" class="markdown-heading">Intervals <a class="hover-link" href="#intervals">#</a></h3>
+
+        </div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Ici_supr">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1596">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/lattice.html#set.Ici_supr"><span class="name">set</span>.<span class="name">Ici_supr</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Sort u_4}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/order/complete_lattice.html#complete_lattice">complete_lattice</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : ι → α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ici">set.Ici</a> <span class="fn">(⨆ (i : ι), <span class="fn">f i)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">⋂ (i : ι), <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ici">set.Ici</a> <span class="fn">(f i)</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Iic_infi">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1599">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/lattice.html#set.Iic_infi"><span class="name">set</span>.<span class="name">Iic_infi</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Sort u_4}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/order/complete_lattice.html#complete_lattice">complete_lattice</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : ι → α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iic">set.Iic</a> <span class="fn">(⨅ (i : ι), <span class="fn">f i)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">⋂ (i : ι), <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iic">set.Iic</a> <span class="fn">(f i)</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Ici_supr₂">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1602">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/lattice.html#set.Ici_supr₂"><span class="name">set</span>.<span class="name">Ici_supr₂</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Sort u_4}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{κ : ι → <span class="fn">Sort u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/order/complete_lattice.html#complete_lattice">complete_lattice</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : Π (i : ι), <span class="fn"><span class="fn">κ i</span> → α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ici">set.Ici</a> <span class="fn">(⨆ (i : ι) (j : <span class="fn">κ i)</span>, <span class="fn"><span class="fn">f i</span> j)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">⋂ (i : ι) (j : <span class="fn">κ i)</span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ici">set.Ici</a> <span class="fn"><span class="fn">(f i</span> j)</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Iic_infi₂">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1603">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/lattice.html#set.Iic_infi₂"><span class="name">set</span>.<span class="name">Iic_infi₂</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{ι : Sort u_4}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{κ : ι → <span class="fn">Sort u_7</span>}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/order/complete_lattice.html#complete_lattice">complete_lattice</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : Π (i : ι), <span class="fn"><span class="fn">κ i</span> → α</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iic">set.Iic</a> <span class="fn">(⨅ (i : ι) (j : <span class="fn">κ i)</span>, <span class="fn"><span class="fn">f i</span> j)</span></span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">⋂ (i : ι) (j : <span class="fn">κ i)</span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iic">set.Iic</a> <span class="fn"><span class="fn">(f i</span> j)</span></span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Ici_Sup">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1605">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/lattice.html#set.Ici_Sup"><span class="name">set</span>.<span class="name">Ici_Sup</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/order/complete_lattice.html#complete_lattice">complete_lattice</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(s : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ici">set.Ici</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/order/complete_lattice.html#has_Sup.Sup" title="has_Sup.Sup">Sup</a> s)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">⋂ (a : α) (H : <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> s)</span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Ici">set.Ici</a> a</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="set.Iic_Inf">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1606">source</a></div>
+
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/data/set/lattice.html#set.Iic_Inf"><span class="name">set</span>.<span class="name">Iic_Inf</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/order/complete_lattice.html#complete_lattice">complete_lattice</a> α]</span></span></span>
+    <span class="decl_args"><span class="fn">(s : <a href="https://mariainesdff.github.io/ideles/init/data/set.html#set">set</a> α)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iic">set.Iic</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/order/complete_lattice.html#has_Inf.Inf" title="has_Inf.Inf">Inf</a> s)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">⋂ (a : α) (H : <span class="fn">a <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> s)</span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/data/set/intervals/basic.html#set.Iic">set.Iic</a> a</span></span></span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
         
         
 <div class="decl" id="set.subset_diff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1594">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1613">source</a></div>
 
 
 
@@ -15684,7 +15937,7 @@ all <code>f ∈ s</code>.</p>
 <div class="decl" id="set.bUnion_diff_bUnion_subset">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1598">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1617">source</a></div>
 
 
 
@@ -15723,7 +15976,7 @@ all <code>f ∈ s</code>.</p>
 <div class="decl" id="set.sigma_to_Union">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1609">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1628">source</a></div>
 
 
 
@@ -15773,7 +16026,7 @@ sending <code>⟨i, x⟩</code> to <code>x</code>.</p>
 <div class="decl" id="set.sigma_to_Union_surjective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1611">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1630">source</a></div>
 
 
 
@@ -15811,7 +16064,7 @@ sending <code>⟨i, x⟩</code> to <code>x</code>.</p>
 <div class="decl" id="set.sigma_to_Union_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1614">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1633">source</a></div>
 
 
 
@@ -15850,7 +16103,7 @@ sending <code>⟨i, x⟩</code> to <code>x</code>.</p>
 <div class="decl" id="set.sigma_to_Union_bijective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1623">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1642">source</a></div>
 
 
 
@@ -15889,7 +16142,7 @@ sending <code>⟨i, x⟩</code> to <code>x</code>.</p>
 <div class="decl" id="set.Union_eq_sigma_of_disjoint">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1628">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/data/set/lattice.lean#L1647">source</a></div>
 
 
 
@@ -15954,13 +16207,6 @@ sending <code>⟨i, x⟩</code> to <code>x</code>.</p>
         <details class="nav_sect" data-path="data" open>
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -18031,6 +18277,12 @@ sending <code>⟨i, x⟩</code> to <code>x</code>.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -18175,6 +18427,13 @@ sending <code>⟨i, x⟩</code> to <code>x</code>.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -18183,6 +18442,29 @@ sending <code>⟨i, x⟩</code> to <code>x</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -18265,6 +18547,9 @@ sending <code>⟨i, x⟩</code> to <code>x</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -18898,27 +19183,35 @@ sending <code>⟨i, x⟩</code> to <code>x</code>.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

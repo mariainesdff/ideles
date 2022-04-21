@@ -50,8 +50,8 @@
             <li><a href="https://mariainesdff.github.io/ideles/algebra/group_ring_action.html">
                 algebra.group_ring_action</a></li>
         
-            <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">
-                group_theory.group_action.basic</a></li>
+            <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">
+                group_theory.group_action.defs</a></li>
         </ul>
     </details>
     <details>
@@ -65,6 +65,9 @@
         
             <li><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html">
                 data.finsupp.basic</a></li>
+        
+            <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">
+                group_theory.group_action.basic</a></li>
         
             <li><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/sub_mul_action.html">
                 group_theory.group_action.sub_mul_action</a></li>
@@ -178,10 +181,6 @@
     <div class="nav_link"><a class="break_within" href="#mul_action_hom.inverse_to_fun"><span class="name">mul_action_hom</span>.<span class="name">inverse_to_fun</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#mul_action_hom.map_smul"><span class="name">mul_action_hom</span>.<span class="name">map_smul</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#mul_action_hom.to_quotient"><span class="name">mul_action_hom</span>.<span class="name">to_quotient</span></a></div>
-
-    <div class="nav_link"><a class="break_within" href="#mul_action_hom.to_quotient_apply"><span class="name">mul_action_hom</span>.<span class="name">to_quotient_apply</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#mul_semiring_action_hom"><span class="name">mul_semiring_action_hom</span></a></div>
 
@@ -923,99 +922,10 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
     
         
         
-<div class="decl" id="mul_action_hom.to_quotient">
-<div class="def">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L112">source</a></div>
-
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">def</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom.to_quotient"><span class="name">mul_action_hom</span>.<span class="name">to_quotient</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u_16}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#group">group</a> G]</span></span></span>
-    <span class="decl_args"><span class="fn">(H : <a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#subgroup">subgroup</a> G)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn">G <a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom" title="mul_action_hom">→[</a>G<a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom" title="mul_action_hom">]</a> <span class="fn">G <a href="https://mariainesdff.github.io/ideles/algebra/quotient.html#has_quotient.quotient" title="has_quotient.quotient">⧸</a> H</span></span></div>
-</div>
-
-
-
-
-
-<p>The canonical map to the left cosets.</p>
-
-
-
-    <details>
-        <summary>Equations</summary>
-        <ul class="equations">
-            
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom.to_quotient">mul_action_hom.to_quotient</a> H</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom.mk" title="mul_action_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom.to_fun" title="mul_action_hom.to_fun">to_fun</a> := <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe">coe</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_to_lift">coe_to_lift</a></span>, <a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom.map_smul'" title="mul_action_hom.map_smul'">map_smul'</a> := _}</span></span></li>
-            
-        </ul>
-    </details>
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
-<div class="decl" id="mul_action_hom.to_quotient_apply">
-<div class="theorem">
-
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L115">source</a></div>
-
-
-    <div class="attributes">@[simp]</div>
-
-
-<div class="decl_header">
-    
-
-
-<span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom.to_quotient_apply"><span class="name">mul_action_hom</span>.<span class="name">to_quotient_apply</span></a></span>
-
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{G : Type u_16}</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#group">group</a> G]</span></span></span>
-    <span class="decl_args"><span class="fn">(H : <a href="https://mariainesdff.github.io/ideles/group_theory/subgroup/basic.html#subgroup">subgroup</a> G)</span></span>
-    <span class="decl_args"><span class="fn">(g : G)</span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/hom/group_action.html#mul_action_hom.to_quotient">mul_action_hom.to_quotient</a> H)</span></span> g</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe" title="coe">↑</a>g</span></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-    
-
-    
-        
-        
 <div class="decl" id="distrib_mul_action_hom.to_mul_action_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L120">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L112">source</a></div>
 
 
 
@@ -1060,7 +970,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.to_add_monoid_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L120">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L112">source</a></div>
 
 
 
@@ -1105,7 +1015,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L120">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L112">source</a></div>
 
 
 
@@ -1165,7 +1075,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.has_coe">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L132">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L124">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1219,7 +1129,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.has_coe'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L135">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L127">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1273,7 +1183,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.has_coe_to_fun">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L138">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L130">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -1327,7 +1237,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.to_fun_eq_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L142">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L134">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1373,7 +1283,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.coe_fn_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L144">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L136">source</a></div>
 
 
     <div class="attributes">@[norm_cast]</div>
@@ -1419,7 +1329,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.coe_fn_coe'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L145">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L137">source</a></div>
 
 
     <div class="attributes">@[norm_cast]</div>
@@ -1465,7 +1375,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L147">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L139">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -1511,7 +1421,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L150">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L142">source</a></div>
 
 
 
@@ -1555,7 +1465,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.congr_fun">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L153">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L145">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -1603,7 +1513,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.to_mul_action_hom_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L155">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L147">source</a></div>
 
 
 
@@ -1648,7 +1558,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.to_add_monoid_hom_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L159">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L151">source</a></div>
 
 
 
@@ -1693,7 +1603,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.map_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L163">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L155">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1739,7 +1649,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.map_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L166">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L158">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1786,7 +1696,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.map_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L169">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L161">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1833,7 +1743,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.map_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L172">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L164">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1880,7 +1790,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.map_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L175">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L167">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -1928,7 +1838,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.id">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L181">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L173">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -1980,7 +1890,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.id_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L184">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L176">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2023,7 +1933,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.has_zero">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L188">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L180">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2077,7 +1987,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.has_one">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L192">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L184">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2128,7 +2038,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.coe_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L194">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L186">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2173,7 +2083,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.coe_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L196">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L188">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2215,7 +2125,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.zero_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L198">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L190">source</a></div>
 
 
 
@@ -2259,7 +2169,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.one_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L200">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L192">source</a></div>
 
 
 
@@ -2300,7 +2210,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L202">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L194">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2354,7 +2264,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.comp">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L205">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L197">source</a></div>
 
 
 
@@ -2412,7 +2322,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.comp_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L209">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L201">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2463,7 +2373,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.id_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L211">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L203">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2509,7 +2419,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.comp_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L214">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L206">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2555,7 +2465,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.inverse">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L218">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L210">source</a></div>
 
 
 
@@ -2612,7 +2522,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.inverse_to_fun">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L218">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L210">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2662,7 +2572,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.ext_ring">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L229">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L221">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -2706,7 +2616,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="distrib_mul_action_hom.ext_ring_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L233">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L225">source</a></div>
 
 
 
@@ -2747,7 +2657,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.to_distrib_mul_action_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L242">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L234">source</a></div>
 
 
 
@@ -2792,7 +2702,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.to_ring_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L242">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L234">source</a></div>
 
 
 
@@ -2837,7 +2747,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom">
 <div class="structure">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L242">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L234">source</a></div>
 
 
     <div class="attributes">@[nolint]</div>
@@ -2905,7 +2815,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.has_coe">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L254">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L246">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -2959,7 +2869,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.has_coe'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L257">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L249">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3013,7 +2923,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.has_coe_to_fun">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L260">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L252">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3067,7 +2977,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.coe_fn_coe">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L264">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L256">source</a></div>
 
 
     <div class="attributes">@[norm_cast]</div>
@@ -3113,7 +3023,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.coe_fn_coe'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L265">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L257">source</a></div>
 
 
     <div class="attributes">@[norm_cast]</div>
@@ -3159,7 +3069,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L267">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L259">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -3205,7 +3115,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L270">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L262">source</a></div>
 
 
 
@@ -3249,7 +3159,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.map_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L273">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L265">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3295,7 +3205,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.map_add">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L276">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L268">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3342,7 +3252,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.map_neg">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L279">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L271">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3389,7 +3299,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.map_sub">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L282">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L274">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3436,7 +3346,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.map_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L285">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L277">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3482,7 +3392,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.map_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L288">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L280">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3529,7 +3439,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.map_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L291">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L283">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3577,7 +3487,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.id">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L297">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L289">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -3629,7 +3539,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.id_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L300">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L292">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3672,7 +3582,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.comp">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L305">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L297">source</a></div>
 
 
 
@@ -3730,7 +3640,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.comp_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L309">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L301">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3781,7 +3691,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.id_comp">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L311">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L303">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3827,7 +3737,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="mul_semiring_action_hom.comp_id">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L314">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L306">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3873,7 +3783,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="is_invariant_subring.subtype_hom">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L323">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L315">source</a></div>
 
 
 
@@ -3925,7 +3835,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="is_invariant_subring.coe_subtype_hom">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L326">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L318">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3969,7 +3879,7 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
 <div class="decl" id="is_invariant_subring.coe_subtype_hom'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L329">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/hom/group_action.lean#L321">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4029,13 +3939,6 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -6106,6 +6009,12 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -6250,6 +6159,13 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -6258,6 +6174,29 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -6340,6 +6279,9 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -6973,27 +6915,35 @@ from <code>R</code> to <code>S</code>, where <code>M</code> is a monoid that act
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>

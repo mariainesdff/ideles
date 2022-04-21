@@ -152,6 +152,8 @@
 
     <div class="nav_link"><a class="break_within" href="#add_monoid_algebra.map_domain_mul"><span class="name">add_monoid_algebra</span>.<span class="name">map_domain_mul</span></a></div>
 
+    <div class="nav_link"><a class="break_within" href="#add_monoid_algebra.map_domain_one"><span class="name">add_monoid_algebra</span>.<span class="name">map_domain_one</span></a></div>
+
     <div class="nav_link"><a class="break_within" href="#add_monoid_algebra.mem_span_support"><span class="name">add_monoid_algebra</span>.<span class="name">mem_span_support</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#add_monoid_algebra.mem_span_support'"><span class="name">add_monoid_algebra</span>.<span class="name">mem_span_support&#x27;</span></a></div>
@@ -355,6 +357,8 @@
     <div class="nav_link"><a class="break_within" href="#monoid_algebra.lift_unique'"><span class="name">monoid_algebra</span>.<span class="name">lift_unique&#x27;</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#monoid_algebra.map_domain_mul"><span class="name">monoid_algebra</span>.<span class="name">map_domain_mul</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#monoid_algebra.map_domain_one"><span class="name">monoid_algebra</span>.<span class="name">map_domain_one</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#monoid_algebra.mem_span_support"><span class="name">monoid_algebra</span>.<span class="name">mem_span_support</span></a></div>
 
@@ -2393,10 +2397,57 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
     
         
         
-<div class="decl" id="monoid_algebra.map_domain_mul">
+<div class="decl" id="monoid_algebra.map_domain_one">
 <div class="theorem">
 
 <div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L340">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra.map_domain_one"><span class="name">monoid_algebra</span>.<span class="name">map_domain_one</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α₂ : Type u_3}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_one">has_one</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_one">has_one</a> α₂]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{F : Type u_4}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#one_hom_class">one_hom_class</a> F</span> α</span> α₂]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : F)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.map_domain">finsupp.map_domain</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> 1</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span></div>
+</div>
+
+
+
+
+
+<p>Like <code><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.map_domain_zero">finsupp.map_domain_zero</a></code>, but for the <code>1</code> we define in this file</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
+<div class="decl" id="monoid_algebra.map_domain_mul">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L346">source</a></div>
 
 
 
@@ -2413,8 +2464,10 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> β]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> α₂]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> β</span> α}</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> α</span> α₂)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{F : Type u_4}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom_class">mul_hom_class</a> F</span> α</span> α₂]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : F)</span></span>
+    <span class="decl_args"><span class="fn">(x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> β</span> α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.map_domain">finsupp.map_domain</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> <span class="fn">(x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> y)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.map_domain">finsupp.map_domain</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> x)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.map_domain">finsupp.map_domain</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> y</span></span></span></div>
 </div>
 
@@ -2440,7 +2493,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.of_magma">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L359">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L365">source</a></div>
 
 
 
@@ -2455,7 +2508,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
     <span class="decl_args"><span class="fn">(G : Type u₂)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> k]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul">has_mul</a> G]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> G</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G)</span></span></div>
+<div class="decl_type"><span class="fn">G <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G</span></span></div>
 </div>
 
 
@@ -2489,7 +2542,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.of_magma_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L359">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L365">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2531,7 +2584,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.of">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L370">source</a></div>
 
 
 
@@ -2580,7 +2633,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.of_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L364">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L370">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2622,7 +2675,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.smul_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L371">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L377">source</a></div>
 
 
 
@@ -2663,7 +2716,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.of_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L374">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L380">source</a></div>
 
 
 
@@ -2703,7 +2756,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.single_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L383">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L389">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -2745,7 +2798,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.single_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L383">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L389">source</a></div>
 
 
 
@@ -2796,7 +2849,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.mul_single_apply_aux">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L388">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L394">source</a></div>
 
 
 
@@ -2839,7 +2892,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.mul_single_one_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L399">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L405">source</a></div>
 
 
 
@@ -2881,7 +2934,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.support_mul_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L403">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L409">source</a></div>
 
 
 
@@ -2924,7 +2977,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.single_mul_apply_aux">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L416">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L422">source</a></div>
 
 
 
@@ -2967,7 +3020,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.single_one_mul_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L426">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L432">source</a></div>
 
 
 
@@ -3009,7 +3062,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.support_single_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L430">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L436">source</a></div>
 
 
 
@@ -3052,7 +3105,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.lift_nc_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L443">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L449">source</a></div>
 
 
 
@@ -3104,7 +3157,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.is_scalar_tower_self">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L460">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L466">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3149,7 +3202,7 @@ that is <code>1</code> at <code>1</code> and zero elsewhere.</p>
 <div class="decl" id="monoid_algebra.smul_comm_class_self">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L473">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L479">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3197,7 +3250,7 @@ also commute with the algebra multiplication.</p>
 <div class="decl" id="monoid_algebra.smul_comm_class_symm_self">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L483">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L489">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3242,7 +3295,7 @@ also commute with the algebra multiplication.</p>
 <div class="decl" id="monoid_algebra.non_unital_alg_hom_ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L491">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L497">source</a></div>
 
 
 
@@ -3260,7 +3313,7 @@ also commute with the algebra multiplication.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u₃}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_semiring">non_unital_non_assoc_semiring</a> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> k</span> A]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{φ₁ φ₂ : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom">non_unital_alg_hom</a> k</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G)</span></span> A}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{φ₁ φ₂ : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">→ₙₐ[</a>k<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">]</a> A}</span></span></span>
     <span class="decl_args"><span class="fn">(h : ∀ (x : G), <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>φ₁ <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.single">finsupp.single</a> x</span> 1)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>φ₂ <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.single">finsupp.single</a> x</span> 1)</span></span></span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">φ₁ <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> φ₂</span></div>
 </div>
@@ -3288,7 +3341,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.non_unital_alg_hom_ext'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L499">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L505">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -3308,7 +3361,7 @@ values on the functions <code>single a 1</code>.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u₃}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_semiring">non_unital_non_assoc_semiring</a> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> k</span> A]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{φ₁ φ₂ : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom">non_unital_alg_hom</a> k</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G)</span></span> A}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{φ₁ φ₂ : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">→ₙₐ[</a>k<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">]</a> A}</span></span></span>
     <span class="decl_args"><span class="fn">(h : <span class="fn">φ₁.<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_mul_hom" title="non_unital_alg_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra.of_magma">monoid_algebra.of_magma</a> k</span> G)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">φ₂.<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_mul_hom" title="non_unital_alg_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra.of_magma">monoid_algebra.of_magma</a> k</span> G)</span></span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">φ₁ <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> φ₂</span></div>
 </div>
@@ -3335,7 +3388,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.lift_magma_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L506">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L512">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3357,7 +3410,7 @@ values on the functions <code>single a 1</code>.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> k</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> k</span> A</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#smul_comm_class">smul_comm_class</a> k</span> A</span> A]</span></span></span>
-    <span class="decl_args"><span class="fn">(F : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom">non_unital_alg_hom</a> k</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G)</span></span> A)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(F : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">→ₙₐ[</a>k<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">]</a> A)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn"><span class="fn">((<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra.lift_magma">monoid_algebra.lift_magma</a> k)</span>.<a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.symm" title="equiv.symm">symm</a>)</span></span> F</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">F.<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_mul_hom" title="non_unital_alg_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra.of_magma">monoid_algebra.of_magma</a> k</span> G)</span></span></span></div>
 </div>
 
@@ -3382,7 +3435,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.lift_magma">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L506">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L512">source</a></div>
 
 
 
@@ -3402,7 +3455,7 @@ values on the functions <code>single a 1</code>.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> k</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> k</span> A</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#smul_comm_class">smul_comm_class</a> k</span> A</span> A]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> G</span> A</span> <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv" title="equiv">≃</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom">non_unital_alg_hom</a> k</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G)</span></span> A</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn">(G <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> A)</span> <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv" title="equiv">≃</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">→ₙₐ[</a>k<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">]</a> A)</span></span></div>
 </div>
 
 
@@ -3418,7 +3471,7 @@ non-associative algebras over <code>k</code> is adjoint to the forgetful functor
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra.lift_magma">monoid_algebra.lift_magma</a> k</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.mk" title="equiv.mk">{</a><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.to_fun" title="equiv.to_fun">to_fun</a> := <span class="fn">λ (f : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> G</span> A)</span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.mk" title="non_unital_alg_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_fun" title="non_unital_alg_hom.to_fun">to_fun</a> := <span class="fn">λ (a : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G)</span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.sum">finsupp.sum</a> a</span> <span class="fn">(λ (m : G) (t : k), <span class="fn">t <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f m)</span></span></span></span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_smul'" title="non_unital_alg_hom.map_smul'">map_smul'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_zero'" title="non_unital_alg_hom.map_zero'">map_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_add'" title="non_unital_alg_hom.map_add'">map_add'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_mul'" title="non_unital_alg_hom.map_mul'">map_mul'</a> := _}</span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.inv_fun" title="equiv.inv_fun">inv_fun</a> := <span class="fn">λ (F : <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom">non_unital_alg_hom</a> k</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G)</span></span> A)</span>, <span class="fn">F.<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_mul_hom" title="non_unital_alg_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra.of_magma">monoid_algebra.of_magma</a> k</span> G)</span></span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.left_inv" title="equiv.left_inv">left_inv</a> := _, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.right_inv" title="equiv.right_inv">right_inv</a> := _}</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra.lift_magma">monoid_algebra.lift_magma</a> k</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.mk" title="equiv.mk">{</a><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.to_fun" title="equiv.to_fun">to_fun</a> := <span class="fn">λ (f : <span class="fn">G <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> A)</span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.mk" title="non_unital_alg_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_fun" title="non_unital_alg_hom.to_fun">to_fun</a> := <span class="fn">λ (a : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G)</span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.sum">finsupp.sum</a> a</span> <span class="fn">(λ (m : G) (t : k), <span class="fn">t <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f m)</span></span></span></span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_smul'" title="non_unital_alg_hom.map_smul'">map_smul'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_zero'" title="non_unital_alg_hom.map_zero'">map_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_add'" title="non_unital_alg_hom.map_add'">map_add'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_mul'" title="non_unital_alg_hom.map_mul'">map_mul'</a> := _}</span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.inv_fun" title="equiv.inv_fun">inv_fun</a> := <span class="fn">λ (F : <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">→ₙₐ[</a>k<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">]</a> A)</span>, <span class="fn">F.<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_mul_hom" title="non_unital_alg_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra.of_magma">monoid_algebra.of_magma</a> k</span> G)</span></span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.left_inv" title="equiv.left_inv">left_inv</a> := _, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.right_inv" title="equiv.right_inv">right_inv</a> := _}</span></span></li>
             
         </ul>
     </details>
@@ -3437,7 +3490,7 @@ non-associative algebras over <code>k</code> is adjoint to the forgetful functor
 <div class="decl" id="monoid_algebra.lift_magma_apply_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L506">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L512">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3459,7 +3512,7 @@ non-associative algebras over <code>k</code> is adjoint to the forgetful functor
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> k</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> k</span> A</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#smul_comm_class">smul_comm_class</a> k</span> A</span> A]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> G</span> A)</span></span>
+    <span class="decl_args"><span class="fn">(f : G <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> A)</span></span>
     <span class="decl_args"><span class="fn">(a : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra">monoid_algebra</a> k</span> G)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#monoid_algebra.lift_magma">monoid_algebra.lift_magma</a> k)</span></span> f)</span></span> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.sum">finsupp.sum</a> a</span> <span class="fn">(λ (m : G) (t : k), <span class="fn">t <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f m)</span></span></span></span></span></div>
 </div>
@@ -3492,7 +3545,7 @@ non-associative algebras over <code>k</code> is adjoint to the forgetful functor
 <div class="decl" id="monoid_algebra.single_one_comm">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L540">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L546">source</a></div>
 
 
 
@@ -3533,7 +3586,7 @@ non-associative algebras over <code>k</code> is adjoint to the forgetful functor
 <div class="decl" id="monoid_algebra.single_one_ring_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L551">source</a></div>
 
 
 
@@ -3582,7 +3635,7 @@ non-associative algebras over <code>k</code> is adjoint to the forgetful functor
 <div class="decl" id="monoid_algebra.single_one_ring_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L545">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L551">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3624,7 +3677,7 @@ non-associative algebras over <code>k</code> is adjoint to the forgetful functor
 <div class="decl" id="monoid_algebra.ring_hom_ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L552">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L558">source</a></div>
 
 
 
@@ -3670,7 +3723,7 @@ and <code>single 1 b</code>, then they are equal.</p>
 <div class="decl" id="monoid_algebra.ring_hom_ext'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L563">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L569">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -3719,7 +3772,7 @@ and <code>single 1 b</code>, then they are equal.</p>
 <div class="decl" id="monoid_algebra.algebra">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L575">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L581">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -3774,7 +3827,7 @@ and <code>single 1 b</code>, then they are equal.</p>
 <div class="decl" id="monoid_algebra.single_one_alg_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L584">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L590">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3819,7 +3872,7 @@ and <code>single 1 b</code>, then they are equal.</p>
 <div class="decl" id="monoid_algebra.single_one_alg_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L584">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L590">source</a></div>
 
 
 
@@ -3871,7 +3924,7 @@ and <code>single 1 b</code>, then they are equal.</p>
 <div class="decl" id="monoid_algebra.coe_algebra_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L588">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L594">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -3915,7 +3968,7 @@ and <code>single 1 b</code>, then they are equal.</p>
 <div class="decl" id="monoid_algebra.single_eq_algebra_map_mul_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L592">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L598">source</a></div>
 
 
 
@@ -3956,7 +4009,7 @@ and <code>single 1 b</code>, then they are equal.</p>
 <div class="decl" id="monoid_algebra.single_algebra_map_eq_algebra_map_mul_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L596">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L602">source</a></div>
 
 
 
@@ -4000,7 +4053,7 @@ and <code>single 1 b</code>, then they are equal.</p>
 <div class="decl" id="monoid_algebra.induction_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L601">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L607">source</a></div>
 
 
 
@@ -4044,7 +4097,7 @@ and <code>single 1 b</code>, then they are equal.</p>
 <div class="decl" id="monoid_algebra.lift_nc_alg_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L619">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L625">source</a></div>
 
 
 
@@ -4102,7 +4155,7 @@ and <code>single 1 b</code>, then they are equal.</p>
 <div class="decl" id="monoid_algebra.alg_hom_ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L627">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L633">source</a></div>
 
 
 
@@ -4148,7 +4201,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.alg_hom_ext'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L632">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L638">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -4195,7 +4248,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.lift">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L641">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L647">source</a></div>
 
 
 
@@ -4248,7 +4301,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.lift_apply'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L649">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L655">source</a></div>
 
 
 
@@ -4292,7 +4345,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.lift_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L652">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L658">source</a></div>
 
 
 
@@ -4336,7 +4389,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.lift_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L656">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L662">source</a></div>
 
 
 
@@ -4379,7 +4432,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.lift_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L660">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L666">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4425,7 +4478,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.lift_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L663">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L669">source</a></div>
 
 
 
@@ -4469,7 +4522,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.lift_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L667">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L673">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4516,7 +4569,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.lift_unique'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L671">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L677">source</a></div>
 
 
 
@@ -4559,7 +4612,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="monoid_algebra.lift_unique">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L677">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L683">source</a></div>
 
 
 
@@ -4605,7 +4658,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.group_smul.linear_map">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L688">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L694">source</a></div>
 
 
 
@@ -4660,7 +4713,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.group_smul.linear_map_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L697">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L703">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4708,7 +4761,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.equivariant_of_linear_of_comm">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L715">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L721">source</a></div>
 
 
 
@@ -4768,7 +4821,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.equivariant_of_linear_of_comm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L731">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L737">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4821,7 +4874,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.prod_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L742">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L748">source</a></div>
 
 
 
@@ -4864,7 +4917,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.mul_single_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L755">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L761">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4908,7 +4961,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.single_mul_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L760">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L766">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -4953,7 +5006,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.mul_apply_left">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L764">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L770">source</a></div>
 
 
 
@@ -4994,7 +5047,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.mul_apply_right">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L771">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L777">source</a></div>
 
 
 
@@ -5035,7 +5088,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.mem_span_support">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L784">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L790">source</a></div>
 
 
 
@@ -5076,7 +5129,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.op_ring_equiv_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L798">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L804">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5118,7 +5171,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.op_ring_equiv">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L798">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L804">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -5170,7 +5223,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="monoid_algebra.op_ring_equiv_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L798">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L804">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5212,7 +5265,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="monoid_algebra.op_ring_equiv_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L809">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L815">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5255,7 +5308,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="monoid_algebra.op_ring_equiv_symm_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L813">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L819">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5298,7 +5351,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="monoid_algebra.submodule_of_smul_mem">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L827">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L833">source</a></div>
 
 
 
@@ -5362,7 +5415,7 @@ submodule over <code><a href="https://mariainesdff.github.io/ideles/algebra/mono
 <div class="decl" id="add_monoid_algebra.inhabited">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L853">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L859">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5402,7 +5455,7 @@ submodule over <code><a href="https://mariainesdff.github.io/ideles/algebra/mono
 <div class="decl" id="add_monoid_algebra">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L853">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L859">source</a></div>
 
 
 
@@ -5452,7 +5505,7 @@ endowed with the convolution product.</p>
 <div class="decl" id="add_monoid_algebra.add_comm_monoid">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L853">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L859">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5492,7 +5545,7 @@ endowed with the convolution product.</p>
 <div class="decl" id="add_monoid_algebra.has_coe_to_fun">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L855">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L861">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5541,7 +5594,7 @@ endowed with the convolution product.</p>
 <div class="decl" id="add_monoid_algebra.lift_nc">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L873">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L879">source</a></div>
 
 
 
@@ -5597,7 +5650,7 @@ homomorphism called <code><a href="https://mariainesdff.github.io/ideles/algebra
 <div class="decl" id="add_monoid_algebra.lift_nc_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L876">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L882">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5643,7 +5696,7 @@ homomorphism called <code><a href="https://mariainesdff.github.io/ideles/algebra
 <div class="decl" id="add_monoid_algebra.has_mul">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L889">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L895">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5697,7 +5750,7 @@ polynomials where <code>α</code> is the additive monoid of monomial exponents.)
 <div class="decl" id="add_monoid_algebra.mul_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L892">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L898">source</a></div>
 
 
 
@@ -5737,7 +5790,7 @@ polynomials where <code>α</code> is the additive monoid of monomial exponents.)
 <div class="decl" id="add_monoid_algebra.non_unital_non_assoc_semiring">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L896">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L902">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5787,7 +5840,7 @@ polynomials where <code>α</code> is the additive monoid of monomial exponents.)
 <div class="decl" id="add_monoid_algebra.lift_nc_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L914">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L920">source</a></div>
 
 
 
@@ -5834,7 +5887,7 @@ polynomials where <code>α</code> is the additive monoid of monomial exponents.)
 <div class="decl" id="add_monoid_algebra.has_one">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L928">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L934">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -5886,7 +5939,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.one_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L931">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L937">source</a></div>
 
 
 
@@ -5925,7 +5978,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.lift_nc_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L934">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L940">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -5972,7 +6025,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.non_unital_semiring">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L945">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L951">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6022,7 +6075,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.non_assoc_semiring">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L960">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L966">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6079,7 +6132,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.has_scalar">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L976">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L982">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6131,7 +6184,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.semiring">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L982">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L988">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6181,7 +6234,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.lift_nc_ring_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L993">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L999">source</a></div>
 
 
 
@@ -6235,7 +6288,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.comm_semiring">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1003">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1009">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6285,7 +6338,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.nontrivial">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1007">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1013">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6334,7 +6387,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.unique">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1013">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1019">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6384,7 +6437,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.add_comm_group">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1016">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1022">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6433,7 +6486,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.non_unital_non_assoc_ring">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1019">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1025">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6483,7 +6536,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.non_unital_ring">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1023">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1029">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6533,7 +6586,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.non_assoc_ring">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1027">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1033">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6583,7 +6636,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.ring">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1031">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1037">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6633,7 +6686,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.comm_ring">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1035">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1041">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6683,7 +6736,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.distrib_mul_action">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1040">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1046">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6735,7 +6788,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.has_faithful_scalar">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1044">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1050">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6780,7 +6833,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.module">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1048">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1054">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6832,7 +6885,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.is_scalar_tower">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1051">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1057">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6880,7 +6933,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.smul_comm_class">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1056">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1062">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6927,7 +6980,7 @@ that is <code>1</code> at <code>0</code> and zero elsewhere.</p>
 <div class="decl" id="add_monoid_algebra.is_central_scalar">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1061">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1067">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -6980,7 +7033,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.mul_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1075">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1081">source</a></div>
 
 
 
@@ -7021,7 +7074,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.mul_apply_antidiagonal">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1079">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1085">source</a></div>
 
 
 
@@ -7064,7 +7117,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.support_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1084">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1090">source</a></div>
 
 
 
@@ -7104,7 +7157,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.single_mul_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1088">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1094">source</a></div>
 
 
 
@@ -7145,7 +7198,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.single_pow">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1095">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1101">source</a></div>
 
 
 
@@ -7184,10 +7237,57 @@ because we've never discussed actions of additive groups.</p>
     
         
         
+<div class="decl" id="add_monoid_algebra.map_domain_one">
+<div class="theorem">
+
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1108">source</a></div>
+
+
+    <div class="attributes">@[simp]</div>
+
+
+<div class="decl_header">
+    
+
+
+<span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra.map_domain_one"><span class="name">add_monoid_algebra</span>.<span class="name">map_domain_one</span></a></span>
+
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α : Type u_1}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{β : Type u_2}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{α₂ : Type u_3}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> β]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_zero">has_zero</a> α₂]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{F : Type u_4}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#zero_hom_class">zero_hom_class</a> F</span> α</span> α₂]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : F)</span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.map_domain">finsupp.map_domain</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> 1</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span></div>
+</div>
+
+
+
+
+
+<p>Like <code><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.map_domain_zero">finsupp.map_domain_zero</a></code>, but for the <code>1</code> we define in this file</p>
+
+
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="add_monoid_algebra.map_domain_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1102">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1115">source</a></div>
 
 
 
@@ -7204,8 +7304,10 @@ because we've never discussed actions of additive groups.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> β]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_add">has_add</a> α]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_add">has_add</a> α₂]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> β</span> α}</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_hom">add_hom</a> α</span> α₂)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{F : Type u_4}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#add_hom_class">add_hom_class</a> F</span> α</span> α₂]</span></span></span>
+    <span class="decl_args"><span class="fn">(f : F)</span></span>
+    <span class="decl_args"><span class="fn">(x y : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> β</span> α)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.map_domain">finsupp.map_domain</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> <span class="fn">(x <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> y)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.map_domain">finsupp.map_domain</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> x)</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mul.mul" title="has_mul.mul">*</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.map_domain">finsupp.map_domain</a> <a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f</span> y</span></span></span></div>
 </div>
 
@@ -7231,7 +7333,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.of_magma">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1124">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1136">source</a></div>
 
 
 
@@ -7246,7 +7348,7 @@ because we've never discussed actions of additive groups.</p>
     <span class="decl_args"><span class="fn">(G : Type u₂)</span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#semiring">semiring</a> k]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/init/core.html#has_add">has_add</a> G]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/type_tags.html#multiplicative">multiplicative</a> G)</span></span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G)</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/type_tags.html#multiplicative">multiplicative</a> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G</span></span></div>
 </div>
 
 
@@ -7280,7 +7382,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.of_magma_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1124">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1136">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7322,7 +7424,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.of">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1129">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1141">source</a></div>
 
 
 
@@ -7371,7 +7473,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.of'">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1135">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1147">source</a></div>
 
 
 
@@ -7419,7 +7521,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.of_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1139">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1151">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7461,7 +7563,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.of'_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1142">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1154">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7502,7 +7604,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.of'_eq_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1144">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1156">source</a></div>
 
 
 
@@ -7542,7 +7644,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.of_injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1146">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1158">source</a></div>
 
 
 
@@ -7582,7 +7684,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.single_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1155">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1167">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -7624,7 +7726,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.single_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1155">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1167">source</a></div>
 
 
 
@@ -7675,7 +7777,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.mul_single_apply_aux">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1160">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1172">source</a></div>
 
 
 
@@ -7718,7 +7820,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.mul_single_zero_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1165">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1177">source</a></div>
 
 
 
@@ -7760,7 +7862,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.single_mul_apply_aux">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1169">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1181">source</a></div>
 
 
 
@@ -7803,7 +7905,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.single_zero_mul_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1174">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1186">source</a></div>
 
 
 
@@ -7845,7 +7947,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.mul_single_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1178">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1190">source</a></div>
 
 
 
@@ -7887,7 +7989,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.single_mul_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1183">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1195">source</a></div>
 
 
 
@@ -7930,7 +8032,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.support_mul_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1187">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1199">source</a></div>
 
 
 
@@ -7973,7 +8075,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.support_single_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1192">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1204">source</a></div>
 
 
 
@@ -8016,7 +8118,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.lift_nc_smul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1197">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1209">source</a></div>
 
 
 
@@ -8061,7 +8163,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.induction_on">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1204">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1216">source</a></div>
 
 
 
@@ -8105,7 +8207,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.mem_span_support">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1222">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1234">source</a></div>
 
 
 
@@ -8146,7 +8248,7 @@ because we've never discussed actions of additive groups.</p>
 <div class="decl" id="add_monoid_algebra.mem_span_support'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1228">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1240">source</a></div>
 
 
 
@@ -8198,7 +8300,7 @@ but for now we just contruct the ring isomorphisms using <code><a href="https://
 <div class="decl" id="add_monoid_algebra.to_multiplicative">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1247">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1259">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8250,7 +8352,7 @@ but for now we just contruct the ring isomorphisms using <code><a href="https://
 <div class="decl" id="monoid_algebra.to_additive">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1258">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1270">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8308,7 +8410,7 @@ but for now we just contruct the ring isomorphisms using <code><a href="https://
 <div class="decl" id="add_monoid_algebra.is_scalar_tower_self">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1278">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1290">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8353,7 +8455,7 @@ but for now we just contruct the ring isomorphisms using <code><a href="https://
 <div class="decl" id="add_monoid_algebra.smul_comm_class_self">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1285">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1297">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8401,7 +8503,7 @@ also commute with the algebra multiplication.</p>
 <div class="decl" id="add_monoid_algebra.smul_comm_class_symm_self">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1289">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1301">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -8446,7 +8548,7 @@ also commute with the algebra multiplication.</p>
 <div class="decl" id="add_monoid_algebra.non_unital_alg_hom_ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1297">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1309">source</a></div>
 
 
 
@@ -8464,7 +8566,7 @@ also commute with the algebra multiplication.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u₃}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_semiring">non_unital_non_assoc_semiring</a> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> k</span> A]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{φ₁ φ₂ : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom">non_unital_alg_hom</a> k</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G)</span></span> A}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{φ₁ φ₂ : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">→ₙₐ[</a>k<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">]</a> A}</span></span></span>
     <span class="decl_args"><span class="fn">(h : ∀ (x : G), <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>φ₁ <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.single">finsupp.single</a> x</span> 1)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>φ₂ <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.single">finsupp.single</a> x</span> 1)</span></span></span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">φ₁ <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> φ₂</span></div>
 </div>
@@ -8492,7 +8594,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.non_unital_alg_hom_ext'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1303">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1315">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -8512,7 +8614,7 @@ values on the functions <code>single a 1</code>.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{A : Type u₃}</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#non_unital_non_assoc_semiring">non_unital_non_assoc_semiring</a> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#distrib_mul_action">distrib_mul_action</a> k</span> A]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">{φ₁ φ₂ : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom">non_unital_alg_hom</a> k</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G)</span></span> A}</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">{φ₁ φ₂ : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">→ₙₐ[</a>k<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">]</a> A}</span></span></span>
     <span class="decl_args"><span class="fn">(h : <span class="fn">φ₁.<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_mul_hom" title="non_unital_alg_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra.of_magma">add_monoid_algebra.of_magma</a> k</span> G)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">φ₂.<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_mul_hom" title="non_unital_alg_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra.of_magma">add_monoid_algebra.of_magma</a> k</span> G)</span></span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">φ₁ <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> φ₂</span></div>
 </div>
@@ -8539,7 +8641,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.lift_magma">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1311">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1323">source</a></div>
 
 
 
@@ -8559,7 +8661,7 @@ values on the functions <code>single a 1</code>.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> k</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> k</span> A</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#smul_comm_class">smul_comm_class</a> k</span> A</span> A]</span></span></span>&nbsp;<span class="decl_args">:</span>
-<div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/type_tags.html#multiplicative">multiplicative</a> G)</span></span> A</span> <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv" title="equiv">≃</a> <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom">non_unital_alg_hom</a> k</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G)</span></span> A</span></span></div>
+<div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/type_tags.html#multiplicative">multiplicative</a> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> A)</span> <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv" title="equiv">≃</a> <span class="fn"><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">→ₙₐ[</a>k<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">]</a> A)</span></span></div>
 </div>
 
 
@@ -8576,7 +8678,7 @@ direction.</p>
         <summary>Equations</summary>
         <ul class="equations">
             
-                <li class="equation"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra.lift_magma">add_monoid_algebra.lift_magma</a> k</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.mk" title="equiv.mk">{</a><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.to_fun" title="equiv.to_fun">to_fun</a> := <span class="fn">λ (f : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/type_tags.html#multiplicative">multiplicative</a> G)</span></span> A)</span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.mk" title="non_unital_alg_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_fun" title="non_unital_alg_hom.to_fun">to_fun</a> := <span class="fn">λ (a : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G)</span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.sum">finsupp.sum</a> a</span> <span class="fn">(λ (m : G) (t : k), <span class="fn">t <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/algebra/group/type_tags.html#multiplicative.of_add">multiplicative.of_add</a> m))</span></span></span></span></span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_smul'" title="non_unital_alg_hom.map_smul'">map_smul'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_zero'" title="non_unital_alg_hom.map_zero'">map_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_add'" title="non_unital_alg_hom.map_add'">map_add'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_mul'" title="non_unital_alg_hom.map_mul'">map_mul'</a> := _}</span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.inv_fun" title="equiv.inv_fun">inv_fun</a> := <span class="fn">λ (F : <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom">non_unital_alg_hom</a> k</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G)</span></span> A)</span>, <span class="fn">F.<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_mul_hom" title="non_unital_alg_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra.of_magma">add_monoid_algebra.of_magma</a> k</span> G)</span></span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.left_inv" title="equiv.left_inv">left_inv</a> := _, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.right_inv" title="equiv.right_inv">right_inv</a> := _}</span></span></li>
+                <li class="equation"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra.lift_magma">add_monoid_algebra.lift_magma</a> k</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.mk" title="equiv.mk">{</a><a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.to_fun" title="equiv.to_fun">to_fun</a> := <span class="fn">λ (f : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/type_tags.html#multiplicative">multiplicative</a> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> A)</span>, <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.mk" title="non_unital_alg_hom.mk">{</a><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_fun" title="non_unital_alg_hom.to_fun">to_fun</a> := <span class="fn">λ (a : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G)</span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.sum">finsupp.sum</a> a</span> <span class="fn">(λ (m : G) (t : k), <span class="fn">t <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/algebra/group/type_tags.html#multiplicative.of_add">multiplicative.of_add</a> m))</span></span></span></span></span></span>, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_smul'" title="non_unital_alg_hom.map_smul'">map_smul'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_zero'" title="non_unital_alg_hom.map_zero'">map_zero'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_add'" title="non_unital_alg_hom.map_add'">map_add'</a> := _, <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.map_mul'" title="non_unital_alg_hom.map_mul'">map_mul'</a> := _}</span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.inv_fun" title="equiv.inv_fun">inv_fun</a> := <span class="fn">λ (F : <span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">→ₙₐ[</a>k<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">]</a> A)</span>, <span class="fn">F.<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_mul_hom" title="non_unital_alg_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra.of_magma">add_monoid_algebra.of_magma</a> k</span> G)</span></span></span>, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.left_inv" title="equiv.left_inv">left_inv</a> := _, <a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.right_inv" title="equiv.right_inv">right_inv</a> := _}</span></span></li>
             
         </ul>
     </details>
@@ -8595,7 +8697,7 @@ direction.</p>
 <div class="decl" id="add_monoid_algebra.lift_magma_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1311">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1323">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8617,7 +8719,7 @@ direction.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> k</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> k</span> A</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#smul_comm_class">smul_comm_class</a> k</span> A</span> A]</span></span></span>
-    <span class="decl_args"><span class="fn">(F : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom">non_unital_alg_hom</a> k</span> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G)</span></span> A)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(F : <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">→ₙₐ[</a>k<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom" title="non_unital_alg_hom">]</a> A)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn"><span class="fn">((<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra.lift_magma">add_monoid_algebra.lift_magma</a> k)</span>.<a href="https://mariainesdff.github.io/ideles/logic/equiv/basic.html#equiv.symm" title="equiv.symm">symm</a>)</span></span> F</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn">F.<a href="https://mariainesdff.github.io/ideles/algebra/hom/non_unital_alg.html#non_unital_alg_hom.to_mul_hom" title="non_unital_alg_hom.to_mul_hom">to_mul_hom</a>.<a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom.comp" title="mul_hom.comp">comp</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra.of_magma">add_monoid_algebra.of_magma</a> k</span> G)</span></span></span></div>
 </div>
 
@@ -8642,7 +8744,7 @@ direction.</p>
 <div class="decl" id="add_monoid_algebra.lift_magma_apply_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1311">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1323">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8664,7 +8766,7 @@ direction.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/module/basic.html#module">module</a> k</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#is_scalar_tower">is_scalar_tower</a> k</span> A</span> A]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html#smul_comm_class">smul_comm_class</a> k</span> A</span> A]</span></span></span>
-    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom">mul_hom</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/group/type_tags.html#multiplicative">multiplicative</a> G)</span></span> A)</span></span>
+    <span class="decl_args"><span class="fn">(f : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/group/type_tags.html#multiplicative">multiplicative</a> G</span> <a href="https://mariainesdff.github.io/ideles/algebra/hom/group.html#mul_hom" title="mul_hom">→ₙ*</a> A)</span></span>
     <span class="decl_args"><span class="fn">(a : <span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra">add_monoid_algebra</a> k</span> G)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn">(<a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/basic.html#add_monoid_algebra.lift_magma">add_monoid_algebra.lift_magma</a> k)</span></span> f)</span></span> a</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/data/finsupp/basic.html#finsupp.sum">finsupp.sum</a> a</span> <span class="fn">(λ (m : G) (t : k), <span class="fn">t <a href="https://mariainesdff.github.io/ideles/algebra/group/defs.html#has_scalar.smul" title="has_scalar.smul">•</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a>f <span class="fn">(<a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/algebra/group/type_tags.html#multiplicative.of_add">multiplicative.of_add</a> m))</span></span></span></span></span></span></div>
 </div>
@@ -8697,7 +8799,7 @@ direction.</p>
 <div class="decl" id="add_monoid_algebra.single_zero_ring_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1326">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1338">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8739,7 +8841,7 @@ direction.</p>
 <div class="decl" id="add_monoid_algebra.single_zero_ring_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1326">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1338">source</a></div>
 
 
 
@@ -8788,7 +8890,7 @@ direction.</p>
 <div class="decl" id="add_monoid_algebra.ring_hom_ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1333">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1345">source</a></div>
 
 
 
@@ -8834,7 +8936,7 @@ and <code>single 0 b</code>, then they are equal.</p>
 <div class="decl" id="add_monoid_algebra.ring_hom_ext'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1342">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1354">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -8883,7 +8985,7 @@ and <code>single 0 b</code>, then they are equal.</p>
 <div class="decl" id="add_monoid_algebra.op_ring_equiv">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1370">source</a></div>
 
 
     <div class="attributes">@[protected]</div>
@@ -8935,7 +9037,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="add_monoid_algebra.op_ring_equiv_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1370">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -8977,7 +9079,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="add_monoid_algebra.op_ring_equiv_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1358">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1370">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9019,7 +9121,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="add_monoid_algebra.op_ring_equiv_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1370">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1382">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9062,7 +9164,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="add_monoid_algebra.op_ring_equiv_symm_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1374">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1386">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9105,7 +9207,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="add_monoid_algebra.algebra">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1385">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1397">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -9160,7 +9262,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="add_monoid_algebra.single_zero_alg_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1393">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1405">source</a></div>
 
 
 
@@ -9212,7 +9314,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="add_monoid_algebra.single_zero_alg_hom_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1393">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1405">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9257,7 +9359,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="add_monoid_algebra.coe_algebra_map">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1397">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1409">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9301,7 +9403,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="add_monoid_algebra.lift_nc_alg_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1410">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1422">source</a></div>
 
 
 
@@ -9359,7 +9461,7 @@ the <code><a href="https://mariainesdff.github.io/ideles/algebra/monoid_algebra/
 <div class="decl" id="add_monoid_algebra.alg_hom_ext">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1419">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1431">source</a></div>
 
 
 
@@ -9405,7 +9507,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.alg_hom_ext'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1424">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1436">source</a></div>
 
 
     <div class="attributes">@[ext]</div>
@@ -9452,7 +9554,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.lift">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1433">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1445">source</a></div>
 
 
 
@@ -9505,7 +9607,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.lift_apply'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1442">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1454">source</a></div>
 
 
 
@@ -9549,7 +9651,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.lift_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1445">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1457">source</a></div>
 
 
 
@@ -9593,7 +9695,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.lift_def">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1449">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1461">source</a></div>
 
 
 
@@ -9636,7 +9738,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.lift_symm_apply">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1453">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1465">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9682,7 +9784,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.lift_of">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1456">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1468">source</a></div>
 
 
 
@@ -9726,7 +9828,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.lift_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1460">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1472">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -9773,7 +9875,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.lift_unique'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1464">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1476">source</a></div>
 
 
 
@@ -9816,7 +9918,7 @@ values on the functions <code>single a 1</code>.</p>
 <div class="decl" id="add_monoid_algebra.lift_unique">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1470">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1482">source</a></div>
 
 
 
@@ -9862,7 +9964,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="add_monoid_algebra.alg_hom_ext_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1474">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1486">source</a></div>
 
 
 
@@ -9905,7 +10007,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="add_monoid_algebra.prod_single">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1486">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1498">source</a></div>
 
 
 
@@ -9948,7 +10050,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="add_monoid_algebra.to_multiplicative_alg_equiv">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1500">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1512">source</a></div>
 
 
 
@@ -10001,7 +10103,7 @@ its values on <code>F (single a 1)</code>.</p>
 <div class="decl" id="monoid_algebra.to_additive_alg_equiv">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1507">source</a></div>
+<div class="gh_link"><a href="https://github.com/leanprover-community/mathlib/blob/master/src/algebra/monoid_algebra/basic.lean#L1519">source</a></div>
 
 
 
@@ -10070,13 +10172,6 @@ its values on <code>F (single a 1)</code>.</p>
         <details class="nav_sect" data-path="data" >
             <summary>data</summary>
             
-        <details class="nav_sect" data-path="data/buffer" >
-            <summary>buffer</summary>
-            
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/data/buffer/parser.html">parser</a>
-        </div>
-        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/data/buffer.html">buffer</a>
         </div>
@@ -12147,6 +12242,12 @@ its values on <code>F (single a 1)</code>.</p>
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/basic.html">basic</a>
         </div>
         <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/big_operators.html">big_operators</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/conj_act.html">conj_act</a>
+        </div>
+        <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/group_theory/group_action/defs.html">defs</a>
         </div>
         <div class="nav_link ">
@@ -12291,6 +12392,13 @@ its values on <code>F (single a 1)</code>.</p>
         <details class="nav_sect" data-path="linear_algebra" >
             <summary>linear_algebra</summary>
             
+        <details class="nav_sect" data-path="linear_algebra/charpoly" >
+            <summary>charpoly</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/charpoly/basic.html">basic</a>
+        </div>
+        </details>
         <details class="nav_sect" data-path="linear_algebra/direct_sum" >
             <summary>direct_sum</summary>
             
@@ -12299,6 +12407,29 @@ its values on <code>F (single a 1)</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/direct_sum/tensor_product.html">tensor_product</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="linear_algebra/free_module" >
+            <summary>free_module</summary>
+            
+        <details class="nav_sect" data-path="linear_algebra/free_module/finite" >
+            <summary>finite</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/finite/rank.html">rank</a>
+        </div>
+        </details>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/basic.html">basic</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/rank.html">rank</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/free_module/strong_rank_condition.html">strong_rank_condition</a>
         </div>
         </details>
         <details class="nav_sect" data-path="linear_algebra/matrix" >
@@ -12381,6 +12512,9 @@ its values on <code>F (single a 1)</code>.</p>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/bilinear_map.html">bilinear_map</a>
+        </div>
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/linear_algebra/contraction.html">contraction</a>
         </div>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/linear_algebra/determinant.html">determinant</a>
@@ -13014,27 +13148,35 @@ its values on <code>F (single a 1)</code>.</p>
         <details class="nav_sect" data-path="set_theory" >
             <summary>set_theory</summary>
             
+        <details class="nav_sect" data-path="set_theory/cardinal" >
+            <summary>cardinal</summary>
+            
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal.html">cardinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal_ordinal.html">cardinal_ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/cofinality.html">cofinality</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/cofinality.html">cofinality</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/finite.html">finite</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/fincard.html">fincard</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/cardinal/ordinal.html">ordinal</a>
+        </div>
+        </details>
+        <details class="nav_sect" data-path="set_theory/ordinal" >
+            <summary>ordinal</summary>
+            
+        <div class="nav_link ">
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/arithmetic.html">arithmetic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal.html">ordinal</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/basic.html">basic</a>
         </div>
         <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal_arithmetic.html">ordinal_arithmetic</a>
+            <a href="https://mariainesdff.github.io/ideles/set_theory/ordinal/principal.html">principal</a>
         </div>
-        <div class="nav_link ">
-            <a href="https://mariainesdff.github.io/ideles/set_theory/principal.html">principal</a>
-        </div>
+        </details>
         <div class="nav_link ">
             <a href="https://mariainesdff.github.io/ideles/set_theory/schroeder_bernstein.html">schroeder_bernstein</a>
         </div>
