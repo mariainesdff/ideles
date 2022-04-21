@@ -1335,7 +1335,7 @@
       </node>
       <node id="ideles:ideles_function_field" label="ideles:ideles_function_field">
         <attvalues>
-          <attvalue for="0" value="67" />
+          <attvalue for="0" value="70" />
         </attvalues>
       </node>
       <node id="mathlib:ring_theory.class_group" label="mathlib:ring_theory.class_group">
@@ -1345,12 +1345,12 @@
       </node>
       <node id="ideles:adeles_function_field" label="ideles:adeles_function_field">
         <attvalues>
-          <attvalue for="0" value="27" />
+          <attvalue for="0" value="29" />
         </attvalues>
       </node>
       <node id="ideles:ideles_R" label="ideles:ideles_R">
         <attvalues>
-          <attvalue for="0" value="53" />
+          <attvalue for="0" value="54" />
         </attvalues>
       </node>
       <node id="mathlib:algebra.hom.group" label="mathlib:algebra.hom.group">
@@ -2280,12 +2280,12 @@
       </node>
       <node id="ideles:ideles_number_field" label="ideles:ideles_number_field">
         <attvalues>
-          <attvalue for="0" value="68" />
+          <attvalue for="0" value="71" />
         </attvalues>
       </node>
       <node id="ideles:adeles_number_field" label="ideles:adeles_number_field">
         <attvalues>
-          <attvalue for="0" value="31" />
+          <attvalue for="0" value="33" />
         </attvalues>
       </node>
       <node id="mathlib:tactic.monotonicity.basic" label="mathlib:tactic.monotonicity.basic">
@@ -4580,7 +4580,7 @@
       </node>
       <node id="ideles:galois" label="ideles:galois">
         <attvalues>
-          <attvalue for="0" value="9" />
+          <attvalue for="0" value="11" />
         </attvalues>
       </node>
       <node id="mathlib:field_theory.krull_topology" label="mathlib:field_theory.krull_topology">

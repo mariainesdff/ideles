@@ -11489,6 +11489,7 @@ set.forall_image2_iff
 real.sqrt_aux
 order.pred_le
 add_group.int_smul_comm_class'
+function_field.C_F.inhabited
 tactic.match_app_of
 has_ssubset.ssubset.not_subset
 le_of_forall_lt_one_mul_le
@@ -23390,6 +23391,7 @@ sum.lex.mono
 tactic.format_result
 one_div_mul_one_div_rev
 set.pairwise_disjoint.image_of_le
+number_field.I_K_f.inhabited
 mv_polynomial.rename_C
 finset.Ico_filter_le_of_right_le
 category_theory.equivalence.inverse_counit_inv_comp
@@ -26863,6 +26865,7 @@ hahn_series.subalgebra.nontrivial
 dfinsupp.support_single_subset
 function.is_partial_inv
 ideal.exists_coeff_mem_comap_sdiff_comap_of_root_mem_sdiff
+finite_idele_group'.inhabited
 finset.prod_add_ordered
 int.neg_eq_neg_one_mul
 polynomial.self_sub_monomial_nat_degree_leading_coeff
@@ -32516,6 +32519,7 @@ cardinal.aleph'_equiv
 multilinear_map.map_add_univ
 one_div_pow_mono
 subalgebra.finite_dimensional_sup
+number_field.C_K.inhabited
 category_theory.eq_to_hom_unop
 charmatrix_reindex
 set.inter_eq_compl_compl_union_compl
@@ -37508,6 +37512,7 @@ category_theory.induced_category.concrete_category
 list.duplicate_iff_sublist
 bounded_lattice_hom.comp
 nat.lcm_zero_left
+number_field.A_K_f.inhabited
 int.cast_coe_nat'
 linear_independent.coe_range
 finset.eq_of_card_le_one_of_prod_eq
@@ -42927,6 +42932,7 @@ exists_iff_of_forall
 ordinal.Sup_eq_sup
 complex.conj_bit1
 infi_sup_eq
+number_field.I_K.inhabited
 add_equiv.to_equiv_eq_coe
 linear_map.to_matrix_eq_to_matrix'
 is_localization.ring_equiv_of_ring_equiv
@@ -44657,6 +44663,7 @@ polynomial.degree_linear_le
 free_group.lift
 nonneg.has_sub
 monoid_hom.from_opposite_apply
+G_K_ab.inhabited
 set.sUnion_pair
 power_basis.equiv_adjoin_simple_gen
 prime_spectrum.zero_locus_inf
@@ -52597,6 +52604,7 @@ connected_component_eq
 nat.cast_le
 finset.off_diag
 set.set_semiring.non_unital_semiring
+function_field.A_F_f.inhabited
 doc_category.inhabited
 norm_num.lt_bit0_bit1
 div_mul_eq_mul_div_comm
@@ -54777,6 +54785,7 @@ list.singleton_append
 decidable.one_lt_mul
 finset.inf_product_right
 nat.prime_def_min_fac
+number_field.A_K.inhabited
 left_cancel_semigroup
 left_cancel_semigroup.mul
 left_cancel_semigroup.mul_assoc
@@ -55516,6 +55525,7 @@ power_series.comm_semiring
 nonempty.exists
 finset.sum_bij'
 csupr_sub
+function_field.I_F_f.inhabited
 linarith.eq_of_eq_of_eq
 part.has_union
 inj_K.map_one
@@ -56846,6 +56856,7 @@ occurrences.pos
 occurrences.neg
 subsemiring.to_ordered_comm_semiring
 list.maximum_eq_coe_iff
+function_field.A_F.inhabited
 zpow_eq_mod_order_of
 matrix.mv_polynomial_X
 order_dual.semigroup
@@ -60272,6 +60283,7 @@ tactic.any_goals
 cardinal.ord
 linear_equiv.symm_apply_apply
 is_compact.bdd_below_image
+G_K.inhabited
 dfinsupp.sub_apply
 add_equiv.congr_fun
 filter.comap_eq_lift'
@@ -60786,6 +60798,7 @@ linear_equiv.skew_prod_symm_apply
 sup_hom.has_sup
 mv_polynomial.vars_0
 traversable.map_traverse'
+function_field.I_F.inhabited
 mv_power_series.add_monoid
 subsemiring.topological_closure_minimal
 mul_neg_one

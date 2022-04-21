@@ -36,7 +36,7 @@
 <nav class="internal_nav">
 <h3><a class="break_within" href="#top"><span class="name">ideles</span> / <span class="name">ideles_R</span></a></h3>
 
-<p class="gh_nav_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean">source</a></p>
+<p class="gh_nav_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean">source</a></p>
 
 <div class="imports">
     <details>
@@ -83,6 +83,8 @@
     <div class="nav_link"><a class="break_within" href="#finite_idele_group'"><span class="name">finite_idele_group&#x27;</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#finite_idele_group'.comm_group"><span class="name">finite_idele_group&#x27;</span>.<span class="name">comm_group</span></a></div>
+
+    <div class="nav_link"><a class="break_within" href="#finite_idele_group'.inhabited"><span class="name">finite_idele_group&#x27;</span>.<span class="name">inhabited</span></a></div>
 
     <div class="nav_link"><a class="break_within" href="#finite_idele_group'.topological_group"><span class="name">finite_idele_group&#x27;</span>.<span class="name">topological_group</span></a></div>
 
@@ -226,7 +228,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="finite_idele_group'">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L55">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L55">source</a></div>
 
 
 
@@ -278,7 +280,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="finite_idele_group'.topological_space">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L57">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L57">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -331,7 +333,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="finite_idele_group'.comm_group">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L58">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L58">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -381,10 +383,63 @@ of fractional ideals is given the discrete topology.</li>
     
         
         
+<div class="decl" id="finite_idele_group'.inhabited">
+<div class="def noncomputable">
+
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L59">source</a></div>
+
+
+    <div class="attributes">@[protected, instance]</div>
+
+
+<div class="decl_header">
+    
+<span class="decl_noncomputable" title="This definition depends on the noncomputable `finite_idele_group&#39;.comm_group`">noncomputable</span>
+
+<span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="https://mariainesdff.github.io/ideles/ideles_R.html#finite_idele_group'.inhabited"><span class="name">finite_idele_group&#x27;</span>.<span class="name">inhabited</span></a></span>
+
+    <span class="decl_args"><span class="fn">(R K : Type)</span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#comm_ring">comm_ring</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/ring/basic.html#is_domain">is_domain</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/ring_theory/dedekind_domain/basic.html#is_dedekind_domain">is_dedekind_domain</a> R]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/field/basic.html#field">field</a> K]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/algebra/basic.html#algebra">algebra</a> R</span> K]</span></span></span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/localization/fraction_ring.html#is_fraction_ring">is_fraction_ring</a> R</span> K]</span></span></span>&nbsp;<span class="decl_args">:</span>
+<div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#inhabited">inhabited</a> <span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/ideles_R.html#finite_idele_group'">finite_idele_group'</a> R</span> K)</span></span></div>
+</div>
+
+
+
+
+
+
+
+
+    <details>
+        <summary>Equations</summary>
+        <ul class="equations">
+            
+                <li class="equation"><span class="fn"><span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/ideles_R.html#finite_idele_group'.inhabited">finite_idele_group'.inhabited</a> R</span> K</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/logic.html#inhabited.mk" title="inhabited.mk">{</a><a href="https://mariainesdff.github.io/ideles/init/logic.html#inhabited.default" title="inhabited.default">default</a> := 1}</span></span></li>
+            
+        </ul>
+    </details>
+
+
+
+
+
+</div>
+</div>
+    
+
+    
+        
+        
 <div class="decl" id="finite_idele_group'.topological_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L59">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L60">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -428,7 +483,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="finite_idele_group'.uniform_space">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L60">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L61">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -481,7 +536,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="finite_idele_group'.uniform_group">
 <div class="def">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L61">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L62">source</a></div>
 
 
     <div class="attributes">@[protected, instance]</div>
@@ -525,7 +580,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="right_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L63">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L64">source</a></div>
 
 
 
@@ -568,7 +623,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="left_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L69">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L70">source</a></div>
 
 
 
@@ -611,7 +666,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="inj_units_K">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L73">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L74">source</a></div>
 
 
 
@@ -663,7 +718,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="inj_units_K.map_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L77">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L78">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -707,7 +762,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="inj_units_K.map_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L81">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L82">source</a></div>
 
 
     <div class="attributes">@[simp]</div>
@@ -752,7 +807,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="inj_units_K.group_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L89">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L90">source</a></div>
 
 
 
@@ -804,7 +859,7 @@ of fractional ideals is given the discrete topology.</li>
 <div class="decl" id="inj_units_K.injective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L96">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L97">source</a></div>
 
 
 
@@ -822,7 +877,7 @@ of fractional ideals is given the discrete topology.</li>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<a href="https://mariainesdff.github.io/ideles/algebra/field/basic.html#field">field</a> K]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/algebra/basic.html#algebra">algebra</a> R</span> K]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/localization/fraction_ring.html#is_fraction_ring">is_fraction_ring</a> R</span> K]</span></span></span>
-    <span class="impl_arg"><span class="decl_args"><span class="fn">[inh : <a href="https://mariainesdff.github.io/ideles/init/logic.html#inhabited">inhabited</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span>]</span></span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="impl_arg"><span class="decl_args"><span class="fn">[inh : <a href="https://mariainesdff.github.io/ideles/init/logic.html#nonempty">nonempty</a> <span class="fn">(<a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span>]</span></span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/function.html#function.injective">function.injective</a> <span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><span class="fn"><span class="fn">(<a href="https://mariainesdff.github.io/ideles/ideles_R.html#inj_units_K.group_hom">inj_units_K.group_hom</a> R</span> K)</span></span></span></div>
 </div>
 
@@ -849,7 +904,7 @@ hypothesis is satisfied for every Dedekind domain that is not a field.</p>
 <div class="decl" id="prod_val_inv_eq_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L107">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L108">source</a></div>
 
 
 
@@ -893,7 +948,7 @@ hypothesis is satisfied for every Dedekind domain that is not a field.</p>
 <div class="decl" id="v_comp.ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L114">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L115">source</a></div>
 
 
 
@@ -937,7 +992,7 @@ hypothesis is satisfied for every Dedekind domain that is not a field.</p>
 <div class="decl" id="valuation_val_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L117">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L118">source</a></div>
 
 
 
@@ -981,7 +1036,7 @@ hypothesis is satisfied for every Dedekind domain that is not a field.</p>
 <div class="decl" id="valuation_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L121">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L122">source</a></div>
 
 
 
@@ -1025,7 +1080,7 @@ hypothesis is satisfied for every Dedekind domain that is not a field.</p>
 <div class="decl" id="restricted_product">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L130">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L131">source</a></div>
 
 
 
@@ -1070,7 +1125,7 @@ hypothesis is satisfied for every Dedekind domain that is not a field.</p>
 <div class="decl" id="finite_exponents">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L137">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L138">source</a></div>
 
 
 
@@ -1115,7 +1170,7 @@ hypothesis is satisfied for every Dedekind domain that is not a field.</p>
 <div class="decl" id="units.valuation_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L165">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L166">source</a></div>
 
 
 
@@ -1161,7 +1216,7 @@ hypothesis is satisfied for every Dedekind domain that is not a field.</p>
 <div class="decl" id="with_zero.to_integer">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L175">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L176">source</a></div>
 
 
 
@@ -1208,7 +1263,7 @@ hypothesis is satisfied for every Dedekind domain that is not a field.</p>
 <div class="decl" id="finite_idele.to_add_valuations">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L180">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L181">source</a></div>
 
 
 
@@ -1263,7 +1318,7 @@ represents the additive <code>v</code>-adic valuation of the component <code>x_v
 <div class="decl" id="finite_idele.to_add_valuations.map_one">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L183">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L184">source</a></div>
 
 
 
@@ -1305,7 +1360,7 @@ represents the additive <code>v</code>-adic valuation of the component <code>x_v
 <div class="decl" id="finite_idele.to_add_valuations.map_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L196">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L197">source</a></div>
 
 
 
@@ -1348,7 +1403,7 @@ represents the additive <code>v</code>-adic valuation of the component <code>x_v
 <div class="decl" id="finite_add_support">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L216">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L217">source</a></div>
 
 
 
@@ -1393,7 +1448,7 @@ the additive <code>v</code>-adic valuation of <code>x_v</code> is nonzero.</p>
 <div class="decl" id="finite_support">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L241">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L242">source</a></div>
 
 
 
@@ -1438,7 +1493,7 @@ the additive <code>v</code>-adic valuation of <code>x_v</code> is nonzero.</p>
 <div class="decl" id="finite_support'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L266">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L267">source</a></div>
 
 
 
@@ -1483,7 +1538,7 @@ the additive <code>v</code>-adic valuation of <code>x_v</code> is nonzero.</p>
 <div class="decl" id="map_to_fractional_ideals.val">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L282">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L283">source</a></div>
 
 
 
@@ -1536,7 +1591,7 @@ the additive <code>v</code>-adic valuation of <code>x_v</code> is nonzero.</p>
 <div class="decl" id="map_to_fractional_ideals.group_hom">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L287">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L290">source</a></div>
 
 
 
@@ -1561,6 +1616,8 @@ the additive <code>v</code>-adic valuation of <code>x_v</code> is nonzero.</p>
 
 
 
+<p>The group homomorphism from <code>finite_idele_group&#x27; R K</code> to the fractional_ideals of <code>R</code> sending a
+finite idèle <code>x</code> to the product <code>∏_v v^(val_v(x_v))</code></p>
 
 
 
@@ -1587,7 +1644,7 @@ the additive <code>v</code>-adic valuation of <code>x_v</code> is nonzero.</p>
 <div class="decl" id="map_to_fractional_ideals.inv">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L308">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L311">source</a></div>
 
 
 
@@ -1640,7 +1697,7 @@ the additive <code>v</code>-adic valuation of <code>x_v</code> is nonzero.</p>
 <div class="decl" id="finite_idele.to_add_valuations.mul_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L313">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L316">source</a></div>
 
 
 
@@ -1683,7 +1740,7 @@ the additive <code>v</code>-adic valuation of <code>x_v</code> is nonzero.</p>
 <div class="decl" id="finite_idele.to_add_valuations.inv_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L328">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L331">source</a></div>
 
 
 
@@ -1726,7 +1783,7 @@ the additive <code>v</code>-adic valuation of <code>x_v</code> is nonzero.</p>
 <div class="decl" id="map_to_fractional_ideals.def">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L336">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L339">source</a></div>
 
 
 
@@ -1780,7 +1837,7 @@ valuation.</p>
 <div class="decl" id="map_to_fractional_ideals">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L342">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L345">source</a></div>
 
 
 
@@ -1832,7 +1889,7 @@ valuation.</p>
 <div class="decl" id="val_property">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L356">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L359">source</a></div>
 
 
 
@@ -1851,8 +1908,7 @@ valuation.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/algebra/basic.html#algebra">algebra</a> R</span> K]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/localization/fraction_ring.html#is_fraction_ring">is_fraction_ring</a> R</span> K]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{a : Π (v : <span class="fn"><a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/adeles_R.html#maximal_spectrum.adic_completion">maximal_spectrum.adic_completion</a> K</span> v</span>}</span></span></span>
-    <span class="decl_args"><span class="fn">(ha : ∀ᶠ (v : <span class="fn"><a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span> in <a href="https://mariainesdff.github.io/ideles/order/filter/cofinite.html#filter.cofinite">filter.cofinite</a>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/topology/algebra/valuation.html#valued.v">valued.v</a> <span class="fn">(a v)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span>)</span></span>
-    <span class="decl_args"><span class="fn">(h_ne_zero : ∀ (v : <span class="fn"><a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span>, <span class="fn"><span class="fn">a v</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 0</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(ha : ∀ᶠ (v : <span class="fn"><a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span> in <a href="https://mariainesdff.github.io/ideles/order/filter/cofinite.html#filter.cofinite">filter.cofinite</a>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/topology/algebra/valuation.html#valued.v">valued.v</a> <span class="fn">(a v)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">∀ᶠ (v : <span class="fn"><a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span> in <a href="https://mariainesdff.github.io/ideles/order/filter/cofinite.html#filter.cofinite">filter.cofinite</a>, <span class="fn"><span class="fn">a v</span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/adeles_R.html#maximal_spectrum.adic_completion_integers">maximal_spectrum.adic_completion_integers</a> K</span> v</span></span></span></div>
 </div>
 
@@ -1877,7 +1933,7 @@ valuation.</p>
 <div class="decl" id="inv_property">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L372">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L374">source</a></div>
 
 
 
@@ -1896,8 +1952,7 @@ valuation.</p>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/algebra/algebra/basic.html#algebra">algebra</a> R</span> K]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">[<span class="fn"><a href="https://mariainesdff.github.io/ideles/ring_theory/localization/fraction_ring.html#is_fraction_ring">is_fraction_ring</a> R</span> K]</span></span></span>
     <span class="impl_arg"><span class="decl_args"><span class="fn">{a : Π (v : <span class="fn"><a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/adeles_R.html#maximal_spectrum.adic_completion">maximal_spectrum.adic_completion</a> K</span> v</span>}</span></span></span>
-    <span class="decl_args"><span class="fn">(ha : ∀ᶠ (v : <span class="fn"><a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span> in <a href="https://mariainesdff.github.io/ideles/order/filter/cofinite.html#filter.cofinite">filter.cofinite</a>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/topology/algebra/valuation.html#valued.v">valued.v</a> <span class="fn">(a v)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span>)</span></span>
-    <span class="decl_args"><span class="fn">(h_ne_zero : ∀ (v : <span class="fn"><a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span>, <span class="fn"><span class="fn">a v</span> <a href="https://mariainesdff.github.io/ideles/init/logic.html#ne" title="ne">≠</a> 0</span>)</span></span>&nbsp;<span class="decl_args">:</span>
+    <span class="decl_args"><span class="fn">(ha : ∀ᶠ (v : <span class="fn"><a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span> in <a href="https://mariainesdff.github.io/ideles/order/filter/cofinite.html#filter.cofinite">filter.cofinite</a>, <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/init/coe.html#coe_fn" title="coe_fn">⇑</a><a href="https://mariainesdff.github.io/ideles/topology/algebra/valuation.html#valued.v">valued.v</a> <span class="fn">(a v)</span></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#eq" title="eq">=</a> 1</span>)</span></span>&nbsp;<span class="decl_args">:</span>
 <div class="decl_type"><span class="fn">∀ᶠ (v : <span class="fn"><a href="https://mariainesdff.github.io/ideles/valuation.html#maximal_spectrum">maximal_spectrum</a> R)</span> in <a href="https://mariainesdff.github.io/ideles/order/filter/cofinite.html#filter.cofinite">filter.cofinite</a>, <span class="fn"><span class="fn"><span class="fn">(a v)</span><a href="https://mariainesdff.github.io/ideles/init/core.html#has_inv.inv" title="has_inv.inv">⁻¹</a></span> <a href="https://mariainesdff.github.io/ideles/init/core.html#has_mem.mem" title="has_mem.mem">∈</a> <span class="fn"><span class="fn"><a href="https://mariainesdff.github.io/ideles/adeles_R.html#maximal_spectrum.adic_completion_integers">maximal_spectrum.adic_completion_integers</a> K</span> v</span></span></span></div>
 </div>
 
@@ -1922,7 +1977,7 @@ valuation.</p>
 <div class="decl" id="right_inv'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L390">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L391">source</a></div>
 
 
 
@@ -1967,7 +2022,7 @@ valuation.</p>
 <div class="decl" id="left_inv'">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L405">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L406">source</a></div>
 
 
 
@@ -2012,7 +2067,7 @@ valuation.</p>
 <div class="decl" id="idele.mk">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L415">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L416">source</a></div>
 
 
 
@@ -2068,7 +2123,7 @@ valuation.</p>
 <div class="decl" id="map_to_fractional_ideals.inv_eq_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L424">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L424">source</a></div>
 
 
 
@@ -2113,7 +2168,7 @@ valuation.</p>
 <div class="decl" id="pi.unif">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L436">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L436">source</a></div>
 
 
 
@@ -2166,7 +2221,7 @@ valuation.</p>
 <div class="decl" id="pi.unif.ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L440">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L440">source</a></div>
 
 
 
@@ -2209,7 +2264,7 @@ valuation.</p>
 <div class="decl" id="idele.mk'.val">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L449">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L449">source</a></div>
 
 
 
@@ -2253,7 +2308,7 @@ valuation.</p>
 <div class="decl" id="idele.mk'.inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L467">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L467">source</a></div>
 
 
 
@@ -2297,7 +2352,7 @@ valuation.</p>
 <div class="decl" id="idele.mk'.mul_inv">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L485">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L485">source</a></div>
 
 
 
@@ -2341,7 +2396,7 @@ valuation.</p>
 <div class="decl" id="idele.mk'.inv_mul">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L501">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L501">source</a></div>
 
 
 
@@ -2385,7 +2440,7 @@ valuation.</p>
 <div class="decl" id="idele.mk'">
 <div class="def noncomputable">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L513">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L513">source</a></div>
 
 
 
@@ -2440,7 +2495,7 @@ finitely many are allowed to be nonzero, <code>(pi_v^(exps v))_v</code> is a fin
 <div class="decl" id="idele.mk'.valuation_ne_zero">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L520">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L520">source</a></div>
 
 
 
@@ -2485,7 +2540,7 @@ finitely many are allowed to be nonzero, <code>(pi_v^(exps v))_v</code> is a fin
 <div class="decl" id="map_to_fractional_ideals.surjective">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L531">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L531">source</a></div>
 
 
 
@@ -2528,7 +2583,7 @@ finitely many are allowed to be nonzero, <code>(pi_v^(exps v))_v</code> is a fin
 <div class="decl" id="map_to_fractional_ideals.mem_kernel_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L567">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L567">source</a></div>
 
 
 
@@ -2573,7 +2628,7 @@ for all <code>v</code>.</p>
 <div class="decl" id="finite_idele.to_add_valuations.comp_eq_zero_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L587">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L587">source</a></div>
 
 
 
@@ -2618,7 +2673,7 @@ for all <code>v</code>.</p>
 <div class="decl" id="finite_idele.valuation_eq_one_iff">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L602">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L602">source</a></div>
 
 
 
@@ -2663,7 +2718,7 @@ for all <code>v</code>.</p>
 <div class="decl" id="map_to_fractional_ideals.continuous">
 <div class="theorem">
 
-<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/a1b1ad9bc6cf6c071691e830fac557c83e5b2336/src/ideles_R.lean#L620">source</a></div>
+<div class="gh_link"><a href="https://github.com/mariainesdff/ideles/blob/59a126f09cb6dc70b70b49c6e46e2986f33aa414/src/ideles_R.lean#L620">source</a></div>
 
 
 
