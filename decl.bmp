@@ -22923,6 +22923,7 @@ metric.bounded.subset_ball
 mul_equiv.injective
 multiset.to_finsupp_add
 power_series.constant_coeff_comp_C
+maximal_spectrum.adic_valued_def
 expr.list_local_const_unique_names
 set.Inter_congr_Prop
 sum.get_right_eq_none_iff
@@ -25428,7 +25429,6 @@ is_coprime.mul_add_right_left_iff
 filter.ptendsto'
 ring_hom.srestrict_apply
 is_coprime_self
-maximal_spectrum.v_valued_K
 coe
 nat.prime.pow_not_prime'
 is_asymm.is_irrefl
@@ -29488,7 +29488,6 @@ function.injective.comp_left
 commute.units_inv_left_iff
 add_hom.has_coe_t
 norm_num.prove_ne_zero
-maximal_spectrum.v_valued_K_def
 tactic.read
 multiset.smul_sum
 tendsto_uniformly_on.tendsto_comp
@@ -34223,6 +34222,7 @@ add_equiv.mul_unop
 finprod_mem_bUnion
 vector.of_fn_nth
 inducing.map_nhds_of_mem
+maximal_spectrum.adic_valued
 nat.cast_sub
 set.div_Union
 equiv.perm.sigma_congr_right_mul
