@@ -125,7 +125,7 @@ begin
     { exact ring_of_integers.is_integral_closure },
     { apply_instance }} ,
   have h_inj: function.injective ⇑(algebra_map ℤ ↥(ring_of_integers K)),
-  { rw ring_hom.injective_iff,
+  { rw [ring_hom.injective_iff_ker_eq_bot, ring_hom.ker_eq_bot_iff_eq_zero],
     intros a ha,
     rw [ring_hom.eq_int_cast, int.cast_eq_zero] at ha,
     exact ha, },

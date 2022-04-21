@@ -809,7 +809,7 @@ lemma inj_K.ring_hom_apply {k : K} : inj_K.ring_hom R K k = inj_K R K k := rfl
 hypothesis is satisfied for every Dedekind domain that is not a field. -/
 lemma inj_K.injective [inh : nonempty (maximal_spectrum R)] : injective (inj_K.ring_hom R K) :=
 begin
-  rw ring_hom.injective_iff,
+  rw [ring_hom.injective_iff_ker_eq_bot, ring_hom.ker_eq_bot_iff_eq_zero],
   intros x hx,
   rw [inj_K.ring_hom, ring_hom.coe_mk, inj_K] at hx,
   dsimp only at hx,

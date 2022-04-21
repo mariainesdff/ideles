@@ -112,10 +112,10 @@ begin
   { rw is_scalar_tower.algebra_map_eq k[X] (ratfunc k) F,
     exact function.injective.comp ((algebra_map (ratfunc k) F).injective)
       (is_fraction_ring.injective k[X] (ratfunc k)), },
-  rw (algebra_map k[X] ↥(ring_of_integers k F)).injective_iff,
+  rw [ring_hom.injective_iff_ker_eq_bot, ring_hom.ker_eq_bot_iff_eq_zero],
   intros p hp,
   rw [← subtype.coe_inj, subalgebra.coe_zero] at hp,
-  rw (algebra_map k[X] F).injective_iff at hinj,
+  rw [ring_hom.injective_iff_ker_eq_bot, ring_hom.ker_eq_bot_iff_eq_zero] at hinj,
   exact hinj p hp,
 end
 

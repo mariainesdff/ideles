@@ -97,12 +97,12 @@ hypothesis is satisfied for every Dedekind domain that is not a field. -/
 lemma inj_units_K.injective [inh : nonempty (maximal_spectrum R)] : 
   injective (inj_units_K.group_hom R K) :=
 begin
-  rw monoid_hom.injective_iff,
-  intros x hx,
-  rw [inj_units_K.group_hom, monoid_hom.coe_mk, inj_units_K, ← units.eq_iff, units.coe_mk,
-    units.val_eq_coe] at hx,
+  rw ← monoid_hom.ker_eq_bot_iff,
+  ext x,
+  rw [monoid_hom.mem_ker, subgroup.mem_bot, inj_units_K.group_hom, monoid_hom.coe_mk, inj_units_K,
+    ← units.eq_iff, units.coe_mk, units.val_eq_coe],
   rw ← units.eq_iff,
-  exact (inj_K.injective R K) hx,
+  exact injective.eq_iff (inj_K.injective R K),
 end
 
 lemma prod_val_inv_eq_one (x : finite_idele_group' R K) : 
