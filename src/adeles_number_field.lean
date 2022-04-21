@@ -93,7 +93,7 @@ instance : topological_space (A_K_f K) :=
 finite_adele_ring'.topological_space (ring_of_integers K) K
 instance : topological_ring (A_K_f K) := 
 finite_adele_ring'.topological_ring (ring_of_integers K) K
-/-- The topological ring structuren on `ℝ ⊗[ℚ] K`. -/
+/-- The topological ring structure on `ℝ ⊗[ℚ] K`. -/
 def infinite_adeles.ring_topology : ring_topology (ℝ ⊗[ℚ] K) := 
 ring_topology.coinduced (linear_map.Rn_to_R_tensor_K K)
 instance : topological_space (ℝ ⊗[ℚ] K) := (infinite_adeles.ring_topology K).to_topological_space

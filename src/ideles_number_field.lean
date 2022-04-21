@@ -361,7 +361,7 @@ begin
   let hz :=  classical.some_spec (with_zero.to_integer._proof_1 hv),
   rw [← with_zero.coe_inj, hz, v.valued_adic_completion_def, inj_K_f.ring_hom,
     inj_K.ring_hom_apply, inj_K_apply, valued.extension_extends, units.val_eq_coe,
-    v.v_valued_K_def, maximal_spectrum.valuation_def],
+    v.adic_valued_def, maximal_spectrum.valuation_def],
   simp only,
   rw [with_zero.coe_div, maximal_spectrum.int_valuation_def_if_neg v
     (non_zero_divisors.coe_ne_zero _), maximal_spectrum.int_valuation_def_if_neg],
@@ -444,7 +444,7 @@ begin
     simp only [finite_idele.to_add_valuations, with_zero.to_integer, eq_neg_iff_eq_neg, neg_sub]
       at h_exps_v,
     conv_rhs {rw [v.valued_adic_completion_def, units.val_eq_coe], },
-    rw [valued.extension_extends, v.v_valued_K_def],
+    rw [valued.extension_extends, v.adic_valued_def],
     simp only [maximal_spectrum.valuation_def],
     rw [← h_dk, ← h_nk, maximal_spectrum.int_valuation_def_if_neg, 
     maximal_spectrum.int_valuation_def_if_neg, ← with_zero.coe_div, ← of_add_sub, neg_sub_neg,

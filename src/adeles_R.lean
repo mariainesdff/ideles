@@ -90,22 +90,22 @@ variables {R : Type} {K : Type} [comm_ring R] [is_domain R] [is_dedekind_domain 
 namespace maximal_spectrum
 
 /-- `K` as a valued field with the `v`-adic valuation. -/
-def v_valued_K : valued K (with_zero (multiplicative ℤ)) := ⟨v.valuation⟩ 
+def adic_valued : valued K (with_zero (multiplicative ℤ)) := ⟨v.valuation⟩ 
 
-lemma v_valued_K_def {x : K} : @valued.v K _ _ _ (v_valued_K v) (x) = v.valuation_def x := rfl
+lemma adic_valued_def {x : K} : @valued.v K _ _ _ v.adic_valued (x) = v.valuation_def x := rfl
 
 /-- The topological space structure on `K` corresponding to the `v`-adic valuation. -/
-def ts' : topological_space K := @valued.topological_space K _ _ _ (v_valued_K v)
+def ts' : topological_space K := @valued.topological_space K _ _ _ v.adic_valued
 lemma tdr' : @topological_division_ring K _ (ts' v) := 
-@valued.topological_division_ring K _ _ _ (v_valued_K v)
+@valued.topological_division_ring K _ _ _ v.adic_valued
 lemma tr' : @topological_ring K  (ts' v) _ := infer_instance
 lemma tg' : @topological_add_group K (ts' v) _ := infer_instance
 /-- The uniform space structure on `K` corresponding to the `v`-adic valuation. -/
 def us' : uniform_space K := @topological_add_group.to_uniform_space K _ (ts' v) (tg' v)
 lemma ug' : @uniform_add_group K (us' v) _ := 
 @topological_add_group_is_uniform K _ (ts' v) (tg' v)
-lemma cf' : @completable_top_field K _ (us' v) := @valued.completable K _ _ _ (v_valued_K v)
-lemma ss : @separated_space K (us' v) := @valued_ring.separated K _ _ _ (v_valued_K v)
+lemma cf' : @completable_top_field K _ (us' v) := @valued.completable K _ _ _ v.adic_valued
+lemma ss : @separated_space K (us' v) := @valued_ring.separated K _ _ _ v.adic_valued
 
 variables (K)
 /-- The completion of `K` with respect to its `v`-adic valuation. -/
@@ -116,10 +116,10 @@ instance : inhabited (v.adic_completion K) := ⟨0⟩
 
 variables {K}
 instance valued_adic_completion : valued (v.adic_completion K) (with_zero (multiplicative ℤ)):= 
-⟨@valued.extension_valuation K _ _ _ (v_valued_K v)⟩
+⟨@valued.extension_valuation K _ _ _ (v.adic_valued)⟩
 
 lemma valued_adic_completion_def {x : v.adic_completion K} :
-  valued.v (x) = @valued.extension K _ _ _ (v_valued_K v)  x := rfl
+  valued.v (x) = @valued.extension K _ _ _ (v.adic_valued)  x := rfl
 
 instance ts : topological_space (v.adic_completion K) := 
 @valued.topological_space (v.adic_completion K) _ _ _ v.valued_adic_completion
@@ -174,8 +174,8 @@ def inj_adic_completion_integers' : R → (v.adic_completion K) :=
 /-- The natural inclusion of `R` in `adic_completion_integers`. -/
 def inj_adic_completion_integers : R → (v.adic_completion_integers K) :=
 λ r, ⟨(coe : K → (v.adic_completion K)) (algebra_map R K r), begin 
-  change @valued.extension K _ _ _ v.v_valued_K (algebra_map R K r) ≤ 1,
-  rw @valued.extension_extends K _ _ _ v.v_valued_K (algebra_map R K r),
+  change @valued.extension K _ _ _ v.adic_valued (algebra_map R K r) ≤ 1,
+  rw @valued.extension_extends K _ _ _ v.adic_valued (algebra_map R K r),
   exact v.valuation_le_one _,
 end⟩
 
@@ -748,8 +748,8 @@ begin
     intros v hv,
     rw mem_set_of_eq at hv ⊢,
     have h_val : valued.v ((coe : K → (v.adic_completion K)) x) =
-      @valued.extension K _ _ _ v.v_valued_K x := rfl,
-    rw [adic_completion.is_integer, h_val, valued.extension_extends _, v.v_valued_K_def, 
+      @valued.extension K _ _ _ v.adic_valued x := rfl,
+    rw [adic_completion.is_integer, h_val, valued.extension_extends _, v.adic_valued_def, 
       maximal_spectrum.valuation_def] at hv,
     let sx : non_zero_divisors R := (classical.some (maximal_spectrum.valuation_def._proof_2 x)),
     have h_loc : is_localization.mk' K 
@@ -916,7 +916,7 @@ begin
         eq_one_div_of_mul_eq_one_left h_val, ← mul_div_assoc, mul_one, 
         div_le_iff₀ (right_ne_zero_of_mul_eq_one h_val), one_mul, not_le, h_coe,
         ← subtype.val_eq_coe, ← subtype.val_eq_coe, hd', v.valued_adic_completion_def,
-        valued.extension_extends, v.v_valued_K_def] at hv,
+        valued.extension_extends, v.adic_valued_def] at hv,
       have h_val_r : (valued.v ((hom_prod R K) r v) : with_zero (multiplicative ℤ)) ≤ 1,
       { rw [hom_prod, ring_hom.coe_mk, ← subtype.val_eq_coe, ← adic_completion.is_integer],
         exact (r v).property, },

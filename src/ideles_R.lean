@@ -554,7 +554,7 @@ begin
     rw ← hx_def at hx ⊢,
     simp only [idele.mk', pi.unif] at hx,
     rw [valuation.map_zpow, v.valued_adic_completion_def, valued.extension_extends,
-      v.v_valued_K_def, classical.some_spec (v.valuation_exists_uniformizer K),
+      v.adic_valued_def, classical.some_spec (v.valuation_exists_uniformizer K),
         ← with_zero.coe_zpow, with_zero.coe_inj] at hx,
     rw [hx, ← of_add_zsmul, to_add_of_add, algebra.id.smul_eq_mul, mul_neg,
           mul_one, neg_neg] },
