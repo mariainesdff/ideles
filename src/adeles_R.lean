@@ -7,6 +7,7 @@ import fractional_ideal
 import ring_theory.valuation.integers
 import topology.algebra.localization
 import topology.algebra.valued_field
+import ring_theory.dedekind_domain.adic_valuation
 
 /-!
 # The finite adèle ring of a Dedekind domain
@@ -49,7 +50,6 @@ finite adèle ring, dedekind domain, completions
 noncomputable theory
 open_locale classical
 open function set is_dedekind_domain
-
 /- Auxiliary lemmas. -/
 private lemma subset.three_union {α : Type*} (f g h : α → Prop):
   {a : α| ¬ (f a ∧ g a ∧ h a)} ⊆ {a : α| ¬ f a} ∪ {a : α| ¬ g a} ∪ {a : α| ¬ h a} := 
@@ -87,62 +87,6 @@ We define `R_hat` (resp. `K_hat`) to be the product of `adic_completion_integers
 variables {R : Type} {K : Type} [comm_ring R] [is_domain R] [is_dedekind_domain R] [field K]
   [algebra R K] [is_fraction_ring R K] (v : height_one_spectrum R)
 
-namespace is_dedekind_domain.height_one_spectrum
-
-/-- `K` as a valued field with the `v`-adic valuation. -/
-def v_valued_K : valued K (with_zero (multiplicative ℤ)) := ⟨v.valuation⟩ 
-
-lemma v_valued_K_def {x : K} : @valued.v K _ _ _ (v_valued_K v) (x) = v.valuation_def x := rfl
-
-/-- The topological space structure on `K` corresponding to the `v`-adic valuation. -/
-def ts' : topological_space K := @valued.topological_space K _ _ _ (v_valued_K v)
-lemma tdr' : @topological_division_ring K _ (ts' v) := 
-@valued.topological_division_ring K _ _ _ (v_valued_K v)
-lemma tr' : @topological_ring K  (ts' v) _ := infer_instance
-lemma tg' : @topological_add_group K (ts' v) _ := infer_instance
-/-- The uniform space structure on `K` corresponding to the `v`-adic valuation. -/
-def us' : uniform_space K := @topological_add_group.to_uniform_space K _ (ts' v) (tg' v)
-lemma ug' : @uniform_add_group K (us' v) _ := 
-@topological_add_group_is_uniform K _ (ts' v) (tg' v)
-lemma cf' : @completable_top_field K _ (us' v) := @valued.completable K _ _ _ (v_valued_K v)
-lemma ss : @separated_space K (us' v) := @valued_ring.separated K _ _ _ (v_valued_K v)
-
-variables (K)
-/-- The completion of `K` with respect to its `v`-adic valuation. -/
-def adic_completion := @uniform_space.completion K (us' v)
-instance : field (v.adic_completion K) := @field_completion K _ (us' v) (tdr' v) _ (ug' v)
-
-variables {K}
-instance valued_adic_completion : valued (v.adic_completion K) (with_zero (multiplicative ℤ)):= 
-⟨@valued.extension_valuation K _ _ _ (v_valued_K v)⟩
-
-lemma valued_adic_completion_def {x : v.adic_completion K} :
-  valued.v (x) = @valued.extension K _ _ _ (v_valued_K v)  x := rfl
-
-instance ts : topological_space (v.adic_completion K) := 
-@valued.topological_space (v.adic_completion K) _ _ _ v.valued_adic_completion
-instance tdr : @topological_division_ring (v.adic_completion K) _ v.ts := 
-@valued.topological_division_ring (v.adic_completion K) _ _ _ v.valued_adic_completion
-instance tr : @topological_ring (v.adic_completion K) v.ts _ := v.tdr.to_topological_ring
-instance tg : @topological_add_group (v.adic_completion K) v.ts _ := 
-@topological_ring.to_topological_add_group (v.adic_completion K) _ v.ts v.tr
-instance us : uniform_space (v.adic_completion K) := 
-@topological_add_group.to_uniform_space (v.adic_completion K) _ v.ts v.tg
-instance ug : @uniform_add_group (v.adic_completion K) v.us _ := 
-@topological_add_group_is_uniform (v.adic_completion K) _ v.ts v.tg
-
-instance : has_lift_t K (@uniform_space.completion K (us' v)) := infer_instance
-instance adic_completion.has_lift_t : has_lift_t K (v.adic_completion K) :=
-uniform_space.completion.has_lift_t v
-
-variables (K)
-/-- The ring of integers of `adic_completion`. -/
-def adic_completion_integers : subring (v.adic_completion K) := 
-@valuation.integer (v.adic_completion K) (with_zero (multiplicative ℤ)) _ _ 
-  v.valued_adic_completion.v 
-
-end is_dedekind_domain.height_one_spectrum
-
 variables (R K)
 
 /-- The product of all `adic_completion_integers`, where `v` runs over the maximal ideals of `R`. -/
@@ -156,9 +100,8 @@ def K_hat := (Π (v : height_one_spectrum R), v.adic_completion K )
 instance : comm_ring (K_hat R K) := pi.comm_ring
 instance : ring (K_hat R K) := infer_instance
 instance : topological_space (K_hat R K) := Pi.topological_space
-instance tr_hat : topological_ring (Π (v : height_one_spectrum R), v.adic_completion K) :=
-pi.topological_ring
-instance : topological_ring (K_hat R K) := tr_hat R K
+instance : topological_ring (K_hat R K) := 
+(infer_instance : topological_ring (Π (v : height_one_spectrum R), v.adic_completion K))
 
 lemma adic_completion.is_integer (x : v.adic_completion K) :
   x ∈ v.adic_completion_integers K ↔ (valued.v x : with_zero (multiplicative ℤ)) ≤ 1 := by refl
@@ -170,8 +113,8 @@ def inj_adic_completion_integers' : R → (v.adic_completion K) :=
 /-- The natural inclusion of `R` in `adic_completion_integers`. -/
 def inj_adic_completion_integers : R → (v.adic_completion_integers K) :=
 λ r, ⟨(coe : K → (v.adic_completion K)) (algebra_map R K r), begin 
-  change @valued.extension K _ _ _ v.v_valued_K (algebra_map R K r) ≤ 1,
-  rw @valued.extension_extends K _ _ _ v.v_valued_K (algebra_map R K r),
+  change @valued.extension K _ _ _ v.adic_valued (algebra_map R K r) ≤ 1,
+  rw @valued.extension_extends K _ _ _ v.adic_valued (algebra_map R K r),
   exact v.valuation_le_one _,
 end⟩
 
@@ -186,7 +129,7 @@ lemma inj_adic_completion_integers.injective :
 begin
   intros x y hxy,
   have h_inj : function.injective (coe : K → v.adic_completion K) :=
-    @uniform_space.completion.coe_inj K v.us' v.ss,
+    @uniform_space.completion.coe_inj K v.adic_valued.to_uniform_space _,
   rw [inj_adic_completion_integers, subtype.mk_eq_mk] at hxy,
   exact (is_fraction_ring.injective R K) ((h_inj) hxy),
 end
@@ -395,16 +338,22 @@ instance finite_adele_ring'.inhabited : inhabited (finite_adele_ring' R K) :=
 
 /-- The ring of integers `adic_completion_integers` is an open subset of `adic_completion`. -/
 lemma adic_completion.is_open_adic_completion_integers :
-  is_open (v.adic_completion_integers K : set (v.adic_completion K)) := 
+  is_open ((v.adic_completion_integers K).to_subring : set (v.adic_completion K)) := 
 begin
-  intros x hx,
+  have : (v.adic_completion_integers K).to_subring =
+    @valuation.integer (v.adic_completion K) (with_zero (multiplicative ℤ)) _ _ 
+  (v.valued_adic_completion K).v := rfl,
+  rw this,
+  
+  sorry
+  /- intros x hx,
   rw [set_like.mem_coe, adic_completion.is_integer] at hx,
   rw [← add_group_filter_basis.nhds_eq, valued.mem_nhds],
   use (1 : units (with_zero (multiplicative ℤ))),
   { intros y hy,
     rw [set_like.mem_coe, adic_completion.is_integer, ← sub_add_cancel y x],
     refine le_trans _ (max_le (le_of_lt hy) hx),
-    exact valuation.map_add _ _ _ }
+    exact valuation.map_add _ _ _ } -/
 end
 
 /-- A generating set for the topology on the finite adèle ring of `R` consists on products `∏_v U_v`
@@ -744,20 +693,14 @@ begin
     intros v hv,
     rw mem_set_of_eq at hv ⊢,
     have h_val : valued.v ((coe : K → (v.adic_completion K)) x) =
-      @valued.extension K _ _ _ v.v_valued_K x := rfl,
-    rw [adic_completion.is_integer, h_val, valued.extension_extends _, v.v_valued_K_def, 
-      height_one_spectrum.valuation_def] at hv,
-    let sx : non_zero_divisors R := (classical.some (height_one_spectrum.valuation_def._proof_2 x)),
-    have h_loc : is_localization.mk' K 
-      (classical.some (height_one_spectrum.valuation_def._proof_1 x)) sx =
-      is_localization.mk' K r ⟨d, hd⟩,
-    { rw hx, exact (classical.some_spec (height_one_spectrum.valuation_def._proof_2 x)) },
-      dsimp only at hv,
-      rw ← height_one_spectrum.int_valuation_lt_one_iff_dvd,
-      by_contradiction h_one_le,
-      rw [height_one_spectrum.valuation_well_defined K v h_loc, subtype.coe_mk,
+      @valued.extension K _ _ _ v.adic_valued x := rfl,
+    rw [← @height_one_spectrum.valuation_lt_one_iff_dvd R _ _ _ K, v.valuation_of_algebra_map],
+    by_contradiction h_one_le,
+    have hdeq : v.int_valuation_def d = v.int_valuation d := rfl,
+    rw [adic_completion.is_integer, h_val, valued.extension_extends _, v.adic_valued_apply, ← hx,
+      v.valuation_of_mk', subtype.coe_mk, ← hdeq,
         (le_antisymm (v.int_valuation_le_one d) (not_lt.mp h_one_le)), div_one] at hv,
-      exact hv (v.int_valuation_le_one r) },
+    exact hv (v.int_valuation_le_one r) },
   exact finite.subset (finite_factors d hd_ne_zero) hsubset,
 end
 
@@ -805,7 +748,7 @@ lemma inj_K.ring_hom_apply {k : K} : inj_K.ring_hom R K k = inj_K R K k := rfl
 hypothesis is satisfied for every Dedekind domain that is not a field. -/
 lemma inj_K.injective [inh : nonempty (height_one_spectrum R)] : injective (inj_K.ring_hom R K) :=
 begin
-  rw ring_hom.injective_iff,
+  rw [ring_hom.injective_iff_ker_eq_bot, ring_hom.ker_eq_bot_iff_eq_zero],
   intros x hx,
   rw [inj_K.ring_hom, ring_hom.coe_mk, inj_K] at hx,
   dsimp only at hx,
@@ -815,7 +758,7 @@ begin
   have hv := congr_fun hx v,
   dsimp only at hv,
   have h_inj : function.injective (coe : K → (v.adic_completion K)) :=
-    @uniform_space.completion.coe_inj K v.us' v.ss,
+    @uniform_space.completion.coe_inj K v.adic_valued.to_uniform_space _,
   apply h_inj hv,
 end
 
@@ -861,7 +804,7 @@ begin
   { rw [adic_completion.is_integer R K, valuation.map_zero], exact zero_le_one',},
   have h_zero : (0 : v.adic_completion_integers K) = ⟨(0 : v.adic_completion K), h⟩ := rfl,
   have h_inj : function.injective (coe : K → (v.adic_completion K)) :=
-    @uniform_space.completion.coe_inj K v.us' v.ss,
+    @uniform_space.completion.coe_inj K v.adic_valued.to_uniform_space _,
   rw [h_zero, subtype.mk_eq_mk, ← uniform_space.completion.coe_zero, 
     ← (algebra_map R K).map_zero, ← ne.def, 
     injective.ne_iff (injective.comp h_inj (is_fraction_ring.injective R K))],
@@ -907,17 +850,17 @@ begin
         ((d' : R_hat R K) v) := rfl,
       have hd' : ((d'.val) v).val = (coe : K → v.adic_completion K) (algebra_map R K d),
       { rw ← hd_inj, dsimp only [inj_R], rw inj_adic_completion_integers, },
-      rw [adic_completion.is_integer, valuation.map_mul, ← units.inv_eq_coe_inv, 
+      rw [adic_completion.is_integer, valuation.map_mul, ← units.inv_eq_coe_inv,
         eq_one_div_of_mul_eq_one_left h_val, ← mul_div_assoc, mul_one, 
         div_le_iff₀ (right_ne_zero_of_mul_eq_one h_val), one_mul, not_le, h_coe,
-        ← subtype.val_eq_coe, ← subtype.val_eq_coe, hd', v.valued_adic_completion_def,
-        valued.extension_extends, v.v_valued_K_def] at hv,
+        ← subtype.val_eq_coe, ← subtype.val_eq_coe, hd',
+        height_one_spectrum.valued_adic_completion_def, valued.extension_extends,
+        v.adic_valued_apply] at hv,
       have h_val_r : (valued.v ((hom_prod R K) r v) : with_zero (multiplicative ℤ)) ≤ 1,
       { rw [hom_prod, force_noncomputable_def, ring_hom.coe_mk, ← subtype.val_eq_coe,
           ← adic_completion.is_integer],
         exact (r v).property, },
-      have h_val_d : v.valuation_def (algebra_map R K d)  < 1 := lt_of_lt_of_le hv h_val_r,
-      exact (v.valuation_lt_one_iff_dvd d).mp h_val_d, }},
+      exact (v.valuation_lt_one_iff_dvd d).mp (lt_of_lt_of_le hv h_val_r), }},
     exact finite.subset (finite_factors d hd) hsubset,
 end 
 

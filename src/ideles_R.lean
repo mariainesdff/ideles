@@ -622,14 +622,11 @@ begin
     { exact one_ne_zero }}
 end
 
-set_option pp.coercions true
 /-- `map_to_fractional_ideals` is continuous, where the codomain is given the discrete topology. -/
 lemma map_to_fractional_ideals.continuous : continuous (map_to_fractional_ideals R K) := 
 begin
   apply uniform_continuous.continuous,
-  rw uniform_group.uniform_continuous_iff_open_ker,
-  set foo := @monoid_hom.monoid_hom_class R K _ _,
-  
+  rw uniform_group.uniform_continuous_iff_open_ker,  
   have h_ker : ((map_to_fractional_ideals R K).ker : set (finite_idele_group' R K)) = 
     { x : units(finite_adele_ring' R K) |
        ∀ v : height_one_spectrum R, finite_idele.to_add_valuations R K x v = 0 },
