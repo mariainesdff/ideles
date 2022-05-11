@@ -338,22 +338,18 @@ instance finite_adele_ring'.inhabited : inhabited (finite_adele_ring' R K) :=
 
 /-- The ring of integers `adic_completion_integers` is an open subset of `adic_completion`. -/
 lemma adic_completion.is_open_adic_completion_integers :
-  is_open ((v.adic_completion_integers K).to_subring : set (v.adic_completion K)) := 
+  is_open ((v.adic_completion_integers K) : set (v.adic_completion K)) := 
 begin
-  have : (v.adic_completion_integers K).to_subring =
-    @valuation.integer (v.adic_completion K) (with_zero (multiplicative ℤ)) _ _ 
-  (v.valued_adic_completion K).v := rfl,
-  rw this,
-  
-  sorry
-  /- intros x hx,
+  rw is_open_iff_mem_nhds,
+  intros x hx,
   rw [set_like.mem_coe, adic_completion.is_integer] at hx,
-  rw [← add_group_filter_basis.nhds_eq, valued.mem_nhds],
+  rw valued.mem_nhds,
   use (1 : units (with_zero (multiplicative ℤ))),
   { intros y hy,
+    rw [units.coe_one, mem_set_of_eq] at hy,
     rw [set_like.mem_coe, adic_completion.is_integer, ← sub_add_cancel y x],
     refine le_trans _ (max_le (le_of_lt hy) hx),
-    exact valuation.map_add _ _ _ } -/
+    exact valuation.map_add _ _ _ }
 end
 
 /-- A generating set for the topology on the finite adèle ring of `R` consists on products `∏_v U_v`

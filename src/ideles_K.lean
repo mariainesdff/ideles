@@ -346,21 +346,32 @@ begin
   apply congr_arg,
   have hv : valued.v (((inj_K_f.ring_hom K) k.val).val v) ≠ (0 : with_zero (multiplicative ℤ)),
   { rw [valuation.ne_zero_iff, inj_K_f.ring_hom.v_comp, units.val_eq_coe,
-      ← uniform_space.completion.coe_zero,
-      injective.ne_iff (@uniform_space.completion.coe_inj K v.us' v.ss)],
+      ← uniform_space.completion.coe_zero, injective.ne_iff
+      (@uniform_space.completion.coe_inj K v.adic_valued.to_uniform_space _)],
     exact units.ne_zero k },
   let z :=  classical.some (with_zero.to_integer._proof_1 hv),
   let hz :=  classical.some_spec (with_zero.to_integer._proof_1 hv),
-  rw [← with_zero.coe_inj, hz, v.valued_adic_completion_def, inj_K_f.ring_hom,
-    inj_K.ring_hom_apply, inj_K_apply, valued.extension_extends, units.val_eq_coe,
-    v.v_valued_K_def, height_one_spectrum.valuation_def],
+  rw [← with_zero.coe_inj, hz, height_one_spectrum.valued_adic_completion_def,
+    inj_K_f.ring_hom, inj_K.ring_hom_apply, inj_K_apply, valued.extension_extends, 
+    units.val_eq_coe, v.adic_valued_apply/- , height_one_spectrum.valuation_def -/],
   simp only,
-  rw [with_zero.coe_div, height_one_spectrum.int_valuation_def_if_neg v
+  rw [with_zero.coe_div],
+  set n := classical.some (is_localization.mk'_surjective (non_zero_divisors ↥(𝓞 K))
+    (k : K)),
+  set d' := classical.some (classical.some_spec (is_localization.mk'_surjective 
+    (non_zero_divisors ↥(𝓞 K)) (k : K))),
+  set d : ↥(𝓞 K) := ↑d',
+  have hk := classical.some_spec (classical.some_spec (is_localization.mk'_surjective
+    (non_zero_divisors ↥(𝓞 K)) (k : K))),
+  conv_rhs{rw ← hk},
+  rw v.valuation_of_mk',
+  have hn : v.int_valuation n = v.int_valuation_def n := rfl,
+  have hd : v.int_valuation d = v.int_valuation_def d := rfl, --TODO : change
+  rw [hn, hd],
+  rw [height_one_spectrum.int_valuation_def_if_neg v
     (non_zero_divisors.coe_ne_zero _), height_one_spectrum.int_valuation_def_if_neg],
-  { rw [ne.def, ← @is_fraction_ring.mk'_eq_zero_iff_eq_zero _ _ K _ _ _ _ _],
-    convert units.ne_zero k,
-    exact classical.some_spec (classical.some_spec
-    (height_one_spectrum.valuation_def._proof_1 (k : K))), },
+  { rw [ne.def, ← @is_fraction_ring.mk'_eq_zero_iff_eq_zero _ _ K _ _ _ _ d', hk],
+    exact units.ne_zero k, }
 end
 
 /-- `I_K.map_to_fractional_ideals` sends the principal idèle `(k)_v` corresponding to `k ∈ K*` to 
@@ -438,10 +449,12 @@ begin
           h_dk, div_eq_inv_mul], }},
     simp only [finite_idele.to_add_valuations, with_zero.to_integer, eq_neg_iff_eq_neg, neg_sub]
       at h_exps_v,
-    conv_rhs {rw [v.valued_adic_completion_def, units.val_eq_coe], },
-    rw [valued.extension_extends, v.v_valued_K_def],
-    simp only [height_one_spectrum.valuation_def],
-    rw [← h_dk, ← h_nk, height_one_spectrum.int_valuation_def_if_neg, 
+    conv_rhs {rw [height_one_spectrum.valued_adic_completion_def, units.val_eq_coe], },
+    rw [valued.extension_extends, v.adic_valued_apply, ← h, v.valuation_of_mk'],
+    have hn : v.int_valuation nk = v.int_valuation_def nk := rfl,
+    have hd : v.int_valuation dk = v.int_valuation_def dk := rfl, --TODO : change
+    rw [hn, hd],
+    rw [height_one_spectrum.int_valuation_def_if_neg, 
     height_one_spectrum.int_valuation_def_if_neg, ← with_zero.coe_div, ← of_add_sub, neg_sub_neg,
     ← h_exps_v, of_add_to_add, eq_comm],
     exact classical.some_spec (with_zero.to_integer._proof_1 _),

@@ -98,12 +98,11 @@ nonemptiness hypothesis is satisfied for every Dedekind domain that is not a fie
 lemma inj_units_K.injective [inh : inhabited (height_one_spectrum R)] : 
   injective (inj_units_K.group_hom R K) :=
 begin
-  rw monoid_hom.injective_iff,
-  intros x hx,
-  rw [inj_units_K.group_hom, monoid_hom.coe_mk, inj_units_K, ← units.eq_iff, units.coe_mk,
-    units.val_eq_coe] at hx,
-  rw ← units.eq_iff,
-  exact (inj_K.injective R K) hx,
+  rw ← monoid_hom.ker_eq_bot_iff,
+  ext x,
+  rw [monoid_hom.mem_ker, subgroup.mem_bot, inj_units_K.group_hom, monoid_hom.coe_mk, inj_units_K,
+    ← units.eq_iff, units.coe_mk, units.val_eq_coe, ← units.eq_iff],
+  exact injective.eq_iff (inj_K.injective R K),
 end
 
 lemma prod_val_inv_eq_one (x : finite_idele_group' R K) : 
@@ -445,7 +444,7 @@ lemma pi.unif.ne_zero : ∀ v : height_one_spectrum R, pi.unif R K v ≠ 0 :=
 begin
   intro v,
   rw [pi.unif, ← uniform_space.completion.coe_zero,
-    injective.ne_iff (@uniform_space.completion.coe_inj K v.us' v.ss)],
+    injective.ne_iff (@uniform_space.completion.coe_inj K v.adic_valued.to_uniform_space _)],
   exact v.valuation_uniformizer_ne_zero K,
 end
 
@@ -558,9 +557,9 @@ begin
     have hx := classical.some_spec (with_zero.to_integer._proof_1 hv),
     rw ← hx_def at hx ⊢,
     simp only [idele.mk', pi.unif] at hx,
-    rw [valuation.map_zpow, v.valued_adic_completion_def, valued.extension_extends,
-      v.v_valued_K_def, classical.some_spec (v.valuation_exists_uniformizer K),
-        ← with_zero.coe_zpow, with_zero.coe_inj] at hx,
+    rw [valuation.map_zpow, height_one_spectrum.valued_adic_completion_def,
+      valued.extension_extends, v.adic_valued_apply, classical.some_spec
+      (v.valuation_exists_uniformizer K), ← with_zero.coe_zpow, with_zero.coe_inj] at hx,
     rw [hx, ← of_add_zsmul, to_add_of_add, algebra.id.smul_eq_mul, mul_neg,
           mul_one, neg_neg] },
   exact ⟨H, map_to_fractional_ideals.inv_eq_inv _ ⟨I, I_inv, hval_inv, hinv_val⟩ H⟩,

@@ -7,8 +7,8 @@ import data.real.basic
 import number_theory.function_field
 import number_theory.number_field
 import ring_theory.tensor_product
-import function_field
 import topology.metric_space.basic
+import adeles_R
 
 /-!
 # The ring of adèles of a global field
@@ -92,39 +92,6 @@ instance : topological_ring (ℝ ⊗[ℚ] K) := (infinite_adeles.ring_topology K
 instance : topological_space (A_K K) := prod.topological_space
 instance : topological_ring (A_K K) := prod.topological_ring
 
-/-- The ring ℤ is not a field. -/
-lemma int.not_field : ¬ is_field ℤ := 
-begin
-  rw ring.not_is_field_iff_exists_ideal_bot_lt_and_lt_top,
-  use ideal.span{(2 : ℤ)},
-  split,
-  { simp only [bot_lt_iff_ne_bot, ne.def, not_false_iff, bit0_eq_zero, one_ne_zero, 
-      ideal.span_singleton_eq_bot] },
-  { rw [lt_top_iff_ne_top, ne.def, ideal.eq_top_iff_one, ideal.mem_span_singleton],
-    intro h2,
-    have h2_nonneg: 0 ≤ (2 : ℤ) := by simp only [zero_le_bit0, zero_le_one],
-    have : (2 : ℤ) = 1 := int.eq_one_of_dvd_one h2_nonneg h2,
-    linarith, },
-end
-
-/-- The ring of integers of a number field is not a field. -/
-lemma ring_of_integers.not_field : ¬ is_field (ring_of_integers K) :=
-begin
-  have h_int :  algebra.is_integral ℤ (ring_of_integers K),
-  { apply is_integral_closure.is_integral_algebra ℤ K,
-    { apply_instance },
-    { exact ring_of_integers.is_integral_closure },
-    { apply_instance }} ,
-  have h_inj: function.injective ⇑(algebra_map ℤ ↥(ring_of_integers K)),
-  { rw ring_hom.injective_iff,
-    intros a ha,
-    rw [ring_hom.eq_int_cast, int.cast_eq_zero] at ha,
-    exact ha, },
-  by_contra hf,
-  rw ← is_integral.is_field_iff_is_field h_int h_inj at hf,
-  exact int.not_field hf,
-end
-
 /-- There exists a nonzero prime ideal of the ring of integers of a number field. -/
 instance : inhabited (height_one_spectrum (ring_of_integers K)) := 
 begin
@@ -132,8 +99,8 @@ begin
   set hM := classical.some_spec(ideal.exists_maximal (ring_of_integers K)),
   use [M, ideal.is_maximal.is_prime hM],
   { simp only [ideal.zero_eq_bot, ne.def],
-    apply ring.ne_bot_of_is_maximal_of_not_is_field hM (ring_of_integers.not_field K),
-  }
+    apply ring.ne_bot_of_is_maximal_of_not_is_field hM
+      (number_field.ring_of_integers.not_is_field K), }
 end
 
 /-- The map from `K` to `A_K_f K` sending `k ∈ K ↦ (k)_v`. -/
@@ -173,20 +140,11 @@ variables (k F : Type) [field k] [field F] [algebra (polynomial k) F] [algebra (
   [is_scalar_tower (polynomial k) (ratfunc k) F] 
   [is_separable (ratfunc k) F] [decidable_eq (ratfunc k)] 
 
-lemma function_field.infty_valued_Fqt.topological_ring :
-  @topological_ring (ratfunc k) (function_field.infty_valued_Fqt.topological_space k) _ := 
-infer_instance
-
-lemma function_field.infty_valued_Fqt.topological_add_group :
-  @topological_add_group (ratfunc k) (function_field.infty_valued_Fqt.topological_space k) _ :=
-infer_instance
-
 instance : algebra (ratfunc k) (Fqt_infty k) := 
 begin
   apply ring_hom.to_algebra (@uniform_space.completion.coe_ring_hom (ratfunc k) _
-    (function_field.infty_valued_Fqt.uniform_space k)
-    (function_field.infty_valued_Fqt.topological_ring k)
-    (function_field.infty_valued_Fqt.uniform_add_group k)),
+    (function_field.infty_valued_Fqt k).to_uniform_space _
+    (function_field.infty_valued_Fqt k).to_uniform_add_group),
 end 
 
 /-- The finite adèle ring of `F`.-/
