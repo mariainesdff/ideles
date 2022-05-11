@@ -6,7 +6,7 @@ In the number field case, we moreover define the idèle class group and provide 
 
 As a prerequisite, we formalize adic valuations on Dedekind domains and the associated completions.
 
-This formalization is described in the paper "Formalizing the ring of adèles of a global field", [submitted to ITP 2022](https://itpconference.github.io/ITP22/cfp.html). The version of the source code referred to in the paper is at the tag [journal-submission](https://github.com/mariainesdff/ideles/tree/journal-submission), and the corresponding documentation can be found in [this link](https://mariainesdff.github.io/ideles/journal-submission).
+This formalization is described in the paper "Formalizing the ring of adèles of a global field", [to be presented at ITP 2022](https://itpconference.github.io/ITP22/cfp.html). The version of the source code referred to in the paper is at the tag [journal-submission](https://github.com/mariainesdff/ideles/tree/journal-submission), and the corresponding documentation can be found in [this link](https://mariainesdff.github.io/ideles/journal-submission).
 
 ## Guide through the code
 
