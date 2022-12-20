@@ -5,7 +5,7 @@ Authors: María Inés de Frutos-Fernández
 -/
 import data.real.basic
 import number_theory.function_field
-import number_theory.number_field
+import number_theory.number_field.basic
 import ring_theory.tensor_product
 import topology.metric_space.basic
 import adeles_R

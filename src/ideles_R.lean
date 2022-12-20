@@ -60,7 +60,7 @@ instance : topological_space (finite_idele_group' R K) := units.topological_spac
 instance : comm_group (finite_idele_group' R K) := units.comm_group
 instance : topological_group (finite_idele_group' R K) := units.topological_group
 instance : uniform_space (finite_idele_group' R K) := topological_group.to_uniform_space _
-instance : uniform_group (finite_idele_group' R K) := topological_group_is_uniform
+instance : uniform_group (finite_idele_group' R K) := topological_comm_group_is_uniform
 
 lemma right_inv (x : units K) : inj_K R K x.val * inj_K R K x.inv = 1 := 
 begin
@@ -129,13 +129,13 @@ end
 /-- For any finite idèle `x`, there are finitely many maximal ideals `v` of `R` for which
 `x_v ∉ R_v` or `x⁻¹_v ∉ R_v`. -/ 
 lemma restricted_product (x : finite_idele_group' R K) :
-  finite ({ v : height_one_spectrum R | (¬ (x.val.val v) ∈ v.adic_completion_integers K) } ∪ 
-    { v : height_one_spectrum R | ¬ (x.inv.val v) ∈ v.adic_completion_integers K }) :=
+  ({ v : height_one_spectrum R | (¬ (x.val.val v) ∈ v.adic_completion_integers K) } ∪ 
+    { v : height_one_spectrum R | ¬ (x.inv.val v) ∈ v.adic_completion_integers K }).finite :=
 finite.union x.val.property x.inv.property
 
 /-- For any finite idèle `x`, there are finitely many maximal ideals `v` of `R` for which
 `|x_v|_v ≠ 1`. -/ 
-lemma finite_exponents (x : finite_idele_group' R K) : finite
+lemma finite_exponents (x : finite_idele_group' R K) : set.finite
   { v : height_one_spectrum R | (valued.v (x.val.val v) : with_zero (multiplicative ℤ)) ≠ 1 } :=
 begin
   have h_subset : { v : height_one_spectrum R |
@@ -155,7 +155,7 @@ begin
         { rw [valuation.ne_zero_iff],
           exact left_ne_zero_of_mul_eq_one (prod_val_inv_eq_one R K v x),},
         rw mul_eq_one_iff_inv_eq₀ hx at h_one,
-        rw [← h_one, ← with_zero.inv_one, inv_lt_inv₀ (ne.symm zero_ne_one) hx],
+        rw [← h_one, ← inv_one, inv_lt_inv₀ (ne.symm zero_ne_one) hx],
         exact hlt, },
       exact not_le.mpr h_inv,},
     { left, exact not_le.mpr hgt, }},
@@ -274,7 +274,7 @@ begin
     {v : height_one_spectrum R | (v.as_ideal : fractional_ideal (non_zero_divisors R) K) ^ 
       finite_idele.to_add_valuations R K x v ≠ 1},
   { ext v,
-    rw [mem_set_of_eq, mem_set_of_eq, ne.def, ne.def, zpow_neg₀, inv_eq_one₀], },
+    rw [mem_set_of_eq, mem_set_of_eq, ne.def, ne.def, zpow_neg, inv_eq_one], },
   rw [mul_support, h],
   exact finite_support R K x,
 end
@@ -384,7 +384,7 @@ begin
     1 < (valued.v (a x)⁻¹ : with_zero (multiplicative ℤ)) } ⊆ 
     {x : height_one_spectrum R | ¬(valued.v (a x) : with_zero (multiplicative ℤ)) = 1},
   { intros v hv,
-    rw [mem_set_of_eq, valuation.map_inv] at hv,
+    rw [mem_set_of_eq, map_inv₀] at hv,
     rw [mem_set_of_eq, ←inv_inj, inv_one],
     exact ne_of_gt hv, },
   exact finite.subset ha h_subset,
@@ -401,7 +401,7 @@ begin
   unfold_projs,
   simp only [mul'],
   rw [subtype.coe_mk, subtype.coe_mk, pi.mul_apply, if_neg (h_ne_zero v)],
-  apply mul_hat_inv_cancel,
+  apply uniform_space.completion.mul_hat_inv_cancel,
   exact h_ne_zero v,
 end
 
@@ -431,7 +431,7 @@ lemma map_to_fractional_ideals.inv_eq_inv (x : finite_idele_group' R K)
 begin
   have h_inv : I.val * (map_to_fractional_ideals.inv R K (x)) = 1,
   { rw ← hxI, exact finite_idele.to_add_valuations.mul_inv R K _ },
-  exact eq_comm.mp (units.inv_eq_of_mul_eq_one h_inv),
+  exact eq_comm.mp (units.inv_eq_of_mul_eq_one_right h_inv),
 end
 
 variables (R K)
@@ -557,7 +557,7 @@ begin
     have hx := classical.some_spec (with_zero.to_integer._proof_1 hv),
     rw ← hx_def at hx ⊢,
     simp only [idele.mk', pi.unif] at hx,
-    rw [valuation.map_zpow, height_one_spectrum.valued_adic_completion_def,
+    rw [map_zpow₀, height_one_spectrum.valued_adic_completion_def,
       valued.extension_extends, v.adic_valued_apply, classical.some_spec
       (v.valuation_exists_uniformizer K), ← with_zero.coe_zpow, with_zero.coe_inj] at hx,
     rw [hx, ← of_add_zsmul, to_add_of_add, algebra.id.smul_eq_mul, mul_neg,

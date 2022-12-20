@@ -1,8 +1,8 @@
 [package]
 name = "ideles"
 version = "0.1"
-lean_version = "leanprover-community/lean:3.42.1"
+lean_version = "leanprover-community/lean:3.49.1"
 path = "src"
 
 [dependencies]
-mathlib = {git = "https://github.com/leanprover-community/mathlib", rev = "e68961170429147df501d4f6cc767d944dd7b434"}
+mathlib = {git = "https://github.com/leanprover-community/mathlib", rev = "d9767b5472a119ce6f34c3007cbcc0cb6a2f2326"}

@@ -40,7 +40,68 @@ idèle group, number field, function field
 noncomputable theory
 
 open set function is_dedekind_domain
-open_locale tensor_product number_field
+open_locale tensor_product number_field non_zero_divisors
+
+/-- Every nonzero element in a field is a unit. -/
+def field.units.mk' {F : Type*} [field F] {k : F} (hk : k ≠ 0) : units F :=
+{ val     := k,
+  inv     := k⁻¹,
+  val_inv := mul_inv_cancel hk,
+  inv_val := inv_mul_cancel hk }
+
+
+namespace fractional_ideal
+
+theorem is_unit_of_span_singleton_eq_one {R P : Type*} [comm_ring R] {S : submonoid R} 
+  [comm_ring P] [algebra R P] [loc : is_localization S P] [no_zero_smul_divisors R P] {x : P} 
+  (hx : span_singleton S x = 1) : is_unit x := 
+begin
+  rw [← span_singleton_one, span_singleton_eq_span_singleton] at hx,
+  obtain ⟨r, hr⟩ := hx,
+  rw is_unit_iff_exists_inv',
+  use algebra_map R P r,
+  rw [← algebra.smul_def, ← hr],
+  refl
+end
+
+theorem unit_is_principal_iff  (K R : Type*) [field K] [comm_ring R] [algebra R K]
+  [is_fraction_ring R K] (I : (fractional_ideal R⁰ K)ˣ) :
+  ((I : (fractional_ideal R⁰ K)) : submodule R K).is_principal ↔ 
+  ∃ (x : Kˣ), (I : fractional_ideal R⁰ K) = fractional_ideal.span_singleton R⁰ (x : K) :=
+begin
+  refine ⟨λ h, _, λ h, _⟩,
+  { obtain ⟨x, hx⟩ := (fractional_ideal.is_principal_iff _).mp h,
+    have hx0 : x ≠ 0,
+    { intro h0,
+      rw [h0, span_singleton_zero] at hx,
+      exact units.ne_zero _ hx },
+    exact ⟨field.units.mk' hx0, hx⟩, },
+  { obtain ⟨x, hx⟩ := h,
+    exact (fractional_ideal.is_principal_iff _).mpr ⟨x, hx⟩ }
+end
+
+end fractional_ideal
+
+section class_group
+
+lemma class_group.mk_surjective {R K : Type*} [comm_ring R] [is_domain R] [is_dedekind_domain R] 
+  [field K] [algebra R K] [is_fraction_ring R K] : 
+  surjective (@class_group.mk R K _ _ _ _ _ ) :=
+begin
+  intros I,
+  obtain ⟨J, hJ⟩ := class_group.mk0_surjective I,
+  use fractional_ideal.mk0 K J,
+  rw class_group.mk_mk0,
+  exact hJ,
+end
+
+lemma class_group.mk_eq_one_iff' {R K : Type*} [comm_ring R] [is_domain R] [is_dedekind_domain R] 
+  [field K] [algebra R K] [is_fraction_ring R K] {I : (fractional_ideal R⁰ K)ˣ} : 
+  class_group.mk I = 1 ↔ 
+  ∃ (x : Kˣ), (I : fractional_ideal R⁰ K) = fractional_ideal.span_singleton R⁰ (x : K)  :=
+by rw [class_group.mk_eq_one_iff, coe_coe, fractional_ideal.unit_is_principal_iff]
+
+end class_group
 
 namespace number_field
 /-! ### The idèle group of a number field
@@ -142,8 +203,8 @@ end
 /-- The idèle class group of `K` is the quotient of `I_K` by the group `K*` of principal idèles. -/
 def C_K := (I_K K) ⧸ (inj_units_K.group_hom K).range
 
-instance : comm_group (C_K K) := 
-quotient_group.has_quotient.quotient.comm_group ((inj_units_K.group_hom K).range)
+instance : comm_group (C_K K) :=
+quotient_group.quotient.comm_group ((inj_units_K.group_hom K).range)
 instance : topological_space (C_K K) := quotient.topological_space
 instance : topological_group (C_K K) := topological_group_quotient ((inj_units_K.group_hom K).range)
 
@@ -157,7 +218,7 @@ def v_comp_inv (x : I_K K) (v : height_one_spectrum (𝓞 K)) :
 
 /-- For any finite idèle `x`, there are finitely many maximal ideals `v` of `R` for which
 `x_v ∉ R_v` or `x⁻¹_v ∉ R_v`. -/ 
-lemma I_K_f.restricted_product (x : I_K_f K) : finite ({ v : height_one_spectrum (𝓞 K) |
+lemma I_K_f.restricted_product (x : I_K_f K) : set.finite ({ v : height_one_spectrum (𝓞 K) |
   ¬ (x.val.val v) ∈ v.adic_completion_integers K } ∪ { v : height_one_spectrum (𝓞 K) |
    ¬ (x.inv.val v) ∈ v.adic_completion_integers K }) :=
 restricted_product (𝓞 K) K x
@@ -183,14 +244,14 @@ lemma v_comp.ne_zero (x : I_K K) (v : height_one_spectrum (𝓞 K)) :
 
 /-- For any idèle `x`, there are finitely many maximal ideals `v` of `R` for which `x_v ∉ R_v` or
 `x⁻¹_v ∉ R_v`. -/ 
-lemma I_K.restricted_product (x : I_K K) :
-  finite ({ v : height_one_spectrum (𝓞 K) | (¬ (x.val.1.val v) ∈ v.adic_completion_integers K) } ∪ 
+lemma I_K.restricted_product (x : I_K K) : set.finite 
+  ({ v : height_one_spectrum (𝓞 K) | (¬ (x.val.1.val v) ∈ v.adic_completion_integers K) } ∪ 
     { v : height_one_spectrum (𝓞 K) | ¬ (x.inv.1.val v) ∈ v.adic_completion_integers K }) :=
 finite.union x.val.1.property x.inv.1.property
 
 /-- For any idèle `x`, there are finitely many maximal ideals `v` of `R` for which `|x_v|_v ≠ 1`. -/
 lemma I_K.finite_exponents (x : I_K K) :
-  finite { v : height_one_spectrum (𝓞 K) | v_comp_val K x v ≠ 1 } :=
+ { v : height_one_spectrum (𝓞 K) | v_comp_val K x v ≠ 1 }.finite :=
 begin
   have h_subset : { v : height_one_spectrum (𝓞 K) | v_comp_val K x v ≠ 1 } ⊆ 
   { v : height_one_spectrum (𝓞 K) | ¬ (x.val.1.val v) ∈ v.adic_completion_integers K } ∪ 
@@ -207,7 +268,7 @@ begin
         { rw [v_comp_val, valuation.ne_zero_iff],
           exact v_comp.ne_zero K x v,},
         rw mul_eq_one_iff_inv_eq₀ hx at h_one,
-        rw [← h_one, ← with_zero.inv_one, inv_lt_inv₀ (ne.symm zero_ne_one) hx],
+        rw [← h_one, ← inv_one, inv_lt_inv₀ (ne.symm zero_ne_one) hx],
         exact hlt, },
       exact not_le.mpr h_inv,},
     { left, exact not_le.mpr hgt, }},
@@ -269,31 +330,33 @@ variable (K)
 /-- The map from `I_K_f` to the ideal  class group of `K` induced by 
 `I_K_f.map_to_fractional_ideals`. -/
 def I_K_f.map_to_class_group :
-  (I_K_f K) → (class_group (𝓞 K) K) := 
-λ x, quotient_group.mk (I_K_f.map_to_fractional_ideals K x)
+  (I_K_f K) → (class_group (𝓞 K)) := 
+λ x, class_group.mk (I_K_f.map_to_fractional_ideals K x)
 
-instance : topological_space (class_group ↥(𝓞 K) K) := ⊥
-instance : topological_group (class_group ↥(𝓞 K) K) := 
+
+instance : topological_space (class_group ↥(𝓞 K)) := ⊥
+instance : topological_group (class_group ↥(𝓞 K)) := 
 { continuous_mul := continuous_of_discrete_topology,
   continuous_inv := continuous_of_discrete_topology, }
 
+
 variable {K}
 lemma I_K_f.map_to_class_group.surjective : surjective (I_K_f.map_to_class_group K) := 
-surjective.comp quotient.surjective_quotient_mk' I_K_f.map_to_fractional_ideals.surjective
+(class_group.mk_surjective).comp I_K_f.map_to_fractional_ideals.surjective
 
 lemma I_K_f.map_to_class_group.continuous : continuous (I_K_f.map_to_class_group K) := 
-continuous.comp continuous_bot (I_K_f.map_to_fractional_ideals.continuous)
+continuous_bot.comp I_K_f.map_to_fractional_ideals.continuous
 
 variable (K)
 /-- The map from `I_K` to the ideal  class group of `K` induced by 
 `I_K.map_to_fractional_ideals`. -/
 def I_K.map_to_class_group :
-  (I_K K) → (class_group (𝓞 K) K) :=
-λ x, quotient_group.mk' _ (I_K.map_to_fractional_ideals K x)
+  (I_K K) → (class_group (𝓞 K)) :=
+λ x, class_group.mk (I_K.map_to_fractional_ideals K x)
 
 variable {K}
 lemma I_K.map_to_class_group.surjective : surjective (I_K.map_to_class_group K) := 
-surjective.comp quotient.surjective_quotient_mk' I_K.map_to_fractional_ideals.surjective
+(class_group.mk_surjective).comp I_K.map_to_fractional_ideals.surjective
 
 lemma I_K.map_to_class_group.continuous : continuous (I_K.map_to_class_group K) := 
 continuous.comp continuous_bot I_K.map_to_fractional_ideals.continuous
@@ -308,7 +371,7 @@ by {simp only [I_K.map_to_class_group, monoid_hom.map_mul] }
 
 /-- The map from `I_K` to the ideal  class group of `K` induced by 
 `I_K.map_to_fractional_ideals` is a group homomorphism. -/
-def I_K.monoid_hom_to_class_group : (I_K K) →* (class_group (𝓞 K) K) := 
+def I_K.monoid_hom_to_class_group : (I_K K) →* (class_group (𝓞 K)) := 
 { to_fun   := I_K.map_to_class_group K,
   map_one' := I_K.map_to_class_group.map_one,
   map_mul' := λ x y, I_K.map_to_class_group.map_mul x y }
@@ -339,10 +402,10 @@ begin
   apply finprod_congr,
   intro v,
   apply congr_arg,
-  rw finite_idele.to_add_valuations,
-  simp only,
+  simp only [finite_idele.to_add_valuations],
+  
   rw [with_zero.to_integer, ← injective.eq_iff multiplicative.of_add.injective, of_add_neg,
-    of_add_to_add, ← neg_sub_neg, of_add_sub, ← inv_div'],
+    of_add_to_add, ← neg_sub_neg, of_add_sub, ← inv_div],
   apply congr_arg,
   have hv : valued.v (((inj_K_f.ring_hom K) k.val).val v) ≠ (0 : with_zero (multiplicative ℤ)),
   { rw [valuation.ne_zero_iff, inj_K_f.ring_hom.v_comp, units.val_eq_coe,
@@ -371,7 +434,7 @@ begin
   rw [height_one_spectrum.int_valuation_def_if_neg v
     (non_zero_divisors.coe_ne_zero _), height_one_spectrum.int_valuation_def_if_neg],
   { rw [ne.def, ← @is_fraction_ring.mk'_eq_zero_iff_eq_zero _ _ K _ _ _ _ d', hk],
-    exact units.ne_zero k, }
+    exact units.ne_zero k, } 
 end
 
 /-- `I_K.map_to_fractional_ideals` sends the principal idèle `(k)_v` corresponding to `k ∈ K*` to 
@@ -386,19 +449,11 @@ I_K_f.map_to_fractional_ideal.map_units k
 lemma I_K.map_to_class_group.map_units_K (k : units K) :
   I_K.map_to_class_group K ((inj_units_K.group_hom K) k) = 1 :=
 begin
-  simp only [I_K.map_to_class_group],
-  rw [quotient_group.mk'_apply, quotient_group.eq_one_iff, monoid_hom.mem_range],
-  simp only [to_principal_ideal_eq_iff], 
+  simp only [I_K.map_to_class_group, class_group.mk_eq_one_iff, coe_coe],
   use k,
-  exact I_K.map_to_fractional_ideals.map_units_K k, 
+  rw [← I_K.map_to_fractional_ideals.map_units_K k, fractional_ideal.coe_span_singleton],
 end
 
-/-- Every nonzero element in a field is a unit. -/
-def field.units.mk' {F : Type*} [field F] (k : F) (hk : k ≠ 0) : units F :=
-{ val     := k,
-  inv     := k⁻¹,
-  val_inv := mul_inv_cancel hk,
-  inv_val := inv_mul_cancel hk}
 
 lemma I_K.map_to_fractional_ideals.apply (x : I_K K) : (((I_K.map_to_fractional_ideals K) x) : 
   fractional_ideal (non_zero_divisors ↥(𝓞 K)) K) = 
@@ -470,13 +525,10 @@ lemma I_K.map_to_class_group.mem_kernel_iff (x : I_K K) :
     (finite_idele.to_add_valuations ↥(𝓞 K) K ((I_K.fst K) x) v) 
     = -with_zero.to_integer (units.valuation_ne_zero (𝓞 K) K v hk) :=
 begin
-  rw [I_K.map_to_class_group, quotient_group.coe_mk', quotient_group.eq_one_iff,
-      monoid_hom.mem_range],
-    simp_rw [to_principal_ideal_eq_iff],
+  rw [I_K.map_to_class_group, class_group.mk_eq_one_iff'],
   refine ⟨λ h, _, λ h, _⟩,
- { obtain ⟨k, hk⟩ := h,
-    use (k : K),
-    use units.ne_zero k,
+  { obtain ⟨k, hk⟩ := h,
+    use [(k : K), k.ne_zero],
     intro v,
     rw [finite_idele.to_add_valuations, neg_inj, with_zero.to_integer,
       with_zero.to_integer, injective.eq_iff multiplicative.to_add.injective],
@@ -487,27 +539,27 @@ begin
     intros b hb,
     have h_valuations : valued.v (((I_K.fst K) x).val.val v) =
       valued.v ((coe : K → v.adic_completion K) (k : K)),
-    { apply I_K.map_to_class_group.valuation_mem_kernel x k v hk },
+    { apply I_K.map_to_class_group.valuation_mem_kernel x k v hk.symm },
     rw [← h_valuations, ← hb] at ha,
     rw ← with_zero.coe_inj,
-    exact ha, }, 
-  { obtain ⟨k, hk, h_vals⟩ := h,
-    use field.units.mk' k hk,
-    rw [I_K.map_to_fractional_ideals.map_units_K, I_K.map_to_fractional_ideals,
-      I_K_f.map_to_fractional_ideals, map_to_fractional_ideals, monoid_hom.coe_comp,
-      comp_app, monoid_hom.coe_mk,map_to_fractional_ideals.def, force_noncomputable_def,
-      units.coe_mk],
-    simp only [map_to_fractional_ideals.val],
-    apply finprod_congr,
-    intro v,
-    rw h_vals v,
-    refl, }
+    exact ha, },
+    { obtain ⟨k, hk, h_vals⟩ := h,
+      use field.units.mk' hk,
+      rw [I_K.map_to_fractional_ideals.map_units_K, I_K.map_to_fractional_ideals,
+        I_K_f.map_to_fractional_ideals, map_to_fractional_ideals, monoid_hom.coe_comp,
+        comp_app, monoid_hom.coe_mk,map_to_fractional_ideals.def, force_noncomputable_def,
+        units.coe_mk],
+      simp only [map_to_fractional_ideals.val],
+      apply finprod_congr,
+      intro v,
+      rw h_vals v,
+      refl, }
   end
 
 variable (K)
 /-- The map `C_K → Cl(K)` induced by `I_K.map_to_class_group`. -/
 def C_K.map_to_class_group :
-  (C_K K) →* (class_group (𝓞 K) K) :=
+  (C_K K) →* (class_group (𝓞 K)) :=
 begin
   apply quotient_group.lift (inj_units_K.group_hom K).range I_K.monoid_hom_to_class_group _,
   { intros x hx,
@@ -528,9 +580,7 @@ end
 /-- The natural map `C_K → Cl(K)` is continuous. -/
 lemma C_K.map_to_class_group.continuous :
   continuous (C_K.map_to_class_group K) := 
-continuous_quot_lift (quotient_group.lift._proof_1
-  (inj_units_K.group_hom K).range I_K.monoid_hom_to_class_group
-  (C_K.map_to_class_group._proof_2 K)) I_K.map_to_class_group.continuous
+continuous_quot_lift _ I_K.map_to_class_group.continuous
 
 /-- An element `x ∈ C_K` is in the kernel of `C_K → Cl(K)` if and only if `x` comes from an idèle 
 of the form `k*y`, with `k ∈ K*` and `|y_v|_v = 1` for all `v`. -/

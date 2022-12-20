@@ -64,9 +64,6 @@ begin
   { exact mem_union_left _ (mem_union_left _ hf),},
 end
 
-lemma mul_le_one₀ {α : Type*} [linear_ordered_comm_group_with_zero α] {x y : α} (hx : x ≤ 1) 
-  (hy : y ≤ 1): x*y ≤ 1 := mul_le_one' hx hy
-
 /-- Auxiliary definition to force a definition to be noncomputable. This is used to avoid timeouts
 or memory errors when Lean cannot decide whether a certain definition is computable.
 Author: Gabriel Ebner. -/
@@ -220,12 +217,12 @@ begin
   rw filter.eventually_cofinite,
   have h_empty : {v : height_one_spectrum R | 
     ¬ ((0 : v.adic_completion K) ∈ v.adic_completion_integers K)} = ∅,
-  { ext v, rw mem_empty_eq, split; intro hv,
-    { rw mem_set_of_eq at hv, apply hv, rw adic_completion.is_integer, 
-      have h_zero : (valued.v (0 : v.adic_completion K) : (with_zero(multiplicative ℤ))) = 0 :=
-      valued.v.map_zero',
-      rw h_zero, exact zero_le_one' },
-    { exfalso, exact hv }},
+  { ext v, rw [mem_empty_iff_false, iff_false],
+    intro hv,
+    rw mem_set_of_eq at hv, apply hv, rw adic_completion.is_integer, 
+    have h_zero : (valued.v (0 : v.adic_completion K) : (with_zero(multiplicative ℤ))) = 0 :=
+    valued.v.map_zero',
+    rw h_zero, exact zero_le_one' _ },
   rw h_empty,
   exact finite_empty,
 end
@@ -268,7 +265,7 @@ begin
     rw [adic_completion.is_integer, pi.mul_apply, h_mul,
       ← mul_one (1 : with_zero (multiplicative ℤ ))],
     exact @mul_le_one' (with_zero (multiplicative ℤ)) _ _ 
-      (ordered_comm_monoid.to_covariant_class_left _) _ _ _ h.left h.right,  },
+      (ordered_comm_monoid.to_covariant_class_left _) _ _ h.left h.right,  },
   exact finite.subset (finite.union hx hy) h_subset,
 end
 
@@ -283,10 +280,9 @@ begin
   rw filter.eventually_cofinite,
   have h_empty : {v : height_one_spectrum R |
     ¬ ((1 : v.adic_completion K) ∈ v.adic_completion_integers K)} = ∅,
-  { ext v, rw mem_empty_eq, split; intro hv,
-    { rw mem_set_of_eq at hv, apply hv, rw adic_completion.is_integer, 
-      exact le_of_eq valued.v.map_one' },
-    { exfalso, exact hv }},
+  { ext v, rw [mem_empty_iff_false, iff_false],intro hv,
+    rw mem_set_of_eq at hv, apply hv, rw adic_completion.is_integer, 
+    exact le_of_eq valued.v.map_one' },
   rw h_empty,
   exact finite_empty,
 end
@@ -766,7 +762,7 @@ TODO: show that this homomorphism is in fact an isomorphism of topological rings
 
 /-- `R∖{0}` is a submonoid of `R_hat R K`, via the inclusion `r ↦ (r)_v`. -/
 def diag_R : submonoid (R_hat R K) := force_noncomputable
-{ carrier  := (inj_R R K) '' set.compl {0},
+{ carrier  := (inj_R R K) '' {0}ᶜ,
   one_mem' :=  ⟨1, set.mem_compl_singleton_iff.mpr one_ne_zero, inj_R.map_one R K⟩,
   mul_mem' := 
   begin
@@ -797,14 +793,14 @@ begin
   rw  [ne.def, subring.coe_eq_zero_iff, ← hrx, inj_R],
   simp only [inj_adic_completion_integers], 
   have h : (0 : v.adic_completion K) ∈ v.adic_completion_integers K,
-  { rw [adic_completion.is_integer R K, valuation.map_zero], exact zero_le_one',},
+  { rw [adic_completion.is_integer R K, valuation.map_zero], exact zero_le_one' _ },
   have h_zero : (0 : v.adic_completion_integers K) = ⟨(0 : v.adic_completion K), h⟩ := rfl,
   have h_inj : function.injective (coe : K → (v.adic_completion K)) :=
     @uniform_space.completion.coe_inj K v.adic_valued.to_uniform_space _,
   rw [h_zero, subtype.mk_eq_mk, ← uniform_space.completion.coe_zero, 
     ← (algebra_map R K).map_zero, ← ne.def, 
     injective.ne_iff (injective.comp h_inj (is_fraction_ring.injective R K))],
-  rw [compl_eq_compl, mem_compl_eq, mem_singleton_iff] at hr,
+  rw [mem_compl_iff, mem_singleton_iff] at hr,
   exact hr,
 end
 
@@ -831,18 +827,18 @@ begin
     by_cases hr : hom_prod R K r v = 0,
     { rw [hr, zero_mul, adic_completion.is_integer, valuation.map_zero] at hv,
       exact absurd (with_zero.zero_le 1) hv, },
-    { have h_inv : (((is_unit.lift_right ((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) 
+    { have h_inv : (((is_unit.lift_right ((hom_prod R K).to_monoid_hom.restrict (diag_R R K)) 
         (hom_prod_diag_unit R K)) d').inv v) *
-        (((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) d' v) = 1,
+        (((hom_prod R K).to_monoid_hom.restrict (diag_R R K)) d' v) = 1,
       { rw [units.inv_eq_coe_inv, ← pi.mul_apply, is_unit.lift_right_inv_mul 
-          ((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) (hom_prod_diag_unit R K) d',
+          ((hom_prod R K).to_monoid_hom.restrict (diag_R R K)) (hom_prod_diag_unit R K) d',
           pi.one_apply]},
-      have h_val : (valued.v (((is_unit.lift_right ((hom_prod R K).to_monoid_hom.mrestrict 
+      have h_val : (valued.v (((is_unit.lift_right ((hom_prod R K).to_monoid_hom.restrict 
         (diag_R R K)) (hom_prod_diag_unit R K)) d').inv v))*
-        ((valued.v (((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) d' v)) :
+        ((valued.v (((hom_prod R K).to_monoid_hom.restrict (diag_R R K)) d' v)) :
           with_zero(multiplicative ℤ)) = 1,
       { rw [← valuation.map_mul, h_inv, valuation.map_one], },
-      have h_coe : (((hom_prod R K).to_monoid_hom.mrestrict (diag_R R K)) d') v =
+      have h_coe : (((hom_prod R K).to_monoid_hom.restrict (diag_R R K)) d') v =
         ((d' : R_hat R K) v) := rfl,
       have hd' : ((d'.val) v).val = (coe : K → v.adic_completion K) (algebra_map R K d),
       { rw ← hd_inj, dsimp only [inj_R], rw inj_adic_completion_integers, },
@@ -857,7 +853,7 @@ begin
           ← adic_completion.is_integer],
         exact (r v).property, },
       exact (v.valuation_lt_one_iff_dvd d).mp (lt_of_lt_of_le hv h_val_r), }},
-    exact finite.subset (finite_factors d hd) hsubset,
+    exact finite.subset (finite_factors d hd) hsubset
 end 
 
 lemma map_to_K_hat.map_one : map_to_K_hat R K 1 = 1 := 
