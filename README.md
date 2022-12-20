@@ -17,6 +17,8 @@ This project is currently in the process of being integrated into `mathlib`. Ple
 - `height_one_spectrum.adic_completion` : [src/ring_theory/dedekind_domain/adic_valuation.lean](https://leanprover-community.github.io/mathlib_docs/ring_theory/dedekind_domain/adic_valuation.html#is_dedekind_domain.height_one_spectrum.adic_completion)
 - `function_field.infty_valuation` : [src/number_theory/function_field.lean](https://leanprover-community.github.io/mathlib_docs/number_theory/function_field.html#function_field.infty_valuation_def)
 - `function_field.valued_Fqt_infty` : [src/number_theory/function_field.lean](https://leanprover-community.github.io/mathlib_docs/number_theory/function_field.html#function_field.valued_Fqt_infty)
+- `ideal.finite_factors` : [src/ring_theory/dedekind_domain/factorization.lean](https://leanprover-community.github.io/mathlib_docs/ring_theory/dedekind_domain/factorization.html#ideal.finite_factors)
+- `ideal.finprod_height_one_spectrum_factorization` : [src/ring_theory/dedekind_domain/factorization.lean](https://leanprover-community.github.io/mathlib_docs/ring_theory/dedekind_domain/factorization.html#ideal.finprod_height_one_spectrum_factorization)
 
 ## Installation instructions
 The formalization has been developed over Lean 3 and its matemathical library mathlib. For detailed instructions to install Lean, mathlib, and supporting tools, visit the [Lean Community website](https://leanprover-community.github.io/get_started.html).
