@@ -335,10 +335,10 @@ def I_K_f.map_to_class_group :
 
 
 instance : topological_space (class_group ↥(𝓞 K)) := ⊥
+instance : discrete_topology (class_group ↥(𝓞 K)) := ⟨rfl⟩
 instance : topological_group (class_group ↥(𝓞 K)) := 
 { continuous_mul := continuous_of_discrete_topology,
-  continuous_inv := continuous_of_discrete_topology, }
-
+  continuous_inv := continuous_of_discrete_topology }
 
 variable {K}
 lemma I_K_f.map_to_class_group.surjective : surjective (I_K_f.map_to_class_group K) := 
@@ -502,7 +502,7 @@ begin
       { rw [fractional_ideal.coe_ideal_span_singleton, 
           fractional_ideal.span_singleton_mul_span_singleton, ← h, is_fraction_ring.mk'_eq_div, 
           h_dk, div_eq_inv_mul], }},
-    simp only [finite_idele.to_add_valuations, with_zero.to_integer, eq_neg_iff_eq_neg, neg_sub]
+    simp only [finite_idele.to_add_valuations, with_zero.to_integer, ← neg_eq_iff_eq_neg, neg_sub] 
       at h_exps_v,
     conv_rhs {rw [height_one_spectrum.valued_adic_completion_def, units.val_eq_coe], },
     rw [valued.extension_extends, v.adic_valued_apply, ← h, v.valuation_of_mk'],
@@ -511,10 +511,10 @@ begin
     rw [hn, hd],
     rw [height_one_spectrum.int_valuation_def_if_neg, 
     height_one_spectrum.int_valuation_def_if_neg, ← with_zero.coe_div, ← of_add_sub, neg_sub_neg,
-    ← h_exps_v, of_add_to_add, eq_comm],
+      h_exps_v, of_add_to_add, eq_comm],
     exact classical.some_spec (with_zero.to_integer._proof_1 _),
     { exact h_dk_ne_zero },
-    { exact h_nk_ne_zero }},
+    { exact h_nk_ne_zero }}
 end
 
 /-- An element `x ∈ I_K` is in the kernel of `C_K → Cl(K)` if and only if there exist `k ∈ K*` and

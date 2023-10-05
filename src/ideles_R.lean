@@ -301,7 +301,7 @@ def map_to_fractional_ideals.group_hom : monoid_hom
     apply finprod_congr,
     intro v,
     rw zpow_add₀,
-    { rw [ne.def, fractional_ideal.coe_ideal_eq_zero_iff],
+    { rw [ne.def, fractional_ideal.coe_ideal_eq_zero],
       exact v.ne_bot},
   end }
 
@@ -317,13 +317,11 @@ lemma finite_idele.to_add_valuations.mul_inv (x : finite_idele_group' R K):
 begin
   rw [map_to_fractional_ideals.val, map_to_fractional_ideals.inv],
   dsimp only,
-  rw ← finprod_mul_distrib (finite_support R K x) (finite_support' R K x),
-  rw ← finprod_one,
+  rw [← finprod_mul_distrib (finite_support R K x) (finite_support' R K x), ← finprod_one],
   apply finprod_congr ,
   intro v,
-  rw ← zpow_add₀,
-  rw [add_right_neg, zpow_zero],
-  { rw [ne.def, fractional_ideal.coe_ideal_eq_zero_iff],
+  rw [← zpow_add₀, add_right_neg, zpow_zero],
+  { rw [ne.def, fractional_ideal.coe_ideal_eq_zero],
       exact v.ne_bot },
 end
 
@@ -637,15 +635,7 @@ begin
     ∀ v : height_one_spectrum R, (p.1.val v) ∈ v.adic_completion_integers K ∧ 
     ((mul_opposite.unop p.2).val v) ∈ v.adic_completion_integers K},
   split,
-  { have : prod.topological_space.is_open
-      {p : finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ | ∀ (v : height_one_spectrum R),
-        p.fst.val v ∈ v.adic_completion_integers K ∧
-        (mul_opposite.unop p.snd).val v ∈ v.adic_completion_integers K}  ↔ is_open
-      {p : finite_adele_ring' R K × (finite_adele_ring' R K)ᵐᵒᵖ | ∀ (v : height_one_spectrum R),
-        p.fst.val v ∈ v.adic_completion_integers K ∧
-        (mul_opposite.unop p.snd).val v ∈ v.adic_completion_integers K} := by refl,
-    rw this, clear this,
-    rw [is_open_prod_iff],
+  { rw [is_open_prod_iff],
     intros x y hxy,
     rw mem_set_of_eq at hxy,
     use {x : finite_adele_ring' R K | ∀ (v : height_one_spectrum R),

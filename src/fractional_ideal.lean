@@ -58,20 +58,6 @@ end
 
 variables {R : Type*} {K : Type*} [comm_ring R] [field K] [algebra R K] 
 
-/-- The discrete topology on the units of the fractional ideals. -/
-instance ufi_ts : topological_space (units (fractional_ideal (non_zero_divisors R) K)) := ⊥
-
-/-- The units of the fractional ideals with the discrete topology are a topological group.  -/
-instance ufi_tg : topological_group (units (fractional_ideal (non_zero_divisors R) K)) := 
-{ continuous_mul := continuous_of_discrete_topology,
-  continuous_inv := continuous_of_discrete_topology, }
-
-instance ufi_us : uniform_space (units (fractional_ideal (non_zero_divisors R) K)) := 
-topological_group.to_uniform_space _
-
-instance ufi_ug : uniform_group (units (fractional_ideal (non_zero_divisors R) K)) := 
-topological_comm_group_is_uniform
-
 variables [is_fraction_ring R K]
 
 /-- If `I` is a nonzero fractional ideal, `a ∈ R`, and `J` is an ideal of `R` such that
@@ -82,7 +68,7 @@ lemma fractional_ideal.ideal_factor_ne_zero {I : fractional_ideal (non_zero_divi
   J ≠ 0 :=
 begin
   intro h, 
-  rw [h, ideal.zero_eq_bot, fractional_ideal.coe_to_fractional_ideal_bot, mul_zero] at haJ, 
+  rw [h, ideal.zero_eq_bot, fractional_ideal.coe_ideal_bot, mul_zero] at haJ,
   exact hI haJ,
 end
 
@@ -130,10 +116,10 @@ begin
   rw ← finprod_mul_distrib,
   apply finprod_congr,
   intro v,
-  rw [← zpow_add₀ ((@fractional_ideal.coe_ideal_ne_zero_iff R _ K _ _ _ _).mpr v.ne_bot),
+  rw [← zpow_add₀ ((@fractional_ideal.coe_ideal_ne_zero R _ K _ _ _ _).mpr v.ne_bot),
     sub_eq_add_neg],
-  apply ideal.finite_mul_support_coe hJ_ne_zero, 
-  apply ideal.finite_mul_support_inv ha_ne_zero, 
+  apply ideal.finite_mul_support_coe hJ_ne_zero,
+  apply ideal.finite_mul_support_inv ha_ne_zero,
   { apply_instance },
 end
 
@@ -303,7 +289,7 @@ lemma fractional_ideal.count_self :
   fractional_ideal.count K v (v.as_ideal : fractional_ideal (non_zero_divisors R) K)  = 1 :=
 begin
   have hv : (v.as_ideal : fractional_ideal (non_zero_divisors R) K) ≠ 0,
-  { rw fractional_ideal.coe_ideal_ne_zero_iff,
+  { rw fractional_ideal.coe_ideal_ne_zero,
     exact v.ne_bot  },
   have h_self : (v.as_ideal : fractional_ideal (non_zero_divisors R) K) = 
     fractional_ideal.span_singleton (non_zero_divisors R) ((algebra_map R K) 1)⁻¹ * 
@@ -362,7 +348,7 @@ begin
     (non_zero_divisors R) ((algebra_map R K) (1))⁻¹ * ↑(w.as_ideal),
   { rw [(algebra_map R K).map_one, inv_one, fractional_ideal.span_singleton_one, one_mul], },
   have hw_ne_zero : (w.as_ideal : fractional_ideal (non_zero_divisors R) K) ≠ 0,
-  { rw fractional_ideal.coe_ideal_ne_zero_iff,
+  { rw fractional_ideal.coe_ideal_ne_zero,
     exact w.ne_bot  },
   have hv : irreducible (associates.mk v.as_ideal) := 
   by apply v.associates_irreducible,
@@ -371,7 +357,7 @@ begin
   rw [fractional_ideal.count_well_defined K v hw_ne_zero hw_fact, ideal.span_singleton_one,
     ← ideal.one_eq_top, associates.mk_one, associates.factors_one, associates.count_zero hv,
     int.coe_nat_zero, sub_zero, int.coe_nat_eq_zero, ← pow_one (associates.mk w.as_ideal),
-    associates.factors_prime_pow hw', associates.count_some hv, multiset.repeat_one, 
+    associates.factors_prime_pow hw', associates.count_some hv, multiset.replicate_one, 
     multiset.count_eq_zero, multiset.mem_singleton],
   simp only [subtype.val_eq_coe],
   rw [associates.mk_eq_mk_iff_associated, associated_iff_eq, ← height_one_spectrum.ext_iff],
@@ -380,7 +366,8 @@ end
 
 /-- `val_v(∏_{w ≠ v} w^{exps w}) = 0`. -/
 lemma fractional_ideal.count_finprod_coprime (exps : height_one_spectrum R → ℤ) :
-  fractional_ideal.count K v (∏ᶠ (w : height_one_spectrum R) (H : w ≠ v), ↑(w.as_ideal) ^ exps w) = 0 :=
+  fractional_ideal.count K v (∏ᶠ (w : height_one_spectrum R) (H : w ≠ v), ↑(w.as_ideal) ^ exps w) 
+  = 0 :=
 begin
   apply finprod_mem_induction (λ I, fractional_ideal.count K v I = 0),
   { exact fractional_ideal.count_one K v },
@@ -411,11 +398,11 @@ begin
     rw [← mul_finprod_cond_ne v h_supp, fractional_ideal.count_mul, 
       fractional_ideal.count_zpow_self, fractional_ideal.count_finprod_coprime, add_zero],
   { apply zpow_ne_zero, 
-    exact fractional_ideal.coe_ideal_ne_zero_iff.mpr v.ne_bot, },
+    exact fractional_ideal.coe_ideal_ne_zero.mpr v.ne_bot, },
   { rw [finprod_cond_ne _ _ h_supp, finset.prod_ne_zero_iff],
     intros w hw,
     apply zpow_ne_zero, 
-    exact fractional_ideal.coe_ideal_ne_zero_iff.mpr w.ne_bot, }
+    exact fractional_ideal.coe_ideal_ne_zero.mpr w.ne_bot, }
 end
 
 variable {K}
@@ -450,3 +437,24 @@ begin
     (ideal.finite_factors (fractional_ideal.constant_factor_ne_zero hI haJ)))
     h_subset,
 end
+
+section discrete_topology
+
+/-- The discrete topology on the units of the fractional ideals. -/
+instance ufi_ts : topological_space (units (fractional_ideal (non_zero_divisors R) K)) := ⊥
+
+instance : discrete_topology (fractional_ideal (non_zero_divisors R) K)ˣ :=
+{ eq_bot := rfl }
+
+/-- The units of the fractional ideals with the discrete topology are a topological group.  -/
+instance ufi_tg : topological_group (units (fractional_ideal (non_zero_divisors R) K)) := 
+{ continuous_mul := continuous_of_discrete_topology,
+  continuous_inv := continuous_of_discrete_topology, }
+
+instance ufi_us : uniform_space (units (fractional_ideal (non_zero_divisors R) K)) := 
+topological_group.to_uniform_space _
+
+instance ufi_ug : uniform_group (units (fractional_ideal (non_zero_divisors R) K)) := 
+topological_comm_group_is_uniform
+
+end discrete_topology
